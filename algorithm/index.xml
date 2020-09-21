@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>알고리즘 ( Algorithm ) on Hong&#39;s Blog</title>
-    <link>https://gowoonsori.github.io/algorithm/</link>
+    <link>https://gowoonsori.site/algorithm/</link>
     <description>Recent content in 알고리즘 ( Algorithm ) on Hong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Sep 2020 19:28:25 +0900</lastBuildDate><atom:link href="https://gowoonsori.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 19:28:25 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/algorithm/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
