@@ -1,0 +1,1075 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+	그래프 ( Graph ) :: Hong&#39;s Blog
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2020-09-21T13:24:19 KST">
+<meta name="description" content="">
+
+
+
+<title>그래프 ( Graph ) :: Hong&#39;s Blog</title>
+
+<link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
+
+
+<link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
+<link rel="stylesheet" href='https://example.com/sass/layout.css'>
+<link rel="stylesheet" href='https://example.com/style.main.css'>
+<link rel="stylesheet" href='https://example.com/style.menu.css'>
+<link href='/vendor/FontAwesome/fontawesome-free-5.14.0-web/css/all.min.css' rel="stylesheet"> 
+<link rel="stylesheet" href='/css/docport.css'>
+
+
+
+
+
+<script src='/vendor/jquery/jquery-3.5.1.min.js'></script>
+<script src='/js/docport.js'></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/example.com";
+</script>
+
+
+
+
+
+    
+  </head>
+
+  <body data-url="/data-structure/graph/"
+
+  class="">
+
+<style type="text/css">
+  #debug{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 3.5rem;
+    margin-bottom: .35rem;
+    padding: 0 2rem;
+    position: fixed;
+    left: 0;      right: 0;     top: 0;
+   
+    top:0px;
+    
+    min-height: 150px;
+
+    background-color: white;
+    border: 3px solid red;
+    z-index: 10000 ;
+    word-wrap: all;
+    overflow: auto;
+  }
+</style>
+ 
+
+
+    
+    
+    <header style="">
+        <div>
+    
+    <div class="burger ">
+        <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">&#9776;</a>
+    </div>
+    
+
+    <div>
+	
+		
+	    	<a class='baselink' href='https://example.com'>Hong's Blog</a>
+	  	
+	</div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/gowoonsori"  rel="noopener">
+                  Github
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://gowoonsori.github.io"  rel="noopener">
+                  Blog
+                </a>
+            </li>
+    </nav>
+
+</div>
+    </header>
+    
+
+    <article>
+      
+      <aside class="">
+        
+<div class="search">
+	<div class="searchbox">
+	  <input data-search-input id="search-by" type="text" placeholder="Type to search...">
+	</div>
+	<script type="text/javascript" src="/vendor/lunr/lunr.min.js"></script>
+	<script type="text/javascript" src="/vendor/auto-complete/auto-complete.js"></script>
+	<link href="/vendor/auto-complete/auto-complete.css" rel="stylesheet">
+	<script type="text/javascript">
+	  
+	      var baseurl = "https:\/\/example.com";
+	  
+	</script>
+	<script type="text/javascript" src="/js/search.js"></script>
+</div>
+	
+		
+	    	
+	    
+	<div id="close_menu">
+  <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">
+      <i class="fa fa-lg fa-times"></i>
+  </a>
+</div>
+
+<ul class="menu">
+
+    <li data-nav-id="https://example.com/home/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/home/">잡담</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://example.com/home/connect-custom-domain/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/connect-custom-domain/">Connect Custom Domain</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://example.com/home/start-blog/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/start-blog/">블로깅에 처음 발을 내디디다.</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://example.com/algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/algorithm/">알고리즘 ( Algorithm )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://example.com/algorithm/sorting-algorithm/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/sorting-algorithm/">Sorting Algorithm</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://example.com/data-structure/" class="dd-item parent haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+        
+      
+          <a href="/data-structure/">자료구조 ( Data Structure )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://example.com/data-structure/graph/" class="dd-item parent active
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/graph/">그래프 ( Graph )</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://example.com/data-structure/array-list/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/array-list/">배열 &amp; 리스트 ( Array &amp; List )</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://example.com/data-structure/stack-queue/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/stack-queue/">스택 &amp; 큐 ( Stack &amp; Queue )</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://example.com/data-structure/heap/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/heap/">힙 ( Heap )</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://example.com/data-structure/tree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/">트리 ( Tree )</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://example.com/solve-algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/solve-algorithm/">알고리즘 문제풀이</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://example.com/solve-algorithm/fibonacci-number/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/solve-algorithm/fibonacci-number/">[프로그래머스] 피보나치 수</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://example.com/solve-algorithm/bulls-and-cows/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/solve-algorithm/bulls-and-cows/">[프로그래머스] 숫자야구</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://example.com/solve-algorithm/ramen-factory/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/solve-algorithm/ramen-factory/">[프로그래머스] 라면공장</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://example.com/solve-algorithm/hopscotch/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/solve-algorithm/hopscotch/">[프로그래머스] 땅따먹기</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://example.com/solve-algorithm/long-jump/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/solve-algorithm/long-jump/">[프로그래머스] 멀리 뛰기</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://example.com/solve-algorithm/best-album/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/solve-algorithm/best-album/">[프로그래머스] 베스트 앨범</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+
+
+</ul>
+	
+		
+	    	<center>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/gowoonsori" aria-label="Follow @gowoonsori on GitHub">Follow@gowoonsori</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/gowoonsori/gowoonsori.github.io" data-icon="octicon-star" aria-label="Star gowoonsori/gowoonsori.github.io on GitHub">Star</a>
+</center>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+	    
+	
+      </aside>
+      
+
+      <section class="page ">
+      
+	
+		
+    
+    
+    <nav id="breadcrumb" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+  
+  	
+		
+  
+  	
+	<li class="breadcrumb-item ">
+      <a class="text-link" href="https://example.com">
+        Home
+      </a>
+    </li>
+	
+  
+    <li class="breadcrumb-item ">
+      <a class="text-link" href="/data-structure/">
+        자료구조 ( Data Structure )
+      </a>
+    </li>
+	
+  	
+  
+    <li class="breadcrumb-item active">
+      
+        그래프 ( Graph )
+      
+    </li>
+
+      </ol>
+    </nav>
+    
+    
+
+    
+	
+		
+        
+		
+		
+		
+		
+		
+		
+
+		
+			<h1>그래프 ( Graph )</h1>
+        
+
+		
+										
+		
+
+		
+
+
+	
+	
+
+	
+	
+	<div class="jump-to-section">
+		<span onclick="$h = $(this);$h.next('nav').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('nav').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+  			Jump to Section
+  			<i style=";" class="fas fa-chevron-right"></i>
+		</span>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-개념">✔ 개념</a></li>
+    <li><a href="#-표현-방법">✔ 표현 방법</a></li>
+    <li><a href="#-탐색">✔ 탐색</a>
+      <ul>
+        <li><a href="#깊이-우선-탐색-dfs-">깊이 우선 탐색( DFS )</a></li>
+        <li><a href="#너비-우선-탐색-bfs-">너비 우선 탐색( BFS )</a></li>
+      </ul>
+    </li>
+    <li><a href="#-신장-트리">✔ 신장 트리</a>
+      <ul>
+        <li><a href="#-구현">✔ 구현</a></li>
+        <li><a href="#-최소-비용-신장-트리">✔ 최소 비용 신장 트리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+	
+	
+
+	<div class="content"><h1>그래프</h1><a class="anchor" id="그래프"></a>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">연결되어 있는 객체 간의 관계를 표현할 수 있는 자료구조.
+Tree는 사이클이 허용되지 않는 그래프이다.
+</code></pre></div><br>
+<h2>✔ 개념</h2><a class="anchor" id="-개념"></a>
+<hr>
+<ul>
+<li>
+<p>정점(vertex) / 노드(node) : 위치</p>
+</li>
+<li>
+<p>간선(edge) / 링크(link) : 위치간의 관계</p>
+</li>
+<li>
+<p>인접 정점 : 간선에 의해 직접 연결된 노드</p>
+</li>
+<li>
+<p>차수 : 하나의 노드에 인접한 노드의 수</p>
+</li>
+<li>
+<p>경로 길이 : 경로를 구성하는 데 사용된 간선의 수</p>
+</li>
+<li>
+<p>단순 경로 : 경로 중에서 반복되는 간선이 없을 경우</p>
+</li>
+<li>
+<p>사이클 : 단순경로의 시작 정점과 종료 정점이 동일한 경로</p>
+</li>
+<li>
+<p>연결 그래프 : 무방향 그래프에 있는 모든 노드쌍에 대해 항상 경로가 존재한 경우</p>
+</li>
+<li>
+<p>완전 그래프 : 모든 노드가 서로 연결되어 있는 그래프</p>
+</li>
+<li>
+<p>부분 그래프 : 원래의 그래프의 일부 정점 및 간선으로 이루어진 그래프</p>
+</li>
+<li>
+<p>오일러 경로 : 모든 간선을 한 번만 통과하면서 처음 정점으로 돌아오는 경로</p>
+</li>
+<li>
+<p>오일러 정리 : 간선이 짝수일 때만 오일러 경로가 존재</p>
+</li>
+</ul>
+<p><br><br></p>
+<h2>✔ 표현 방법</h2><a class="anchor" id="-표현-방법"></a>
+<hr>
+<ul>
+<li>인접 행렬(2차원 배열)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">해당하는 위치의 값을 통해 vertex간의 연결 관계를 O(1)로 파악.
+
+배열은 노드를 n개를 갖는다고 한다면 n^2만큼 메모리가 필요하기에 희소 그래프는 메모리 낭비가 될 수 있다.
+
+따라서 밀집 그래프 (Dense graph) 가 적합하다.
+</code></pre></div><br>
+<ul>
+<li>인접 리스트 ( 연결 리스트 )</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">노드의 개수가 n개이고 노드의 개수가 e개인 무방향 그래프를 그리는데 있어 n개의 연결 리스트, n개의 헤드 포인터, 2e개의 노드가
+필요하다.
+
+간선의 개수가 적은 희소 그래프 (Sparse graph) 가 적합하다.
+</code></pre></div><p>밀집 그래프 : 간선이 많이 존재하는 그래프</p>
+<p>희소 그래프 : 간선이 적은 그래프</p>
+<p><br><br></p>
+<h2>✔ 탐색</h2><a class="anchor" id="-탐색"></a>
+<br>
+<h3>깊이 우선 탐색( DFS )</h3><a class="anchor" id="깊이-우선-탐색-dfs-"></a>
+<hr>
+<br>
+<p>시작 노드에서 출발하여 먼저 다음 노드로 향하면서 탐색한 곳은 표시를 해두고 더이상 갈 수 있는 노드가 없다면 이전 노드에서 다른 노드로 향하여 모든 노드를 탐색하는 방식.
+<strong>Stack</strong> 을 사용하여 구현.</p>
+<br>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">    유사 코드
+
+    노드를 방문했다고 표시
+    해당 노드 출력
+    for 연결되어 있는 모든 노드 확인
+        if 방문 하지 않고 연결되어 있는 노드
+            재귀 함수
+</code></pre></div><p>노드의 수가 n, 간선의 수가 e 인 그래프의 DFS 탐색 시간은 인접 리스트 O(n+e) / 인접 행렬 O(n^2)
+&ndash;&gt; 희소 그래프인 경우 dfs에서는 인접 리스트 사용이 시간적으로 더 유리하다.</p>
+<p><a href="https://github.com/gowoonsori/my-tech/dataStructure/Graph/Deep_First_Search.cpp">c++을 이용한 코드 예</a></p>
+<p><br><br></p>
+<h3>너비 우선 탐색( BFS )</h3><a class="anchor" id="너비-우선-탐색-bfs-"></a>
+<hr>
+<p>시작 정점으로부터 가까운 정점을 먼저 방문하고 멀리 떨어져 있는 정점을 나중에 방문하는 순회 방법
+<strong>큐</strong>를 이용하여 노드를 삽입하고 방문한 노드는 큐에서 빼내는 방식으로 구현.</p>
+<br>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">    유사 코드
+
+    노드를 방문했다고 표시
+    queue에 노드번호 삽입
+    while 큐가 비어있을때까지
+        queue pop
+        pop값 출력
+        for 노드에 연결되어있는 모든 노드 탐색
+            if 방문하지 않은 노드라면
+                큐에 삽입
+                노드 방문표시
+</code></pre></div><p>노드의 수 n, 간선의 수 e인 그래프 BFS탐색 시간은 인접 리스트 O(n+e) / 인접 행열 O(n^2)
+&ndash;&gt; 희소그래프의 경우 인접 리스트를 사용하는 것이 유리하다.</p>
+<p><a href="https://github.com/gowoonsori/my-tech/dataStructure/Graph/Breadth_First_Search.cpp">c++을 이용한 코드 예</a></p>
+<p><br><br></p>
+<h2>✔ 신장 트리</h2><a class="anchor" id="-신장-트리"></a>
+<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">Spanning Tree
+- 그래프 내의 모든 정점을 포함하는 트리
+- 모든 정점들이 연결되어 있어야 하고 사이클은 포함되지 않는 형태
+- n개의 노드를 정확이 n-1개의 간선으로 연결된다.
+- 하나의 그래프에는 많은 신장 트리 존재 가능
+</code></pre></div> <br>
+<h3>✔ 구현</h3><a class="anchor" id="-구현"></a>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">    유사 코드
+
+    노드 방문 표시
+    for 인접한 노드 탐색
+        if 방문하지 않은 노드
+            간선 표시
+            재귀함수
+</code></pre></div><p><br><br></p>
+<h3>✔ 최소 비용 신장 트리</h3><a class="anchor" id="-최소-비용-신장-트리"></a>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">Minimum Spanning Tree
+- 신장 트리 중에서 사용된 간선들의 가중치 합이 최소인 신장 트리
+- 모든 정점들이 연결되어 있어야 하고 사이클은 포함되지 않는 형태
+- n개의 노드를 정확이 n-1개의 간선으로 연결된다.
+</code></pre></div><br>
+<h4>알고리즘 종류</h4><a class="anchor" id="알고리즘-종류"></a>
+<ul>
+<li>Krustkal MST</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">탐욕적인 방법( Greedy Method )
+
+- 간선 선택 기반 알고리즘
+- 간선 선택 단계에서 사이클을 포함하지 않고 최소 비용 간선을 선택
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">[과정]
+
+    1. 그래프의 가중치를 이용하여 오름차순 정렬
+    2. 정렬된 리스트에서 사이클 포함하지 않은 간선 선택
+    3. 선택한 간선을 MST 집합에 추가
+</code></pre></div><br>
+<ul>
+<li>Prim MST</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">- 정점 선택 기반
+- 시작 정점부터 출발하여 신장 트리 집합을 단계적으로 확장
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">[과정]
+
+    1. 시작 정점 MST에 추가
+    2. 앞 단계의 MST에 인접한 정점들 중 최소 간선 정점 선택
+    3. MST가 n-1개 간선을 가질때 까지 반복
+</code></pre></div></div>
+
+
+	 
+	<div class="chevrons ">
+		<a class="next" href="/data-structure/array-list/" title="배열 &amp; 리스트 ( Array &amp; List )" style="margin-right: 0px;">
+            <div>
+                <p>Next page</p>
+                <label>배열 &amp; 리스트 ( Array &amp; List )</label>
+            </div>
+            <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
+	</div>
+	
+	
+
+      </section>
+
+      
+      
+      <section class="right-menu ">
+      
+	
+	
+		
+	    	
+	  	
+	<div class="TableOfContents">
+    <label>What&#39;s on this page</label>
+    <nav>
+        <ul >
+            <li><a href="/data-structure/graph/">그래프 ( Graph )</a></li>
+        </ul>
+    </nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-개념">✔ 개념</a></li>
+    <li><a href="#-표현-방법">✔ 표현 방법</a></li>
+    <li><a href="#-탐색">✔ 탐색</a>
+      <ul>
+        <li><a href="#깊이-우선-탐색-dfs-">깊이 우선 탐색( DFS )</a></li>
+        <li><a href="#너비-우선-탐색-bfs-">너비 우선 탐색( BFS )</a></li>
+      </ul>
+    </li>
+    <li><a href="#-신장-트리">✔ 신장 트리</a>
+      <ul>
+        <li><a href="#-구현">✔ 구현</a></li>
+        <li><a href="#-최소-비용-신장-트리">✔ 최소 비용 신장 트리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+	
+		
+	    	
+	  	
+	<div class="Actions">
+	<nav>
+		<ul>
+				
+		    
+		    
+			
+		      <li>
+		          <i class='fas fa-calendar'></i>
+		          Last update on 20 September 2020
+		      </li>
+		    
+		    
+
+    	</ul>
+	</nav>
+    
+</div>
+
+      </section>
+      
+    </article>
+    
+    
+    <footer>
+      
+	
+		
+	    	<style type="text/css">
+
+.footer-gray {
+  width: 100%;
+  color: #888;
+}
+
+.footer-custom {
+  font: normal normal 12px/1.4 sans-serif;
+  /*max-width: 1008px;*/
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.footer-custom:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-lists:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-hdr {
+  color: white;
+  font: 22px/1.4  sans-serif;
+  margin: 1em 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .ftr-hdr {
+    font-size: 18px;
+  }
+}
+
+.footer-list-wrap {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 568px) {
+  .footer-list-wrap {
+    width: 33.3333%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-list-wrap {
+    width: 25%;
+  }
+}
+
+.ftr-links-sub {
+  padding: 0;
+  margin: 0;
+}
+
+.ftr-links-sub:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-links-sub li {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0;
+  color: #888;
+  font: normal normal 12px sans-serif;
+  text-transform: uppercase;
+  /*width: 150px;*/
+}
+
+.footer-custom a,
+.footer-custom a:link,
+.footer-custom a:visited,
+.ftr-links-sub li .link {
+  text-decoration: none;
+  color: #888;
+  padding: 5px 0;
+  display: block;
+}
+
+.footer-custom .footer-legal a {
+  display: inline;
+}
+
+.footer-custom a:hover,
+.footer-custom a:active,
+.ftr-links-sub li .link:hover {
+  text-decoration: underline;
+  color: #888;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-custom a, .footer-custom a:link, .footer-custom a:visited, .ftr-links-sub li .link {
+    padding: 0;
+  }
+}
+/* BEGIN EMAIL CAPTURE STYLES*/
+
+.footer-email {
+  text-align: center;
+}
+
+#ftrEmailForm {
+  height: 44px;
+}
+
+#ftrEmailForm .error {
+  display: none;
+  color: red;
+  text-align: left;
+}
+
+#ftrEmailForm #ftrEmailInput {
+  background: none repeat scroll 0 0 #FFF;
+  border: 1px solid #D6D6D6;
+  box-sizing: border-box;
+  color: #888;
+  float: left;
+  font: normal normal 14px/1.4 sans-serif;
+  padding: 5px;
+  width: 70%;
+  height: 100%;
+}
+
+#ftrEmailForm #ftrEmailInput:hover {
+  border: 1px solid #888;
+}
+
+#ftrEmailForm #ftrEmailInput:focus {
+  border: 1px solid #ef9223;
+  outline: #ef9223 auto 5px;
+}
+
+#ftrEmailForm .button {
+  width: 30%;
+  height: 100%;
+  padding: 5px;
+  float: left;
+  border: 1px solid #DFDFDF;
+  box-sizing: border-box;
+  color: #000;
+  font: normal bold 18px/1 sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FFF;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e1e1e1));
+  background: -webkit-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -moz-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -ms-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -o-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: linear-gradient(to bottom, white 0, #e1e1e1 100%);
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+}
+
+#ftrEmailForm .button:hover,
+#ftrEmailForm .button:active {
+  background: black;
+  color: #FFF;
+  outline: none;
+}
+/* BEGIN SOCIAL STYLES*/
+
+.footer-social {
+  text-align: center;
+}
+
+.footer-social ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-social ul:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-social li {
+  float: left;
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-lists {
+    width: 100%;
+  }
+  .footer-email {
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+  .footer-social {
+    width: 45%;
+    margin-left: 5%;
+    float: left;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-lists {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-email {
+    width: 33.3333%;
+  }
+  .footer-social {
+    width: 33.3333%;
+    float: right;
+    margin-left: 0;
+  }
+}
+
+.footer-legal {
+  padding: 15px 0 0;
+  clear: left;
+}
+
+.footer-payment {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-legal {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-payment {
+    width: 33.3333%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment {
+    text-align: left;
+  }
+}
+
+.footer-payment ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-payment ul li {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment ul li.ftr-stella {
+    margin-left: 0;
+  }
+}
+
+
+</style>
+  <div class="footer-gray">
+    <div class="footer-custom">
+      <div class="footer-lists">
+        <h6 class = "ftr-hdr">Contact me</h6>
+        <p>E-mail : gowoonsori97@gmail.com  |  gowoonsori97@naver.com</p>
+      </div>
+      <div class="footer-social">
+        <h6 class="ftr-hdr">Follow Us</h6>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/gowoonsori97/" title="Facebook">
+              <img width="24" height="24" alt="Like us on Facebook" src="/images/fb.png">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.github.com/gowoonosori" title="Github">
+              <img width="24" height="24" alt="Follow us on Github" src="/images/github.png">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; Docport MIT Licence. | <a href="#" rel="nofollow">Privacy Policy</a> | <a href="#" rel="nofollow">Terms of Use</a> | <a href="#" rel="nofollow">Terms of Sale</a></p>
+        <p>Docport is free Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+      </div>
+    </div>
+  </div>
+  <!--/.footer-gray-->
+	    
+	
+    </footer>
+    
+
+
+
+  </body>
+</html>
