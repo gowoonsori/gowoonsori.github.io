@@ -1,0 +1,1281 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+	Hugo와 Github page를 사용하여 블로그 만들기 :: Hong&#39;s Blog
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2020-09-24T00:33:48 KST">
+<meta name="description" content="hugo와 github page 사용하기">
+
+
+
+<title>Hugo와 Github page를 사용하여 블로그 만들기 :: Hong&#39;s Blog</title>
+
+<link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
+
+
+<link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/sass/layout.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.main.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.menu.css'>
+<link href='/vendor/FontAwesome/fontawesome-free-5.14.0-web/css/all.min.css' rel="stylesheet"> 
+<link rel="stylesheet" href='/css/docport.css'>
+
+
+
+
+
+<script src='/vendor/jquery/jquery-3.5.1.min.js'></script>
+<script src='/js/docport.js'></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/gowoonsori.site";
+</script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-178493752-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+    
+  </head>
+
+  <body data-url="/home/start-hugo/"
+
+  class="">
+
+<style type="text/css">
+  #debug{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 3.5rem;
+    margin-bottom: .35rem;
+    padding: 0 2rem;
+    position: fixed;
+    left: 0;      right: 0;     top: 0;
+   
+    top:0px;
+    
+    min-height: 150px;
+
+    background-color: white;
+    border: 3px solid red;
+    z-index: 10000 ;
+    word-wrap: all;
+    overflow: auto;
+  }
+</style>
+ 
+
+
+    
+    
+    <header style="">
+        <div>
+    
+    <div class="burger ">
+        <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">&#9776;</a>
+    </div>
+    
+    <img src="/images/favicon.png" style="margin-top:3px; width: 20px; height: 20px;">
+    <div>
+	
+		
+	    	<a class='baselink' href='https://gowoonsori.site'>Hong's Blog</a>
+	  	
+	</div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/gowoonsori"  rel="noopener">
+                  Github
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://gowoonsori.github.io"  rel="noopener">
+                  Blog
+                </a>
+            </li>
+    </nav>
+
+</div>
+    </header>
+    
+
+    <article>
+      
+      <aside class="">
+        
+<div class="search">
+	<div class="searchbox">
+	  <input data-search-input id="search-by" type="text" placeholder="Type to search...">
+	</div>
+	<script type="text/javascript" src="/vendor/lunr/lunr.min.js"></script>
+	<script type="text/javascript" src="/vendor/auto-complete/auto-complete.js"></script>
+	<link href="/vendor/auto-complete/auto-complete.css" rel="stylesheet">
+	<script type="text/javascript">
+	  
+	      var baseurl = "https:\/\/gowoonsori.site";
+	  
+	</script>
+	<script type="text/javascript" src="/js/search.js"></script>
+</div>
+	
+		
+	    	
+	    
+	<div id="close_menu">
+  <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">
+      <i class="fa fa-lg fa-times"></i>
+  </a>
+</div>
+
+<ul class="menu">
+
+    <li data-nav-id="https://gowoonsori.site/home/" class="dd-item parent alwaysopen haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+        
+      
+          <a href="/home/">잡담</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/start-blog/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/start-blog/">블로깅에 처음 발을 내디디다. 🦵</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/start-hugo/" class="dd-item parent active
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/start-hugo/">Hugo와 Github page를 사용하여 블로그 만들기</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/data-structure/">자료구조 ( Data Structure )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/array-list/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/array-list/">배열 &amp; 리스트 ( Array &amp; List )</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/stack-queue/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/stack-queue/">스택 &amp; 큐 ( Stack &amp; Queue )</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/graph/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/graph/">그래프 ( Graph )</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/">트리 ( Tree )</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/heap/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/heap/">힙 ( Heap )</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/algorithm/">알고리즘 ( Algorithm )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/sorting-algorithm/">Sorting Algorithm</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/solve-algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/solve-algorithm/">알고리즘 문제풀이</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/solve-algorithm/fibonacci-number/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/solve-algorithm/fibonacci-number/">[프로그래머스] 피보나치 수</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/solve-algorithm/bulls-and-cows/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/solve-algorithm/bulls-and-cows/">[프로그래머스] 숫자야구</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/solve-algorithm/ramen-factory/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/solve-algorithm/ramen-factory/">[프로그래머스] 라면공장</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/solve-algorithm/hopscotch/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/solve-algorithm/hopscotch/">[프로그래머스] 땅따먹기</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/solve-algorithm/long-jump/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/solve-algorithm/long-jump/">[프로그래머스] 멀리 뛰기</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/solve-algorithm/best-album/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/solve-algorithm/best-album/">[프로그래머스] 베스트 앨범</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+
+
+</ul>
+	
+		
+	    	<center>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/gowoonsori" aria-label="Follow @gowoonsori on GitHub">Follow@gowoonsori</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/gowoonsori/gowoonsori.github.io" data-icon="octicon-star" aria-label="Star gowoonsori/gowoonsori.github.io on GitHub">Star</a>
+</center>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+	    
+	
+      </aside>
+      
+
+      <section class="page ">
+      
+	
+		
+    
+    
+    <nav id="breadcrumb" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+  
+  	
+		
+  
+  	
+	<li class="breadcrumb-item ">
+      <a class="text-link" href="https://gowoonsori.site">
+        Home
+      </a>
+    </li>
+	
+  
+    <li class="breadcrumb-item ">
+      <a class="text-link" href="/home/">
+        잡담
+      </a>
+    </li>
+	
+  	
+  
+    <li class="breadcrumb-item active">
+      
+        Hugo와 Github page를 사용하여 블로그 만들기
+      
+    </li>
+
+      </ol>
+    </nav>
+    
+    
+
+    
+	
+		
+        
+		
+		
+		
+		
+		
+		
+
+		
+			<h1>Hugo와 Github page를 사용하여 블로그 만들기</h1>
+        
+
+		
+										
+		
+
+		
+
+
+	
+	
+
+	
+	
+	<div class="jump-to-section">
+		<span onclick="$h = $(this);$h.next('nav').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('nav').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+  			Jump to Section
+  			<i style=";" class="fas fa-chevron-right"></i>
+		</span>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-hugo를-선택한-이유">◼ hugo를 선택한 이유</a></li>
+      </ul>
+    </li>
+    <li><a href="#1-첫-시작-hugo-설치">1. 첫 시작! Hugo 설치</a></li>
+    <li><a href="#2-블로그-생성과-호스팅을-위해-github-repository를-2개-생성">2. 블로그 생성과 호스팅을 위해 Github repository를 2개 생성</a></li>
+    <li><a href="#3-블로그의-컨텐츠들을-담을-파일-생성">3. 블로그의 컨텐츠들을 담을 파일 생성</a></li>
+    <li><a href="#4-테마-다운-및-설정">4. 테마 다운 및 설정</a></li>
+    <li><a href="#5-파일-관리와-호스팅을-위해-github-repo와-연결시켜주기">5. 파일 관리와 호스팅을 위해 github repo와 연결시켜주기</a></li>
+    <li><a href="#6-컨텐츠-생성">6. 컨텐츠 생성</a></li>
+    <li><a href="#7-컨텐츠-업로드">7. 컨텐츠 업로드</a></li>
+    <li><a href="#8-컨텐츠-업로드-자동화">8. 컨텐츠 업로드 자동화</a></li>
+    <li><a href="#여기서부터는-skip해도-무방하다"><em>여기서부터는 skip해도 무방하다.</em></a></li>
+    <li><a href="#9-custom-domain-연결하기">9. custom domain 연결하기</a></li>
+    <li><a href="#10-댓글-기능-추가하기">10. 댓글 기능 추가하기</a></li>
+    <li><a href="#-블로그-생성한-후기">✍ 블로그 생성한 후기</a></li>
+  </ul>
+</nav>
+	</div>
+	
+	
+
+	<div class="content">
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices primary">
+	<p>블로그를 작성하기로 마음 먹은 후에 가장 먼저 할 일이 블로그를 만드는 것이었다.<br>
+hugo와 github을 사용하면서 블로그를 open하는 과정과 겪었던 문제점들, 추가한 내용들을 정리하여 hugo를 선택하신분들에게 조금이나마 도움이 되고자 한다.</p>
+
+</div>
+
+<br>
+<h3>◼ hugo를 선택한 이유</h3><a class="anchor" id="-hugo를-선택한-이유"></a>
+<p>github page를 이용하여 블로그를 운영하는데 다양한 generator가 존재한다.</p>
+<p>가장 유명한 generator로는 <code>Ruby</code> 기반의 <code>Jekyll</code>이 있다. 이 지킬은 가장 github의 star 수가 많은 만큼 theme도 많고 한글 reference도 많다.</p>
+<p>하지만, page수가 많지도 않은 데 점점 build가 오래걸린다는 issue가 있다고 하고, <strong>남들이 많이 하지 않는 거를 해보자!!</strong> 하는 마음과 Ruby 보다는 <code>Go</code>를 기반으로 한 <code>Hugo</code> 가 더 끌려 <strong>Hugo</strong>를 선택했다.</p>
+<p>
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices dark">
+	<p><em>그때는 몰랐다. 이 선택이 엄청난 삽질의 시작라는 것을&hellip;.</em></p>
+
+</div>
+
+<br><br></p>
+<h2>1. 첫 시작! Hugo 설치</h2><a class="anchor" id="1-첫-시작-hugo-설치"></a>
+<hr>
+<p>github page를 이용하여 블로그를 만드는 것이기 때문에 따로 git 설치 과정은 생략한다.</p>
+<p><a href="https://gohugo.io/getting-started/installing#windows">Hugo install에 관한 공식 문서</a> 를 보고 자신의 OS환경에 맞게 설치를 해주면 된다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/button.css'>
+
+<button class="btn  dark" type="button"  onclick="location.href='https:\/\/gohugo.io\/getting-started\/installing#install-hugo-with-brew'" >macOS 설치 동영상</button>
+
+
+</td>
+<td style="text-align:center">
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/button.css'>
+
+<button class="btn  dark" type="button"  onclick="location.href='https:\/\/gohugo.io\/getting-started\/installing#linux'" >Linux 설치 문서</button>
+
+
+</td>
+<td style="text-align:center">
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/button.css'>
+
+<button class="btn  dark" type="button"  onclick="location.href='https:\/\/gohugo.io\/getting-started\/installing#windows'" >windows 설치 동영상</button>
+
+
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>위의 링크를 통해 Linux나 macOS라면 명령어를 이용해서 쉽게 설치가 가능하다.</li>
+<li>나는 windows를 사용하고 있고 따로 package sw를 사용하지 않기 때문에 <a href="https://github.com/gohugoio/hugo/releases">Hugo 공식 github</a> 을 통해 windows의 최신 버전의 zip파일을 다운받아 설치했다.</li>
+</ul>
+<p>설치 할때 C:\Hugo\bin 디렉토리를 생성해서 이 폴더안에 다운받은 압축파일 해제하면 된다.</p>
+<br>
+<ul>
+<li>설치를 완료 했다면 경로 설정을 해주어야 하는데
+<ol>
+<li>윈도우 검색창에 <code>시스템 환경 변수</code>를 검색 하고 실행시키기</li>
+<li><code>시스템 속성</code>의 <code>환경변수</code> 클릭</li>
+<li><code>시스템 변수</code>의 <code>Path</code> 더블 클릭</li>
+<li><code>새로 만들기</code>를 클릭하여 아까 설치했던 C:\Hugo\bin 폴더를 잡아주기.</li>
+</ol>
+</li>
+</ul>
+<p><img src="system-path1.PNG?classes=border,shadow" alt="system-path-1">
+<img src="system-path2.PNG?classes=border,shadow" alt="system-path-2">
+<img src="system-path3.PNG?classes=border,shadow" alt="system-path-3"></p>
+<br>
+<p>위에 처럼 진행하거나</p>
+<p>cmd를 통하여 $ set PATH=%PATH%;C:\Hugo\bin 명령으로 환경변수를 추가하시면 된다.</p>
+<p>제대로 완료되었는지 확인 하고 싶다면 <code>cmd</code>를 통해 $ hugo version 혹은 $ hugo help로 동작 확인.</p>
+<p><br><br></p>
+<h2>2. 블로그 생성과 호스팅을 위해 Github repository를 2개 생성</h2><a class="anchor" id="2-블로그-생성과-호스팅을-위해-github-repository를-2개-생성"></a>
+<hr>
+<ul>
+<li>
+<p>repo를 두개 생성하게 되는데 <strong>한개</strong>는 hugo를 사용하여 블로그안에 채울 내용과 소스파일들을 저장하기 위한 repo를 만들어준다.
+<br> 이 repo는 소스가 보여지는 게 싫다하면<code> private</code>로 만들어도 무관하며 이름도 편한대로 만들면 된다. ( 나는 <code>blog</code> 라는 이름으로 생성했다. )</p>
+</li>
+<li>
+<p><strong>다른 한개</strong>는 github page를 사용한 호스팅을 위해 <code>USERNAME.github.io</code> 라는 이름으로 생성하면된다.
+<br>이때 USERNAME 은 본인의 github name을 적으면 되고 이 repo는 무료로 호스팅을 위해서는 <code>public</code>으로 생성해야하고 <code>private</code>으로 생성하고 싶다면 <strong>Github pro</strong> 이상을 구매하면 된다.</p>
+</li>
+</ul>
+<p><br><br></p>
+<h2>3. 블로그의 컨텐츠들을 담을 파일 생성</h2><a class="anchor" id="3-블로그의-컨텐츠들을-담을-파일-생성"></a>
+<hr>
+<p><code>hugo new site &lt;파일명&gt;</code> 왼쪽의 명령어를 사용하면 기본 hugo폴더의 뼈대가 자동적으로 생성이 되는데 원하는 파일 경로에 directory를 생성해주면 된다.</p>
+<p>현재 cmd의 위치가 C:/Hugo 라면 이 폴더 안에 생성될 것이고 다른 곳에 생성을 원하면 <code>../Users/파일명</code>과 같이 파일명 앞에 경로를 추가해주면 된다.</p>
+<p>나는 C:\Hugo 안에서 <code>hugo new site blog</code> 명령어를 통해 blog라는 폴더를 생성해주었다.</p>
+<p><br><br></p>
+<h2>4. 테마 다운 및 설정</h2><a class="anchor" id="4-테마-다운-및-설정"></a>
+<hr>
+<ol>
+<li><a href="https://themes.gohugo.io/">hugo 테마 둘러보기</a> 사이트에 들어가서 마음에 드는 테마를 선택후 <code>Download</code>를 클릭.</li>
+<li>해당 테마의를 submodule에 추가한다.
+<br><code>Download</code>를 클릭하면 각 테마를 만든 사람의 github의 repo에 들어가지는데 repo에 어떻게 submodule를 추가하면되는지 나와 있다.</li>
+</ol>
+<Br>
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices secondary">
+	<p>나는 <a href="https://github.com/vjeantet/hugo-theme-docport">hugo-theme-docport</a> 테마를 선택 했고 submodule 추가 과정은<br><br>
+<code>git init</code> 후<br>
+<code>git submodule add https://github.com/vjeantet/hugo-theme-docport.git themes/hugo-theme-docport</code><br>
+을 통해 추가했다.</p>
+
+</div>
+
+<br>
+<ol start="3">
+<li>❗ <code>config.toml</code> 파일 수정</li>
+</ol>
+<hr>
+<p>나와 똑같이 진행을 했다면 blog폴더 안에 config.toml 파일이 있을 텐데 이 파일을 통해 title이나 baseUrl, google analytics, theme 기본 설정등 해주게 된다.</p>
+<p>이 파일을 수정하는 내용은 테마들 별로 조금씩 다르기 때문에
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/alert.css'>
+<div class="alert danger" role="alert"><strong>꼭 꼭</strong> 해당 테마의 repo를 참고하여 수정토록 하자!</div>
+<br>
+baseURL은 본인의 블로그 주소 = Username.github.io를 설정 해주면 된다.</p>
+<p><br><br></p>
+<h2>5. 파일 관리와 호스팅을 위해 github repo와 연결시켜주기</h2><a class="anchor" id="5-파일-관리와-호스팅을-위해-github-repo와-연결시켜주기"></a>
+<hr>
+<ul>
+<li>
+<p>처음에 만든 <code>blog</code> repo 연결</p>
+<ul>
+<li>cmd에서 C:\Hugo\blog로 이동한다.</li>
+<li>$ <code>git remote add origin &lt;본인의 첫번째만든 repo주소&gt;</code></li>
+</ul>
+<p><img src="repo.PNG?classes=border,shadow" alt=""></p>
+<p>github repo주소를 모르겠다 하면 github 홈페이지의 본인 repo에 들어 가보면 <code>code</code>버튼을 클릭하고 위의 빨간색 동그라미 부분을 클릭하면 repo주소가 복사가 된다.</p>
+</li>
+<li>
+<p>두번째 만든 <code>username.github.io</code> repo 연결</p>
+<ul>
+<li><code>git submodule add -b master &lt;두번째 만든 githbu.io repo주소&gt; public</code> 을 입력해주면 blog폴더 안에 public 폴더가 만들어지는 데 이 public폴더가 username.github.io 저장소와 연결 될 것이다.</li>
+</ul>
+</li>
+</ul>
+<br>
+<h2>6. 컨텐츠 생성</h2><a class="anchor" id="6-컨텐츠-생성"></a>
+<hr>
+<ul>
+<li><code>hugo new &lt;파일명&gt;</code>을 사용하여 업로드할 컨텐츠를 만들어 볼 수 있는 데 기본 파일구조가 테마별로 다르니 <strong>꼭 꼭 본인이 사용하는 테마의 repo를 잘 참조하자!!</strong></li>
+</ul>
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices secondary">
+	<p>어떤 테마는 <code>post/파일명.md</code> 파일로 생성을 하는가 하면 내가 사용하는 테마는 <code>파일명/_index.md</code>를 통해 컨텐츠가 생성이 된다.
+<br><br>
+테마를 만든 사람에 따라 <strong>구조가 조금씩 달라</strong> 안그래도 한국 레퍼런스가 많이 없는 hugo에서 이때문에 초반에 삽질을 조금 했다.</p>
+
+</div>
+
+<ul>
+<li>컨텐츠가 생성이 되었다면 <code>hugo server</code>를 입력하면 <a href="http://localhost:1313/">http://localhost:1313/</a> 을 통해 확인해 볼 수 있다.</li>
+</ul>
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices secondary">
+	<p>여기서 또 삽질을 경험한 것이 보통 hugo 파일 구조가 <code>기본 폴더</code> , 그러니까 blog폴더 내의 source파일들을 이용하여 레이아웃을 구성하고 만약 없다면  theme 폴더 내의 소스파일을 이용해서 레이아웃을 구성하게 된다. <br><br>
+하지만 내가 사용한 테마는 기본 scss 파일들을 theme 파일안에 존재하지 않아 build가 되지를 않았다. <br><br>
+docport 테마는 따로 exampleSite폴더 내에 기본 레이아웃을 구성하는 구조와 css,js파일들이 존재하기 때문에 이 파일을 blog폴더내에 복사해주는 것으로 해결했다. <br><br>
+그러니 <strong>꼭 테마별 설명서를 잘 읽어보자 !!</strong></p>
+
+</div>
+
+<ul>
+<li>위의 명령어는 확인만 해볼수 있지 html 파일로 build 시켜 주지 않는데 <code>hugo -t &lt;테마이름&gt;</code>을 통해 <code>public</code> 내에 <code>build</code> 시킬 수 있다. <br>
+테마 이름은 <code>blog/themes</code> 폴더를 들어가보면 된다.</li>
+</ul>
+<p><br><br></p>
+<h2>7. 컨텐츠 업로드</h2><a class="anchor" id="7-컨텐츠-업로드"></a>
+<hr>
+<p><code>hugo server</code> 를 통해 홈페이지를 확인해봤다면 본인의 블로그에 업로드 해야하지 않겠는가?</p>
+<p>업로드 순서는 아래를 따라하면 된다.</p>
+<ul>
+<li>
+<p><code>username.github.io</code> 에 push 하기</p>
+<ul>
+<li><code>$ hugo -t 테마이름</code> 명령을 통해 테마가 적용된 블로그 내용을 public 폴더 내에 build 해준다.</li>
+<li><code>$ cd public</code> 을 통해 public 디렉토리로 이동한다.</li>
+<li><code>$ git add .</code> 수정된 파일들을 index에 올린다.</li>
+<li><code>$ git commit -m &quot;커밋메세지&quot;</code> 변경 내용을 commit하고</li>
+<li><code>$ git push origin master commit</code>을 통해 <code>username.github.io</code>에 upload</li>
+</ul>
+</li>
+<li>
+<p><code>blog</code> repo에도 push 하기</p>
+<ul>
+<li><code>$ cd ..</code></li>
+<li><code>$ git add .</code></li>
+<li><code>$ git commit -m &quot;커밋메세지&quot;</code></li>
+<li><code>$ git push origin master</code></li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+<h2>8. 컨텐츠 업로드 자동화</h2><a class="anchor" id="8-컨텐츠-업로드-자동화"></a>
+<hr>
+<p>아래의 내용을 deplosy.sh로 저장하여 blog폴더 내에 두면 다음 부터는
+컨텐츠 업로드시 일일히 타이핑하지 않고 <code>deplosy.sh &quot;커밋메세지&quot;</code> 를 통해 자동으로 편하게 업로드 할 수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Build the project.</span>
+hugo -t &lt;테마이름&gt;
+
+<span style="color:#75715e"># Go To Public folder</span>
+cd public
+<span style="color:#75715e"># Add changes to git.</span>
+git add .
+
+<span style="color:#75715e"># Commit changes.</span>
+msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rebuilding site `date`&#34;</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>
+  <span style="color:#66d9ef">then</span> msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span>
+git commit -m <span style="color:#e6db74">&#34;</span>$msg<span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># Push source and build repos.</span>
+git push origin master
+
+<span style="color:#75715e"># Come Back up to the Project Root</span>
+cd ..
+
+<span style="color:#75715e"># blog 저장소 Commit &amp; Push</span>
+git add .
+
+msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rebuilding site `date`&#34;</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>
+  <span style="color:#66d9ef">then</span> msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span>
+git commit -m <span style="color:#e6db74">&#34;</span>$msg<span style="color:#e6db74">&#34;</span>
+
+git push origin master
+</code></pre></div><p><br><br></p>
+<h2><em>여기서부터는 skip해도 무방하다.</em></h2><a class="anchor" id="여기서부터는-skip해도-무방하다"></a>
+<p><br><br></p>
+<h2>9. custom domain 연결하기</h2><a class="anchor" id="9-custom-domain-연결하기"></a>
+<hr>
+<p>github page를 이용해도 <code>username.github.io</code>가 아닌 개인의 도메인을 연결하여 사용할 수 있다.</p>
+<p>나는 <code>가비아</code>를 통해 도메인을 구매했기 때문에 가비아 기준으로 설명을 하겠다.</p>
+<ul>
+<li>
+<p>가비아에 들어가 <code>My 가비아</code>에 들어가 도메인 관리를 클릭 후 <code>DNS 정보</code>의 <code>도메인 연결</code>의 <code>설정</code>을 클릭.
+<img src="dns.PNG?classes=border,shadow" alt=""></p>
+</li>
+<li>
+<p>나는 지금 설정을 해놓은 상태라 이렇게 추가가 되어 있다.
+<br><code>레코드 수정</code>을 통해 사진과 같이 추가해주면 된다.</p>
+</li>
+<li>
+<p>설정 후 본인의 <code>username.github.io</code> 에 돌아와 <code>Settings</code>를 클릭한다.</p>
+</li>
+<li>
+<p>스크롤을 내리다 보면 <code>Github pages 항목</code>에 custom domain에 자기의 domain을 입력해 주고 <code>Save</code>를 클릭해주면 된다.
+<img src="custom-domain.PNG?classes=border,shadow" alt="">
+도메인이 적용되는 데 몇분의 시간이 소요 될 수 있고 Enforce HTTPS를 활성화 시켜주면 Let&rsquo;s Encrypt를 통한 무료로 https를 적용 시켜 준다.</p>
+</li>
+<li>
+<p>마지막으로 본인의 <code>config.toml</code>파일의 baseURL을 <code>custom domain</code>으로 바꿔주면 된다.</p>
+</li>
+</ul>
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices secondary">
+	<p>github 내에서는 <code>www</code> 나 <code>blog</code>와 같이 <code>sub domain</code>의 사용을 권장하는 데 나는 이상하게 sub domain설정만 하면 dns설정이 바르게 되지 않아 몇번의 삽질끝에 포기했다.</p>
+
+</div>
+
+<p><br><br></p>
+<h2>10. 댓글 기능 추가하기</h2><a class="anchor" id="10-댓글-기능-추가하기"></a>
+<hr>
+<p>github page는 정적 사이트 호스팅이다보니 자체적으로 댓글 기능을 제공하지는 않기 때문에 외부의 라이브러리를 사용해 추가를 해줄 수 있다.</p>
+<p>유명한 라이브러리로 <code>disqus</code>가 있는 데 나는 disqus의 인터페이스가 지저분하다는 생각이 들어 다른 것을 찾다보니 <code>utterances</code>를 발견하게 되었다.</p>
+<p><a href="https://utteranc.es/">utterances 공식 문서</a>를 참고하면 theme도 설정가능하고 label도 설정가능 하다.</p>
+<p>잘 모르겠다 싶으면 아래의 방법을 따라 해도 무방하다.</p>
+<br>
+<ul>
+<li>
+<p>댓글의 기능을 mapping 해줄 repo를 하나 생성 해준다. <br>
+나는 <code>comments</code>라는 repo를 생성했다.</p>
+</li>
+<li>
+<p>그 후 본인의 theme 폴더 내의 <code>layouts/partials</code> 안의 contents의 내용을 포함하는 <code>body-contents</code> 역할의 html파일을 찾아 편집기를 통해 연다.</p>
+</li>
+<li>
+<p>코드가 길게 있을 텐데 contents 끝 자락 부분에 아래의 코드를 추가 해주면 된다.</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;margin-top:200px;&#34;</span>&gt;
+		&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://utteranc.es/client.js&#34;</span>
+				<span style="color:#a6e22e">repo</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gowoonsori/comments&#34;</span>
+				<span style="color:#a6e22e">issue-term</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pathname&#34;</span>
+				<span style="color:#a6e22e">theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;github-light&#34;</span>
+				<span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>
+				<span style="color:#a6e22e">async</span>&gt;
+		&lt;/<span style="color:#f92672">script</span>&gt;
+	&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p><em>이때 repo의 username과 repo이름은 바꿔줘야 한다</em></p>
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices secondary">
+	<p>테마별로 구조와 파일명이 조금씩 다를 수 있어 이도 공식 문서를 잘 참조하자.
+<br><br> 나는 공식문서에 이는 나와있지 않아 partials폴더 내에 <code>contents</code>를 담당할 것 같은 파일을 찾아 연뒤 <code>hugo server</code>명령어를 실행 시켜놓고 하나하나 붙여넣어보며 적당한 위치를 찾았다. <br><br>
+&lt;div&gt;로 &lt;script&gt;를 한번 씌워 margin-top을 준것도 contents와 너무 붙어 있어 띄어 배치 시켰다.</p>
+
+</div>
+
+<p><br><br></p>
+<h2>✍ 블로그 생성한 후기</h2><a class="anchor" id="-블로그-생성한-후기"></a>
+<hr>
+<p>한글 레퍼런스가 많이 없어 삽질을 많이 하긴 했지만 덕분에 hugo의 전체적인 파일 구조를 파악할 수 있어 손쉽게 내 입맛에 맞게 커스터 마이징을 할 수 있을 것 같다.</p>
+<p>hugo를 처음 사용하시는 분들께 강조 하고 싶은 것은
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/alert.css'>
+<div class="alert danger" role="alert"><strong>본인이 선택한 테마의 문서 (설명서)를 잘 보자는 것이다.</strong></div>
+</p>
+</div>
+
+	<div style="margin-top:200px;">
+		<script src="https://utteranc.es/client.js"
+				repo="gowoonsori/blog-comments"
+				issue-term="pathname"
+				theme="github-light"
+				crossorigin="anonymous"
+				async>
+		</script>
+	</div>
+
+
+	 
+	<div class="chevrons ">
+		<a class="next" href="/data-structure/" title="자료구조 ( Data Structure )" style="margin-right: 0px;">
+            <div>
+                <p>Next page</p>
+                <label>자료구조 ( Data Structure )</label>
+            </div>
+            <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
+	</div>
+	
+	
+
+      </section>
+
+      
+      
+      <section class="right-menu ">
+      
+	
+	
+		
+	    	
+	  	
+	<div class="TableOfContents">
+    <label>What&#39;s on this page</label>
+    <nav>
+        <ul >
+            <li><a href="/home/start-hugo/">Hugo와 Github page를 사용하여 블로그 만들기</a></li>
+        </ul>
+    </nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-hugo를-선택한-이유">◼ hugo를 선택한 이유</a></li>
+      </ul>
+    </li>
+    <li><a href="#1-첫-시작-hugo-설치">1. 첫 시작! Hugo 설치</a></li>
+    <li><a href="#2-블로그-생성과-호스팅을-위해-github-repository를-2개-생성">2. 블로그 생성과 호스팅을 위해 Github repository를 2개 생성</a></li>
+    <li><a href="#3-블로그의-컨텐츠들을-담을-파일-생성">3. 블로그의 컨텐츠들을 담을 파일 생성</a></li>
+    <li><a href="#4-테마-다운-및-설정">4. 테마 다운 및 설정</a></li>
+    <li><a href="#5-파일-관리와-호스팅을-위해-github-repo와-연결시켜주기">5. 파일 관리와 호스팅을 위해 github repo와 연결시켜주기</a></li>
+    <li><a href="#6-컨텐츠-생성">6. 컨텐츠 생성</a></li>
+    <li><a href="#7-컨텐츠-업로드">7. 컨텐츠 업로드</a></li>
+    <li><a href="#8-컨텐츠-업로드-자동화">8. 컨텐츠 업로드 자동화</a></li>
+    <li><a href="#여기서부터는-skip해도-무방하다"><em>여기서부터는 skip해도 무방하다.</em></a></li>
+    <li><a href="#9-custom-domain-연결하기">9. custom domain 연결하기</a></li>
+    <li><a href="#10-댓글-기능-추가하기">10. 댓글 기능 추가하기</a></li>
+    <li><a href="#-블로그-생성한-후기">✍ 블로그 생성한 후기</a></li>
+  </ul>
+</nav>
+</div>
+	
+		
+	    	
+	  	
+	<div class="Actions">
+	<nav>
+		<ul>
+				
+		    
+		    
+			
+		      <li>
+		          <i class='fas fa-calendar'></i>
+		          Last update on 23 September 2020
+		      </li>
+		    
+		    
+
+    	</ul>
+	</nav>
+    
+</div>
+
+      </section>
+      
+    </article>
+    
+    
+    <footer>
+      
+	
+		
+	    	<style type="text/css">
+
+.footer-gray {
+  width: 100%;
+  color: #888;
+}
+
+.footer-custom {
+  font: normal normal 12px/1.4 sans-serif;
+  /*max-width: 1008px;*/
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.footer-custom:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-lists:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-hdr {
+  color: white;
+  font: 22px/1.4  sans-serif;
+  margin: 1em 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .ftr-hdr {
+    font-size: 18px;
+  }
+}
+
+.footer-list-wrap {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 568px) {
+  .footer-list-wrap {
+    width: 33.3333%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-list-wrap {
+    width: 25%;
+  }
+}
+
+.ftr-links-sub {
+  padding: 0;
+  margin: 0;
+}
+
+.ftr-links-sub:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-links-sub li {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0;
+  color: #888;
+  font: normal normal 12px sans-serif;
+  text-transform: uppercase;
+  /*width: 150px;*/
+}
+
+.footer-custom a,
+.footer-custom a:link,
+.footer-custom a:visited,
+.ftr-links-sub li .link {
+  text-decoration: none;
+  color: #888;
+  padding: 5px 0;
+  display: block;
+}
+
+.footer-custom .footer-legal a {
+  display: inline;
+}
+
+.footer-custom a:hover,
+.footer-custom a:active,
+.ftr-links-sub li .link:hover {
+  text-decoration: underline;
+  color: #888;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-custom a, .footer-custom a:link, .footer-custom a:visited, .ftr-links-sub li .link {
+    padding: 0;
+  }
+}
+/* BEGIN EMAIL CAPTURE STYLES*/
+
+.footer-email {
+  text-align: center;
+}
+
+#ftrEmailForm {
+  height: 44px;
+}
+
+#ftrEmailForm .error {
+  display: none;
+  color: red;
+  text-align: left;
+}
+
+#ftrEmailForm #ftrEmailInput {
+  background: none repeat scroll 0 0 #FFF;
+  border: 1px solid #D6D6D6;
+  box-sizing: border-box;
+  color: #888;
+  float: left;
+  font: normal normal 14px/1.4 sans-serif;
+  padding: 5px;
+  width: 70%;
+  height: 100%;
+}
+
+#ftrEmailForm #ftrEmailInput:hover {
+  border: 1px solid #888;
+}
+
+#ftrEmailForm #ftrEmailInput:focus {
+  border: 1px solid #ef9223;
+  outline: #ef9223 auto 5px;
+}
+
+#ftrEmailForm .button {
+  width: 30%;
+  height: 100%;
+  padding: 5px;
+  float: left;
+  border: 1px solid #DFDFDF;
+  box-sizing: border-box;
+  color: #000;
+  font: normal bold 18px/1 sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FFF;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e1e1e1));
+  background: -webkit-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -moz-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -ms-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -o-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: linear-gradient(to bottom, white 0, #e1e1e1 100%);
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+}
+
+#ftrEmailForm .button:hover,
+#ftrEmailForm .button:active {
+  background: black;
+  color: #FFF;
+  outline: none;
+}
+/* BEGIN SOCIAL STYLES*/
+
+.footer-social {
+  text-align: center;
+}
+
+.footer-social ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-social ul:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-social li {
+  float: left;
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-lists {
+    width: 100%;
+  }
+  .footer-email {
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+  .footer-social {
+    width: 45%;
+    margin-left: 5%;
+    float: left;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-lists {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-email {
+    width: 33.3333%;
+  }
+  .footer-social {
+    width: 33.3333%;
+    float: right;
+    margin-left: 0;
+  }
+}
+
+.footer-legal {
+  padding: 15px 0 0;
+  clear: left;
+}
+
+.footer-payment {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-legal {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-payment {
+    width: 33.3333%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment {
+    text-align: left;
+  }
+}
+
+.footer-payment ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-payment ul li {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment ul li.ftr-stella {
+    margin-left: 0;
+  }
+}
+
+
+</style>
+  <div class="footer-gray">
+    <div class="footer-custom">
+      <div class="footer-lists">
+        <h6 class = "ftr-hdr">Contact me</h6>
+        <p>E-mail : gowoonsori97@gmail.com  |  gowoonsori97@naver.com</p>
+      </div>
+      <div class="footer-social">
+        <h6 class="ftr-hdr">Follow Us</h6>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/gowoonsori97/" title="Facebook">
+              <img width="24" height="24" alt="Like us on Facebook" src="/images/fb.png">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.github.com/gowoonosori" title="Github">
+             <i class="fab fa-github" style="font-size:24px"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <p>Copyrihgt &copy; gowoonsori.site All Rights Reserved. </p>
+      </div>
+    </div>
+  </div>
+  <!--/.footer-gray-->
+	    
+	
+    </footer>
+    
+
+
+
+  </body>
+</html>
