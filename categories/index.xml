@@ -5,6 +5,25 @@
     <link>https://gowoonsori.site/categories/</link>
     <description>Recent content in Categories on Hong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://gowoonsori.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Sep 2020 19:28:25 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>algorithm</title>
+      <link>https://gowoonsori.site/categories/algorithm/</link>
+      <pubDate>Sun, 20 Sep 2020 19:28:25 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/categories/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data structure</title>
+      <link>https://gowoonsori.site/categories/data-structure/</link>
+      <pubDate>Sun, 20 Sep 2020 19:07:18 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/categories/data-structure/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

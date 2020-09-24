@@ -8,15 +8,24 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-09-24T21:04:32 KST">
+<meta name="revised" content="2020-09-25T00:21:09 KST">
 <meta name="description" content="">
+<meta name="robots" content="index,follow" /> 
+<meta name="googlebot" content="index,follow" />
 
+
+<meta name="author" content="gowoonsori">
 
 
 <title>그래프 ( Graph ) :: Hong&#39;s Blog</title>
 
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
-
+<meta property="og:title" content="그래프 ( Graph ) :: Hong&#39;s Blog" />
+<meta property="og:site_name" content="Hong&#39;s Blog" />
+<meta property="og:description" content="" />
+<meta property="og:url" content="https://gowoonsori.site/data-structure/graph/" />
+<meta property="og:image" content='/images/favicon.png' /> 
+<meta property="og:locale" content="en">
 
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 <link rel="stylesheet" href='https://gowoonsori.site/sass/layout.css'>
@@ -622,7 +631,7 @@ Tree는 사이클이 허용되지 않는 그래프이다.
             재귀 함수
 </code></pre></div><p>노드의 수가 n, 간선의 수가 e 인 그래프의 DFS 탐색 시간은 인접 리스트 O(n+e) / 인접 행렬 O(n^2)
 &ndash;&gt; 희소 그래프인 경우 dfs에서는 인접 리스트 사용이 시간적으로 더 유리하다.</p>
-<p><a href="https://github.com/gowoonsori/my-tech/dataStructure/Graph/Deep_First_Search.cpp">c++을 이용한 코드 예</a></p>
+<p><a href="https://github.com/gowoonsori/my-tech/tree/master/dataStructure/Graph/Deep_First_Search.cpp">c++을 이용한 코드 예</a></p>
 <p><br><br></p>
 <h3>너비 우선 탐색( BFS )</h3><a class="anchor" id="너비-우선-탐색-bfs-"></a>
 <hr>
@@ -642,7 +651,7 @@ Tree는 사이클이 허용되지 않는 그래프이다.
                 노드 방문표시
 </code></pre></div><p>노드의 수 n, 간선의 수 e인 그래프 BFS탐색 시간은 인접 리스트 O(n+e) / 인접 행열 O(n^2)
 &ndash;&gt; 희소그래프의 경우 인접 리스트를 사용하는 것이 유리하다.</p>
-<p><a href="https://github.com/gowoonsori/my-tech/dataStructure/Graph/Breadth_First_Search.cpp">c++을 이용한 코드 예</a></p>
+<p><a href="https://github.com/gowoonsori/my-tech/tree/master/dataStructure/Graph/Breadth_First_Search.cpp">c++을 이용한 코드 예</a></p>
 <p><br><br></p>
 <h2>✔ 신장 트리</h2><a class="anchor" id="-신장-트리"></a>
 <hr>

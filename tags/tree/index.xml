@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tree on Hong&#39;s Blog</title>
+    <link>https://gowoonsori.site/tags/tree/</link>
+    <description>Recent content in tree on Hong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Sep 2020 01:28:52 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/tree/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>트리 ( Tree )</title>
+      <link>https://gowoonsori.site/data-structure/tree/</link>
+      <pubDate>Sun, 20 Sep 2020 01:28:52 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/data-structure/tree/</guid>
+      <description>그래프의 일종으로, 여러 노드가 한개의 노드를 가리킬 수 없는 구조 선형구조가 아닌 (비선형), 부모자식의 관계를 가지는 계층형 구조 
+◼ 개념    Node (노드) : 트리를 구성하고 있는 각각의 요소를 의미한다.
+  Edge (간선) : 트리를 구성하기 위해 노드와 노드를 연결하는 선을 의미한다.
+  Root Node (루트 노드) : 트리 구조에서 최상위에 있는 노드를 의미한다.
+  Terminal Node ( = leaf Node, 단말 노드) : 하위에 다른 노드가 연결되어 있지 않은 노드를 의미한다.</description>
+    </item>
+    
+  </channel>
+</rss>
