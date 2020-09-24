@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://gowoonsori.site/home/start-hugo/</loc>
-    <lastmod>2020-09-23T17:45:19+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://gowoonsori.site/home/</loc>
     <lastmod>2020-09-20T19:32:01+09:00</lastmod>
   </url>
@@ -15,6 +10,11 @@
   <url>
     <loc>https://gowoonsori.site/home/start-blog/</loc>
     <lastmod>2020-09-18T18:51:53+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/home/start-hugo/</loc>
+    <lastmod>2020-09-23T17:45:19+09:00</lastmod>
   </url>
   
   <url>
