@@ -25,7 +25,12 @@
       <pubDate>Sun, 20 Sep 2020 01:28:37 +0900</pubDate>
       
       <guid>https://gowoonsori.site/data-structure/</guid>
-      <description>앞으로 자료구조들을 업로드 할 예정입니다. </description>
+      <description>앞으로 자료구조들을 업로드 할 예정입니다. 
+배열 &amp;amp; 리스트 ( Array &amp;amp; List )배열과 리스트를 c을 이용한 예제 코드와 함께 정리합니다.
+스택 &amp;amp; 큐 ( Stack &amp;amp; Queue )스택과 큐를 c을 이용한 예제 코드와 함께 정리합니다.
+그래프 ( Graph )그래프를 cpp을 이용한 예제 코드와 함께 정리합니다.
+트리 ( Tree )트리를 cpp을 이용한 예제 코드와 함께 정리합니다.
+힙 ( Heap )힙을 cpp을 이용한 예제 코드와 함께 정리합니다.</description>
     </item>
     
     <item>
