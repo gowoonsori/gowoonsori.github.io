@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>next.js on Hong&#39;s Blog</title>
+    <link>https://gowoonsori.site/tags/next.js/</link>
+    <description>Recent content in next.js on Hong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Sep 2020 23:33:54 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/next.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. 초기 셋팅하기</title>
+      <link>https://gowoonsori.site/home/react-project/1_settings/</link>
+      <pubDate>Mon, 28 Sep 2020 23:33:54 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/home/react-project/1_settings/</guid>
+      <description>노드 (Node.js) 설치하기  사용할 IDE는 vscode를 사용할 예정이다.
+react 프로젝트를 시작하기에 앞서 js를 이용하여 웹프로그래밍을 하기 위해 노드를 설치 해주어야 한다.
+다운로드 링크 : https://nodejs.org/ko/
+위의 링크를 통해 다운 및 설치를 해주었다.
+터미널에 npm -v를 통해 설치가 되었는지/무슨 버전을 설치했는 지 확인할 수 있다.
+프로젝트 폴더 만들기  프로젝트를 진행할 earn-points-web이라는 폴더를 만들고 이 폴더 안에서 front / back을 나누어 개발을 할 것이고 front먼저 틀을 잡아놓을 계획이기 때문에 front먼저 생성 해주었다.</description>
+    </item>
+    
+  </channel>
+</rss>
