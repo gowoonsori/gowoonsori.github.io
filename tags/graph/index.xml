@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>graph on Hong&#39;s Blog</title>
-    <link>https://blog.gowoonsori.site/tags/graph/</link>
+    <link>https://gowoonsori.site/tags/graph/</link>
     <description>Recent content in graph on Hong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Sep 2020 19:07:18 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/tags/graph/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 19:07:18 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/graph/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>그래프 ( Graph )</title>
-      <link>https://blog.gowoonsori.site/data-structure/graph/</link>
+      <link>https://gowoonsori.site/data-structure/graph/</link>
       <pubDate>Sun, 20 Sep 2020 19:07:18 +0900</pubDate>
       
-      <guid>https://blog.gowoonsori.site/data-structure/graph/</guid>
+      <guid>https://gowoonsori.site/data-structure/graph/</guid>
       <description>그래프 연결되어 있는 객체 간의 관계를 표현할 수 있는 자료구조. Tree는 사이클이 허용되지 않는 그래프이다. 
 ✔ 개념    정점(vertex) / 노드(node) : 위치
   간선(edge) / 링크(link) : 위치간의 관계

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>react on Hong&#39;s Blog</title>
-    <link>https://blog.gowoonsori.site/categories/react/</link>
+    <link>https://gowoonsori.site/categories/react/</link>
     <description>Recent content in react on Hong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Sep 2020 23:33:54 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/categories/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Sep 2020 23:33:54 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1. 초기 셋팅하기</title>
-      <link>https://blog.gowoonsori.site/home/react-project/1_settings/</link>
+      <link>https://gowoonsori.site/home/react-project/1_settings/</link>
       <pubDate>Mon, 28 Sep 2020 23:33:54 +0900</pubDate>
       
-      <guid>https://blog.gowoonsori.site/home/react-project/1_settings/</guid>
+      <guid>https://gowoonsori.site/home/react-project/1_settings/</guid>
       <description>노드 (Node.js) 설치하기  사용할 IDE는 vscode를 사용할 예정이다.
 react 프로젝트를 시작하기에 앞서 js를 이용하여 웹프로그래밍을 하기 위해 노드를 설치 해주어야 한다.
 다운로드 링크 : https://nodejs.org/ko/
@@ -23,10 +23,10 @@ react 프로젝트를 시작하기에 앞서 js를 이용하여 웹프로그래�
     
     <item>
       <title>ReactToyProject 개발기록</title>
-      <link>https://blog.gowoonsori.site/home/react-project/</link>
+      <link>https://gowoonsori.site/home/react-project/</link>
       <pubDate>Mon, 28 Sep 2020 23:33:25 +0900</pubDate>
       
-      <guid>https://blog.gowoonsori.site/home/react-project/</guid>
+      <guid>https://gowoonsori.site/home/react-project/</guid>
       <description>React를 이용하여 ToyProject 포인트 적립 웹 만들기 💰  Github repo로 가기 
 1. 초기 셋팅하기React로 Toy project 초기 개발환경 세팅하기
 </description>

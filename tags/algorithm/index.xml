@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>algorithm on Hong&#39;s Blog</title>
-    <link>https://blog.gowoonsori.site/tags/algorithm/</link>
+    <link>https://gowoonsori.site/tags/algorithm/</link>
     <description>Recent content in algorithm on Hong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Sep 2020 19:28:25 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 19:28:25 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>알고리즘 ( Algorithm )</title>
-      <link>https://blog.gowoonsori.site/algorithm/</link>
+      <link>https://gowoonsori.site/algorithm/</link>
       <pubDate>Sun, 20 Sep 2020 19:28:25 +0900</pubDate>
       
-      <guid>https://blog.gowoonsori.site/algorithm/</guid>
+      <guid>https://gowoonsori.site/algorithm/</guid>
       <description>computer algorithm관련 내용을 포스팅할 예정입니다. 
 Sorting Algorithm정렬 알고리즘들을 정리하여 한페이지로 보기 쉽게 포스팅 합니다
 </description>

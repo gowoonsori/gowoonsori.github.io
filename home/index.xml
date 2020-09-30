@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>잡담 on Hong&#39;s Blog</title>
-    <link>https://blog.gowoonsori.site/home/</link>
+    <link>https://gowoonsori.site/home/</link>
     <description>Recent content in 잡담 on Hong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Sep 2020 19:32:01 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/home/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 19:32:01 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/home/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
