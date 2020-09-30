@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ReactToyProject 개발기록 on Hong&#39;s Blog</title>
-    <link>https://gowoonsori.site/home/react-project/</link>
+    <link>https://blog.gowoonsori.site/home/react-project/</link>
     <description>Recent content in ReactToyProject 개발기록 on Hong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Sep 2020 23:33:25 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/home/react-project/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Sep 2020 23:33:25 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/home/react-project/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

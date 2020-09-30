@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>goorm on Hong&#39;s Blog</title>
-    <link>https://gowoonsori.site/tags/goorm/</link>
+    <link>https://blog.gowoonsori.site/tags/goorm/</link>
     <description>Recent content in goorm on Hong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Sep 2020 00:13:18 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/goorm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 00:13:18 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/tags/goorm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>알고리즘 문제풀이</title>
-      <link>https://gowoonsori.site/solve-algorithm/</link>
+      <link>https://blog.gowoonsori.site/solve-algorithm/</link>
       <pubDate>Sun, 20 Sep 2020 00:13:18 +0900</pubDate>
       
-      <guid>https://gowoonsori.site/solve-algorithm/</guid>
+      <guid>https://blog.gowoonsori.site/solve-algorithm/</guid>
       <description>알고리즘 문제 출처 프로그래머스, 백준, 구름
 
 [프로그래머스] 추석 트래픽프로그래머스 Lv3 [카카오]추석 트래픽 문제 풀이

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hong&#39;s Blog</title>
-    <link>https://gowoonsori.site/</link>
+    <link>https://blog.gowoonsori.site/</link>
     <description>Recent content on Hong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Sep 2020 23:33:54 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Sep 2020 23:33:54 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Whoops! Page not found</title>
-      <link>https://gowoonsori.site/404.html</link>
+      <link>https://blog.gowoonsori.site/404.html</link>
       <pubDate>Tue, 08 Sep 2020 20:40:23 +0000</pubDate>
       
-      <guid>https://gowoonsori.site/404.html</guid>
+      <guid>https://blog.gowoonsori.site/404.html</guid>
       <description>That page can&amp;rsquo;t be found.
 Our latest content is on the homepage.
 Photo by Aron Visuals on Unsplash</description>
