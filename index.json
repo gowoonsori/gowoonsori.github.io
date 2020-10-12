@@ -81,7 +81,7 @@
 	"title": "알고리즘 ( Algorithm )",
 	"tags": ["algorithm"],
 	"description": "computer algorithm관련 내용을 포스팅합니다.",
-	"content": "computer algorithm관련 내용을 포스팅할 예정입니다. \n\rSorting Algorithm\r정렬 알고리즘들을 정리하여 한페이지로 보기 쉽게 포스팅 합니다\n\r\r"
+	"content": "computer algorithm관련 내용을 포스팅할 예정입니다. \n\rSorting Algorithm\r정렬 알고리즘들을 정리하여 한페이지로 보기 쉽게 포스팅 합니다\n\r\rCounting Sort ( 계수 정렬 )\r계수 정렬은 삽입, 버블, 선택, 퀵, 합병 정렬들과 같이 비교를 수행하는 방식이 아닌 비교를 하지 않는 Not-Comparisions Sorting Algorithm입니다. 그러면 여기서, 값을 정렬하는데 어떻게 비교 없이 수행하나요? 와 같은 질문이 있을 텐데요. 계수 정렬은 비교 대신 정렬할 수의 개수와 배열의 인덱스를 가지고 정렬을 수행하게 됩니다. 기본적인 흐름 2 1 2 4 5 3 6 5 3 을 정렬하고자 한다면 1의 개수는 1개, 2의 개수는 2개, 3의 개수는 2개,\n\r\r"
 },
 {
 	"uri": "https://gowoonsori.site/algorithm/sorting-algorithm/",
@@ -91,18 +91,18 @@
 	"content": "정렬 데이터를 오름차순 / 내림차순으로 나열 하는 것. \n✔ 종류  선택 정렬 ( Selection Sort ) 삽입 정렬 ( Insertion Sort ) 버블 정렬 ( Bubble Sort ) 셸 정렬 ( Shell Sort ) 퀵 정렬 ( Quick Sort ) 힙 정렬 ( Heap Sort ) 합병 정렬 ( Merge Sort ) 기수 정렬 ( Radix Sort ) 계수(카운트) 정렬 ( Count Sort )  \n✔ 시간 복잡도 ( Big-O )    알고리즘 최선 평균 최악     선택 정렬 O(n^2) O(n^2) O(n^2)   버블 정렬 O(n^2) O(n^2) O(n^2)   삽입 정렬 O(n) O(n^2) O(n^2)   셸 정렬 O(n) O(n^1.5) O(n^1.5)   퀵 정렬 O(nlgn) O(nlgn) O(n^2)   힙 정렬 O(nlgn) O(nlgn) O(nlgn)   합병 정렬 O(nlgn) O(nlgn) O(nlgn)   기수 정렬 O(dn) O(dn) O(dn)   계수 정렬 O(dn) O(dn) O(dn)     \n◼ Selection Sort  추가 메모리 생성할 필요 X 배열 쭉 탐색 후 가장 작은 값 왼쪽부터 차곡차곡 쌓는 방식  int min; /*배열을 순차 탐색하며 제일 최솟값을 왼쪽부터 정렬*/ for(int i=0; i\u0026lt;arrlen-1;i++){ min=i; for(int j=i+1;j\u0026lt;arrlen;j++) //최솟값이 들어있는 인덱스 search  if(array[j]\u0026lt;array[min]) min=j; swap( \u0026amp;array[i], \u0026amp;array[min] ); //가장 작은값을 왼쪽으로 이동  } Code 보기 (c++)\n◼ Insertion Sort  추가 메모리 생성할 필요 X 인덱스값을 한개씩 늘려가며 해당 값이 맞는 위치에 삽입 상황에 따라 모두 비교하지 않으므로 best case 경우 O(n)으로 빠른 시간을 갖는다.  for(int i=1;i\u0026lt;arrlen;i++){ item=array[i]; /*배열의 첫번째 가 아니고, 앞의 값보다 작다면 교체*/ for(j=i-1;j\u0026gt;=0 \u0026amp;\u0026amp; item \u0026lt; array[j] ;j--) array[j+1]=array[j]; array[j+1]=item; } Code 보기 (c++)\n◼ Bubble Sort  추가 메모리 생성할 필요 X 배열을 모두 탐색하며 가장 큰 값을 오른쪽부터 쌓는다.  /*한번 탐색할때마다 배열의 끝에 제일 큰 값이 채워지므로 배열의 길이-1만큼 반복문이 돈다*/ for(int i=arrlen-1;i\u0026gt;0;i--){ /*배열의 첫번째부터 다음 값과 비교해보면서 큰 값은 점점 뒤로 민다*/ for(int j=0;j\u0026lt;i;j++) if(array[j]\u0026gt;array[j+1]) swap(\u0026amp;array[j],\u0026amp;array[j+1]); Code 보기 (c++)\n◼ Merge Sort  분할과 정복 원리 ( Divide \u0026amp; Conquer ) 더이상 나누어지지 않을 때까지 반으로 분할하다가 더이상 나누어지지 않은경우, 원소(value)를 결합(combine)할 때,양쪽의 value를 비교 후 정렬방식대로 combine을 실행한다. 재귀를 이용 ( recursion ) 추가 메모리가 필요하다.  /*merge (병합) 과정*/ /* * 왼쪽 배열과 오른쪽 배열 비교하며 sorted배열 ( 추가 메모리 공간 )에 삽입 * * 한쪽먼저 다 sorted에 삽입되었다면 남아 있는 다른쪽 배열 값 sorted 배열에 모두 삽입 * * sorted의 배열 ( 정렬되어 있는 배열 )을 원래 배열에 복사 */ void Merge_sort(int array[],int left, int right){ int mid; if(left\u0026lt;right){ mid = (left+right) /2; Merge_sort(array,left,mid); // 재귀  Merge_sort(array,mid+1,right); // 재귀  Merge(array,left,mid,right); // merge (병합)  } } Code 보기 (c++)\n◼ Quick Sort  분할과 정복 이용 ( Divide \u0026amp; Conquer ) 분할시 기준 값 (pivot)을 설정 후 해당 pivot을 기준으로 좌, 우로 작은, 큰 값을 배치 시킨 후 pivot보다 작은 숫자들, 큰 숫자들의 집합을 다시 재귀 함수를 이용하여 분할 정렬을 하는 방식 pivot은 기준점으로 중간값이기 때문에 재귀에 포함시키지 않는다. pivot을 계속 가장 작은 값 or 가장 큰 값을 설정시 worst case로 O(n^2)이 된다. 따라서 pivot을 어떻게 잡아서 partitioning할지가 중요하다. balanced partitioning : 좌우가 동일한 사이즈로 나누어지도록 pivot을 설정한 경우 =\u0026gt; 가장 좋은 경우  /*pivot을 0 ( 시작 점 )으로 설정하였을 경우*/ void QuickSort(int array[],int pivot, int arrlen){ int left = pivot+1, right = arrlen-1; if(pivot\u0026gt;=arrlen-1) return; /*right가 left와 같거나 더 작아질때까지*/ while(left\u0026lt;=right){ while(left \u0026lt;= arrlen-1 \u0026amp;\u0026amp; array[left]\u0026lt;=array[pivot])left++; //피벗보다 큰 값 왼쪽부터 찾기  while(right \u0026gt; pivot \u0026amp;\u0026amp; array[right]\u0026gt;=array[pivot])right--; //피벗보다 작은 값 오른쪽부터 찾기  if(left\u0026lt;right) swap(array[left],array[right]); //left와 right가 교차하지 않았다면 두 값을 swap  /*교차 했다면, pivot의 값과 right값을 swap ( 이때 right값은 pivot보다 작은 값을 가리키고 있기 때문이다.)*/ else swap(array[pivot],array[right]); } QuickSort(array,pivot,right); //pivot의 왼쪽 배열 정렬  QuickSort(array,right+1,arrlen); //pivot의 오른쪽 배열 정렬 } Code 보기 (c++)\n◼ Shell Sort  삽입정렬을 보완한 알고리즘 ( 어느정도 정렬된 배열에서 속도가 빠른 것에서 착안 ) 삽입정렬은 삽입할 때, 이웃한 위치로만 이동이 가능하다는 단점이 있다. -\u0026gt; 이를 보완하여 셀 정렬은 멀리 떨어진 곳을 삽입정렬을 이용하여 정렬한다. 삽입정렬과 다르게 한 번에 정렬하지 않는다. 간격을 설정 하여 k번째 요소들을 추출하여 해당 숫자들을 삽입정렬로 정렬 후, k를 절반으로 줄여 1이 될 때까지 반복 간격(gap) : 초깃값 = 정렬할 값의 수/2 생성된 부분 리스트의 개수는 gap과 같다.  void shell_sort(int list[], int n){ int i, gap; // gap의 초기 값 : 정렬할 값의 수/2  for(gap=n/2; gap\u0026gt;0; gap=gap/2){ if((gap%2) == 0){ gap++; // gap을 홀수로 만든다.  } // 부분 리스트의 개수는 gap과 같다.  for(i=0; i\u0026lt;gap; i++){ // 부분 리스트에 대한 삽입 정렬 수행  insertion_sort(list, i, n-1, gap); } } } Code 보기 (c++)\n◼ Heap Sort  Heap 자료구조 ( Complete Binary Tree 의 일종 )을 이용한 정렬 방법 배열을 heapify( heap으로 만들어 주는 것 ) 을 거쳐서 value를 꺼내는 방식의 정렬 추가 메모리 생성이 필요 없다. 오름차순 정렬을 위해 최대 힙을 구성하고, 내림차순 정렬을 위해 최소 힙을 구성  void HeapSort(int *array, int arrlen){ heapify(array,arrlen); //maxHeap형태로 만들어준다.  for(int i= arrlen-1 ; i\u0026gt;=0; i--){ //가장 큰 숫자(루트)를 맨 뒷 노드로 swap해준다.  swap(array[i],array[0]); //swap한 마지막 노드를 제외하고 heapify를 해준다.  heapify(array,i); //결과적으로 큰 숫자들이 뒤에 오게 되며 오름차순으로 정렬이 된다.  } } Code 보기 (c++)\n◼ Radix Sort  Non-Comparisions Sorting Algorithm ( 비교하지 않는 정렬 알고리즘 ) 기수 (Radix) : 데이터를 구성하는 기본요소 하나의 기수마다 버킷 (데이터 공간)을 생성하여 분류하여 버킷안에서 다시 정렬하는 방식 정렬 방식  LSD ( Least Significant Digit ) : 덜 중요한 기수부터 정렬 예를들어서 일의 자리수자부터 정렬하는 방식이다. 따라서 중간에 정렬 결과를 확인할 수 없다. MSD ( Most Significant Digit ) : 가장 중요한 기수부터 정렬 예를들어서 백의 자리숫자부터 정렬하는 방식이다. 따라서 중간에 정렬 결과를 확인 할 수있으나 확인하는 과정에서 메모리를 더 사용하게 된다.    void RadixSort(int *array,int arrlen){ int digit=1; int k; //k는 radix(기수 = 각 자리수의 숫자)  /*배열의 값 중 가장 큰 값의 자릿수 알아내기*/ while(digit\u0026lt;MAXVALUE) digit*=10; /*가장 큰 값의 자릿수 만큼 만큼 반복*/ for(int i=1; i\u0026lt;digit ; i*=10){ /*queue(bucket)에 옮기기*/ for(int j=0;j\u0026lt;arrlen;j++){ k=(array[j]/i)%10; q[k].push(array[j]); //q는 bucket  } /*array에 옮기기*/ int idx=0; for(int j=0;j\u0026lt;10;j++){ while(!q[j].empty()){ array[idx]=q[j].front(); q[j].pop(); idx++; } } } } Code 보기 (c++)\n◼ Count Sort -Non-Comparisions Sorting Algorithm( 비교하지 않는 정렬 알고리즘 )\n 좁은 범위의 데이터를 정렬할 때 유용 ( ex. Score ) 법위가 넓어지게 되면 추가 메모리 공간이 많이 필요해지기 때문에 비효율 정렬을 위해 추가 배열을 생성하는데 사이즈를 정렬할 배열의 가장 큰 값만큼 생성해 준다. 과정  정렬할 배열 A, 추가 배열 C를 생성해준다. 배열 C는 모든 값을 0으로 초기화해준다. 배열 A의 값을 토대로 배열 C의 인덱스값을 참조하여 값을 1씩올려준다. (예를 들어 배열 A의 값중 3이 있다고 한다면, C의 3번째 인덱스 값을 1더해준다.) 배열 c의 각 값들을 직전 값을 더해 업데이트 해준다. (예를 들어, 배열 C가 1,0,2,2 였다면, 1,1,3,5로 업데이트 해준다.) 배열 C는 배열 A의 값들의 인덱스 값이므로, 배열 A를 끝에서부터 역순으로 훑으면서 배열 B에 정렬해 준다. (이때, 한 값을 B에 옮겨주었다면, 해당하는 인덱스의 배열 C의 값은 1을 빼준다.)    int *c = new int[maxValue+1]; //0도 포함한 숫자를 정렬 할 경우 maxValue + 1만큼 생성해주어야 한다.  /*각 숫자 횟수 카운틱하며 c배열 인덱스 값 증가*/ for(int i = 0; i \u0026lt; a_size ; i++){ c[a[i]]++; } /*배열 c의 인덱스 값 누적합 구하기*/ for(int i=1; i \u0026lt; c_size; i++){ c[i] += c[i-1]; } /*배열 A역순으로 훑으며, 배열 C참조하여 정렬*/ for(int i = a_size-1; i \u0026gt;= 0; i-- ){ b[c[a[i]]-1] = a[i]; --c[a[i]]; } Code 보기 (c++)\n"
 },
 {
+	"uri": "https://gowoonsori.site/algorithm/counting-sort/",
+	"title": "Counting Sort ( 계수 정렬 )",
+	"tags": ["계수 정렬", "Counting Sort", "stable sort"],
+	"description": "",
+	"content": "계수 정렬은 삽입, 버블, 선택, 퀵, 합병 정렬들과 같이 비교를 수행하는 방식이 아닌 비교를 하지 않는 Not-Comparisions Sorting Algorithm입니다.\n그러면 여기서, 값을 정렬하는데 어떻게 비교 없이 수행하나요? 와 같은 질문이 있을 텐데요. 계수 정렬은 비교 대신 정렬할 수의 개수와 배열의 인덱스를 가지고 정렬을 수행하게 됩니다.\n\n기본적인 흐름  2 1 2 4 5 3 6 5 3 을 정렬하고자 한다면 1의 개수는 1개,\n2의 개수는 2개,\n3의 개수는 2개,\n4의 개수는 1개,\n5의 개수는 2개,\n6의 개수는 1개\n이기 때문에 작은 수 부터 개수만큼 차례대로 나열하게 되면\n1 2 2 3 3 4 5 5 6 으로 정렬이 되게 됩니다.\n정렬 과정    정렬할 배열 A, 추가 배열 C를 생성해준다.\n  배열 C는 모든 값을 0으로 초기화해준다.\n  배열 A의 값을 토대로 배열 C의 인덱스값을 참조하여 값을 1씩올려준다. (예를 들어 배열 A의 값중 3이 있다고 한다면, C의 3번째 인덱스 값을 1더해준다.)\n  배열 c의 각 값들을 직전 값을 더해 업데이트 해준다. (예를 들어, 배열 C가 1,0,2,2 였다면, 1,1,3,5로 업데이트 해준다.)\n  배열 C는 배열 A의 값들의 인덱스 값이므로, 배열 A를 끝에서부터 역순으로 훑으면서 배열 B에 정렬해 준다. (이때, 한 값을 B에 옮겨주었다면, 해당하는 인덱스의 배열 C의 값은 1을 빼준다.)\n  여기서 배열 A의 뒤의 값부터 역순으로 훑으면서 정렬하는 이유는 counting sort 는 stable한 특성을 갖고있는 정렬인데, 앞에서부터 정렬을 하게 되면 stable한 특성이 깨지기 때문이다.\n\r예를들어, 아래와 같은 배열 A가 있다면, 뒤에서부터 훑게 되면,\nA = { 3 5(a) 1 4 5(b) 2 } C = { 1 2 3 4 6 } 이 되어, A = { 1 2 3 4 5(a) 5(b) } 가 된다.\n똑같은 A를 앞에서 부터 훑게 되면\n1 2 3 4 5(b) 5(a) 가 나오게 되면서 stable한 특성이 깨지게 된다. 따라서 뒤에서 부터 훑으며 정렬을 하게 된다.\n\nc++ 구현 코드  #include \u0026lt;iostream\u0026gt;#include \u0026lt;cstdlib\u0026gt; //time#include \u0026lt;ctime\u0026gt; //rand, srand#include \u0026lt;string.h\u0026gt; //memset#include \u0026lt;time.h\u0026gt; //시간 측정 using namespace std; #define MAX_ARRAY_SIZE 64 //정렬할 배열 숫자 개수  int maxValue=0; //가장 큰 값  clock_t start, finish, used_time=0; //실행 시간 측정을 위한 변수  //배열의 item을 random으로 삽입 void input_random(int *array,int arrlen){ srand((unsigned int)time(NULL)); for(int i=0;i\u0026lt;arrlen;i++){ array[i]=rand()%MAX_ARRAY_SIZE + 1; maxValue = (maxValue \u0026lt; array[i]) ? array[i] : maxValue; //가장 큰 값 찾기  } } void display(int *array,int arrlen){ for(int i=0; i\u0026lt;arrlen;i++){ cout.width(3); cout \u0026lt;\u0026lt; i+1 \u0026lt;\u0026lt;\u0026#34;. \u0026#34;; cout.width(2); cout \u0026lt;\u0026lt; array[i] \u0026lt;\u0026lt; endl; } } //실행 시간을 측정 및 출력하는 함수 void CalcTime(void){ used_time=finish-start; printf(\u0026#34;\\n*********** result **********\\ntime : %lf sec\\n\u0026#34;, (double)(used_time)/CLOCKS_PER_SEC); } int* count_sort(int *array,int arrlen){ int *c = new int[maxValue+1]; int c_size = maxValue+1; int *b = new int[arrlen]; memset(c,0,c_size*sizeof(int)); //배열c 0으로 초기화  /*각 숫자 횟수 카운틱하며 c배열 인덱스 값 증가*/ for(int i = 0; i \u0026lt; arrlen ; i++){ c[array[i]]++; } /*배열 c의 인덱스 값 누적합 구하기*/ for(int i=1; i \u0026lt; c_size; i++){ c[i] += c[i-1]; } /*배열 A역순으로 훑으며, 배열 C참조하여 정렬*/ for(int i = arrlen-1; i \u0026gt;= 0; i-- ){ b[c[array[i]]-1] = array[i]; --c[array[i]]; } return b; } int main(){ int *array = new int[MAX_ARRAY_SIZE]; input_random(array,MAX_ARRAY_SIZE); //배열에 랜덤값 삽입  delete array; start = clock(); array = count_sort(array,MAX_ARRAY_SIZE); //계수 정렬  finish = clock(); display(array,MAX_ARRAY_SIZE); //show array  CalcTime(); delete array; return 0; } \n특징  시간 복잡도는 O(n+k) 로 O(n) 또는 O(k) 를 갖습니다. ( 여기서 n은 input의 개수, k는 input으로 들어온 n의 범위 == 추가 배열 c의 범위 )\n그 이유는 n이 k보다 클 수도 있고 k가 n보다 클 수 있기 때문입니다.\n예를 들어 1,1,1,1,1,1,1,1 과같이 1이 10개로 n이 10이 들어왔다면, 이때 k는 2가 되고, 1 500 의 input이 주어진다면 n은 2에 불과하지만, k는 501이 되게 됩니다.\n\r범위가 넓어지게 되면 추가 메모리 공간이 많이 필요해지고, 또 범위를 계산해서 가장 큰 수가 무엇인지 판별하는 추가 로직도 도는 등 추가 작업이 필요하게 됩니다.\n따라서, 점수나 알파벳같은 좁은 범위의 데이터를 정렬할 때 유용합니다.\nstable 한 정렬 방법으로 radix sort 시 사용되는 정렬입니다.\n"
+},
+{
 	"uri": "https://gowoonsori.site/solve-algorithm/",
 	"title": "알고리즘 문제풀이",
 	"tags": ["solve algorithm", "programmers", "baekjoon", "goorm"],
 	"description": "알고리즘 문제 풀이를 포스팅합니다",
 	"content": "알고리즘 문제 출처 프로그래머스, 백준, 구름\n\n\r[프로그래머스] 추석 트래픽\r프로그래머스 Lv3 [카카오]추석 트래픽 문제 풀이\n\r\r[프로그래머스] 피보나치 수\r프로그래머스 Lv2 단계 문제 피보나치수\n\r\r[프로그래머스] 숫자야구\r프로그래머스 Lv2 단계 문제 숫자야구\n\r\r[프로그래머스] 라면공장\r프로그래머스 Lv2 단계 문제 라면공장\n\r\r[프로그래머스] 땅따먹기\r프로그래머스 Lv2 단계 문제 땅따먹기\n\r\r[프로그래머스] 멀리 뛰기\r프로그래머스 Lv2 단계 문제 멀리뛰기\n\r\r[프로그래머스] 베스트 앨범\r프로그래머스 Lv2 단계 문제 베스트 앨범\n\r\r"
-},
-{
-	"uri": "https://gowoonsori.site/tags/ant-design/",
-	"title": "ant-design",
-	"tags": [],
-	"description": "",
-	"content": ""
 },
 {
 	"uri": "https://gowoonsori.site/categories/",
@@ -112,8 +112,50 @@
 	"content": ""
 },
 {
+	"uri": "https://gowoonsori.site/tags/counting-sort/",
+	"title": "Counting Sort",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://gowoonsori.site/",
 	"title": "Hong&#39;s Blog",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/categories/sorting-algorithm/",
+	"title": "sorting-algorithm",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/stable-sort/",
+	"title": "stable sort",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/%EA%B3%84%EC%88%98-%EC%A0%95%EB%A0%AC/",
+	"title": "계수 정렬",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/ant-design/",
+	"title": "ant-design",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -156,13 +198,6 @@
 {
 	"uri": "https://gowoonsori.site/tags/redux-saga/",
 	"title": "redux-saga",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://gowoonsori.site/tags/",
-	"title": "Tags",
 	"tags": [],
 	"description": "",
 	"content": ""
