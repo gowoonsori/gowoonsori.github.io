@@ -28,8 +28,8 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/data-structure/array-list/</loc>
-    <lastmod>2020-09-20T19:03:01+09:00</lastmod>
+    <loc>https://gowoonsori.site/home/kpu_sw_competition/</loc>
+    <lastmod>2020-10-16T20:39:09+09:00</lastmod>
   </url>
   
   <url>
@@ -38,23 +38,8 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/data-structure/stack-queue/</loc>
-    <lastmod>2020-09-20T18:58:17+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/data-structure/graph/</loc>
-    <lastmod>2020-09-20T19:07:18+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://gowoonsori.site/data-structure/tree/</loc>
     <lastmod>2020-09-20T01:28:52+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/data-structure/heap/</loc>
-    <lastmod>2020-09-20T18:52:59+09:00</lastmod>
   </url>
   
   <url>
@@ -78,17 +63,42 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/categories/</loc>
-    <lastmod>2020-10-13T00:25:11+09:00</lastmod>
+    <loc>https://gowoonsori.site/tags/algorithm/</loc>
+    <lastmod>2020-10-16T20:39:09+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/tags/counting-sort/</loc>
-    <lastmod>2020-10-13T00:25:11+09:00</lastmod>
+    <loc>https://gowoonsori.site/categories/algorithm/</loc>
+    <lastmod>2020-10-16T20:39:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/categories/</loc>
+    <lastmod>2020-10-16T20:39:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/coding-test/</loc>
+    <lastmod>2020-10-16T20:39:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/categories/coding-test/</loc>
+    <lastmod>2020-10-16T20:39:09+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://gowoonsori.site/</loc>
+    <lastmod>2020-10-16T20:39:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/</loc>
+    <lastmod>2020-10-16T20:39:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/counting-sort/</loc>
     <lastmod>2020-10-13T00:25:11+09:00</lastmod>
   </url>
   
@@ -99,11 +109,6 @@
   
   <url>
     <loc>https://gowoonsori.site/tags/stable-sort/</loc>
-    <lastmod>2020-10-13T00:25:11+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/</loc>
     <lastmod>2020-10-13T00:25:11+09:00</lastmod>
   </url>
   
@@ -153,11 +158,6 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/categories/algorithm/</loc>
-    <lastmod>2020-09-26T20:24:29+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://gowoonsori.site/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/</loc>
     <lastmod>2020-09-26T20:24:29+09:00</lastmod>
   </url>
@@ -198,11 +198,6 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/tags/algorithm/</loc>
-    <lastmod>2020-09-20T19:28:25+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://gowoonsori.site/tags/cpp/</loc>
     <lastmod>2020-09-20T19:15:05+09:00</lastmod>
   </url>
@@ -214,47 +209,12 @@
   
   <url>
     <loc>https://gowoonsori.site/tags/data-structure/</loc>
-    <lastmod>2020-09-20T19:07:18+09:00</lastmod>
+    <lastmod>2020-09-20T01:28:52+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://gowoonsori.site/categories/data-structure/</loc>
-    <lastmod>2020-09-20T19:07:18+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/graph/</loc>
-    <lastmod>2020-09-20T19:07:18+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/array/</loc>
-    <lastmod>2020-09-20T19:03:01+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/double-linked-list/</loc>
-    <lastmod>2020-09-20T19:03:01+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/single-linked-list/</loc>
-    <lastmod>2020-09-20T19:03:01+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/queue/</loc>
-    <lastmod>2020-09-20T18:58:17+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/stack/</loc>
-    <lastmod>2020-09-20T18:58:17+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/heap/</loc>
-    <lastmod>2020-09-20T18:52:59+09:00</lastmod>
+    <lastmod>2020-09-20T01:28:52+09:00</lastmod>
   </url>
   
   <url>

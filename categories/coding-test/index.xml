@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>coding test on Hong&#39;s Blog</title>
+    <link>https://gowoonsori.site/categories/coding-test/</link>
+    <description>Recent content in coding test on Hong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Oct 2020 20:39:09 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/coding-test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KPU S/W 경진대회 후기 (코딩 테스트)</title>
+      <link>https://gowoonsori.site/home/kpu_sw_competition/</link>
+      <pubDate>Fri, 16 Oct 2020 20:39:09 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/home/kpu_sw_competition/</guid>
+      <description>학교공부에 치여 살다보니 알고리즘 문제 풀이를 안한지 3달정도가 지났는 데 학교 엘레베이터에 위와 같은 코테 포스터가 붙여진 것을 보았다.
+실력 테스트도 해보고 상금도 노릴겸 해서 겸사겸사 신청을 했다.
+사실 예선 통과후 본선에 들면 40명중 절반 이상인 26명안에만 들어도 10만원의 상금을 준다는 것을 보고 10만원을 목표로 신청했다.
+예선전은 2020. 10. 07. 수요일에 18:00 ~ 22:00 까지 온라인을 통해 이루어졌다.
+나는 수요일 당일 20시까지 수업이 있어 늦게 시작해야했는데, 수업이 조금 일찍 끝나 20시쯤 부터 문제풀이를 시작했다.</description>
+    </item>
+    
+  </channel>
+</rss>
