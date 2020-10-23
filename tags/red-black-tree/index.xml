@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>red black tree on Hong&#39;s Blog</title>
+    <link>https://gowoonsori.site/tags/red-black-tree/</link>
+    <description>Recent content in red black tree on Hong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Oct 2020 17:53:52 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/red-black-tree/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🔴 레드 블랙 트리 (Red Black Tree)</title>
+      <link>https://gowoonsori.site/data-structure/tree/redblacktree/</link>
+      <pubDate>Fri, 23 Oct 2020 17:53:52 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/data-structure/tree/redblacktree/</guid>
+      <description>BST (이진 탐색 트리)를 기반으로 둔 Tree.
+Tree의 Rebalancing 방법 중 하나로 balanced한 트리이다.
+각 노드는 값(key)말고도 색을 갖고 있으며, 색은 레드 or 블랙 2종류다.
+📌 Red Black Tree가 갖는 특성  Root Property : 루트(root)노드는 블랙(black)이다.
+External Property : 모든 외부 노드 (external node)는 블랙이다.
+Depth Property : 모든 단말 노드(leaf node)의 경우 루트부터 외부 노드 까지 방문하는 블랙 노드의 수가 같다.
+Internal Property : 빨강 노드의 자식은 블랙이다.</description>
+    </item>
+    
+  </channel>
+</rss>

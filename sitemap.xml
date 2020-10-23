@@ -48,6 +48,16 @@
   </url>
   
   <url>
+    <loc>https://gowoonsori.site/data-structure/tree/redblacktree/</loc>
+    <lastmod>2020-10-23T17:53:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/data-structure/tree/avltree/</loc>
+    <lastmod>2020-10-23T17:53:52+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gowoonsori.site/algorithm/</loc>
     <lastmod>2020-09-20T19:28:25+09:00</lastmod>
   </url>
@@ -58,13 +68,53 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/algorithm/counting-sort/</loc>
+    <loc>https://gowoonsori.site/algorithm/sorting-algorithm/counting-sort/</loc>
     <lastmod>2020-10-13T00:25:11+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://gowoonsori.site/solve-algorithm/</loc>
     <lastmod>2020-09-20T00:13:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/avl-tree/</loc>
+    <lastmod>2020-10-23T17:53:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/categories/</loc>
+    <lastmod>2020-10-23T17:53:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/data-structure/</loc>
+    <lastmod>2020-10-23T17:53:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/categories/data-structure/</loc>
+    <lastmod>2020-10-23T17:53:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/</loc>
+    <lastmod>2020-10-23T17:53:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/red-black-tree/</loc>
+    <lastmod>2020-10-23T17:53:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/</loc>
+    <lastmod>2020-10-23T17:53:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/tree/</loc>
+    <lastmod>2020-10-23T17:53:52+09:00</lastmod>
   </url>
   
   <url>
@@ -78,27 +128,12 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/categories/</loc>
-    <lastmod>2020-10-20T18:21:01+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/</loc>
-    <lastmod>2020-10-20T18:21:01+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://gowoonsori.site/tags/programmers/</loc>
     <lastmod>2020-10-20T18:21:01+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://gowoonsori.site/tags/solve-algorithm/</loc>
-    <lastmod>2020-10-20T18:21:01+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/</loc>
     <lastmod>2020-10-20T18:21:01+09:00</lastmod>
   </url>
   
@@ -235,21 +270,6 @@
   <url>
     <loc>https://gowoonsori.site/tags/sorting-algorithm/</loc>
     <lastmod>2020-09-20T19:15:05+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/data-structure/</loc>
-    <lastmod>2020-09-20T01:28:52+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/categories/data-structure/</loc>
-    <lastmod>2020-09-20T01:28:52+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/tree/</loc>
-    <lastmod>2020-09-20T01:28:52+09:00</lastmod>
   </url>
   
   <url>
