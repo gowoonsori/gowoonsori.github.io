@@ -4,15 +4,15 @@
 <html>
   <head>
     <title>
-	1. 초기 셋팅하기 :: Hong&#39;s Blog
+	1. 초기 셋팅하기 (front) :: 고소리&#39;s Blog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-24T00:19:34 KST">
+<meta name="revised" content="2020-10-26T01:11:51 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>1. 초기 셋팅하기 :: Hong&#39;s Blog</title>
+<title>1. 초기 셋팅하기 (front) :: 고소리&#39;s Blog</title>
 
 <meta name="author" content="gowoonsori">
 
@@ -20,7 +20,7 @@
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="1. 초기 셋팅하기" />
+<meta property="og:title" content="1. 초기 셋팅하기 (front)" />
 <meta property="og:description" content="React로 Toy project 초기 개발환경 세팅하기" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gowoonsori.site/home/react-project/1_settings/" />
@@ -118,7 +118,7 @@ if (!doNotTrack) {
     <div>
 	
 		
-	    	<a class='baselink' href='https://gowoonsori.site'>Hong's Blog</a>
+	    	<a class='baselink' href='https://gowoonsori.site'>고소리's Blog</a>
 	  	
 	</div>
     <nav class="shortcuts">
@@ -238,7 +238,22 @@ if (!doNotTrack) {
       
       
       
-          <a href="/home/react-project/1_settings/">1. 초기 셋팅하기</a>
+          <a href="/home/react-project/1_settings/">1. 초기 셋팅하기 (front)</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/react-project/2_backsettings/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/react-project/2_backsettings/">2. 초기 셋팅하기 (back)</a>
       
         
       
@@ -542,8 +557,12 @@ if (!doNotTrack) {
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/gowoonsori/gowoonsori.github.io" data-icon="octicon-star" aria-label="Star gowoonsori/gowoonsori.github.io on GitHub">Star</a>
 </center>
+<center style='margin-top:20px'>
+    <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgowoonsori.site&count_bg=%23426EAE&title_bg=%23555555&icon=&icon_color=%238E4F4F&title=%F0%9F%93%8C+Today+%2F+Total++&edge_flat=false"/></a>
+</center>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+
 	    
 	
       </aside>
@@ -591,7 +610,7 @@ if (!doNotTrack) {
   
     <li class="breadcrumb-item active">
       
-        1. 초기 셋팅하기
+        1. 초기 셋팅하기 (front)
       
     </li>
 
@@ -612,7 +631,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>1. 초기 셋팅하기</h1>
+			<h1>1. 초기 셋팅하기 (front)</h1>
         
 
 		
@@ -643,6 +662,7 @@ if (!doNotTrack) {
         <li><a href="#설치-순서와-파일-수정">설치 순서와 파일 수정</a></li>
       </ul>
     </li>
+    <li><a href="#ant-design-라이브러리-설치">ant design 라이브러리 설치</a></li>
     <li><a href="#그-외-플러그인들-설치">그 외 플러그인들 설치</a></li>
     <li><a href="#참고자료">참고자료</a></li>
   </ul>
@@ -658,7 +678,7 @@ if (!doNotTrack) {
 <p>다운로드 링크 : <a href="https://nodejs.org/ko/">https://nodejs.org/ko/</a></p>
 <p>위의 링크를 통해 다운 및 설치를 해주었다.</p>
 <p>터미널에 <code>npm -v</code>를 통해 설치가 되었는지/무슨 버전을 설치했는 지 확인할 수 있다.</p>
-<br>
+<p><br><br></p>
 <h2>프로젝트 폴더 만들기</h2><a class="anchor" id="프로젝트-폴더-만들기"></a>
 <hr>
 <p>프로젝트를 진행할 <code>earn-points-web</code>이라는 폴더를 만들고 이 폴더 안에서 front / back을 나누어 개발을 할 것이고 front먼저 틀을 잡아놓을 계획이기 때문에 front먼저 생성 해주었다.</p>
@@ -684,23 +704,19 @@ if (!doNotTrack) {
 </code></pre></div><p><code>author</code> 과 <code>scripts</code>와 같은 정보를 추가해주었다.</p>
 <p><code>main</code>옵션을 보면 index.js가 root page가 되는 것을 볼 수 있다.</p>
 <p>여기서 <code>dev</code>는 next를 localhost로 실행시켜보는 script명령어이며 <code>-p</code>옵션을 통해 <code>port 번호</code>를 설정해 줄 수도 있다.</p>
-<br>
+<p><br><br></p>
 <h2>index.js 작성</h2><a class="anchor" id="indexjs-작성"></a>
 <hr>
 <p><code>front</code>폴더 안에 <code>pages</code>폴더를 새로 만들고 <code>index.js</code>를 만들어 아래의 코드를 작성해 주고 정상적으로 Next.js가 잘돌아가는지 확인했다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Home</span> <span style="color:#f92672">=</span> () =&gt; {
-  <span style="color:#66d9ef">return</span> (
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#f92672">&gt;</span>
-      <span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">js</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
-  );
-}
+  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">js</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;;</span>
+};
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Home</span>;
-</code></pre></div><br>
+</code></pre></div><p><br><br></p>
 <p><img src="hello.PNG?classes=border,shadow" alt="성공적인 next"></p>
 <p>localhost:3060 으로 접속하니 사진과 같이 실행이 정상적으로 되었다.</p>
-<br>
+<p><br><br></p>
 <h2>_app.js 작성</h2><a class="anchor" id="_appjs-작성"></a>
 <hr>
 <p>페이지들이 바뀌어도 기본적인 layout의 유지를 위해 _app.js를 아래와 같이 작성해 주었다.</p>
@@ -709,19 +725,19 @@ if (!doNotTrack) {
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">EarnPointsWeb</span> <span style="color:#f92672">=</span> ({<span style="color:#a6e22e">Component</span>}) =&gt; {
   <span style="color:#66d9ef">return</span> (
-      <span style="color:#f92672">&lt;&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Head</span><span style="color:#f92672">&gt;</span>
-              <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">charSet</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;utf-8&#34;</span> <span style="color:#f92672">/&gt;</span>
-              <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">포인트</span> <span style="color:#a6e22e">적립</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/title&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Head&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Component</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/&gt;</span>
-  )
+    <span style="color:#f92672">&lt;&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Head</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">charSet</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">포인트</span> <span style="color:#a6e22e">적립</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/title&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Head&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Component</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/&gt;</span>
+  );
 };
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">EarnPointsWeb</span>;
-</code></pre></div><br>
-아래의 사진과 같이 index.js를 _app.js 가 감싸주어 타이틀이 변한 것을 볼 수 있다.
+</code></pre></div><p><br><br>
+아래의 사진과 같이 index.js를 _app.js 가 감싸주어 타이틀이 변한 것을 볼 수 있다.</p>
 <p><img src="appjs.PNG?classes=border,shadow" alt="appJs"></p>
 <br>
 <p><code>_app.js</code>는 다음과 같은 기능을 수행 하기 위해 사용된다.</p>
@@ -731,10 +747,10 @@ if (!doNotTrack) {
 <li>graphQL과 같은 추가 데이터들을 페이지들에 사용</li>
 <li>componentDidCatch로 에러 관리</li>
 </ul>
-<br>
+<p><br><br></p>
 <h2>Redux 와 Redux-saga 설치</h2><a class="anchor" id="redux-와-redux-saga-설치"></a>
 <hr>
-<p><code>Redux</code>란  한마디로 말해 <code>중앙 데이터 저장소</code>역할을 해주는 라이브러리이다.
+<p><code>Redux</code>란 한마디로 말해 <code>중앙 데이터 저장소</code>역할을 해주는 라이브러리이다.
 <br>
 각 컴포넌트, 페이지들의 데이터들을 서로 교환하는 방식이 아닌 중앙 데이터에서 모든 데이터를 관리하고 보내주는 것이 훨씬 효율적이기 때문에 사용할 생각이다.</p>
 <p><code>Redux</code>를 사용하게 되면 변경사항마다 action을 작성해주어야 하기 때문에 코드가 길어질 수 있지만 중요한 개념으로써 한번 사용해 볼 생각이다.
@@ -745,14 +761,14 @@ if (!doNotTrack) {
 <h3>설치 순서와 파일 수정</h3><a class="anchor" id="설치-순서와-파일-수정"></a>
 <p><code>npm i redux next-redux-wrapper</code>을 통하여 설치를 진행했다.
 <br> 여기서 redux-wrapper는 redux의 손쉬운 사용을 위해 설치했다.</p>
+<br>
 <ul>
 <li><code>front/store/configureStore.js</code> 파일 생성</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createWrapper</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;next-redux-wrapper&#39;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">createWrapper</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;next-redux-wrapper&#39;</span>;
 <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">createStore</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;redux&#39;</span>;
 
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">reducer</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../reducers&#39;</span>
-
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">reducer</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../reducers&#39;</span>;
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">configureStore</span> <span style="color:#f92672">=</span> () =&gt; {
   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">reducer</span>);
@@ -760,23 +776,24 @@ if (!doNotTrack) {
 };
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">wrapper</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createWrapper</span>(<span style="color:#a6e22e">configureSotre</span>, {
-  <span style="color:#a6e22e">debug</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">NODE_ENV</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;development,&#39;</span>
+  <span style="color:#a6e22e">debug</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">NODE_ENV</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;development,&#39;</span>,
 });
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">wrapper</span>;
 </code></pre></div><p>파일 생성 후 reducer에게 상태를 넘겨주고 페이지들을 redux로 감싸주기 위해 위의 코드를 작성해주었다. ( 아직 별 페이지도 없기 때문에 뭔가를 넘겨주지는 않는다&hellip;)</p>
 <p><em>redux는 action이 날라오면 reducer가 store의 state를 변경시키는 방식으로 동작</em></p>
+<br>
 <ul>
 <li><code>front/reducers/index.js</code> 파일 생성</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">HYDRATE</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;next-redux-wrapper&#34;</span>;
-<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">combineReducers</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;redux&#34;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">HYDRATE</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;next-redux-wrapper&#39;</span>;
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">combineReducers</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;redux&#39;</span>;
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rootReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">action</span>) =&gt; {
-    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>){
-      <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">HYDRATE</span> <span style="color:#f92672">:</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">payload</span>;
-      <span style="color:#66d9ef">default</span> <span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">HYDRATE</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">payload</span>;
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
   }
 };
 
@@ -791,27 +808,33 @@ if (!doNotTrack) {
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">EarnPointsWeb</span> <span style="color:#f92672">=</span> ({<span style="color:#a6e22e">Component</span>}) =&gt; {
   <span style="color:#66d9ef">return</span> (
-      <span style="color:#f92672">&lt;&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Head</span><span style="color:#f92672">&gt;</span>
-              <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">charSet</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;utf-8&#34;</span> <span style="color:#f92672">/&gt;</span>
-              <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">포인트</span> <span style="color:#a6e22e">적립</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/title&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Head&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Component</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/&gt;</span>
-  )
+    <span style="color:#f92672">&lt;&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Head</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">charSet</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">포인트</span> <span style="color:#a6e22e">적립</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/title&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Head&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Component</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/&gt;</span>
+  );
 };
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">wrapper</span>.<span style="color:#a6e22e">withRedux</span>(<span style="color:#a6e22e">EarnPointsWeb</span>);
 </code></pre></div><p>_app.js의 함수를 redux를 통하여 감싸주어 프로젝트의 모든 컴포넌트와 페이지에 적용시키기</p>
-<br>
+<p><br><br></p>
+<h2>ant design 라이브러리 설치</h2><a class="anchor" id="ant-design-라이브러리-설치"></a>
+<hr>
+<p>목적은 토이프로젝트의 빠른 개발을 통해 개념 공부이기 때문에, 디자인에 힘을 덜 들이고자 컴포넌트 UI 라이브러리 중 하나인 <code>antd</code>을 이욯하여 개발하기로 했다.</p>
+<p>아래의 공식문서에 각종 컴포넌트들 사용 법들이 잘 나와있어 가져다가 입맛대로 바꿔 사용하면 된다.</p>
+<p><a href="https://ant.design/docs/react/introduce">antd 공식문서</a></p>
+<p><br><br></p>
 <h2>그 외 플러그인들 설치</h2><a class="anchor" id="그-외-플러그인들-설치"></a>
 <hr>
-<p><code>UI 라이브러리</code>로 <code>ant-design</code>을, redux와 더불어 <code>redux-saga</code>를 사용해주기 위해 설치해 주었다.</p>
+<p>redux와 더불어 api 요청을 saga를 이용하여 구현해보고자 <code>redux-saga</code>를 설치해 주었다.</p>
 <p><code>redux-saga</code>란 <code>redux-thunk</code>다음으로 가장 많이 사용되는 라이브러리로 <code>redux-thunk</code>는 함수를 디스패치 할 수 있게 해주는 미들웨어이고, <code>redux-saga</code>는 모니터링하다 특정 액션이 발생하게 되면 특정 작업을 수행할 수 있게 해준다.
 <br>
 (특정 수행은 js코드를 수행하는 것일 수도 있고 dispatch, 상태를 불러오는 것이거나, 비동기 작업시 기존 요청을 취소처리, api 요청 실패시 재요청 작업 등을 수행 할 수 있다.)</p>
 <p>chrome의 <code>React Developer Tools</code> 확장 프로그램과 더불어 개발시 redux 상태를 쉽게 파악하여 개발을 도와주는 <code>redux-devtools-extension</code>도 설치 해주었다.</p>
-<p><code>code convention</code>을 지키기 위해 <code>elsint</code> , <code>prettier</code>를 설치 해주었다.</p>
+<p><code>code convention</code>을 지키기 위해 <code>eslint</code> , <code>prettier</code>를 설치 해주었다.</p>
 <p><em>code convention : 읽고 관리하기 쉬운 코드를 작성하기 위한 코딩 스타일 규약 -&gt; 코드의 가독성이 좋아지고 오류의 발생요소를 줄여준다.</em></p>
 <br>
 <h2>참고자료</h2><a class="anchor" id="참고자료"></a>
@@ -837,10 +860,10 @@ if (!doNotTrack) {
 
 	 
 	<div class="chevrons ">
-		<a class="next" href="/home/kpu_sw_competition/" title="KPU S/W 경진대회 예선 후기 (코딩 테스트)" style="margin-right: 0px;">
+		<a class="next" href="/home/react-project/2_backsettings/" title="2. 초기 셋팅하기 (back)" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>KPU S/W 경진대회 예선 후기 (코딩 테스트)</label>
+                <label>2. 초기 셋팅하기 (back)</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -862,7 +885,7 @@ if (!doNotTrack) {
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/home/react-project/1_settings/">1. 초기 셋팅하기</a></li>
+            <li><a href="/home/react-project/1_settings/">1. 초기 셋팅하기 (front)</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">
@@ -876,6 +899,7 @@ if (!doNotTrack) {
         <li><a href="#설치-순서와-파일-수정">설치 순서와 파일 수정</a></li>
       </ul>
     </li>
+    <li><a href="#ant-design-라이브러리-설치">ant design 라이브러리 설치</a></li>
     <li><a href="#그-외-플러그인들-설치">그 외 플러그인들 설치</a></li>
     <li><a href="#참고자료">참고자료</a></li>
   </ul>

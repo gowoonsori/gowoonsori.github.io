@@ -1,10 +1,10 @@
 [
 {
 	"uri": "https://gowoonsori.site/home/react-project/1_settings/",
-	"title": "1. 초기 셋팅하기",
+	"title": "1. 초기 셋팅하기 (front)",
 	"tags": ["react", "redux", "redux-saga", "ant-design", "next.js", "node.js"],
 	"description": "React로 Toy project 초기 개발환경 세팅하기",
-	"content": "노드 (Node.js) 설치하기  사용할 IDE는 vscode를 사용할 예정이다.\nreact 프로젝트를 시작하기에 앞서 js를 이용하여 웹프로그래밍을 하기 위해 노드를 설치 해주어야 한다.\n다운로드 링크 : https://nodejs.org/ko/\n위의 링크를 통해 다운 및 설치를 해주었다.\n터미널에 npm -v를 통해 설치가 되었는지/무슨 버전을 설치했는 지 확인할 수 있다.\n프로젝트 폴더 만들기  프로젝트를 진행할 earn-points-web이라는 폴더를 만들고 이 폴더 안에서 front / back을 나누어 개발을 할 것이고 front먼저 틀을 잡아놓을 계획이기 때문에 front먼저 생성 해주었다.\n또한 react의 SSR을 위해 Next.js를 사용해 줄 생각이기 때문에 next.js 플러그인을 아래의 방법대로 설치를 진행해 주었다.\n mkdir front를 통해 폴더 생성 cd front npm init -y : npm 초기화 npm install --save react react-dom next : next 설치  설치를 진행하고 나면 package.json이 생기는 데 여기에 각종 설정을 추가해주었다.\n\u0026#34;name\u0026#34;: \u0026#34;front\u0026#34;, \u0026#34;version\u0026#34;: \u0026#34;1.0.0\u0026#34;, \u0026#34;private\u0026#34;: true, \u0026#34;description\u0026#34;: \u0026#34;\u0026#34;, \u0026#34;main\u0026#34;: \u0026#34;index.js\u0026#34;, \u0026#34;author\u0026#34;: \u0026#34;Euisung\u0026#34;, \u0026#34;license\u0026#34;: \u0026#34;ISC\u0026#34;, \u0026#34;scripts\u0026#34;: { \u0026#34;dev\u0026#34;: \u0026#34;next -p 3060\u0026#34;, \u0026#34;build\u0026#34;: \u0026#34;next build\u0026#34;, \u0026#34;start\u0026#34;: \u0026#34;next start\u0026#34;, author 과 scripts와 같은 정보를 추가해주었다.\nmain옵션을 보면 index.js가 root page가 되는 것을 볼 수 있다.\n여기서 dev는 next를 localhost로 실행시켜보는 script명령어이며 -p옵션을 통해 port 번호를 설정해 줄 수도 있다.\nindex.js 작성  front폴더 안에 pages폴더를 새로 만들고 index.js를 만들어 아래의 코드를 작성해 주고 정상적으로 Next.js가 잘돌아가는지 확인했다.\nconst Home = () =\u0026gt; { return ( \u0026lt;div \u0026gt; Hello Next.js \u0026lt;/div\u0026gt; ); } export default Home; \nlocalhost:3060 으로 접속하니 사진과 같이 실행이 정상적으로 되었다.\n_app.js 작성  페이지들이 바뀌어도 기본적인 layout의 유지를 위해 _app.js를 아래와 같이 작성해 주었다.\nimport React from \u0026#39;react\u0026#39;; import Head from \u0026#39;next/head\u0026#39;; const EarnPointsWeb = ({Component}) =\u0026gt; { return ( \u0026lt;\u0026gt; \u0026lt;Head\u0026gt; \u0026lt;meta charSet = \u0026#34;utf-8\u0026#34; /\u0026gt; \u0026lt;title\u0026gt;포인트 적립\u0026lt;/title\u0026gt; \u0026lt;/Head\u0026gt; \u0026lt;Component /\u0026gt; \u0026lt;/\u0026gt; ) }; export default EarnPointsWeb; \n아래의 사진과 같이 index.js를 _app.js 가 감싸주어 타이틀이 변한 것을 볼 수 있다. _app.js는 다음과 같은 기능을 수행 하기 위해 사용된다.\n 공통 layout부분 유지 페이지를 네비게이팅(navigating)할 때 상태 유지 graphQL과 같은 추가 데이터들을 페이지들에 사용 componentDidCatch로 에러 관리  Redux 와 Redux-saga 설치  Redux란 한마디로 말해 중앙 데이터 저장소역할을 해주는 라이브러리이다. 각 컴포넌트, 페이지들의 데이터들을 서로 교환하는 방식이 아닌 중앙 데이터에서 모든 데이터를 관리하고 보내주는 것이 훨씬 효율적이기 때문에 사용할 생각이다.\nRedux를 사용하게 되면 변경사항마다 action을 작성해주어야 하기 때문에 코드가 길어질 수 있지만 중요한 개념으로써 한번 사용해 볼 생각이다. Redux말고도 Mobax, Context API 같은 라이브러리도 있다.\nRedux는 모든 history가 기록되기 때문에 에러 추적이 쉽다. Mobax는 코드량이 적어 생산성을 높일 수 있지만 상태 추적이 어렵고 Context API는 앱 규모가 작을때 권장 된다.\n설치 순서와 파일 수정 npm i redux next-redux-wrapper을 통하여 설치를 진행했다. 여기서 redux-wrapper는 redux의 손쉬운 사용을 위해 설치했다.\n front/store/configureStore.js 파일 생성  import { createWrapper } from \u0026#39;next-redux-wrapper\u0026#39;; import {createStore} from \u0026#39;redux\u0026#39;; import reducer from \u0026#39;../reducers\u0026#39; const configureStore = () =\u0026gt; { const store = createStore(reducer); return store; }; const wrapper = createWrapper(configureSotre, { debug: process.env.NODE_ENV === \u0026#39;development,\u0026#39; }); export default wrapper; 파일 생성 후 reducer에게 상태를 넘겨주고 페이지들을 redux로 감싸주기 위해 위의 코드를 작성해주었다. ( 아직 별 페이지도 없기 때문에 뭔가를 넘겨주지는 않는다\u0026hellip;)\nredux는 action이 날라오면 reducer가 store의 state를 변경시키는 방식으로 동작\n front/reducers/index.js 파일 생성  import {HYDRATE} from \u0026#34;next-redux-wrapper\u0026#34;; import {combineReducers} from \u0026#34;redux\u0026#34;; const rootReducer = (state, action) =\u0026gt; { switch (action.type){ case HYDRATE : return action.payload; default : } }; export default rootReducer; \n _app.js 수정  import React from \u0026#39;react\u0026#39;; import Head from \u0026#39;next/head\u0026#39;; import wrapper from \u0026#39;../store/configureStore.js\u0026#39;; const EarnPointsWeb = ({Component}) =\u0026gt; { return ( \u0026lt;\u0026gt; \u0026lt;Head\u0026gt; \u0026lt;meta charSet = \u0026#34;utf-8\u0026#34; /\u0026gt; \u0026lt;title\u0026gt;포인트 적립\u0026lt;/title\u0026gt; \u0026lt;/Head\u0026gt; \u0026lt;Component /\u0026gt; \u0026lt;/\u0026gt; ) }; export default wrapper.withRedux(EarnPointsWeb); _app.js의 함수를 redux를 통하여 감싸주어 프로젝트의 모든 컴포넌트와 페이지에 적용시키기\n그 외 플러그인들 설치  UI 라이브러리로 ant-design을, redux와 더불어 redux-saga를 사용해주기 위해 설치해 주었다.\nredux-saga란 redux-thunk다음으로 가장 많이 사용되는 라이브러리로 redux-thunk는 함수를 디스패치 할 수 있게 해주는 미들웨어이고, redux-saga는 모니터링하다 특정 액션이 발생하게 되면 특정 작업을 수행할 수 있게 해준다. (특정 수행은 js코드를 수행하는 것일 수도 있고 dispatch, 상태를 불러오는 것이거나, 비동기 작업시 기존 요청을 취소처리, api 요청 실패시 재요청 작업 등을 수행 할 수 있다.)\nchrome의 React Developer Tools 확장 프로그램과 더불어 개발시 redux 상태를 쉽게 파악하여 개발을 도와주는 redux-devtools-extension도 설치 해주었다.\ncode convention을 지키기 위해 elsint , prettier를 설치 해주었다.\ncode convention : 읽고 관리하기 쉬운 코드를 작성하기 위한 코딩 스타일 규약 -\u0026gt; 코드의 가독성이 좋아지고 오류의 발생요소를 줄여준다.\n참고자료  https://react.vlpt.us/redux-middleware/10-redux-saga.html https://medium.com/signal9/redux-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EB%8D%94-%ED%8E%B8%ED%95%98%EA%B2%8C-redux-devtools-4e228655ac7d https://velog.io/@sbinha/Next.js-app.js%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C https://react.vlpt.us/redux-middleware/10-red https://velog.io/@jehjong/Next.js%EC%97%90%EC%84%9C-Redux%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-Redux-wrapper  "
+	"content": "노드 (Node.js) 설치하기  사용할 IDE는 vscode를 사용할 예정이다.\nreact 프로젝트를 시작하기에 앞서 js를 이용하여 웹프로그래밍을 하기 위해 노드를 설치 해주어야 한다.\n다운로드 링크 : https://nodejs.org/ko/\n위의 링크를 통해 다운 및 설치를 해주었다.\n터미널에 npm -v를 통해 설치가 되었는지/무슨 버전을 설치했는 지 확인할 수 있다.\n\n프로젝트 폴더 만들기  프로젝트를 진행할 earn-points-web이라는 폴더를 만들고 이 폴더 안에서 front / back을 나누어 개발을 할 것이고 front먼저 틀을 잡아놓을 계획이기 때문에 front먼저 생성 해주었다.\n또한 react의 SSR을 위해 Next.js를 사용해 줄 생각이기 때문에 next.js 플러그인을 아래의 방법대로 설치를 진행해 주었다.\n mkdir front를 통해 폴더 생성 cd front npm init -y : npm 초기화 npm install --save react react-dom next : next 설치  설치를 진행하고 나면 package.json이 생기는 데 여기에 각종 설정을 추가해주었다.\n\u0026#34;name\u0026#34;: \u0026#34;front\u0026#34;, \u0026#34;version\u0026#34;: \u0026#34;1.0.0\u0026#34;, \u0026#34;private\u0026#34;: true, \u0026#34;description\u0026#34;: \u0026#34;\u0026#34;, \u0026#34;main\u0026#34;: \u0026#34;index.js\u0026#34;, \u0026#34;author\u0026#34;: \u0026#34;Euisung\u0026#34;, \u0026#34;license\u0026#34;: \u0026#34;ISC\u0026#34;, \u0026#34;scripts\u0026#34;: { \u0026#34;dev\u0026#34;: \u0026#34;next -p 3060\u0026#34;, \u0026#34;build\u0026#34;: \u0026#34;next build\u0026#34;, \u0026#34;start\u0026#34;: \u0026#34;next start\u0026#34;, author 과 scripts와 같은 정보를 추가해주었다.\nmain옵션을 보면 index.js가 root page가 되는 것을 볼 수 있다.\n여기서 dev는 next를 localhost로 실행시켜보는 script명령어이며 -p옵션을 통해 port 번호를 설정해 줄 수도 있다.\n\nindex.js 작성  front폴더 안에 pages폴더를 새로 만들고 index.js를 만들어 아래의 코드를 작성해 주고 정상적으로 Next.js가 잘돌아가는지 확인했다.\nconst Home = () =\u0026gt; { return \u0026lt;div\u0026gt;Hello Next.js\u0026lt;/div\u0026gt;; }; export default Home; \nlocalhost:3060 으로 접속하니 사진과 같이 실행이 정상적으로 되었다.\n\n_app.js 작성  페이지들이 바뀌어도 기본적인 layout의 유지를 위해 _app.js를 아래와 같이 작성해 주었다.\nimport React from \u0026#39;react\u0026#39;; import Head from \u0026#39;next/head\u0026#39;; const EarnPointsWeb = ({Component}) =\u0026gt; { return ( \u0026lt;\u0026gt; \u0026lt;Head\u0026gt; \u0026lt;meta charSet=\u0026#34;utf-8\u0026#34; /\u0026gt; \u0026lt;title\u0026gt;포인트 적립\u0026lt;/title\u0026gt; \u0026lt;/Head\u0026gt; \u0026lt;Component /\u0026gt; \u0026lt;/\u0026gt; ); }; export default EarnPointsWeb; \n아래의 사진과 같이 index.js를 _app.js 가 감싸주어 타이틀이 변한 것을 볼 수 있다.\n_app.js는 다음과 같은 기능을 수행 하기 위해 사용된다.\n 공통 layout부분 유지 페이지를 네비게이팅(navigating)할 때 상태 유지 graphQL과 같은 추가 데이터들을 페이지들에 사용 componentDidCatch로 에러 관리  \nRedux 와 Redux-saga 설치  Redux란 한마디로 말해 중앙 데이터 저장소역할을 해주는 라이브러리이다. 각 컴포넌트, 페이지들의 데이터들을 서로 교환하는 방식이 아닌 중앙 데이터에서 모든 데이터를 관리하고 보내주는 것이 훨씬 효율적이기 때문에 사용할 생각이다.\nRedux를 사용하게 되면 변경사항마다 action을 작성해주어야 하기 때문에 코드가 길어질 수 있지만 중요한 개념으로써 한번 사용해 볼 생각이다. Redux말고도 Mobax, Context API 같은 라이브러리도 있다.\nRedux는 모든 history가 기록되기 때문에 에러 추적이 쉽다. Mobax는 코드량이 적어 생산성을 높일 수 있지만 상태 추적이 어렵고 Context API는 앱 규모가 작을때 권장 된다.\n설치 순서와 파일 수정 npm i redux next-redux-wrapper을 통하여 설치를 진행했다. 여기서 redux-wrapper는 redux의 손쉬운 사용을 위해 설치했다.\n front/store/configureStore.js 파일 생성  import {createWrapper} from \u0026#39;next-redux-wrapper\u0026#39;; import {createStore} from \u0026#39;redux\u0026#39;; import reducer from \u0026#39;../reducers\u0026#39;; const configureStore = () =\u0026gt; { const store = createStore(reducer); return store; }; const wrapper = createWrapper(configureSotre, { debug: process.env.NODE_ENV === \u0026#39;development,\u0026#39;, }); export default wrapper; 파일 생성 후 reducer에게 상태를 넘겨주고 페이지들을 redux로 감싸주기 위해 위의 코드를 작성해주었다. ( 아직 별 페이지도 없기 때문에 뭔가를 넘겨주지는 않는다\u0026hellip;)\nredux는 action이 날라오면 reducer가 store의 state를 변경시키는 방식으로 동작\n front/reducers/index.js 파일 생성  import {HYDRATE} from \u0026#39;next-redux-wrapper\u0026#39;; import {combineReducers} from \u0026#39;redux\u0026#39;; const rootReducer = (state, action) =\u0026gt; { switch (action.type) { case HYDRATE: return action.payload; default: } }; export default rootReducer; \n _app.js 수정  import React from \u0026#39;react\u0026#39;; import Head from \u0026#39;next/head\u0026#39;; import wrapper from \u0026#39;../store/configureStore.js\u0026#39;; const EarnPointsWeb = ({Component}) =\u0026gt; { return ( \u0026lt;\u0026gt; \u0026lt;Head\u0026gt; \u0026lt;meta charSet=\u0026#34;utf-8\u0026#34; /\u0026gt; \u0026lt;title\u0026gt;포인트 적립\u0026lt;/title\u0026gt; \u0026lt;/Head\u0026gt; \u0026lt;Component /\u0026gt; \u0026lt;/\u0026gt; ); }; export default wrapper.withRedux(EarnPointsWeb); _app.js의 함수를 redux를 통하여 감싸주어 프로젝트의 모든 컴포넌트와 페이지에 적용시키기\n\nant design 라이브러리 설치  목적은 토이프로젝트의 빠른 개발을 통해 개념 공부이기 때문에, 디자인에 힘을 덜 들이고자 컴포넌트 UI 라이브러리 중 하나인 antd을 이욯하여 개발하기로 했다.\n아래의 공식문서에 각종 컴포넌트들 사용 법들이 잘 나와있어 가져다가 입맛대로 바꿔 사용하면 된다.\nantd 공식문서\n\n그 외 플러그인들 설치  redux와 더불어 api 요청을 saga를 이용하여 구현해보고자 redux-saga를 설치해 주었다.\nredux-saga란 redux-thunk다음으로 가장 많이 사용되는 라이브러리로 redux-thunk는 함수를 디스패치 할 수 있게 해주는 미들웨어이고, redux-saga는 모니터링하다 특정 액션이 발생하게 되면 특정 작업을 수행할 수 있게 해준다. (특정 수행은 js코드를 수행하는 것일 수도 있고 dispatch, 상태를 불러오는 것이거나, 비동기 작업시 기존 요청을 취소처리, api 요청 실패시 재요청 작업 등을 수행 할 수 있다.)\nchrome의 React Developer Tools 확장 프로그램과 더불어 개발시 redux 상태를 쉽게 파악하여 개발을 도와주는 redux-devtools-extension도 설치 해주었다.\ncode convention을 지키기 위해 eslint , prettier를 설치 해주었다.\ncode convention : 읽고 관리하기 쉬운 코드를 작성하기 위한 코딩 스타일 규약 -\u0026gt; 코드의 가독성이 좋아지고 오류의 발생요소를 줄여준다.\n참고자료  https://react.vlpt.us/redux-middleware/10-redux-saga.html https://medium.com/signal9/redux-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EB%8D%94-%ED%8E%B8%ED%95%98%EA%B2%8C-redux-devtools-4e228655ac7d https://velog.io/@sbinha/Next.js-app.js%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C https://react.vlpt.us/redux-middleware/10-red https://velog.io/@jehjong/Next.js%EC%97%90%EC%84%9C-Redux%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-Redux-wrapper  "
 },
 {
 	"uri": "https://gowoonsori.site/home/start-blog/",
@@ -14,11 +14,18 @@
 	"content": "👋 첫 블로그 시작 !!  우선, 나는 말수가 적은 편이다. 말을 적게한다고 생각을 안하는 것이 아니라 머리속에서 생각은 정말 많으나, 그것을 입밖으로 꺼낼때 정리가 되지 않아 버벅거리기도 하고, 조사를 잘못 선택하여 말을 하거나 말을 하는 도중에 머리속이 꼬여 중간에 말을 멈추기도 한다.\n말은 생각을 언어로 바꾼 것이기 때문에 많은 생각들을 정리하는 연습과 맞춤법, 올바른 조사사용 등 올바른 언어 습관을 글쓰기를 통해 얻고자 글쓰기를 시작하기로 했다.\n현재 나는 개발자 더 나아가 엔지니어로 불리고 싶은 학생이다.\n배운 기술지식들이 많은데 이를 언제든 찾아 볼 수 있게 하고 다른 사람들과 지식공유를 하기 위함이다.\n나만 이해한 것이 아닌 남들도 이해하기 쉽게 작성해야 한다는 생각에 주제에 대해서 더 많이 찾아보고 공부 할 수 있게 되지 않을까?\n◼ github page를 선택한 이유  블로그를 작성하는 방법으로는 플랫폼으로는 네이버 블로그, tstory, velog 등 여러가지가 있다.\n기술 블로그로 유명한 tstory, wordpress등 이 있는 데 나는 velog를 조금 사용해보다가 커스터마이징이 가능한 나만의 블로그를 갖고 싶다는 생각에 github page를 선택했다.\n( 처음 세팅하는 데 각종 오류들로 많은 시간을 소비한 것은 안 비밀 \u0026hellip;ㅎㅎ)\n◼ 글 주제  기술 블로그인만큼 Computer Science 지식이 주로 작성을 할 생각이다.\n현재 github에 my-tech라는 이름의 repo로 TIL (Today I Learn)을 진행하고 있는 데 레포에 작성한 내용을 더 다듬어서 블로그에 업로드 할 것 이다.\nTIL을 했던 경험, project를 진행하고 겪었던 일들과 쉬는 날 놀러갔다온 일상적인 얘기도 조금씩 업로드 할 수 도 있다.\n◼ 목표  적어도 한 달에 3개의 글을 작성하는 것이 목표입니다. 🙏\n"
 },
 {
+	"uri": "https://gowoonsori.site/home/react-project/2_backsettings/",
+	"title": "2. 초기 셋팅하기 (back)",
+	"tags": ["react", "express", "mysql", "node.js"],
+	"description": "React로 Toy project 초기 개발환경 세팅하기",
+	"content": "express 설치하기  참고자료 "
+},
+{
 	"uri": "https://gowoonsori.site/home/start-hugo/",
 	"title": "Hugo와 Github page를 사용하여 블로그 만들기",
 	"tags": ["hugo", "github page", "utterances", "custom domain"],
 	"description": "hugo와 github page 사용하기",
-	"content": "\r블로그를 작성하기로 마음 먹은 후에 가장 먼저 할 일이 블로그를 만드는 것이었다.\nhugo와 github을 사용하면서 블로그를 open하는 과정과 겪었던 문제점들, 추가한 내용들을 정리하여 hugo를 선택하신분들에게 조금이나마 도움이 되고자 한다.\n\r◼ hugo를 선택한 이유 github page를 이용하여 블로그를 운영하는데 다양한 generator가 존재한다.\n가장 유명한 generator로는 Ruby 기반의 Jekyll이 있다. 이 지킬은 가장 github의 star 수가 많은 만큼 theme도 많고 한글 reference도 많다.\n하지만, page수가 많지도 않은 데 점점 build가 오래걸린다는 issue가 있다고 하고, 남들이 많이 하지 않는 거를 해보자!! 하는 마음과 Ruby 보다는 Go를 기반으로 한 Hugo 가 더 끌려 Hugo를 선택했다.\n\r그때는 몰랐다. 이 선택이 엄청난 삽질의 시작라는 것을\u0026hellip;.\n\r1. 첫 시작! Hugo 설치  github page를 이용하여 블로그를 만드는 것이기 때문에 따로 git 설치 과정은 생략한다.\nHugo install에 관한 공식 문서 를 보고 자신의 OS환경에 맞게 설치를 해주면 된다.\n          macOS 설치 동영상\r Linux 설치 문서\r windows 설치 동영상\r     위의 링크를 통해 Linux나 macOS라면 명령어를 이용해서 쉽게 설치가 가능하다. 나는 windows를 사용하고 있고 따로 package sw를 사용하지 않기 때문에 Hugo 공식 github 을 통해 windows의 최신 버전의 zip파일을 다운받아 설치했다.  설치 할때 C:\\Hugo\\bin 디렉토리를 생성해서 이 폴더안에 다운받은 압축파일 해제하면 된다.\n 설치를 완료 했다면 경로 설정을 해주어야 하는데  윈도우 검색창에 시스템 환경 변수를 검색 하고 실행시키기 시스템 속성의 환경변수 클릭 시스템 변수의 Path 더블 클릭 새로 만들기를 클릭하여 아까 설치했던 C:\\Hugo\\bin 입력.    위에 처럼 진행하거나\ncmd를 통하여 $ set PATH=%PATH%;C:\\Hugo\\bin 명령으로 환경변수를 추가하시면 된다.\n제대로 완료되었는지 확인 하고 싶다면 cmd를 통해 $ hugo version 혹은 $ hugo help로 동작 확인.\n\n2. 블로그 생성과 호스팅을 위해 Github repository를 2개 생성    repo를 두개 생성하게 되는데 한개는 hugo를 사용하여 블로그안에 채울 내용과 소스파일들을 저장하기 위한 repo를 만들어준다. 이 repo는 소스가 보여지는 게 싫다하면 private로 만들어도 무관하며 이름도 편한대로 만들면 된다. ( 나는 blog 라는 이름으로 생성했다. )\n  다른 한개는 github page를 사용한 호스팅을 위해 USERNAME.github.io 라는 이름으로 생성하면된다. 이때 USERNAME 은 본인의 github name을 적으면 되고 이 repo는 무료로 호스팅을 위해서는 public으로 생성해야하고 private으로 생성하고 싶다면 Github pro 이상을 구매하면 된다.\n  \n3. 블로그의 컨텐츠들을 담을 파일 생성  hugo new site \u0026lt;파일명\u0026gt; 왼쪽의 명령어를 사용하면 기본 hugo폴더의 뼈대가 자동적으로 생성이 되는데 원하는 파일 경로에 directory를 생성해주면 된다.\n현재 cmd의 위치가 C:/Hugo 라면 이 폴더 안에 생성될 것이고 다른 곳에 생성을 원하면 ../Users/파일명과 같이 파일명 앞에 경로를 추가해주면 된다.\n나는 C:\\Hugo 안에서 hugo new site blog 명령어를 통해 blog라는 폴더를 생성해주었다.\n\n4. 테마 다운 및 설정   hugo 테마 둘러보기 사이트에 들어가서 마음에 드는 테마를 선택후 Download를 클릭. 해당 테마의를 submodule에 추가한다. Download를 클릭하면 각 테마를 만든 사람의 github의 repo에 들어가지는데 repo에 어떻게 submodule를 추가하면되는지 나와 있다.   나는 hugo-theme-docport 테마를 선택 했고 submodule 추가 과정은\ngit init 후\ngit submodule add https://github.com/vjeantet/hugo-theme-docport.git themes/hugo-theme-docport\n을 통해 추가했다.\n\r❗ config.toml 파일 수정 나와 똑같이 진행을 했다면 blog폴더 안에 config.toml 파일이 있을 텐데 이 파일을 통해 title이나 baseUrl, google analytics, theme 기본 설정등 해주게 된다.  이 파일을 수정하는 내용은 테마들 별로 조금씩 다르기 때문에 꼭 꼭 해당 테마의 repo를 참고하여 수정토록 하자!\rbaseURL은 본인의 블로그 주소 = Username.github.io를 설정 해주면 된다.\n\n5. 파일 관리와 호스팅을 위해 github repo와 연결시켜주기    처음에 만든 blog repo 연결\n cmd에서 C:\\Hugo\\blog로 이동한다. $ git remote add origin \u0026lt;본인의 첫번째만든 repo주소\u0026gt;  github repo주소를 모르겠다 하면 github 홈페이지의 본인 repo에 들어 가보면 code버튼을 클릭하고 위의 빨간색 동그라미 부분을 클릭하면 repo주소가 복사가 된다.\n  두번째 만든 username.github.io repo 연결\n git submodule add -b master \u0026lt;두번째 만든 githbu.io repo주소\u0026gt; public 을 입력해주면 blog폴더 안에 public 폴더가 만들어지는 데 이 public폴더가 username.github.io 저장소와 연결 될 것이다.    6. 컨텐츠 생성   hugo new \u0026lt;파일명\u0026gt;을 사용하여 업로드할 컨텐츠를 만들어 볼 수 있는 데 기본 파일구조가 테마별로 다르니 꼭 꼭 본인이 사용하는 테마의 repo를 잘 참조하자!!  어떤 테마는 post/파일명.md 파일로 생성을 하는가 하면 내가 사용하는 테마는 파일명/_index.md를 통해 컨텐츠가 생성이 된다. 테마를 만든 사람에 따라 구조가 조금씩 달라 안그래도 한국 레퍼런스가 많이 없는 hugo에서 이때문에 초반에 삽질을 조금 했다.\n\r 컨텐츠가 생성이 되었다면 hugo server를 입력하면 http://localhost:1313/ 을 통해 확인해 볼 수 있다.  여기서 또 삽질을 경험한 것이 보통 hugo 파일 구조가 기본 폴더 , 그러니까 blog폴더 내의 source파일들을 이용하여 레이아웃을 구성하고 만약 없다면 theme 폴더 내의 소스파일을 이용해서 레이아웃을 구성하게 된다. 하지만 내가 사용한 테마는 기본 scss 파일들을 theme 파일안에 존재하지 않아 build가 되지를 않았다. docport 테마는 따로 exampleSite폴더 내에 기본 레이아웃을 구성하는 구조와 css,js파일들이 존재하기 때문에 이 파일을 blog폴더내에 복사해주는 것으로 해결했다. 그러니 꼭 테마별 설명서를 잘 읽어보자 !!\n\r 위의 명령어는 확인만 해볼수 있지 html 파일로 build 시켜 주지 않는데 hugo -t \u0026lt;테마이름\u0026gt;을 통해 public 내에 build 시킬 수 있다. 테마 이름은 blog/themes 폴더를 들어가보면 된다.  \n7. 컨텐츠 업로드  hugo server 를 통해 홈페이지를 확인해봤다면 본인의 블로그에 업로드 해야하지 않겠는가?\n업로드 순서는 아래를 따라하면 된다.\n  username.github.io 에 push 하기\n $ hugo -t 테마이름 명령을 통해 테마가 적용된 블로그 내용을 public 폴더 내에 build 해준다. $ cd public 을 통해 public 디렉토리로 이동한다. $ git add . 수정된 파일들을 index에 올린다. $ git commit -m \u0026quot;커밋메세지\u0026quot; 변경 내용을 commit하고 $ git push origin master commit을 통해 username.github.io에 upload    blog repo에도 push 하기\n $ cd .. $ git add . $ git commit -m \u0026quot;커밋메세지\u0026quot; $ git push origin master    \n8. 컨텐츠 업로드 반 자동화 하기  아래의 내용을 deplosy.sh로 저장하여 blog폴더 내에 두면 다음 부터는 컨텐츠 업로드시 일일히 타이핑하지 않고 deplosy.sh \u0026quot;커밋메세지\u0026quot; 를 통해 자동으로 편하게 업로드 할 수 있다.\n#!/bin/bash  # Build the project. hugo -t \u0026lt;테마이름\u0026gt; # Go To Public folder cd public # Add changes to git. git add . # Commit changes. msg=\u0026#34;rebuilding site `date`\u0026#34; if [ $# -eq 1 ] then msg=\u0026#34;$1\u0026#34; fi git commit -m \u0026#34;$msg\u0026#34; # Push source and build repos. git push origin master # Come Back up to the Project Root cd .. # blog 저장소 Commit \u0026amp; Push git add . msg=\u0026#34;rebuilding site `date`\u0026#34; if [ $# -eq 1 ] then msg=\u0026#34;$1\u0026#34; fi git commit -m \u0026#34;$msg\u0026#34; git push origin master \n여기서부터는 skip해도 무방하다. 9. custom domain 연결하기  github page를 이용해도 username.github.io가 아닌 개인의 도메인을 연결하여 사용할 수 있다.\n나는 가비아를 통해 도메인을 구매했기 때문에 가비아 기준으로 설명을 하겠다.\n  가비아에 들어가 My 가비아에 들어가 도메인 관리를 클릭 후 DNS 정보의 도메인 연결의 설정을 클릭.   나는 지금 설정을 해놓은 상태라 이렇게 추가가 되어 있다. 레코드 수정을 통해 사진과 같이 추가해주면 된다.\n  설정 후 본인의 username.github.io 에 돌아와 Settings를 클릭한다.\n  스크롤을 내리다 보면 Github pages 항목에 custom domain에 자기의 domain을 입력해 주고 Save를 클릭해주면 된다. 도메인이 적용되는 데 몇분의 시간이 소요 될 수 있고 Enforce HTTPS를 활성화 시켜주면 github 자체에서 Let\u0026rsquo;s Encrypt를 이용한 https를 무료로 적용 시켜 준다.\n  마지막으로 본인의 config.toml파일의 baseURL을 custom domain으로 바꿔주면 된다.\n  github 내에서는 www 나 blog와 같이 sub domain의 사용을 권장하는 데 나는 이상하게 sub domain설정만 하면 dns설정이 바르게 되지 않아 몇 번의 삽질끝에 포기기로 했다.\n\r\n10. 댓글 기능 추가하기  github page는 정적 사이트 호스팅이다보니 자체적으로 댓글 기능을 제공하지는 않기 때문에 외부의 라이브러리를 사용해 추가를 해줄 수 있다.\n유명한 라이브러리로 disqus가 있는 데 나는 disqus의 인터페이스가 지저분하다는 생각이 들어 다른 것을 찾다보니 utterances를 발견하게 되었다.\nutterances 공식 문서를 참고하면 theme도 설정가능하고 label도 설정가능 하다.\n잘 모르겠다 싶으면 아래의 코드를 따라 해도 무방하다. (reop 경로는 바꿔주어야 한다.)\n내가 선택한 테마는 github-light로 밝은 분위기가 깔끔해 선택했다.\n  댓글의 기능을 mapping 해줄 repo를 하나 생성 해준다. 나는 comments라는 repo를 생성했다.\n  그 후 본인의 theme 폴더 내의 layouts/partials 안의 contents의 내용을 포함하는 body-contents 역할의 html파일을 찾아 편집기를 통해 연다.\n  코드가 길게 있을 텐데 contents 끝 자락 부분의 아래나 footer 바로 윗 부분에 코드를 추가 해주면 된다.\n  \u0026lt;div style=\u0026#34;margin-top:200px;\u0026#34;\u0026gt; \u0026lt;script src=\u0026#34;https://utteranc.es/client.js\u0026#34; repo=\u0026#34;gowoonsori/comments\u0026#34; issue-term=\u0026#34;pathname\u0026#34; theme=\u0026#34;github-light\u0026#34; crossorigin=\u0026#34;anonymous\u0026#34; async\u0026gt; \u0026lt;/script\u0026gt; \u0026lt;/div\u0026gt; 이때 repo의 username과 repo이름은 바꿔줘야 한다\n테마별로 구조와 파일명이 조금씩 다를 수 있어 이도 공식 문서를 잘 참조하자. 나는 공식문서에 이는 나와있지 않아 partials폴더 내에 contents를 담당할 것 같은 파일(.html)을 찾아 연뒤 hugo server명령어를 실행 시켜놓고 하나하나 붙여 넣어보며 적당한 위치를 찾았다. \u0026lt;div\u0026gt;로 \u0026lt;script\u0026gt; 를 한번 씌워 margin-top을 준것도 contents 바로 아래에 붙이니 contets들과 너무 붙어 있어 띄어 배치 시켰다. footer의 윗부분에 배치시키거나 저 공간이 싫다하면 div를 제외하고 scirpt부분만 붙여넣으면 된다.\n\r\n✍ 블로그 생성한 후기  한글 레퍼런스가 많이 없어 삽질을 많이 하긴 했지만 덕분에 hugo의 전체적인 파일 구조를 파악할 수 있어 손쉽게 내 입맛에 맞게 커스터 마이징을 할 수 있을 것 같다.\nhugo를 처음 사용하시는 분들께 강조 하고 싶은 것은 본인이 선택한 테마의 문서 (설명서)를 잘 보자는 것이다.\r"
+	"content": " 블로그를 작성하기로 마음 먹은 후에 가장 먼저 할 일이 블로그를 만드는 것이었다.\nhugo와 github을 사용하면서 블로그를 open하는 과정과 겪었던 문제점들, 추가한 내용들을 정리하여 hugo를 선택하신분들에게 조금이나마 도움이 되고자 한다.\n\r◼ hugo를 선택한 이유 github page를 이용하여 블로그를 운영하는데 다양한 generator가 존재한다.\n가장 유명한 generator로는 Ruby 기반의 Jekyll이 있다. 이 지킬은 가장 github의 star 수가 많은 만큼 theme도 많고 한글 reference도 많다.\n하지만, page수가 많지도 않은 데 점점 build가 오래걸린다는 issue가 있다고 하고, 남들이 많이 하지 않는 거를 해보자!! 하는 마음과 Ruby 보다는 Go를 기반으로 한 Hugo 가 더 끌려 Hugo를 선택했다.\n\r그때는 몰랐다. 이 선택이 엄청난 삽질의 시작라는 것을\u0026hellip;.\n\r1. 첫 시작! Hugo 설치  github page를 이용하여 블로그를 만드는 것이기 때문에 따로 git 설치 과정은 생략한다.\nHugo install에 관한 공식 문서 를 보고 자신의 OS환경에 맞게 설치를 해주면 된다.\n          macOS 설치 동영상\r Linux 설치 문서\r windows 설치 동영상\r     위의 링크를 통해 Linux나 macOS라면 명령어를 이용해서 쉽게 설치가 가능하다. 나는 windows를 사용하고 있고 따로 package sw를 사용하지 않기 때문에 Hugo 공식 github 을 통해 windows의 최신 버전의 zip파일을 다운받아 설치했다.  설치 할때 C:\\Hugo\\bin 디렉토리를 생성해서 이 폴더안에 다운받은 압축파일 해제하면 된다.\n 설치를 완료 했다면 경로 설정을 해주어야 하는데  윈도우 검색창에 시스템 환경 변수를 검색 하고 실행시키기 시스템 속성의 환경변수 클릭 시스템 변수의 Path 더블 클릭 새로 만들기를 클릭하여 아까 설치했던 C:\\Hugo\\bin 입력.    위에 처럼 진행하거나\ncmd를 통하여 $ set PATH=%PATH%;C:\\Hugo\\bin 명령으로 환경변수를 추가하시면 된다.\n제대로 완료되었는지 확인 하고 싶다면 cmd를 통해 $ hugo version 혹은 $ hugo help로 동작 확인.\n\n2. 블로그 생성과 호스팅을 위해 Github repository를 2개 생성    repo를 두개 생성하게 되는데 한개는 hugo를 사용하여 블로그안에 채울 내용과 소스파일들을 저장하기 위한 repo를 만들어준다. 이 repo는 소스가 보여지는 게 싫다하면 private로 만들어도 무관하며 이름도 편한대로 만들면 된다. ( 나는 blog 라는 이름으로 생성했다. )\n  다른 한개는 github page를 사용한 호스팅을 위해 USERNAME.github.io 라는 이름으로 생성하면된다. 이때 USERNAME 은 본인의 github name을 적으면 되고 이 repo는 무료로 호스팅을 위해서는 public으로 생성해야하고 private으로 생성하고 싶다면 Github pro 이상을 구매하면 된다.\n  \n3. 블로그의 컨텐츠들을 담을 파일 생성  hugo new site \u0026lt;파일명\u0026gt; 왼쪽의 명령어를 사용하면 기본 hugo폴더의 뼈대가 자동적으로 생성이 되는데 원하는 파일 경로에 directory를 생성해주면 된다.\n현재 cmd의 위치가 C:/Hugo 라면 이 폴더 안에 생성될 것이고 다른 곳에 생성을 원하면 ../Users/파일명과 같이 파일명 앞에 경로를 추가해주면 된다.\n나는 C:\\Hugo 안에서 hugo new site blog 명령어를 통해 blog라는 폴더를 생성해주었다.\n\n4. 테마 다운 및 설정   hugo 테마 둘러보기 사이트에 들어가서 마음에 드는 테마를 선택후 Download를 클릭. 해당 테마의를 submodule에 추가한다. Download를 클릭하면 각 테마를 만든 사람의 github의 repo에 들어가지는데 repo에 어떻게 submodule를 추가하면되는지 나와 있다.   나는 hugo-theme-docport 테마를 선택 했고 submodule 추가 과정은\ngit init 후\ngit submodule add https://github.com/vjeantet/hugo-theme-docport.git themes/hugo-theme-docport\n을 통해 추가했다.\n\r❗ config.toml 파일 수정 나와 똑같이 진행을 했다면 blog폴더 안에 config.toml 파일이 있을 텐데 이 파일을 통해 title이나 baseUrl, google analytics, theme 기본 설정등 해주게 된다.  이 파일을 수정하는 내용은 테마들 별로 조금씩 다르기 때문에 꼭 꼭 해당 테마의 repo를 참고하여 수정토록 하자!\rbaseURL은 본인의 블로그 주소 = Username.github.io를 설정 해주면 된다.\n\n5. 파일 관리와 호스팅을 위해 github repo와 연결시켜주기    처음에 만든 blog repo 연결\n cmd에서 C:\\Hugo\\blog로 이동한다. $ git remote add origin \u0026lt;본인의 첫번째만든 repo주소\u0026gt;  github repo주소를 모르겠다 하면 github 홈페이지의 본인 repo에 들어 가보면 code버튼을 클릭하고 위의 빨간색 동그라미 부분을 클릭하면 repo주소가 복사가 된다.\n  두번째 만든 username.github.io repo 연결\n git submodule add -b master \u0026lt;두번째 만든 githbu.io repo주소\u0026gt; public 을 입력해주면 blog폴더 안에 public 폴더가 만들어지는 데 이 public폴더가 username.github.io 저장소와 연결 될 것이다.    6. 컨텐츠 생성   hugo new \u0026lt;파일명\u0026gt;을 사용하여 업로드할 컨텐츠를 만들어 볼 수 있는 데 기본 파일구조가 테마별로 다르니 꼭 꼭 본인이 사용하는 테마의 repo를 잘 참조하자!!  어떤 테마는 post/파일명.md 파일로 생성을 하는가 하면 내가 사용하는 테마는 파일명/_index.md를 통해 컨텐츠가 생성이 된다. 테마를 만든 사람에 따라 구조가 조금씩 달라 안그래도 한국 레퍼런스가 많이 없는 hugo에서 이때문에 초반에 삽질을 조금 했다.\n\r 컨텐츠가 생성이 되었다면 hugo server를 입력하면 http://localhost:1313/ 을 통해 확인해 볼 수 있다.  여기서 또 삽질을 경험한 것이 보통 hugo 파일 구조가 기본 폴더 , 그러니까 blog폴더 내의 source파일들을 이용하여 레이아웃을 구성하고 만약 없다면 theme 폴더 내의 소스파일을 이용해서 레이아웃을 구성하게 된다. 하지만 내가 사용한 테마는 기본 scss 파일들을 theme 파일안에 존재하지 않아 build가 되지를 않았다. docport 테마는 따로 exampleSite폴더 내에 기본 레이아웃을 구성하는 구조와 css,js파일들이 존재하기 때문에 이 파일을 blog폴더내에 복사해주는 것으로 해결했다. 그러니 꼭 테마별 설명서를 잘 읽어보자 !!\n\r 위의 명령어는 확인만 해볼수 있지 html 파일로 build 시켜 주지 않는데 hugo -t \u0026lt;테마이름\u0026gt;을 통해 public 내에 build 시킬 수 있다. 테마 이름은 blog/themes 폴더를 들어가보면 된다.  \n7. 컨텐츠 업로드  hugo server 를 통해 홈페이지를 확인해봤다면 본인의 블로그에 업로드 해야하지 않겠는가?\n업로드 순서는 아래를 따라하면 된다.\n  username.github.io 에 push 하기\n $ hugo -t 테마이름 명령을 통해 테마가 적용된 블로그 내용을 public 폴더 내에 build 해준다. $ cd public 을 통해 public 디렉토리로 이동한다. $ git add . 수정된 파일들을 index에 올린다. $ git commit -m \u0026quot;커밋메세지\u0026quot; 변경 내용을 commit하고 $ git push origin master commit을 통해 username.github.io에 upload    blog repo에도 push 하기\n $ cd .. $ git add . $ git commit -m \u0026quot;커밋메세지\u0026quot; $ git push origin master    \n8. 컨텐츠 업로드 반 자동화 하기  아래의 내용을 deploy.sh로 저장하여 blog폴더 내에 두면 다음 부터는 컨텐츠 업로드시 일일히 타이핑하지 않고 deploy.sh \u0026quot;커밋메세지\u0026quot; 를 통해 자동으로 편하게 업로드 할 수 있다.\n나는 다른 이름으로 실행시키고 싶다 하면 deploy 대신 원하는 이름으로 저장을 하면 된다. 대신 .sh 확장자로 저장을 해야 쉘 스크립트로 저장이 되어 실행시킬 수 가 있다.!!\n#!/bin/bash  # Build the project. hugo -t \u0026lt;테마이름\u0026gt; # github.io 레포 push위해 파일 경로 이동 cd public # CNAME 등 레포에서 변경되는 사항이 있으면 먼저 pull하기 위함 git pull origin master # git내용들 추가 git add . # Commit 바꾸기. git commit -m \u0026#34;원하는 커밋 메세지\u0026#34;를 입력하거나 # git commit만 입력시 커밋날짜를 메세지로 자동설정 msg=\u0026#34;rebuilding site `date`\u0026#34; if [ $# -eq 1 ] then msg=\u0026#34;$1\u0026#34; fi git commit -m \u0026#34;$msg\u0026#34; # github.io 레포에 push git push origin master # 상위 폴더인 blog도 push위해 경로 변경 cd .. # blog 저장소 Commit \u0026amp; Push git add . msg=\u0026#34;rebuilding site `date`\u0026#34; if [ $# -eq 1 ] then msg=\u0026#34;$1\u0026#34; fi git commit -m \u0026#34;$msg\u0026#34; git push origin master \n여기서부터는 skip해도 무방하다. 9. custom domain 연결하기  github page를 이용해도 username.github.io가 아닌 개인의 도메인을 연결하여 사용할 수 있다.\n나는 가비아를 통해 도메인을 구매했기 때문에 가비아 기준으로 설명을 하겠다.\n  가비아에 들어가 My 가비아에 들어가 도메인 관리를 클릭 후 DNS 정보의 도메인 연결의 설정을 클릭.   나는 지금 설정을 해놓은 상태라 이렇게 추가가 되어 있다. 레코드 수정을 통해 사진과 같이 추가해주면 된다.\n  설정 후 본인의 username.github.io 에 돌아와 Settings를 클릭한다.\n  스크롤을 내리다 보면 Github pages 항목에 custom domain에 자기의 domain을 입력해 주고 Save를 클릭해주면 된다. 도메인이 적용되는 데 몇분의 시간이 소요 될 수 있고 Enforce HTTPS를 활성화 시켜주면 github 자체에서 Let\u0026rsquo;s Encrypt를 이용한 https를 무료로 적용 시켜 준다.\n  마지막으로 본인의 config.toml파일의 baseURL을 custom domain으로 바꿔주면 된다.\n  github 내에서는 www 나 blog와 같이 sub domain의 사용을 권장하는 데 나는 이상하게 sub domain설정만 하면 dns설정이 바르게 되지 않아 몇 번의 삽질끝에 포기기로 했다.\n\r\n10. 댓글 기능 추가하기  github page는 정적 사이트 호스팅이다보니 자체적으로 댓글 기능을 제공하지는 않기 때문에 외부의 라이브러리를 사용해 추가를 해줄 수 있다.\n유명한 라이브러리로 disqus가 있는 데 나는 disqus의 인터페이스가 지저분하다는 생각이 들어 다른 것을 찾다보니 utterances를 발견하게 되었다.\nutterances 공식 문서를 참고하면 theme도 설정가능하고 label도 설정가능 하다.\n잘 모르겠다 싶으면 아래의 코드를 따라 해도 무방하다. (reop 경로는 바꿔주어야 한다.)\n내가 선택한 테마는 github-light로 밝은 분위기가 깔끔해 선택했다.\n  댓글의 기능을 mapping 해줄 repo를 하나 생성 해준다. 나는 comments라는 repo를 생성했다.\n  그 후 본인의 theme 폴더 내의 layouts/partials 안의 contents의 내용을 포함하는 body-contents 역할의 html파일을 찾아 편집기를 통해 연다.\n  코드가 길게 있을 텐데 contents 끝 자락 부분의 아래나 footer 바로 윗 부분에 코드를 추가 해주면 된다.\n  \u0026lt;div style=\u0026#34;margin-top:200px;\u0026#34;\u0026gt; \u0026lt;script src=\u0026#34;https://utteranc.es/client.js\u0026#34; repo=\u0026#34;gowoonsori/comments\u0026#34; issue-term=\u0026#34;pathname\u0026#34; theme=\u0026#34;github-light\u0026#34; crossorigin=\u0026#34;anonymous\u0026#34; async \u0026gt;\u0026lt;/script\u0026gt; \u0026lt;/div\u0026gt; 이때 repo의 username과 repo이름은 바꿔줘야 한다\n테마별로 구조와 파일명이 조금씩 다를 수 있어 이도 공식 문서를 잘 참조하자. 나는 공식문서에 이는 나와있지 않아 partials폴더 내에 contents를 담당할 것 같은 파일(.html)을 찾아 연뒤 hugo server명령어를 실행 시켜놓고 하나하나 붙여 넣어보며 적당한 위치를 찾았다. \u0026lt;div\u0026gt;로 \u0026lt;script\u0026gt; 를 한번 씌워 margin-top을 준것도 contents 바로 아래에 붙이니 contets들과 너무 붙어 있어 띄어 배치 시켰다. footer의 윗부분에 배치시키거나 저 공간이 싫다하면 div를 제외하고 scirpt부분만 붙여넣으면 된다.\n\r\n✍ 블로그 생성한 후기  한글 레퍼런스가 많이 없어 삽질을 많이 하긴 했지만 덕분에 hugo의 전체적인 파일 구조를 파악할 수 있어 손쉽게 내 입맛에 맞게 커스터 마이징을 할 수 있을 것 같다.\nhugo를 처음 사용하시는 분들께 강조 하고 싶은 것은 본인이 선택한 테마의 문서 (설명서)를 잘 보자는 것이다.\rHugo를 사용한지 한달이 되어가면서 많이 익숙해졌더니 정말 편하다. deploy.sh로 반자동 배포도 가능하고 처음에는 테마와 og설정등 삽질좀 했지만 모두 마치고 익숙해진 지금은 정말 잘 쓰고 있다.\n"
 },
 {
 	"uri": "https://gowoonsori.site/home/",
@@ -32,7 +39,7 @@
 	"title": "ReactToyProject 개발기록",
 	"tags": ["react"],
 	"description": "React를 이용하여 ToyProject &#34;포인트 적립 웹 만들기&#34;",
-	"content": "React를 이용하여 ToyProject 포인트 적립 웹 만들기 💰  Github repo로 가기\r \n\r1. 초기 셋팅하기\rReact로 Toy project 초기 개발환경 세팅하기\n\r\r"
+	"content": "React를 이용하여 ToyProject 포인트 적립 웹 만들기 💰  Github repo로 가기\r \n\r1. 초기 셋팅하기 (front)\rReact로 Toy project 초기 개발환경 세팅하기\n\r\r2. 초기 셋팅하기 (back)\rReact로 Toy project 초기 개발환경 세팅하기\n\r\r"
 },
 {
 	"uri": "https://gowoonsori.site/home/kpu_sw_competition/",
@@ -105,15 +112,64 @@
 	"content": "알고리즘 문제 출처 프로그래머스, 백준, 구름\n\n\r[프로그래머스] 징검다리 c\u0026#43;\u0026#43;\r프로그래머스 Lv4 이분탐색이용한 징검다리 풀이 c\u0026#43;\u0026#43;\n\r\r[프로그래머스] 추석 트래픽\r프로그래머스 Lv3 [카카오]추석 트래픽 문제 풀이\n\r\r[프로그래머스] 피보나치 수\r프로그래머스 Lv2 단계 문제 피보나치수\n\r\r[프로그래머스] 숫자야구\r프로그래머스 Lv2 단계 문제 숫자야구\n\r\r[프로그래머스] 라면공장\r프로그래머스 Lv2 단계 문제 라면공장\n\r\r[프로그래머스] 땅따먹기\r프로그래머스 Lv2 단계 문제 땅따먹기\n\r\r[프로그래머스] 멀리 뛰기\r프로그래머스 Lv2 단계 문제 멀리뛰기\n\r\r[프로그래머스] 베스트 앨범\r프로그래머스 Lv2 단계 문제 베스트 앨범\n\r\r"
 },
 {
-	"uri": "https://gowoonsori.site/tags/avl-tree/",
-	"title": "avl tree",
+	"uri": "https://gowoonsori.site/categories/",
+	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://gowoonsori.site/categories/",
-	"title": "Categories",
+	"uri": "https://gowoonsori.site/tags/express/",
+	"title": "express",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/mysql/",
+	"title": "mysql",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/node.js/",
+	"title": "node.js",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/react/",
+	"title": "react",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/categories/react/",
+	"title": "react",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/",
+	"title": "고소리&#39;s Blog",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/avl-tree/",
+	"title": "avl tree",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -133,22 +189,8 @@
 	"content": ""
 },
 {
-	"uri": "https://gowoonsori.site/",
-	"title": "Hong&#39;s Blog",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "https://gowoonsori.site/tags/red-black-tree/",
 	"title": "red black tree",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://gowoonsori.site/tags/",
-	"title": "Tags",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -261,27 +303,6 @@
 {
 	"uri": "https://gowoonsori.site/tags/next.js/",
 	"title": "next.js",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://gowoonsori.site/tags/node.js/",
-	"title": "node.js",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://gowoonsori.site/tags/react/",
-	"title": "react",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://gowoonsori.site/categories/react/",
-	"title": "react",
 	"tags": [],
 	"description": "",
 	"content": ""
