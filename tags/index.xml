@@ -6,22 +6,76 @@
     <description>Recent content in Tags on 고소리&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Oct 2020 23:33:54 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Nov 2020 18:42:08 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>express</title>
-      <link>https://gowoonsori.site/tags/express/</link>
-      <pubDate>Sat, 24 Oct 2020 23:33:54 +0900</pubDate>
+      <title>오류해결</title>
+      <link>https://gowoonsori.site/tags/%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0/</link>
+      <pubDate>Fri, 06 Nov 2020 18:42:08 +0900</pubDate>
       
-      <guid>https://gowoonsori.site/tags/express/</guid>
+      <guid>https://gowoonsori.site/tags/%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>환경 설정</title>
+      <link>https://gowoonsori.site/tags/%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/</link>
+      <pubDate>Fri, 06 Nov 2020 18:42:08 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://gowoonsori.site/tags/docker/</link>
+      <pubDate>Fri, 06 Nov 2020 18:41:47 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mysql</title>
       <link>https://gowoonsori.site/tags/mysql/</link>
-      <pubDate>Sat, 24 Oct 2020 23:33:54 +0900</pubDate>
+      <pubDate>Fri, 06 Nov 2020 18:41:47 +0900</pubDate>
       
       <guid>https://gowoonsori.site/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://gowoonsori.site/tags/nginx/</link>
+      <pubDate>Fri, 06 Nov 2020 18:41:47 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://gowoonsori.site/tags/ssh/</link>
+      <pubDate>Fri, 06 Nov 2020 18:41:47 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wsl2</title>
+      <link>https://gowoonsori.site/tags/wsl2/</link>
+      <pubDate>Fri, 06 Nov 2020 18:41:47 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/wsl2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>express</title>
+      <link>https://gowoonsori.site/tags/express/</link>
+      <pubDate>Sat, 24 Oct 2020 23:33:54 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/express/</guid>
       <description></description>
     </item>
     

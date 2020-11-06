@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>오류해결 on 고소리&#39;s Blog</title>
+    <link>https://gowoonsori.site/tags/%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0/</link>
+    <description>Recent content in 오류해결 on 고소리&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Nov 2020 18:42:08 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>기타 (환경 설정 및 오류해결)</title>
+      <link>https://gowoonsori.site/etc/</link>
+      <pubDate>Fri, 06 Nov 2020 18:42:08 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/etc/</guid>
+      <description>WSL2에서 Mysql 자동실행 설정하기</description>
+    </item>
+    
+  </channel>
+</rss>

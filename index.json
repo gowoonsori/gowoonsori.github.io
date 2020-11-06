@@ -119,8 +119,43 @@
 	"content": ""
 },
 {
-	"uri": "https://gowoonsori.site/tags/express/",
-	"title": "express",
+	"uri": "https://gowoonsori.site/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/etc/",
+	"title": "기타 (환경 설정 및 오류해결)",
+	"tags": ["환경 설정", "오류해결"],
+	"description": "개발 환경 설정이나 오류 해결하는 방법을 포스팅하는 카테고리입니다.",
+	"content": "\r\rWSL2에서 Mysql 자동실행 설정하기\r\r\r"
+},
+{
+	"uri": "https://gowoonsori.site/tags/%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0/",
+	"title": "오류해결",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/categories/%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0/",
+	"title": "오류해결",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/",
+	"title": "환경 설정",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/docker/",
+	"title": "docker",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -128,6 +163,62 @@
 {
 	"uri": "https://gowoonsori.site/tags/mysql/",
 	"title": "mysql",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/nginx/",
+	"title": "nginx",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/ssh/",
+	"title": "ssh",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/wsl2/",
+	"title": "wsl2",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/categories/wsl2/",
+	"title": "wsl2",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/etc/wsl2-mysql/",
+	"title": "WSL2에서 Mysql 자동실행 설정하기",
+	"tags": ["wsl2", "mysql", "ssh", "nginx", "docker"],
+	"description": "wsl2에서 service 자동실행 설정하기",
+	"content": "[wsl2 설치가 안된 분은 여기를 참고하자]\n나는 이번년도에 wsl2를 알게 되어 wsl2을 통해 편하게 개발을 진행하였다.\n그런데, wsl2가 아직 여럿 불편한 점이 있었고 그 중 하나가 wsl2의 자동 실행 미지원이다.\nwsl2는 컴퓨터 시작시 자동 실행을 지원하지 않아 수동으로 ssh나 mysql, nginx와 같은 프로그램들을 실행시켜줘야하는 불편함이 있었다.\n그래서 정말 많은 구글링과 삽질끝에 해결한 방법을 공유하고자 글을 썼다.\n셋팅 방법  셋팅 방법은 생각보다 별거 없었다.\nwindow에서 컴퓨터 시작을 trigger로 작업 스케줄러에 bash를 통해 start해주면 되는 거다.\n우선, mysql을 자동 실행 설정 방법은 아래와 같고, ssh, nginx, docker등 동일한 방법으로 설정하면 된다.\n\r1. 작업 스케줄러에 작업 새로만들기 윈도우 검색창에 작업 스케줄러를 검색하여 스케줄러를 띄운 후 작업만들기를 클릭한다.\n1-1. 일반 이름은 마음대로 지어도 상관없으며, mysql을 자동실행할 프로그램이라 mysqld라 지었고, 간단하게 설명도 작성해주면 된다.\n여기서 중요한 것이 사용자 또는 그룹 변경을 클릭해서 SYSTEM으로 실행을 시켜줘야 백그라운드로 동작한다. 변경을 안해주면 부팅시마다 까만 cmd창이 꺼졋다 켜지는 것을 볼 수 있다. 안해줘도 무방하나 상당히 거슬리기에 SYSTEM으로 실행시키는 것을 추천드린다.\n\r1-2. 트리거 트리거는 새로만들기를 클릭하여 작업시작에서 로그온할 때를 클릭하고 확인을 누르면 된다.\n시작할 때가 로그온 할때보다 살짝 더 빠르다고 하는데, 노트북에 비밀번호가 걸려있는 경우에 trigger가 작동하지 않기도 해서 로그온 할때를 추천한다.\n1-3. 동작 bash를 이용해서 wsl2를 원격으로 자동실행 시켜줄 것이기 때문에, 동작의 프로그램/스크립트에 bash.exe의 경로를 넣어주고, 인수에 명령어를 입력해주면 된다.\nbash.exe 경로는 특별한일 없으면 아래와 같으니 복사/붙여 넣기 하면 된다. bash경로 : C:\\Window\\System32\\bash.exe 인수 추가 : -c \u0026#34;sudo service mysql start\u0026#34; \n1-4. 기타 설정 조건 이나 설정등 보면서 필요없는 사항들은 체크,체크 해제 해주면된다.\n나는 조건에 충전기 연결 안되도 자동 실행 되게 전원부분은 모두 해제 했다.\n재부팅 해주기전에 한가지 더 설정 해줘야 할 것이 있다. 이대로면 명령어가 sudo 권한 명령어이기 때문에 비밀번호 입력에 막혀 결국 자동 실행이 안되게 된다. 따라서, sudo권한에서 service 명령어는 비밀번호를 해제를 시켜줘야한다.\n\r\n2. sudo service 비밀번호 해제 window 검색창에 bash.exe를 검색하여 실행시키거나, wsl2를 실행시켜 sudo visudo 명령어를 입력하여 설정파일을 편집해주면 된다.\n그러면 nano편집기로 열릴텐데 맨아래 부분에 아래 명령어를 추가하고 ctrl+s로 저장하고 ctrl+x를 눌러 빠져나오자.\n%sudo ALL=NOPASSWD: /usr/sbin/service \n3. 반복 sudo service로 실행 되는 ssh, docker, nginx등 자동실행을 원하는 프로그램들을 1번과정을 반복해주면 된다.\n\n4. 재부팅 후 확인 재부팅 후 mysql 접속을 시도해보면 잘 접속이 되는 것을 볼 수 있다.\n\n다음에 window에서 workbench를 이용해 wsl2의 mysql을 접속하는 방법을 공유하겠다.\n"
+},
+{
+	"uri": "https://gowoonsori.site/categories/%EC%9E%90%EB%8F%99-%EC%8B%A4%ED%96%89/",
+	"title": "자동 실행",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/",
+	"title": "고소리&#39;s Blog",
+	"tags": [],
+	"description": "",
+	"content": "안녕하세요 👋 Hong EuiSung \u0026ndash;@gowoonosori\n환경 설정, 개발 도중 발생한 오류를 해결한 방법이나 제가 공부한 CS지식들을 공유하고자 만든 블로그입니다.\n💻 Languages   C / C++\n  JavaScript\n  ⚡ Interest   네트워크와 웹 지식\n  DB 와 server\n  Blogging ( 어떻게 좋은 글을 쓸 것인가 )\n  \rGithub\rFacebook\rGmail\r"
+},
+{
+	"uri": "https://gowoonsori.site/tags/express/",
+	"title": "express",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -149,20 +240,6 @@
 {
 	"uri": "https://gowoonsori.site/categories/react/",
 	"title": "react",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://gowoonsori.site/tags/",
-	"title": "Tags",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://gowoonsori.site/",
-	"title": "고소리&#39;s Blog",
 	"tags": [],
 	"description": "",
 	"content": ""
