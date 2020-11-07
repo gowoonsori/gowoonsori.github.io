@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-06T19:54:34 KST">
+<meta name="revised" content="2020-11-07T15:38:37 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -16,12 +16,12 @@
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="프로그래머스 Lv2 단계 문제 피보나치수">
+<meta name="description" content="Lv2 단계, dp이용한 문제 풀이">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
 <meta property="og:title" content="[프로그래머스] 피보나치 수" />
-<meta property="og:description" content="프로그래머스 Lv2 단계 문제 피보나치수" />
+<meta property="og:description" content="Lv2 단계, dp이용한 문제 풀이" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gowoonsori.site/solve-algorithm/fibonacci-number/" />
 <meta property="og:image" content="https://images.velog.io/images/gowoonsori/post/e874799e-3386-442a-8be2-b58d1e0ea638/image.png" />
@@ -290,6 +290,21 @@ if (!doNotTrack) {
       
     </li>
         </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/2month-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/2month-retrospect/">블로그 시작한지 2달째 작성해보는 회고</a>
+      
+        
+      
     </li>
         </ul>
     </li>
@@ -736,7 +751,7 @@ if (!doNotTrack) {
     <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
     <span style="color:#66d9ef">int</span> F[<span style="color:#ae81ff">100001</span>];
     F[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; F[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-    
+
     <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>; i<span style="color:#f92672">&lt;=</span>n; i<span style="color:#f92672">++</span>){
         F[i] <span style="color:#f92672">=</span> (F[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> F[i<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] )  <span style="color:#f92672">%</span> <span style="color:#ae81ff">1234567</span>;
     }

@@ -84,12 +84,27 @@
   
   <url>
     <loc>https://gowoonsori.site/categories/</loc>
-    <lastmod>2020-11-06T18:42:08+09:00</lastmod>
+    <lastmod>2020-11-07T14:58:55+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://gowoonsori.site/tags/</loc>
-    <lastmod>2020-11-06T18:42:08+09:00</lastmod>
+    <lastmod>2020-11-07T14:58:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/home/2month-retrospect/</loc>
+    <lastmod>2020-11-07T14:58:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/%ED%9A%8C%EA%B3%A0/</loc>
+    <lastmod>2020-11-07T14:58:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/categories/%ED%9A%8C%EA%B3%A0/</loc>
+    <lastmod>2020-11-07T14:58:55+09:00</lastmod>
   </url>
   
   <url>
@@ -348,12 +363,27 @@
   </url>
   
   <url>
+    <loc>https://gowoonsori.site/tags/dp/</loc>
+    <lastmod>2020-09-20T01:10:10+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gowoonsori.site/solve-algorithm/bulls-and-cows/</loc>
     <lastmod>2020-09-20T01:04:54+09:00</lastmod>
   </url>
   
   <url>
+    <loc>https://gowoonsori.site/tags/%EC%99%84%EC%A0%84%ED%83%90%EC%83%89/</loc>
+    <lastmod>2020-09-20T01:04:54+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gowoonsori.site/solve-algorithm/ramen-factory/</loc>
+    <lastmod>2020-09-20T00:56:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/priority_queue/</loc>
     <lastmod>2020-09-20T00:56:52+09:00</lastmod>
   </url>
   
@@ -379,6 +409,11 @@
   
   <url>
     <loc>https://gowoonsori.site/solve-algorithm/best-album/</loc>
+    <lastmod>2020-09-20T00:08:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/map/</loc>
     <lastmod>2020-09-20T00:08:08+09:00</lastmod>
   </url>
   

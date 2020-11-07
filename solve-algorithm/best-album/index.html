@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-06T19:54:34 KST">
+<meta name="revised" content="2020-11-07T15:38:37 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -16,12 +16,12 @@
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="프로그래머스 Lv2 단계 문제 베스트 앨범">
+<meta name="description" content="Lv2 단계, map(hash table)이용한 문제풀이">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
 <meta property="og:title" content="[프로그래머스] 베스트 앨범" />
-<meta property="og:description" content="프로그래머스 Lv2 단계 문제 베스트 앨범" />
+<meta property="og:description" content="Lv2 단계, map(hash table)이용한 문제풀이" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gowoonsori.site/solve-algorithm/best-album/" />
 <meta property="og:updated_time" content="2020-09-20T00:08:08+09:00" />
@@ -289,6 +289,21 @@ if (!doNotTrack) {
       
     </li>
         </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/2month-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/2month-retrospect/">블로그 시작한지 2달째 작성해보는 회고</a>
+      
+        
+      
     </li>
         </ul>
     </li>
@@ -753,21 +768,21 @@ pop 장르는 3,100회 재생되었으며, pop 노래는 다음과 같습니다.
 
 vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> solution(vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> genres, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> plays) {
     vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> answer;
-    unordered_map<span style="color:#f92672">&lt;</span>string,vector<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;&gt;</span> genre_playlist;  
-    unordered_map<span style="color:#f92672">&lt;</span>string,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> genre_play_cnt;                   
-    vector<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span>string,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> genre_play_cnt_v;                  
-    
+    unordered_map<span style="color:#f92672">&lt;</span>string,vector<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;&gt;</span> genre_playlist;
+    unordered_map<span style="color:#f92672">&lt;</span>string,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> genre_play_cnt;
+    vector<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span>string,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> genre_play_cnt_v;
+
     <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> genres.size(); i<span style="color:#f92672">++</span>){
         genre_playlist[genres[i]].push_back(make_pair(plays[i],i));
         genre_play_cnt[genres[i]]<span style="color:#f92672">+=</span>plays[i];
     }
-    
+
     <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span>k : genre_playlist){
         sort(k.second.begin(),k.second.end(),compare);
     }
     genre_play_cnt_v.assign(genre_play_cnt.begin(),genre_play_cnt.end());
     sort(genre_play_cnt_v.begin(),genre_play_cnt_v.end(),compare_map_value);
-    
+
 
     <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> genre_play_cnt_v.size(); i<span style="color:#f92672">++</span>){
         string genre_name <span style="color:#f92672">=</span> genre_play_cnt_v[i].first;
@@ -781,7 +796,7 @@ vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</sp
 <h3>📃 코드 ( 주석 있는 코드 )</h3><a class="anchor" id="-코드--주석-있는-코드-"></a>
 <details>
   <summary style="font-Weight : bold; font-size : 15px; color : #FE642E;" >    ( 접기 / 펼치기 )</summary>
-  <div>  
+  <div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
@@ -801,7 +816,7 @@ vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</sp
     unordered_map<span style="color:#f92672">&lt;</span>string,vector<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;&gt;</span> genre_playlist;  <span style="color:#75715e">// 장르,vector(재생회수, 노래 고유번호(인덱스) 값)
 </span><span style="color:#75715e"></span>    unordered_map<span style="color:#f92672">&lt;</span>string,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> genre_play_cnt;                   <span style="color:#75715e">// 장르, 총 재생회수
 </span><span style="color:#75715e"></span>    vector<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span>string,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> genre_play_cnt_v;                  <span style="color:#75715e">//genre_play_cnt를 value로 정렬하기 위한 vector
-</span><span style="color:#75715e"></span>    
+</span><span style="color:#75715e"></span>
     <span style="color:#75715e">/*hash map에 데이터 삽입*/</span>
     <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> genres.size(); i<span style="color:#f92672">++</span>){
         genre_playlist[genres[i]].push_back(make_pair(plays[i],i));
@@ -816,7 +831,7 @@ vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</sp
     <span style="color:#75715e">/*장르별 총 재생횟수 내림차순으로 정렬*/</span>
     genre_play_cnt_v.assign(genre_play_cnt.begin(),genre_play_cnt.end());
     sort(genre_play_cnt_v.begin(),genre_play_cnt_v.end(),compare_map_value);
-    
+
     <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> genre_play_cnt_v.size(); i<span style="color:#f92672">++</span>){
         string genre_name <span style="color:#f92672">=</span> genre_play_cnt_v[i].first;
         <span style="color:#75715e">/*음악이 1개면 1개만, 2개이상이면 2개까지만 answer에 저장*/</span>
@@ -827,7 +842,7 @@ vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</sp
     <span style="color:#66d9ef">return</span> answer;
 }
 </code></pre></div>  </div>
-</details>  
+</details>
 </div>
 
 	<div style="margin-top:200px;">

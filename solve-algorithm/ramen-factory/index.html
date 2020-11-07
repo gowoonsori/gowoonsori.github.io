@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-06T19:54:35 KST">
+<meta name="revised" content="2020-11-07T15:38:37 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -16,12 +16,12 @@
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="프로그래머스 Lv2 단계 문제 라면공장">
+<meta name="description" content="Lv2 단계, 우선순위 큐이용한 문제풀이">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
 <meta property="og:title" content="[프로그래머스] 라면공장" />
-<meta property="og:description" content="프로그래머스 Lv2 단계 문제 라면공장" />
+<meta property="og:description" content="Lv2 단계, 우선순위 큐이용한 문제풀이" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gowoonsori.site/solve-algorithm/ramen-factory/" />
 <meta property="og:updated_time" content="2020-09-20T00:56:52+09:00" />
@@ -289,6 +289,21 @@ if (!doNotTrack) {
       
     </li>
         </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/2month-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/2month-retrospect/">블로그 시작한지 2달째 작성해보는 회고</a>
+      
+        
+      
     </li>
         </ul>
     </li>
@@ -719,11 +734,11 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">stock   	dates	  supplies  	k    	result
 4	     [4,10,15]	 [20,5,10]   30	    2
 </code></pre></div><p>❗ <strong>입출력 예 설명</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">현재 밀가루가 4톤 남아 있기 때문에 오늘과 1일 후~3일 후까지 사용하고 나면 모든 밀가루를 다 사용합니다. 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">현재 밀가루가 4톤 남아 있기 때문에 오늘과 1일 후~3일 후까지 사용하고 나면 모든 밀가루를 다 사용합니다.
 
 따라서 4일 후에는 반드시 밀가루를 공급받아야 합니다.
 
-4일째 공급받고 나면 15일 이후 아침에는 9톤의 밀가루가 남아있게 되고, 이때 10톤을 더 공급받으면 19톤이 남아있게 됩니다. 
+4일째 공급받고 나면 15일 이후 아침에는 9톤의 밀가루가 남아있게 되고, 이때 10톤을 더 공급받으면 19톤이 남아있게 됩니다.
 
 15일 이후부터 29일 이후까지 필요한 밀가루는 15톤이므로 더 이상의 공급은 필요 없습니다.
 
@@ -754,7 +769,7 @@ if (!doNotTrack) {
     <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
     priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> q;
     <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
-    
+
     <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> day <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; day <span style="color:#f92672">&lt;</span> k ; day<span style="color:#f92672">++</span>, stock<span style="color:#f92672">--</span>){
         <span style="color:#66d9ef">if</span>( day <span style="color:#f92672">==</span> dates[j]) q.push(supplies[j<span style="color:#f92672">++</span>]);
         <span style="color:#66d9ef">if</span> ( stock <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> ){

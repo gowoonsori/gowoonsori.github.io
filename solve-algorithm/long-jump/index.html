@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-06T19:54:35 KST">
+<meta name="revised" content="2020-11-07T15:38:37 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -16,12 +16,12 @@
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="프로그래머스 Lv2 단계 문제 멀리뛰기">
+<meta name="description" content="Lv2 단계, dp이용한 문제풀이">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
 <meta property="og:title" content="[프로그래머스] 멀리 뛰기" />
-<meta property="og:description" content="프로그래머스 Lv2 단계 문제 멀리뛰기" />
+<meta property="og:description" content="Lv2 단계, dp이용한 문제풀이" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gowoonsori.site/solve-algorithm/long-jump/" />
 <meta property="og:updated_time" content="2020-09-20T00:22:37+09:00" />
@@ -289,6 +289,21 @@ if (!doNotTrack) {
       
     </li>
         </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/2month-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/2month-retrospect/">블로그 시작한지 2달째 작성해보는 회고</a>
+      
+        
+      
     </li>
         </ul>
     </li>
@@ -702,13 +717,13 @@ if (!doNotTrack) {
 의 5가지 방법으로 맨 끝 칸에 도달할 수 있습니다. 멀리뛰기에 사용될 칸의 수 n이 주어질 때, 효진이가 끝에 도달하는 방법이 몇 가지인지 알아내, 여기에 1234567를 나눈 나머지를 리턴하는 함수, solution을 완성하세요. 예를 들어 4가 입력된다면, 5를 return하면 됩니다.</p>
 </blockquote>
 <br>
-<p>❗  <strong>제한사항</strong></p>
+<p>❗ <strong>제한사항</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">n은 1 이상, 2000 이하인 정수입니다.
-</code></pre></div><p>❗  <strong>입출력 예</strong></p>
+</code></pre></div><p>❗ <strong>입출력 예</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">n	result
 4	5
 3	3
-</code></pre></div><p>❗  <strong>입출력 예 설명</strong></p>
+</code></pre></div><p>❗ <strong>입출력 예 설명</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">입출력 예 #1
 위에서 설명한 내용과 같습니다.
 
@@ -745,17 +760,17 @@ if (!doNotTrack) {
 
 <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">solution</span>(<span style="color:#66d9ef">int</span> n) {
     vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span><span style="color:#f92672">&gt;</span> v;
-    
+
     <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n ; i<span style="color:#f92672">++</span>){
-        <span style="color:#66d9ef">if</span>( v.size() <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span> ) v.push_back(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);       
-        <span style="color:#66d9ef">else</span> v.push_back( (v[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">%</span> <span style="color:#ae81ff">1234567</span>) <span style="color:#f92672">+</span> (v[i<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#f92672">%</span> <span style="color:#ae81ff">1234567</span>) );    
+        <span style="color:#66d9ef">if</span>( v.size() <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span> ) v.push_back(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+        <span style="color:#66d9ef">else</span> v.push_back( (v[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">%</span> <span style="color:#ae81ff">1234567</span>) <span style="color:#f92672">+</span> (v[i<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#f92672">%</span> <span style="color:#ae81ff">1234567</span>) );
     <span style="color:#66d9ef">return</span> (v.back()) <span style="color:#f92672">%</span> <span style="color:#ae81ff">1234567</span>;
 }
 </code></pre></div><p><br><br></p>
 <h3>📃 코드 ( 주석 있는 코드 )</h3><a class="anchor" id="-코드--주석-있는-코드-"></a>
 <details>
   <summary style="font-Weight : bold; font-size : 15px; color : #FE642E;" >    ( 접기 / 펼치기 )</summary>
-  <div>  
+  <div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
@@ -763,15 +778,15 @@ if (!doNotTrack) {
 
 <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">solution</span>(<span style="color:#66d9ef">int</span> n) {
     vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span><span style="color:#f92672">&gt;</span> v;
-    
+
     <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n ; i<span style="color:#f92672">++</span>){
         <span style="color:#66d9ef">if</span>( v.size() <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span> ) v.push_back(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);        <span style="color:#75715e">//칸이 1 or 2칸 일때는 경우의 수 인 1, 2를 삽입 해준다
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">else</span> v.push_back( (v[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">%</span> <span style="color:#ae81ff">1234567</span>) <span style="color:#f92672">+</span> (v[i<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#f92672">%</span> <span style="color:#ae81ff">1234567</span>) );    <span style="color:#75715e">//3칸 이상부터는 n-1칸 + n-2칸의 경우의 수를 더해준다.    
-</span><span style="color:#75715e"></span>    }    
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">else</span> v.push_back( (v[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">%</span> <span style="color:#ae81ff">1234567</span>) <span style="color:#f92672">+</span> (v[i<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#f92672">%</span> <span style="color:#ae81ff">1234567</span>) );    <span style="color:#75715e">//3칸 이상부터는 n-1칸 + n-2칸의 경우의 수를 더해준다.
+</span><span style="color:#75715e"></span>    }
     <span style="color:#66d9ef">return</span> (v.back()) <span style="color:#f92672">%</span> <span style="color:#ae81ff">1234567</span>;
 }
 </code></pre></div>  </div>
-</details>  
+</details>
 </div>
 
 	<div style="margin-top:200px;">
