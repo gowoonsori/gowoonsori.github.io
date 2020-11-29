@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 06 Nov 2020 18:41:47 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WSL2에서 Mysql 자동실행 설정하기</title>
-      <link>https://gowoonsori.site/etc/wsl2-mysql/</link>
+      <link>https://gowoonsori.site/wsl2/wsl2-mysql/</link>
       <pubDate>Fri, 06 Nov 2020 18:41:47 +0900</pubDate>
       
-      <guid>https://gowoonsori.site/etc/wsl2-mysql/</guid>
+      <guid>https://gowoonsori.site/wsl2/wsl2-mysql/</guid>
       <description>[wsl2 설치가 안된 분은 여기를 참고하자]
 나는 이번년도에 wsl2를 알게 되어 wsl2을 통해 편하게 개발을 진행하였다.
 그런데, wsl2가 아직 여럿 불편한 점이 있었고 그 중 하나가 wsl2의 자동 실행 미지원이다.

@@ -6,7 +6,34 @@
     <description>Recent content in Tags on 고소리&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Nov 2020 14:58:55 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Nov 2020 12:07:28 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>workbench</title>
+      <link>https://gowoonsori.site/tags/workbench/</link>
+      <pubDate>Sun, 29 Nov 2020 12:07:28 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/workbench/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wsl2</title>
+      <link>https://gowoonsori.site/tags/wsl2/</link>
+      <pubDate>Sun, 29 Nov 2020 12:07:28 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/wsl2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>포트포워딩</title>
+      <link>https://gowoonsori.site/tags/%ED%8F%AC%ED%8A%B8%ED%8F%AC%EC%9B%8C%EB%94%A9/</link>
+      <pubDate>Sun, 29 Nov 2020 12:07:28 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/%ED%8F%AC%ED%8A%B8%ED%8F%AC%EC%9B%8C%EB%94%A9/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>회고</title>
       <link>https://gowoonsori.site/tags/%ED%9A%8C%EA%B3%A0/</link>
@@ -67,15 +94,6 @@
       <pubDate>Fri, 06 Nov 2020 18:41:47 +0900</pubDate>
       
       <guid>https://gowoonsori.site/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>wsl2</title>
-      <link>https://gowoonsori.site/tags/wsl2/</link>
-      <pubDate>Fri, 06 Nov 2020 18:41:47 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/tags/wsl2/</guid>
       <description></description>
     </item>
     

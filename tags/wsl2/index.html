@@ -6,7 +6,7 @@
     <title></title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-13T15:56:22 KST">
+<meta name="revised" content="2020-11-29T13:23:05 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -22,7 +22,7 @@
 <meta property="og:description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gowoonsori.site/tags/wsl2/" />
-<meta property="og:updated_time" content="2020-11-06T18:41:47+09:00" />
+<meta property="og:updated_time" content="2020-11-29T12:07:28+09:00" />
 
 
 
@@ -176,7 +176,7 @@ if (!doNotTrack) {
           <i class="fas fa-chevron-down ddexp"></i>
         
       
-          <a href="/home/">blogging</a>
+          <a href="/home/">Blogging</a>
       
         <ul>
               
@@ -420,7 +420,7 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/etc/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/wsl2/" class="dd-item haschildren
         item_level_$level
         ">
 
@@ -430,12 +430,12 @@ if (!doNotTrack) {
       <i class="fas fa-chevron-right ddexp"></i>
         
       
-          <a href="/etc/">기타 (환경 설정 및 오류해결)</a>
+          <a href="/wsl2/">WSL2</a>
       
         <ul>
               
 
-    <li data-nav-id="https://gowoonsori.site/etc/wsl2-mysql/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/wsl2/port-forwarding/" class="dd-item
         item_level_$level
         ">
 
@@ -443,7 +443,22 @@ if (!doNotTrack) {
       
       
       
-          <a href="/etc/wsl2-mysql/">WSL2에서 Mysql 자동실행 설정하기</a>
+          <a href="/wsl2/port-forwarding/">WSL2 포트포워딩과 window에서 workbench로 접속</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/wsl2-mysql/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/wsl2/wsl2-mysql/">WSL2에서 Mysql 자동실행 설정하기</a>
       
         
       
@@ -489,9 +504,62 @@ if (!doNotTrack) {
 </div>
 
 
-   <article class="post etc">
+   <article class="post WSL2">
     <header class="post-header">
-        <h2 class="post-title"><a href="/etc/wsl2-mysql/">WSL2에서 Mysql 자동실행 설정하기</a></h2>
+        <h2 class="post-title"><a href="/wsl2/port-forwarding/">WSL2 포트포워딩과 window에서 workbench로 접속</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>WSL2를 이용하여 개발을 진행서 외부에서 접근하고 싶거나, 배포를 위해 접근하고 싶을 수가 있는데, 문제가 되는 것이 WSL2는 VM과 같은 환경이라 별도의 IP를 갖는다는 점이다.
+그러면 포트포워딩을 하면 되지 않느냐라고 할 수 있는데 맞다 포트포워딩을 하면된다 하지만 재부팅을 할때마다 변경되는 IP에 매번 포트 포워딩을 할 수 없는 노릇이기에 Powershell 파일을 이용하여 재부팅마다 wsl2의 ip를 잡아 특정 포트를 포트포워딩 하는 방법을 남기려고 한다.
+
+사용자 생성 모든 db,table에 접근 가능한 root권한을 가진 사용자로 외부에서 db를 접근하는 것은 위험한 일일 수 있으니 외부에서 접근하고자 하는 db만 접근권한을 가진 사용자를 생성하여 이를 이용해 접근하자. <a class="read-more" href="/wsl2/port-forwarding/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://gowoonsori.sitetags/wsl2/">wsl2</a>
+            
+                <a class="label label-default" href="https://gowoonsori.sitetags/%ED%8F%AC%ED%8A%B8%ED%8F%AC%EC%9B%8C%EB%94%A9/">포트포워딩</a>
+            
+                <a class="label label-default" href="https://gowoonsori.sitetags/workbench/">workbench</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post WSL2">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/wsl2/">WSL2</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>WSL2 포트포워딩과 window에서 workbench로 접속WSL2에서 Mysql 자동실행 설정하기 <a class="read-more" href="/wsl2/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://gowoonsori.sitetags/wsl2/">wsl2</a>
+            
+                <a class="label label-default" href="https://gowoonsori.sitetags/%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/">환경 설정</a>
+            
+                <a class="label label-default" href="https://gowoonsori.sitetags/%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0/">오류해결</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post WSL2">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/wsl2/wsl2-mysql/">WSL2에서 Mysql 자동실행 설정하기</a></h2>
     </header>
     <section class="post-excerpt">
         <p>[wsl2 설치가 안된 분은 여기를 참고하자]
@@ -500,7 +568,7 @@ if (!doNotTrack) {
 wsl2는 컴퓨터 시작시 자동 실행을 지원하지 않아 수동으로 ssh나 mysql, nginx와 같은 프로그램들을 실행시켜줘야하는 불편함이 있었다.
 그래서 정말 많은 구글링과 삽질끝에 해결한 방법을 공유하고자 글을 썼다.
 
-셋팅 방법  셋팅 방법은 생각보다 별거 없었고 원리는 window에서 컴퓨터 시작할때마다 스크립트 파일을 통해 자동으로 실행 시켜주는 것이다. <a class="read-more" href="/etc/wsl2-mysql/">&raquo;</a></p>
+셋팅 방법  셋팅 방법은 생각보다 별거 없었고 원리는 window에서 컴퓨터 시작할때마다 스크립트 파일을 통해 자동으로 실행 시켜주는 것이다. <a class="read-more" href="/wsl2/wsl2-mysql/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          

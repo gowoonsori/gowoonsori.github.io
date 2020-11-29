@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-11-13T15:56:21 KST">
+<meta name="revised" content="2020-11-29T13:23:04 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -178,7 +178,7 @@ if (!doNotTrack) {
           <i class="fas fa-chevron-down ddexp"></i>
         
       
-          <a href="/home/">blogging</a>
+          <a href="/home/">Blogging</a>
       
         <ul>
               
@@ -423,7 +423,7 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/etc/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/wsl2/" class="dd-item haschildren
         item_level_$level
         ">
 
@@ -433,12 +433,12 @@ if (!doNotTrack) {
       <i class="fas fa-chevron-right ddexp"></i>
         
       
-          <a href="/etc/">기타 (환경 설정 및 오류해결)</a>
+          <a href="/wsl2/">WSL2</a>
       
         <ul>
               
 
-    <li data-nav-id="https://gowoonsori.site/etc/wsl2-mysql/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/wsl2/port-forwarding/" class="dd-item
         item_level_$level
         ">
 
@@ -446,7 +446,22 @@ if (!doNotTrack) {
       
       
       
-          <a href="/etc/wsl2-mysql/">WSL2에서 Mysql 자동실행 설정하기</a>
+          <a href="/wsl2/port-forwarding/">WSL2 포트포워딩과 window에서 workbench로 접속</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/wsl2-mysql/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/wsl2/wsl2-mysql/">WSL2에서 Mysql 자동실행 설정하기</a>
       
         
       
@@ -503,7 +518,7 @@ if (!doNotTrack) {
   
     <li class="breadcrumb-item ">
       <a class="text-link" href="/home/">
-        blogging
+        Blogging
       </a>
     </li>
 	
@@ -1044,7 +1059,7 @@ name의 길이는 1 이상 20 이하입니다.
 시흥시의 도로는모두 양방향 통행이 가능하며, 모든 교차로를 이용할 수 있다면 어느 교차로에서 든지 다른 교차로로 갈 수 있습니다.시흥시 도로의 이름은 오직 2개의 교차로를 연결하고 다른 교차로는 통과하지 않습니다.
 
 예를 들어서5 개의 교차로I1,I2,I3,I4,I5가 있고  6개의 도로가있다고 가정합니다.
-</code></pre></div><p><img src="./graph.png" alt="graph"></p>
+</code></pre></div><p><img src="./graph.png?classes=border,shadow" alt="graph"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">도로 1은I1과I2를연결합니다.
 도로 2는I2와I3을연결합니다.
 도로 3은I1과I3을연결합니다.
@@ -1217,7 +1232,7 @@ SFO
 </div>
 <br>
 <p>문제를 보고 <code>dfs</code> 나 <code>bfs</code>로 풀면 되겠다 생각하고 접근했으며, 도착하기까지의 경로가 여러개 일 수 있기 때문에 모든 경로를 저장하는 배열을 전역변수로 선언하여 경로를 구하고 알파벳순으로 <code>sort</code>하여 가장 앞의 경로를 답으로 제출하는 식으로 풀이를 진행했다.</p>
-<p><img src="./timeLimit.PNG" alt="time limit">
+<p><img src="./timeLimit.PNG?classes=border,shadow" alt="time limit">
 풀이를 진행하고 보니 4개의 case중 1개의 case가 time Limit으로 부분 통과 하였다.</p>
 
 <link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
@@ -1486,13 +1501,13 @@ bfs를 이용해서 문제를 풀이 했고, <code>미로 찾기</code>같이 <c
 행은 위에서 아래로 번호가 매겨지고 열은 왼쪽에서 오른쪽으로 번호가 매겨진다고 가정합니다.
 
 예를 들어 배열이 다음과 같습니다.
-</code></pre></div><p><img src="./1.jpg" alt="1"></p>
+</code></pre></div><p><img src="./1.jpg?classes=border,shadow" alt="1"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">위 배열의 위치 (3,4)에 있는 나무의 양은 15 입방 피트 입니다.
 
 산림청은 숲의 직사각형의 토지에 목재의 총량을 계산하여 토지 임대 자료로 활용하려고 합니다.
 
 직사각형은 왼쪽 상단 모서리와 오른쪽 하단 모서리의 나무 위치로 나타냅니다. 예를 들어서 위치 (2,2) 와 (3,4) 모서리를 가지는 직사각형은 아래 그림과 같습니다.
-</code></pre></div><p><img src="./2.jpg" alt="2"></p>
+</code></pre></div><p><img src="./2.jpg?classes=border,shadow" alt="2"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">이 직사각형 토지의 목재 총량은 76 입방 피트입니다.
 
 마찬가지로 직사각형 모서리가 (4,2)와 (4,2)인 경우의 목재양은 하나 뿐인 나무의 양 20 입방 피트입니다.
