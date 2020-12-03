@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WSL2 on 고소리&#39;s Blog</title>
+    <title>wsl2 on 고소리&#39;s Blog</title>
     <link>https://gowoonsori.site/wsl2/</link>
-    <description>Recent content in WSL2 on 고소리&#39;s Blog</description>
+    <description>Recent content in wsl2 on 고소리&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 06 Nov 2020 18:42:08 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/wsl2/index.xml" rel="self" type="application/rss+xml" />

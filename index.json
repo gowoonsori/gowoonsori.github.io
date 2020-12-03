@@ -176,7 +176,7 @@
 },
 {
 	"uri": "https://gowoonsori.site/wsl2/",
-	"title": "WSL2",
+	"title": "wsl2",
 	"tags": ["wsl2", "환경 설정", "오류해결"],
 	"description": "wsl2에 대한 환경설정, 오류에 관한 글",
 	"content": "\r\rWSL2 포트포워딩과 window에서 workbench로 접속\r\r\rWSL2에서 Mysql 자동실행 설정하기\r\r\r"
