@@ -6,7 +6,25 @@
     <description>Recent content in Categories on 고소리&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Nov 2020 12:07:28 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Dec 2020 00:43:18 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>https://gowoonsori.site/categories/linux/</link>
+      <pubDate>Fri, 11 Dec 2020 00:43:18 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>packet capture</title>
+      <link>https://gowoonsori.site/categories/packet-capture/</link>
+      <pubDate>Fri, 11 Dec 2020 00:43:18 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/categories/packet-capture/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>wsl2</title>
       <link>https://gowoonsori.site/categories/wsl2/</link>

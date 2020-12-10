@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on 고소리&#39;s Blog</title>
+    <link>https://gowoonsori.site/categories/linux/</link>
+    <description>Recent content in linux on 고소리&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Dec 2020 00:43:18 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://gowoonsori.site/linux/</link>
+      <pubDate>Fri, 11 Dec 2020 00:43:18 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/linux/</guid>
+      <description>packet capture program 만들기</description>
+    </item>
+    
+  </channel>
+</rss>
