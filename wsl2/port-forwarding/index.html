@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-12-11T01:21:39 KST">
+<meta name="revised" content="2020-12-19T23:08:59 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -689,7 +689,10 @@ wsl2-portFowarding
 <p><img src="error.png?classes=border,shadow" alt="error"></p>
 <p>사용자를 &lsquo;%&lsquo;로 만들어 wsl2의 ip로 접근을 하면 window의 workbench에서 접근이 가능하다.
 <img src="success.PNG?classes=border,shadow" alt="success"></p>
-<p>대신 재접속시마다 ip가 바뀌기 때문에 ifconfig로 ip확인후 접속하는게 귀찮기는 하다.</p>
+<p>wsl에서 mysql포트번호를 3306그대로 이용할 시 window의 mysql포트번호가 3306이라면 충돌이 일어나기때문에 ifconfig로 ip확인후 접속해야 한다.</p>
+<p>하지만 이러면 매번 ip를 입력하는게 귀찮기 때문에 wsl이나 window의 mysql의 포트번호를 바꿔 사용하면 간단하게 해결이된다.</p>
+<p>나는 wsl의 mysql의 포트번호를 3307로 하고 3307을 포트포워딩 설정을 해주었는데 그러면 window에서도 localhost:3307로 접속을 하면 잘 접속이되는 것을 볼 수 있다.</p>
+<p><img src="success2.PNG?classes=border,shadow" alt="success2"></p>
 <p><br><br></p>
 <hr>
 <h2>Reference</h2><a class="anchor" id="reference"></a>
