@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://gowoonsori.site/java/jvm/</loc>
+    <lastmod>2021-01-22T11:03:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/books/</loc>
+    <lastmod>2021-01-22T10:33:13+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gowoonsori.site/home/react-project/1_settings/</loc>
     <lastmod>2020-09-28T23:33:54+09:00</lastmod>
   </url>
@@ -10,6 +20,11 @@
   <url>
     <loc>https://gowoonsori.site/home/start-blog/</loc>
     <lastmod>2020-09-18T18:51:53+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/java/datatype/</loc>
+    <lastmod>2021-01-22T11:04:35+09:00</lastmod>
   </url>
   
   <url>
@@ -40,6 +55,11 @@
   <url>
     <loc>https://gowoonsori.site/home/kpu_sw_competition/final/</loc>
     <lastmod>2020-10-18T19:22:51+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/java/thread/</loc>
+    <lastmod>2021-01-22T11:04:42+09:00</lastmod>
   </url>
   
   <url>
@@ -78,22 +98,67 @@
   </url>
   
   <url>
+    <loc>https://gowoonsori.site/categories/</loc>
+    <lastmod>2021-01-22T11:04:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/java/</loc>
+    <lastmod>2021-01-22T11:04:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/categories/java/</loc>
+    <lastmod>2021-01-22T11:04:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/</loc>
+    <lastmod>2021-01-22T11:04:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/thread/</loc>
+    <lastmod>2021-01-22T11:04:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/datatype/</loc>
+    <lastmod>2021-01-22T11:04:35+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/java/</loc>
+    <lastmod>2021-01-22T11:03:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/jvm/</loc>
+    <lastmod>2021-01-22T11:03:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/categories/books/</loc>
+    <lastmod>2021-01-22T10:32:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/clean-code/</loc>
+    <lastmod>2021-01-22T10:32:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/books/cleancode/</loc>
+    <lastmod>2021-01-22T10:32:58+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gowoonsori.site/tags/2020/</loc>
     <lastmod>2021-01-05T23:53:36+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://gowoonsori.site/home/2020-retrospect/</loc>
-    <lastmod>2021-01-05T23:53:36+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/categories/</loc>
-    <lastmod>2021-01-05T23:53:36+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/</loc>
     <lastmod>2021-01-05T23:53:36+09:00</lastmod>
   </url>
   

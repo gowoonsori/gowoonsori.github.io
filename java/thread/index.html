@@ -1,0 +1,1707 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+	멀티 스레딩 :: 고소리&#39;s Blog
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2021-01-22T12:05:11 KST">
+<meta name="robots" content="index,follow" /> 
+<meta name="googlebot" content="index,follow" />
+
+<title>멀티 스레딩 :: 고소리&#39;s Blog</title>
+
+<meta name="author" content="gowoonsori">
+
+<meta name="description" content="Thread와 프로세스, 동기화, 데드락에 대한 개념과 구현을 도와주는 패키지,클래스,메서드 정리">
+<link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
+<link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
+
+<meta property="og:title" content="멀티 스레딩" />
+<meta property="og:description" content="Thread와 프로세스, 동기화, 데드락에 대한 개념과 구현을 도와주는 패키지,클래스,메서드 정리" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://gowoonsori.site/java/thread/" />
+<meta property="og:image" content="https://gowoonsori.site/../images/favicon.png" />
+<meta property="og:updated_time" content="2021-01-22T11:04:42+09:00" />
+
+
+
+
+
+
+<link rel="stylesheet" href='https://gowoonsori.site/sass/layout.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.main.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.menu.css'>
+<link href='/vendor/FontAwesome/fontawesome-free-5.14.0-web/css/all.min.css' rel="stylesheet"> 
+<link rel="stylesheet" href='/css/docport.css'>
+
+
+
+
+
+<script src='/vendor/jquery/jquery-3.5.1.min.js'></script>
+<script src='/js/docport.js'></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/gowoonsori.site";
+</script>
+<script>
+      (function(j,en,ni,fer) {
+          j['dmndata']=[];j['jenniferFront']=function(args){window.dmndata.push(args)};
+          j['dmnaid']=fer;j['dmnatime']=new Date();j['dmnanocookie']=false;j['dmnajennifer']='JENNIFER_FRONT@INTG';
+          var b=Math.floor(new Date().getTime() / 60000) * 60000;var a=en.createElement(ni);
+          a.src='https://d-collect.jennifersoft.com/'+fer+'/demian.js?'+b;a.async=true;
+          en.getElementsByTagName(ni)[0].parentNode.appendChild(a);
+      }(window,document,'script','b13ba63e'));
+  </script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-178493752-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+    
+  </head>
+
+  <body data-url="/java/thread/"
+
+  class="">
+
+<style type="text/css">
+  #debug{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 3.5rem;
+    margin-bottom: .35rem;
+    padding: 0 2rem;
+    position: fixed;
+    left: 0;      right: 0;     top: 0;
+   
+    top:0px;
+    
+    min-height: 150px;
+
+    background-color: white;
+    border: 3px solid red;
+    z-index: 10000 ;
+    word-wrap: all;
+    overflow: auto;
+  }
+</style>
+ 
+
+
+    
+    
+    <header style="">
+        <div>
+    
+    <div class="burger ">
+        <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">&#9776;</a>
+    </div>
+    
+    <img src="/images/favicon.png" style="margin-top:3px; width: 20px; height: 20px;">
+    <div>
+	
+		
+	    	<a class='baselink' href='https://gowoonsori.site'>고소리's Blog</a>
+	  	
+	</div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/gowoonsori"  rel="noopener">
+                  Github
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://gowoonsori.github.io"  rel="noopener">
+                  Blog
+                </a>
+            </li>
+    </nav>
+
+</div>
+    </header>
+    
+
+    <article>
+      
+      <aside class="">
+        
+<div class="search">
+	<div class="searchbox">
+	  <input data-search-input id="search-by" type="text" placeholder="Type to search...">
+	</div>
+	<script type="text/javascript" src="/vendor/lunr/lunr.min.js"></script>
+	<script type="text/javascript" src="/vendor/auto-complete/auto-complete.js"></script>
+	<link href="/vendor/auto-complete/auto-complete.css" rel="stylesheet">
+	<script type="text/javascript">
+	  
+	      var baseurl = "https:\/\/gowoonsori.site";
+	  
+	</script>
+	<script type="text/javascript" src="/js/search.js"></script>
+</div>
+	
+		
+	    	
+	    
+	<div id="close_menu">
+  <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">
+      <i class="fa fa-lg fa-times"></i>
+  </a>
+</div>
+
+<ul class="menu">
+
+    <li data-nav-id="https://gowoonsori.site/books/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/books/">Books</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/books/cleancode/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/books/cleancode/">Clean Code</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/home/" class="dd-item alwaysopen haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+        
+      
+          <a href="/home/">Blogging</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/start-blog/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/start-blog/">블로그에 처음 발을 내디디다. 🦵</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/start-hugo/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/start-hugo/">Hugo와 Github page를 사용하여 블로그 만들기</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/react-project/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/react-project/">ReactToyProject 개발기록</a>
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/react-project/1_settings/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/react-project/1_settings/">1. 초기 셋팅하기 (front)</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/react-project/2_backsettings/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/react-project/2_backsettings/">2. 초기 셋팅하기 (back)</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/kpu_sw_competition/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/kpu_sw_competition/">KPU S/W 경진대회 예선 후기 (코딩 테스트)</a>
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/kpu_sw_competition/final/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/kpu_sw_competition/final/">KPU S/W 경진대회 본선 후기 (코딩 테스트)</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/2020-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/2020-retrospect/">2020년을 보내며</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/2month-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/2month-retrospect/">블로그 시작한지 2달째 작성해보는 회고</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/data-structure/">자료구조 ( Data Structure )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/">🎄 트리 ( Tree )</a>
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/redblacktree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/redblacktree/">🔴 레드 블랙 트리 (Red Black Tree)</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/avltree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/avltree/">⚫ AVL Tree</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/algorithm/">알고리즘 ( Algorithm )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/sorting-algorithm/">Sorting Algorithm (정렬 알고리즘)</a>
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/counting-sort/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/sorting-algorithm/counting-sort/">Counting Sort ( 계수 정렬 )</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/java/" class="dd-item parent haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+        
+      
+          <a href="/java/">Java</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/jvm/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/jvm/">JVM과 자바 실행</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/datatype/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/datatype/">DataType과 변수</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/thread/" class="dd-item parent active
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/thread/">멀티 스레딩</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/linux/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/linux/">Linux</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/packet_capture/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/packet_capture/">packet capture program 만들기</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/wsl2/">wsl2</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/port-forwarding/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/wsl2/port-forwarding/">WSL2 포트포워딩과 window에서 workbench로 접속</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/wsl2-mysql/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/wsl2/wsl2-mysql/">WSL2에서 Mysql 자동실행 설정하기</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+
+
+</ul>
+	
+		
+	    	<center>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/gowoonsori" aria-label="Follow @gowoonsori on GitHub">Follow@gowoonsori</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/gowoonsori/gowoonsori.github.io" data-icon="octicon-star" aria-label="Star gowoonsori/gowoonsori.github.io on GitHub">Star</a>
+</center>
+<!-- <center style='margin-top:20px'>
+    <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgowoonsori.site&count_bg=%23426EAE&title_bg=%23555555&icon=&icon_color=%238E4F4F&title=%F0%9F%93%8C+Today+%2F+Total++&edge_flat=false"/></a>
+</center> -->
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+	    
+	
+      </aside>
+      
+
+      <section class="page ">
+      
+	
+		
+    
+    
+    <nav id="breadcrumb" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+  
+  	
+		
+  
+  	
+	<li class="breadcrumb-item ">
+      <a class="text-link" href="https://gowoonsori.site">
+        Home
+      </a>
+    </li>
+	
+  
+    <li class="breadcrumb-item ">
+      <a class="text-link" href="/java/">
+        Java
+      </a>
+    </li>
+	
+  	
+  
+    <li class="breadcrumb-item active">
+      
+        멀티 스레딩
+      
+    </li>
+
+      </ol>
+    </nav>
+    
+    
+
+    
+	
+		
+        
+		
+		
+		
+		
+		
+		
+
+		
+			<h1>멀티 스레딩</h1>
+        
+
+		
+										
+		
+
+		
+
+
+	
+	
+
+	
+	
+	<div class="jump-to-section">
+		<span onclick="$h = $(this);$h.next('nav').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('nav').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+  			Jump to Section
+  			<i style=";" class="fas fa-chevron-right"></i>
+		</span>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#thread란">Thread란?</a>
+      <ul>
+        <li><a href="#프로세스란">프로세스란</a></li>
+        <li><a href="#쓰레드">쓰레드</a></li>
+        <li><a href="#병행성동시성-concurrency">병행성(동시성) (Concurrency)</a></li>
+      </ul>
+    </li>
+    <li><a href="#thread-클래스와-runnable-인터페이스">Thread 클래스와 Runnable 인터페이스</a>
+      <ul>
+        <li><a href="#thread-클래스-extends">Thread 클래스 extends</a></li>
+        <li><a href="#runnable-인터페이스-implements">Runnable 인터페이스 implements</a></li>
+        <li><a href="#차이점">차이점</a></li>
+      </ul>
+    </li>
+    <li><a href="#쓰레드의-상태">쓰레드의 상태</a>
+      <ul>
+        <li><a href="#start와-run">Start와 run</a></li>
+        <li><a href="#쓰레드-상태-제어-메서드">쓰레드 상태 제어 메서드</a></li>
+      </ul>
+    </li>
+    <li><a href="#쓰레드의-우선순위">쓰레드의 우선순위</a>
+      <ul>
+        <li><a href="#메서드">메서드</a></li>
+        <li><a href="#순환할당-round-robin-방식">순환할당 (Round Robin) 방식</a></li>
+      </ul>
+    </li>
+    <li><a href="#main-쓰레드">Main 쓰레드</a></li>
+    <li><a href="#동기화">동기화</a>
+      <ul>
+        <li><a href="#synchronized-이용">Synchronized 이용</a></li>
+        <li><a href="#locks">Locks</a></li>
+        <li><a href="#synchronized-와-lock의-차이점">Synchronized 와 Lock의 차이점</a></li>
+        <li><a href="#volatile">volatile</a></li>
+      </ul>
+    </li>
+    <li><a href="#데드락">데드락</a>
+      <ul>
+        <li><a href="#데드락-발생-조건이유">데드락 발생 조건(이유)</a></li>
+        <li><a href="#데드락-해결-방법">데드락 해결 방법</a></li>
+        <li><a href="#데드락-방지-방법들">데드락 방지 방법들</a></li>
+      </ul>
+    </li>
+    <li><a href="#쓰레드-풀">쓰레드 풀</a>
+      <ul>
+        <li><a href="#장점">장점</a></li>
+        <li><a href="#단점">단점</a></li>
+        <li><a href="#쓰레드-풀의-구조">쓰레드 풀의 구조</a></li>
+        <li><a href="#생성-메서드">생성 메서드</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+	
+	
+
+	<div class="content"><h2>Thread란?</h2><a class="anchor" id="thread란"></a>
+<p>쓰레드라는 개념을 이해하기 위해서는 <code>프로세스</code>와 <code>병행성(Concurrency)</code>의 개념을 알면 더 좋을 것같다.</p>
+<br>
+<h3>프로세스란</h3><a class="anchor" id="프로세스란"></a>
+<p>프로세스의 사전적 의미는 컴퓨터에서 실행되고 있는 컴퓨터 프로그램을 말한다. 여러 개의 프로세서를 사용하는 것을 <code>멀티 프로세싱</code>이라고 하며, 같은 시간에 여러 개의 프로그램을 띄우는 시분할 방식을 멀티태스킹 이라고 한다.</p>
+<h4>특징</h4><a class="anchor" id="특징"></a>
+<ul>
+<li>프로그램이 실행되는 단위</li>
+<li>모든 프로그램은 실행 될 때 하나 이상의 프로세스를 갖는다.</li>
+<li>각 프로세스는 다른 프로세스의 변수나 자료 구조에 접근할 수 없다.</li>
+<li>각 프로세스는 별도의 주소공간에서 실행된다.</li>
+<li>컴퓨터 메모리에 적재되어 실행되어 있는 프로그램을 말한다.</li>
+<li>프로세스의 상태는 생성, 실행, 준비, 대기, 종료가 있다.</li>
+</ul>
+<br>
+<h3>쓰레드</h3><a class="anchor" id="쓰레드"></a>
+<p>프로세스의 특정한 수행 경로로 프로세스가 할당 받은 자원을 이용하는 실행의 단위라고 할 수 있다.</p>
+<p>하나의 프로세스에서 여러개의 스레드를 사용하는 것을 <code>멀티 스레딩</code>이라고 한다.</p>
+<h4>특징</h4><a class="anchor" id="특징-1"></a>
+<ul>
+<li>
+<p>프로세스 내에서 스택/레지스터만 각각 할당 받고 나머지 메모리 영역은 공유한다.</p>
+<p><strong>스택은 각각 할당하는 이유</strong> : 스레드는 한 기능을 수행하는 독립적인 단위로써 최소한의 메모리 영역(스택)은 각각 할당해야 독립적으로 수행이 가능하다.</p>
+</li>
+</ul>
+<br>
+<h3>병행성(동시성) (Concurrency)</h3><a class="anchor" id="병행성동시성-concurrency"></a>
+<p><code>병렬성</code>과 헷갈릴 수 있는데 병행성은 <code>동시에 실행되는 것 처럼 보이는 것</code>으로 싱글코어에서는 <code>시분할기법</code>으로 수행할 수 있고 멀티코어에서는 물리적으로 병렬로 동작할 수 있다.</p>
+<p><code>병렬성(Parallelism)</code>은 <code>실제로 동시에 작업이 처리되는 것</code>으로 멀티코에에서만 동작이 가능하다.</p>
+<p><br><br></p>
+<h2>Thread 클래스와 Runnable 인터페이스</h2><a class="anchor" id="thread-클래스와-runnable-인터페이스"></a>
+<p>자바에서 쓰레드를 작성하는 방법에는 <code>Thread 클래스</code>와 <code>Runnable 인터페이스</code>를 사용하는 두가지 방법이 있다.</p>
+<br>
+<h3>Thread 클래스 extends</h3><a class="anchor" id="thread-클래스-extends"></a>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">){</span>
+    ExampleThread th1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ExampleThread<span style="color:#f92672">();</span>
+    Thread th2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(){</span>
+      <span style="color:#a6e22e">@Override</span>
+      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">(){</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;thread2&#34;</span><span style="color:#f92672">);</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    th1<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+    th2<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExampleThread</span> <span style="color:#66d9ef">extends</span> Threads<span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">(){</span>
+      System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Thread 1&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Thread 클래스를 확장하여 생성하는 방법으로는 thread클래스를 상속받아 생성하는 방법인 <code>th1</code>과 <code>th2</code>와 같이 익명 객체를 사용하여 생성하는 방법 2가지 가 존재하고 두번째방법인 <code>익명 클래스</code>를 이용하는 방법은 쓰레드가 오직 한번만 수행 될때 사용하는 방법이다.</p>
+<br>
+<h3>Runnable 인터페이스 implements</h3><a class="anchor" id="runnable-인터페이스-implements"></a>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">){</span>
+    Runnable r <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ExampleThread<span style="color:#f92672">();</span>
+    Thread th1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>r<span style="color:#f92672">);</span>
+    <span style="color:#75715e">//Thread th1 = new Thread(new ExampleThread());
+</span><span style="color:#75715e"></span>
+    Thread th2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(()-&gt;{</span>
+      System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;thread2&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">});</span>
+
+    th1<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+    th2<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExampleThread</span> <span style="color:#66d9ef">implements</span> Runnalbe<span style="color:#f92672">{}</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">(){</span>
+      System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Thread 1&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Runnable 인터페이스를 이용한 Thread생성방법도 두가지가 존재한다.</p>
+<ol>
+<li>
+<p>Runnalbe 인터페이스를 implements한 class를 생성자 매개변수로 이용하여 생성하는 방법</p>
+</li>
+<li>
+<p>Runnable 인터페이스는 run메서드밖에 존재하지 않는 점을 이용하여 <code>람다</code>를 이용해 바로 run메서드를 정의하여 생성하는 방법</p>
+</li>
+</ol>
+<br>
+<h3>차이점</h3><a class="anchor" id="차이점"></a>
+<ol>
+<li>
+<p>Thread 클래스를 extends하는 방법은 class를 상속받는 것인 만큼 Thread의 다른 메서드들을 이용이 가능하지만 다른 class를 상속받지 못하지만, Runnable 인터페이스를 구현하는 것은 다른 class를 상속받을 수 있고 조금 더 <code>객체 지향적</code>이다.</p>
+</li>
+<li>
+<p>Thread클래스를 상속받는 class는 run 메서드가 종료되면 가비지 컬렉션이 되기 때문에 재사용이 불가능하지만, Runnable 인터페이스를 구현한 방법은 Thread 클래스는 가비지 컬랙션이 되더라도 구현체는 가비지 컬랙션이 되지 않기 때문에 재사용이 가능하다.</p>
+</li>
+<li>
+<p>Runnable 인터페이스를 구현한 경우 Thread클래스의 메서드를 이용하고 싶다면 Thread 클래스의 static 메서드인 currentThread()를 호출하여 쓰레드의 참조를 얻어야 사용이 가능하다.</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadA</span> <span style="color:#66d9ef">extends</span> Thread  <span style="color:#f92672">{</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>getName<span style="color:#f92672">());</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadB</span> <span style="color:#66d9ef">implements</span> Runnable <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><br><br></p>
+<h2>쓰레드의 상태</h2><a class="anchor" id="쓰레드의-상태"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">상태</th>
+<th style="text-align:center">열거 상수</th>
+<th style="text-align:center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">객체 생성</td>
+<td style="text-align:center">NEW</td>
+<td style="text-align:center">스레드 객체 생성 (start()메서드 호출 전)</td>
+</tr>
+<tr>
+<td style="text-align:center">실행 대기</td>
+<td style="text-align:center">RUNNABLE</td>
+<td style="text-align:center">스케줄링 되지 않아 실행을 기다리고 있는 상태</td>
+</tr>
+<tr>
+<td style="text-align:center">일시정지</td>
+<td style="text-align:center">WAITING</td>
+<td style="text-align:center">다른 스레드의 notify를 기다리는 상태</td>
+</tr>
+<tr>
+<td style="text-align:center">일시정지</td>
+<td style="text-align:center">TIMED_WAITING</td>
+<td style="text-align:center">주어진 시간 동안 기다리는 상태</td>
+</tr>
+<tr>
+<td style="text-align:center">일시정지</td>
+<td style="text-align:center">BLOCKED</td>
+<td style="text-align:center">사용하고자 하는 객체의 락이 풀릴 때 까지 기다리는 상태 ( 동기화 문제 )</td>
+</tr>
+<tr>
+<td style="text-align:center">종료</td>
+<td style="text-align:center">TERMINATED</td>
+<td style="text-align:center">실행을 마친 상태</td>
+</tr>
+</tbody>
+</table>
+<h3>Start와 run</h3><a class="anchor" id="start와-run"></a>
+<p>start()는 NEW상태의 스레드를 RUNNABLE상태로 만들어주는 메서드로 실행될 수 있는 대기 큐에 넣어주는 역할(call stack 생성)</p>
+<p>run()은 스레드가 스케줄러에 의해 실제로 실행될때 실행할 메서드이고 start()없이 run만 실행하게 된다면 override된 메서드를 그대로 호출할 뿐 해당 Thread는 RUNNABLE상태가 아니기 때문에 <code>메타데이터</code>가 <code>실행대기 큐</code>에 들어있지 않아 원하는 대로 동작하지 않는다.</p>
+<br>
+<h3>쓰레드 상태 제어 메서드</h3><a class="anchor" id="쓰레드-상태-제어-메서드"></a>
+<p><img src="./thread_method.PNG?classes=border,shadow" alt="쓰레드 상태 메서드">
+<a href="https://widevery.tistory.com/28">사진 출처 : https://widevery.tistory.com/28</a></p>
+<br>
+<h4>Thread 클래스에 정의</h4><a class="anchor" id="thread-클래스에-정의"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">메서드</th>
+<th style="text-align:center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">interrupt()</td>
+<td style="text-align:center">일시정지상태의 스레드에서 Interrupt 예외를 발생시켜 작업을 멈추라고 요청하는 메서드</td>
+</tr>
+<tr>
+<td style="text-align:center">interrupted()</td>
+<td style="text-align:center">interrupt()가 호출되었는지 알려주는 메서드 (되었다면 true)</td>
+</tr>
+<tr>
+<td style="text-align:center">join((long millis),(int nanos))</td>
+<td style="text-align:center">동작중인 작업을 멈추고 다른 스레드가 지정 시간동안 작업 수행하도록 넘겨주는 메서드로 시간을 지정하지 않으면 다른 스레드가 작업을 마칠때 까지 기다린다.</td>
+</tr>
+<tr>
+<td style="text-align:center">sleep(long millis, (int nonos))</td>
+<td style="text-align:center">일정 시간동안 스레드를 멈추게 하는 메서드로 <code>일시정지</code>상태로 만들고 <code>interrupt()</code>가 호출되면 <code>실행 대기</code>상태로 만든다.<br>sleep은 <code>항상 실행중인 스레드</code>에 대해 작동하기 때문에 static으로 선언되어 있어 <code>Thread.sleep(1000)</code>과 같이 사용해야 한다.</td>
+</tr>
+<tr>
+<td style="text-align:center">yield()</td>
+<td style="text-align:center">스레드 자신에게 주어진 시간을 다음 스레드에게 양보하는 메서드</td>
+</tr>
+</tbody>
+</table>
+<h4>Object 클래스에 정의</h4><a class="anchor" id="object-클래스에-정의"></a>
+<p>특정 객체에 대한 것이므로 위의 메서드롸 다르게 Object클래스에 정의되어 있어 모든 객체에서 호출이 가능하고 <code>동기화 블록</code>내에서만 사용할 수 있다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">메서드</th>
+<th style="text-align:center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">notify()</td>
+<td style="text-align:center">일시정지 상태의 스레드중 다른 스레드를 깨우는 메서드로 RUNNABLE상태로 만든다.</td>
+</tr>
+<tr>
+<td style="text-align:center">notifyAll()</td>
+<td style="text-align:center"><code>waiting pool</code>안에 있는 모든 스레드를 깨우는 메서드로 깨어난 스레드들은 다시 경쟁을 통해 실행된다.<br>호출된 객체의 waiting pool내의 스레드들을 모두 깨우는 것</td>
+</tr>
+<tr>
+<td style="text-align:center">wait()</td>
+<td style="text-align:center">notify()나 notifyAll()을 기다리는 메서드</td>
+</tr>
+<tr>
+<td style="text-align:center">wait(long timeout,(int nanos))</td>
+<td style="text-align:center">지정된 시간동안만 기다리는 메서드</td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<h2>쓰레드의 우선순위</h2><a class="anchor" id="쓰레드의-우선순위"></a>
+<p>여러개의 쓰레드가 동작하며 병행성을 수행하기 위해 시분할을 하여 스케줄링을 통해 스레드를 동작 시키는데 이를 위해, 자바는 쓰레드 클래스에 어떤 쓰레드를 더 <code>중요하게</code> 생각하여 동작시킬지 지정하여 더 많은 <code>작업시간</code>을 갖도록 할 수 있게 해주는 <code>멤버 변수</code>를 갖고 있다.</p>
+<p>우선순위의 범위는 <code>1~10</code>이며 숫자가 높을수록 우선순위가 높고, 메인 메서드를 수행하는 쓰레드의 우선순위가 5이므로 main메서드 내에서 생성하는 쓰레드의 우선순위는 기본값이 5가 된다.</p>
+<p>쓰레드의 우선순위는 <code>상대적</code>인 값으로 절대적이 값이 아니다</p>
+<Br>
+<h3>메서드</h3><a class="anchor" id="메서드"></a>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">thread<span style="color:#f92672">.</span><span style="color:#a6e22e">setPriority</span><span style="color:#f92672">(</span>1<span style="color:#f92672">~</span>10<span style="color:#f92672">);</span>
+thread<span style="color:#f92672">.</span><span style="color:#a6e22e">setPriority</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">MIN_PRIORITY</span><span style="color:#f92672">);</span> <span style="color:#75715e">//1
+</span><span style="color:#75715e"></span>thread<span style="color:#f92672">.</span><span style="color:#a6e22e">setPriority</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">NORM_PRIORITY</span><span style="color:#f92672">);</span> <span style="color:#75715e">//5
+</span><span style="color:#75715e"></span>thread<span style="color:#f92672">.</span><span style="color:#a6e22e">setPriority</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_PRIORITY</span><span style="color:#f92672">);</span>  <span style="color:#75715e">//10
+</span></code></pre></div><h3>순환할당 (Round Robin) 방식</h3><a class="anchor" id="순환할당-round-robin-방식"></a>
+<p>스케줄링 방식에는 우선순위방식 말고도 RR방식도 있는데 이 방식은 스레드마다 사용할 시간을 할당(Time slice)해서 정해진 시간만큼 돌아가며 실행하는 방식으로 <code>JVM</code>에 의해 결정되기 때문에 개발자가 임의로 수정할 수 없다.</p>
+<p><br><br></p>
+<h2>Main 쓰레드</h2><a class="anchor" id="main-쓰레드"></a>
+<p>우리가 자바프로젝트를 처음 시작했을때나 c,c++와 같이 처음 작성하는 <code>main()</code>메서드를 실행하면 시작되는 스레드로 <code>main메서드의 코드 흐름</code>이다.</p>
+<p>main 쓰레드를 통해 다른 쓰레드를 생성하기 때문에 메인스레드가 없다면 멀티스레드는 당연히 구현할 수 없다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">single process</th>
+<th style="text-align:center">multi process</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>single thread</strong></td>
+<td style="text-align:center"><img src="./spst.PNG?classes=border,shadow" alt="single process single thread"></td>
+<td style="text-align:center"><img src="./mpst.PNG?classes=border,shadow" alt="multi process single thread"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>multi thread</strong></td>
+<td style="text-align:center"><img src="./spmt.PNG?classes=border,shadow" alt="single process multi thread"></td>
+<td style="text-align:center"><img src="./mpmt.PNG?classes=border,shadow" alt="multi process multi thread"></td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<h2>동기화</h2><a class="anchor" id="동기화"></a>
+<p>멀티 스레드로 동작하는 프로그램에서 한 스레드가 작업하는 중에 사용하는 데이터들을 다른 스레드가 간섭하지 못하도록 막는 것이다.</p>
+<p>동기화를 시키지 않는다면 여러개의 스레드가 번갈아가며 동작할 경우, 어떤 스레드가 먼저 실행될지 알 수 없기 때문에 개발자가 의도하지 않는 동작이 발생할 수 있기 때문에 멀티스레드프로그래밍에서는 중요한 문제이다.</p>
+<br>
+<p><strong>주요 개념들</strong></p>
+<ul>
+<li>
+<p>임계 구역 (Critical Section) : 여러개의 스레드가 공유하는 데이터 블럭으로 하나의 스레드만 접근가능하도록 지정하는 것이 목표이다.</p>
+</li>
+<li>
+<p>상호 배제 (Mutual Exclusion,Mutex) : 임계 구역을 헌 시점에서 한개의 스레드만 사용할 수 있도록 다른 스레드의 접근을 제어하는 기법</p>
+</li>
+<li>
+<p>동기화 : 상호배제의 한 형태로 상호배제를 수행하기 위해 프로세스의 처리 순서를 결정하는 기법 (Semaphore)</p>
+</li>
+<li>
+<p>기아 상태 (starvation) : 다른 쓰레드에게 우선순위가 밀려 자원을 계속 할당받지 못하는 상태</p>
+</li>
+<li>
+<p>공정성(fairness) : 모든 쓰레드가 공평하게 작업을 수행하는 것</p>
+</li>
+</ul>
+<br>
+<h3>Synchronized 이용</h3><a class="anchor" id="synchronized-이용"></a>
+<p>임계영역을 설정하는데 사용하는 키워드로 메서드 전체를 임계영역으로 지정하거나 특정한 영역을 임계영역으로 지정하는 방법이 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">1<span style="color:#f92672">.</span> 메서드 전체를 임계 영역으로 지정
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">cal</span><span style="color:#f92672">()</span>  <span style="color:#f92672">{</span>
+    <span style="color:#f92672">...</span>
+  <span style="color:#f92672">}</span>
+
+2<span style="color:#f92672">.</span> 특정한 영역을 임계 영역으로 지정
+  <span style="color:#a6e22e">synchronized</span><span style="color:#f92672">(</span>객체의 참조변수<span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+    <span style="color:#f92672">...</span>
+  <span style="color:#f92672">}</span>
+</code></pre></div><p>쓰레드는 synchronized가 호출된 시점부터 해당 코드블럭이 포함된 객체의 lock을 얻어 작업을 수행하다가 종료되면 lock이 반환되고 이는 모두 자동으로 이루어지기 때문에, 개발자는 임계영역만 설정 해주면된다.</p>
+<p>객체는 lock을 하나씩 가지고 있고 설정한 객체의 lock을 가지고있는 쓰레드만 임계영역에 접근이 가능하고 다른 스레드는 대기 상태에 들어가기 때문에 임계영역은 좁히는 것이 좋다.</p>
+<p>메서드에 synchronized를 걸면 그 메서드가 포함된 객체(this)에 lock을 거는 것과 같다.</p>
+<p>객체 없이 호출하는 static 메서드의 경우 해당 class에 lock을 걸면서 함수간에 lock이 공유되어 동시에 호출되는 것을 막아 동기화문제가 해결된다.</p>
+<br>
+<h3>Locks</h3><a class="anchor" id="locks"></a>
+<p>Java 5에 추가된 패키지로 <code>java.util.concurrent</code>가 있는데 이 패키지에서 동기화를 위해 다양한 클래스들을 제공한다.</p>
+<h4>주요 기능</h4><a class="anchor" id="주요-기능"></a>
+<ul>
+<li>
+<p>Locks : 상호 배제를 사용할 수 있는 클래스</p>
+</li>
+<li>
+<p>Synchronizers : 동기화를 처리하는 클래스 제공 (Semaphore, CountDownLatch, CyclicBarrier, Phaser, Exchanger)</p>
+</li>
+<li>
+<p>Atomic : 동기화가 되어있는 변수 제공</p>
+</li>
+<li>
+<p>Executors : 쓰레드 풀 생성, 쓰레드 생명주기 관리와 같은 기능 제공</p>
+</li>
+<li>
+<p>Queue : Thread-safe한 Queue 제공</p>
+</li>
+</ul>
+<br>
+<h4>java.util.concurrent.locks</h4><a class="anchor" id="javautilconcurrentlocks"></a>
+<p>해당 패키지에 상호 배제를 위한 Lock API들이 정이 되어있고, synchronized 도 lock을 이용한 동기화인만큼 동일한 메커니즘으로 동작한다.</p>
+<p>내부적으로 synchronized를 사용해 구현되었고, 더욱 더 유연하고 정교하게 처리하기 위해 사용되고 직접 lock을 걸고 푸는 작업을 수행해야 한다.</p>
+<ul>
+<li>
+<p><strong>Interface</strong></p>
+<ul>
+<li>
+<p>Lock : 공유자원에 한번에 한 쓰레드만 read/write를 수행 가능</p>
+</li>
+<li>
+<p>ReadWriteLock : 공유 자원에 여러개의 쓰레드가 read할 수 있지만 write는 한 쓰레드만 수행 가능</p>
+</li>
+<li>
+<p>Condition : wait()과 notify()를 쓰레드의 종류로 구분하지 않고, 공유객체의 waiting poll에 몰아 넣고 각 쓰레드를 위한 Condition을 만들어 각각의 waiting pool에서 따로 기다리도록 한다.</p>
+<p>wait(),notify(),notifyAll() 대신 await(),signal(),signalAll()을 사용한다.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Interface의 구현체</strong></p>
+<ul>
+<li>
+<p>ReentrantLock : Lock의 구현체로 임계영역의 시작,졸료 지점을 명시 할 수 있게 해준다.</p>
+</li>
+<li>
+<p>ReentrantReadWriteLock : ReadWriteLock의 구현체</p>
+</li>
+<li>
+<p>StampLock : JDK 1.8부터 추가되었고, 다른 lock과 달리 Lock인터페이스를 구현하지 않고 lock을 걸거나 해지할때 스탬프(long타입 정수값)를 사용한다.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>주요 메서드</strong></p>
+<ul>
+<li>
+<p>lock() : Lock 인스턴스에 lock을 건다.</p>
+</li>
+<li>
+<p>lockInterruptibly() : 현제 쓰레드가 interrupted 상태가 아닐때 Lock 인스턴스에 잠금을 걸고 interrupted상태라면 Exception을 발생시킨다.</p>
+</li>
+<li>
+<p>tryLock() : 즉시 Lock인스턴스에 잠금을 시도하고 성공여부를 boolean 타입으로 반환한다.</p>
+</li>
+<li>
+<p>tryLock(long timeout, TimeUnit timeUnit) : 잠금 실패시 false를 반환하는 것이 아닌 주어진 시간동안 기다린다.</p>
+</li>
+<li>
+<p>unlock() : Lock인스턴스의 잠금을 해제한다.</p>
+</li>
+<li>
+<p>newCondition() : 현제 Lock 인스턴스와 연결된 Condition 객체를 반환한다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<h3>Synchronized 와 Lock의 차이점</h3><a class="anchor" id="synchronized-와-lock의-차이점"></a>
+<p><code>Synchronized</code>는 <code>암시적인(implicit) lock</code>이라고 하여 불공정 문제가 발생 할 수 있어 쓰레드 순서를 보장하지 않지만 <code>Lock</code>은 순서를 지정할 수 있어 <code>명시적인(explict) lock</code>이라고 한다.</p>
+<p><code>Synchronized</code>는 lock을 자동 획득/반환해주기 때문에 <code>코드가 간결하다는 장점</code>이 있고, <code>Lock</code>은 ReentrantLock을 이용하면 생성자 인자를 통해 공정/불공정을 설정 할 수 있어 공정한 lock을 사용할 경우 자원 할당을 위해 경쟁이 발생했을 때 오래 기다린 스레드에게 lock을 제공하여 <code>기아 문제를 해결</code>할 수 있다.</p>
+<p><br><br></p>
+<h3>volatile</h3><a class="anchor" id="volatile"></a>
+<p>멀티 코어 프로세서는 코어마다 별도의 캐시를 갖고 있는데 변수 앞에 <code>volatile</code> 키워드를 붙이면 코어가 변수의 값을 읽어올 때 캐시가 아닌 메모리에서 읽어오기 때문에 캐시와 메모리간의 불일치를 해결할 수 있다.</p>
+<p>JVM은 데이터를 4byte 단위로 처리하기 때문에 int나 이보다 작은 타입의 데이터는 한번에 읽거나 쓰는 것이 가능하나 그보다 큰 데이터 타입이라면 하나의 명령어로 값을 읽거나 쓸 수 없다.
+<br>때문에 변수의 값을 읽는 과정에서 다른 쓰레드가 끼어들 틈이 있기 때문에 변수를 읽고 쓰는 문장을 synchronized블럭으로 감싸거나 변수를 volatile을 붙여 선언하는 방법으로 캐시와 메모리간 불일치 문제를 해결 할 수 있다.</p>
+<p>상수에는 volatile를 붙일 수 없어 변수에 final을 같이 쓸 수 없다. <br> <em>(상수는 변하지 않는 값이기 때문에 thread-safe하기 때문에)</em></p>
+<br>
+<br>
+<h2>데드락</h2><a class="anchor" id="데드락"></a>
+<p><code>교착상태</code>라고도 하며 상호 배제에 의해 나타나는 문제로, 둘 이상의 스레드가 데이터를 점유한 상태에서 서로 다른 스레드가 점유하고 있는 데이터를 요구하게되어 <strong>끝없이 기다리는 상태</strong></p>
+<p>데이터베이스 트랜젝션에서도 발생하는데 한 트랜잭션에서 한 레코드에 업데이트를 수행할 때, 이 레코드는 업데이트를 위해 다른 트랜잭션의 접근을 막도록 lock을 거는데 다수의 트랜젝션이 동시에 레코드를 업데이트하려한다면 데드락에 빠질 위험이 있다.</p>
+<h3>데드락 발생 조건(이유)</h3><a class="anchor" id="데드락-발생-조건이유"></a>
+<ol>
+<li>
+<p><strong>Mutual Exclusion(Mutex)</strong> : 자원에 동시 접근 불가능</p>
+</li>
+<li>
+<p><strong>Hold &amp; Wait</strong> : 점유하고 기다리기 (자원을 점유한채로 다른 스레드의 자원을 반납받길 기다리는 것)</p>
+</li>
+<li>
+<p><strong>No Preemption</strong> : 자원을 강제로 뺐어오지 못함</p>
+</li>
+<li>
+<p><strong>Circular Wait</strong> : 순환 형태로 대기</p>
+</li>
+</ol>
+<br>
+<h3>데드락 해결 방법</h3><a class="anchor" id="데드락-해결-방법"></a>
+<ol>
+<li>
+<p>데드락 예방 : 데드락 발생 조건 4가지를 원천 봉쇄하는 방법</p>
+</li>
+<li>
+<p>데드락의 회피 : 자원이 어떻게 요청될지에 대한 추가정보를 제공하도록 요구하는 것으로 자원 할당상태를 검사하는 방법</p>
+</li>
+<li>
+<p>데드락 탐지 &amp; 회복 : 데드락이 발생했을때 해결하는 방법</p>
+</li>
+<li>
+<p>데드락 무시 : 아주 적은 확률로 데드락이 발생한다면, 무시하는 방법</p>
+</li>
+</ol>
+<p>무시하거나 재실행하는 편이 자원적으로 더 이득을 볼 수도 있기 때문에 수행하는 방법</p>
+<br>
+<h3>데드락 방지 방법들</h3><a class="anchor" id="데드락-방지-방법들"></a>
+<ol>
+<li>
+<p><strong>락 정렬</strong> : 모든 락이 항상 같은 순서로 획득된다면 데드락은 발생하지 않기 때문에 효과적이나 락의 순서를 알고 있는 상태에서만 사용이 가능하다. (데드락 예방)</p>
+</li>
+<li>
+<p><strong>락 타임 아웃</strong> : 락을 획득하기 위해 기다리는 시간을 정해놓고 시간이 지난 후에는 락을 다시 시도하는 방법 (데드락 탐지&amp;회복)</p>
+</li>
+</ol>
+<p>같은 락을 획득하려는 다른 모든 쓰레드에게 기회를 주는 것이기 때문에 공정성 문제가 발생하게되고, 데드락 뿐만이 아닌 작업을 처리중에도 타임아웃이 발생할 수 도 있다.</p>
+<ol>
+<li>
+<p><strong>데드락 감지</strong> : 자료구조를 이용하여 쓰레드가 락을 획득하면 저장하고 이를 이용해 데드락을 감지하고 데드락이 발생했다면, 락을 해제하는 방법</p>
+</li>
+<li>
+<p><strong>Atomic Variable</strong> : volatile 키워드나 java.util.concurrent.atomic 클래스를 이용하여 원자 변수를 사용하는 방법</p>
+</li>
+</ol>
+<p><br><br></p>
+<h2>쓰레드 풀</h2><a class="anchor" id="쓰레드-풀"></a>
+<p>쓰레드를 미리 만들어 필요할때 사용하고 반납할 수 있도록 하는 풀장의 개념</p>
+<p><code>java.util.concurrent.Executors</code>에서 스레드풀 관련 API를 제공한다.</p>
+<h3>장점</h3><a class="anchor" id="장점"></a>
+<ul>
+<li>스레드를 생성/수거하는데 비용이 적다.</li>
+<li>위의 이유로 다수의 사용자 요청을 처리할때 빠르게 대응 가능하다.</li>
+</ul>
+<h3>단점</h3><a class="anchor" id="단점"></a>
+<ul>
+<li>사용하는 양보다 많이 생성해두면 메모리 낭비가 된다.</li>
+<li>노는 스레드가 발생할 수 있다.</li>
+</ul>
+<h3>쓰레드 풀의 구조</h3><a class="anchor" id="쓰레드-풀의-구조"></a>
+<ol>
+<li>
+<p>Task의 요청을 받는 Queue</p>
+</li>
+<li>
+<p>실제 쓰레드를 생성하고 관리하는 manager</p>
+</li>
+<li>
+<p>Queue 안에서 Task를 꺼내와 실제 쓰레드위에 동작시켜 결과를 얻는 부분</p>
+</li>
+</ol>
+<h3>생성 메서드</h3><a class="anchor" id="생성-메서드"></a>
+<ol>
+<li>
+<p>Executors.newFixedThreadPool(10) : 최대 쓰레드를 10개까지 만드는 풀</p>
+</li>
+<li>
+<p>Executors.newCachedThreadPool() : 쓰레드 수의 제한을 두지 않는 풀로 쓰레드 시작 요청이 들어올때 생성하고 종료시에 바로 죽지않고 짧은 시간(1분)동안 살아있는 방법의 풀</p>
+</li>
+<li>
+<p>Executors.newSingleThreadExecutor() : 하나의 쓰레드를 생성하는 풀로 쓰레드 작업중에 예외상황이 발생한 경우 예외처리를 위한 쓰레드용으로 많이 사용한다.</p>
+</li>
+<li>
+<p>Executors.newScheduledThreadPool() : 일정 주기마다 반복해야하는 스레드를 여러개 생성하기 위한 풀</p>
+</li>
+</ol>
+<p><a href="https://yaaam.tistory.com/entry/%EC%8A%A4%EB%A0%88%EB%93%9C-%ED%92%80Thread-Pool-%EC%8A%A4%EB%A0%88%EB%93%9C-%ED%92%80%EC%9D%98-%EC%A0%81%EC%A0%95-%ED%81%AC%EA%B8%B0%EB%8A%94-%EC%8A%A4%EB%A0%88%EB%93%9C-%ED%92%80%EC%9D%98-%EC%A0%81%EC%A0%88%ED%95%9C-%EC%82%AC%EC%9D%B4%EC%A6%88%EB%8A%94">적정 스레드풀의 사이즈는 어떻게 알까?</a></p>
+<p><br><br><br></p>
+<hr>
+<h3>Reference</h3><a class="anchor" id="reference"></a>
+<p><a href="https://nesoy.github.io/articles/2018-09/OS-Concurrency-Parallelism">https://nesoy.github.io/articles/2018-09/OS-Concurrency-Parallelism</a></p>
+<p><a href="https://ryan-han.com/post/java/java-thread/">https://ryan-han.com/post/java/java-thread/</a></p>
+<p><a href="https://zbomoon.tistory.com/12">https://zbomoon.tistory.com/12</a></p>
+<p><a href="https://widevery.tistory.com/28">https://widevery.tistory.com/28</a></p>
+<p><a href="https://goscala.tistory.com/171">https://goscala.tistory.com/171</a></p>
+<p><a href="https://tourspace.tistory.com/54">https://tourspace.tistory.com/54</a></p>
+</div>
+
+	<div style="margin-top:200px;">
+		<script src="https://utteranc.es/client.js"
+				repo="gowoonsori/blog-comments"
+				issue-term="pathname"
+				theme="github-light"
+				crossorigin="anonymous"
+				async>
+		</script>
+	</div>
+
+
+	 
+	<div class="chevrons ">
+		<a class="next" href="/linux/" title="Linux" style="margin-right: 0px;">
+            <div>
+                <p>Next page</p>
+                <label>Linux</label>
+            </div>
+            <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
+	</div>
+	
+	
+
+      </section>
+
+      
+      
+      <section class="right-menu ">
+      
+	
+	
+		
+	    	
+	  	
+	<div class="TableOfContents">
+    <label>What&#39;s on this page</label>
+    <nav>
+        <ul >
+            <li><a href="/java/thread/">멀티 스레딩</a></li>
+        </ul>
+    </nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#thread란">Thread란?</a>
+      <ul>
+        <li><a href="#프로세스란">프로세스란</a></li>
+        <li><a href="#쓰레드">쓰레드</a></li>
+        <li><a href="#병행성동시성-concurrency">병행성(동시성) (Concurrency)</a></li>
+      </ul>
+    </li>
+    <li><a href="#thread-클래스와-runnable-인터페이스">Thread 클래스와 Runnable 인터페이스</a>
+      <ul>
+        <li><a href="#thread-클래스-extends">Thread 클래스 extends</a></li>
+        <li><a href="#runnable-인터페이스-implements">Runnable 인터페이스 implements</a></li>
+        <li><a href="#차이점">차이점</a></li>
+      </ul>
+    </li>
+    <li><a href="#쓰레드의-상태">쓰레드의 상태</a>
+      <ul>
+        <li><a href="#start와-run">Start와 run</a></li>
+        <li><a href="#쓰레드-상태-제어-메서드">쓰레드 상태 제어 메서드</a></li>
+      </ul>
+    </li>
+    <li><a href="#쓰레드의-우선순위">쓰레드의 우선순위</a>
+      <ul>
+        <li><a href="#메서드">메서드</a></li>
+        <li><a href="#순환할당-round-robin-방식">순환할당 (Round Robin) 방식</a></li>
+      </ul>
+    </li>
+    <li><a href="#main-쓰레드">Main 쓰레드</a></li>
+    <li><a href="#동기화">동기화</a>
+      <ul>
+        <li><a href="#synchronized-이용">Synchronized 이용</a></li>
+        <li><a href="#locks">Locks</a></li>
+        <li><a href="#synchronized-와-lock의-차이점">Synchronized 와 Lock의 차이점</a></li>
+        <li><a href="#volatile">volatile</a></li>
+      </ul>
+    </li>
+    <li><a href="#데드락">데드락</a>
+      <ul>
+        <li><a href="#데드락-발생-조건이유">데드락 발생 조건(이유)</a></li>
+        <li><a href="#데드락-해결-방법">데드락 해결 방법</a></li>
+        <li><a href="#데드락-방지-방법들">데드락 방지 방법들</a></li>
+      </ul>
+    </li>
+    <li><a href="#쓰레드-풀">쓰레드 풀</a>
+      <ul>
+        <li><a href="#장점">장점</a></li>
+        <li><a href="#단점">단점</a></li>
+        <li><a href="#쓰레드-풀의-구조">쓰레드 풀의 구조</a></li>
+        <li><a href="#생성-메서드">생성 메서드</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+	
+		
+	    	
+	  	
+	<div class="Actions">
+	<nav>
+		<ul>
+				
+		    
+		    
+			
+		      <li>
+		          <i class='fas fa-calendar'></i>
+		          Last update on 22 January 2021
+		      </li>
+		    
+		    
+
+    	</ul>
+	</nav>
+    
+</div>
+
+      </section>
+      
+    </article>
+    
+    
+    <footer>
+      
+	
+		
+	    	<style type="text/css">
+
+.footer-gray {
+  width: 100%;
+  color: #888;
+}
+
+.footer-custom {
+  font: normal normal 12px/1.4 sans-serif;
+  /*max-width: 1008px;*/
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.footer-custom:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-lists:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-hdr {
+  color: white;
+  font: 22px/1.4  sans-serif;
+  margin: 1em 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .ftr-hdr {
+    font-size: 18px;
+  }
+}
+
+.footer-list-wrap {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 568px) {
+  .footer-list-wrap {
+    width: 33.3333%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-list-wrap {
+    width: 25%;
+  }
+}
+
+.ftr-links-sub {
+  padding: 0;
+  margin: 0;
+}
+
+.ftr-links-sub:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-links-sub li {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0;
+  color: #888;
+  font: normal normal 12px sans-serif;
+  text-transform: uppercase;
+  /*width: 150px;*/
+}
+
+.footer-custom a,
+.footer-custom a:link,
+.footer-custom a:visited,
+.ftr-links-sub li .link {
+  text-decoration: none;
+  color: #888;
+  padding: 5px 0;
+  display: block;
+}
+
+.footer-custom .footer-legal a {
+  display: inline;
+}
+
+.footer-custom a:hover,
+.footer-custom a:active,
+.ftr-links-sub li .link:hover {
+  text-decoration: underline;
+  color: #888;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-custom a, .footer-custom a:link, .footer-custom a:visited, .ftr-links-sub li .link {
+    padding: 0;
+  }
+}
+/* BEGIN EMAIL CAPTURE STYLES*/
+
+.footer-email {
+  text-align: center;
+}
+
+#ftrEmailForm {
+  height: 44px;
+}
+
+#ftrEmailForm .error {
+  display: none;
+  color: red;
+  text-align: left;
+}
+
+#ftrEmailForm #ftrEmailInput {
+  background: none repeat scroll 0 0 #FFF;
+  border: 1px solid #D6D6D6;
+  box-sizing: border-box;
+  color: #888;
+  float: left;
+  font: normal normal 14px/1.4 sans-serif;
+  padding: 5px;
+  width: 70%;
+  height: 100%;
+}
+
+#ftrEmailForm #ftrEmailInput:hover {
+  border: 1px solid #888;
+}
+
+#ftrEmailForm #ftrEmailInput:focus {
+  border: 1px solid #ef9223;
+  outline: #ef9223 auto 5px;
+}
+
+#ftrEmailForm .button {
+  width: 30%;
+  height: 100%;
+  padding: 5px;
+  float: left;
+  border: 1px solid #DFDFDF;
+  box-sizing: border-box;
+  color: #000;
+  font: normal bold 18px/1 sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FFF;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e1e1e1));
+  background: -webkit-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -moz-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -ms-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -o-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: linear-gradient(to bottom, white 0, #e1e1e1 100%);
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+}
+
+#ftrEmailForm .button:hover,
+#ftrEmailForm .button:active {
+  background: black;
+  color: #FFF;
+  outline: none;
+}
+/* BEGIN SOCIAL STYLES*/
+
+.footer-social {
+  text-align: center;
+}
+
+.footer-social ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-social ul:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-social li {
+  float: left;
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-lists {
+    width: 100%;
+  }
+  .footer-email {
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+  .footer-social {
+    width: 45%;
+    margin-left: 5%;
+    float: left;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-lists {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-email {
+    width: 33.3333%;
+  }
+  .footer-social {
+    width: 33.3333%;
+    float: right;
+    margin-left: 0;
+  }
+}
+
+.footer-legal {
+  padding: 15px 0 0;
+  clear: left;
+}
+
+.footer-payment {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-legal {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-payment {
+    width: 33.3333%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment {
+    text-align: left;
+  }
+}
+
+.footer-payment ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-payment ul li {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment ul li.ftr-stella {
+    margin-left: 0;
+  }
+}
+
+
+</style>
+  <div class="footer-gray">
+    <div class="footer-custom">
+      <div class="footer-lists">
+        <h6 class = "ftr-hdr">Contact me</h6>
+        <p>E-mail : gowoonsori97@gmail.com  |  gowoonsori97@naver.com</p>
+      </div>
+      <div class="footer-social">
+        <h6 class="ftr-hdr">Follow Us</h6>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/gowoonsori97/" title="Facebook">
+              <img width="24" height="24" alt="Like us on Facebook" src="/images/fb.png">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.github.com/gowoonosori" title="Github">
+             <i class="fab fa-github" style="font-size:24px"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <p>Copyrihgt &copy; gowoonsori.site All Rights Reserved. </p>
+      </div>
+    </div>
+  </div>
+  <!--/.footer-gray-->
+	    
+	
+    </footer>
+    
+
+
+
+  </body>
+</html>

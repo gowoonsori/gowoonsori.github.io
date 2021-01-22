@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JVM과 자바 실행 on 고소리&#39;s Blog</title>
+    <link>https://gowoonsori.site/java/jvm/</link>
+    <description>Recent content in JVM과 자바 실행 on 고소리&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Jan 2021 11:03:39 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/java/jvm/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

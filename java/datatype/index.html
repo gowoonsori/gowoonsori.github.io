@@ -1,0 +1,1450 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+	DataType과 변수 :: 고소리&#39;s Blog
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2021-01-22T12:05:11 KST">
+<meta name="robots" content="index,follow" /> 
+<meta name="googlebot" content="index,follow" />
+
+<title>DataType과 변수 :: 고소리&#39;s Blog</title>
+
+<meta name="author" content="gowoonsori">
+
+<meta name="description" content="DataType과 변수,리터럴,타입 변환,타입 추론에 관하여 정리">
+<link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
+<link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
+
+<meta property="og:title" content="DataType과 변수" />
+<meta property="og:description" content="DataType과 변수,리터럴,타입 변환,타입 추론에 관하여 정리" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://gowoonsori.site/java/datatype/" />
+<meta property="og:image" content="https://gowoonsori.site/../images/favicon.png" />
+<meta property="og:updated_time" content="2021-01-22T11:04:35+09:00" />
+
+
+
+
+
+
+<link rel="stylesheet" href='https://gowoonsori.site/sass/layout.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.main.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.menu.css'>
+<link href='/vendor/FontAwesome/fontawesome-free-5.14.0-web/css/all.min.css' rel="stylesheet"> 
+<link rel="stylesheet" href='/css/docport.css'>
+
+
+
+
+
+<script src='/vendor/jquery/jquery-3.5.1.min.js'></script>
+<script src='/js/docport.js'></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/gowoonsori.site";
+</script>
+<script>
+      (function(j,en,ni,fer) {
+          j['dmndata']=[];j['jenniferFront']=function(args){window.dmndata.push(args)};
+          j['dmnaid']=fer;j['dmnatime']=new Date();j['dmnanocookie']=false;j['dmnajennifer']='JENNIFER_FRONT@INTG';
+          var b=Math.floor(new Date().getTime() / 60000) * 60000;var a=en.createElement(ni);
+          a.src='https://d-collect.jennifersoft.com/'+fer+'/demian.js?'+b;a.async=true;
+          en.getElementsByTagName(ni)[0].parentNode.appendChild(a);
+      }(window,document,'script','b13ba63e'));
+  </script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-178493752-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+    
+  </head>
+
+  <body data-url="/java/datatype/"
+
+  class="">
+
+<style type="text/css">
+  #debug{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 3.5rem;
+    margin-bottom: .35rem;
+    padding: 0 2rem;
+    position: fixed;
+    left: 0;      right: 0;     top: 0;
+   
+    top:0px;
+    
+    min-height: 150px;
+
+    background-color: white;
+    border: 3px solid red;
+    z-index: 10000 ;
+    word-wrap: all;
+    overflow: auto;
+  }
+</style>
+ 
+
+
+    
+    
+    <header style="">
+        <div>
+    
+    <div class="burger ">
+        <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">&#9776;</a>
+    </div>
+    
+    <img src="/images/favicon.png" style="margin-top:3px; width: 20px; height: 20px;">
+    <div>
+	
+		
+	    	<a class='baselink' href='https://gowoonsori.site'>고소리's Blog</a>
+	  	
+	</div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/gowoonsori"  rel="noopener">
+                  Github
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://gowoonsori.github.io"  rel="noopener">
+                  Blog
+                </a>
+            </li>
+    </nav>
+
+</div>
+    </header>
+    
+
+    <article>
+      
+      <aside class="">
+        
+<div class="search">
+	<div class="searchbox">
+	  <input data-search-input id="search-by" type="text" placeholder="Type to search...">
+	</div>
+	<script type="text/javascript" src="/vendor/lunr/lunr.min.js"></script>
+	<script type="text/javascript" src="/vendor/auto-complete/auto-complete.js"></script>
+	<link href="/vendor/auto-complete/auto-complete.css" rel="stylesheet">
+	<script type="text/javascript">
+	  
+	      var baseurl = "https:\/\/gowoonsori.site";
+	  
+	</script>
+	<script type="text/javascript" src="/js/search.js"></script>
+</div>
+	
+		
+	    	
+	    
+	<div id="close_menu">
+  <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">
+      <i class="fa fa-lg fa-times"></i>
+  </a>
+</div>
+
+<ul class="menu">
+
+    <li data-nav-id="https://gowoonsori.site/books/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/books/">Books</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/books/cleancode/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/books/cleancode/">Clean Code</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/home/" class="dd-item alwaysopen haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+        
+      
+          <a href="/home/">Blogging</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/start-blog/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/start-blog/">블로그에 처음 발을 내디디다. 🦵</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/start-hugo/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/start-hugo/">Hugo와 Github page를 사용하여 블로그 만들기</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/react-project/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/react-project/">ReactToyProject 개발기록</a>
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/react-project/1_settings/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/react-project/1_settings/">1. 초기 셋팅하기 (front)</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/react-project/2_backsettings/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/react-project/2_backsettings/">2. 초기 셋팅하기 (back)</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/kpu_sw_competition/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/kpu_sw_competition/">KPU S/W 경진대회 예선 후기 (코딩 테스트)</a>
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/kpu_sw_competition/final/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/kpu_sw_competition/final/">KPU S/W 경진대회 본선 후기 (코딩 테스트)</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/2020-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/2020-retrospect/">2020년을 보내며</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/2month-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/2month-retrospect/">블로그 시작한지 2달째 작성해보는 회고</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/data-structure/">자료구조 ( Data Structure )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/">🎄 트리 ( Tree )</a>
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/redblacktree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/redblacktree/">🔴 레드 블랙 트리 (Red Black Tree)</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/avltree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/avltree/">⚫ AVL Tree</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/algorithm/">알고리즘 ( Algorithm )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/sorting-algorithm/">Sorting Algorithm (정렬 알고리즘)</a>
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/counting-sort/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/sorting-algorithm/counting-sort/">Counting Sort ( 계수 정렬 )</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/java/" class="dd-item parent haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+        
+      
+          <a href="/java/">Java</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/jvm/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/jvm/">JVM과 자바 실행</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/datatype/" class="dd-item parent active
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/datatype/">DataType과 변수</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/thread/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/thread/">멀티 스레딩</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/linux/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/linux/">Linux</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/packet_capture/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/packet_capture/">packet capture program 만들기</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/wsl2/">wsl2</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/port-forwarding/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/wsl2/port-forwarding/">WSL2 포트포워딩과 window에서 workbench로 접속</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/wsl2-mysql/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/wsl2/wsl2-mysql/">WSL2에서 Mysql 자동실행 설정하기</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+
+
+</ul>
+	
+		
+	    	<center>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/gowoonsori" aria-label="Follow @gowoonsori on GitHub">Follow@gowoonsori</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/gowoonsori/gowoonsori.github.io" data-icon="octicon-star" aria-label="Star gowoonsori/gowoonsori.github.io on GitHub">Star</a>
+</center>
+<!-- <center style='margin-top:20px'>
+    <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgowoonsori.site&count_bg=%23426EAE&title_bg=%23555555&icon=&icon_color=%238E4F4F&title=%F0%9F%93%8C+Today+%2F+Total++&edge_flat=false"/></a>
+</center> -->
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+	    
+	
+      </aside>
+      
+
+      <section class="page ">
+      
+	
+		
+    
+    
+    <nav id="breadcrumb" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+  
+  	
+		
+  
+  	
+	<li class="breadcrumb-item ">
+      <a class="text-link" href="https://gowoonsori.site">
+        Home
+      </a>
+    </li>
+	
+  
+    <li class="breadcrumb-item ">
+      <a class="text-link" href="/java/">
+        Java
+      </a>
+    </li>
+	
+  	
+  
+    <li class="breadcrumb-item active">
+      
+        DataType과 변수
+      
+    </li>
+
+      </ol>
+    </nav>
+    
+    
+
+    
+	
+		
+        
+		
+		
+		
+		
+		
+		
+
+		
+			<h1>DataType과 변수</h1>
+        
+
+		
+										
+		
+
+		
+
+
+	
+	
+
+	
+	
+	<div class="jump-to-section">
+		<span onclick="$h = $(this);$h.next('nav').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('nav').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+  			Jump to Section
+  			<i style=";" class="fas fa-chevron-right"></i>
+		</span>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#primitive-type">Primitive Type</a></li>
+    <li><a href="#refrerence-type">Refrerence Type</a>
+      <ul>
+        <li><a href="#특징">특징</a></li>
+      </ul>
+    </li>
+    <li><a href="#리터럴">리터럴</a></li>
+    <li><a href="#변수-선언-및-초기화-방법">변수 선언 및 초기화 방법</a>
+      <ul>
+        <li><a href="#변수-선언">변수 선언</a></li>
+        <li><a href="#변수-초기화">변수 초기화</a></li>
+      </ul>
+    </li>
+    <li><a href="#변수의-스코프와-라이프타임">변수의 스코프와 라이프타임</a></li>
+    <li><a href="#타입-변환-캐스팅--타입-프로모션">타입 변환, 캐스팅 , 타입 프로모션</a></li>
+    <li><a href="#1차-2차-배열-선언">1차, 2차 배열 선언</a>
+      <ul>
+        <li><a href="#1차원-배열">1차원 배열</a></li>
+        <li><a href="#2차원-배열">2차원 배열</a></li>
+      </ul>
+    </li>
+    <li><a href="#타입-추론">타입 추론</a>
+      <ul>
+        <li><a href="#제네릭">제네릭</a></li>
+        <li><a href="#var">var</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+	
+	
+
+	<div class="content"><p>자바에서 데이터 타입은 크게 <code>원시(Primitive) 타입</code>과 <code>참조(Reference) 타입</code>이 있다.</p>
+<br>
+<h2>Primitive Type</h2><a class="anchor" id="primitive-type"></a>
+<p>정수, 실수, 문자, 논리 리터럴과 같은 실제 데이터 값을 저장하는 타입</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">종류</th>
+<th style="text-align:center">데이터 타입</th>
+<th style="text-align:center">크기(byte)</th>
+<th style="text-align:center">기본 값</th>
+<th style="text-align:center">범위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">논리형</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">1byte</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">true, false</td>
+</tr>
+<tr>
+<td style="text-align:center">문자형</td>
+<td style="text-align:center">char</td>
+<td style="text-align:center">2byte</td>
+<td style="text-align:center">\u0000</td>
+<td style="text-align:center">0 ~ 65,535</td>
+</tr>
+<tr>
+<td style="text-align:center">정수형</td>
+<td style="text-align:center">byte</td>
+<td style="text-align:center">1byte</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">-128~ 127</td>
+</tr>
+<tr>
+<td style="text-align:center">정수형</td>
+<td style="text-align:center">short</td>
+<td style="text-align:center">2byte</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">-2^15 ~ 2^15 - 1</td>
+</tr>
+<tr>
+<td style="text-align:center">정수형</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">4byte</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">-2^31 ~ 2^31 - 1</td>
+</tr>
+<tr>
+<td style="text-align:center">정수형</td>
+<td style="text-align:center">long</td>
+<td style="text-align:center">8byte</td>
+<td style="text-align:center">0L</td>
+<td style="text-align:center">-2^63 ~ 2^63 - 1</td>
+</tr>
+<tr>
+<td style="text-align:center">실수형</td>
+<td style="text-align:center">float</td>
+<td style="text-align:center">4byte</td>
+<td style="text-align:center">0.0F</td>
+<td style="text-align:center">1.4E-45 ~ 3.4028235E38</td>
+</tr>
+<tr>
+<td style="text-align:center">실수형</td>
+<td style="text-align:center">double</td>
+<td style="text-align:center">8byte</td>
+<td style="text-align:center">0.0</td>
+<td style="text-align:center">4.9E-324 ~ 1.7976931348623157E308</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>boolean : c와 같이 true와 false를 표현하는데 1bit만 있으면 될 것 같지만 Java는 데이터 최소범위가 1Byte이기 때문에 boolean도 1byte의 크기를 갖는다.</p>
+</li>
+<li>
+<p>char : c의 경우 1byte의 크기를 같지만 Java는 <code>유니코드</code>를 표현하기 위해 기본 2byte를 갖으며, Java의 원시 데이터타입중 유일하게 unsigned형태이다.</p>
+</li>
+<li>
+<p>정수형 : JVM의 스택이 기본적으로 피연산자를 4byte 단위로 저장하기 때문에 int보다 작은 자료형의 값을 계산할때 int형으로 형변환되어서 연산이 수행되기 때문에 굳이 byte와 short형을 사용할 필요는 없어 보인다.</p>
+<p>JVM은 int형을 정수형의 기본 데이터 타입으로 사용하기 때문에 long을 사용하고자 한다면 뒤에 <code>l</code>or<code>L</code>을 붙여야 한다.</p>
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices primary">
+	<p>Java8 이후부터는 Integer와 Long의 Wrapper클래스에 unsigned 관련 메소드가 추가되어 unsigned 형태도 이용이 가능하다.</p>
+</div>
+
+</li>
+<li>
+<p>실수형 : double형이 기본 데이터 타입으로 float형을 사용하고자 한다면 뒤에 <code>f</code>or<code>F</code>를 붙여 주어야 한다.</p>
+<p>메모리 크기는 int,long과 같지만 실수형은 <code>부동소수점</code> 방식으로 저장하여 더 많은 범위를 저장 할 수 있다.</p>
+<p>float의 경우 부호(1bit)+지수(8bit)+가수(23bit), double의 경우 부호(1bit)+지수(11bit)+가수(52bit)로 나누어 저장하게 되어 표현범위가 고정 소수점방식보다 넓지만 실수 표현에 있어 근사치를 표현하기 때문에 오차가 존재하는 단점을 갖고있다.</p>
+<p><em>(0.1을 1000번 더하게 되면 100이 되어야 하지만 100.09999&hellip; 와 같은 근사값이 출력된다.)</em></p>
+<p>float의 경우 소수점 아래 9자리, double의 경우 18자리까지 표현이 가능하다.</p>
+<p>같은 데이터 타입에서도 int,long / float,double형으로 나눈 이유는 메모리를 효율적으로 사용하기 위해서 이다.</p>
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices primary">
+	<p>닭 잡는데 소 잡는 칼을 사용하는 것은 낭비이기 때문이다.</p>
+</div>
+
+</li>
+</ul>
+<p><br><br></p>
+<h2>Refrerence Type</h2><a class="anchor" id="refrerence-type"></a>
+<p>영어 의미 그대로 참조 타입으로 저장되는 값이 원시데이터와 다르게 실제 값이 아닌 <code>메모리 주소값</code>이 저장되는 타입으로 <code>문자열</code>,<code>배열</code>,<code>enum</code>,<code>class</code>,<code>interface</code>등이 있다.</p>
+<p>JVM의 Runtime Data Area중 <code>참조 타입 변수</code>는 <code>런타임 스택 영역</code>에 <code>실제 객체</code>는 <code>힙 영역</code>에 저장되어 객체를 사용할때 마다 참조 변수에 저장된 객체의 주소를 불러와 사용한다.</p>
+<p>위에서 말한것과 같이 실제 데이터는 <code>힙 영역</code>에 저장되며 데이터 크기는 정해져있지 않고 동적으로 할당되며 참조하는 변수가 없다면 <code>Garbage Collector</code>가 제거하여 메모리를 관리한다.</p>
+<ul>
+<li>
+<p>Boxing : 원시 타입을 참조 타입으로 변환시키는 것</p>
+</li>
+<li>
+<p>Unboxing : 참조 타입을 원시 타입으로 변환 시키는 것</p>
+<p>Auto Boxing기능으로 명시적으로 작성하지 않아도 자동으로 Boxing 을 해준다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+Integer integer <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span> <span style="color:#75715e">//Auto Boxing
+</span></code></pre></div></li>
+</ul>
+<br>
+<h3>특징</h3><a class="anchor" id="특징"></a>
+<ul>
+<li>
+<p><code>null</code>을 포함할 수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> example <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span> <span style="color:#75715e">//error
+</span><span style="color:#75715e"></span>Integer integer <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</code></pre></div></li>
+<li>
+<p><code>제네릭 타입</code>에서 사용할 수 있다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">List<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> list<span style="color:#f92672">;</span> <span style="color:#75715e">//error
+</span><span style="color:#75715e"></span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list<span style="color:#f92672">;</span>
+</code></pre></div></li>
+<li>
+<p>데이터 접근 속도가 원시타입에 비해 느리다</p>
+<p>원시타입은 <code>스택</code>에서 바로 사용이가능하나 참조타입은 <code>스택</code>에서 메모리주소를 갖고 <code>힙</code>에 접근하는 방법으로 값을 필요할때마다 <code>Unboxing</code>을 거쳐야하기 때문에 접근속도가 느려지게 된다.</p>
+<p>하지만, 큰 크기의 데이터 접근이 아닌 전달,복사의 경우에는 원시타입보다는 참조타입이 좋을 수도 있다.</p>
+</li>
+</ul>
+<p><br><br></p>
+<h2>리터럴</h2><a class="anchor" id="리터럴"></a>
+<p>메모리에 저장되어 변하지 않는 값을 뜻하며 <code>컴파일 타임</code>에 <code>정의</code>되어 그대로 사용하는 값</p>
+<p>대입 연산에서 모든 우항의 값들을 보통 리터럴이라고 부른다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">boolean</span> isTrue <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">char</span> c <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C&#39;</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1001<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">long</span> il <span style="color:#f92672">=</span> 1001L<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">float</span> f <span style="color:#f92672">=</span> 1<span style="color:#f92672">.</span><span style="color:#a6e22e">1234F</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">double</span> d <span style="color:#f92672">=</span> 1<span style="color:#f92672">.</span><span style="color:#a6e22e">1234</span><span style="color:#f92672">;</span>
+String str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">;</span>
+</code></pre></div><p>와 같이 우항에 있는 내가 정의한 값들로 변하지 않는 값들을 의미한다.</p>
+<p><br><br></p>
+<h2>변수 선언 및 초기화 방법</h2><a class="anchor" id="변수-선언-및-초기화-방법"></a>
+<h3>변수 선언</h3><a class="anchor" id="변수-선언"></a>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">(데이터 타입) (변수명1),(변수명 2)... ;
+
+--Example --
+int i;
+int j,k,l;
+</code></pre></div><p>위와 같이 하나의 변수를 선언이 가능하고 동시에 여러개도 가능하다.</p>
+<br>
+<h3>변수 초기화</h3><a class="anchor" id="변수-초기화"></a>
+<ul>
+<li>
+<p>선언 후 초기화</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> i<span style="color:#f92672">;</span>
+i <span style="color:#f92672">=</span>10<span style="color:#f92672">;</span>
+</code></pre></div></li>
+<li>
+<p>선언과 동시에 초기화</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>10<span style="color:#f92672">;</span>
+</code></pre></div></li>
+</ul>
+<p><br><br></p>
+<h2>변수의 스코프와 라이프타임</h2><a class="anchor" id="변수의-스코프와-라이프타임"></a>
+<p><code>변수의 스코프</code>란 해당 변수에 접근할 수 있는 범위를 나타내는 것으로 <code>중괄호 {}</code>를 통해 스코프를 나누는 <code>블록 스코프</code>이고 해당 변수가 언제까지 존재하는지가 라이프 타임이다.</p>
+<p>지역변수의 <code>라이프타임</code>과 <code>스코프</code>는 <code>코드 블럭</code>에 국한된다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">example</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span>1<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">){</span>
+            <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>2<span style="color:#f92672">;</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>j<span style="color:#f92672">);</span> <span style="color:#75715e">//error
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>위의 코드에서 if내에서 i를 접근할때 if의 코드 블럭에서 i를 찾고 없으면 그보다 상위 블럭인 class 블럭에서 i를 찾아 접근이 가능하지만 j는 if내에 선언되어 if의 <code>블럭({})</code>에 국한되기 때문에 if밖에 나와서는 접근이 불가능하고 if의 블럭이 끝나면서 if에 국한되어있던 <code>지역 변수</code>들은 스택영역에서 소멸된다.</p>
+<p><code>레퍼런스 타입</code>저장시에 저장되는 <code>힙 영역</code>데이터의 라이프 타임은 <code>가비지 컬렉터</code>가 관리한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">example</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">){</span>
+        String str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Test&#34;</span><span style="color:#f92672">;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>str<span style="color:#f92672">);</span>
+        str <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>str<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>str은 <code>Test</code>라는 <code>힙영역</code>에 저장된 데이터를 참조하는 변수인데, <code>str=null;</code>부분을 통해 <code>Test</code>를 가리키는 변수는 더이상 존재하지 않게 되어 <code>가비지 컬렉터가</code> 힙영역에서 Test라는 데이터를 제거하게 된다.</p>
+<p>이처럼 <code>참조 타입</code>의 힙 영역에 저장되는 데이터는 아무도 참조하지 않게 되었을때 소멸된다.</p>
+<p><br><br></p>
+<h2>타입 변환, 캐스팅 , 타입 프로모션</h2><a class="anchor" id="타입-변환-캐스팅--타입-프로모션"></a>
+<p>특정 데이터 타입의 값을 다른 데이터 타입의 값을 변환 하는 것</p>
+<ul>
+<li>
+<p>타입 프로모션 : 자신의 표현범위를 모두 포함한 데이터 타입으로 변환</p>
+<p><code>byte -&gt; int, int-&gt; long</code>와 같이 더 큰 범위를 갖는 데이터 타입으로 변환의 경우가 속하거나 <code>int -&gt; float</code>와 같이 같은 크기여도 표현범위를 모두 포함할 수 있다면 프로모션이다.</p>
+<p><code>float -&gt; long</code> 의 경우 데이터 크기로만 보면 프로모션이라고 생각할 수 있지만, long은 실수를 저장할 수 없기 때문에 데이터 손실이 일어나 프로모션이라고 할 수 없고 <code>캐스팅</code>이라고 볼 수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">long</span> l <span style="color:#f92672">=</span> 1234L<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">float</span> f <span style="color:#f92672">=</span> l<span style="color:#f92672">;</span>
+</code></pre></div><p>위의 코드와 같이 <code>프로모션</code>의 경우 데이터 손실이 발생하지 않고 자동으로 형변환을 시켜준다.</p>
+</li>
+<li>
+<p>타입 캐스팅 : 자신의 포현 범위를 모두 포함하지 못한 데이터 타입으로 변환</p>
+<p><code>int-&gt;byte, long -&gt; int</code>와 같이 큰 데이터크기에서 작은 크기의 데이터 타입으로 변환할때나 <code>float -&gt; long</code>과 같이 데이터 표현범위가 달라지는 경우에 속하며 데이터 손실이 일어 난다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">float</span> f <span style="color:#f92672">=</span> 1<span style="color:#f92672">.</span><span style="color:#a6e22e">234f</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">long</span> l <span style="color:#f92672">=</span> f<span style="color:#f92672">;</span>
+</code></pre></div><p>위의 코드와 같이 자동으로 캐스팅을 하려고한다면 데이터 손실이 발생할 수 있기 때문에 <code>컴파일타임에 오류를 발생 시킨다.</code></p>
+<p>그래도 형변환을 하고 싶다면 <code>강제형변환</code>을 사용할 수 있지만 데이터 손실이 발생하게 된다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">float</span> f <span style="color:#f92672">=</span> 1<span style="color:#f92672">.</span><span style="color:#a6e22e">234f</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">long</span> l <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">long</span><span style="color:#f92672">)</span>f<span style="color:#f92672">;</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>l<span style="color:#f92672">);</span> <span style="color:#75715e">// 1
+</span></code></pre></div></li>
+</ul>
+<p><br><br></p>
+<h2>1차, 2차 배열 선언</h2><a class="anchor" id="1차-2차-배열-선언"></a>
+<p>배열 변수 선언과 동시에 초기화를 통해 선언 하는 방식과 <code>new</code>를 이용하는 방식이 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ArrayExample</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">//1차원 배열
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> array1 <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>1<span style="color:#f92672">,</span> 2<span style="color:#f92672">,</span> 3<span style="color:#f92672">,</span> 4<span style="color:#f92672">,</span> 5<span style="color:#f92672">};</span>
+        <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> array2<span style="color:#f92672">;</span>
+        array2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>5<span style="color:#f92672">];</span>
+        array2<span style="color:#f92672">[</span>0<span style="color:#f92672">]=</span>1<span style="color:#f92672">;</span>
+        array2<span style="color:#f92672">[</span>1<span style="color:#f92672">]=</span>2<span style="color:#f92672">;</span>
+        array2<span style="color:#f92672">[</span>2<span style="color:#f92672">]=</span>3<span style="color:#f92672">;</span>
+        array2<span style="color:#f92672">[</span>3<span style="color:#f92672">]=</span>4<span style="color:#f92672">;</span>
+        array2<span style="color:#f92672">[</span>4<span style="color:#f92672">]=</span>5<span style="color:#f92672">;</span>
+
+        <span style="color:#75715e">//2차원 배열
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> array3 <span style="color:#f92672">=</span> <span style="color:#f92672">{{</span>1<span style="color:#f92672">,</span> 2<span style="color:#f92672">},</span> <span style="color:#f92672">{</span>3<span style="color:#f92672">,</span> 4<span style="color:#f92672">}};</span>
+        <span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> array4<span style="color:#f92672">;</span>
+        array4 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>2<span style="color:#f92672">][</span>2<span style="color:#f92672">];</span>
+        array4<span style="color:#f92672">[</span>0<span style="color:#f92672">][</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+        array4<span style="color:#f92672">[</span>0<span style="color:#f92672">][</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> 2<span style="color:#f92672">;</span>
+        array4<span style="color:#f92672">[</span>1<span style="color:#f92672">][</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> 3<span style="color:#f92672">;</span>
+        array4<span style="color:#f92672">[</span>1<span style="color:#f92672">][</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> 4<span style="color:#f92672">;</span>
+
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><br>
+<h3>1차원 배열</h3><a class="anchor" id="1차원-배열"></a>
+<p><img src="./array1.PNG?classes=border,shadow" alt="array1"></p>
+<p><a href="https://www.notion.so/2-38b5d67c7f5a48238529bb8f1617ea0d">사진 출처: https://www.notion.so/2-38b5d67c7f5a48238529bb8f1617ea0d</a></p>
+<br>
+<p>1차원 배열의 변수(array1,array2)는 스택영역에 존재하며 <code>힙 영역</code>의 <code>주소값</code>을 갖는다.</p>
+<p><code>힙 영역</code>에는 데이터 타입 크기와 요소 개수에 맞게 할당되어 사용이된다.</p>
+<h3>2차원 배열</h3><a class="anchor" id="2차원-배열"></a>
+<p><img src="./array2.PNG?classes=border,shadow" alt="array2"></p>
+<p><a href="https://www.notion.so/2-38b5d67c7f5a48238529bb8f1617ea0d">사진 출처 : https://www.notion.so/2-38b5d67c7f5a48238529bb8f1617ea0d</a></p>
+<br>
+<p>2차원 배열의 변수(array3,array4)는 스택영역에 존재하며 <code>힙 영역</code>의 <code>주소값</code>을 갖는다.</p>
+<p><code>힙 영역</code>에는 실제 데이터값들과 2차원배열의 각 행의 시작주소를 갖는 주소값들이 존재한다.</p>
+<p><br><br></p>
+<h2>타입 추론</h2><a class="anchor" id="타입-추론"></a>
+<p>Java 10 이후부터 생겨난 기능으로 컴파일러가 값을 보고 데이터 타입이 무엇인지 추론하는 것으로 <code>Js</code>의 <code>var</code>,<code>let</code>와 비슷하다.</p>
+<h3>제네릭</h3><a class="anchor" id="제네릭"></a>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">example</span><span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">){</span>
+        HashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>Integer<span style="color:#f92672">&gt;</span> hashMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>위와 같이 우항의 <code>&lt;&gt;</code>안에 값을 입력하지 않아도 좌항의 값을 보고 타입을 추론하여 생성하는 경우</p>
+<h3>var</h3><a class="anchor" id="var"></a>
+<p><code>JS</code>의 <code>var</code>,<code>let</code>과 같이 추론형 데이터 타입으로 생각할 수 있는데, 다른점으로 <code>지역 변수</code>와 <code>선언과 동시에 값이 할당 되어야 한다는 점</code>에서 <code>let과 const</code>를 합친 느낌이다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">example</span><span style="color:#f92672">{</span>
+    var i <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span> <span style="color:#75715e">//error
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">){</span>
+        var j<span style="color:#f92672">;</span> <span style="color:#75715e">//error
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><br><br><br></p>
+<hr>
+<h3>Reference</h3><a class="anchor" id="reference"></a>
+<p><a href="https://velog.io/@gillog/%EC%9B%90%EC%8B%9C%ED%83%80%EC%9E%85-%EC%B0%B8%EC%A1%B0%ED%83%80%EC%9E%85Primitive-Type-Reference-Type">https://velog.io/@gillog/%EC%9B%90%EC%8B%9C%ED%83%80%EC%9E%85-%EC%B0%B8%EC%A1%B0%ED%83%80%EC%9E%85Primitive-Type-Reference-Type</a></p>
+<p><a href="https://wikidocs.net/81917">https://wikidocs.net/81917</a></p>
+<p><a href="https://www.notion.so/2-38b5d67c7f5a48238529bb8f1617ea0d">https://www.notion.so/2-38b5d67c7f5a48238529bb8f1617ea0d</a></p>
+<p><a href="https://blog.naver.com/hsm622/222144931396">https://blog.naver.com/hsm622/222144931396</a></p>
+</div>
+
+	<div style="margin-top:200px;">
+		<script src="https://utteranc.es/client.js"
+				repo="gowoonsori/blog-comments"
+				issue-term="pathname"
+				theme="github-light"
+				crossorigin="anonymous"
+				async>
+		</script>
+	</div>
+
+
+	 
+	<div class="chevrons ">
+		<a class="next" href="/java/thread/" title="멀티 스레딩" style="margin-right: 0px;">
+            <div>
+                <p>Next page</p>
+                <label>멀티 스레딩</label>
+            </div>
+            <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
+	</div>
+	
+	
+
+      </section>
+
+      
+      
+      <section class="right-menu ">
+      
+	
+	
+		
+	    	
+	  	
+	<div class="TableOfContents">
+    <label>What&#39;s on this page</label>
+    <nav>
+        <ul >
+            <li><a href="/java/datatype/">DataType과 변수</a></li>
+        </ul>
+    </nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#primitive-type">Primitive Type</a></li>
+    <li><a href="#refrerence-type">Refrerence Type</a>
+      <ul>
+        <li><a href="#특징">특징</a></li>
+      </ul>
+    </li>
+    <li><a href="#리터럴">리터럴</a></li>
+    <li><a href="#변수-선언-및-초기화-방법">변수 선언 및 초기화 방법</a>
+      <ul>
+        <li><a href="#변수-선언">변수 선언</a></li>
+        <li><a href="#변수-초기화">변수 초기화</a></li>
+      </ul>
+    </li>
+    <li><a href="#변수의-스코프와-라이프타임">변수의 스코프와 라이프타임</a></li>
+    <li><a href="#타입-변환-캐스팅--타입-프로모션">타입 변환, 캐스팅 , 타입 프로모션</a></li>
+    <li><a href="#1차-2차-배열-선언">1차, 2차 배열 선언</a>
+      <ul>
+        <li><a href="#1차원-배열">1차원 배열</a></li>
+        <li><a href="#2차원-배열">2차원 배열</a></li>
+      </ul>
+    </li>
+    <li><a href="#타입-추론">타입 추론</a>
+      <ul>
+        <li><a href="#제네릭">제네릭</a></li>
+        <li><a href="#var">var</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+	
+		
+	    	
+	  	
+	<div class="Actions">
+	<nav>
+		<ul>
+				
+		    
+		    
+			
+		      <li>
+		          <i class='fas fa-calendar'></i>
+		          Last update on 22 January 2021
+		      </li>
+		    
+		    
+
+    	</ul>
+	</nav>
+    
+</div>
+
+      </section>
+      
+    </article>
+    
+    
+    <footer>
+      
+	
+		
+	    	<style type="text/css">
+
+.footer-gray {
+  width: 100%;
+  color: #888;
+}
+
+.footer-custom {
+  font: normal normal 12px/1.4 sans-serif;
+  /*max-width: 1008px;*/
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.footer-custom:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-lists:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-hdr {
+  color: white;
+  font: 22px/1.4  sans-serif;
+  margin: 1em 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .ftr-hdr {
+    font-size: 18px;
+  }
+}
+
+.footer-list-wrap {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 568px) {
+  .footer-list-wrap {
+    width: 33.3333%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-list-wrap {
+    width: 25%;
+  }
+}
+
+.ftr-links-sub {
+  padding: 0;
+  margin: 0;
+}
+
+.ftr-links-sub:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-links-sub li {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0;
+  color: #888;
+  font: normal normal 12px sans-serif;
+  text-transform: uppercase;
+  /*width: 150px;*/
+}
+
+.footer-custom a,
+.footer-custom a:link,
+.footer-custom a:visited,
+.ftr-links-sub li .link {
+  text-decoration: none;
+  color: #888;
+  padding: 5px 0;
+  display: block;
+}
+
+.footer-custom .footer-legal a {
+  display: inline;
+}
+
+.footer-custom a:hover,
+.footer-custom a:active,
+.ftr-links-sub li .link:hover {
+  text-decoration: underline;
+  color: #888;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-custom a, .footer-custom a:link, .footer-custom a:visited, .ftr-links-sub li .link {
+    padding: 0;
+  }
+}
+/* BEGIN EMAIL CAPTURE STYLES*/
+
+.footer-email {
+  text-align: center;
+}
+
+#ftrEmailForm {
+  height: 44px;
+}
+
+#ftrEmailForm .error {
+  display: none;
+  color: red;
+  text-align: left;
+}
+
+#ftrEmailForm #ftrEmailInput {
+  background: none repeat scroll 0 0 #FFF;
+  border: 1px solid #D6D6D6;
+  box-sizing: border-box;
+  color: #888;
+  float: left;
+  font: normal normal 14px/1.4 sans-serif;
+  padding: 5px;
+  width: 70%;
+  height: 100%;
+}
+
+#ftrEmailForm #ftrEmailInput:hover {
+  border: 1px solid #888;
+}
+
+#ftrEmailForm #ftrEmailInput:focus {
+  border: 1px solid #ef9223;
+  outline: #ef9223 auto 5px;
+}
+
+#ftrEmailForm .button {
+  width: 30%;
+  height: 100%;
+  padding: 5px;
+  float: left;
+  border: 1px solid #DFDFDF;
+  box-sizing: border-box;
+  color: #000;
+  font: normal bold 18px/1 sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FFF;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e1e1e1));
+  background: -webkit-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -moz-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -ms-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -o-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: linear-gradient(to bottom, white 0, #e1e1e1 100%);
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+}
+
+#ftrEmailForm .button:hover,
+#ftrEmailForm .button:active {
+  background: black;
+  color: #FFF;
+  outline: none;
+}
+/* BEGIN SOCIAL STYLES*/
+
+.footer-social {
+  text-align: center;
+}
+
+.footer-social ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-social ul:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-social li {
+  float: left;
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-lists {
+    width: 100%;
+  }
+  .footer-email {
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+  .footer-social {
+    width: 45%;
+    margin-left: 5%;
+    float: left;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-lists {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-email {
+    width: 33.3333%;
+  }
+  .footer-social {
+    width: 33.3333%;
+    float: right;
+    margin-left: 0;
+  }
+}
+
+.footer-legal {
+  padding: 15px 0 0;
+  clear: left;
+}
+
+.footer-payment {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-legal {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-payment {
+    width: 33.3333%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment {
+    text-align: left;
+  }
+}
+
+.footer-payment ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-payment ul li {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment ul li.ftr-stella {
+    margin-left: 0;
+  }
+}
+
+
+</style>
+  <div class="footer-gray">
+    <div class="footer-custom">
+      <div class="footer-lists">
+        <h6 class = "ftr-hdr">Contact me</h6>
+        <p>E-mail : gowoonsori97@gmail.com  |  gowoonsori97@naver.com</p>
+      </div>
+      <div class="footer-social">
+        <h6 class="ftr-hdr">Follow Us</h6>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/gowoonsori97/" title="Facebook">
+              <img width="24" height="24" alt="Like us on Facebook" src="/images/fb.png">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.github.com/gowoonosori" title="Github">
+             <i class="fab fa-github" style="font-size:24px"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <p>Copyrihgt &copy; gowoonsori.site All Rights Reserved. </p>
+      </div>
+    </div>
+  </div>
+  <!--/.footer-gray-->
+	    
+	
+    </footer>
+    
+
+
+
+  </body>
+</html>
