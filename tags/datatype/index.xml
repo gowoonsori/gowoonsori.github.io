@@ -13,8 +13,9 @@
       <pubDate>Fri, 22 Jan 2021 11:04:35 +0900</pubDate>
       
       <guid>https://gowoonsori.site/java/datatype/</guid>
-      <description>자바에서 데이터 타입은 크게 원시(Primitive) 타입과 참조(Reference) 타입이 있다.
-Primitive Type 정수, 실수, 문자, 논리 리터럴과 같은 실제 데이터 값을 저장하는 타입
+      <description>백기선님의 유튜브로 진행하시는 스터디를 진행하며 올리는 정리 블로그입니다.
+자바에서 데이터 타입은 크게 원시(Primitive) 타입과 참조(Reference) 타입이 있다.
+📌 Primitive Type 정수, 실수, 문자, 논리 리터럴과 같은 실제 데이터 값을 저장하는 타입
    종류 데이터 타입 크기(byte) 기본 값 범위     논리형 boolean 1byte false true, false   문자형 char 2byte \u0000 0 ~ 65,535   정수형 byte 1byte 0 -128~ 127   정수형 short 2byte 0 -2^15 ~ 2^15 - 1   정수형 int 4byte 0 -2^31 ~ 2^31 - 1   정수형 long 8byte 0L -2^63 ~ 2^63 - 1   실수형 float 4byte 0.</description>
     </item>
     

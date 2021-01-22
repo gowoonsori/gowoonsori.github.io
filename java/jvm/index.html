@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-22T12:05:11 KST">
+<meta name="revised" content="2021-01-23T00:21:04 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -167,38 +167,6 @@ if (!doNotTrack) {
 </div>
 
 <ul class="menu">
-
-    <li data-nav-id="https://gowoonsori.site/books/" class="dd-item haschildren
-        item_level_$level
-        ">
-
-      
-      
-      
-      <i class="fas fa-chevron-right ddexp"></i>
-        
-      
-          <a href="/books/">Books</a>
-      
-        <ul>
-              
-
-    <li data-nav-id="https://gowoonsori.site/books/cleancode/" class="dd-item
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/books/cleancode/">Clean Code</a>
-      
-        
-      
-    </li>
-        </ul>
-    </li>
-    
 
     <li data-nav-id="https://gowoonsori.site/home/" class="dd-item alwaysopen haschildren
         item_level_$level
@@ -516,6 +484,21 @@ if (!doNotTrack) {
     </li>
               
 
+    <li data-nav-id="https://gowoonsori.site/java/operator/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/operator/">연산자</a>
+      
+        
+      
+    </li>
+              
+
     <li data-nav-id="https://gowoonsori.site/java/thread/" class="dd-item
         item_level_$level
         ">
@@ -525,6 +508,38 @@ if (!doNotTrack) {
       
       
           <a href="/java/thread/">멀티 스레딩</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/books/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+          <a href="/books/">Books</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/books/cleancode/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/books/cleancode/">Clean Code</a>
       
         
       
@@ -708,18 +723,18 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#jvm">JVM</a></li>
-    <li><a href="#컴파일-하는-방법">컴파일 하는 방법</a>
+    <li><a href="#-jvm">📌 JVM</a></li>
+    <li><a href="#-컴파일-하는-방법">📌 컴파일 하는 방법</a>
       <ul>
         <li><a href="#컴파일-과정">컴파일 과정</a></li>
       </ul>
     </li>
-    <li><a href="#실행방법">실행방법</a></li>
-    <li><a href="#바이트코드란">바이트코드란</a></li>
-    <li><a href="#jvm-구성요소">JVM 구성요소</a></li>
-    <li><a href="#runtime-data-area">Runtime Data Area</a></li>
-    <li><a href="#jdk와-jre-차이">JDK와 JRE 차이</a></li>
-    <li><a href="#oraclejdk-와-openjdk의-차이">OracleJDK 와 OpenJDK의 차이</a>
+    <li><a href="#-실행방법">📌 실행방법</a></li>
+    <li><a href="#-바이트코드란">📌 바이트코드란</a></li>
+    <li><a href="#-jvm-구성요소">📌 JVM 구성요소</a></li>
+    <li><a href="#-runtime-data-area">📌 Runtime Data Area</a></li>
+    <li><a href="#-jdk와-jre-차이">📌 JDK와 JRE 차이</a></li>
+    <li><a href="#-oraclejdk-와-openjdk의-차이">📌 OracleJDK 와 OpenJDK의 차이</a>
       <ul>
         <li><a href="#reference">Reference</a></li>
       </ul>
@@ -730,7 +745,8 @@ if (!doNotTrack) {
 	
 	
 
-	<div class="content"><h2>JVM</h2><a class="anchor" id="jvm"></a>
+	<div class="content"><p>백기선님의 <a href="https://www.youtube.com/c/%EB%B0%B1%EA%B8%B0%EC%84%A0/featured">유튜브</a>로 진행하시는 스터디를 진행하며 올리는 정리 블로그입니다.</p>
+<h2>📌 JVM</h2><a class="anchor" id="-jvm"></a>
 <p>Java Virtual Machine의 약자로 Java와 OS사이에서 중개자 역할을 하여 메모리 관리, GC(garbage collection)을 수행하는 스택기반의 가상머신으로 C++,C와 같은 언어들과 다르게 OS에 상관없이 동작이 가능하다.</p>
 <p>Java는 C나 C++과 같이 바로 컴파일되는 컴파일 언어가 아니다. 컴파일언어는 컴파일 환경에 따라 다르게 컴파일이 된다는 특징을 가지고 있기 때문에 Java의 가장 큰 특징인 os와 환경에 구애받지 않는 다는 점을 위반하기 때문이다.
 (파이썬이나, JS는 인터프리터 언어)</p>
@@ -757,7 +773,7 @@ if (!doNotTrack) {
 </div>
 
 <br>
-<h2>컴파일 하는 방법</h2><a class="anchor" id="컴파일-하는-방법"></a>
+<h2>📌 컴파일 하는 방법</h2><a class="anchor" id="-컴파일-하는-방법"></a>
 <p>컴파일 이름 그대로 자바 컴파일러를 이용해 자바코드를 바이트코드(.class파일)로 변환하는 것으로 설치한 jdk의 bin폴더안에 <code>javac</code>이라는 자바 컴파일러가 존재하기 때문에 이를 이용하면 된다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-shell" data-lang="shell">javac hello.world.java
 </code></pre></div><br>
@@ -778,18 +794,18 @@ if (!doNotTrack) {
 </li>
 </ol>
 <br>
-<h2>실행방법</h2><a class="anchor" id="실행방법"></a>
+<h2>📌 실행방법</h2><a class="anchor" id="-실행방법"></a>
 <p>요즘 대부분은 <code>IDE</code>를 통해 실행하나 CLI의 <code>java</code>명령어를 이용하여 실행이가능하다.</p>
 <p>default 패키지라면 바로 파일명을 통해 실행이 가능하며 package를 명시하여 실행도 가능하다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-shell" data-lang="shell">java hello_world
 
 java java.me.example.hello_world
 </code></pre></div><br>
-<h2>바이트코드란</h2><a class="anchor" id="바이트코드란"></a>
+<h2>📌 바이트코드란</h2><a class="anchor" id="-바이트코드란"></a>
 <p>위에서 설명것 처럼 JVM이라는 기계가 이해할 수 있는 언어이다.</p>
 <p>때문에 자바코드를 바이트 코드로 변환하는 것을 <code>자바 컴파일러</code>라고 부른다.</p>
 <br>
-<h2>JVM 구성요소</h2><a class="anchor" id="jvm-구성요소"></a>
+<h2>📌 JVM 구성요소</h2><a class="anchor" id="-jvm-구성요소"></a>
 <p><img src="./jvm.PNG?classes=border,shadow" alt="jvm">
 <a href="https://asfirstalways.tistory.com/158">사진 출처 : https://asfirstalways.tistory.com/158</a></p>
 <ul>
@@ -815,7 +831,7 @@ java java.me.example.hello_world
 </li>
 </ul>
 <br>
-<h2>Runtime Data Area</h2><a class="anchor" id="runtime-data-area"></a>
+<h2>📌 Runtime Data Area</h2><a class="anchor" id="-runtime-data-area"></a>
 <p>JVM내의 메모리</p>
 <p><img src="./memory.PNG?classes=border,shadow" alt="memory">
 <a href="https://asfirstalways.tistory.com/158">사진 출처 : https://asfirstalways.tistory.com/158</a></p>
@@ -867,7 +883,7 @@ java java.me.example.hello_world
 </li>
 </ul>
 <br>
-<h2>JDK와 JRE 차이</h2><a class="anchor" id="jdk와-jre-차이"></a>
+<h2>📌 JDK와 JRE 차이</h2><a class="anchor" id="-jdk와-jre-차이"></a>
 <ul>
 <li>
 <p>JDK : Java Development kit의 약자로 <code>컴파일러</code>,<code>역 어셈블러</code>,<code>디버거</code>,<code>의존관계 분석</code>등 <strong>개발</strong>에 필요한 도구를 제공</p>
@@ -880,7 +896,7 @@ java java.me.example.hello_world
 </li>
 </ul>
 <br>
-<h2>OracleJDK 와 OpenJDK의 차이</h2><a class="anchor" id="oraclejdk-와-openjdk의-차이"></a>
+<h2>📌 OracleJDK 와 OpenJDK의 차이</h2><a class="anchor" id="-oraclejdk-와-openjdk의-차이"></a>
 <p>JVM은 <code>ORACLE</code>이라는 기업이 JVM의 표준을 정의하면 <code>Amazon</code>이나 <code>Oracle</code>,<code>Azul</code>와 같은 기업들이 표준에 따라 실물을 만들어 제공하게 된다.</p>
 <p>이때, 스펙과 표준을 정의한 Oracle이 배포한 JDK가 OracleJDK이며, 가격 정책이 존재한다.</p>
 <p>다른 기업들이 무료로 배포한 JDK를 OpenJDK라고 한다.</p>
@@ -936,18 +952,18 @@ java java.me.example.hello_world
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#jvm">JVM</a></li>
-    <li><a href="#컴파일-하는-방법">컴파일 하는 방법</a>
+    <li><a href="#-jvm">📌 JVM</a></li>
+    <li><a href="#-컴파일-하는-방법">📌 컴파일 하는 방법</a>
       <ul>
         <li><a href="#컴파일-과정">컴파일 과정</a></li>
       </ul>
     </li>
-    <li><a href="#실행방법">실행방법</a></li>
-    <li><a href="#바이트코드란">바이트코드란</a></li>
-    <li><a href="#jvm-구성요소">JVM 구성요소</a></li>
-    <li><a href="#runtime-data-area">Runtime Data Area</a></li>
-    <li><a href="#jdk와-jre-차이">JDK와 JRE 차이</a></li>
-    <li><a href="#oraclejdk-와-openjdk의-차이">OracleJDK 와 OpenJDK의 차이</a>
+    <li><a href="#-실행방법">📌 실행방법</a></li>
+    <li><a href="#-바이트코드란">📌 바이트코드란</a></li>
+    <li><a href="#-jvm-구성요소">📌 JVM 구성요소</a></li>
+    <li><a href="#-runtime-data-area">📌 Runtime Data Area</a></li>
+    <li><a href="#-jdk와-jre-차이">📌 JDK와 JRE 차이</a></li>
+    <li><a href="#-oraclejdk-와-openjdk의-차이">📌 OracleJDK 와 OpenJDK의 차이</a>
       <ul>
         <li><a href="#reference">Reference</a></li>
       </ul>
