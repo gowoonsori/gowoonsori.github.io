@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Enum on 고소리&#39;s Blog</title>
+    <link>https://gowoonsori.site/java/enum/</link>
+    <description>Recent content in Enum on 고소리&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Jan 2021 20:46:28 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/java/enum/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
