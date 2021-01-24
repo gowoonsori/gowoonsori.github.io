@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-23T00:21:04 KST">
+<meta name="revised" content="2021-01-24T15:56:05 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -214,53 +214,6 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/home/react-project/" class="dd-item haschildren
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/home/react-project/">ReactToyProject 개발기록</a>
-      <i class="fas fa-chevron-right ddexp"></i>
-        
-      
-        <ul>
-              
-
-    <li data-nav-id="https://gowoonsori.site/home/react-project/1_settings/" class="dd-item
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/home/react-project/1_settings/">1. 초기 셋팅하기 (front)</a>
-      
-        
-      
-    </li>
-              
-
-    <li data-nav-id="https://gowoonsori.site/home/react-project/2_backsettings/" class="dd-item
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/home/react-project/2_backsettings/">2. 초기 셋팅하기 (back)</a>
-      
-        
-      
-    </li>
-        </ul>
-    </li>
-              
-
     <li data-nav-id="https://gowoonsori.site/home/kpu_sw_competition/" class="dd-item haschildren
         item_level_$level
         ">
@@ -285,6 +238,53 @@ if (!doNotTrack) {
       
       
           <a href="/home/kpu_sw_competition/final/">KPU S/W 경진대회 본선 후기 (코딩 테스트)</a>
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/react-project/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/react-project/">🌼 포인트 적립을 위한 웹 제작기</a>
+      <i class="fas fa-chevron-right ddexp"></i>
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/react-project/1/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/react-project/1/">프로젝트 설계와 환경 구성</a>
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/react-project/2/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/react-project/2/">React/Next 개발환경 셋팅과 로그인 창 구현</a>
       
         
       
@@ -797,10 +797,13 @@ if (!doNotTrack) {
 <h2>📌 실행방법</h2><a class="anchor" id="-실행방법"></a>
 <p>요즘 대부분은 <code>IDE</code>를 통해 실행하나 CLI의 <code>java</code>명령어를 이용하여 실행이가능하다.</p>
 <p>default 패키지라면 바로 파일명을 통해 실행이 가능하며 package를 명시하여 실행도 가능하다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-shell" data-lang="shell">java hello_world
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">java hello_world
 
 java java.me.example.hello_world
-</code></pre></div><br>
+</code></pre></div><p>자바 상위버전의 <code>class</code>파일을 하위 버전으로 실행하려고 하면 대부분 <code>에러</code>가 발생하고 반대의 경우에는 <code>하위 호환성(backward compatible)</code>이라고 하여 실행이 가능하다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">javac -source &lt;version&gt; -target &lt;version&gt; &lt;java filename&gt;
+</code></pre></div><p>위와 같은 명령어로 컴파일시 호환성 옵션을 줄 수 있다.</p>
+<br>
 <h2>📌 바이트코드란</h2><a class="anchor" id="-바이트코드란"></a>
 <p>위에서 설명것 처럼 JVM이라는 기계가 이해할 수 있는 언어이다.</p>
 <p>때문에 자바코드를 바이트 코드로 변환하는 것을 <code>자바 컴파일러</code>라고 부른다.</p>

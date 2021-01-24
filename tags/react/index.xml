@@ -6,41 +6,29 @@
     <description>Recent content in react on 고소리&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Oct 2020 23:33:54 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jan 2021 14:09:48 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>1. 초기 셋팅하기 (front)</title>
-      <link>https://gowoonsori.site/home/react-project/1_settings/</link>
-      <pubDate>Mon, 28 Sep 2020 23:33:54 +0900</pubDate>
+      <title>프로젝트 설계와 환경 구성</title>
+      <link>https://gowoonsori.site/home/react-project/1/</link>
+      <pubDate>Sun, 24 Jan 2021 13:41:25 +0900</pubDate>
       
-      <guid>https://gowoonsori.site/home/react-project/1_settings/</guid>
-      <description>노드 (Node.js) 설치하기  사용할 IDE는 vscode를 사용할 예정이다.
-react 프로젝트를 시작하기에 앞서 js를 이용하여 웹프로그래밍을 하기 위해 노드를 설치 해주어야 한다.
-다운로드 링크 : https://nodejs.org/ko/
-위의 링크를 통해 다운 및 설치를 해주었다.
-터미널에 npm -v를 통해 설치가 되었는지/무슨 버전을 설치했는 지 확인할 수 있다.
-
-프로젝트 폴더 만들기  프로젝트를 진행할 earn-points-web이라는 폴더를 만들고 이 폴더 안에서 front / back을 나누어 개발을 할 것이고 front먼저 틀을 잡아놓을 계획이기 때문에 front먼저 생성 해주었다.</description>
+      <guid>https://gowoonsori.site/home/react-project/1/</guid>
+      <description>웹 전반적인 흐름도 익히고 프레임워크들도 공부하기 위해 토이 프로젝트로 간단한 고객 정보를 관리하고 포인트 적립을 하는 웹을 구현해보고자 한다.
+사용할 스택으로는 크게 React와 spring boot를 사용해서 개발해보려고 한다.
+React는 사용을 해본적이 있고 JS에 관심이 많기 때문에 선택을 하였고, 백을 JS 프레임워크가 아닌 굳이 Spring boot를 사용하는 이유는 현재 졸업작품에서도 사용을 하고 있고 현재 흥미가 많은 프레임워크이기 때문에 더많은 공부를 위해 사용하기로 했다.
+또한 그런 Rest API로 괜찮은가? 를 꽤 감명깊게 봐서 Spring boot로 한번 Restful한 API를 만들어보고자 했고 이런 백엔드와 프론트영역을 완전히 분리하여 개발하려고 하고있고 현재 생각중인 기능에서 SSR이 필요하다고 생각해서 next.</description>
     </item>
     
     <item>
-      <title>2. 초기 셋팅하기 (back)</title>
-      <link>https://gowoonsori.site/home/react-project/2_backsettings/</link>
-      <pubDate>Sat, 24 Oct 2020 23:33:54 +0900</pubDate>
+      <title>React/Next 개발환경 셋팅과 로그인 창 구현</title>
+      <link>https://gowoonsori.site/home/react-project/2/</link>
+      <pubDate>Sun, 24 Jan 2021 14:09:48 +0900</pubDate>
       
-      <guid>https://gowoonsori.site/home/react-project/2_backsettings/</guid>
-      <description>express 설치하기  참고자료 </description>
-    </item>
-    
-    <item>
-      <title>ReactToyProject 개발기록</title>
-      <link>https://gowoonsori.site/home/react-project/</link>
-      <pubDate>Mon, 28 Sep 2020 23:33:25 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/home/react-project/</guid>
-      <description>React를 이용하여 ToyProject 포인트 적립 웹 만들기 💰  Github repo로 가기 
-1. 초기 셋팅하기 (front)React로 Toy project 초기 개발환경 세팅하기
-2. 초기 셋팅하기 (back)React로 Toy project 초기 개발환경 세팅하기
-</description>
+      <guid>https://gowoonsori.site/home/react-project/2/</guid>
+      <description>가장 먼저 vscode를 통해 wsl2에 접속하고 wsl2에 폴더를 만들어 주었다.
+mkdir front cd front npm init -y npm install --save react react-dom next 만든 프로젝트안에 front라는 폴더를 만들어 react와 next의 의존성을 추가해주었다.
+&amp;#34;scripts&amp;#34;: { &amp;#34;dev&amp;#34;: &amp;#34;next -p 3060&amp;#34;, &amp;#34;build&amp;#34;: &amp;#34;next build&amp;#34;, &amp;#34;start&amp;#34;: &amp;#34;next start&amp;#34;, . . . package.json에 프로젝트 실행을 보다 간편하게 하기 위해 명령어를 수정해주었다.
+npm run dev를 통해 개발모드로 실행 시키고 npm run build와 npm start로 실제 동작을 시킬 수 있다.</description>
     </item>
     
   </channel>

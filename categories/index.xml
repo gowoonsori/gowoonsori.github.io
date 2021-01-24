@@ -6,7 +6,43 @@
     <description>Recent content in Categories on 고소리&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jan 2021 00:01:50 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jan 2021 14:09:48 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Material UI</title>
+      <link>https://gowoonsori.site/categories/material-ui/</link>
+      <pubDate>Sun, 24 Jan 2021 14:09:48 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/categories/material-ui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Next</title>
+      <link>https://gowoonsori.site/categories/next/</link>
+      <pubDate>Sun, 24 Jan 2021 14:09:48 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/categories/next/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>https://gowoonsori.site/categories/react/</link>
+      <pubDate>Sun, 24 Jan 2021 14:09:48 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/categories/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring boot</title>
+      <link>https://gowoonsori.site/categories/spring-boot/</link>
+      <pubDate>Sun, 24 Jan 2021 13:41:25 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/categories/spring-boot/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>java</title>
       <link>https://gowoonsori.site/categories/java/</link>
@@ -94,15 +130,6 @@
       <pubDate>Fri, 06 Nov 2020 18:41:47 +0900</pubDate>
       
       <guid>https://gowoonsori.site/categories/%EC%9E%90%EB%8F%99-%EC%8B%A4%ED%96%89/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>react</title>
-      <link>https://gowoonsori.site/categories/react/</link>
-      <pubDate>Sat, 24 Oct 2020 23:33:54 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/react/</guid>
       <description></description>
     </item>
     
