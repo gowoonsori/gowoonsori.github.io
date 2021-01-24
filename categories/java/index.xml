@@ -6,7 +6,7 @@
     <description>Recent content in java on 고소리&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jan 2021 00:01:50 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jan 2021 20:46:28 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JVM과 자바 실행</title>
       <link>https://gowoonsori.site/java/jvm/</link>
@@ -54,6 +54,19 @@ int left = 2020; int right = 1; int year = left + right; char ch = A; System.</d
 📌 Thread란? 쓰레드라는 개념을 이해하기 위해서는 프로세스와 병행성(Concurrency)의 개념을 알면 더 좋을 것같다.
 ◾ 프로세스란 프로세스의 사전적 의미는 컴퓨터에서 실행되고 있는 컴퓨터 프로그램을 말한다. 여러 개의 프로세서를 사용하는 것을 멀티 프로세싱이라고 하며, 같은 시간에 여러 개의 프로그램을 띄우는 시분할 방식을 멀티태스킹 이라고 한다.
 특징  프로그램이 실행되는 단위 모든 프로그램은 실행 될 때 하나 이상의 프로세스를 갖는다. 각 프로세스는 다른 프로세스의 변수나 자료 구조에 접근할 수 없다.</description>
+    </item>
+    
+    <item>
+      <title>Enum</title>
+      <link>https://gowoonsori.site/java/enum/</link>
+      <pubDate>Sun, 24 Jan 2021 20:46:28 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/java/enum/</guid>
+      <description>백기선님의 유튜브로 진행하시는 스터디를 진행하며 올리는 정리 블로그입니다.
+
+Java의 Enum도 기본적으로 c나 c++의 enum과 같은 목적을 위한 클래스로 JDK 1.5이후에 생긴 클래스이다.
+잠깐 C언어 얘기를 하자면 C언어의 C99 이전에는 boolean타입을 제공하지 않았기 때문에 다음과 같이 사용하고는 했었다.
+typedef enum _boolean { FALSE, TRUE } boolean; #define FALSE 0 #define TRUE 1 ◾ Java에서의 Enum 특징 Enum 비교시에 값이 아닌 타입까지도 체크가 가능하고 Enum의 상수값이 재정의 되어도 다시 컴파일하지 않는다.</description>
     </item>
     
   </channel>
