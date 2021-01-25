@@ -6,7 +6,7 @@
     <description>Recent content in java on 고소리&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Jan 2021 20:46:28 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Jan 2021 20:11:16 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JVM과 자바 실행</title>
       <link>https://gowoonsori.site/java/jvm/</link>
@@ -28,6 +28,17 @@ Java는 C나 C++과 같이 바로 컴파일되는 컴파일 언어가 아니다.
 자바에서 데이터 타입은 크게 원시(Primitive) 타입과 참조(Reference) 타입이 있다.
 📌 Primitive Type 정수, 실수, 문자, 논리 리터럴과 같은 실제 데이터 값을 저장하는 타입
    종류 데이터 타입 크기(byte) 기본 값 범위     논리형 boolean 1byte false true, false   문자형 char 2byte \u0000 0 ~ 65,535   정수형 byte 1byte 0 -128~ 127   정수형 short 2byte 0 -2^15 ~ 2^15 - 1   정수형 int 4byte 0 -2^31 ~ 2^31 - 1   정수형 long 8byte 0L -2^63 ~ 2^63 - 1   실수형 float 4byte 0.</description>
+    </item>
+    
+    <item>
+      <title>제어문</title>
+      <link>https://gowoonsori.site/java/controlstatement/</link>
+      <pubDate>Mon, 25 Jan 2021 20:11:16 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/java/controlstatement/</guid>
+      <description>조건문 ◾ Switch 특정 데이터의 값에 따라 수행할 작업을 선택하는 구문으로 switch를 사용한다.
+일반적인 사용법은 C/C++와 다르지 않다.
+public class example { public static void main(String[] args) { String select = &amp;#34;ORANGE&amp;#34;; String fruit; switch(select){ case &amp;#34;APPLE&amp;#34; : fruit = &amp;#34;apple&amp;#34;; System.out.println(&amp;#34;사과&amp;#34;); break; case &amp;#34;BANANA&amp;#34; : fruit = &amp;#34;banana&amp;#34;; System.out.println(&amp;#34;바나나&amp;#34;); break; case &amp;#34;ORANGE&amp;#34; : fruit = &amp;#34;orange&amp;#34;; System.out.println(&amp;#34;오렌지&amp;#34;); break; default: fruit = &amp;#34;default&amp;#34;; System.out.println(&amp;#34;default&amp;#34;); break; } System.out.println(fruit); } } switch() 매개변수에 데이터 값을 입력하고 case : 를 이용해 값에 따라 구문을 구분하면 된다.</description>
     </item>
     
     <item>
