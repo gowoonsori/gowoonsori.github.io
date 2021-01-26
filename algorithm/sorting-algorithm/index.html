@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-26T23:43:34 KST">
+<meta name="revised" content="2021-01-27T00:32:55 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -686,7 +686,6 @@ if (!doNotTrack) {
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/gowoonsori" aria-label="Follow @gowoonsori on GitHub">Follow@gowoonsori</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/gowoonsori/gowoonsori.github.io" data-icon="octicon-star" aria-label="Star gowoonsori/gowoonsori.github.io on GitHub">Star</a>
 </center>
 <!-- <center style='margin-top:20px'>
     <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgowoonsori.site&count_bg=%23426EAE&title_bg=%23555555&icon=&icon_color=%238E4F4F&title=%F0%9F%93%8C+Today+%2F+Total++&edge_flat=false"/></a>
@@ -982,13 +981,13 @@ if (!doNotTrack) {
 </ul>
 <br>
 <p>예를 들어, 같은 5이더라도 a가 앞에 있는 5, b가 뒤에 있는 5라고 한다면</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>  3 5(a) 1 4 5(b) 2
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  이 정렬 후에
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  1 2 3 4 5(a) 5(b)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>  와 같이 같은 키값의 원소의 순서가 유지 되는 것.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">  3 5(a) 1 4 5(b) 2
+
+  이 정렬 후에
+
+  1 2 3 4 5(a) 5(b)
+
+  와 같이 같은 키값의 원소의 순서가 유지 되는 것.
 </code></pre></div><br>
 <ul>
 <li>
@@ -1005,13 +1004,13 @@ if (!doNotTrack) {
 </ul>
 <br>
 <p>예를 들어, 같은 5이더라도 a가 앞에 있는 5, b가 뒤에 있는 5라고 한다면</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>  3 5(a) 1 4 5(b) 2
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  이 정렬 후에
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  1 2 3 4 5(b) 5(a)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>  와 같이 같은 키값의 원소의 순서가 유지 되지 않는 것.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">  3 5(a) 1 4 5(b) 2
+
+  이 정렬 후에
+
+  1 2 3 4 5(b) 5(a)
+
+  와 같이 같은 키값의 원소의 순서가 유지 되지 않는 것.
 </code></pre></div><p><br><br></p>
 <p><a id="selection"/></a></p>
 <h3>◼ Selection Sort</h3><a class="anchor" id="-selection-sort"></a>
@@ -1030,63 +1029,63 @@ if (!doNotTrack) {
 <details>
   <summary style="font-Weight : bold; font-size : 15px; color : #F90000;" >  📃 코드  ( 접기 / 펼치기 )</summary>
   <div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#6272a4">//배열의 item을 random으로 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">100</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        cout.width(<span style="color:#bd93f9">3</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        cout.width(<span style="color:#bd93f9">2</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#6272a4">//선택 정렬
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Selection_sort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>    <span style="color:#8be9fd">int</span> min;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    <span style="color:#6272a4">/*배열을 순차 탐색하며 제일 최솟값을 왼쪽부터 정렬*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>        min<span style="color:#ff79c6">=</span>i;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">=</span>i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>;j<span style="color:#ff79c6">&lt;</span>arrlen;j<span style="color:#ff79c6">++</span>)  <span style="color:#6272a4">//최솟값이 들어있는 인덱스 search
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">if</span>(array[j]<span style="color:#ff79c6">&lt;</span>array[min]) min<span style="color:#ff79c6">=</span>j;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>        swap( array[i], array[min] );       <span style="color:#6272a4">//가장 작은값을 왼쪽으로 이동
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span style="color:#6272a4"></span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>    <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">64</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span style="color:#6272a4"></span>    start <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>    Selection_sort(array,arr_sz); <span style="color:#6272a4">//선택 정렬
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>    display(array,arr_sz);         <span style="color:#6272a4">//show array
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span><span style="color:#6272a4"></span>    CalcTime();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6"></span>
+<span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
+
+clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4">//배열의 item을 random으로 삽입
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">100</span>;
+    }
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        cout.width(<span style="color:#bd93f9">3</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
+        cout.width(<span style="color:#bd93f9">2</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
+    }
+}
+
+<span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
+    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
+    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
+}
+
+<span style="color:#6272a4">//선택 정렬
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Selection_sort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#8be9fd">int</span> min;
+    <span style="color:#6272a4">/*배열을 순차 탐색하며 제일 최솟값을 왼쪽부터 정렬*/</span>
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;i<span style="color:#ff79c6">++</span>){
+        min<span style="color:#ff79c6">=</span>i;
+        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">=</span>i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>;j<span style="color:#ff79c6">&lt;</span>arrlen;j<span style="color:#ff79c6">++</span>)  <span style="color:#6272a4">//최솟값이 들어있는 인덱스 search
+</span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">if</span>(array[j]<span style="color:#ff79c6">&lt;</span>array[min]) min<span style="color:#ff79c6">=</span>j;
+        swap( array[i], array[min] );       <span style="color:#6272a4">//가장 작은값을 왼쪽으로 이동
+</span><span style="color:#6272a4"></span>    }
+}
+
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
+    <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">64</span>];
+    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
+
+    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
+</span><span style="color:#6272a4"></span>    start <span style="color:#ff79c6">=</span> clock();
+    Selection_sort(array,arr_sz); <span style="color:#6272a4">//선택 정렬
+</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
+    display(array,arr_sz);         <span style="color:#6272a4">//show array
+</span><span style="color:#6272a4"></span>    CalcTime();
+
+    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+}
 </code></pre></div>  </div>
 </details>
 <p><br><br></p>
@@ -1111,68 +1110,68 @@ if (!doNotTrack) {
 <details>
   <summary style="font-Weight : bold; font-size : 15px; color : #F90000;" >  📃 코드  ( 접기 / 펼치기 )</summary>
   <div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#6272a4">//배열의 item을 random으로 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">100</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        cout.width(<span style="color:#bd93f9">3</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        cout.width(<span style="color:#bd93f9">2</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Insertion_sort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    <span style="color:#8be9fd">int</span> j,item;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>        item<span style="color:#ff79c6">=</span>array[i];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>        <span style="color:#6272a4">/*배열의 첫번째 가 아니고, 앞의 값보다
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span style="color:#6272a4">        작다면 교체*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>        <span style="color:#ff79c6">for</span>(j<span style="color:#ff79c6">=</span>i<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;j<span style="color:#ff79c6">&gt;=</span><span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> item <span style="color:#ff79c6">&lt;</span> array[j] ;j<span style="color:#ff79c6">--</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>            array[j<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">=</span>array[j];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>        array[j<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">=</span>item;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>    <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">64</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span><span style="color:#6272a4"></span>    start <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>    Insertion_sort(array,arr_sz); <span style="color:#6272a4">//삽입 정렬
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>    display(array,arr_sz);         <span style="color:#6272a4">//show array
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span><span style="color:#6272a4"></span>    CalcTime();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6"></span>
+<span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
+
+clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4">//배열의 item을 random으로 삽입
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">100</span>;
+    }
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        cout.width(<span style="color:#bd93f9">3</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
+        cout.width(<span style="color:#bd93f9">2</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
+    }
+}
+
+<span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
+    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
+    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Insertion_sort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+
+
+    <span style="color:#8be9fd">int</span> j,item;
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        item<span style="color:#ff79c6">=</span>array[i];
+
+        <span style="color:#6272a4">/*배열의 첫번째 가 아니고, 앞의 값보다
+</span><span style="color:#6272a4">        작다면 교체*/</span>
+        <span style="color:#ff79c6">for</span>(j<span style="color:#ff79c6">=</span>i<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;j<span style="color:#ff79c6">&gt;=</span><span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> item <span style="color:#ff79c6">&lt;</span> array[j] ;j<span style="color:#ff79c6">--</span>)
+            array[j<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">=</span>array[j];
+        array[j<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">=</span>item;
+
+
+    }
+}
+
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
+    <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">64</span>];
+    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
+
+    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
+</span><span style="color:#6272a4"></span>    start <span style="color:#ff79c6">=</span> clock();
+    Insertion_sort(array,arr_sz); <span style="color:#6272a4">//삽입 정렬
+</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
+    display(array,arr_sz);         <span style="color:#6272a4">//show array
+</span><span style="color:#6272a4"></span>    CalcTime();
+
+    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+}
 </code></pre></div>  </div>
 </details>
 <p><br><br></p>
@@ -1194,63 +1193,63 @@ if (!doNotTrack) {
 <details>
   <summary style="font-Weight : bold; font-size : 15px; color : #F90000;" >  📃 코드  ( 접기 / 펼치기 )</summary>
   <div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#6272a4">//배열의 item을 random으로 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">100</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        cout.width(<span style="color:#bd93f9">3</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        cout.width(<span style="color:#bd93f9">2</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Bubble_sort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>    <span style="color:#6272a4">/*한번 탐색할때마다 배열의 끝에 제일 큰 값이 채워지므로
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span style="color:#6272a4">    배열의 길이-1만큼 반복문이 돈다*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;i<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">--</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>        <span style="color:#6272a4">/*배열의 첫번째부터 다음 값과 비교해보면서
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span style="color:#6272a4">        큰 값은 점점 뒤로 민다*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;j<span style="color:#ff79c6">&lt;</span>i;j<span style="color:#ff79c6">++</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>            <span style="color:#ff79c6">if</span>(array[j]<span style="color:#ff79c6">&gt;</span>array[j<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]) swap(array[j],array[j<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>    <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">64</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span style="color:#6272a4"></span>    start <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>    Bubble_sort(array,arr_sz);    <span style="color:#6272a4">//버블 정렬
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>    display(array,arr_sz);         <span style="color:#6272a4">//show array
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span><span style="color:#6272a4"></span>    CalcTime();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6"></span>
+<span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
+
+clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4">//배열의 item을 random으로 삽입
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">100</span>;
+    }
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        cout.width(<span style="color:#bd93f9">3</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
+        cout.width(<span style="color:#bd93f9">2</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
+    }
+}
+
+<span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
+    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
+    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Bubble_sort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+
+    <span style="color:#6272a4">/*한번 탐색할때마다 배열의 끝에 제일 큰 값이 채워지므로
+</span><span style="color:#6272a4">    배열의 길이-1만큼 반복문이 돈다*/</span>
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;i<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">--</span>){
+        <span style="color:#6272a4">/*배열의 첫번째부터 다음 값과 비교해보면서
+</span><span style="color:#6272a4">        큰 값은 점점 뒤로 민다*/</span>
+        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;j<span style="color:#ff79c6">&lt;</span>i;j<span style="color:#ff79c6">++</span>)
+            <span style="color:#ff79c6">if</span>(array[j]<span style="color:#ff79c6">&gt;</span>array[j<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]) swap(array[j],array[j<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]);
+    }
+}
+
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
+    <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">64</span>];
+
+    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
+    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
+</span><span style="color:#6272a4"></span>    start <span style="color:#ff79c6">=</span> clock();
+    Bubble_sort(array,arr_sz);    <span style="color:#6272a4">//버블 정렬
+</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
+    display(array,arr_sz);         <span style="color:#6272a4">//show array
+</span><span style="color:#6272a4"></span>    CalcTime();
+
+    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+}
 </code></pre></div>  </div>
 </details>
 <p><br><br></p>
@@ -1278,93 +1277,93 @@ if (!doNotTrack) {
 <details>
   <summary style="font-Weight : bold; font-size : 15px; color : #F90000;" >  📃 코드  ( 접기 / 펼치기 )</summary>
   <div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#8be9fd">int</span> sorted[<span style="color:#bd93f9">64</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#6272a4">//배열의 item을 random으로 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">100</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        cout.width(<span style="color:#bd93f9">2</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>        cout.width(<span style="color:#bd93f9">2</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Merge</span>(<span style="color:#8be9fd">int</span> array[],<span style="color:#8be9fd">int</span> left,<span style="color:#8be9fd">int</span> mid,<span style="color:#8be9fd">int</span> right){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    <span style="color:#8be9fd">int</span> l;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    <span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>left;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>    <span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">=</span>mid<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>    <span style="color:#8be9fd">int</span> k<span style="color:#ff79c6">=</span>left;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>    <span style="color:#6272a4">/*왼쪽 배열과 오른쪽 배열 비교하며 sorted배열에 삽입*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    <span style="color:#ff79c6">while</span>(i<span style="color:#ff79c6">&lt;=</span> mid <span style="color:#ff79c6">&amp;&amp;</span> j<span style="color:#ff79c6">&lt;=</span>right){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>        <span style="color:#ff79c6">if</span>(array[i]<span style="color:#ff79c6">&lt;=</span>array[j])
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>            sorted[k<span style="color:#ff79c6">++</span>]<span style="color:#ff79c6">=</span>array[i<span style="color:#ff79c6">++</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>        <span style="color:#ff79c6">else</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>            sorted[k<span style="color:#ff79c6">++</span>]<span style="color:#ff79c6">=</span>array[j<span style="color:#ff79c6">++</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>    <span style="color:#6272a4">/*한쪽먼저 다 sorted에 삽입되어 남아있는 배열 값 모두 삽입*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>    <span style="color:#ff79c6">if</span>(i<span style="color:#ff79c6">&gt;</span>mid){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>        <span style="color:#ff79c6">for</span>(l<span style="color:#ff79c6">=</span>j;l<span style="color:#ff79c6">&lt;=</span>right;l<span style="color:#ff79c6">++</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>            sorted[k<span style="color:#ff79c6">++</span>]<span style="color:#ff79c6">=</span>array[l];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>    <span style="color:#ff79c6">else</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>        <span style="color:#ff79c6">for</span>(l<span style="color:#ff79c6">=</span>i; l<span style="color:#ff79c6">&lt;=</span>mid; l<span style="color:#ff79c6">++</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>            sorted[k<span style="color:#ff79c6">++</span>]<span style="color:#ff79c6">=</span>array[l];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span>    <span style="color:#6272a4">/*배열 복사*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span>    <span style="color:#ff79c6">for</span>(l<span style="color:#ff79c6">=</span>left; l<span style="color:#ff79c6">&lt;=</span>right; l<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span>        array[l]<span style="color:#ff79c6">=</span>sorted[l];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Merge_sort</span>(<span style="color:#8be9fd">int</span> array[],<span style="color:#8be9fd">int</span> left, <span style="color:#8be9fd">int</span> right){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span>    <span style="color:#8be9fd">int</span> mid;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span>    <span style="color:#ff79c6">if</span>(left<span style="color:#ff79c6">&lt;</span>right){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span>        mid <span style="color:#ff79c6">=</span> (left<span style="color:#ff79c6">+</span>right) <span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68</span>        Merge_sort(array,left,mid);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69</span>        Merge_sort(array,mid<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>,right);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70</span>        Merge(array,left,mid,right);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75</span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76</span>    <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">1</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77</span>    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78</span>    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80</span>    start <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81</span>    Merge_sort(array,<span style="color:#bd93f9">0</span>,arr_sz<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>);    <span style="color:#6272a4">//합병 정렬
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83</span>    display(array,arr_sz);         <span style="color:#6272a4">//show array
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84</span><span style="color:#6272a4"></span>    CalcTime();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86</span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87</span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6"></span>
+<span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
+
+<span style="color:#8be9fd">int</span> sorted[<span style="color:#bd93f9">64</span>];
+
+clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4">//배열의 item을 random으로 삽입
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">100</span>;
+    }
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        cout.width(<span style="color:#bd93f9">2</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
+        cout.width(<span style="color:#bd93f9">2</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
+    }
+}
+
+<span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
+    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
+    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Merge</span>(<span style="color:#8be9fd">int</span> array[],<span style="color:#8be9fd">int</span> left,<span style="color:#8be9fd">int</span> mid,<span style="color:#8be9fd">int</span> right){
+    <span style="color:#8be9fd">int</span> l;
+    <span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>left;
+    <span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">=</span>mid<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>;
+    <span style="color:#8be9fd">int</span> k<span style="color:#ff79c6">=</span>left;
+
+    <span style="color:#6272a4">/*왼쪽 배열과 오른쪽 배열 비교하며 sorted배열에 삽입*/</span>
+    <span style="color:#ff79c6">while</span>(i<span style="color:#ff79c6">&lt;=</span> mid <span style="color:#ff79c6">&amp;&amp;</span> j<span style="color:#ff79c6">&lt;=</span>right){
+        <span style="color:#ff79c6">if</span>(array[i]<span style="color:#ff79c6">&lt;=</span>array[j])
+            sorted[k<span style="color:#ff79c6">++</span>]<span style="color:#ff79c6">=</span>array[i<span style="color:#ff79c6">++</span>];
+        <span style="color:#ff79c6">else</span>
+            sorted[k<span style="color:#ff79c6">++</span>]<span style="color:#ff79c6">=</span>array[j<span style="color:#ff79c6">++</span>];
+    }
+
+    <span style="color:#6272a4">/*한쪽먼저 다 sorted에 삽입되어 남아있는 배열 값 모두 삽입*/</span>
+    <span style="color:#ff79c6">if</span>(i<span style="color:#ff79c6">&gt;</span>mid){
+        <span style="color:#ff79c6">for</span>(l<span style="color:#ff79c6">=</span>j;l<span style="color:#ff79c6">&lt;=</span>right;l<span style="color:#ff79c6">++</span>)
+            sorted[k<span style="color:#ff79c6">++</span>]<span style="color:#ff79c6">=</span>array[l];
+    }
+    <span style="color:#ff79c6">else</span>{
+        <span style="color:#ff79c6">for</span>(l<span style="color:#ff79c6">=</span>i; l<span style="color:#ff79c6">&lt;=</span>mid; l<span style="color:#ff79c6">++</span>)
+            sorted[k<span style="color:#ff79c6">++</span>]<span style="color:#ff79c6">=</span>array[l];
+    }
+
+    <span style="color:#6272a4">/*배열 복사*/</span>
+    <span style="color:#ff79c6">for</span>(l<span style="color:#ff79c6">=</span>left; l<span style="color:#ff79c6">&lt;=</span>right; l<span style="color:#ff79c6">++</span>){
+        array[l]<span style="color:#ff79c6">=</span>sorted[l];
+    }
+}
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Merge_sort</span>(<span style="color:#8be9fd">int</span> array[],<span style="color:#8be9fd">int</span> left, <span style="color:#8be9fd">int</span> right){
+    <span style="color:#8be9fd">int</span> mid;
+    <span style="color:#ff79c6">if</span>(left<span style="color:#ff79c6">&lt;</span>right){
+        mid <span style="color:#ff79c6">=</span> (left<span style="color:#ff79c6">+</span>right) <span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>;
+        Merge_sort(array,left,mid);
+        Merge_sort(array,mid<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>,right);
+        Merge(array,left,mid,right);
+    }
+}
+
+
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
+    <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">1</span>];
+    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
+    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
+</span><span style="color:#6272a4"></span>
+    start <span style="color:#ff79c6">=</span> clock();
+    Merge_sort(array,<span style="color:#bd93f9">0</span>,arr_sz<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>);    <span style="color:#6272a4">//합병 정렬
+</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
+    display(array,arr_sz);         <span style="color:#6272a4">//show array
+</span><span style="color:#6272a4"></span>    CalcTime();
+
+    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+}
 </code></pre></div>  </div>
 </details>
 <p><br><br></p>
@@ -1398,65 +1397,65 @@ if (!doNotTrack) {
 <details>
   <summary style="font-Weight : bold; font-size : 15px; color : #F90000;" >  📃 코드  ( 접기 / 펼치기 )</summary>
   <div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">100</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>        cout.width(<span style="color:#bd93f9">3</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        cout.width(<span style="color:#bd93f9">2</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">QuickSort</span>(<span style="color:#8be9fd">int</span> array[],<span style="color:#8be9fd">int</span> pivot, <span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>   <span style="color:#8be9fd">int</span> left <span style="color:#ff79c6">=</span> pivot<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>, right <span style="color:#ff79c6">=</span> arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>    <span style="color:#ff79c6">if</span>(pivot<span style="color:#ff79c6">&gt;=</span>arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    <span style="color:#ff79c6">while</span>(left<span style="color:#ff79c6">&lt;=</span>right){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>        <span style="color:#ff79c6">while</span>(left <span style="color:#ff79c6">&lt;=</span> arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> array[left]<span style="color:#ff79c6">&lt;=</span>array[pivot])left<span style="color:#ff79c6">++</span>;    <span style="color:#6272a4">//피벗보다 큰 값 왼쪽부터 찾기
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">while</span>(right <span style="color:#ff79c6">&gt;</span> pivot <span style="color:#ff79c6">&amp;&amp;</span> array[right]<span style="color:#ff79c6">&gt;=</span>array[pivot])right<span style="color:#ff79c6">--</span>;   <span style="color:#6272a4">//피벗보다 작은 값 오른쪽부터 찾기
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span>(left<span style="color:#ff79c6">&lt;</span>right) swap(array[left],array[right]);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>        <span style="color:#ff79c6">else</span> swap(array[pivot],array[right]);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>   }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    QuickSort(array,pivot,right);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>    QuickSort(array,right<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>,arrlen);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span> <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">64</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>    start <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>    QuickSort(array,<span style="color:#bd93f9">0</span>,arr_sz);    <span style="color:#6272a4">//버블 정렬
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>    display(array,arr_sz);         <span style="color:#6272a4">//show array
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span><span style="color:#6272a4"></span>    CalcTime();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6"></span>
+<span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
+
+clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">100</span>;
+    }
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        cout.width(<span style="color:#bd93f9">3</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
+        cout.width(<span style="color:#bd93f9">2</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
+    }
+}
+
+<span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
+    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
+    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">QuickSort</span>(<span style="color:#8be9fd">int</span> array[],<span style="color:#8be9fd">int</span> pivot, <span style="color:#8be9fd">int</span> arrlen){
+   <span style="color:#8be9fd">int</span> left <span style="color:#ff79c6">=</span> pivot<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>, right <span style="color:#ff79c6">=</span> arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;
+
+    <span style="color:#ff79c6">if</span>(pivot<span style="color:#ff79c6">&gt;=</span>arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">return</span>;
+    <span style="color:#ff79c6">while</span>(left<span style="color:#ff79c6">&lt;=</span>right){
+        <span style="color:#ff79c6">while</span>(left <span style="color:#ff79c6">&lt;=</span> arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> array[left]<span style="color:#ff79c6">&lt;=</span>array[pivot])left<span style="color:#ff79c6">++</span>;    <span style="color:#6272a4">//피벗보다 큰 값 왼쪽부터 찾기
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">while</span>(right <span style="color:#ff79c6">&gt;</span> pivot <span style="color:#ff79c6">&amp;&amp;</span> array[right]<span style="color:#ff79c6">&gt;=</span>array[pivot])right<span style="color:#ff79c6">--</span>;   <span style="color:#6272a4">//피벗보다 작은 값 오른쪽부터 찾기
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span>(left<span style="color:#ff79c6">&lt;</span>right) swap(array[left],array[right]);
+        <span style="color:#ff79c6">else</span> swap(array[pivot],array[right]);
+   }
+    QuickSort(array,pivot,right);
+    QuickSort(array,right<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>,arrlen);
+}
+
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
+
+ <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">64</span>];
+    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
+    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
+</span><span style="color:#6272a4"></span>
+    start <span style="color:#ff79c6">=</span> clock();
+    QuickSort(array,<span style="color:#bd93f9">0</span>,arr_sz);    <span style="color:#6272a4">//버블 정렬
+</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
+    display(array,arr_sz);         <span style="color:#6272a4">//show array
+</span><span style="color:#6272a4"></span>    CalcTime();
+
+    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+}
 </code></pre></div>  </div>
 </details>
 <p><br><br></p>
@@ -1488,78 +1487,78 @@ if (!doNotTrack) {
 <details>
   <summary style="font-Weight : bold; font-size : 15px; color : #F90000;" >  📃 코드  ( 접기 / 펼치기 )</summary>
   <div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#6272a4">//배열의 item을 random으로 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">100</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        cout.width(<span style="color:#bd93f9">3</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        cout.width(<span style="color:#bd93f9">2</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#6272a4">/*기본은 삽입정렬 알고리즘
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span style="color:#6272a4">gap차이만큼의 숫자들을 삽입정렬로 정렬*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">insertionSort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> first,<span style="color:#8be9fd">int</span> last,<span style="color:#8be9fd">int</span> gap){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    <span style="color:#8be9fd">int</span> item,j;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>first<span style="color:#ff79c6">+</span>gap; i<span style="color:#ff79c6">&lt;</span>last ; i<span style="color:#ff79c6">+=</span>gap ){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>        item<span style="color:#ff79c6">=</span>array[i];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>        <span style="color:#6272a4">/*배열의 제일 왼쪽이거나 앞의 값이 해당 값보다 작다면 배열을 한 칸씩 뒤로 미룸*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>        <span style="color:#ff79c6">for</span>(j<span style="color:#ff79c6">=</span>i<span style="color:#ff79c6">-</span>gap; j<span style="color:#ff79c6">&gt;=</span>first <span style="color:#ff79c6">&amp;&amp;</span> array[j]<span style="color:#ff79c6">&gt;</span>item; j<span style="color:#ff79c6">-=</span>gap)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>            array[j<span style="color:#ff79c6">+</span>gap]<span style="color:#ff79c6">=</span>array[j];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>        array[j<span style="color:#ff79c6">+</span>gap]<span style="color:#ff79c6">=</span>item;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Shell_sort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>    <span style="color:#8be9fd">int</span> gap;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>    <span style="color:#ff79c6">for</span>( gap <span style="color:#ff79c6">=</span> arrlen<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span> ; gap<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">0</span>; gap<span style="color:#ff79c6">/=</span><span style="color:#bd93f9">2</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>        <span style="color:#ff79c6">if</span>(gap<span style="color:#ff79c6">%</span><span style="color:#bd93f9">2</span> <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>) gap<span style="color:#ff79c6">++</span>;         <span style="color:#6272a4">//gap이 짝수라면 홀수로 맞추는 것이 더 좋은 것으로 분석이 됨
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>gap;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>            insertionSort(array,i,arrlen,gap);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span>    <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">64</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span>    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span>    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span>    start <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span>    Shell_sort(array,arr_sz); <span style="color:#6272a4">//삽입 정렬
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68</span>    display(array,arr_sz);         <span style="color:#6272a4">//show array
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69</span><span style="color:#6272a4"></span>    CalcTime();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71</span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72</span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6"></span>
+<span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
+
+clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4">//배열의 item을 random으로 삽입
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">100</span>;
+    }
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        cout.width(<span style="color:#bd93f9">3</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
+        cout.width(<span style="color:#bd93f9">2</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
+    }
+}
+
+<span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
+    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
+    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
+}
+
+<span style="color:#6272a4">/*기본은 삽입정렬 알고리즘
+</span><span style="color:#6272a4">gap차이만큼의 숫자들을 삽입정렬로 정렬*/</span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">insertionSort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> first,<span style="color:#8be9fd">int</span> last,<span style="color:#8be9fd">int</span> gap){
+    <span style="color:#8be9fd">int</span> item,j;
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>first<span style="color:#ff79c6">+</span>gap; i<span style="color:#ff79c6">&lt;</span>last ; i<span style="color:#ff79c6">+=</span>gap ){
+        item<span style="color:#ff79c6">=</span>array[i];
+        <span style="color:#6272a4">/*배열의 제일 왼쪽이거나 앞의 값이 해당 값보다 작다면 배열을 한 칸씩 뒤로 미룸*/</span>
+        <span style="color:#ff79c6">for</span>(j<span style="color:#ff79c6">=</span>i<span style="color:#ff79c6">-</span>gap; j<span style="color:#ff79c6">&gt;=</span>first <span style="color:#ff79c6">&amp;&amp;</span> array[j]<span style="color:#ff79c6">&gt;</span>item; j<span style="color:#ff79c6">-=</span>gap)
+            array[j<span style="color:#ff79c6">+</span>gap]<span style="color:#ff79c6">=</span>array[j];
+        array[j<span style="color:#ff79c6">+</span>gap]<span style="color:#ff79c6">=</span>item;
+    }
+}
+
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Shell_sort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#8be9fd">int</span> gap;
+    <span style="color:#ff79c6">for</span>( gap <span style="color:#ff79c6">=</span> arrlen<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span> ; gap<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">0</span>; gap<span style="color:#ff79c6">/=</span><span style="color:#bd93f9">2</span>){
+        <span style="color:#ff79c6">if</span>(gap<span style="color:#ff79c6">%</span><span style="color:#bd93f9">2</span> <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>) gap<span style="color:#ff79c6">++</span>;         <span style="color:#6272a4">//gap이 짝수라면 홀수로 맞추는 것이 더 좋은 것으로 분석이 됨
+</span><span style="color:#6272a4"></span>
+        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>gap;i<span style="color:#ff79c6">++</span>){
+            insertionSort(array,i,arrlen,gap);
+        }
+    }
+}
+
+
+
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
+    <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">64</span>];
+    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
+    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
+</span><span style="color:#6272a4"></span>
+    start <span style="color:#ff79c6">=</span> clock();
+    Shell_sort(array,arr_sz); <span style="color:#6272a4">//삽입 정렬
+</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
+    display(array,arr_sz);         <span style="color:#6272a4">//show array
+</span><span style="color:#6272a4"></span>    CalcTime();
+
+    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+}
 </code></pre></div>  </div>
 </details>
 <p><br><br></p>
@@ -1587,132 +1586,132 @@ if (!doNotTrack) {
 <details>
   <summary style="font-Weight : bold; font-size : 15px; color : #F90000;" >  📃 코드  ( 접기 / 펼치기 )</summary>
   <div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span><span style="color:#ff79c6"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span><span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span><span style="color:#ff79c6">#define MAX_ARRAY_SIZE 64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span><span style="color:#ff79c6"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span><span style="color:#8be9fd">int</span> maxValue<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;     <span style="color:#6272a4">//가장 큰 값을 담을 변수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span>clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span><span style="color:#6272a4">//배열의 item을 random으로 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span>    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span>        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">99</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span>        maxValue <span style="color:#ff79c6">=</span> (maxValue <span style="color:#ff79c6">&lt;</span> array[i]) <span style="color:#ff79c6">?</span> array[i] <span style="color:#ff79c6">:</span> maxValue;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span>        cout.width(<span style="color:#bd93f9">3</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span>        cout.width(<span style="color:#bd93f9">2</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span><span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span>    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span>    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span><span style="color:#6272a4">/*top-down*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">top_down_heapify</span>(<span style="color:#8be9fd">int</span><span style="color:#ff79c6">*</span> array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span><span style="color:#6272a4">/*인덱스 0을 루트(부모 노드)로 삼고 인덱스 1(왼쪽 자식)부터 maxHeap형태로
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span><span style="color:#6272a4"> *만들어 주기 위해 swap
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span><span style="color:#6272a4"> */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>; i <span style="color:#ff79c6">&lt;</span> arrlen ; i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span>        <span style="color:#8be9fd">int</span> child <span style="color:#ff79c6">=</span> i;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span>        <span style="color:#ff79c6">while</span>(child <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span>            <span style="color:#8be9fd">int</span> parent <span style="color:#ff79c6">=</span> (child <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span>            <span style="color:#ff79c6">if</span>(array[parent] <span style="color:#ff79c6">&lt;</span> array[child]){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span>                swap(array[parent],array[child]);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span>            }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span>            child <span style="color:#ff79c6">=</span> parent;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span><span style="color:#6272a4">/*bottom-up*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">bottom_up_heapify</span>(<span style="color:#8be9fd">int</span><span style="color:#ff79c6">*</span> array,<span style="color:#8be9fd">int</span> parent,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span><span style="color:#6272a4">/*인덱스 0을 루트(부모 노드)로 삼고 인덱스 1(왼쪽 자식)부터 maxHeap형태로
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span><span style="color:#6272a4"> *만들어 주기 위해 swap */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span>    <span style="color:#ff79c6">while</span>(parent <span style="color:#ff79c6">&lt;=</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span>        <span style="color:#8be9fd">int</span> largest <span style="color:#ff79c6">=</span> parent;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span>        <span style="color:#8be9fd">int</span> l <span style="color:#ff79c6">=</span> parent <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span>        <span style="color:#8be9fd">int</span> r <span style="color:#ff79c6">=</span> parent <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">2</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span>        <span style="color:#ff79c6">if</span>(l <span style="color:#ff79c6">&lt;</span> arrlen <span style="color:#ff79c6">&amp;&amp;</span> array[largest] <span style="color:#ff79c6">&lt;</span> array[l]){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span>            largest <span style="color:#ff79c6">=</span> l;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span>        <span style="color:#ff79c6">if</span>(r <span style="color:#ff79c6">&lt;</span> arrlen <span style="color:#ff79c6">&amp;&amp;</span> array[largest] <span style="color:#ff79c6">&lt;</span> array[r]){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span>            largest <span style="color:#ff79c6">=</span> r;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span>        <span style="color:#6272a4">/*largest가 값이 바뀌었다면 swap해야한다는 뜻
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span><span style="color:#6272a4">        swap했다면 child로 내려가 아래 서브트리도 확인하기 위해
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span><span style="color:#6272a4">        parent값 largest로 변환 */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span>        <span style="color:#ff79c6">if</span>(largest <span style="color:#ff79c6">!=</span> parent) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span>            swap(array[parent],array[largest]);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span>            parent <span style="color:#ff79c6">=</span> largest;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span>        <span style="color:#ff79c6">else</span> parent <span style="color:#ff79c6">=</span> l;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">top_down_HeapSort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array, <span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span>    top_down_heapify(array,arrlen);  <span style="color:#6272a4">//maxHeap형태로 만들어준다.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span> arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> ; i<span style="color:#ff79c6">&gt;=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">--</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span>        swap(array[i],array[<span style="color:#bd93f9">0</span>]);    <span style="color:#6272a4">//가장 큰 숫자(루트)를 맨 뒷 노드로 swap해준다.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span><span style="color:#6272a4"></span>        top_down_heapify(array,i);           <span style="color:#6272a4">//swap한 마지막 노드를 제외하고 heapify를 해준다.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span><span style="color:#6272a4"></span>    }                               <span style="color:#6272a4">//결과적으로 큰 숫자들이 뒤에 오게 되며 오름차순으로 정렬이 된다.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span><span style="color:#6272a4"></span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">bottom_up_HeapSort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array, <span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span>    <span style="color:#6272a4">/*build max-heap
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span><span style="color:#6272a4">        루트 노드가 0 기준 ) n개의 노드를 가진 트리라면,
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span><span style="color:#6272a4">                            마지막 노드 n의 부모 인덱스 번호는 n/2 -1 이다.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span><span style="color:#6272a4">        루트 노드가 1 기준 )  n개의 노드를 가진 트리라면,
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span><span style="color:#6272a4">                            마지막 노드 n의 부모 인덱스 번호는 n/2  이다.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span><span style="color:#6272a4">        leafnode들은 더이상 heapify를 안해줘도 되기 때문에 마지막 노드의 부모 노드 부터
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span><span style="color:#6272a4">        heapify를 시작
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span><span style="color:#6272a4">        --&gt; heap sort의 초반 build heap부분에서 bottom-up방식은 n/2개만 큼만 수행하므로
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span><span style="color:#6272a4">        top-down방식보다 bottom-up 방식이 조금 더 성능이 좋다.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span><span style="color:#6272a4">    */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span> arrlen <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>; i <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">--</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span>        bottom_up_heapify(array,i,arrlen);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>; i <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">--</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span>        swap(array[i],array[<span style="color:#bd93f9">0</span>]);                <span style="color:#6272a4">//가장 큰 숫자(루트)를 맨 뒷 노드로 swap해준다.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span><span style="color:#6272a4"></span>        bottom_up_heapify(array,<span style="color:#bd93f9">0</span>,i);           <span style="color:#6272a4">//swap한 마지막 노드를 제외하고 heapify를 해준다.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span><span style="color:#6272a4"></span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115</span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116</span>    <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span>[MAX_ARRAY_SIZE];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118</span>    input_random(array,MAX_ARRAY_SIZE);     <span style="color:#6272a4">//배열에 랜덤값 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119</span><span style="color:#6272a4"></span>    start <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120</span>    bottom_up_HeapSort(array,MAX_ARRAY_SIZE);         <span style="color:#6272a4">//계수 정렬
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122</span>    display(array,MAX_ARRAY_SIZE);          <span style="color:#6272a4">//show array
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123</span><span style="color:#6272a4"></span>    CalcTime();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125</span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126</span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6"></span>
+<span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
+
+<span style="color:#ff79c6">#define MAX_ARRAY_SIZE 64
+</span><span style="color:#ff79c6"></span>
+<span style="color:#8be9fd">int</span> maxValue<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;     <span style="color:#6272a4">//가장 큰 값을 담을 변수
+</span><span style="color:#6272a4"></span>
+clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4">//배열의 item을 random으로 삽입
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">99</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
+        maxValue <span style="color:#ff79c6">=</span> (maxValue <span style="color:#ff79c6">&lt;</span> array[i]) <span style="color:#ff79c6">?</span> array[i] <span style="color:#ff79c6">:</span> maxValue;
+    }
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        cout.width(<span style="color:#bd93f9">3</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
+        cout.width(<span style="color:#bd93f9">2</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
+    }
+}
+
+<span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
+    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
+    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
+}
+
+<span style="color:#6272a4">/*top-down*/</span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">top_down_heapify</span>(<span style="color:#8be9fd">int</span><span style="color:#ff79c6">*</span> array,<span style="color:#8be9fd">int</span> arrlen){
+<span style="color:#6272a4">/*인덱스 0을 루트(부모 노드)로 삼고 인덱스 1(왼쪽 자식)부터 maxHeap형태로
+</span><span style="color:#6272a4"> *만들어 주기 위해 swap
+</span><span style="color:#6272a4"> */</span>
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>; i <span style="color:#ff79c6">&lt;</span> arrlen ; i<span style="color:#ff79c6">++</span>){
+        <span style="color:#8be9fd">int</span> child <span style="color:#ff79c6">=</span> i;
+        <span style="color:#ff79c6">while</span>(child <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>){
+            <span style="color:#8be9fd">int</span> parent <span style="color:#ff79c6">=</span> (child <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>;
+
+            <span style="color:#ff79c6">if</span>(array[parent] <span style="color:#ff79c6">&lt;</span> array[child]){
+                swap(array[parent],array[child]);
+            }
+            child <span style="color:#ff79c6">=</span> parent;
+        }
+    }
+}
+
+<span style="color:#6272a4">/*bottom-up*/</span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">bottom_up_heapify</span>(<span style="color:#8be9fd">int</span><span style="color:#ff79c6">*</span> array,<span style="color:#8be9fd">int</span> parent,<span style="color:#8be9fd">int</span> arrlen){
+<span style="color:#6272a4">/*인덱스 0을 루트(부모 노드)로 삼고 인덱스 1(왼쪽 자식)부터 maxHeap형태로
+</span><span style="color:#6272a4"> *만들어 주기 위해 swap */</span>
+    <span style="color:#ff79c6">while</span>(parent <span style="color:#ff79c6">&lt;=</span> arrlen){
+        <span style="color:#8be9fd">int</span> largest <span style="color:#ff79c6">=</span> parent;
+        <span style="color:#8be9fd">int</span> l <span style="color:#ff79c6">=</span> parent <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
+        <span style="color:#8be9fd">int</span> r <span style="color:#ff79c6">=</span> parent <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">2</span>;
+
+        <span style="color:#ff79c6">if</span>(l <span style="color:#ff79c6">&lt;</span> arrlen <span style="color:#ff79c6">&amp;&amp;</span> array[largest] <span style="color:#ff79c6">&lt;</span> array[l]){
+            largest <span style="color:#ff79c6">=</span> l;
+        }
+        <span style="color:#ff79c6">if</span>(r <span style="color:#ff79c6">&lt;</span> arrlen <span style="color:#ff79c6">&amp;&amp;</span> array[largest] <span style="color:#ff79c6">&lt;</span> array[r]){
+            largest <span style="color:#ff79c6">=</span> r;
+        }
+
+        <span style="color:#6272a4">/*largest가 값이 바뀌었다면 swap해야한다는 뜻
+</span><span style="color:#6272a4">        swap했다면 child로 내려가 아래 서브트리도 확인하기 위해
+</span><span style="color:#6272a4">        parent값 largest로 변환 */</span>
+        <span style="color:#ff79c6">if</span>(largest <span style="color:#ff79c6">!=</span> parent) {
+            swap(array[parent],array[largest]);
+            parent <span style="color:#ff79c6">=</span> largest;
+        }
+        <span style="color:#ff79c6">else</span> parent <span style="color:#ff79c6">=</span> l;
+    }
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">top_down_HeapSort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array, <span style="color:#8be9fd">int</span> arrlen){
+    top_down_heapify(array,arrlen);  <span style="color:#6272a4">//maxHeap형태로 만들어준다.
+</span><span style="color:#6272a4"></span>
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span> arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> ; i<span style="color:#ff79c6">&gt;=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">--</span>){
+        swap(array[i],array[<span style="color:#bd93f9">0</span>]);    <span style="color:#6272a4">//가장 큰 숫자(루트)를 맨 뒷 노드로 swap해준다.
+</span><span style="color:#6272a4"></span>        top_down_heapify(array,i);           <span style="color:#6272a4">//swap한 마지막 노드를 제외하고 heapify를 해준다.
+</span><span style="color:#6272a4"></span>    }                               <span style="color:#6272a4">//결과적으로 큰 숫자들이 뒤에 오게 되며 오름차순으로 정렬이 된다.
+</span><span style="color:#6272a4"></span>}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">bottom_up_HeapSort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array, <span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#6272a4">/*build max-heap
+</span><span style="color:#6272a4">        루트 노드가 0 기준 ) n개의 노드를 가진 트리라면,
+</span><span style="color:#6272a4">                            마지막 노드 n의 부모 인덱스 번호는 n/2 -1 이다.
+</span><span style="color:#6272a4">        루트 노드가 1 기준 )  n개의 노드를 가진 트리라면,
+</span><span style="color:#6272a4">                            마지막 노드 n의 부모 인덱스 번호는 n/2  이다.
+</span><span style="color:#6272a4">        leafnode들은 더이상 heapify를 안해줘도 되기 때문에 마지막 노드의 부모 노드 부터
+</span><span style="color:#6272a4">        heapify를 시작
+</span><span style="color:#6272a4">        --&gt; heap sort의 초반 build heap부분에서 bottom-up방식은 n/2개만 큼만 수행하므로
+</span><span style="color:#6272a4">        top-down방식보다 bottom-up 방식이 조금 더 성능이 좋다.
+</span><span style="color:#6272a4">    */</span>
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span> arrlen <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>; i <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">--</span>){
+        bottom_up_heapify(array,i,arrlen);
+    }
+
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>; i <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">--</span>){
+        swap(array[i],array[<span style="color:#bd93f9">0</span>]);                <span style="color:#6272a4">//가장 큰 숫자(루트)를 맨 뒷 노드로 swap해준다.
+</span><span style="color:#6272a4"></span>        bottom_up_heapify(array,<span style="color:#bd93f9">0</span>,i);           <span style="color:#6272a4">//swap한 마지막 노드를 제외하고 heapify를 해준다.
+</span><span style="color:#6272a4"></span>    }
+}
+
+
+
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
+    <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span>[MAX_ARRAY_SIZE];
+
+    input_random(array,MAX_ARRAY_SIZE);     <span style="color:#6272a4">//배열에 랜덤값 삽입
+</span><span style="color:#6272a4"></span>    start <span style="color:#ff79c6">=</span> clock();
+    bottom_up_HeapSort(array,MAX_ARRAY_SIZE);         <span style="color:#6272a4">//계수 정렬
+</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
+    display(array,MAX_ARRAY_SIZE);          <span style="color:#6272a4">//show array
+</span><span style="color:#6272a4"></span>    CalcTime();
+
+    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+}
 </code></pre></div>  </div>
 </details>
 <p><br><br></p>
@@ -1746,82 +1745,82 @@ if (!doNotTrack) {
 <details>
   <summary style="font-Weight : bold; font-size : 15px; color : #F90000;" >  📃 코드  ( 접기 / 펼치기 )</summary>
       <div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">#include</span><span style="color:#ff79c6">&lt;queue&gt;</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#ff79c6"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>std<span style="color:#ff79c6">::</span>queue<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">&gt;</span> q[<span style="color:#bd93f9">10</span>];   <span style="color:#6272a4">//10진수 정수형을 정렬하기 때문에 0-9의 버킷
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4"></span><span style="color:#8be9fd">int</span> MAXVALUE<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;         <span style="color:#6272a4">//정렬할 수 중 가장 큰 수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">1000</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        <span style="color:#ff79c6">if</span>(MAXVALUE<span style="color:#ff79c6">&lt;</span>array[i]) MAXVALUE<span style="color:#ff79c6">=</span>array[i];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        std<span style="color:#ff79c6">::</span>cout.width(<span style="color:#bd93f9">3</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>        std<span style="color:#ff79c6">::</span>cout.width(<span style="color:#bd93f9">2</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">RadixSort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    <span style="color:#8be9fd">int</span> digit<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>    <span style="color:#8be9fd">int</span> k;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>    <span style="color:#6272a4">/*가장 큰 값의 자릿수 알아내기*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>    <span style="color:#ff79c6">while</span>(digit<span style="color:#ff79c6">&lt;</span>MAXVALUE)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>        digit<span style="color:#ff79c6">*=</span><span style="color:#bd93f9">10</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>    <span style="color:#6272a4">/*가장 큰 값의 자릿수 만큼 만큼 반복*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>; i<span style="color:#ff79c6">&lt;</span>digit ; i<span style="color:#ff79c6">*=</span><span style="color:#bd93f9">10</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>        <span style="color:#6272a4">/*queue에 옮기기*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;j<span style="color:#ff79c6">&lt;</span>arrlen;j<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>            k<span style="color:#ff79c6">=</span>(array[j]<span style="color:#ff79c6">/</span>i)<span style="color:#ff79c6">%</span><span style="color:#bd93f9">10</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>            q[k].push(array[j]);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>        <span style="color:#6272a4">/*array에 옮기기*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>        <span style="color:#8be9fd">int</span> idx<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;j<span style="color:#ff79c6">&lt;</span><span style="color:#bd93f9">10</span>;j<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>            <span style="color:#ff79c6">while</span>(<span style="color:#ff79c6">!</span>q[j].empty()){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>                array[idx]<span style="color:#ff79c6">=</span>q[j].front();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>                q[j].pop();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>                idx<span style="color:#ff79c6">++</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>            }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span>    <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">64</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span>    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span>    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69</span>    start <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70</span>    RadixSort(array,arr_sz);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71</span>    finish <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72</span>    display(array,arr_sz);         <span style="color:#6272a4">//show array
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73</span><span style="color:#6272a4"></span>    CalcTime();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75</span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76</span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp">
+<span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span><span style="color:#ff79c6">&lt;queue&gt;</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6"></span>
+std<span style="color:#ff79c6">::</span>queue<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">&gt;</span> q[<span style="color:#bd93f9">10</span>];   <span style="color:#6272a4">//10진수 정수형을 정렬하기 때문에 0-9의 버킷
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">int</span> MAXVALUE<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;         <span style="color:#6272a4">//정렬할 수 중 가장 큰 수
+</span><span style="color:#6272a4"></span>
+clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">1000</span>;
+        <span style="color:#ff79c6">if</span>(MAXVALUE<span style="color:#ff79c6">&lt;</span>array[i]) MAXVALUE<span style="color:#ff79c6">=</span>array[i];
+    }
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        std<span style="color:#ff79c6">::</span>cout.width(<span style="color:#bd93f9">3</span>);
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
+        std<span style="color:#ff79c6">::</span>cout.width(<span style="color:#bd93f9">2</span>);
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+    }
+}
+
+<span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
+    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
+    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">RadixSort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#8be9fd">int</span> digit<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>;
+    <span style="color:#8be9fd">int</span> k;
+
+    <span style="color:#6272a4">/*가장 큰 값의 자릿수 알아내기*/</span>
+    <span style="color:#ff79c6">while</span>(digit<span style="color:#ff79c6">&lt;</span>MAXVALUE)
+        digit<span style="color:#ff79c6">*=</span><span style="color:#bd93f9">10</span>;
+
+    <span style="color:#6272a4">/*가장 큰 값의 자릿수 만큼 만큼 반복*/</span>
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>; i<span style="color:#ff79c6">&lt;</span>digit ; i<span style="color:#ff79c6">*=</span><span style="color:#bd93f9">10</span>){
+        <span style="color:#6272a4">/*queue에 옮기기*/</span>
+        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;j<span style="color:#ff79c6">&lt;</span>arrlen;j<span style="color:#ff79c6">++</span>){
+            k<span style="color:#ff79c6">=</span>(array[j]<span style="color:#ff79c6">/</span>i)<span style="color:#ff79c6">%</span><span style="color:#bd93f9">10</span>;
+            q[k].push(array[j]);
+        }
+        <span style="color:#6272a4">/*array에 옮기기*/</span>
+        <span style="color:#8be9fd">int</span> idx<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;
+        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;j<span style="color:#ff79c6">&lt;</span><span style="color:#bd93f9">10</span>;j<span style="color:#ff79c6">++</span>){
+            <span style="color:#ff79c6">while</span>(<span style="color:#ff79c6">!</span>q[j].empty()){
+                array[idx]<span style="color:#ff79c6">=</span>q[j].front();
+                q[j].pop();
+                idx<span style="color:#ff79c6">++</span>;
+            }
+        }
+
+    }
+}
+
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
+    <span style="color:#8be9fd">int</span> array[<span style="color:#bd93f9">64</span>];
+    <span style="color:#8be9fd">int</span> arr_sz<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">sizeof</span>(array)<span style="color:#ff79c6">/</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>);
+    input_random(array,arr_sz);   <span style="color:#6272a4">//배열에 랜덤값 삽입
+</span><span style="color:#6272a4"></span>
+    start <span style="color:#ff79c6">=</span> clock();
+    RadixSort(array,arr_sz);
+    finish <span style="color:#ff79c6">=</span> clock();
+    display(array,arr_sz);         <span style="color:#6272a4">//show array
+</span><span style="color:#6272a4"></span>    CalcTime();
+
+    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+}
 </code></pre></div>  </div>
 </details>
 <p><br><br></p>
@@ -1857,85 +1856,85 @@ if (!doNotTrack) {
 <details>
 <summary style="font-Weight : bold; font-size : 15px; color : #F90000;" >  📃 코드  ( 접기 / 펼치기 )</summary>
     <div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;string.h&gt; //memset</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#ff79c6">#define MAX_ARRAY_SIZE 64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#ff79c6"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#8be9fd">int</span> maxValue<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#6272a4">//배열의 item을 random으로 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">99</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        maxValue <span style="color:#ff79c6">=</span> (maxValue <span style="color:#ff79c6">&lt;</span> array[i]) <span style="color:#ff79c6">?</span> array[i] <span style="color:#ff79c6">:</span> maxValue;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>        cout.width(<span style="color:#bd93f9">3</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        cout.width(<span style="color:#bd93f9">2</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">*</span> <span style="color:#50fa7b">count_sort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>    <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>c <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span>[maxValue<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>    <span style="color:#8be9fd">int</span> c_size <span style="color:#ff79c6">=</span> maxValue<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>b <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span>[arrlen];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>    memset(c,<span style="color:#bd93f9">0</span>,c_size<span style="color:#ff79c6">*</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>)); <span style="color:#6272a4">//배열c 0으로 초기화
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>    <span style="color:#6272a4">/*각 숫자 횟수 카운틱하며 c배열 인덱스 값 증가*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> arrlen ; i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>        c[array[i]]<span style="color:#ff79c6">++</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>    <span style="color:#6272a4">/*배열 c의 인덱스 값 누적합 구하기*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>; i <span style="color:#ff79c6">&lt;</span> c_size; i<span style="color:#ff79c6">++</span>){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>        c[i] <span style="color:#ff79c6">+=</span> c[i<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>    <span style="color:#6272a4">/*배열 A역순으로 훑으며, 배열 C참조하여 정렬*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>; i <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">--</span> ){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>        b[c[array[i]]<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">=</span> array[i];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span>        <span style="color:#ff79c6">--</span>c[array[i]];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span>    <span style="color:#ff79c6">return</span> b;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span>    <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span>[MAX_ARRAY_SIZE];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68</span>    input_random(array,MAX_ARRAY_SIZE);     <span style="color:#6272a4">//배열에 랜덤값 삽입
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">delete</span> array;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71</span>    start <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72</span>    array <span style="color:#ff79c6">=</span> count_sort(array,MAX_ARRAY_SIZE);       <span style="color:#6272a4">//계수 정렬
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74</span>    display(array,MAX_ARRAY_SIZE);          <span style="color:#6272a4">//show array
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75</span><span style="color:#6272a4"></span>    CalcTime();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77</span>    <span style="color:#ff79c6">delete</span> array;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78</span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79</span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;cstdlib&gt;  //time</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;ctime&gt;    //rand, srand</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;string.h&gt; //memset</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;time.h&gt;   //시간 측정</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6"></span>
+<span style="color:#ff79c6">using</span> <span style="color:#ff79c6">namespace</span> std;
+
+<span style="color:#ff79c6">#define MAX_ARRAY_SIZE 64
+</span><span style="color:#ff79c6"></span>
+<span style="color:#8be9fd">int</span> maxValue<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;
+
+clock_t start, finish, used_time<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;    <span style="color:#6272a4">//실행 시간 측정을 위한 변수
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4">//배열의 item을 random으로 삽입
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">input_random</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    srand((<span style="color:#8be9fd">unsigned</span> <span style="color:#8be9fd">int</span>)time(<span style="color:#8be9fd;font-style:italic">NULL</span>));
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>;i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        array[i]<span style="color:#ff79c6">=</span>rand()<span style="color:#ff79c6">%</span><span style="color:#bd93f9">99</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
+        maxValue <span style="color:#ff79c6">=</span> (maxValue <span style="color:#ff79c6">&lt;</span> array[i]) <span style="color:#ff79c6">?</span> array[i] <span style="color:#ff79c6">:</span> maxValue;
+    }
+}
+
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">display</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>arrlen;i<span style="color:#ff79c6">++</span>){
+        cout.width(<span style="color:#bd93f9">3</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;. &#34;</span>;
+        cout.width(<span style="color:#bd93f9">2</span>);
+        cout <span style="color:#ff79c6">&lt;&lt;</span> array[i] <span style="color:#ff79c6">&lt;&lt;</span> endl;
+    }
+}
+
+<span style="color:#6272a4">//실행 시간을 측정 및 출력하는 함수
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">CalcTime</span>(<span style="color:#8be9fd">void</span>){
+    used_time<span style="color:#ff79c6">=</span>finish<span style="color:#ff79c6">-</span>start;
+    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">*********** result **********</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">     time : %lf sec</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, (<span style="color:#8be9fd">double</span>)(used_time)<span style="color:#ff79c6">/</span>CLOCKS_PER_SEC);
+}
+
+<span style="color:#8be9fd">int</span><span style="color:#ff79c6">*</span> <span style="color:#50fa7b">count_sort</span>(<span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array,<span style="color:#8be9fd">int</span> arrlen){
+    <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>c <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span>[maxValue<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>];
+    <span style="color:#8be9fd">int</span> c_size <span style="color:#ff79c6">=</span> maxValue<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>;
+    <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>b <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span>[arrlen];
+
+    memset(c,<span style="color:#bd93f9">0</span>,c_size<span style="color:#ff79c6">*</span><span style="color:#ff79c6">sizeof</span>(<span style="color:#8be9fd">int</span>)); <span style="color:#6272a4">//배열c 0으로 초기화
+</span><span style="color:#6272a4"></span>
+    <span style="color:#6272a4">/*각 숫자 횟수 카운틱하며 c배열 인덱스 값 증가*/</span>
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> arrlen ; i<span style="color:#ff79c6">++</span>){
+        c[array[i]]<span style="color:#ff79c6">++</span>;
+    }
+
+    <span style="color:#6272a4">/*배열 c의 인덱스 값 누적합 구하기*/</span>
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>; i <span style="color:#ff79c6">&lt;</span> c_size; i<span style="color:#ff79c6">++</span>){
+        c[i] <span style="color:#ff79c6">+=</span> c[i<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>];
+    }
+
+    <span style="color:#6272a4">/*배열 A역순으로 훑으며, 배열 C참조하여 정렬*/</span>
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> arrlen<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>; i <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">--</span> ){
+        b[c[array[i]]<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">=</span> array[i];
+        <span style="color:#ff79c6">--</span>c[array[i]];
+    }
+
+    <span style="color:#ff79c6">return</span> b;
+}
+
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
+    <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">*</span>array <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span>[MAX_ARRAY_SIZE];
+
+    input_random(array,MAX_ARRAY_SIZE);     <span style="color:#6272a4">//배열에 랜덤값 삽입
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">delete</span> array;
+
+    start <span style="color:#ff79c6">=</span> clock();
+    array <span style="color:#ff79c6">=</span> count_sort(array,MAX_ARRAY_SIZE);       <span style="color:#6272a4">//계수 정렬
+</span><span style="color:#6272a4"></span>    finish <span style="color:#ff79c6">=</span> clock();
+    display(array,MAX_ARRAY_SIZE);          <span style="color:#6272a4">//show array
+</span><span style="color:#6272a4"></span>    CalcTime();
+
+    <span style="color:#ff79c6">delete</span> array;
+    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+}
 </code></pre></div>  </div>
 </details>
 </div>

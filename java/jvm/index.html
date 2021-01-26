@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-26T23:43:34 KST">
+<meta name="revised" content="2021-01-27T00:32:56 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -686,7 +686,6 @@ if (!doNotTrack) {
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/gowoonsori" aria-label="Follow @gowoonsori on GitHub">Follow@gowoonsori</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/gowoonsori/gowoonsori.github.io" data-icon="octicon-star" aria-label="Star gowoonsori/gowoonsori.github.io on GitHub">Star</a>
 </center>
 <!-- <center style='margin-top:20px'>
     <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgowoonsori.site&count_bg=%23426EAE&title_bg=%23555555&icon=&icon_color=%238E4F4F&title=%F0%9F%93%8C+Today+%2F+Total++&edge_flat=false"/></a>
@@ -825,7 +824,7 @@ if (!doNotTrack) {
 <br>
 <h2>📌 컴파일 하는 방법</h2><a class="anchor" id="-컴파일-하는-방법"></a>
 <p>컴파일 이름 그대로 자바 컴파일러를 이용해 자바코드를 바이트코드(.class파일)로 변환하는 것으로 설치한 jdk의 bin폴더안에 <code>javac</code>이라는 자바 컴파일러가 존재하기 때문에 이를 이용하면 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>javac hello.world.java
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-shell" data-lang="shell">javac hello.world.java
 </code></pre></div><br>
 <p>요즘은 IDE가 매우 똑똑해졌기 때문에 IDE에 코드를 작성하는 것만으로도 컴파일에러를 잡아낸다.</p>
 <h3>컴파일 과정</h3><a class="anchor" id="컴파일-과정"></a>
@@ -847,11 +846,11 @@ if (!doNotTrack) {
 <h2>📌 실행방법</h2><a class="anchor" id="-실행방법"></a>
 <p>요즘 대부분은 <code>IDE</code>를 통해 실행하나 CLI의 <code>java</code>명령어를 이용하여 실행이가능하다.</p>
 <p>default 패키지라면 바로 파일명을 통해 실행이 가능하며 package를 명시하여 실행도 가능하다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>java hello_world
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>java java.me.example.hello_world
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">java hello_world
+
+java java.me.example.hello_world
 </code></pre></div><p>자바 상위버전의 <code>class</code>파일을 하위 버전으로 실행하려고 하면 대부분 <code>에러</code>가 발생하고 반대의 경우에는 <code>하위 호환성(backward compatible)</code>이라고 하여 실행이 가능하다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>javac -source &lt;version&gt; -target &lt;version&gt; &lt;java filename&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">javac -source &lt;version&gt; -target &lt;version&gt; &lt;java filename&gt;
 </code></pre></div><p>위와 같은 명령어로 컴파일시 호환성 옵션을 줄 수 있다.</p>
 <br>
 <h2>📌 바이트코드란</h2><a class="anchor" id="-바이트코드란"></a>

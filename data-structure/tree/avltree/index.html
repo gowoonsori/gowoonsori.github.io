@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-26T23:43:34 KST">
+<meta name="revised" content="2021-01-27T00:32:55 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -686,7 +686,6 @@ if (!doNotTrack) {
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/gowoonsori" aria-label="Follow @gowoonsori on GitHub">Follow@gowoonsori</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/gowoonsori/gowoonsori.github.io" data-icon="octicon-star" aria-label="Star gowoonsori/gowoonsori.github.io on GitHub">Star</a>
 </center>
 <!-- <center style='margin-top:20px'>
     <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgowoonsori.site&count_bg=%23426EAE&title_bg=%23555555&icon=&icon_color=%238E4F4F&title=%F0%9F%93%8C+Today+%2F+Total++&edge_flat=false"/></a>
@@ -841,428 +840,428 @@ if (!doNotTrack) {
 <hr>
 <br>
 <h3>Insert (삽입)</h3><a class="anchor" id="insert-삽입"></a>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>BST의 일반 삽입 규칙에 맞게 삽입 후, 첫번째로 불균형한 노드를 찾는다.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>이때 불균형한 노드를 z라고 할때, 자식노드가 y, 손자 노드를 x라 한다.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>해당하는 case에 따라 z를 기준으로 부분트리를 회전을 통해 재배열 시켜준다.(rotation , restructuring)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>🔴 case 1 : y는 z의 왼쪽 자식, x는 y의 왼쪽 자식 ( left left )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  ➡ z를 기준으로 right-rotate 시켜준다.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>🔴 case 2 : y는 z의 왼쪽 자식, x는 y의 오른쪽 자식 ( left right )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  ➡ y를 기준으로 left-rotate 시켜준 후, z를 기준으로 right-rotate 시켜준다.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>🔴 case 3 : y는 z의 오른쪽 자식, x는 y의 오른쪽 자식 ( right right )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>   ➡ z를 기준으로 left-rotate 시켜준다.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>🔴 case 4 : y는 z의 오른쪽 자식, x는 y의 왼쪽 자식 ( right left )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    ➡ y를 기준으로 right-rotate 시켜준 후, z를 기준으로 left-rotate 시켜준다.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">BST의 일반 삽입 규칙에 맞게 삽입 후, 첫번째로 불균형한 노드를 찾는다.
+이때 불균형한 노드를 z라고 할때, 자식노드가 y, 손자 노드를 x라 한다.
+
+해당하는 case에 따라 z를 기준으로 부분트리를 회전을 통해 재배열 시켜준다.(rotation , restructuring)
+
+🔴 case 1 : y는 z의 왼쪽 자식, x는 y의 왼쪽 자식 ( left left )
+
+  ➡ z를 기준으로 right-rotate 시켜준다.
+
+🔴 case 2 : y는 z의 왼쪽 자식, x는 y의 오른쪽 자식 ( left right )
+
+  ➡ y를 기준으로 left-rotate 시켜준 후, z를 기준으로 right-rotate 시켜준다.
+
+🔴 case 3 : y는 z의 오른쪽 자식, x는 y의 오른쪽 자식 ( right right )
+
+   ➡ z를 기준으로 left-rotate 시켜준다.
+
+🔴 case 4 : y는 z의 오른쪽 자식, x는 y의 왼쪽 자식 ( right left )
+
+    ➡ y를 기준으로 right-rotate 시켜준 후, z를 기준으로 left-rotate 시켜준다.
 </code></pre></div><p><br><br></p>
 <h3>Delete (삭제)</h3><a class="anchor" id="delete-삭제"></a>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>BST의 일반 삽입 규칙에 맞게 삭제 후, 첫번째로 불균형한 노드를 찾는다.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>이때 불균형한 노드를 z라고 할때, z의 자식노드중 깊이가 큰 자식 노드를 y, y의 자식노드중 깊이가 큰 자식 노드를 x라 하자.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>해당하는 case에 따라 z를 기준으로 부분트리를 회전을 통해 재배열 시켜준다.(rotation , restructuring)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>재배열 과정은 삽입과 동일하다.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>🔴 case 1 : y는 z의 왼쪽 자식, x는 y의 왼쪽 자식 ( left left )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  ➡ z를 기준으로 right-rotate 시켜준다.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>🔴 case 2 : y는 z의 왼쪽 자식, x는 y의 오른쪽 자식 ( left right )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  ➡ y를 기준으로 left-rotate 시켜준 후, z를 기준으로 right-rotate 시켜준다.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>🔴 case 3 : y는 z의 오른쪽 자식, x는 y의 오른쪽 자식 ( right right )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>   ➡ z를 기준으로 left-rotate 시켜준다.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>🔴 case 4 : y는 z의 오른쪽 자식, x는 y의 왼쪽 자식 ( right left )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    ➡ y를 기준으로 right-rotate 시켜준 후, z를 기준으로 left-rotate 시켜준다.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">BST의 일반 삽입 규칙에 맞게 삭제 후, 첫번째로 불균형한 노드를 찾는다.
+이때 불균형한 노드를 z라고 할때, z의 자식노드중 깊이가 큰 자식 노드를 y, y의 자식노드중 깊이가 큰 자식 노드를 x라 하자.
+
+해당하는 case에 따라 z를 기준으로 부분트리를 회전을 통해 재배열 시켜준다.(rotation , restructuring)
+재배열 과정은 삽입과 동일하다.
+
+🔴 case 1 : y는 z의 왼쪽 자식, x는 y의 왼쪽 자식 ( left left )
+
+  ➡ z를 기준으로 right-rotate 시켜준다.
+
+🔴 case 2 : y는 z의 왼쪽 자식, x는 y의 오른쪽 자식 ( left right )
+
+  ➡ y를 기준으로 left-rotate 시켜준 후, z를 기준으로 right-rotate 시켜준다.
+
+🔴 case 3 : y는 z의 오른쪽 자식, x는 y의 오른쪽 자식 ( right right )
+
+   ➡ z를 기준으로 left-rotate 시켜준다.
+
+🔴 case 4 : y는 z의 오른쪽 자식, x는 y의 왼쪽 자식 ( right left )
+
+    ➡ y를 기준으로 right-rotate 시켜준 후, z를 기준으로 left-rotate 시켜준다.
 </code></pre></div><p><br><br></p>
 <h3>Search ( 탐색 )</h3><a class="anchor" id="search--탐색-"></a>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>AVL Tree도 BST의 일종이기 때문에 탐색의 밥법은 일반적인 Bianry Tree의 탐색 방법과 다르지 않다.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>찾는 값이 해당 노드보다 작다면 왼쪽으로 크다면 오른쪽으로 내려가며 값을 탐색
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">AVL Tree도 BST의 일종이기 때문에 탐색의 밥법은 일반적인 Bianry Tree의 탐색 방법과 다르지 않다.
+
+찾는 값이 해당 노드보다 작다면 왼쪽으로 크다면 오른쪽으로 내려가며 값을 탐색
 </code></pre></div><br>
 <details>
   <summary style="font-Weight : bold; font-size : 15px; color : #F90000;" >  📃 코드  ( 접기 / 펼치기 )</summary>
   <div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span style="color:#6272a4">/*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span style="color:#6272a4">* C++ 이용하여 AVL Tree 구현하기
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span style="color:#6272a4">*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span><span style="color:#6272a4">* 목적 : AVL Tree 공부 하기 위해 작성했으며,
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span><span style="color:#6272a4">*       C++ 이용하여 작성하시는 분들에게 도움이 되고자 했다.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span><span style="color:#6272a4">*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span><span style="color:#6272a4">* 설명 : key 값은 int만 가능 하며 중복 key는 허용 x
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span><span style="color:#6272a4">*       단순 연결 리스트로 구현
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span><span style="color:#6272a4">*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span><span style="color:#6272a4">*       class AVLTree
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span><span style="color:#6272a4">*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span><span style="color:#6272a4">*       변수 :   root =&gt; root node
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span><span style="color:#6272a4">*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span><span style="color:#6272a4">*       생성자 : RBTREE =&gt;  root 를 null로 초기화
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span><span style="color:#6272a4">*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span><span style="color:#6272a4">*       함수 :   IsKey =&gt; key값이 있는지 검사하는 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span><span style="color:#6272a4">*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span><span style="color:#6272a4">*               Insert =&gt; 재귀를 이용한 삽입 함수 (최종적으로 root를 return)
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span><span style="color:#6272a4">*               Delete =&gt; 재귀를 이용한 삭제 함수 (최종적을 root를 return)
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span><span style="color:#6272a4">*               Balancing =&gt; 삽입 / 삭제후 BF 검사하여 규칙깨졌을시 재조정 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span><span style="color:#6272a4">*               Transplant =&gt; 삭제 시 이용하며, 삭제할 노드의 자식 노드를 부모노드에 연결해주는 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span><span style="color:#6272a4">*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span><span style="color:#6272a4">*               getHeight(x) =&gt; x의 높이 getter
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span><span style="color:#6272a4">*               getBalanceBacotr(x) =&gt; x의 BF 계산하여 return
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span><span style="color:#6272a4">*               RotateRight(x) =&gt; x기준 오른쪽으로 회전
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span><span style="color:#6272a4">*               RotateLeft(x) =&gt; x기준 왼쪽으로 회전
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span><span style="color:#6272a4">*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span><span style="color:#6272a4">*               Inorder,Preorder,Postorder =&gt; 순회 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span><span style="color:#6272a4">*               tree_minimum(x), tree_maximum(x) =&gt; 노드 x 기준으로 가장 왼쪽, 오른쪽 return 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span><span style="color:#6272a4">*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span><span style="color:#6272a4">*               DisplayMenu, SelectMenu =&gt; 초기 Menu판 print 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span><span style="color:#6272a4">*               Insert_helper,Delete_helper,order_helper,print_helper =&gt; 각각 이벤트 수행시 입력받고 조건 에러 처리 위한 함수 와 tree print 해주는 함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span><span style="color:#6272a4">*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span><span style="color:#6272a4">*        Balancing에서 각 case에 대한 설명은 github에 적어 놓았다.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span><span style="color:#6272a4">*
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span><span style="color:#6272a4">* 작성자 : gowoonsori
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span><span style="color:#6272a4">* github : https://github.com/gowoonsori/my-tech/tree/master/dataStructure/Tree
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span><span style="color:#6272a4">*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;algorithm&gt;  // max() 함수 이용</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span><span style="color:#ff79c6"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span><span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">node</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span>    <span style="color:#8be9fd">int</span> key;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span>    node <span style="color:#ff79c6">*</span>left <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">nullptr</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span>    node <span style="color:#ff79c6">*</span>right <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">nullptr</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span>    <span style="color:#8be9fd">int</span> height <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span>};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span><span style="color:#ff79c6">typedef</span> node <span style="color:#ff79c6">*</span>NodePtr;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span><span style="color:#ff79c6">class</span> <span style="color:#50fa7b">AVLTREE</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span>   <span style="color:#ff79c6">private</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span>    NodePtr root;  <span style="color:#6272a4">//루트 노드
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span>    <span style="color:#6272a4">//key값이 있는지 없는지 검사 있으면 pointer 값, 없으면 nullptr
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span><span style="color:#6272a4"></span>    NodePtr <span style="color:#50fa7b">IsKey</span>(<span style="color:#8be9fd">int</span> item) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span>        NodePtr t <span style="color:#ff79c6">=</span> root;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span>        <span style="color:#6272a4">/*key값을 찾거나 없다면 break*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span>        <span style="color:#ff79c6">while</span> (t <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span> <span style="color:#ff79c6">&amp;&amp;</span> t<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">!=</span> item) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span>            t <span style="color:#ff79c6">=</span> (item <span style="color:#ff79c6">&lt;</span> t<span style="color:#ff79c6">-&gt;</span>key) <span style="color:#ff79c6">?</span> t<span style="color:#ff79c6">-&gt;</span><span style="color:#8be9fd;font-style:italic">left</span> : t<span style="color:#ff79c6">-&gt;</span>right;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span>        <span style="color:#ff79c6">return</span> t;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span>    <span style="color:#6272a4">/*새로운 key 삽입함수로 root노드 반환*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span>    NodePtr <span style="color:#50fa7b">Insert</span>(NodePtr r, <span style="color:#8be9fd">int</span> item) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span>        <span style="color:#6272a4">/*새로운 노드 삽입*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span>        <span style="color:#ff79c6">if</span> (r <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span>            NodePtr z <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> node;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span>            z<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">=</span> item;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span>            r <span style="color:#ff79c6">=</span> z;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span>            <span style="color:#ff79c6">return</span> r;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span>        } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (r<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&lt;</span> item) {  <span style="color:#6272a4">//item이 key값보다 크다면 오른쪽으로 이동
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span><span style="color:#6272a4"></span>            r<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">=</span> Insert(r<span style="color:#ff79c6">-&gt;</span>right, item);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span>        } <span style="color:#ff79c6">else</span> {  <span style="color:#6272a4">//item이 key값보다 작다면 왼쪽으로 이동
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span><span style="color:#6272a4"></span>            r<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">=</span> Insert(r<span style="color:#ff79c6">-&gt;</span>left, item);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span>        r<span style="color:#ff79c6">-&gt;</span>height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(r<span style="color:#ff79c6">-&gt;</span>left), getHeight(r<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span>        Balancing(r, item);  <span style="color:#6272a4">//새로운 노드가 추가되었으므로 재귀적으로 부모노드들 높이 1증가 시켜주고
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span><span style="color:#6272a4"></span>                             <span style="color:#6272a4">//Balace Factor 측정하여 2이상이라면 재조정함수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">return</span> r;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span>    <span style="color:#6272a4">/*key 삭제 함수*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span>    NodePtr <span style="color:#50fa7b">Delete</span>(NodePtr r, <span style="color:#8be9fd">int</span> item) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span>        <span style="color:#ff79c6">if</span> (r<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&gt;</span> item <span style="color:#ff79c6">&amp;&amp;</span> r<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span>            r<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">=</span> Delete(r<span style="color:#ff79c6">-&gt;</span>left, item);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span>        } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (r<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&lt;</span> item <span style="color:#ff79c6">&amp;&amp;</span> r<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span>            r<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">=</span> Delete(r<span style="color:#ff79c6">-&gt;</span>right, item);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span>        } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (r<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">==</span> item) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span>            Transplant(r);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span>        <span style="color:#6272a4">/*root를 지운게 아니라면*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span>        <span style="color:#ff79c6">if</span> (r <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span>            r<span style="color:#ff79c6">-&gt;</span>height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(r<span style="color:#ff79c6">-&gt;</span>left), getHeight(r<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span>            Balancing(r, item);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span>        <span style="color:#ff79c6">return</span> r;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span>    <span style="color:#6272a4">/* balance Factor 측정후 재조정*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Balancing</span>(NodePtr <span style="color:#ff79c6">&amp;</span>r, <span style="color:#8be9fd">int</span> item) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span>        <span style="color:#8be9fd">int</span> bF <span style="color:#ff79c6">=</span> getBalanceFactor(r);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span>        <span style="color:#6272a4">//case 1 (left left)
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> (bF <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> item <span style="color:#ff79c6">&lt;</span> r<span style="color:#ff79c6">-&gt;</span>left<span style="color:#ff79c6">-&gt;</span>key) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span>            r <span style="color:#ff79c6">=</span> RotateRight(r);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111</span>        <span style="color:#6272a4">//case 2 (left right)
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (bF <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> item <span style="color:#ff79c6">&gt;</span> r<span style="color:#ff79c6">-&gt;</span>left<span style="color:#ff79c6">-&gt;</span>key) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113</span>            r<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">=</span> RotateLeft(r<span style="color:#ff79c6">-&gt;</span>left);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114</span>            r <span style="color:#ff79c6">=</span> RotateRight(r);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116</span>        <span style="color:#6272a4">//case 3 (right right)
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (bF <span style="color:#ff79c6">&lt;</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> item <span style="color:#ff79c6">&gt;</span> r<span style="color:#ff79c6">-&gt;</span>right<span style="color:#ff79c6">-&gt;</span>key) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118</span>            r <span style="color:#ff79c6">=</span> RotateLeft(r);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120</span>        <span style="color:#6272a4">//case 4 ( right left)
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (bF <span style="color:#ff79c6">&lt;</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> item <span style="color:#ff79c6">&lt;</span> r<span style="color:#ff79c6">-&gt;</span>right<span style="color:#ff79c6">-&gt;</span>key) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122</span>            r<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">=</span> RotateRight(r<span style="color:#ff79c6">-&gt;</span>right);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123</span>            r <span style="color:#ff79c6">=</span> RotateLeft(r);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127</span>    <span style="color:#6272a4">/* 삭제시 자식 이식 함수*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128</span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Transplant</span>(NodePtr <span style="color:#ff79c6">&amp;</span>x) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129</span>        NodePtr y <span style="color:#ff79c6">=</span> x;  <span style="color:#6272a4">//y를 통해 노드 삭제
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131</span>        <span style="color:#ff79c6">if</span> (x<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132</span>            x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>right;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133</span>        } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (x<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134</span>            x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>left;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135</span>        } <span style="color:#ff79c6">else</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136</span>            NodePtr z <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>right;  <span style="color:#6272a4">//z : 삭제할 x의 다음으로 가장 작은 수
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137</span><span style="color:#6272a4"></span>            NodePtr pZ <span style="color:#ff79c6">=</span> x;        <span style="color:#6272a4">//p[z] : z의 부모 노드
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139</span>            <span style="color:#6272a4">/* 오른쪽 자식중 가장 작은 값*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140</span>            <span style="color:#ff79c6">while</span> (z<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141</span>                pZ <span style="color:#ff79c6">=</span> z;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142</span>                z <span style="color:#ff79c6">=</span> z<span style="color:#ff79c6">-&gt;</span>left;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143</span>            }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145</span>            x<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">=</span> z<span style="color:#ff79c6">-&gt;</span>key;  <span style="color:#6272a4">//successor과 key값 교환
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146</span><span style="color:#6272a4"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147</span>            <span style="color:#6272a4">/*오른쪽 자식이 가장 작다면*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148</span>            <span style="color:#ff79c6">if</span> (pZ <span style="color:#ff79c6">==</span> x) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149</span>                x<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">=</span> z<span style="color:#ff79c6">-&gt;</span>right;  <span style="color:#6272a4">// z의 오른쪽 자식 붙여주기
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150</span><span style="color:#6272a4"></span>            } <span style="color:#ff79c6">else</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151</span>                pZ<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">=</span> z<span style="color:#ff79c6">-&gt;</span>right;  <span style="color:#6272a4">// 오른쪽 자식의 왼쪽 자식이 있다면
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152</span><span style="color:#6272a4"></span>            }                         <span style="color:#6272a4">// 그 z(successor)의 오른쪽 자식 p[z]의 왼쪽에 붙여주기
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153</span><span style="color:#6272a4"></span>            y <span style="color:#ff79c6">=</span> z;                    <span style="color:#6272a4">//값 삭제를 위해 y &lt;- z;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154</span><span style="color:#6272a4"></span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155</span>        <span style="color:#ff79c6">delete</span> y;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157</span>    <span style="color:#6272a4">/*높이 getter */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158</span>    <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">getHeight</span>(NodePtr r) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159</span>        <span style="color:#ff79c6">if</span> (r <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160</span>            <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161</span>        <span style="color:#ff79c6">else</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162</span>            <span style="color:#ff79c6">return</span> r<span style="color:#ff79c6">-&gt;</span>height;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164</span>    <span style="color:#6272a4">/*좌우 자식 깊이 비교하여 Balnace Factor get*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165</span>    <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">getBalanceFactor</span>(NodePtr r) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166</span>        <span style="color:#ff79c6">return</span> getHeight(r<span style="color:#ff79c6">-&gt;</span>left) <span style="color:#ff79c6">-</span> getHeight(r<span style="color:#ff79c6">-&gt;</span>right);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169</span>    <span style="color:#6272a4">/*x를 중심으로 왼쪽으로 회전*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170</span>    NodePtr <span style="color:#50fa7b">RotateLeft</span>(NodePtr x) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171</span>        NodePtr y <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>right;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172</span>        x<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">=</span> y<span style="color:#ff79c6">-&gt;</span>left;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173</span>        y<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">=</span> x;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175</span>        <span style="color:#6272a4">//위치가 바뀌었으므로 높이 재조정
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176</span><span style="color:#6272a4"></span>        x<span style="color:#ff79c6">-&gt;</span>height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(x<span style="color:#ff79c6">-&gt;</span>left), getHeight(x<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177</span>        y<span style="color:#ff79c6">-&gt;</span>height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(y<span style="color:#ff79c6">-&gt;</span>left), getHeight(y<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179</span>        <span style="color:#ff79c6">return</span> y;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181</span>    <span style="color:#6272a4">/*y를 중심으로 오른쪽으로 회전*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182</span>    NodePtr <span style="color:#50fa7b">RotateRight</span>(NodePtr y) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183</span>        NodePtr x <span style="color:#ff79c6">=</span> y<span style="color:#ff79c6">-&gt;</span>left;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184</span>        y<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>right;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185</span>        x<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">=</span> y;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187</span>        <span style="color:#6272a4">//위치가 바뀌었으므로 높이 재조정
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188</span><span style="color:#6272a4"></span>        y<span style="color:#ff79c6">-&gt;</span>height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(y<span style="color:#ff79c6">-&gt;</span>left), getHeight(y<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189</span>        x<span style="color:#ff79c6">-&gt;</span>height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(x<span style="color:#ff79c6">-&gt;</span>left), getHeight(x<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191</span>        <span style="color:#ff79c6">return</span> x;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194</span>    <span style="color:#6272a4">/*show tree*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195</span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">print_helper</span>(NodePtr root, std<span style="color:#ff79c6">::</span>string indent, <span style="color:#8be9fd">bool</span> last) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196</span>        <span style="color:#6272a4">// print the tree structure on the screen
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> (root <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198</span>            std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> indent;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199</span>            <span style="color:#ff79c6">if</span> (last) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200</span>                std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;R----&#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201</span>                indent <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#34;     &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202</span>            } <span style="color:#ff79c6">else</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203</span>                std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;L----&#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204</span>                indent <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#34;|    &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205</span>            }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207</span>            <span style="color:#8be9fd">int</span> height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(root<span style="color:#ff79c6">-&gt;</span>left), getHeight(root<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208</span>            std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> root<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; (&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> height <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;)&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209</span>            print_helper(root<span style="color:#ff79c6">-&gt;</span>left, indent, <span style="color:#8be9fd;font-style:italic">false</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210</span>            print_helper(root<span style="color:#ff79c6">-&gt;</span>right, indent, <span style="color:#8be9fd;font-style:italic">true</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214</span>    <span style="color:#6272a4">/*중위순회*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215</span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Inorder</span>(NodePtr target) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216</span>        <span style="color:#ff79c6">if</span> (target <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217</span>            <span style="color:#ff79c6">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218</span>        Inorder(target<span style="color:#ff79c6">-&gt;</span>left);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> target<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220</span>        Inorder(target<span style="color:#ff79c6">-&gt;</span>right);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222</span>    <span style="color:#6272a4">/*후위순회*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223</span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Postorder</span>(NodePtr target) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224</span>        <span style="color:#ff79c6">if</span> (target <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225</span>            <span style="color:#ff79c6">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226</span>        Postorder(target<span style="color:#ff79c6">-&gt;</span>left);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227</span>        Postorder(target<span style="color:#ff79c6">-&gt;</span>right);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> target<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230</span>    <span style="color:#6272a4">/*전위순회*/</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231</span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Preorder</span>(NodePtr target) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232</span>        <span style="color:#ff79c6">if</span> (target <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233</span>            <span style="color:#ff79c6">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> target<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235</span>        Preorder(target<span style="color:#ff79c6">-&gt;</span>left);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236</span>        Preorder(target<span style="color:#ff79c6">-&gt;</span>right);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239</span>   <span style="color:#ff79c6">public</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240</span>    AVLTREE() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241</span>        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">nullptr</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243</span>    <span style="color:#6272a4">//최솟값 찾기
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244</span><span style="color:#6272a4"></span>    NodePtr <span style="color:#50fa7b">tree_minimum</span>(NodePtr x) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245</span>        <span style="color:#ff79c6">while</span> (x<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246</span>            x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>left;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">248</span>        <span style="color:#ff79c6">return</span> x;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">249</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">250</span>    <span style="color:#6272a4">//최댓값 찾기
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">251</span><span style="color:#6272a4"></span>    NodePtr <span style="color:#50fa7b">tree_maximum</span>(NodePtr x) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">252</span>        <span style="color:#ff79c6">while</span> (x<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">253</span>            x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>right;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">254</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">255</span>        <span style="color:#ff79c6">return</span> x;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">257</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">258</span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">DisplayMenuBoard</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">259</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;         ** AVL Tree **     &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">260</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;                            &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">261</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;              Menu          &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">262</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          1. Insert Key     &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">263</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          2. Delete Key     &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">264</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          3. Show Tree      &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">265</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          4. choose order   &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">266</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          5. show Menu      &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">267</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          6. clear Display  &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">268</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          7. exit           &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">269</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">270</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">271</span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">SelectMenu</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">272</span>        DisplayMenuBoard();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">273</span>        <span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">274</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">275</span>        <span style="color:#ff79c6">while</span> (i <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">8</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">276</span>            std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;(show Menu : 5) --&gt;  select :   &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">277</span>            std<span style="color:#ff79c6">::</span>cin <span style="color:#ff79c6">&gt;&gt;</span> i;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">278</span>            <span style="color:#ff79c6">switch</span> (i) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">279</span>                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">280</span>                    Insert_helper();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">281</span>                    <span style="color:#ff79c6">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">282</span>                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">283</span>                    Delete_helper();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">284</span>                    <span style="color:#ff79c6">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">285</span>                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">3</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">286</span>                    print_helper(root, <span style="color:#f1fa8c">&#34;&#34;</span>, <span style="color:#8be9fd;font-style:italic">true</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">287</span>                    <span style="color:#ff79c6">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">288</span>                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">4</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">289</span>                    Order_helper();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">290</span>                    <span style="color:#ff79c6">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">291</span>                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">5</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">292</span>                    DisplayMenuBoard();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">293</span>                    <span style="color:#ff79c6">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">294</span>                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">6</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">295</span>                    system(<span style="color:#f1fa8c">&#34;cls&#34;</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">296</span>                    DisplayMenuBoard();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">297</span>                    <span style="color:#ff79c6">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">298</span>                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">7</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">299</span>                    <span style="color:#ff79c6">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">300</span>                <span style="color:#ff79c6">default</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">301</span>                    std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; !!! Wrong entered !!!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">302</span>                              <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">303</span>            }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">304</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">305</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">306</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">307</span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Insert_helper</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">308</span>        <span style="color:#8be9fd">int</span> item;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">309</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;Key to insert  :  &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">310</span>        std<span style="color:#ff79c6">::</span>cin <span style="color:#ff79c6">&gt;&gt;</span> item;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">311</span>        <span style="color:#ff79c6">if</span> (IsKey(item)) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">312</span>            std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;!!! &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> item <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; is already exists !!!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">313</span>            <span style="color:#ff79c6">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">314</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">315</span>        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root <span style="color:#ff79c6">=</span> Insert(<span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root, item);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">316</span>        <span style="color:#ff79c6">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">317</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">318</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">319</span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Delete_helper</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">320</span>        <span style="color:#8be9fd">int</span> item;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">321</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;Key to delete  :  &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">322</span>        std<span style="color:#ff79c6">::</span>cin <span style="color:#ff79c6">&gt;&gt;</span> item;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">323</span>        <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">!</span>IsKey(item)) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">324</span>            std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;!!! &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> item <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; is not exists !!!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">325</span>            <span style="color:#ff79c6">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">326</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">327</span>        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root <span style="color:#ff79c6">=</span> Delete(<span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root, item);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">328</span>        <span style="color:#ff79c6">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">329</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">330</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">331</span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Order_helper</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">332</span>        <span style="color:#8be9fd">int</span> i;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">333</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;         == Order Menu ==&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">334</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          1. PreOrder&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">335</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          2. InOrder&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">336</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          3. PostOrder&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">337</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          4. exit&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">338</span>        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; --&gt; select  :  &#34;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">339</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">340</span>        std<span style="color:#ff79c6">::</span>cin <span style="color:#ff79c6">&gt;&gt;</span> i;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">341</span>        <span style="color:#ff79c6">switch</span> (i) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">342</span>            <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">343</span>                Preorder(<span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">344</span>                std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">345</span>                <span style="color:#ff79c6">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">346</span>            <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">347</span>                Inorder(<span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">348</span>                std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">349</span>                <span style="color:#ff79c6">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">350</span>            <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">3</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">351</span>                Postorder(<span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">352</span>                std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">353</span>                <span style="color:#ff79c6">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">354</span>            <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">4</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">355</span>                <span style="color:#ff79c6">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">356</span>            <span style="color:#ff79c6">default</span><span style="color:#ff79c6">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">357</span>                std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; !!! Wrong enter !!!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">358</span>                          <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">359</span>                <span style="color:#ff79c6">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">360</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">361</span>        <span style="color:#ff79c6">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">362</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">363</span>};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">364</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">365</span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">366</span>    AVLTREE tree;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">367</span>    tree.SelectMenu();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">368</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">369</span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">370</span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#6272a4">/*
+</span><span style="color:#6272a4">* C++ 이용하여 AVL Tree 구현하기
+</span><span style="color:#6272a4">*
+</span><span style="color:#6272a4">* 목적 : AVL Tree 공부 하기 위해 작성했으며,
+</span><span style="color:#6272a4">*       C++ 이용하여 작성하시는 분들에게 도움이 되고자 했다.
+</span><span style="color:#6272a4">*
+</span><span style="color:#6272a4">* 설명 : key 값은 int만 가능 하며 중복 key는 허용 x
+</span><span style="color:#6272a4">*       단순 연결 리스트로 구현
+</span><span style="color:#6272a4">*
+</span><span style="color:#6272a4">*       class AVLTree
+</span><span style="color:#6272a4">*
+</span><span style="color:#6272a4">*       변수 :   root =&gt; root node
+</span><span style="color:#6272a4">*
+</span><span style="color:#6272a4">*       생성자 : RBTREE =&gt;  root 를 null로 초기화
+</span><span style="color:#6272a4">*
+</span><span style="color:#6272a4">*       함수 :   IsKey =&gt; key값이 있는지 검사하는 함수
+</span><span style="color:#6272a4">*
+</span><span style="color:#6272a4">*               Insert =&gt; 재귀를 이용한 삽입 함수 (최종적으로 root를 return)
+</span><span style="color:#6272a4">*               Delete =&gt; 재귀를 이용한 삭제 함수 (최종적을 root를 return)
+</span><span style="color:#6272a4">*               Balancing =&gt; 삽입 / 삭제후 BF 검사하여 규칙깨졌을시 재조정 함수
+</span><span style="color:#6272a4">*               Transplant =&gt; 삭제 시 이용하며, 삭제할 노드의 자식 노드를 부모노드에 연결해주는 함수
+</span><span style="color:#6272a4">*
+</span><span style="color:#6272a4">*               getHeight(x) =&gt; x의 높이 getter
+</span><span style="color:#6272a4">*               getBalanceBacotr(x) =&gt; x의 BF 계산하여 return
+</span><span style="color:#6272a4">*               RotateRight(x) =&gt; x기준 오른쪽으로 회전
+</span><span style="color:#6272a4">*               RotateLeft(x) =&gt; x기준 왼쪽으로 회전
+</span><span style="color:#6272a4">*
+</span><span style="color:#6272a4">*               Inorder,Preorder,Postorder =&gt; 순회 함수
+</span><span style="color:#6272a4">*               tree_minimum(x), tree_maximum(x) =&gt; 노드 x 기준으로 가장 왼쪽, 오른쪽 return 함수
+</span><span style="color:#6272a4">*
+</span><span style="color:#6272a4">*               DisplayMenu, SelectMenu =&gt; 초기 Menu판 print 함수
+</span><span style="color:#6272a4">*               Insert_helper,Delete_helper,order_helper,print_helper =&gt; 각각 이벤트 수행시 입력받고 조건 에러 처리 위한 함수 와 tree print 해주는 함수
+</span><span style="color:#6272a4">*
+</span><span style="color:#6272a4">*        Balancing에서 각 case에 대한 설명은 github에 적어 놓았다.
+</span><span style="color:#6272a4">*
+</span><span style="color:#6272a4">* 작성자 : gowoonsori
+</span><span style="color:#6272a4">* github : https://github.com/gowoonsori/my-tech/tree/master/dataStructure/Tree
+</span><span style="color:#6272a4">*/</span>
+
+<span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;algorithm&gt;  // max() 함수 이용</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;iostream&gt;</span><span style="color:#ff79c6">
+</span><span style="color:#ff79c6"></span>
+<span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">node</span> {
+    <span style="color:#8be9fd">int</span> key;
+    node <span style="color:#ff79c6">*</span>left <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">nullptr</span>;
+    node <span style="color:#ff79c6">*</span>right <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">nullptr</span>;
+    <span style="color:#8be9fd">int</span> height <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>;
+};
+<span style="color:#ff79c6">typedef</span> node <span style="color:#ff79c6">*</span>NodePtr;
+
+<span style="color:#ff79c6">class</span> <span style="color:#50fa7b">AVLTREE</span> {
+   <span style="color:#ff79c6">private</span><span style="color:#ff79c6">:</span>
+    NodePtr root;  <span style="color:#6272a4">//루트 노드
+</span><span style="color:#6272a4"></span>
+    <span style="color:#6272a4">//key값이 있는지 없는지 검사 있으면 pointer 값, 없으면 nullptr
+</span><span style="color:#6272a4"></span>    NodePtr <span style="color:#50fa7b">IsKey</span>(<span style="color:#8be9fd">int</span> item) {
+        NodePtr t <span style="color:#ff79c6">=</span> root;
+
+        <span style="color:#6272a4">/*key값을 찾거나 없다면 break*/</span>
+        <span style="color:#ff79c6">while</span> (t <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span> <span style="color:#ff79c6">&amp;&amp;</span> t<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">!=</span> item) {
+            t <span style="color:#ff79c6">=</span> (item <span style="color:#ff79c6">&lt;</span> t<span style="color:#ff79c6">-&gt;</span>key) <span style="color:#ff79c6">?</span> t<span style="color:#ff79c6">-&gt;</span><span style="color:#8be9fd;font-style:italic">left</span> : t<span style="color:#ff79c6">-&gt;</span>right;
+        }
+        <span style="color:#ff79c6">return</span> t;
+    }
+
+    <span style="color:#6272a4">/*새로운 key 삽입함수로 root노드 반환*/</span>
+    NodePtr <span style="color:#50fa7b">Insert</span>(NodePtr r, <span style="color:#8be9fd">int</span> item) {
+        <span style="color:#6272a4">/*새로운 노드 삽입*/</span>
+        <span style="color:#ff79c6">if</span> (r <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>) {
+            NodePtr z <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> node;
+            z<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">=</span> item;
+            r <span style="color:#ff79c6">=</span> z;
+            <span style="color:#ff79c6">return</span> r;
+        } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (r<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&lt;</span> item) {  <span style="color:#6272a4">//item이 key값보다 크다면 오른쪽으로 이동
+</span><span style="color:#6272a4"></span>            r<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">=</span> Insert(r<span style="color:#ff79c6">-&gt;</span>right, item);
+        } <span style="color:#ff79c6">else</span> {  <span style="color:#6272a4">//item이 key값보다 작다면 왼쪽으로 이동
+</span><span style="color:#6272a4"></span>            r<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">=</span> Insert(r<span style="color:#ff79c6">-&gt;</span>left, item);
+        }
+        r<span style="color:#ff79c6">-&gt;</span>height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(r<span style="color:#ff79c6">-&gt;</span>left), getHeight(r<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
+        Balancing(r, item);  <span style="color:#6272a4">//새로운 노드가 추가되었으므로 재귀적으로 부모노드들 높이 1증가 시켜주고
+</span><span style="color:#6272a4"></span>                             <span style="color:#6272a4">//Balace Factor 측정하여 2이상이라면 재조정함수
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">return</span> r;
+    }
+
+    <span style="color:#6272a4">/*key 삭제 함수*/</span>
+    NodePtr <span style="color:#50fa7b">Delete</span>(NodePtr r, <span style="color:#8be9fd">int</span> item) {
+        <span style="color:#ff79c6">if</span> (r<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&gt;</span> item <span style="color:#ff79c6">&amp;&amp;</span> r<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
+            r<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">=</span> Delete(r<span style="color:#ff79c6">-&gt;</span>left, item);
+        } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (r<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&lt;</span> item <span style="color:#ff79c6">&amp;&amp;</span> r<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
+            r<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">=</span> Delete(r<span style="color:#ff79c6">-&gt;</span>right, item);
+        } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (r<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">==</span> item) {
+            Transplant(r);
+        }
+        <span style="color:#6272a4">/*root를 지운게 아니라면*/</span>
+        <span style="color:#ff79c6">if</span> (r <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
+            r<span style="color:#ff79c6">-&gt;</span>height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(r<span style="color:#ff79c6">-&gt;</span>left), getHeight(r<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
+            Balancing(r, item);
+        }
+
+        <span style="color:#ff79c6">return</span> r;
+    }
+
+    <span style="color:#6272a4">/* balance Factor 측정후 재조정*/</span>
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Balancing</span>(NodePtr <span style="color:#ff79c6">&amp;</span>r, <span style="color:#8be9fd">int</span> item) {
+        <span style="color:#8be9fd">int</span> bF <span style="color:#ff79c6">=</span> getBalanceFactor(r);
+
+        <span style="color:#6272a4">//case 1 (left left)
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> (bF <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> item <span style="color:#ff79c6">&lt;</span> r<span style="color:#ff79c6">-&gt;</span>left<span style="color:#ff79c6">-&gt;</span>key) {
+            r <span style="color:#ff79c6">=</span> RotateRight(r);
+        }
+        <span style="color:#6272a4">//case 2 (left right)
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (bF <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> item <span style="color:#ff79c6">&gt;</span> r<span style="color:#ff79c6">-&gt;</span>left<span style="color:#ff79c6">-&gt;</span>key) {
+            r<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">=</span> RotateLeft(r<span style="color:#ff79c6">-&gt;</span>left);
+            r <span style="color:#ff79c6">=</span> RotateRight(r);
+        }
+        <span style="color:#6272a4">//case 3 (right right)
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (bF <span style="color:#ff79c6">&lt;</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> item <span style="color:#ff79c6">&gt;</span> r<span style="color:#ff79c6">-&gt;</span>right<span style="color:#ff79c6">-&gt;</span>key) {
+            r <span style="color:#ff79c6">=</span> RotateLeft(r);
+        }
+        <span style="color:#6272a4">//case 4 ( right left)
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (bF <span style="color:#ff79c6">&lt;</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> item <span style="color:#ff79c6">&lt;</span> r<span style="color:#ff79c6">-&gt;</span>right<span style="color:#ff79c6">-&gt;</span>key) {
+            r<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">=</span> RotateRight(r<span style="color:#ff79c6">-&gt;</span>right);
+            r <span style="color:#ff79c6">=</span> RotateLeft(r);
+        }
+    }
+
+    <span style="color:#6272a4">/* 삭제시 자식 이식 함수*/</span>
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Transplant</span>(NodePtr <span style="color:#ff79c6">&amp;</span>x) {
+        NodePtr y <span style="color:#ff79c6">=</span> x;  <span style="color:#6272a4">//y를 통해 노드 삭제
+</span><span style="color:#6272a4"></span>
+        <span style="color:#ff79c6">if</span> (x<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>) {
+            x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>right;
+        } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (x<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>) {
+            x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>left;
+        } <span style="color:#ff79c6">else</span> {
+            NodePtr z <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>right;  <span style="color:#6272a4">//z : 삭제할 x의 다음으로 가장 작은 수
+</span><span style="color:#6272a4"></span>            NodePtr pZ <span style="color:#ff79c6">=</span> x;        <span style="color:#6272a4">//p[z] : z의 부모 노드
+</span><span style="color:#6272a4"></span>
+            <span style="color:#6272a4">/* 오른쪽 자식중 가장 작은 값*/</span>
+            <span style="color:#ff79c6">while</span> (z<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
+                pZ <span style="color:#ff79c6">=</span> z;
+                z <span style="color:#ff79c6">=</span> z<span style="color:#ff79c6">-&gt;</span>left;
+            }
+
+            x<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">=</span> z<span style="color:#ff79c6">-&gt;</span>key;  <span style="color:#6272a4">//successor과 key값 교환
+</span><span style="color:#6272a4"></span>
+            <span style="color:#6272a4">/*오른쪽 자식이 가장 작다면*/</span>
+            <span style="color:#ff79c6">if</span> (pZ <span style="color:#ff79c6">==</span> x) {
+                x<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">=</span> z<span style="color:#ff79c6">-&gt;</span>right;  <span style="color:#6272a4">// z의 오른쪽 자식 붙여주기
+</span><span style="color:#6272a4"></span>            } <span style="color:#ff79c6">else</span> {
+                pZ<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">=</span> z<span style="color:#ff79c6">-&gt;</span>right;  <span style="color:#6272a4">// 오른쪽 자식의 왼쪽 자식이 있다면
+</span><span style="color:#6272a4"></span>            }                         <span style="color:#6272a4">// 그 z(successor)의 오른쪽 자식 p[z]의 왼쪽에 붙여주기
+</span><span style="color:#6272a4"></span>            y <span style="color:#ff79c6">=</span> z;                    <span style="color:#6272a4">//값 삭제를 위해 y &lt;- z;
+</span><span style="color:#6272a4"></span>        }
+        <span style="color:#ff79c6">delete</span> y;
+    }
+    <span style="color:#6272a4">/*높이 getter */</span>
+    <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">getHeight</span>(NodePtr r) {
+        <span style="color:#ff79c6">if</span> (r <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>)
+            <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+        <span style="color:#ff79c6">else</span>
+            <span style="color:#ff79c6">return</span> r<span style="color:#ff79c6">-&gt;</span>height;
+    }
+    <span style="color:#6272a4">/*좌우 자식 깊이 비교하여 Balnace Factor get*/</span>
+    <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">getBalanceFactor</span>(NodePtr r) {
+        <span style="color:#ff79c6">return</span> getHeight(r<span style="color:#ff79c6">-&gt;</span>left) <span style="color:#ff79c6">-</span> getHeight(r<span style="color:#ff79c6">-&gt;</span>right);
+    }
+
+    <span style="color:#6272a4">/*x를 중심으로 왼쪽으로 회전*/</span>
+    NodePtr <span style="color:#50fa7b">RotateLeft</span>(NodePtr x) {
+        NodePtr y <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>right;
+        x<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">=</span> y<span style="color:#ff79c6">-&gt;</span>left;
+        y<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">=</span> x;
+
+        <span style="color:#6272a4">//위치가 바뀌었으므로 높이 재조정
+</span><span style="color:#6272a4"></span>        x<span style="color:#ff79c6">-&gt;</span>height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(x<span style="color:#ff79c6">-&gt;</span>left), getHeight(x<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
+        y<span style="color:#ff79c6">-&gt;</span>height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(y<span style="color:#ff79c6">-&gt;</span>left), getHeight(y<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
+
+        <span style="color:#ff79c6">return</span> y;
+    }
+    <span style="color:#6272a4">/*y를 중심으로 오른쪽으로 회전*/</span>
+    NodePtr <span style="color:#50fa7b">RotateRight</span>(NodePtr y) {
+        NodePtr x <span style="color:#ff79c6">=</span> y<span style="color:#ff79c6">-&gt;</span>left;
+        y<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>right;
+        x<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">=</span> y;
+
+        <span style="color:#6272a4">//위치가 바뀌었으므로 높이 재조정
+</span><span style="color:#6272a4"></span>        y<span style="color:#ff79c6">-&gt;</span>height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(y<span style="color:#ff79c6">-&gt;</span>left), getHeight(y<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
+        x<span style="color:#ff79c6">-&gt;</span>height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(x<span style="color:#ff79c6">-&gt;</span>left), getHeight(x<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
+
+        <span style="color:#ff79c6">return</span> x;
+    }
+
+    <span style="color:#6272a4">/*show tree*/</span>
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">print_helper</span>(NodePtr root, std<span style="color:#ff79c6">::</span>string indent, <span style="color:#8be9fd">bool</span> last) {
+        <span style="color:#6272a4">// print the tree structure on the screen
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> (root <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
+            std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> indent;
+            <span style="color:#ff79c6">if</span> (last) {
+                std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;R----&#34;</span>;
+                indent <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#34;     &#34;</span>;
+            } <span style="color:#ff79c6">else</span> {
+                std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;L----&#34;</span>;
+                indent <span style="color:#ff79c6">+=</span> <span style="color:#f1fa8c">&#34;|    &#34;</span>;
+            }
+
+            <span style="color:#8be9fd">int</span> height <span style="color:#ff79c6">=</span> std<span style="color:#ff79c6">::</span>max(getHeight(root<span style="color:#ff79c6">-&gt;</span>left), getHeight(root<span style="color:#ff79c6">-&gt;</span>right)) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
+            std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> root<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; (&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> height <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;)&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+            print_helper(root<span style="color:#ff79c6">-&gt;</span>left, indent, <span style="color:#8be9fd;font-style:italic">false</span>);
+            print_helper(root<span style="color:#ff79c6">-&gt;</span>right, indent, <span style="color:#8be9fd;font-style:italic">true</span>);
+        }
+    }
+
+    <span style="color:#6272a4">/*중위순회*/</span>
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Inorder</span>(NodePtr target) {
+        <span style="color:#ff79c6">if</span> (target <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>)
+            <span style="color:#ff79c6">return</span>;
+        Inorder(target<span style="color:#ff79c6">-&gt;</span>left);
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> target<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; &#34;</span>;
+        Inorder(target<span style="color:#ff79c6">-&gt;</span>right);
+    }
+    <span style="color:#6272a4">/*후위순회*/</span>
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Postorder</span>(NodePtr target) {
+        <span style="color:#ff79c6">if</span> (target <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>)
+            <span style="color:#ff79c6">return</span>;
+        Postorder(target<span style="color:#ff79c6">-&gt;</span>left);
+        Postorder(target<span style="color:#ff79c6">-&gt;</span>right);
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> target<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; &#34;</span>;
+    }
+    <span style="color:#6272a4">/*전위순회*/</span>
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Preorder</span>(NodePtr target) {
+        <span style="color:#ff79c6">if</span> (target <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">nullptr</span>)
+            <span style="color:#ff79c6">return</span>;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> target<span style="color:#ff79c6">-&gt;</span>key <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; &#34;</span>;
+        Preorder(target<span style="color:#ff79c6">-&gt;</span>left);
+        Preorder(target<span style="color:#ff79c6">-&gt;</span>right);
+    }
+
+   <span style="color:#ff79c6">public</span><span style="color:#ff79c6">:</span>
+    AVLTREE() {
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">nullptr</span>;
+    }
+    <span style="color:#6272a4">//최솟값 찾기
+</span><span style="color:#6272a4"></span>    NodePtr <span style="color:#50fa7b">tree_minimum</span>(NodePtr x) {
+        <span style="color:#ff79c6">while</span> (x<span style="color:#ff79c6">-&gt;</span>left <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
+            x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>left;
+        }
+        <span style="color:#ff79c6">return</span> x;
+    }
+    <span style="color:#6272a4">//최댓값 찾기
+</span><span style="color:#6272a4"></span>    NodePtr <span style="color:#50fa7b">tree_maximum</span>(NodePtr x) {
+        <span style="color:#ff79c6">while</span> (x<span style="color:#ff79c6">-&gt;</span>right <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nullptr</span>) {
+            x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">-&gt;</span>right;
+        }
+        <span style="color:#ff79c6">return</span> x;
+    }
+
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">DisplayMenuBoard</span>() {
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;         ** AVL Tree **     &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;                            &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;              Menu          &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          1. Insert Key     &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          2. Delete Key     &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          3. Show Tree      &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          4. choose order   &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          5. show Menu      &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          6. clear Display  &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          7. exit           &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+    }
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">SelectMenu</span>() {
+        DisplayMenuBoard();
+        <span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;
+
+        <span style="color:#ff79c6">while</span> (i <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">8</span>) {
+            std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;(show Menu : 5) --&gt;  select :   &#34;</span>;
+            std<span style="color:#ff79c6">::</span>cin <span style="color:#ff79c6">&gt;&gt;</span> i;
+            <span style="color:#ff79c6">switch</span> (i) {
+                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">:</span>
+                    Insert_helper();
+                    <span style="color:#ff79c6">break</span>;
+                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">:</span>
+                    Delete_helper();
+                    <span style="color:#ff79c6">break</span>;
+                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">3</span><span style="color:#ff79c6">:</span>
+                    print_helper(root, <span style="color:#f1fa8c">&#34;&#34;</span>, <span style="color:#8be9fd;font-style:italic">true</span>);
+                    <span style="color:#ff79c6">break</span>;
+                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">4</span><span style="color:#ff79c6">:</span>
+                    Order_helper();
+                    <span style="color:#ff79c6">break</span>;
+                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">5</span><span style="color:#ff79c6">:</span>
+                    DisplayMenuBoard();
+                    <span style="color:#ff79c6">break</span>;
+                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">6</span><span style="color:#ff79c6">:</span>
+                    system(<span style="color:#f1fa8c">&#34;cls&#34;</span>);
+                    DisplayMenuBoard();
+                    <span style="color:#ff79c6">break</span>;
+                <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">7</span><span style="color:#ff79c6">:</span>
+                    <span style="color:#ff79c6">return</span>;
+                <span style="color:#ff79c6">default</span><span style="color:#ff79c6">:</span>
+                    std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; !!! Wrong entered !!!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>
+                              <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+            }
+        }
+    }
+
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Insert_helper</span>() {
+        <span style="color:#8be9fd">int</span> item;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;Key to insert  :  &#34;</span>;
+        std<span style="color:#ff79c6">::</span>cin <span style="color:#ff79c6">&gt;&gt;</span> item;
+        <span style="color:#ff79c6">if</span> (IsKey(item)) {
+            std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;!!! &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> item <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; is already exists !!!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>;
+            <span style="color:#ff79c6">return</span>;
+        }
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root <span style="color:#ff79c6">=</span> Insert(<span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root, item);
+        <span style="color:#ff79c6">return</span>;
+    }
+
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Delete_helper</span>() {
+        <span style="color:#8be9fd">int</span> item;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;Key to delete  :  &#34;</span>;
+        std<span style="color:#ff79c6">::</span>cin <span style="color:#ff79c6">&gt;&gt;</span> item;
+        <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">!</span>IsKey(item)) {
+            std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;!!! &#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> item <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; is not exists !!!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>;
+            <span style="color:#ff79c6">return</span>;
+        }
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root <span style="color:#ff79c6">=</span> Delete(<span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root, item);
+        <span style="color:#ff79c6">return</span>;
+    }
+
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Order_helper</span>() {
+        <span style="color:#8be9fd">int</span> i;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;         == Order Menu ==&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          1. PreOrder&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          2. InOrder&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          3. PostOrder&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34;          4. exit&#34;</span> <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+        std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; --&gt; select  :  &#34;</span>;
+
+        std<span style="color:#ff79c6">::</span>cin <span style="color:#ff79c6">&gt;&gt;</span> i;
+        <span style="color:#ff79c6">switch</span> (i) {
+            <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">:</span>
+                Preorder(<span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root);
+                std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+                <span style="color:#ff79c6">break</span>;
+            <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">:</span>
+                Inorder(<span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root);
+                std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+                <span style="color:#ff79c6">break</span>;
+            <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">3</span><span style="color:#ff79c6">:</span>
+                Postorder(<span style="color:#ff79c6">this</span><span style="color:#ff79c6">-&gt;</span>root);
+                std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+                <span style="color:#ff79c6">break</span>;
+            <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">4</span><span style="color:#ff79c6">:</span>
+                <span style="color:#ff79c6">return</span>;
+            <span style="color:#ff79c6">default</span><span style="color:#ff79c6">:</span>
+                std<span style="color:#ff79c6">::</span>cout <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#f1fa8c">&#34; !!! Wrong enter !!!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>
+                          <span style="color:#ff79c6">&lt;&lt;</span> std<span style="color:#ff79c6">::</span>endl;
+                <span style="color:#ff79c6">break</span>;
+        }
+        <span style="color:#ff79c6">return</span>;
+    }
+};
+
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>() {
+    AVLTREE tree;
+    tree.SelectMenu();
+
+    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
+}
 </code></pre></div>  </div>
 </details>
 <p><br><br></p>
