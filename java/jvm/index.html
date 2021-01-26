@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-26T22:02:09 KST">
+<meta name="revised" content="2021-01-26T23:43:34 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -128,8 +128,13 @@ if (!doNotTrack) {
                 </a>
             </li>
             <li class="" role="">
-                <a href="https://gowoonsori.github.io"  rel="noopener">
-                  Blog
+                <a href="https://www.facebook.com/gowoonsori97"  rel="noopener">
+                  FaceBook
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="mailto:gowoonsori97@gmail.com"  rel="noopener">
+                  Gmail
                 </a>
             </li>
     </nav>
@@ -820,7 +825,7 @@ if (!doNotTrack) {
 <br>
 <h2>📌 컴파일 하는 방법</h2><a class="anchor" id="-컴파일-하는-방법"></a>
 <p>컴파일 이름 그대로 자바 컴파일러를 이용해 자바코드를 바이트코드(.class파일)로 변환하는 것으로 설치한 jdk의 bin폴더안에 <code>javac</code>이라는 자바 컴파일러가 존재하기 때문에 이를 이용하면 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-shell" data-lang="shell">javac hello.world.java
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>javac hello.world.java
 </code></pre></div><br>
 <p>요즘은 IDE가 매우 똑똑해졌기 때문에 IDE에 코드를 작성하는 것만으로도 컴파일에러를 잡아낸다.</p>
 <h3>컴파일 과정</h3><a class="anchor" id="컴파일-과정"></a>
@@ -842,11 +847,11 @@ if (!doNotTrack) {
 <h2>📌 실행방법</h2><a class="anchor" id="-실행방법"></a>
 <p>요즘 대부분은 <code>IDE</code>를 통해 실행하나 CLI의 <code>java</code>명령어를 이용하여 실행이가능하다.</p>
 <p>default 패키지라면 바로 파일명을 통해 실행이 가능하며 package를 명시하여 실행도 가능하다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">java hello_world
-
-java java.me.example.hello_world
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>java hello_world
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>java java.me.example.hello_world
 </code></pre></div><p>자바 상위버전의 <code>class</code>파일을 하위 버전으로 실행하려고 하면 대부분 <code>에러</code>가 발생하고 반대의 경우에는 <code>하위 호환성(backward compatible)</code>이라고 하여 실행이 가능하다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">javac -source &lt;version&gt; -target &lt;version&gt; &lt;java filename&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>javac -source &lt;version&gt; -target &lt;version&gt; &lt;java filename&gt;
 </code></pre></div><p>위와 같은 명령어로 컴파일시 호환성 옵션을 줄 수 있다.</p>
 <br>
 <h2>📌 바이트코드란</h2><a class="anchor" id="-바이트코드란"></a>
@@ -951,10 +956,10 @@ java java.me.example.hello_world
 <p><br><br><br></p>
 <hr>
 <h3>Reference</h3><a class="anchor" id="reference"></a>
-<p><a href="https://asfirstalways.tistory.com/158">https://asfirstalways.tistory.com/158</a>
-<a href="https://m.blog.naver.com/ehcibear314/221228200531">https://m.blog.naver.com/ehcibear314/221228200531</a>
-<a href="https://catch-me-java.tistory.com/9">https://catch-me-java.tistory.com/9</a>
-<a href="https://homoefficio.github.io/2019/01/31/Back-to-the-Essence-Java-%EC%BB%B4%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EC%8B%A4%ED%96%89%EA%B9%8C%EC%A7%80-2/">https://homoefficio.github.io/2019/01/31/Back-to-the-Essence-Java-%EC%BB%B4%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EC%8B%A4%ED%96%89%EA%B9%8C%EC%A7%80-2/</a></p>
+<p><a href="https://asfirstalways.tistory.com/158">https://asfirstalways.tistory.com/158</a></p>
+<p><a href="https://m.blog.naver.com/ehcibear314/221228200531">https://m.blog.naver.com/ehcibear314/221228200531</a></p>
+<p><a href="https://catch-me-java.tistory.com/9">https://catch-me-java.tistory.com/9</a></p>
+<p><a href="https://homoefficio.github.io/2019/01/31/Back-to-the-Essence-Java-%EC%BB%B4%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EC%8B%A4%ED%96%89%EA%B9%8C%EC%A7%80-2/">https://homoefficio.github.io/2019/01/31/Back-to-the-Essence-Java-%EC%BB%B4%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EC%8B%A4%ED%96%89%EA%B9%8C%EC%A7%80-2/</a></p>
 </div>
 
 	<div style="margin-top:200px;">

@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-26T22:02:09 KST">
+<meta name="revised" content="2021-01-26T23:43:34 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -128,8 +128,13 @@ if (!doNotTrack) {
                 </a>
             </li>
             <li class="" role="">
-                <a href="https://gowoonsori.github.io"  rel="noopener">
-                  Blog
+                <a href="https://www.facebook.com/gowoonsori97"  rel="noopener">
+                  FaceBook
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="mailto:gowoonsori97@gmail.com"  rel="noopener">
+                  Gmail
                 </a>
             </li>
     </nav>
@@ -802,28 +807,28 @@ if (!doNotTrack) {
 	
 
 	<div class="content"><p>가장 먼저 <code>vscode</code>를 통해 <code>wsl2</code>에 접속하고 wsl2에 폴더를 만들어 주었다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">mkdir front
-cd front
-npm init -y
-npm install --save react react-dom next
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>mkdir front
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#8be9fd;font-style:italic">cd</span> front
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>npm init -y
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>npm install --save react react-dom next
 </code></pre></div><p>만든 프로젝트안에 <code>front</code>라는 폴더를 만들어 react와 next의 의존성을 추가해주었다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">&#34;scripts&#34;: {
-        &#34;dev&#34;: &#34;next -p 3060&#34;,
-        &#34;build&#34;: &#34;next build&#34;,
-        &#34;start&#34;: &#34;next start&#34;,
-    .
-    .
-    .
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&#34;scripts&#34;: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>        &#34;dev&#34;: &#34;next -p 3060&#34;,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>        &#34;build&#34;: &#34;next build&#34;,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>        &#34;start&#34;: &#34;next start&#34;,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    .
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>    .
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>    .
 </code></pre></div><p>package.json에 프로젝트 실행을 보다 간편하게 하기 위해 명령어를 수정해주었다.</p>
 <p><code>npm run dev</code>를 통해 개발모드로 실행 시키고 <code>npm run build</code>와 <code>npm start</code>로 실제 동작을 시킬 수 있다. (<code>test</code>와 <code>start</code> 명령은 <code>run</code>을 생략할 수 있다.)</p>
 <p><br><br></p>
 <h2>index.js 작성</h2><a class="anchor" id="indexjs-작성"></a>
 <p>프로젝트에 기본시작 파일은 <code>pages/index.js</code>가 되기 때문에 index.js를 다음과 같이 작성해 주었다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Index</span> <span style="color:#f92672">=</span> () =&gt; {
-  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">js</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;;</span>
-};
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Index</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">const</span> Index <span style="color:#ff79c6">=</span> () =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&lt;</span>div<span style="color:#ff79c6">&gt;</span>Hello Next.js<span style="color:#ff79c6">&lt;</span>/div&gt;;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> Index;
 </code></pre></div><p><code>npm run dev</code>를 통해 실행 시키면 잘 동작이 되는 것을 볼 수 있다.
 <img src="./hello.PNG?classes=shadow,border" alt="hello"></p>
 <p>이때 나처럼 <code>wsl2</code>로 실행시킨 사람이라면 window의 브라우저에 <code>localhost:3060</code>을 타이핑해서 들어간다면 접속이 되지 않을 것이다.</p>
@@ -831,233 +836,233 @@ npm install --save react react-dom next
 <p><br><br></p>
 <h2>_app.js</h2><a class="anchor" id="_appjs"></a>
 <p>나는 왼쪽과 위쪽에 <code>메뉴바</code>가 고정으로 있는 디자인을 생각하고 있어 전체 layout은 유지하고 state를 유지하기 위해 모든 페이지에서 사용할 <code>_app.js</code>를 만들어 주었다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Head</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;next/head&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">PropTypes</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;prop-types&#39;</span>;
-
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">RecoilRoot</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;recoil&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PointsWeb</span> <span style="color:#f92672">=</span> ({ <span style="color:#a6e22e">Component</span> }) =&gt; {
-  <span style="color:#66d9ef">return</span> (
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">RecoilRoot</span><span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Head</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">포인트</span> <span style="color:#a6e22e">적립</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/title&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Head&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Component</span> <span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/RecoilRoot&gt;</span>
-  );
-};
-
-<span style="color:#a6e22e">PointsWeb</span>.<span style="color:#a6e22e">propTypes</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">Component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">elementType</span>.<span style="color:#a6e22e">isRequired</span>,
-};
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">PointsWeb</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">import</span> React from <span style="color:#f1fa8c">&#39;react&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">import</span> Head from <span style="color:#f1fa8c">&#39;next/head&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">import</span> PropTypes from <span style="color:#f1fa8c">&#39;prop-types&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6">import</span> { RecoilRoot } from <span style="color:#f1fa8c">&#39;recoil&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#ff79c6">const</span> PointsWeb <span style="color:#ff79c6">=</span> ({ Component }) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#ff79c6">return</span> (
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#ff79c6">&lt;</span>RecoilRoot<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      <span style="color:#ff79c6">&lt;</span>Head<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        <span style="color:#ff79c6">&lt;</span>title<span style="color:#ff79c6">&gt;</span>포인트 적립<span style="color:#ff79c6">&lt;</span>/title&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>      <span style="color:#ff79c6">&lt;</span>/Head&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>      <span style="color:#ff79c6">&lt;</span>Component <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="color:#ff79c6">&lt;</span>/RecoilRoot&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>PointsWeb.propTypes <span style="color:#ff79c6">=</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>  Component<span style="color:#ff79c6">:</span> PropTypes.elementType.isRequired,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> PointsWeb;
 </code></pre></div><p>모든 page(일종의 Component)들이 <code>Component</code>라는 <code>prop</code>으로 이용하여 해당 컴포넌트를 다른 <code>Layout(Component)</code>로 감싸는 구조이다.</p>
 <p>또한 이 _app.js가 최상단 Component로 state을 모든 Component에서 사용하기 위해 <RecoilRoot>로 이를 감싸 주었다.</p>
 <p><br><br></p>
 <h2>AppLayout</h2><a class="anchor" id="applayout"></a>
 <p>모든 페이지에서 공통적으로 사용할 AppLayout을 정의한 컴포넌트이다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">PropTypes</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;prop-types&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Router</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;next/router&#39;</span>;
-<span style="color:#66d9ef">import</span> {
-  <span style="color:#a6e22e">AppBar</span>,
-  <span style="color:#a6e22e">Drawer</span>,
-  <span style="color:#a6e22e">CssBaseline</span>,
-  <span style="color:#a6e22e">Divider</span>,
-  <span style="color:#a6e22e">Hidden</span>,
-  <span style="color:#a6e22e">IconButton</span>,
-  <span style="color:#a6e22e">Toolbar</span>,
-  <span style="color:#a6e22e">List</span>,
-  <span style="color:#a6e22e">ListItemText</span>,
-  <span style="color:#a6e22e">ListItem</span>,
-  <span style="color:#a6e22e">makeStyles</span>,
-} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@material-ui/core&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">MenuIcon</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@material-ui/icons/Menu&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">drawerWidth</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">180</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useStyles</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">makeStyles</span>((<span style="color:#a6e22e">theme</span>) =&gt; ({
-  <span style="color:#a6e22e">root</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">display</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;flex&#39;</span>,
-  },
-  <span style="color:#a6e22e">drawer</span><span style="color:#f92672">:</span> {
-    [<span style="color:#a6e22e">theme</span>.<span style="color:#a6e22e">breakpoints</span>.<span style="color:#a6e22e">up</span>(<span style="color:#e6db74">&#39;sm&#39;</span>)]<span style="color:#f92672">:</span> {
-      <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">drawerWidth</span>,
-      <span style="color:#a6e22e">flexShrink</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
-    },
-  },
-  <span style="color:#a6e22e">appBar</span><span style="color:#f92672">:</span> {
-    [<span style="color:#a6e22e">theme</span>.<span style="color:#a6e22e">breakpoints</span>.<span style="color:#a6e22e">up</span>(<span style="color:#e6db74">&#39;sm&#39;</span>)]<span style="color:#f92672">:</span> {
-      <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`calc(100% - </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">drawerWidth</span><span style="color:#e6db74">}</span><span style="color:#e6db74">px)`</span>,
-      <span style="color:#a6e22e">marginLeft</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">drawerWidth</span>,
-    },
-  },
-  <span style="color:#a6e22e">menuButton</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">marginRight</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">theme</span>.<span style="color:#a6e22e">spacing</span>(<span style="color:#ae81ff">2</span>),
-    [<span style="color:#a6e22e">theme</span>.<span style="color:#a6e22e">breakpoints</span>.<span style="color:#a6e22e">up</span>(<span style="color:#e6db74">&#39;sm&#39;</span>)]<span style="color:#f92672">:</span> {
-      <span style="color:#a6e22e">display</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;none&#39;</span>,
-    },
-  },
-  <span style="color:#a6e22e">menuText</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">textAlign</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;right&#39;</span>,
-    <span style="color:#a6e22e">paddingRight</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">theme</span>.<span style="color:#a6e22e">spacing</span>(<span style="color:#ae81ff">4</span>),
-  },
-  <span style="color:#a6e22e">toolbar</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">paddingTop</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;10px&#39;</span>,
-    ...<span style="color:#a6e22e">theme</span>.<span style="color:#a6e22e">mixins</span>.<span style="color:#a6e22e">toolbar</span>,
-  },
-  <span style="color:#a6e22e">drawerPaper</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">drawerWidth</span>,
-    <span style="color:#a6e22e">background</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#284D7A&#39;</span>,
-    <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#ffffff&#39;</span>,
-  },
-  <span style="color:#a6e22e">contentContainer</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">flexGrow</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
-    <span style="color:#a6e22e">padding</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">theme</span>.<span style="color:#a6e22e">spacing</span>(<span style="color:#ae81ff">3</span>),
-  },
-  <span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">textAlign</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;center&#39;</span>,
-    <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;100%&#39;</span>,
-    <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;100%&#39;</span>,
-  },
-}));
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">AppLayout</span> <span style="color:#f92672">=</span> ({ <span style="color:#a6e22e">children</span> }) =&gt; {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">classes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useStyles</span>();
-  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">mobileOpen</span>, <span style="color:#a6e22e">setMobileOpen</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#66d9ef">false</span>);
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleDrawerToggle</span> <span style="color:#f92672">=</span> () =&gt; {
-    <span style="color:#a6e22e">setMobileOpen</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">mobileOpen</span>);
-  };
-
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">drawer</span> <span style="color:#f92672">=</span> (
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">toolbar</span>}<span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ListItem</span> <span style="color:#a6e22e">button</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Home&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">menuText</span>}<span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ListItemText</span>
-            <span style="color:#a6e22e">primary</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Home&#34;</span>
-            <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{() =&gt; {
-              <span style="color:#a6e22e">Router</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#39;/&#39;</span>);
-            }}
-          <span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ListItem&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Divider</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">List</span><span style="color:#f92672">&gt;</span>
-        {[
-          { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;로그인&#39;</span>, <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;login&#39;</span> },
-          { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;회원가입&#39;</span>, <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;signup&#39;</span> },
-        ].<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">text</span>) =&gt; (
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ListItem</span> <span style="color:#a6e22e">button</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">name</span>} <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">menuText</span>}<span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ListItemText</span>
-              <span style="color:#a6e22e">primary</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">name</span>}
-              <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{() =&gt; {
-                <span style="color:#a6e22e">Router</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">link</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
-              }}
-            <span style="color:#f92672">/&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ListItem&gt;</span>
-        ))}
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/List&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Divider</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">List</span><span style="color:#f92672">&gt;</span>
-        {[
-          { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;포인트 적립&#39;</span>, <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;points&#39;</span> },
-          { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;고객 정보 보기&#39;</span>, <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;customers&#39;</span> },
-        ].<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">text</span>) =&gt; (
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ListItem</span> <span style="color:#a6e22e">button</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">name</span>} <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">menuText</span>}<span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ListItemText</span>
-              <span style="color:#a6e22e">primary</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">name</span>}
-              <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{() =&gt; {
-                <span style="color:#a6e22e">Router</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">link</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
-              }}
-            <span style="color:#f92672">/&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ListItem&gt;</span>
-        ))}
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/List&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
-  );
-
-  <span style="color:#66d9ef">return</span> (
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">root</span>}<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">CssBaseline</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">AppBar</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fixed&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">appBar</span>} <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Toolbar</span><span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">IconButton</span>
-            <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inherit&#34;</span>
-            <span style="color:#a6e22e">aria</span><span style="color:#f92672">-</span><span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;open drawer&#34;</span>
-            <span style="color:#a6e22e">edge</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;start&#34;</span>
-            <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleDrawerToggle</span>}
-            <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">menuButton</span>}
-          <span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">MenuIcon</span> <span style="color:#f92672">/&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/IconButton&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Toolbar&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/AppBar&gt;</span>
-
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">nav</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">drawer</span>} <span style="color:#a6e22e">aria</span><span style="color:#f92672">-</span><span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mailbox folders&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Hidden</span> <span style="color:#a6e22e">smUp</span> <span style="color:#a6e22e">implementation</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css&#34;</span><span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Drawer</span>
-            <span style="color:#a6e22e">variant</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;temporary&#34;</span>
-            <span style="color:#a6e22e">anchor</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;left&#34;</span>
-            <span style="color:#a6e22e">open</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">mobileOpen</span>}
-            <span style="color:#a6e22e">onClose</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleDrawerToggle</span>}
-            <span style="color:#a6e22e">classes</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">paper</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">drawerPaper</span> }}
-            <span style="color:#a6e22e">ModalProps</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">keepMounted</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> }}
-            <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span>
-          <span style="color:#f92672">&gt;</span>
-            {<span style="color:#a6e22e">drawer</span>}
-          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Drawer&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Hidden&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Hidden</span> <span style="color:#a6e22e">xsDown</span> <span style="color:#a6e22e">implementation</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css&#34;</span><span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Drawer</span> <span style="color:#a6e22e">classes</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">paper</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">drawerPaper</span> }} <span style="color:#a6e22e">variant</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;permanent&#34;</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">open</span><span style="color:#f92672">&gt;</span>
-            {<span style="color:#a6e22e">drawer</span>}
-          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Drawer&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Hidden&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/nav&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">main</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">contentContainer</span>}<span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">toolbar</span>} <span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">content</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">children</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/main&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
-  );
-};
-
-<span style="color:#a6e22e">AppLayout</span>.<span style="color:#a6e22e">propTypes</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">children</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">isRequired</span>,
-};
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">AppLayout</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span style="color:#ff79c6">import</span> React, { useState } from <span style="color:#f1fa8c">&#39;react&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span style="color:#ff79c6">import</span> PropTypes from <span style="color:#f1fa8c">&#39;prop-types&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span style="color:#ff79c6">import</span> Router from <span style="color:#f1fa8c">&#39;next/router&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span><span style="color:#ff79c6">import</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span>  AppBar,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span>  Drawer,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span>  CssBaseline,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span>  Divider,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span>  Hidden,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span>  IconButton,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span>  Toolbar,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span>  List,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span>  ListItemText,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span>  ListItem,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span>  makeStyles,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span>} from <span style="color:#f1fa8c">&#39;@material-ui/core&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span><span style="color:#ff79c6">import</span> MenuIcon from <span style="color:#f1fa8c">&#39;@material-ui/icons/Menu&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span><span style="color:#ff79c6">const</span> drawerWidth <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">180</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span><span style="color:#ff79c6">const</span> useStyles <span style="color:#ff79c6">=</span> makeStyles((theme) =&gt; ({
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span>  root<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span>    display<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;flex&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span>  drawer<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span>    [theme.breakpoints.up(<span style="color:#f1fa8c">&#39;sm&#39;</span>)]<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span>      width<span style="color:#ff79c6">:</span> drawerWidth,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span>      flexShrink<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">0</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span>    },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span>  appBar<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span>    [theme.breakpoints.up(<span style="color:#f1fa8c">&#39;sm&#39;</span>)]<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span>      width<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">`calc(100% - </span><span style="color:#f1fa8c">${</span>drawerWidth<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">px)`</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span>      marginLeft<span style="color:#ff79c6">:</span> drawerWidth,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span>    },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span>  menuButton<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span>    marginRight<span style="color:#ff79c6">:</span> theme.spacing(<span style="color:#bd93f9">2</span>),
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span>    [theme.breakpoints.up(<span style="color:#f1fa8c">&#39;sm&#39;</span>)]<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span>      display<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;none&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span>    },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span>  menuText<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span>    textAlign<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;right&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span>    paddingRight<span style="color:#ff79c6">:</span> theme.spacing(<span style="color:#bd93f9">4</span>),
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span>  toolbar<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span>    paddingTop<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;10px&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span>    ...theme.mixins.toolbar,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span>  drawerPaper<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span>    width<span style="color:#ff79c6">:</span> drawerWidth,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span>    background<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#284D7A&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span>    color<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#ffffff&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span>  contentContainer<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span>    flexGrow<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">1</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span>    padding<span style="color:#ff79c6">:</span> theme.spacing(<span style="color:#bd93f9">3</span>),
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span>  content<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span>    textAlign<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;center&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span>    width<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;100%&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span>    height<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;100%&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span>}));
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span><span style="color:#ff79c6">const</span> AppLayout <span style="color:#ff79c6">=</span> ({ children }) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span>  <span style="color:#ff79c6">const</span> classes <span style="color:#ff79c6">=</span> useStyles();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span>  <span style="color:#ff79c6">const</span> [mobileOpen, setMobileOpen] <span style="color:#ff79c6">=</span> useState(<span style="color:#ff79c6">false</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span>  <span style="color:#ff79c6">const</span> handleDrawerToggle <span style="color:#ff79c6">=</span> () =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span>    setMobileOpen(<span style="color:#ff79c6">!</span>mobileOpen);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span>  };
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span>  <span style="color:#ff79c6">const</span> drawer <span style="color:#ff79c6">=</span> (
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span>    <span style="color:#ff79c6">&lt;</span>div<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span>      <span style="color:#ff79c6">&lt;</span>div className<span style="color:#ff79c6">=</span>{classes.toolbar}<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span>        <span style="color:#ff79c6">&lt;</span>ListItem button key<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Home&#34;</span> className<span style="color:#ff79c6">=</span>{classes.menuText}<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span>          <span style="color:#ff79c6">&lt;</span>ListItemText
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span>            primary<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Home&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span>            onClick<span style="color:#ff79c6">=</span>{() =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span>              Router.push(<span style="color:#f1fa8c">&#39;/&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span>            }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span>          <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span>        <span style="color:#ff79c6">&lt;</span>/ListItem&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span>      <span style="color:#ff79c6">&lt;</span>/div&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span>      <span style="color:#ff79c6">&lt;</span>Divider <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span>      <span style="color:#ff79c6">&lt;</span>List<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span>        {[
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span>          { name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;로그인&#39;</span>, link<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;login&#39;</span> },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span>          { name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;회원가입&#39;</span>, link<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;signup&#39;</span> },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span>        ].map((text) =&gt; (
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span>          <span style="color:#ff79c6">&lt;</span>ListItem button key<span style="color:#ff79c6">=</span>{text.name} className<span style="color:#ff79c6">=</span>{classes.menuText}<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span>            <span style="color:#ff79c6">&lt;</span>ListItemText
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span>              primary<span style="color:#ff79c6">=</span>{text.name}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span>              onClick<span style="color:#ff79c6">=</span>{() =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span>                Router.push(<span style="color:#f1fa8c">`</span><span style="color:#f1fa8c">${</span>text.link<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">`</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span>              }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span>            <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span>          <span style="color:#ff79c6">&lt;</span>/ListItem&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span>        ))}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span>      <span style="color:#ff79c6">&lt;</span>/List&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span>      <span style="color:#ff79c6">&lt;</span>Divider <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span>      <span style="color:#ff79c6">&lt;</span>List<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span>        {[
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span>          { name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;포인트 적립&#39;</span>, link<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;points&#39;</span> },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span>          { name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;고객 정보 보기&#39;</span>, link<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;customers&#39;</span> },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span>        ].map((text) =&gt; (
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span>          <span style="color:#ff79c6">&lt;</span>ListItem button key<span style="color:#ff79c6">=</span>{text.name} className<span style="color:#ff79c6">=</span>{classes.menuText}<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span>            <span style="color:#ff79c6">&lt;</span>ListItemText
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span>              primary<span style="color:#ff79c6">=</span>{text.name}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111</span>              onClick<span style="color:#ff79c6">=</span>{() =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112</span>                Router.push(<span style="color:#f1fa8c">`</span><span style="color:#f1fa8c">${</span>text.link<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">`</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113</span>              }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114</span>            <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115</span>          <span style="color:#ff79c6">&lt;</span>/ListItem&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116</span>        ))}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117</span>      <span style="color:#ff79c6">&lt;</span>/List&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118</span>    <span style="color:#ff79c6">&lt;</span>/div&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119</span>  );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121</span>  <span style="color:#ff79c6">return</span> (
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122</span>    <span style="color:#ff79c6">&lt;</span>div className<span style="color:#ff79c6">=</span>{classes.root}<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123</span>      <span style="color:#ff79c6">&lt;</span>CssBaseline <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124</span>      <span style="color:#ff79c6">&lt;</span>AppBar position<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;fixed&#34;</span> className<span style="color:#ff79c6">=</span>{classes.appBar} color<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;primary&#34;</span><span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125</span>        <span style="color:#ff79c6">&lt;</span>Toolbar<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126</span>          <span style="color:#ff79c6">&lt;</span>IconButton
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127</span>            color<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;inherit&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128</span>            aria<span style="color:#ff79c6">-</span>label<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;open drawer&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129</span>            edge<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;start&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130</span>            onClick<span style="color:#ff79c6">=</span>{handleDrawerToggle}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131</span>            className<span style="color:#ff79c6">=</span>{classes.menuButton}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132</span>          <span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133</span>            <span style="color:#ff79c6">&lt;</span>MenuIcon <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134</span>          <span style="color:#ff79c6">&lt;</span>/IconButton&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135</span>        <span style="color:#ff79c6">&lt;</span>/Toolbar&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136</span>      <span style="color:#ff79c6">&lt;</span>/AppBar&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138</span>      <span style="color:#ff79c6">&lt;</span>nav className<span style="color:#ff79c6">=</span>{classes.drawer} aria<span style="color:#ff79c6">-</span>label<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;mailbox folders&#34;</span><span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139</span>        <span style="color:#ff79c6">&lt;</span>Hidden smUp implementation<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;css&#34;</span><span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140</span>          <span style="color:#ff79c6">&lt;</span>Drawer
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141</span>            variant<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;temporary&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142</span>            anchor<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;left&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143</span>            open<span style="color:#ff79c6">=</span>{mobileOpen}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144</span>            onClose<span style="color:#ff79c6">=</span>{handleDrawerToggle}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145</span>            classes<span style="color:#ff79c6">=</span>{{ paper<span style="color:#ff79c6">:</span> classes.drawerPaper }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146</span>            ModalProps<span style="color:#ff79c6">=</span>{{ keepMounted<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">true</span> }}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147</span>            color<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;secondary&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148</span>          <span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149</span>            {drawer}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150</span>          <span style="color:#ff79c6">&lt;</span>/Drawer&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151</span>        <span style="color:#ff79c6">&lt;</span>/Hidden&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152</span>        <span style="color:#ff79c6">&lt;</span>Hidden xsDown implementation<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;css&#34;</span><span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153</span>          <span style="color:#ff79c6">&lt;</span>Drawer classes<span style="color:#ff79c6">=</span>{{ paper<span style="color:#ff79c6">:</span> classes.drawerPaper }} variant<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;permanent&#34;</span> color<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;secondary&#34;</span> open<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154</span>            {drawer}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155</span>          <span style="color:#ff79c6">&lt;</span>/Drawer&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156</span>        <span style="color:#ff79c6">&lt;</span>/Hidden&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157</span>      <span style="color:#ff79c6">&lt;</span>/nav&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158</span>      <span style="color:#ff79c6">&lt;</span>main className<span style="color:#ff79c6">=</span>{classes.contentContainer}<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159</span>        <span style="color:#ff79c6">&lt;</span>div className<span style="color:#ff79c6">=</span>{classes.toolbar} <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160</span>        <span style="color:#ff79c6">&lt;</span>div className<span style="color:#ff79c6">=</span>{classes.content}<span style="color:#ff79c6">&gt;</span>{children}<span style="color:#ff79c6">&lt;</span>/div&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161</span>      <span style="color:#ff79c6">&lt;</span>/main&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162</span>    <span style="color:#ff79c6">&lt;</span>/div&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163</span>  );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166</span>AppLayout.propTypes <span style="color:#ff79c6">=</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167</span>  children<span style="color:#ff79c6">:</span> PropTypes.node.isRequired,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170</span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> AppLayout;
 </code></pre></div><p><code>Material Ui</code>의 temporary Drawer를 이용했으며 여기서 Materal Ui의 <code>makeStyles</code>를 통한 css class 생성 구문을 처음봤고 <a href="https://material-ui.com/styles/api/">공식 문서</a>를 통해 기본 방법을 공부하느라 제법 삽질을 했다.</p>
 <p>API를 보면 제법 많은 메서드를 지원해주는데 그 중 <code>makeStyles</code>함수를 통해 class와 css를 객체로 만들고 이를 <code>useStyles()</code>를 통해 객체로서 접근이 가능한 방식이었다.</p>
 <p>그리고 이 Layout을 기본으로 안의 내용만 바꿀것이기 때문에 _app.js의 <code>Children</code>을 이 Layout의 적절한 위치에 배치해주기 위해 이 컴포넌츠에서도 _app.js의 <code>Children</code>을 prop으로 넘겨받아 배치 시켜주었다.</p>
 <p>Drawer의 각 Nav마다 해당하는 페이지로 바꿔주기 위해 위해 <code>Router</code>를 이용하여 라우팅하였다.</p>
 <h3>_app.js 수정</h3><a class="anchor" id="_appjs-수정"></a>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Head</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;next/head&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">PropTypes</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;prop-types&#39;</span>;
-
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">RecoilRoot</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;recoil&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">AppLayout</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../components/AppLayout&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PointsWeb</span> <span style="color:#f92672">=</span> ({ <span style="color:#a6e22e">Component</span> }) =&gt; {
-  <span style="color:#66d9ef">return</span> (
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">RecoilRoot</span><span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Head</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">포인트</span> <span style="color:#a6e22e">적립</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/title&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Head&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">AppLayout</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Component</span> <span style="color:#f92672">/&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/AppLayout&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/RecoilRoot&gt;</span>
-  );
-};
-
-<span style="color:#a6e22e">PointsWeb</span>.<span style="color:#a6e22e">propTypes</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">Component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">elementType</span>.<span style="color:#a6e22e">isRequired</span>,
-};
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">PointsWeb</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">import</span> React from <span style="color:#f1fa8c">&#39;react&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">import</span> Head from <span style="color:#f1fa8c">&#39;next/head&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">import</span> PropTypes from <span style="color:#f1fa8c">&#39;prop-types&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6">import</span> { RecoilRoot } from <span style="color:#f1fa8c">&#39;recoil&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">import</span> AppLayout from <span style="color:#f1fa8c">&#39;../components/AppLayout&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#ff79c6">const</span> PointsWeb <span style="color:#ff79c6">=</span> ({ Component }) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#ff79c6">return</span> (
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#ff79c6">&lt;</span>RecoilRoot<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>      <span style="color:#ff79c6">&lt;</span>Head<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        <span style="color:#ff79c6">&lt;</span>title<span style="color:#ff79c6">&gt;</span>포인트 적립<span style="color:#ff79c6">&lt;</span>/title&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>      <span style="color:#ff79c6">&lt;</span>/Head&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>      <span style="color:#ff79c6">&lt;</span>AppLayout<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        <span style="color:#ff79c6">&lt;</span>Component <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>      <span style="color:#ff79c6">&lt;</span>/AppLayout&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    <span style="color:#ff79c6">&lt;</span>/RecoilRoot&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>PointsWeb.propTypes <span style="color:#ff79c6">=</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>  Component<span style="color:#ff79c6">:</span> PropTypes.elementType.isRequired,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> PointsWeb;
 </code></pre></div><p>Component를 AppLayout으로 감싸 Component를 AppLayout에 prop으로 넘겨주도록 배치하였다.</p>
 <p><br><br></p>
 <h2>_document.js</h2><a class="anchor" id="_documentjs"></a>
@@ -1065,65 +1070,65 @@ npm install --save react react-dom next
 <p>그래서 SSR시에도 Material Ui를 렌더링을 시켜주어야했는데 _document.js를 이용했다.</p>
 <p>_document.js는 <code>React</code>의 <code>index.html</code>과 같은 파일로 SPA에서의 시작점이 되는 파일과 같다.</p>
 <p>지금과 같이 Custom할때 작성을 하며 작성을 안하면 Next.js가 기폰 값을 사용하여 실행시키게 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js">{
-  <span style="color:#e6db74">&#34;presets&#34;</span> <span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;next/babel&#34;</span>],
-  <span style="color:#e6db74">&#34;plugins&#34;</span><span style="color:#f92672">:</span> [
-    [<span style="color:#e6db74">&#34;babel-plugin-styled-components&#34;</span>,{
-      <span style="color:#e6db74">&#34;ssr&#34;</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-      <span style="color:#e6db74">&#34;displayName&#34;</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
-    }]
-  ]
-}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#f1fa8c">&#34;presets&#34;</span> <span style="color:#ff79c6">:</span> [<span style="color:#f1fa8c">&#34;next/babel&#34;</span>],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#f1fa8c">&#34;plugins&#34;</span><span style="color:#ff79c6">:</span> [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    [<span style="color:#f1fa8c">&#34;babel-plugin-styled-components&#34;</span>,{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>      <span style="color:#f1fa8c">&#34;ssr&#34;</span> <span style="color:#ff79c6">:</span> <span style="color:#ff79c6">true</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>      <span style="color:#f1fa8c">&#34;displayName&#34;</span> <span style="color:#ff79c6">:</span> <span style="color:#ff79c6">true</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>    }]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>  ]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>}
 </code></pre></div><p>_document.js를 작성하기 전에 <code>babel-plugin-components</code>를 설치해주고 <code>.babelrc</code>파일을 다음과 같이 작성해서 SSR시 styled components를 적용하게 설정을 해주었다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NextDocument</span>, { <span style="color:#a6e22e">Html</span>, <span style="color:#a6e22e">Head</span>, <span style="color:#a6e22e">Main</span>, <span style="color:#a6e22e">NextScript</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;next/document&#39;</span>;
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">ServerStyleSheet</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">StyledComponentSheets</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;styled-components&#39;</span>;
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">ServerStyleSheets</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">MaterialUiServerStyleSheets</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@material-ui/core/styles&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Document</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">NextDocument</span> {
-  <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">getInitialProps</span>(<span style="color:#a6e22e">ctx</span>) {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">styledComponentSheet</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">StyledComponentSheets</span>();
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">materialUiSheets</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MaterialUiServerStyleSheets</span>();
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">originalRenderPage</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">renderPage</span>;
-
-    <span style="color:#66d9ef">try</span> {
-      <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">renderPage</span> <span style="color:#f92672">=</span> () =&gt;
-        <span style="color:#a6e22e">originalRenderPage</span>({
-          <span style="color:#a6e22e">enhanceApp</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">App</span>) =&gt; (<span style="color:#a6e22e">props</span>) =&gt;
-            <span style="color:#a6e22e">styledComponentSheet</span>.<span style="color:#a6e22e">collectStyles</span>(<span style="color:#a6e22e">materialUiSheets</span>.<span style="color:#a6e22e">collect</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">App</span> {...<span style="color:#a6e22e">props</span>} <span style="color:#f92672">/&gt;</span>)),
-        });
-
-      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">initialProps</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">NextDocument</span>.<span style="color:#a6e22e">getInitialProps</span>(<span style="color:#a6e22e">ctx</span>);
-
-      <span style="color:#66d9ef">return</span> {
-        ...<span style="color:#a6e22e">initialProps</span>,
-        <span style="color:#a6e22e">styles</span><span style="color:#f92672">:</span> [
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Fragment</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;styles&#34;</span><span style="color:#f92672">&gt;</span>
-            {<span style="color:#a6e22e">initialProps</span>.<span style="color:#a6e22e">styles</span>}
-            {<span style="color:#a6e22e">materialUiSheets</span>.<span style="color:#a6e22e">getStyleElement</span>()}
-            {<span style="color:#a6e22e">styledComponentSheet</span>.<span style="color:#a6e22e">getStyleElement</span>()}
-          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/React.Fragment&gt;,</span>
-        ],
-      };
-    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
-    } <span style="color:#66d9ef">finally</span> {
-      <span style="color:#a6e22e">styledComponentSheet</span>.<span style="color:#a6e22e">seal</span>();
-    }
-  }
-
-  <span style="color:#a6e22e">render</span>() {
-    <span style="color:#66d9ef">return</span> (
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Html</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Head</span> <span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">body</span><span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Main</span> <span style="color:#f92672">/&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">NextScript</span> <span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/body&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Html&gt;</span>
-    );
-  }
-}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">import</span> React from <span style="color:#f1fa8c">&#39;react&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">import</span> NextDocument, { Html, Head, Main, NextScript } from <span style="color:#f1fa8c">&#39;next/document&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">import</span> { ServerStyleSheet as StyledComponentSheets } from <span style="color:#f1fa8c">&#39;styled-components&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">import</span> { ServerStyleSheets as MaterialUiServerStyleSheets } from <span style="color:#f1fa8c">&#39;@material-ui/core/styles&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> <span style="color:#ff79c6">class</span> Document <span style="color:#ff79c6">extends</span> NextDocument {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#ff79c6">static</span> async getInitialProps(ctx) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#ff79c6">const</span> styledComponentSheet <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StyledComponentSheets();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#ff79c6">const</span> materialUiSheets <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> MaterialUiServerStyleSheets();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#ff79c6">const</span> originalRenderPage <span style="color:#ff79c6">=</span> ctx.renderPage;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#ff79c6">try</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>      ctx.renderPage <span style="color:#ff79c6">=</span> () =&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        originalRenderPage({
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>          enhanceApp<span style="color:#ff79c6">:</span> (App) =&gt; (props) =&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>            styledComponentSheet.collectStyles(materialUiSheets.collect(<span style="color:#ff79c6">&lt;</span>App {...props} <span style="color:#ff79c6">/&gt;</span>)),
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        });
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>      <span style="color:#ff79c6">const</span> initialProps <span style="color:#ff79c6">=</span> await NextDocument.getInitialProps(ctx);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>      <span style="color:#ff79c6">return</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        ...initialProps,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        styles<span style="color:#ff79c6">:</span> [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>          <span style="color:#ff79c6">&lt;</span>React.Fragment key<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;styles&#34;</span><span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>            {initialProps.styles}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>            {materialUiSheets.getStyleElement()}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>            {styledComponentSheet.getStyleElement()}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>          <span style="color:#ff79c6">&lt;</span>/React.Fragment&gt;,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>        ],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>      };
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>    } <span style="color:#ff79c6">catch</span> (error) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>      console.log(error);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>    } <span style="color:#ff79c6">finally</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>      styledComponentSheet.seal();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>  render() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>    <span style="color:#ff79c6">return</span> (
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>      <span style="color:#ff79c6">&lt;</span>Html<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>        <span style="color:#ff79c6">&lt;</span>Head <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>        <span style="color:#ff79c6">&lt;</span>body<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>          <span style="color:#ff79c6">&lt;</span>Main <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>          <span style="color:#ff79c6">&lt;</span>NextScript <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>        <span style="color:#ff79c6">&lt;</span>/body&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>      <span style="color:#ff79c6">&lt;</span>/Html&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>    );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>}
 </code></pre></div><p><code>styled components Sheets</code>를 이용하여 <code>material ui styleSheets</code>를 감싸 렌더링시에 Material Ui도 렌더링되게 설정을 해주었다.</p>
 <p><br><br></p>
 <h2>Theme color 수정</h2><a class="anchor" id="theme-color-수정"></a>
@@ -1131,69 +1136,69 @@ npm install --save react react-dom next
 <p>Material Ui에서 제공하는 AppBar나 Button의 색을 바꿔주기 위해서는 기본 제공하는 palette의 색을 바꿔주거나 생성해주고 <code>ThemeProvider</code>를 적용하고자하는 컴포넌트를 감싸 테마를 사용할 수 있었다.</p>
 <p>나는 전체적인 컬러감을 생각해두고 있었고 `컬러는 4,5개 내에서 웹을 다지인 할 것이기 때문에 global theme를 만들어 전체 컴포넌트에 적용하고자 했다.</p>
 <h3>global Theme provider 파일 작성</h3><a class="anchor" id="global-theme-provider-파일-작성"></a>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">PropTypes</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;prop-types&#39;</span>;
-
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createMuiTheme</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@material-ui/core/styles&#39;</span>;
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">ThemeProvider</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@material-ui/styles&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">GlobalTheme</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createMuiTheme</span>({
-  <span style="color:#a6e22e">palette</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">primary</span><span style="color:#f92672">:</span> {
-      <span style="color:#a6e22e">main</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#284D7A&#39;</span>,
-    },
-    <span style="color:#a6e22e">secondary</span><span style="color:#f92672">:</span> {
-      <span style="color:#a6e22e">main</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#20B8AA&#39;</span>,
-    },
-    <span style="color:#a6e22e">tertiary</span><span style="color:#f92672">:</span> {
-      <span style="color:#a6e22e">main</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#56F0B9&#39;</span>,
-    },
-    <span style="color:#a6e22e">quad</span><span style="color:#f92672">:</span> {
-      <span style="color:#a6e22e">main</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#E9EBED&#39;</span>,
-    },
-  },
-});
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">GlobalThemeProvider</span> <span style="color:#f92672">=</span> ({ <span style="color:#a6e22e">children</span> }) =&gt; <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ThemeProvider</span> <span style="color:#a6e22e">theme</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">GlobalTheme</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">children</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ThemeProvider&gt;;</span>
-
-<span style="color:#a6e22e">GlobalThemeProvider</span>.<span style="color:#a6e22e">propTypes</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">children</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">elementType</span>.<span style="color:#a6e22e">isRequired</span>,
-};
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">GlobalThemeProvider</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">import</span> React from <span style="color:#f1fa8c">&#39;react&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">import</span> PropTypes from <span style="color:#f1fa8c">&#39;prop-types&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">import</span> { createMuiTheme } from <span style="color:#f1fa8c">&#39;@material-ui/core/styles&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6">import</span> { ThemeProvider } from <span style="color:#f1fa8c">&#39;@material-ui/styles&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#ff79c6">const</span> GlobalTheme <span style="color:#ff79c6">=</span> createMuiTheme({
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  palette<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    primary<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      main<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#284D7A&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    secondary<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>      main<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#20B8AA&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    tertiary<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>      main<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#56F0B9&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    quad<span style="color:#ff79c6">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>      main<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#E9EBED&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>});
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span style="color:#ff79c6">const</span> GlobalThemeProvider <span style="color:#ff79c6">=</span> ({ children }) =&gt; <span style="color:#ff79c6">&lt;</span>ThemeProvider theme<span style="color:#ff79c6">=</span>{GlobalTheme}<span style="color:#ff79c6">&gt;</span>{children}<span style="color:#ff79c6">&lt;</span>/ThemeProvider&gt;;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>GlobalThemeProvider.propTypes <span style="color:#ff79c6">=</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>  children<span style="color:#ff79c6">:</span> PropTypes.elementType.isRequired,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> GlobalThemeProvider;
 </code></pre></div><p>4가지의 색을 미리 선언해놓고 이 컴포넌트를 루트에 씌워 모든 컴포넌트에서 사용할 수 있게 할 생각으로 똑같이 <code>children</code>을 prop으로 받아 이를 감싸도록 해주었다.</p>
 <h3>_app.js 수정</h3><a class="anchor" id="_appjs-수정-1"></a>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Head</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;next/head&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">PropTypes</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;prop-types&#39;</span>;
-
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">RecoilRoot</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;recoil&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">GlobalThemeProvider</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../css/GlobalThemeProvider&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">AppLayout</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;../components/AppLayout&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PointsWeb</span> <span style="color:#f92672">=</span> ({ <span style="color:#a6e22e">Component</span> }) =&gt; {
-  <span style="color:#66d9ef">return</span> (
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">RecoilRoot</span><span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Head</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">포인트</span> <span style="color:#a6e22e">적립</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/title&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Head&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">GlobalThemeProvider</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">AppLayout</span><span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Component</span> <span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/AppLayout&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/GlobalThemeProvider&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/RecoilRoot&gt;</span>
-  );
-};
-
-<span style="color:#a6e22e">PointsWeb</span>.<span style="color:#a6e22e">propTypes</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">Component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PropTypes</span>.<span style="color:#a6e22e">elementType</span>.<span style="color:#a6e22e">isRequired</span>,
-};
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">PointsWeb</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">import</span> React from <span style="color:#f1fa8c">&#39;react&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6">import</span> Head from <span style="color:#f1fa8c">&#39;next/head&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">import</span> PropTypes from <span style="color:#f1fa8c">&#39;prop-types&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#ff79c6">import</span> { RecoilRoot } from <span style="color:#f1fa8c">&#39;recoil&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">import</span> GlobalThemeProvider from <span style="color:#f1fa8c">&#39;../css/GlobalThemeProvider&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#ff79c6">import</span> AppLayout from <span style="color:#f1fa8c">&#39;../components/AppLayout&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#ff79c6">const</span> PointsWeb <span style="color:#ff79c6">=</span> ({ Component }) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#ff79c6">return</span> (
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#ff79c6">&lt;</span>RecoilRoot<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>      <span style="color:#ff79c6">&lt;</span>Head<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>        <span style="color:#ff79c6">&lt;</span>title<span style="color:#ff79c6">&gt;</span>포인트 적립<span style="color:#ff79c6">&lt;</span>/title&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>      <span style="color:#ff79c6">&lt;</span>/Head&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>      <span style="color:#ff79c6">&lt;</span>GlobalThemeProvider<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>        <span style="color:#ff79c6">&lt;</span>AppLayout<span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>          <span style="color:#ff79c6">&lt;</span>Component <span style="color:#ff79c6">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        <span style="color:#ff79c6">&lt;</span>/AppLayout&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>      <span style="color:#ff79c6">&lt;</span>/GlobalThemeProvider&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    <span style="color:#ff79c6">&lt;</span>/RecoilRoot&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>  );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>PointsWeb.propTypes <span style="color:#ff79c6">=</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>  Component<span style="color:#ff79c6">:</span> PropTypes.elementType.isRequired,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> PointsWeb;
 </code></pre></div><p>모든 컴포넌트들에 기본이 되는 AppLayout을 방금 만든 <code>커스텀 테마 컴포넌트</code>로 감싸 모든 컴포넌트에서 이 테마를 사용가능하게 해주었다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">AppBar</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fixed&#34;</span>  <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Button</span> <span style="color:#a6e22e">variant</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;contained&#34;</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">&lt;</span>AppBar position<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;fixed&#34;</span>  color<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;primary&#34;</span><span style="color:#ff79c6">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#ff79c6">&lt;</span>Button variant<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;contained&#34;</span> color<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;secondary&#34;</span> <span style="color:#ff79c6">&gt;</span>
 </code></pre></div><p>그러면 위와 같이 color 속성으로 테마를 적용할 수 있고 잘 적용 된 것을 볼 수 있다.</p>
 <br>
 <h2>실행 화면</h2><a class="anchor" id="실행-화면"></a>

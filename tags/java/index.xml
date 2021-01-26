@@ -41,7 +41,7 @@ Java는 C나 C++과 같이 바로 컴파일되는 컴파일 언어가 아니다.
 📌 산술 연산자 두개의 피연산자를 갖는 이항 연산자로써, 기본적인 사칙연산을 다루는 연산자
 ◾ 더하기 (+) 왼쪽의 피연산자에 오른쪽 피연산자를 더하는 연산자로 숫자+숫자, 문자열+문자열이 가능하고 문자열+숫자를 할 시 숫자를 자동으로 문자열로 변환하여 덧셈이 가능하다.
 문자+숫자를 할 경우에는 아스키 코드를 이용하여 문자로 결과가 출력 된다. 문자에 맞는 아스키 코드값과 숫자를 더한 결과값에 해당하는 아스키코드를 return하기 때문이다.
-int left = 2020; int right = 1; int year = left + right; char ch = A; System.</description>
+1int left = 2020; 2int right = 1; 3int year = left + right; 4char ch = A; 5 6System.</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@ int left = 2020; int right = 1; int year = left + right; char ch = A; System.</d
       <guid>https://gowoonsori.site/java/controlstatement/</guid>
       <description>조건문 ◾ Switch 특정 데이터의 값에 따라 수행할 작업을 선택하는 구문으로 switch를 사용한다.
 일반적인 사용법은 C/C++와 다르지 않다.
-public class example { public static void main(String[] args) { String select = &amp;#34;ORANGE&amp;#34;; String fruit; switch(select){ case &amp;#34;APPLE&amp;#34; : fruit = &amp;#34;apple&amp;#34;; System.out.println(&amp;#34;사과&amp;#34;); break; case &amp;#34;BANANA&amp;#34; : fruit = &amp;#34;banana&amp;#34;; System.out.println(&amp;#34;바나나&amp;#34;); break; case &amp;#34;ORANGE&amp;#34; : fruit = &amp;#34;orange&amp;#34;; System.out.println(&amp;#34;오렌지&amp;#34;); break; default: fruit = &amp;#34;default&amp;#34;; System.out.println(&amp;#34;default&amp;#34;); break; } System.out.println(fruit); } } switch() 매개변수에 데이터 값을 입력하고 case : 를 이용해 값에 따라 구문을 구분하면 된다.</description>
+1public class example { 2 public static void main(String[] args) { 3 String select = &amp;#34;ORANGE&amp;#34;; 4 String fruit; 5 6 switch(select){ 7 case &amp;#34;APPLE&amp;#34; : 8 fruit = &amp;#34;apple&amp;#34;; 9 System.out.println(&amp;#34;사과&amp;#34;); 10 break; 11 case &amp;#34;BANANA&amp;#34; : 12 fruit = &amp;#34;banana&amp;#34;; 13 System.out.println(&amp;#34;바나나&amp;#34;); 14 break; 15 case &amp;#34;ORANGE&amp;#34; : 16 fruit = &amp;#34;orange&amp;#34;; 17 System.</description>
     </item>
     
     <item>
@@ -94,7 +94,7 @@ Spring Boot를 이용하면 내부에 dependency가 포함되어 있다.
 
 Java의 Enum도 기본적으로 c나 c++의 enum과 같은 목적을 위한 클래스로 JDK 1.5이후에 생긴 클래스이다.
 잠깐 C언어 얘기를 하자면 C언어의 C99 이전에는 boolean타입을 제공하지 않았기 때문에 다음과 같이 사용하고는 했었다.
-typedef enum _boolean { FALSE, TRUE } boolean; #define FALSE 0 #define TRUE 1 ◾ Java에서의 Enum 특징 Enum 비교시에 값이 아닌 타입까지도 체크가 가능하고 Enum의 상수값이 재정의 되어도 다시 컴파일하지 않는다.</description>
+1typedef enum _boolean { 2 FALSE, 3 TRUE 4} boolean; 5 6#define FALSE 0 7#define TRUE 1 ◾ Java에서의 Enum 특징 Enum 비교시에 값이 아닌 타입까지도 체크가 가능하고 Enum의 상수값이 재정의 되어도 다시 컴파일하지 않는다.</description>
     </item>
     
   </channel>

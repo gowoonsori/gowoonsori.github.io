@@ -8,7 +8,7 @@
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
-  --pink: #e83e8c;
+  --pink: #ff3860;
   --red: #dc3545;
   --orange: #fd7e14;
   --yellow: #ffc107;
@@ -531,9 +531,9 @@ mark,
 }
 
 code {
-  font-size: 100%;
-  background: #f8f8f8;
-  color: #e83e8c;
+  font-size: 95%;
+  background: #f9f1f3;
+  color: #ff3860;
   word-wrap: break-word;
 }
 

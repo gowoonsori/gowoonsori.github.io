@@ -5,7 +5,7 @@ body:not(.render_raw) {
   line-height: 1.5;
   color: black; }
   body:not(.render_raw) a {
-    color: black;
+    color: #424242;
     text-decoration: none;
     background-color: transparent; }
   body:not(.render_raw) header {
@@ -166,6 +166,10 @@ article section.page {
   article section.page div.jump-to-section {
     font-size: smaller;
     color: #333333; }
+    .jump-to-section span:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     article section.page div.jump-to-section ul li a {
       color: #a14545; }
     article section.page div.jump-to-section nav {
@@ -230,8 +234,10 @@ article section.page div.content {
     top: -7rem;
     visibility: hidden; }
   article section.page div.content a {
-    color: #1d8d3f;
+    color: #00bfa5;
     font-weight: bold; }
+  article section.page div.content a:hover { 
+    text-decoration: underline; }
   article section.page div.content h1 {
     color: #4d4d4d;
     font-size: 30px;
@@ -286,12 +292,14 @@ article section.page div.content {
       vertical-align: bottom; }
   article section.page div.content code {
     font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-    font-size: 100%;
-    background-color: #f8f8f8;
-    color: #e83e8c;
+    font-size: 95%;
+    background-color: #f9f1f3;
+    color: #ff3860;
     word-wrap: break-word;
-    padding: 0.5px;
-    font-weight: 600;
+    padding: 1.5px 0.5px 0px;
+    margin: 0px 1px;
+    border-radius: 5px;
+    font-weight: 500;
     white-space: pre-wrap; }
   article section.page div.content div.highlight pre {
     display: block;

@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-26T22:02:09 KST">
+<meta name="revised" content="2021-01-26T23:43:34 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -127,8 +127,13 @@ if (!doNotTrack) {
                 </a>
             </li>
             <li class="" role="">
-                <a href="https://gowoonsori.github.io"  rel="noopener">
-                  Blog
+                <a href="https://www.facebook.com/gowoonsori97"  rel="noopener">
+                  FaceBook
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="mailto:gowoonsori97@gmail.com"  rel="noopener">
+                  Gmail
                 </a>
             </li>
     </nav>
@@ -1006,43 +1011,43 @@ docport 테마는 따로 exampleSite폴더 내에 기본 레이아웃을 구성�
 컨텐츠 업로드시 일일히 타이핑하지 않고 <code>deploy.sh &quot;커밋메세지&quot;</code> 를 통해 자동으로 편하게 업로드 할 수 있다.</p>
 <p>나는 다른 이름으로 실행시키고 싶다 하면 deploy 대신 원하는 이름으로 저장을 하면 된다.
 <br> 대신 <strong>.sh 확장자로 저장</strong>을 해야 쉘 스크립트로 저장이 되어 실행시킬 수 가 있다.!!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e"># Build the project.</span>
-hugo -t &lt;테마이름&gt;
-
-<span style="color:#75715e"># github.io 레포 push위해 파일 경로 이동</span>
-cd public
-<span style="color:#75715e"># CNAME 등 레포에서 변경되는 사항이 있으면 먼저 pull하기 위함</span>
-git pull origin master
-
-<span style="color:#75715e"># git내용들 추가</span>
-git add .
-
-<span style="color:#75715e"># Commit 바꾸기. git commit -m &#34;원하는 커밋 메세지&#34;를 입력하거나</span>
-<span style="color:#75715e"># git commit만 입력시 커밋날짜를 메세지로 자동설정</span>
-msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rebuilding site `date`&#34;</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>
-  <span style="color:#66d9ef">then</span> msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">fi</span>
-git commit -m <span style="color:#e6db74">&#34;</span>$msg<span style="color:#e6db74">&#34;</span>
-
-<span style="color:#75715e"># github.io 레포에 push</span>
-git push origin master
-
-<span style="color:#75715e"># 상위 폴더인 blog도 push위해 경로 변경</span>
-cd ..
-
-<span style="color:#75715e"># blog 저장소 Commit &amp; Push</span>
-git add .
-
-msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rebuilding site `date`&#34;</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>
-  <span style="color:#66d9ef">then</span> msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">fi</span>
-git commit -m <span style="color:#e6db74">&#34;</span>$msg<span style="color:#e6db74">&#34;</span>
-
-git push origin master
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">#!/bin/bash
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#ff79c6"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#6272a4"># Build the project.</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>hugo -t &lt;테마이름&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#6272a4"># github.io 레포 push위해 파일 경로 이동</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#8be9fd;font-style:italic">cd</span> public
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#6272a4"># CNAME 등 레포에서 변경되는 사항이 있으면 먼저 pull하기 위함</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>git pull origin master
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#6272a4"># git내용들 추가</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>git add .
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#6272a4"># Commit 바꾸기. git commit -m &#34;원하는 커밋 메세지&#34;를 입력하거나</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#6272a4"># git commit만 입력시 커밋날짜를 메세지로 자동설정</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#8be9fd;font-style:italic">msg</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;rebuilding site `date`&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#ff79c6">if</span> <span style="color:#ff79c6">[</span> <span style="color:#8be9fd;font-style:italic">$#</span> -eq <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  <span style="color:#ff79c6">then</span> <span style="color:#8be9fd;font-style:italic">msg</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$1</span><span style="color:#f1fa8c">&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#ff79c6">fi</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>git commit -m <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$msg</span><span style="color:#f1fa8c">&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#6272a4"># github.io 레포에 push</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>git push origin master
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span style="color:#6272a4"># 상위 폴더인 blog도 push위해 경로 변경</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span style="color:#8be9fd;font-style:italic">cd</span> ..
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#6272a4"># blog 저장소 Commit &amp; Push</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>git add .
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span style="color:#8be9fd;font-style:italic">msg</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;rebuilding site `date`&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span style="color:#ff79c6">if</span> <span style="color:#ff79c6">[</span> <span style="color:#8be9fd;font-style:italic">$#</span> -eq <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">]</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>  <span style="color:#ff79c6">then</span> <span style="color:#8be9fd;font-style:italic">msg</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$1</span><span style="color:#f1fa8c">&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span style="color:#ff79c6">fi</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>git commit -m <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$msg</span><span style="color:#f1fa8c">&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>git push origin master
 </code></pre></div><p><br><br><br></p>
 <h2><em>여기서부터는 skip해도 무방하다.</em></h2><a class="anchor" id="_여기서부터는-skip해도-무방하다_"></a>
 <br>
@@ -1099,16 +1104,16 @@ git push origin master
 <p>코드가 길게 있을 텐데 <strong>contents</strong> 끝 자락 부분의 아래나 <strong>footer</strong> 바로 윗 부분에 코드를 추가 해주면 된다.</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;margin-top:200px;&#34;</span>&gt;
-  &lt;<span style="color:#f92672">script</span>
-    <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://utteranc.es/client.js&#34;</span>
-    <span style="color:#a6e22e">repo</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gowoonsori/comments&#34;</span>
-    <span style="color:#a6e22e">issue-term</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pathname&#34;</span>
-    <span style="color:#a6e22e">theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;github-light&#34;</span>
-    <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>
-    <span style="color:#a6e22e">async</span>
-  &gt;&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">style</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;margin-top:200px;&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  &lt;<span style="color:#ff79c6">script</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#50fa7b">src</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;https://utteranc.es/client.js&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#50fa7b">repo</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;gowoonsori/comments&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#50fa7b">issue-term</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;pathname&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#50fa7b">theme</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;github-light&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#50fa7b">crossorigin</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;anonymous&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#50fa7b">async</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  &gt;&lt;/<span style="color:#ff79c6">script</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>&lt;/<span style="color:#ff79c6">div</span>&gt;
 </code></pre></div><p><em>이때 repo의 username과 repo이름은 바꿔줘야 한다</em></p>
 
 <link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>

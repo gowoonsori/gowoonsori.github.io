@@ -18,7 +18,7 @@
 📌 산술 연산자 두개의 피연산자를 갖는 이항 연산자로써, 기본적인 사칙연산을 다루는 연산자
 ◾ 더하기 (+) 왼쪽의 피연산자에 오른쪽 피연산자를 더하는 연산자로 숫자+숫자, 문자열+문자열이 가능하고 문자열+숫자를 할 시 숫자를 자동으로 문자열로 변환하여 덧셈이 가능하다.
 문자+숫자를 할 경우에는 아스키 코드를 이용하여 문자로 결과가 출력 된다. 문자에 맞는 아스키 코드값과 숫자를 더한 결과값에 해당하는 아스키코드를 return하기 때문이다.
-int left = 2020; int right = 1; int year = left + right; char ch = A; System.</description>
+1int left = 2020; 2int right = 1; 3int year = left + right; 4char ch = A; 5 6System.</description>
     </item>
     
   </channel>

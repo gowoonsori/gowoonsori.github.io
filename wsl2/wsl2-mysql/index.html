@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-26T22:02:09 KST">
+<meta name="revised" content="2021-01-26T23:43:35 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -24,7 +24,7 @@
 <meta property="og:description" content="wsl2에서 service 자동실행 설정하기" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gowoonsori.site/wsl2/wsl2-mysql/" />
-<meta property="og:image" content="https://gowoonsori.site/../images/favicon.png" />
+<meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
 <meta property="og:updated_time" content="2020-11-06T18:41:47+09:00" />
 
 
@@ -128,8 +128,13 @@ if (!doNotTrack) {
                 </a>
             </li>
             <li class="" role="">
-                <a href="https://gowoonsori.github.io"  rel="noopener">
-                  Blog
+                <a href="https://www.facebook.com/gowoonsori97"  rel="noopener">
+                  FaceBook
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="mailto:gowoonsori97@gmail.com"  rel="noopener">
+                  Gmail
                 </a>
             </li>
     </nav>
@@ -821,11 +826,11 @@ if (!doNotTrack) {
 <h4>1 .bat파일 (스크립트 파일) 작성</h4><a class="anchor" id="1-bat파일-스크립트-파일-작성"></a>
 <p>우선 자동 실행을 위해 프로그램들을 실행시켜줄 명령어들을 모은 스크립트 파일을 작성해야한다.</p>
 <p>메모장을 열고 본인이 자동실행 시킬 프로그램 명령어를 아래와 같이 앞에 <code>wsl</code>을 붙여 입력하면 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">wsl sudo service mysql start
-wsl sudo service ssh start
-wsl sudo service nginx start
-wsl sudo service docker start
-wsl sudo service apache2 start
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>wsl sudo service mysql start
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>wsl sudo service ssh start
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>wsl sudo service nginx start
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>wsl sudo service docker start
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>wsl sudo service apache2 start
 </code></pre></div><p>그 후에 저장을 하는데 저장시 <strong>주의사항</strong>으로 아래 사진과 같이 <code>모든 파일 형식</code>에 <code>파일이름</code>뒤에 <code>.bat</code>을 붙여 저장하면 된다.</p>
 <p>귀찮으신분은 아래 파일을 다운받아 고쳐 사용해도 된다.
 
@@ -856,10 +861,10 @@ bat 파일
 <p>된
 해당 파일을 실행시키면 sudo권한 실행을 위해 비밀번호 입력때문에 자동실행이 막히게 되기 때문에 비밀번호를 해제해줘야 자동실행이 된다.</p>
 <p>window 검색창에 <code>bash.exe</code>를 검색하여 실행시키거나, <code>wsl2</code>를 실행시켜 <code>sudo visudo</code> 명령어를 입력하여 설정파일을 열면 nano편집기로 열릴텐데 <code>아래 명령어</code>를 추가하고 <code>ctrl+s</code>로 저장하고 <code>ctrl+x</code>를 눌러 빠져나오자.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">%sudo ALL=NOPASSWD: /usr/sbin/service
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>%sudo ALL=NOPASSWD: /usr/sbin/service
 </code></pre></div><p>모든 service명령어를 비밀번호 해제하는게 나는 두렵다(?)라고 생각하시는 분은 아래와 같이 해당 명령어만 비밀번호를 해제 해도 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service mysql *
-%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service ssh *
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service mysql *
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service ssh *
 </code></pre></div><p>
 <link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/alert.css'>
 <div class="alert info" role="alert">여기서 중요한 점은 <code>%sudo ALL=(ALL:ALL) ALL</code> 명령어보다 아래에 작성해야 한다는 점이다.</div>
