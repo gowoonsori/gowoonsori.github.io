@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>java on 고소리&#39;s Blog</title>
+    <title>java on Gowoonsori&#39;s TechBlog</title>
     <link>https://gowoonsori.site/categories/java/</link>
-    <description>Recent content in java on 고소리&#39;s Blog</description>
+    <description>Recent content in java on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Jan 2021 20:11:16 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Jan 2021 20:13:58 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JVM과 자바 실행</title>
       <link>https://gowoonsori.site/java/jvm/</link>
@@ -31,17 +31,6 @@ Java는 C나 C++과 같이 바로 컴파일되는 컴파일 언어가 아니다.
     </item>
     
     <item>
-      <title>제어문</title>
-      <link>https://gowoonsori.site/java/controlstatement/</link>
-      <pubDate>Mon, 25 Jan 2021 20:11:16 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/java/controlstatement/</guid>
-      <description>조건문 ◾ Switch 특정 데이터의 값에 따라 수행할 작업을 선택하는 구문으로 switch를 사용한다.
-일반적인 사용법은 C/C++와 다르지 않다.
-public class example { public static void main(String[] args) { String select = &amp;#34;ORANGE&amp;#34;; String fruit; switch(select){ case &amp;#34;APPLE&amp;#34; : fruit = &amp;#34;apple&amp;#34;; System.out.println(&amp;#34;사과&amp;#34;); break; case &amp;#34;BANANA&amp;#34; : fruit = &amp;#34;banana&amp;#34;; System.out.println(&amp;#34;바나나&amp;#34;); break; case &amp;#34;ORANGE&amp;#34; : fruit = &amp;#34;orange&amp;#34;; System.out.println(&amp;#34;오렌지&amp;#34;); break; default: fruit = &amp;#34;default&amp;#34;; System.out.println(&amp;#34;default&amp;#34;); break; } System.out.println(fruit); } } switch() 매개변수에 데이터 값을 입력하고 case : 를 이용해 값에 따라 구문을 구분하면 된다.</description>
-    </item>
-    
-    <item>
       <title>연산자</title>
       <link>https://gowoonsori.site/java/operator/</link>
       <pubDate>Sat, 23 Jan 2021 00:01:50 +0900</pubDate>
@@ -53,6 +42,34 @@ public class example { public static void main(String[] args) { String select = 
 ◾ 더하기 (+) 왼쪽의 피연산자에 오른쪽 피연산자를 더하는 연산자로 숫자+숫자, 문자열+문자열이 가능하고 문자열+숫자를 할 시 숫자를 자동으로 문자열로 변환하여 덧셈이 가능하다.
 문자+숫자를 할 경우에는 아스키 코드를 이용하여 문자로 결과가 출력 된다. 문자에 맞는 아스키 코드값과 숫자를 더한 결과값에 해당하는 아스키코드를 return하기 때문이다.
 int left = 2020; int right = 1; int year = left + right; char ch = A; System.</description>
+    </item>
+    
+    <item>
+      <title>제어문</title>
+      <link>https://gowoonsori.site/java/controlstatement/</link>
+      <pubDate>Mon, 25 Jan 2021 20:11:16 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/java/controlstatement/</guid>
+      <description>조건문 ◾ Switch 특정 데이터의 값에 따라 수행할 작업을 선택하는 구문으로 switch를 사용한다.
+일반적인 사용법은 C/C++와 다르지 않다.
+public class example { public static void main(String[] args) { String select = &amp;#34;ORANGE&amp;#34;; String fruit; switch(select){ case &amp;#34;APPLE&amp;#34; : fruit = &amp;#34;apple&amp;#34;; System.out.println(&amp;#34;사과&amp;#34;); break; case &amp;#34;BANANA&amp;#34; : fruit = &amp;#34;banana&amp;#34;; System.out.println(&amp;#34;바나나&amp;#34;); break; case &amp;#34;ORANGE&amp;#34; : fruit = &amp;#34;orange&amp;#34;; System.out.println(&amp;#34;오렌지&amp;#34;); break; default: fruit = &amp;#34;default&amp;#34;; System.out.println(&amp;#34;default&amp;#34;); break; } System.out.println(fruit); } } switch() 매개변수에 데이터 값을 입력하고 case : 를 이용해 값에 따라 구문을 구분하면 된다.</description>
+    </item>
+    
+    <item>
+      <title>Junit5</title>
+      <link>https://gowoonsori.site/java/junit5/</link>
+      <pubDate>Mon, 25 Jan 2021 20:13:58 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/java/junit5/</guid>
+      <description>자바 프로그래밍용 Unit 테스트 프레임워크
+런타임시 Java 8이상이 필요하며 컴파일 타임시에 JAR로서 링크된다.
+Spring Boot를 이용하면 내부에 dependency가 포함되어 있다.
+
+구조   JUnit Platform : 테스트를 발견하고 계획을 생성하는 TestEngine인터페이스를 갖고 있다.
+이를 통해 테스트를 발견,실행,보고한다.
+  JUnit Jupiter : TestEngine의 실제 구현체는 별도 모듈중 하나로 Juptier-API를 이용한 테스트 코드를 발견하고 실행
+ Jupiter API는 JUnit5에 새롭게 추가된 테스트 코드용 API
+   JUnit Vintage : 기존 버전으로 작성한 테스트 코드를 실행할때 이 모듈을 이용</description>
     </item>
     
     <item>

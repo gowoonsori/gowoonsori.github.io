@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>spring boot on 고소리&#39;s Blog</title>
+    <title>spring boot on Gowoonsori&#39;s TechBlog</title>
     <link>https://gowoonsori.site/categories/spring-boot/</link>
-    <description>Recent content in spring boot on 고소리&#39;s Blog</description>
+    <description>Recent content in spring boot on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Jan 2021 13:41:25 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/spring-boot/index.xml" rel="self" type="application/rss+xml" />
