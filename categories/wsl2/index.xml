@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>wsl2</title>
+      <link>https://gowoonsori.site/wsl2/</link>
+      <pubDate>Fri, 06 Nov 2020 18:42:08 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/wsl2/</guid>
+      <description>WSL2 포트포워딩과 window에서 workbench로 접속WSL2에서 Mysql 자동실행 설정하기</description>
+    </item>
+    
+    <item>
       <title>WSL2에서 Mysql 자동실행 설정하기</title>
       <link>https://gowoonsori.site/wsl2/wsl2-mysql/</link>
       <pubDate>Fri, 06 Nov 2020 18:41:47 +0900</pubDate>

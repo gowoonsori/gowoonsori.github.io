@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Jan 2021 20:13:58 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>java</title>
+      <title>Java</title>
       <link>https://gowoonsori.site/tags/java/</link>
       <pubDate>Mon, 25 Jan 2021 20:13:58 +0900</pubDate>
       
@@ -125,20 +125,29 @@
     </item>
     
     <item>
+      <title>Books</title>
+      <link>https://gowoonsori.site/tags/books/</link>
+      <pubDate>Fri, 22 Jan 2021 10:33:13 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>서평</title>
+      <link>https://gowoonsori.site/tags/%EC%84%9C%ED%8F%89/</link>
+      <pubDate>Fri, 22 Jan 2021 10:33:13 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/%EC%84%9C%ED%8F%89/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Clean Code</title>
       <link>https://gowoonsori.site/tags/clean-code/</link>
       <pubDate>Fri, 22 Jan 2021 10:32:58 +0900</pubDate>
       
       <guid>https://gowoonsori.site/tags/clean-code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>2020</title>
-      <link>https://gowoonsori.site/tags/2020/</link>
-      <pubDate>Tue, 05 Jan 2021 23:53:36 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/tags/2020/</guid>
       <description></description>
     </item>
     
@@ -269,6 +278,15 @@
     </item>
     
     <item>
+      <title>Home</title>
+      <link>https://gowoonsori.site/tags/home/</link>
+      <pubDate>Fri, 06 Nov 2020 18:13:16 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/home/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>avl tree</title>
       <link>https://gowoonsori.site/tags/avl-tree/</link>
       <pubDate>Fri, 23 Oct 2020 17:53:52 +0900</pubDate>
@@ -382,6 +400,15 @@
       <pubDate>Wed, 23 Sep 2020 17:45:19 +0900</pubDate>
       
       <guid>https://gowoonsori.site/tags/utterances/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blogging</title>
+      <link>https://gowoonsori.site/tags/blogging/</link>
+      <pubDate>Sun, 20 Sep 2020 19:32:01 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/blogging/</guid>
       <description></description>
     </item>
     

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>java on Gowoonsori&#39;s TechBlog</title>
+    <title>Java on Gowoonsori&#39;s TechBlog</title>
     <link>https://gowoonsori.site/categories/java/</link>
-    <description>Recent content in java on Gowoonsori&#39;s TechBlog</description>
+    <description>Recent content in Java on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Jan 2021 20:13:58 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/java/index.xml" rel="self" type="application/rss+xml" />
@@ -95,6 +95,15 @@ Spring Boot를 이용하면 내부에 dependency가 포함되어 있다.
 Java의 Enum도 기본적으로 c나 c++의 enum과 같은 목적을 위한 클래스로 JDK 1.5이후에 생긴 클래스이다.
 잠깐 C언어 얘기를 하자면 C언어의 C99 이전에는 boolean타입을 제공하지 않았기 때문에 다음과 같이 사용하고는 했었다.
 typedef enum _boolean { FALSE, TRUE } boolean; #define FALSE 0 #define TRUE 1 ◾ Java에서의 Enum 특징 Enum 비교시에 값이 아닌 타입까지도 체크가 가능하고 Enum의 상수값이 재정의 되어도 다시 컴파일하지 않는다.</description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://gowoonsori.site/java/</link>
+      <pubDate>Fri, 22 Jan 2021 11:03:48 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/java/</guid>
+      <description>JVM과 자바 실행DataType과 변수연산자제어문Junit5멀티 스레딩Enum</description>
     </item>
     
   </channel>

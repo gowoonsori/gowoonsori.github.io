@@ -6,7 +6,7 @@
     <title></title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-27T00:40:55 KST">
+<meta name="revised" content="2021-01-28T00:02:50 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -365,7 +365,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/data-structure/tree/redblacktree/">🔴 레드 블랙 트리 (Red Black Tree)</a>
+          <a href="/data-structure/tree/redblacktree/">레드 블랙 트리 (Red Black Tree)</a>
       
         
       
@@ -380,7 +380,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/data-structure/tree/avltree/">⚫ AVL Tree</a>
+          <a href="/data-structure/tree/avltree/">AVL Tree</a>
       
         
       
@@ -724,6 +724,36 @@ if (!doNotTrack) {
           
             
                 <a class="label label-default" href="https://gowoonsori.sitetags/linux/">linux</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post linux">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/linux/packet_capture/">packet capture program 만들기</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Linux환경에서 C를 이용해 raw socket을 이용한 tcpdump의 interface를 모방하는 패킷 캡쳐 프로그램 작성하는 것을 목표로 시작했습니다.
+캡쳐할 정보는 IPv4(이더넷 타입이 0x0800 (ip헤더의 버전이 4)를 기반으로 2계층인 Ethernet 정보부터 패킷을 수집하여 앞에서부터 잘라내면서, Ethernet header | ip header | TCP/UDP/ICMP header | data(payload) 캡쳐 하는 프로그램을 작성해보았습니다.
+응용계층의 http, dns와 네트워크 계층의 icmp에 대해서는 추가적으로 payload도 분석하는 프로그램입니다.
+사용시 주의사항 외부의 컴퓨터를 패킷캡쳐를 시도하려면, 첫번째로 sudo ifconfig eth0 promisc을 통해 무차별 모드로 네트워크를 설정해줘야 한다. <a class="read-more" href="/linux/packet_capture/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://gowoonsori.sitetags/packet-capture/">packet capture</a>
+            
+                <a class="label label-default" href="https://gowoonsori.sitetags/raw-socket/">raw socket</a>
+            
+                <a class="label label-default" href="https://gowoonsori.sitetags/linux/">linux</a>
+            
+                <a class="label label-default" href="https://gowoonsori.sitetags/c/">C</a>
             
         
 

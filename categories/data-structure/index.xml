@@ -33,7 +33,7 @@
     </item>
     
     <item>
-      <title>🔴 레드 블랙 트리 (Red Black Tree)</title>
+      <title>레드 블랙 트리 (Red Black Tree)</title>
       <link>https://gowoonsori.site/data-structure/tree/redblacktree/</link>
       <pubDate>Fri, 23 Oct 2020 17:53:52 +0900</pubDate>
       
@@ -48,7 +48,7 @@ Internal Property : 빨강 노드의 자식은 블랙이다.</description>
     </item>
     
     <item>
-      <title>⚫ AVL Tree</title>
+      <title>AVL Tree</title>
       <link>https://gowoonsori.site/data-structure/tree/avltree/</link>
       <pubDate>Fri, 23 Oct 2020 17:53:52 +0900</pubDate>
       

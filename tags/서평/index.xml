@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>서평 on Gowoonsori&#39;s TechBlog</title>
+    <link>https://gowoonsori.site/tags/%EC%84%9C%ED%8F%89/</link>
+    <description>Recent content in 서평 on Gowoonsori&#39;s TechBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Jan 2021 10:33:13 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/%EC%84%9C%ED%8F%89/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Books</title>
+      <link>https://gowoonsori.site/books/</link>
+      <pubDate>Fri, 22 Jan 2021 10:33:13 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/books/</guid>
+      <description>책들을 읽고 난 후 간단한 소감과 요약내용을 올릴 예정입니다 📑
+Clean Code</description>
+    </item>
+    
+  </channel>
+</rss>

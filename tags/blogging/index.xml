@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blogging on Gowoonsori&#39;s TechBlog</title>
+    <link>https://gowoonsori.site/tags/blogging/</link>
+    <description>Recent content in blogging on Gowoonsori&#39;s TechBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Sep 2020 19:32:01 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/blogging/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blogging</title>
+      <link>https://gowoonsori.site/home/</link>
+      <pubDate>Sun, 20 Sep 2020 19:32:01 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/home/</guid>
+      <description>꾸준한 글쓰기로 많은 사람들에 도움이 되는 것을 꿈꾸고 있어요. 😀 
+블로그에 처음 발을 내디디다. 🦵Hugo와 Github page를 사용하여 블로그 만들기KPU S/W 경진대회 예선 후기 (코딩 테스트)🌼 포인트 적립을 위한 웹 제작기2020년을 보내며블로그 시작한지 2달째 작성해보는 회고</description>
+    </item>
+    
+  </channel>
+</rss>

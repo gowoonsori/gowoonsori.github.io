@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Jan 2021 20:13:58 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>java</title>
+      <title>Java</title>
       <link>https://gowoonsori.site/categories/java/</link>
       <pubDate>Mon, 25 Jan 2021 20:13:58 +0900</pubDate>
       
@@ -17,92 +17,20 @@
     </item>
     
     <item>
-      <title>junit5</title>
-      <link>https://gowoonsori.site/categories/junit5/</link>
-      <pubDate>Mon, 25 Jan 2021 20:13:58 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/junit5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>enum</title>
-      <link>https://gowoonsori.site/categories/enum/</link>
-      <pubDate>Sun, 24 Jan 2021 20:46:28 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/enum/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Material UI</title>
-      <link>https://gowoonsori.site/categories/material-ui/</link>
+      <title>Home</title>
+      <link>https://gowoonsori.site/categories/home/</link>
       <pubDate>Sun, 24 Jan 2021 14:09:48 +0900</pubDate>
       
-      <guid>https://gowoonsori.site/categories/material-ui/</guid>
+      <guid>https://gowoonsori.site/categories/home/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Next</title>
-      <link>https://gowoonsori.site/categories/next/</link>
-      <pubDate>Sun, 24 Jan 2021 14:09:48 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/next/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>react</title>
-      <link>https://gowoonsori.site/categories/react/</link>
-      <pubDate>Sun, 24 Jan 2021 14:09:48 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/react/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spring boot</title>
-      <link>https://gowoonsori.site/categories/spring-boot/</link>
-      <pubDate>Sun, 24 Jan 2021 13:41:25 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/spring-boot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>operator</title>
-      <link>https://gowoonsori.site/categories/operator/</link>
-      <pubDate>Sat, 23 Jan 2021 00:01:50 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/operator/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>연산자</title>
-      <link>https://gowoonsori.site/categories/%EC%97%B0%EC%82%B0%EC%9E%90/</link>
-      <pubDate>Sat, 23 Jan 2021 00:01:50 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>books</title>
+      <title>Books</title>
       <link>https://gowoonsori.site/categories/books/</link>
-      <pubDate>Fri, 22 Jan 2021 10:32:58 +0900</pubDate>
+      <pubDate>Fri, 22 Jan 2021 10:33:13 +0900</pubDate>
       
       <guid>https://gowoonsori.site/categories/books/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>회고</title>
-      <link>https://gowoonsori.site/categories/%ED%9A%8C%EA%B3%A0/</link>
-      <pubDate>Tue, 05 Jan 2021 23:53:36 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/%ED%9A%8C%EA%B3%A0/</guid>
       <description></description>
     </item>
     
@@ -116,29 +44,11 @@
     </item>
     
     <item>
-      <title>packet capture</title>
-      <link>https://gowoonsori.site/categories/packet-capture/</link>
-      <pubDate>Fri, 11 Dec 2020 00:43:18 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/packet-capture/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>wsl2</title>
       <link>https://gowoonsori.site/categories/wsl2/</link>
       <pubDate>Sun, 29 Nov 2020 12:07:28 +0900</pubDate>
       
       <guid>https://gowoonsori.site/categories/wsl2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>오류해결</title>
-      <link>https://gowoonsori.site/categories/%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0/</link>
-      <pubDate>Fri, 06 Nov 2020 18:42:08 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0/</guid>
       <description></description>
     </item>
     
@@ -161,29 +71,20 @@
     </item>
     
     <item>
-      <title>algorithm</title>
-      <link>https://gowoonsori.site/categories/algorithm/</link>
-      <pubDate>Sun, 18 Oct 2020 19:22:51 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>coding test</title>
-      <link>https://gowoonsori.site/categories/coding-test/</link>
-      <pubDate>Sun, 18 Oct 2020 19:22:51 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/categories/coding-test/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>sorting-algorithm</title>
       <link>https://gowoonsori.site/categories/sorting-algorithm/</link>
       <pubDate>Tue, 13 Oct 2020 00:25:11 +0900</pubDate>
       
       <guid>https://gowoonsori.site/categories/sorting-algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algorithm</title>
+      <link>https://gowoonsori.site/categories/algorithm/</link>
+      <pubDate>Sun, 20 Sep 2020 19:28:25 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/categories/algorithm/</guid>
       <description></description>
     </item>
     
