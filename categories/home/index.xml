@@ -69,6 +69,18 @@ npm run dev를 통해 개발모드로 실행 시키고 npm run build와 npm star
     </item>
     
     <item>
+      <title>🌼 포인트 적립을 위한 웹 제작기</title>
+      <link>https://gowoonsori.site/home/react-project/</link>
+      <pubDate>Sun, 24 Jan 2021 14:09:48 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/home/react-project/</guid>
+      <description>방학때 엄마집에 있으며 엄마 가게를 도와주다가 갑자기 엄마가 운영하는 꽃집에 포인트 적립을 한번 도입해보고 싶다고 하셨다.
+지류로 하는 도장형식은 하기 싫다고 하셨고 운영도 애매하다 하시면서 요즘 태블릿으로 전화번호만 입력하면 포스기랑 연동되어 적립이 된다더라라고 말을 하셨다.
+그런데 이는 년단위 계약에 적지 않은 돈을 지불하는 유료 서비스이고 우리 가게에는 포스기도 없었기 때문에 그럼 내가 만들어줄게라고 농담삼아 던저본 말이 씨가 되어 토이 프로젝트로 진행하게 되었다.
+포스기랑 연동할 생각도 없었기 때문에 간편하게 웹을 이용해 구현할 생각이고 휴대폰이나 태블릿을 사용하는 경우를 생각해서 반응형까지는 생각을 하고 있다.</description>
+    </item>
+    
+    <item>
       <title>2020년을 보내며</title>
       <link>https://gowoonsori.site/home/2020-retrospect/</link>
       <pubDate>Tue, 05 Jan 2021 23:53:36 +0900</pubDate>

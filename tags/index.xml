@@ -6,7 +6,34 @@
     <description>Recent content in Tags on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Jan 2021 20:13:58 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Jan 2021 19:31:09 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>js</title>
+      <link>https://gowoonsori.site/tags/js/</link>
+      <pubDate>Thu, 28 Jan 2021 19:31:09 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>operator&#34;</title>
+      <link>https://gowoonsori.site/tags/operator/</link>
+      <pubDate>Thu, 28 Jan 2021 19:31:09 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/operator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data type</title>
+      <link>https://gowoonsori.site/tags/data-type/</link>
+      <pubDate>Thu, 28 Jan 2021 17:46:19 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/data-type/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Java</title>
       <link>https://gowoonsori.site/tags/java/</link>
@@ -71,20 +98,29 @@
     </item>
     
     <item>
+      <title>기록</title>
+      <link>https://gowoonsori.site/tags/%EA%B8%B0%EB%A1%9D/</link>
+      <pubDate>Sun, 24 Jan 2021 14:09:48 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/%EA%B8%B0%EB%A1%9D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>제작기</title>
+      <link>https://gowoonsori.site/tags/%EC%A0%9C%EC%9E%91%EA%B8%B0/</link>
+      <pubDate>Sun, 24 Jan 2021 14:09:48 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/tags/%EC%A0%9C%EC%9E%91%EA%B8%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>spring boot</title>
       <link>https://gowoonsori.site/tags/spring-boot/</link>
       <pubDate>Sun, 24 Jan 2021 13:41:25 +0900</pubDate>
       
       <guid>https://gowoonsori.site/tags/spring-boot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>operator&#34;</title>
-      <link>https://gowoonsori.site/tags/operator/</link>
-      <pubDate>Sat, 23 Jan 2021 00:01:50 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/tags/operator/</guid>
       <description></description>
     </item>
     

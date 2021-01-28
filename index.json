@@ -1,5 +1,12 @@
 [
 {
+	"uri": "https://gowoonsori.site/javascript/datatype/",
+	"title": "DataType",
+	"tags": ["data type", "js"],
+	"description": "",
+	"content": "요즘 핫한 TS가 아닌 원래의 기본 JS는 동적 타입(느슨한 타입) 언어이기 때문에 타입을 미리 선언할 필요가 없다.\n기본 자료형 ( Primitive ) ◾ boolean 다른 언어들과 마찬가지로 true와 false값을 갖는다.\n◾ null 값이 비어있다는 것을 표시하는 데이터 형으로 비교 연산시 false로 취급한다. 값이 존재하지 않는 다는 것(변수가 어떤 객체도 가리키고 있지 않음)을 의도적으로 가리키기 위해 사용하기 때문에 typeof null연산에 object를 반환한다.\n◾ undefined 전역 객체의 속성을 가리키는 값으로 변수에 값을 할당하지 않은 상태이다.\nnull == undefined; //true null === undefined; //false undefined도 비교 연산시 false로 취급한다. 때문에 null과 동등 연산(==)시 true이지만, 엄연히 다른 타입이기 때문에 null과 일치 연산자(===)시에 false가 반환된다.\n◾ number 다른 언어들과는 다르게 고정/부동 소수점 방식에 따라 자료형을 나누지 않고 통일된 형태로 사용된다.\nconst bigInt = 123456789n; 타입의 표현 범위는 -(2^53-1) ~ 2^53-1이다. 이보다 더 큰 숫자를 표현 하고 싶다면 숫자 끝에 n을 붙인 BigInt형을 사용할 수도 있다.\nInfinity 이름 그대로 가장 큰 값(∞)을 표현하는 데 사용되고, 다른 언어들과 달리 특정 숫자를 0으로 나눌 수 있는데 이때 Infinity값이 반환된다.\n또한, Js는 0을 +0과 -0 두가지로 표현할 수 있는데, 나누는 부호에 따라 Infinity도 부호가 결정된다.\nNaN 약자 그대로 숫자가 아니라는 것을 표현하는 값이다.\nconsole.log(\u0026#39;문자열 나누기 숫자\u0026#39; / 2); //NaN \n◾ String 2byte의 unsigned 정수값 들의 집합이다. 한번 생성되면 immutable 하다.\n◾ symbol 유일하고 immutable한 원시 값이기 때문에, 객체의 식별자(일종의 private한 key값)에 사용된다.\nSymbol() 메서드를 이용하여 고유한 심볼값을 반환받을 수 있다.\nSymbol(\u0026#39;ex\u0026#39;) === Symbol(\u0026#39;ex\u0026#39;); //false Symbol(\u0026#39;ex\u0026#39;) == Symbol(\u0026#39;ex\u0026#39;); //false  var ex = new Symbol(); //error Symbol(12) + 1; //error Symbol(12) + \u0026#39;1\u0026#39;; //error typeof Symbol() === \u0026#39;symbol\u0026#39;; 특징   비열거형 (for\u0026hellip;in사용 불가)\n  new 키워드를 지원하지 않는다.\n  숫자나 문자열로 형변환 되지 않는다. (TypeError)\n  Object.getOwnPropertyNames() 메서드에서 심볼 속성은 반환되지 않는다.\n JSON.stringify()에서도 무시된다.    Object.assign() 은 심볼포함 모든 프로퍼티를 복사한다.\n  Symbol.for() 을 통해 전역 심볼을 만들 수 있다.\n  객체 let user = { name: \u0026#39;hong\u0026#39; }; let user2 = new Object(); 식별자를 통해 참조할 수 있는 Refrerence Type 이다.\n여러 데이터들을 담을 수 있는 데이터타입으로 일종의 collection. key와 value를 쌍으로 갖는 데이터 타입으로 key에는 문자열만 올 수 있따.\n객체 안의 데이터를 변환하지 못하게 하는 속성이나 객체에 접근할 수 있게 하는 속성 두개의 속성이 있으며 둘 중 한개만 갖을 수 있다. ◾ 데이터 속성 객체 내 데이터를 수정하지 못하게 하는 속성\n  [[Writable]] : 객체안의 값의 수정 권한을 지정 (true면 수정 가능)\n  [[Enumerable]] : 열거형으로 사용 가능한지 지정 (true면 열거형으로 for\u0026hellip;in 사용가능)\n  [[Configurable]] : false라면 Configurable과 Enumerable을 수정이 불가능하다.\n  ◾ 접근자 속성 객체내 접근자 함수(get/set)를 기술하는 속성\n  [[Get]] : 객체 내의 get 키워드를 통해 정의된 메서드를 호출하고 그 반환값을 가져온다.\n  [[Set]] : 할당된 값을 인자로 객체 내의 set 키워드를 통해 정의된 메서드를 호출\n  [[Enumerable]] : 열거형으로 사용 가능한지 지정\n  [[Configurable]] : flase라면 Configurable과 데이터 속성을 수정할 수 없다.\n  Primitive Wrapper Object (원시 래퍼 객체) 앞서 나열한 원시값이 메서드나 프로퍼티에 접근할 수 있게 해주는 특수 객체\nString, Number, Boolean, Symbol과 같다.\nlet user = \u0026#39;hong\u0026#39;; console.log(user.toUpperCase()); //HONG 원시값을 래퍼객체의 함수를 이용하여 접근하는 순간 래퍼 객체가 자동으로 만들어져 메서드를 이용하고 반환값을 반환한 후 래퍼 객체는 자동 소멸된다.\nArray 순서가 있는 객체를 표현하고, key를 문자열이 아닌 정수를 갖을 수 있는 객체\nlet user = [\u0026#39;hong\u0026#39;, \u0026#39;kim\u0026#39;]; alert(user[1]); //kim 대괄호 []로 표현이 가능하고 key를 정수로 접근이 가능하다.\n그 외 Set, Map 등이 객체에 속한다. \n형변환 ◾ 명시적 형변환 typeof String(1); //\u0026#34;string\u0026#34; typeof Number(\u0026#39;1\u0026#39;); //\u0026#34;number\u0026#34; typeof Boolean(0); //\u0026#34;boolean\u0026#34;  console.log(Number(\u0026#39;12\u0026#39;)); //12 console.log(Number(\u0026#39;hello\u0026#39;)); //NaN console.log(Number(undefined)); //0 console.log(Number(NaN)); //0 console.log(Number(null)); //0  console.log(Boolean(0)); //false console.log(Boolean(null)); //false console.log(Boolean(undefined)); //false console.log(Boolean(NaN)); //false 형 변환을 명시적으로 해주는 것으로 예제와 같은 결과값을 갖는다.\n◾ 자동 형변환 명시적으로 지시 하지 않아도 대부분 자동형변환을 통해 적절하게 변환된다.\n이를 이용해 String을 숫자로 쉽게 변환 시킬 수 있다.\nconsole.log(typeof +\u0026#39;11\u0026#39;); //number console.log(typeof 1 * \u0026#39;11\u0026#39;); //number console.log(typeof \u0026#39;11\u0026#39; / 1); //number 연산을 수행해도 값이 변하지 않는 1을 곱하거나 나누는 방식이나 +연산자를 붙이는 방법으로 쉽게 변환이 가능하다.\n하지만, String이 모두 숫자가 아닌 문자가 섞여있다면 NaN을 반환하기 때문에 parseInt()/parseFloat()을 사용해 앞에서부터 읽을 수 있는 자리까지 변환 하는 방법이 있다.\nconsole.log(+\u0026#39;100a\u0026#39;); //NaN console.log(parseInt(\u0026#39;100px\u0026#39;)); //100 console.log(parseInt(\u0026#39;12.3\u0026#39;)); // 12, 정수 부분만 반환 console.log(parseFloat(\u0026#39;12.3.4\u0026#39;)); // 12.3, 첫번째 점까지만 반환 console.log(parseInt(\u0026#39;a123\u0026#39;)); // NaN \n Refernece https://ko.javascript.info/\n"
+},
+{
 	"uri": "https://gowoonsori.site/home/react-project/1/",
 	"title": "프로젝트 설계와 환경 구성",
 	"tags": ["react", "spring boot"],
@@ -19,6 +26,13 @@
 	"tags": ["hugo", "github page", "start blog"],
 	"description": "블로그를 시작하게 된 이유와 다짐",
 	"content": "👋 첫 블로그 시작 !!  우선, 나는 말수가 적은 편이다. 말을 적게한다고 생각을 안하는 것이 아니라 머리속에서 생각은 정말 많으나, 그것을 입밖으로 꺼낼때 정리가 되지 않아 버벅거리기도 하고, 조사를 잘못 선택하여 말을 하거나 말을 하는 도중에 머리속이 꼬여 중간에 말을 멈추기도 한다.\n말은 생각을 언어로 바꾼 것이기 때문에 많은 생각들을 정리하는 연습과 맞춤법, 올바른 조사사용 등 올바른 언어 습관을 글쓰기를 통해 얻고자 글쓰기를 시작하기로 했다.\n현재 나는 개발자 더 나아가 엔지니어로 불리고 싶은 학생이다.\n배운 기술지식들이 많은데 이를 언제든 찾아 볼 수 있게 하고 다른 사람들과 지식공유를 하기 위함이다.\n나만 이해한 것이 아닌 남들도 이해하기 쉽게 작성해야 한다는 생각에 주제에 대해서 더 많이 찾아보고 공부 할 수 있게 되지 않을까?\n◼ github page를 선택한 이유  블로그를 작성하는 방법으로는 플랫폼으로는 네이버 블로그, tstory, velog 등 여러가지가 있다.\n기술 블로그로 유명한 tstory, wordpress등 이 있는 데 나는 velog를 조금 사용해보다가 커스터마이징이 가능한 나만의 블로그를 갖고 싶다는 생각에 github page를 선택했다.\n( 처음 세팅하는 데 각종 오류들로 많은 시간을 소비한 것은 안 비밀 \u0026hellip;ㅎㅎ)\n◼ 글 주제  기술 블로그인만큼 Computer Science 지식이 주로 작성을 할 생각이다.\n현재 github에 my-tech라는 이름의 repo로 TIL (Today I Learn)을 진행하고 있는 데 레포에 작성한 내용을 더 다듬어서 블로그에 업로드 할 것 이다.\nTIL을 했던 경험, project를 진행하고 겪었던 일들과 쉬는 날 놀러갔다온 일상적인 얘기도 조금씩 업로드 할 수 도 있다.\n◼ 목표  적어도 한 달에 3개의 글을 작성하는 것이 목표입니다. 🙏\n"
+},
+{
+	"uri": "https://gowoonsori.site/javascript/operator/",
+	"title": "연산자",
+	"tags": ["operator", "js"],
+	"description": "Js의 연산자들에 대해 정리합니다.",
+	"content": "new 정의한 생성자 (객체 생성 메서드)를 통해 객체를 생성하여 할당하는 연산자\nOptional Chaining ( ?. ) 왼쪽 피연산자가 null이거나 undefined라면 undefined를 반환하고 아니면 오른쪽 피연산자를 반환하는 연산자\n주로 객체에 접근할때 사용하는데, 만약 중첩객체라고 한다면, 중간 프로퍼티가 undefined라면 그 아래의 데이터에는 접근을 하지못하고 error가 뜨는 것을 방지하기 위함이다.\nlet user = { name: \u0026#39;hong\u0026#39;, likes: { fruit: \u0026#39;apple\u0026#39;, sports: \u0026#39;tennis\u0026#39;, }, }; console.log(user.pw?.createdDate); //undefined console.log(user.pw.createdDate); //TypeError 본래라면 undefined의 프로퍼티를 찾으려고 하기 때문에 에러가 뜨는데 이를 막아주는 역할을 한다.\n단항 연산자    연산자 의미     a++ 후위 증가   a\u0026ndash; 후위 감소   ! 논리 NOT   ~ 비트 NOT   + 양의 부호 (숫자가 아닌 자료형은 숫자로 변환)   - 단항 부정 (부호를 뒤집는다)   ++a 전위 증가   \u0026ndash;a 전위 감소    ◾ typeof 피연산자의 자료형을 나타내는 연산자로 자동형변환 되기 전의 자료형을 표시한다.\nconsole.log(typeof 12); //\u0026#34;number\u0026#34; console.log(typeof true); // \u0026#34;boolean\u0026#34; ◾ void 피연산자(표현식)을 수행 후 undefined 반환\nconsole.log(void console.log(\u0026#39;12\u0026#39;) === undefined); // 12 출력후 true출력 ◾ delete 객체 자기 자신의 프로퍼티를 제거하는 연산자로 성공 시 true반환\nlet user = { lastName: \u0026#39;hong\u0026#39;, }; delete user.lastName; console.log(user.lastName); //undefined  let fruit = [\u0026#39;apple\u0026#39;, \u0026#39;oragne\u0026#39;, \u0026#39;banana\u0026#39;]; delete fruit[1]; console.log(fruit); //[\u0026#34;apple\u0026#34;, empty, \u0026#34;banana\u0026#34;] ◾ await async 메서드 내에서 Promise를 기다리기 위해 사용\n산술 연산 ◾ ** 지수 (거듭 제곱)을 표현하기 위한 연산자\nconsole.log(2 ** 3); //8 ◾ + , - , * , % 다른 언어들과 대부분 비슷하나 /, % 연산은 소숫점까지 계산된다.\nconsole.log(1 / 2); //0.5 console.log(1 / 3); //0.3333333333333333 console.log(4.5 % 3); //1.5 \n시프트 연산 ◾ \u0026laquo; 32 bit로 표현된 숫자 데이터를 왼쪽으로 옮기는 연산자로 over된 bit는 버려지고 새로 채워지는 bit는 0으로 채워진다.\n◾ \u0026raquo; \u0026lt;\u0026lt;와 반대로 동작하는 연산자 이지만 옮기려는 왼쪽 피연산자가 음수이면 1로 채워지고 양수이면 0으로 채워진다.\n◾ \u0026raquo;\u0026gt; 왼쪽 피연산자의 부호에 상관없이 왼쪽은 0으로 채워진다.\nconsole.log(-2 \u0026lt;\u0026lt; 2); // 8 console.log(2 \u0026lt;\u0026lt; 2); //-8 console.log(5 \u0026gt;\u0026gt; 1); // 2 console.log(-5 \u0026gt;\u0026gt; 1); //-3 console.log(-5 \u0026gt;\u0026gt;\u0026gt; 1); //2147483645 \ninstanceof 생성자의 prototype 속성이 객체 프로토타입 체인 안에 존재하는 지 판별\nlet user = { lastName: \u0026#39;hong\u0026#39;, }; console.log(user instanceof Object); // true  let str = new String(\u0026#39;123\u0026#39;); console.log(str instanceof String); // true console.log(str instanceof Object); // true \nin 프로퍼티 in 객체와 같이 쓰이며 프로퍼티가 객체 안에 있는지 판별\nlet user = { lastName: \u0026#39;hong\u0026#39;, firstName: null, likes: \u0026#39;\u0026#39;, }; console.log(\u0026#39;lastName\u0026#39; in user); // true console.log(\u0026#39;hong\u0026#39; in user); // false console.log(\u0026#39;__proto__\u0026#39; in user); // true \n비교 연산자 왼쪽 피연산자를 오른쪽 피연산자와 비교해 조건이 충족 된다면 true 리턴\n   연산자 의미     \u0026gt; 초과   \u0026gt;= 이상   \u0026lt; 미만   \u0026lt;= 이하    ◾ 일치 연산자 ( === / !== ) 형변환 없이 값을 비교 =\u0026gt; 자료형까지 같아야한다.\n◾ 동등 연산자 ( == / !=) 비교하려는 두개의 값의 자료형이 같으면 그대로 비교하고 다르면 숫자로 바꾸어 비교한다.\n이때 문제가 발생하는데 0과 false를 구별하지 못하고, null과 undefined는 형변환을 하지 않고 null과 undefined를 비교시 true가 반환된다.\n때문에 정확히 비교를 하고자 하면 일치 연산자를 사용하자\nconsole.log(3 == \u0026#39;3\u0026#39;); //true console.log(3 === \u0026#39;3\u0026#39;); //false  console.log(0 == false); //true console.log(0 === false); //false console.log(0 == \u0026#39;false\u0026#39;); //false : 숫자가 아니 문자열을 숫자로 바꾸면 NaN반환  console.log(0 == null); //false console.log(undefined == null); //true console.log(undefined === null); //false  console.log(0 === -0); //true console.log(Infinity == -Infinity); //false console.log(NaN === NaN); //false console.log(Object.is(0,0-)); //false console.log(Object.is(NaN,NaN)); //true 추가적으로 NaN은 자기 자신 포함해서 어느것과 같지 않고 0과 -0은 0으로 같지만 이마저도 정확하게 표현하고 싶다면 Object.is()를 사용하면 된다.\n비트 연산자 ◾ | : 비트 OR  1 | 1 = 1 1 | 0 = 1 0 | 0 = 0  ◾ ^ : 비트 XOR  1 ^ 1 = 0 1 ^ 0 = 1 0 ^ 0 = 0  ◾ \u0026amp; : 비트 AND  1 \u0026amp; 1 = 1 1 \u0026amp; 0 = 0 0 \u0026amp; 0 = 0  널 병합 연산자 (Nullish coalescing) 왼쪽 피연산자가 null or undefined일 때 오른쪽 피연산자를 반환 하고 아니면 왼쪽 피연산자를 반환하는 연산자\n||는 단락 회로 평가로 인해 왼쪽 연산자가 true거나 false면 바로 반환을 하는데 0/\u0026quot;\u0026quot;/NaN/null/undefined인 경우에는 boolean타입으로 변환이 되지 않아 오른쪽 피연산자를 반환한다. 이 때, 왼쪽 피연산자가 0, \u0026ldquo;\u0026ldquo;을 데이터로 갖고있는 경우의 문제를 피하기 위한 연산자이다.\n??도 마찬가지로 단락 회로 평가된다.\nlet user = { lastName: \u0026#39;hong\u0026#39;, firstName: null, likes: \u0026#39;\u0026#39;, }; var name = user.firstName ?? \u0026#39;이름은 없습니다.\u0026#39;; //\u0026#34;이름은 없습니다\u0026#34; var like = user.likes ?? \u0026#39;사과\u0026#39;; //\u0026#34;\u0026#34; \n논리 연산자  \u0026amp;\u0026amp; : 논리 AND || : 논리 OR  조건 ( ? : ) (조건) ? x : y 의 형태로 조건식이 참이면 x를 false면 y를 반환하는 연산자이다.\nlet user = { lastName: \u0026#39;hong\u0026#39;, firstName: \u0026#39;GilDong\u0026#39;, }; var name = user.firstName !== undefined ? user.firstName : \u0026#39;이름은 없습니다.\u0026#39;; \n대입 (=) 오른쪽 피연산자를 왼쪽의 피연산자에 할당하는 연산자\n◾ 복합 대입연산자    연산자 의미     x += y x = x + y   x -= y : x = x - y   x *= y x = x * y   x /= y x = x / y   x %= y x = x % y   x **= y x = x^y(제곱)   x \u0026lt;\u0026lt;= y x = x \u0026lt;\u0026lt; y   x \u0026gt;\u0026gt;= y x = x \u0026gt;\u0026gt; y   x \u0026gt;\u0026gt;\u0026gt;= y x = x \u0026gt;\u0026gt;\u0026gt; y   x \u0026amp;= y x = x \u0026amp; y   x ^= y x = x ^ y   x |= y x = x | y    \n Refernece https://ko.javascript.info/\n"
 },
 {
 	"uri": "https://gowoonsori.site/home/react-project/2/",
@@ -154,6 +168,48 @@
 	"content": ""
 },
 {
+	"uri": "https://gowoonsori.site/tags/js/",
+	"title": "js",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/categories/js/",
+	"title": "js",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/operator/",
+	"title": "operator&#34;",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/data-type/",
+	"title": "data type",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/javascript/",
+	"title": "JavaScript",
+	"tags": ["js"],
+	"description": "바닐라 Js부터 es6, react등 js프레임워크,라이브러리등을 공부하고 정리합니다.",
+	"content": "\r\rDataType\r\r\r연산자\r\r\r"
+},
+{
 	"uri": "https://gowoonsori.site/tags/java/",
 	"title": "Java",
 	"tags": [],
@@ -170,13 +226,6 @@
 {
 	"uri": "https://gowoonsori.site/tags/junit-5/",
 	"title": "junit 5",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://gowoonsori.site/tags/",
-	"title": "Tags",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -224,22 +273,29 @@
 	"content": ""
 },
 {
+	"uri": "https://gowoonsori.site/tags/%EA%B8%B0%EB%A1%9D/",
+	"title": "기록",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://gowoonsori.site/tags/%EC%A0%9C%EC%9E%91%EA%B8%B0/",
+	"title": "제작기",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://gowoonsori.site/home/react-project/",
 	"title": "🌼 포인트 적립을 위한 웹 제작기",
-	"tags": [],
+	"tags": ["제작기", "기록"],
 	"description": "포인트 적립과 고객 관리 웹 제작기",
 	"content": "방학때 엄마집에 있으며 엄마 가게를 도와주다가 갑자기 엄마가 운영하는 꽃집에 포인트 적립을 한번 도입해보고 싶다고 하셨다.\n지류로 하는 도장형식은 하기 싫다고 하셨고 운영도 애매하다 하시면서 요즘 태블릿으로 전화번호만 입력하면 포스기랑 연동되어 적립이 된다더라라고 말을 하셨다.\n그런데 이는 년단위 계약에 적지 않은 돈을 지불하는 유료 서비스이고 우리 가게에는 포스기도 없었기 때문에 그럼 내가 만들어줄게라고 농담삼아 던저본 말이 씨가 되어 토이 프로젝트로 진행하게 되었다.\n포스기랑 연동할 생각도 없었기 때문에 간편하게 웹을 이용해 구현할 생각이고 휴대폰이나 태블릿을 사용하는 경우를 생각해서 반응형까지는 생각을 하고 있다.\n혼자하는 토이프로젝트이고 졸업작품도 준비해야하기 때문에 많은 기능을 만들지는 못하기도 하고 사용자는 내가 아니기 때문에 우선 엄마에게 기능 요구사항을 물어보았고 엄마도 요구하는 기능이 많지는 않아 다행이었다.\n엄마가 작성해준 요구사항을 기반으로 웹을 만들어 가며 문제가 되었던 부분, 해결한 방법, 사용한 라이브러리와 이유등을 기록하려고 한다.\n\n프로젝트 기록 \r프로젝트 설계와 환경 구성\r\r\rReact/Next 개발환경 셋팅과 로그인 창 구현\r\r\r"
 },
 {
 	"uri": "https://gowoonsori.site/tags/spring-boot/",
 	"title": "spring boot",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://gowoonsori.site/tags/operator/",
-	"title": "operator&#34;",
 	"tags": [],
 	"description": "",
 	"content": ""
