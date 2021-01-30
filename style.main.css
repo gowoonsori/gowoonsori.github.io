@@ -301,6 +301,9 @@ article section.page div.content {
     border-radius: 5px;
     font-weight: 500;
     white-space: pre-wrap; }
+  details .detail:hover{
+    cursor: pointer;
+  }
   article section.page div.content div.highlight pre {
     display: block;
     white-space: pre-wrap; 

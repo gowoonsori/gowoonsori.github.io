@@ -6,7 +6,7 @@
     <description>Recent content in Home on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Jan 2021 14:09:48 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/home/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Jan 2021 23:44:32 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/home/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>프로젝트 설계와 환경 구성</title>
       <link>https://gowoonsori.site/home/react-project/1/</link>
@@ -39,6 +39,17 @@ npm run dev를 통해 개발모드로 실행 시키고 npm run build와 npm star
       <guid>https://gowoonsori.site/home/</guid>
       <description>꾸준한 글쓰기로 많은 사람들에 도움이 되는 것을 꿈꾸고 있어요. 😀 
 블로그에 처음 발을 내디디다. 🦵Hugo와 Github page를 사용하여 블로그 만들기KPU S/W 경진대회 예선 후기 (코딩 테스트)🌼 포인트 적립을 위한 웹 제작기2020년을 보내며블로그 시작한지 2달째 작성해보는 회고</description>
+    </item>
+    
+    <item>
+      <title>atom사용과 포인트 적립 페이지 만들기</title>
+      <link>https://gowoonsori.site/home/react-project/3/</link>
+      <pubDate>Fri, 29 Jan 2021 23:44:32 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/home/react-project/3/</guid>
+      <description>지난 번에는 전체 레이아웃 적용과 nav창까지 만들었습니다.
+이번에는 atom을 사용해서 로그인 구현과 로그인에 따른 nav변경, 포인트 적립 페이지(전화번호 검색과 자동완성)를 만들어 보려고 합니다.
+atom이용해 user 상태 선언 import { atom } from &amp;#39;recoil&amp;#39;; export const user = atom({ key: &amp;#39;user&amp;#39;, default: null, }); export const loginState = atom({ key: &amp;#39;loginState&amp;#39;, default: { loginError: false, loginLoading: false, loginDone: false, }, }); export const logOutState = atom({ key: &amp;#39;logOutState&amp;#39;, default: { logOutError: false, logOutLoading: false, logOutDone: false, }, }); login / logout 이벤트 시에 사용하기 위해 reducers/user.</description>
     </item>
     
     <item>
