@@ -75,7 +75,7 @@ body:not(.render_raw) {
       -webkit-box-flex: 1;
       flex: 1 auto;
       max-width: 100%;
-      min-width: 0; }
+      min-width: 320px; }
       body:not(.render_raw) article section.page .jump-to-section {
         display: none;
         margin-top: 0.5em;
