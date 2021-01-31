@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-31T20:58:40 KST">
+<meta name="revised" content="2021-01-31T21:05:17 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -1148,8 +1148,9 @@ ClassName, SuperClass, Constructors, Methods, Fields, Annotations &hellip;</p>
 <p><br><br></p>
 <h2>애노테이션 프로세서</h2><a class="anchor" id="애노테이션-프로세서"></a>
 <p>런타임시에 리플랙션을 사용하는 어노테이션과는 달리 컴파일 타임에 이루어진다.</p>
-<p>컴파일 타임에 어노테이션들을 프로세싱하는 javac에 속한 빌드 툴로 어노테이션의 소스코드를 분석하고 처리하기 위해 사용되는 훅</p>
-<p>보일러플레이트 코드를 제거하는데 도움이 된다.</p>
+<p>컴파일 타임에 어노테이션들을 프로세싱하는 javac에 속한 빌드 툴로 어노테이션의 소스코드를 분석하고 처리하기 위해 사용되는 훅이다.</p>
+<p>보일러플레이트 코드를 제거하는데 도움이 된다.
+<br>( <code>AbstractProcessor</code>를 implements하여 구현체를 만들 수 있으며 Lombok의 <code>@Getter</code>, <code>@Setter</code>와 같은 어노테이션을 이용하는 것만으로도 컴파일 타임에 알아서 getter/setter를 만들어주는 방식으로 보일러플레이트 코드 제거 )</p>
 <p><br><br><br></p>
 <hr>
 <h3>Reference</h3><a class="anchor" id="reference"></a>
