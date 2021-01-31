@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-30T22:03:23 KST">
+<meta name="revised" content="2021-01-31T20:58:40 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -610,6 +610,21 @@ if (!doNotTrack) {
     </li>
               
 
+    <li data-nav-id="https://gowoonsori.site/java/annotation/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/annotation/">어노테이션 (Annotation)</a>
+      
+        
+      
+    </li>
+              
+
     <li data-nav-id="https://gowoonsori.site/java/enum/" class="dd-item
         item_level_$level
         ">
@@ -850,17 +865,17 @@ if (!doNotTrack) {
 <p><br><br></p>
 <h2>사용자 생성</h2><a class="anchor" id="사용자-생성"></a>
 <p>모든 db,table에 접근 가능한 root권한을 가진 사용자로 외부에서 db를 접근하는 것은 위험한 일일 수 있으니 외부에서 접근하고자 하는 db만 접근권한을 가진 사용자를 생성하여 이를 이용해 접근하자.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">create</span> <span style="color:#ff79c6">user</span> 사용자이름<span style="color:#ff79c6">@</span><span style="color:#f1fa8c">&#39;ip주소&#39;</span> identified <span style="color:#ff79c6">by</span> <span style="color:#f1fa8c">&#39;비밀번호&#39;</span>;
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#069;font-weight:bold">create</span> <span style="color:#069;font-weight:bold">user</span> <span style="color:#a00;background-color:#faa">사용자이름</span><span style="color:#555">@</span><span style="color:#c30">&#39;ip주소&#39;</span> identified <span style="color:#069;font-weight:bold">by</span> <span style="color:#c30">&#39;비밀번호&#39;</span>;
 </code></pre></div><p>위와 같이 <code>create user</code>명령어를 이용하여 외부에서 접근할 사용자를 생성하자</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">create</span> <span style="color:#ff79c6">user</span> gowoonso<span style="color:#ff79c6">@</span><span style="color:#f1fa8c">&#39;%&#39;</span> identified <span style="color:#ff79c6">by</span> <span style="color:#f1fa8c">&#39;1234&#39;</span>;
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#069;font-weight:bold">create</span> <span style="color:#069;font-weight:bold">user</span> gowoonso<span style="color:#555">@</span><span style="color:#c30">&#39;%&#39;</span> identified <span style="color:#069;font-weight:bold">by</span> <span style="color:#c30">&#39;1234&#39;</span>;
 </code></pre></div><p>나는 위와 같이 입력하여 예제 사용자를 만들었고 &lsquo;%&lsquo;는 모든 외부 ip접속을 허용한다는 뜻이고 특정 ip에서만 접속하려면 ip주소를 입력해주면 된다.</p>
 <p><img src="create-user.PNG?classes=border,shadow" alt="create user"></p>
 <p>사진과 같이 mysql에 user가 추가된 것을 볼 수 있다.</p>
 <p><br><br></p>
 <h2>접근 권한 부여</h2><a class="anchor" id="접근-권한-부여"></a>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">grant</span> <span style="color:#ff79c6">all</span> privieges <span style="color:#ff79c6">on</span> DB이름.테이블이름 <span style="color:#ff79c6">to</span> 사용자이름<span style="color:#ff79c6">@</span><span style="color:#f1fa8c">&#39;ip주소&#39;</span>;
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#069;font-weight:bold">grant</span> <span style="color:#069;font-weight:bold">all</span> privieges <span style="color:#069;font-weight:bold">on</span> DB이름.<span style="color:#a00;background-color:#faa">테이블이름</span> <span style="color:#069;font-weight:bold">to</span> <span style="color:#a00;background-color:#faa">사용자이름</span><span style="color:#555">@</span><span style="color:#c30">&#39;ip주소&#39;</span>;
 </code></pre></div><p>위와 같이 grant 명령어를 이용해 특정 db와 테이블이름에 접근 권한을 부여하자.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">grant</span> <span style="color:#ff79c6">all</span> <span style="color:#ff79c6">privileges</span> <span style="color:#ff79c6">on</span> earn_points_web.<span style="color:#ff79c6">*</span> <span style="color:#ff79c6">to</span> gowoonso<span style="color:#ff79c6">@</span><span style="color:#f1fa8c">&#39;%&#39;</span>;
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#069;font-weight:bold">grant</span> <span style="color:#069;font-weight:bold">all</span> <span style="color:#069;font-weight:bold">privileges</span> <span style="color:#069;font-weight:bold">on</span> earn_points_web.<span style="color:#555">*</span> <span style="color:#069;font-weight:bold">to</span> gowoonso<span style="color:#555">@</span><span style="color:#c30">&#39;%&#39;</span>;
 </code></pre></div><p>나는 <code>earn_points_web</code>이라는 db의 모든 테이블(*)을 아까만든 <code>gowoonso@'%'</code>의 사용자에게 접근권한을 부여했다.</p>
 <p><code>all privileges</code>대신에 <code>select,insert,update</code>을 사용하여 특정 명령어에 대해서만 접근 권한을 부여할 수 도 있고, 모든 db에 대한 접근권한을 부여하고자 한다면 <code>테이블명.*</code> 대신 <code>*.*</code>을 이용하면 된다.</p>
 <p><img src="grant.PNG?classes=border,shadow" alt="grant"></p>
@@ -868,37 +883,37 @@ if (!doNotTrack) {
 <h2>PowerShell명령 이용하여 포트포워딩</h2><a class="anchor" id="powershell명령-이용하여-포트포워딩"></a>
 <p>쉘 스크립트를 이용하여 Powershell파일을 작성해 재부팅시마다 자동으로 이 파일을 실행시키도록 할 것이다.</p>
 <p>파일은 <code>Reference</code>를 참조하였습니다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-shell" data-lang="shell"><span style="color:#8be9fd;font-style:italic">$remoteport</span> <span style="color:#ff79c6">=</span> bash.exe -c <span style="color:#f1fa8c">&#34;ifconfig eth0 | grep &#39;inet &#39;&#34;</span>
-<span style="color:#8be9fd;font-style:italic">$found</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">$remoteport</span> -match <span style="color:#f1fa8c">&#39;\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}&#39;</span>;
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-shell" data-lang="shell"><span style="color:#033">$remoteport</span> <span style="color:#555">=</span> bash.exe -c <span style="color:#c30">&#34;ifconfig eth0 | grep &#39;inet &#39;&#34;</span>
+<span style="color:#033">$found</span> <span style="color:#555">=</span> <span style="color:#033">$remoteport</span> -match <span style="color:#c30">&#39;\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}&#39;</span>;
 
-<span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> <span style="color:#8be9fd;font-style:italic">$found</span> <span style="color:#ff79c6">){</span>
-  <span style="color:#8be9fd;font-style:italic">$remoteport</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">$matches</span><span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">]</span>;
-<span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span><span style="color:#ff79c6">{</span>
-  <span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;The Script Exited, the ip address of WSL 2 cannot be found&#34;</span>;
+<span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span> <span style="color:#033">$found</span> <span style="color:#555">){</span>
+  <span style="color:#033">$remoteport</span> <span style="color:#555">=</span> <span style="color:#033">$matches</span><span style="color:#555">[</span>0<span style="color:#555">]</span>;
+<span style="color:#555">}</span> <span style="color:#069;font-weight:bold">else</span><span style="color:#555">{</span>
+  <span style="color:#366">echo</span> <span style="color:#c30">&#34;The Script Exited, the ip address of WSL 2 cannot be found&#34;</span>;
   exit;
-<span style="color:#ff79c6">}</span>
+<span style="color:#555">}</span>
 
-<span style="color:#6272a4">#[Ports]</span>
-<span style="color:#6272a4">#All the ports you want to forward separated by coma</span>
-<span style="color:#8be9fd;font-style:italic">$ports</span><span style="color:#ff79c6">=</span>@<span style="color:#ff79c6">(</span>22,80,3306,10000,3000,5000<span style="color:#ff79c6">)</span>;
+<span style="color:#09f;font-style:italic">#[Ports]</span>
+<span style="color:#09f;font-style:italic">#All the ports you want to forward separated by coma</span>
+<span style="color:#033">$ports</span><span style="color:#555">=</span>@<span style="color:#555">(</span>22,80,3306,10000,3000,5000<span style="color:#555">)</span>;
 
-<span style="color:#6272a4">#[Static ip]</span>
-<span style="color:#6272a4">#You can change the addr to your ip config to listen to a specific address</span>
-<span style="color:#8be9fd;font-style:italic">$addr</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;0.0.0.0&#39;</span>;
-<span style="color:#8be9fd;font-style:italic">$ports_a</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">$ports</span> -join <span style="color:#f1fa8c">&#34;,&#34;</span>;
+<span style="color:#09f;font-style:italic">#[Static ip]</span>
+<span style="color:#09f;font-style:italic">#You can change the addr to your ip config to listen to a specific address</span>
+<span style="color:#033">$addr</span><span style="color:#555">=</span><span style="color:#c30">&#39;0.0.0.0&#39;</span>;
+<span style="color:#033">$ports_a</span> <span style="color:#555">=</span> <span style="color:#033">$ports</span> -join <span style="color:#c30">&#34;,&#34;</span>;
 
-<span style="color:#6272a4">#Remove Firewall Exception Rules</span>
-iex <span style="color:#f1fa8c">&#34;Remove-NetFireWallRule -DisplayName &#39;WSL 2 Firewall Unlock&#39; &#34;</span>;
+<span style="color:#09f;font-style:italic">#Remove Firewall Exception Rules</span>
+iex <span style="color:#c30">&#34;Remove-NetFireWallRule -DisplayName &#39;WSL 2 Firewall Unlock&#39; &#34;</span>;
 
-<span style="color:#6272a4">#adding Exception Rules for inbound and outbound Rules</span>
-iex <span style="color:#f1fa8c">&#34;New-NetFireWallRule -DisplayName &#39;WSL 2 Firewall Unlock&#39; -Direction Outbound -LocalPort </span><span style="color:#8be9fd;font-style:italic">$ports_a</span><span style="color:#f1fa8c"> -Action Allow -Protocol TCP&#34;</span>;
-iex <span style="color:#f1fa8c">&#34;New-NetFireWallRule -DisplayName &#39;WSL 2 Firewall Unlock&#39; -Direction Inbound -LocalPort </span><span style="color:#8be9fd;font-style:italic">$ports_a</span><span style="color:#f1fa8c"> -Action Allow -Protocol TCP&#34;</span>;
+<span style="color:#09f;font-style:italic">#adding Exception Rules for inbound and outbound Rules</span>
+iex <span style="color:#c30">&#34;New-NetFireWallRule -DisplayName &#39;WSL 2 Firewall Unlock&#39; -Direction Outbound -LocalPort </span><span style="color:#033">$ports_a</span><span style="color:#c30"> -Action Allow -Protocol TCP&#34;</span>;
+iex <span style="color:#c30">&#34;New-NetFireWallRule -DisplayName &#39;WSL 2 Firewall Unlock&#39; -Direction Inbound -LocalPort </span><span style="color:#033">$ports_a</span><span style="color:#c30"> -Action Allow -Protocol TCP&#34;</span>;
 
-<span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span> <span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">=</span> 0; <span style="color:#8be9fd;font-style:italic">$i</span> -lt <span style="color:#8be9fd;font-style:italic">$ports</span>.length; <span style="color:#8be9fd;font-style:italic">$i</span>++ <span style="color:#ff79c6">){</span>
-  <span style="color:#8be9fd;font-style:italic">$port</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">$ports</span><span style="color:#ff79c6">[</span><span style="color:#8be9fd;font-style:italic">$i</span><span style="color:#ff79c6">]</span>;
-  iex <span style="color:#f1fa8c">&#34;netsh interface portproxy delete v4tov4 listenport=</span><span style="color:#8be9fd;font-style:italic">$port</span><span style="color:#f1fa8c"> listenaddress=</span><span style="color:#8be9fd;font-style:italic">$addr</span><span style="color:#f1fa8c">&#34;</span>;
-  iex <span style="color:#f1fa8c">&#34;netsh interface portproxy add v4tov4 listenport=</span><span style="color:#8be9fd;font-style:italic">$port</span><span style="color:#f1fa8c"> listenaddress=</span><span style="color:#8be9fd;font-style:italic">$addr</span><span style="color:#f1fa8c"> connectport=</span><span style="color:#8be9fd;font-style:italic">$port</span><span style="color:#f1fa8c"> connectaddress=</span><span style="color:#8be9fd;font-style:italic">$remoteport</span><span style="color:#f1fa8c">&#34;</span>;
-<span style="color:#ff79c6">}</span>
+<span style="color:#069;font-weight:bold">for</span><span style="color:#555">(</span> <span style="color:#033">$i</span> <span style="color:#555">=</span> 0; <span style="color:#033">$i</span> -lt <span style="color:#033">$ports</span>.length; <span style="color:#033">$i</span>++ <span style="color:#555">){</span>
+  <span style="color:#033">$port</span> <span style="color:#555">=</span> <span style="color:#033">$ports</span><span style="color:#555">[</span><span style="color:#033">$i</span><span style="color:#555">]</span>;
+  iex <span style="color:#c30">&#34;netsh interface portproxy delete v4tov4 listenport=</span><span style="color:#033">$port</span><span style="color:#c30"> listenaddress=</span><span style="color:#033">$addr</span><span style="color:#c30">&#34;</span>;
+  iex <span style="color:#c30">&#34;netsh interface portproxy add v4tov4 listenport=</span><span style="color:#033">$port</span><span style="color:#c30"> listenaddress=</span><span style="color:#033">$addr</span><span style="color:#c30"> connectport=</span><span style="color:#033">$port</span><span style="color:#c30"> connectaddress=</span><span style="color:#033">$remoteport</span><span style="color:#c30">&#34;</span>;
+<span style="color:#555">}</span>
 </code></pre></div><p>위의 파일을 이용하여 쉘 스크립트 파일을 만들거나 아래의 파일을 다운받아 수정하여 사용하면 된다.
 
 <link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/attachments.css'>

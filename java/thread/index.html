@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-30T22:03:22 KST">
+<meta name="revised" content="2021-01-31T20:58:40 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -611,6 +611,21 @@ if (!doNotTrack) {
     </li>
               
 
+    <li data-nav-id="https://gowoonsori.site/java/annotation/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/annotation/">어노테이션 (Annotation)</a>
+      
+        
+      
+    </li>
+              
+
     <li data-nav-id="https://gowoonsori.site/java/enum/" class="dd-item
         item_level_$level
         ">
@@ -927,51 +942,51 @@ if (!doNotTrack) {
 <p>자바에서 쓰레드를 작성하는 방법에는 <code>Thread 클래스</code>와 <code>Runnable 인터페이스</code>를 사용하는 두가지 방법이 있다.</p>
 <br>
 <h3>◾ Thread 클래스 extends</h3><a class="anchor" id="-thread-클래스-extends"></a>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Example</span> <span style="color:#ff79c6">{</span>
-  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">){</span>
-    ExampleThread th1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ExampleThread<span style="color:#ff79c6">();</span>
-    Thread th2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Thread<span style="color:#ff79c6">(){</span>
-      @Override
-      <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">run</span><span style="color:#ff79c6">(){</span>
-        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;thread2&#34;</span><span style="color:#ff79c6">);</span>
-      <span style="color:#ff79c6">}</span>
-    <span style="color:#ff79c6">}</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Example</span> <span style="color:#555">{</span>
+  <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">[]</span> args<span style="color:#555">){</span>
+    ExampleThread th1 <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ExampleThread<span style="color:#555">();</span>
+    Thread th2 <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Thread<span style="color:#555">(){</span>
+      <span style="color:#99f">@Override</span>
+      <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span><span style="color:#555">(){</span>
+        System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;thread2&#34;</span><span style="color:#555">);</span>
+      <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
 
-    th1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">start</span><span style="color:#ff79c6">();</span>
-    th2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">start</span><span style="color:#ff79c6">();</span>
-  <span style="color:#ff79c6">}</span>
+    th1<span style="color:#555">.</span><span style="color:#309">start</span><span style="color:#555">();</span>
+    th2<span style="color:#555">.</span><span style="color:#309">start</span><span style="color:#555">();</span>
+  <span style="color:#555">}</span>
 
-  <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">ExampleThread</span> <span style="color:#8be9fd;font-style:italic">extends</span> Threads<span style="color:#ff79c6">{</span>
-    @Override
-    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">run</span><span style="color:#ff79c6">(){</span>
-      System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Thread 1&#34;</span><span style="color:#ff79c6">);</span>
-    <span style="color:#ff79c6">}</span>
-  <span style="color:#ff79c6">}</span>
-<span style="color:#ff79c6">}</span>
+  <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">ExampleThread</span> <span style="color:#069;font-weight:bold">extends</span> Threads<span style="color:#555">{</span>
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span><span style="color:#555">(){</span>
+      System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;Thread 1&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">}</span>
 </code></pre></div><p>Thread 클래스를 확장하여 생성하는 방법으로는 thread클래스를 상속받아 생성하는 방법인 <code>th1</code>과 <code>th2</code>와 같이 익명 객체를 사용하여 생성하는 방법 2가지 가 존재하고 두번째방법인 <code>익명 클래스</code>를 이용하는 방법은 쓰레드가 오직 한번만 수행 될때 사용하는 방법이다.</p>
 <br>
 <h3>◾ Runnable 인터페이스 implements</h3><a class="anchor" id="-runnable-인터페이스-implements"></a>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Example</span> <span style="color:#ff79c6">{</span>
-  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">){</span>
-    Runnable r <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ExampleThread<span style="color:#ff79c6">();</span>
-    Thread th1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Thread<span style="color:#ff79c6">(</span>r<span style="color:#ff79c6">);</span>
-    <span style="color:#6272a4">//Thread th1 = new Thread(new ExampleThread());
-</span><span style="color:#6272a4"></span>
-    Thread th2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Thread<span style="color:#ff79c6">(()-&gt;{</span>
-      System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;thread2&#34;</span><span style="color:#ff79c6">);</span>
-    <span style="color:#ff79c6">});</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Example</span> <span style="color:#555">{</span>
+  <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">[]</span> args<span style="color:#555">){</span>
+    Runnable r <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ExampleThread<span style="color:#555">();</span>
+    Thread th1 <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Thread<span style="color:#555">(</span>r<span style="color:#555">);</span>
+    <span style="color:#09f;font-style:italic">//Thread th1 = new Thread(new ExampleThread());
+</span><span style="color:#09f;font-style:italic"></span>
+    Thread th2 <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Thread<span style="color:#555">(()-&gt;{</span>
+      System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;thread2&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">});</span>
 
-    th1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">start</span><span style="color:#ff79c6">();</span>
-    th2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">start</span><span style="color:#ff79c6">();</span>
-  <span style="color:#ff79c6">}</span>
+    th1<span style="color:#555">.</span><span style="color:#309">start</span><span style="color:#555">();</span>
+    th2<span style="color:#555">.</span><span style="color:#309">start</span><span style="color:#555">();</span>
+  <span style="color:#555">}</span>
 
-  <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">ExampleThread</span> <span style="color:#8be9fd;font-style:italic">implements</span> Runnalbe<span style="color:#ff79c6">{}</span>
-    @Override
-    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">run</span><span style="color:#ff79c6">(){</span>
-      System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Thread 1&#34;</span><span style="color:#ff79c6">);</span>
-    <span style="color:#ff79c6">}</span>
-  <span style="color:#ff79c6">}</span>
-<span style="color:#ff79c6">}</span>
+  <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">ExampleThread</span> <span style="color:#069;font-weight:bold">implements</span> Runnalbe<span style="color:#555">{}</span>
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span><span style="color:#555">(){</span>
+      System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;Thread 1&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">}</span>
 </code></pre></div><p>Runnable 인터페이스를 이용한 Thread생성방법도 두가지가 존재한다.</p>
 <ol>
 <li>
@@ -994,16 +1009,16 @@ if (!doNotTrack) {
 <p>Runnable 인터페이스를 구현한 경우 Thread클래스의 메서드를 이용하고 싶다면 Thread 클래스의 static 메서드인 currentThread()를 호출하여 쓰레드의 참조를 얻어야 사용이 가능하다.</p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">ThreadA</span> <span style="color:#8be9fd;font-style:italic">extends</span> Thread  <span style="color:#ff79c6">{</span>
-<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">run</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-  System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>getName<span style="color:#ff79c6">());</span>
-<span style="color:#ff79c6">}</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">ThreadA</span> <span style="color:#069;font-weight:bold">extends</span> Thread  <span style="color:#555">{</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+  System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>getName<span style="color:#555">());</span>
+<span style="color:#555">}</span>
 
-<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">ThreadB</span> <span style="color:#8be9fd;font-style:italic">implements</span> Runnable <span style="color:#ff79c6">{</span>
-  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">run</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
-    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>Thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">currentThread</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">getName</span><span style="color:#ff79c6">());</span>
-  <span style="color:#ff79c6">}</span>
-<span style="color:#ff79c6">}</span>
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">ThreadB</span> <span style="color:#069;font-weight:bold">implements</span> Runnable <span style="color:#555">{</span>
+  <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>Thread<span style="color:#555">.</span><span style="color:#309">currentThread</span><span style="color:#555">().</span><span style="color:#309">getName</span><span style="color:#555">());</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">}</span>
 </code></pre></div><p><br><br></p>
 <h2>📌 쓰레드의 상태</h2><a class="anchor" id="-쓰레드의-상태"></a>
 <table>
@@ -1121,10 +1136,10 @@ if (!doNotTrack) {
 <p>쓰레드의 우선순위는 <code>상대적</code>인 값으로 절대적이 값이 아니다</p>
 <Br>
 <h3>◾ 메서드</h3><a class="anchor" id="-메서드"></a>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setPriority</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">~</span>10<span style="color:#ff79c6">);</span>
-thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setPriority</span><span style="color:#ff79c6">(</span>Thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">MIN_PRIORITY</span><span style="color:#ff79c6">);</span> <span style="color:#6272a4">//1
-</span><span style="color:#6272a4"></span>thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setPriority</span><span style="color:#ff79c6">(</span>Thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">NORM_PRIORITY</span><span style="color:#ff79c6">);</span> <span style="color:#6272a4">//5
-</span><span style="color:#6272a4"></span>thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setPriority</span><span style="color:#ff79c6">(</span>Thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">MAX_PRIORITY</span><span style="color:#ff79c6">);</span>  <span style="color:#6272a4">//10
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">thread<span style="color:#555">.</span><span style="color:#309">setPriority</span><span style="color:#555">(</span>1<span style="color:#555">~</span>10<span style="color:#555">);</span>
+thread<span style="color:#555">.</span><span style="color:#309">setPriority</span><span style="color:#555">(</span>Thread<span style="color:#555">.</span><span style="color:#309">MIN_PRIORITY</span><span style="color:#555">);</span> <span style="color:#09f;font-style:italic">//1
+</span><span style="color:#09f;font-style:italic"></span>thread<span style="color:#555">.</span><span style="color:#309">setPriority</span><span style="color:#555">(</span>Thread<span style="color:#555">.</span><span style="color:#309">NORM_PRIORITY</span><span style="color:#555">);</span> <span style="color:#09f;font-style:italic">//5
+</span><span style="color:#09f;font-style:italic"></span>thread<span style="color:#555">.</span><span style="color:#309">setPriority</span><span style="color:#555">(</span>Thread<span style="color:#555">.</span><span style="color:#309">MAX_PRIORITY</span><span style="color:#555">);</span>  <span style="color:#09f;font-style:italic">//10
 </span></code></pre></div><h3>◾ 순환할당 (Round Robin) 방식</h3><a class="anchor" id="-순환할당-round-robin-방식"></a>
 <p>스케줄링 방식에는 우선순위방식 말고도 RR방식도 있는데 이 방식은 스레드마다 사용할 시간을 할당(Time slice)해서 정해진 시간만큼 돌아가며 실행하는 방식으로 <code>JVM</code>에 의해 결정되기 때문에 개발자가 임의로 수정할 수 없다.</p>
 <p><br><br></p>
@@ -1178,15 +1193,15 @@ thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setPriorit
 <br>
 <h3>◾ Synchronized 이용</h3><a class="anchor" id="-synchronized-이용"></a>
 <p>임계영역을 설정하는데 사용하는 키워드로 메서드 전체를 임계영역으로 지정하거나 특정한 영역을 임계영역으로 지정하는 방법이 있다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">1<span style="color:#ff79c6">.</span> 메서드 전체를 임계 영역으로 지정
-  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">synchronized</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">cal</span><span style="color:#ff79c6">()</span>  <span style="color:#ff79c6">{</span>
-    <span style="color:#ff79c6">...</span>
-  <span style="color:#ff79c6">}</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">1<span style="color:#555">.</span> 메서드 전체를 임계 영역으로 지정
+  <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">synchronized</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">cal</span><span style="color:#555">()</span>  <span style="color:#555">{</span>
+    <span style="color:#555">...</span>
+  <span style="color:#555">}</span>
 
-2<span style="color:#ff79c6">.</span> 특정한 영역을 임계 영역으로 지정
-  <span style="color:#50fa7b">synchronized</span><span style="color:#ff79c6">(</span>객체의 참조변수<span style="color:#ff79c6">)</span>  <span style="color:#ff79c6">{</span>
-    <span style="color:#ff79c6">...</span>
-  <span style="color:#ff79c6">}</span>
+2<span style="color:#555">.</span> 특정한 영역을 임계 영역으로 지정
+  <span style="color:#c0f">synchronized</span><span style="color:#555">(</span>객체의 참조변수<span style="color:#555">)</span>  <span style="color:#555">{</span>
+    <span style="color:#555">...</span>
+  <span style="color:#555">}</span>
 </code></pre></div><p>쓰레드는 synchronized가 호출된 시점부터 해당 코드블럭이 포함된 객체의 lock을 얻어 작업을 수행하다가 종료되면 lock이 반환되고 이는 모두 자동으로 이루어지기 때문에, 개발자는 임계영역만 설정 해주면된다.</p>
 <p>객체는 lock을 하나씩 가지고 있고 설정한 객체의 lock을 가지고있는 쓰레드만 임계영역에 접근이 가능하고 다른 스레드는 대기 상태에 들어가기 때문에 임계영역은 좁히는 것이 좋다.</p>
 <p>메서드에 synchronized를 걸면 그 메서드가 포함된 객체(this)에 lock을 거는 것과 같다.</p>
@@ -1402,10 +1417,10 @@ thread<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setPriorit
 
 	 
 	<div class="chevrons ">
-		<a class="next" href="/java/enum/" title="Enum" style="margin-right: 0px;">
+		<a class="next" href="/java/annotation/" title="어노테이션 (Annotation)" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>Enum</label>
+                <label>어노테이션 (Annotation)</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>

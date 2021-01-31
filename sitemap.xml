@@ -83,6 +83,11 @@
   </url>
   
   <url>
+    <loc>https://gowoonsori.site/java/annotation/</loc>
+    <lastmod>2021-01-31T20:38:09+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gowoonsori.site/java/enum/</loc>
     <lastmod>2021-01-24T20:46:28+09:00</lastmod>
   </url>
@@ -123,12 +128,32 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/tags/atom/</loc>
-    <lastmod>2021-01-29T23:44:32+09:00</lastmod>
+    <loc>https://gowoonsori.site/tags/annotation/</loc>
+    <lastmod>2021-01-31T20:38:09+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://gowoonsori.site/categories/</loc>
+    <lastmod>2021-01-31T20:38:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/java/</loc>
+    <lastmod>2021-01-31T20:38:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/categories/java/</loc>
+    <lastmod>2021-01-31T20:38:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/</loc>
+    <lastmod>2021-01-31T20:38:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/tags/atom/</loc>
     <lastmod>2021-01-29T23:44:32+09:00</lastmod>
   </url>
   
@@ -144,11 +169,6 @@
   
   <url>
     <loc>https://gowoonsori.site/tags/recoil/</loc>
-    <lastmod>2021-01-29T23:44:32+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/</loc>
     <lastmod>2021-01-29T23:44:32+09:00</lastmod>
   </url>
   
@@ -180,16 +200,6 @@
   <url>
     <loc>https://gowoonsori.site/javascript/</loc>
     <lastmod>2021-01-28T17:43:07+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/tags/java/</loc>
-    <lastmod>2021-01-25T20:13:58+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gowoonsori.site/categories/java/</loc>
-    <lastmod>2021-01-25T20:13:58+09:00</lastmod>
   </url>
   
   <url>
