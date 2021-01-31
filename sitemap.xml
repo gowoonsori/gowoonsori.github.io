@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>https://gowoonsori.site/home/start-hugo/custom/</loc>
+    <lastmod>2020-09-23T17:45:19+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gowoonsori.site/home/start-blog/</loc>
     <lastmod>2020-09-18T18:51:53+09:00</lastmod>
   </url>
@@ -83,13 +88,13 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/java/annotation/</loc>
-    <lastmod>2021-01-31T20:38:09+09:00</lastmod>
+    <loc>https://gowoonsori.site/java/enum/</loc>
+    <lastmod>2021-01-24T20:46:28+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/java/enum/</loc>
-    <lastmod>2021-01-24T20:46:28+09:00</lastmod>
+    <loc>https://gowoonsori.site/java/annotation/</loc>
+    <lastmod>2021-01-31T20:38:09+09:00</lastmod>
   </url>
   
   <url>
@@ -488,6 +493,11 @@
   </url>
   
   <url>
+    <loc>https://gowoonsori.site/categories/custom/</loc>
+    <lastmod>2020-09-23T17:45:19+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gowoonsori.site/tags/custom-domain/</loc>
     <lastmod>2020-09-23T17:45:19+09:00</lastmod>
   </url>
@@ -499,6 +509,11 @@
   
   <url>
     <loc>https://gowoonsori.site/tags/hugo/</loc>
+    <lastmod>2020-09-23T17:45:19+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/categories/hugo/</loc>
     <lastmod>2020-09-23T17:45:19+09:00</lastmod>
   </url>
   
