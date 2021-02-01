@@ -1,22 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>환경 설정 on Gowoonsori&#39;s TechBlog</title>
-    <link>https://gowoonsori.site/tags/%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/</link>
-    <description>Recent content in 환경 설정 on Gowoonsori&#39;s TechBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 06 Nov 2020 18:42:08 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>wsl2</title>
-      <link>https://gowoonsori.site/wsl2/</link>
-      <pubDate>Fri, 06 Nov 2020 18:42:08 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/wsl2/</guid>
-      <description>WSL2 포트포워딩과 window에서 workbench로 접속하기WSL2를 이용하여 개발을 진행서 외부에서 접근하고 싶거나, 배포를 위해 접근하고 싶을 수가 있는데, 문제가 되는 것이 WSL2는 VM과 같은 환경이라 별도의 IP를 갖는다는 점이다. 그러면 포트포워딩을 하 ...
-WSL2에서 Mysql 자동실행 설정하기[wsl2 설치가 안된 분은 여기를 참고하자] 나는 이번년도에 wsl2를 알게 되어 wsl2을 통해 편하게 개발을 진행하였다. 그런데, wsl2가 아직 여럿 불편한 점이 있었고 그 중 하나가 wsl2의 자동 ...
- </description>
-    </item>
-    
-  </channel>
-</rss>

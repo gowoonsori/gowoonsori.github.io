@@ -1,49 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>wsl2 on Gowoonsori&#39;s TechBlog</title>
-    <link>https://gowoonsori.site/categories/wsl2/</link>
-    <description>Recent content in wsl2 on Gowoonsori&#39;s TechBlog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 29 Nov 2020 12:07:28 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/categories/wsl2/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>wsl2</title>
-      <link>https://gowoonsori.site/wsl2/</link>
-      <pubDate>Fri, 06 Nov 2020 18:42:08 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/wsl2/</guid>
-      <description>WSL2 포트포워딩과 window에서 workbench로 접속하기WSL2를 이용하여 개발을 진행서 외부에서 접근하고 싶거나, 배포를 위해 접근하고 싶을 수가 있는데, 문제가 되는 것이 WSL2는 VM과 같은 환경이라 별도의 IP를 갖는다는 점이다. 그러면 포트포워딩을 하 ...
-WSL2에서 Mysql 자동실행 설정하기[wsl2 설치가 안된 분은 여기를 참고하자] 나는 이번년도에 wsl2를 알게 되어 wsl2을 통해 편하게 개발을 진행하였다. 그런데, wsl2가 아직 여럿 불편한 점이 있었고 그 중 하나가 wsl2의 자동 ...
- </description>
-    </item>
-    
-    <item>
-      <title>WSL2 포트포워딩과 window에서 workbench로 접속하기</title>
-      <link>https://gowoonsori.site/wsl2/port-forwarding/</link>
-      <pubDate>Sun, 29 Nov 2020 12:07:28 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/wsl2/port-forwarding/</guid>
-      <description>WSL2를 이용하여 개발을 진행서 외부에서 접근하고 싶거나, 배포를 위해 접근하고 싶을 수가 있는데, 문제가 되는 것이 WSL2는 VM과 같은 환경이라 별도의 IP를 갖는다는 점이다.
-그러면 포트포워딩을 하면 되지 않느냐라고 할 수 있는데 맞다 포트포워딩을 하면된다 하지만 재부팅을 할때마다 변경되는 IP에 매번 포트 포워딩을 할 수 없는 노릇이기에 Powershell 파일을 이용하여 재부팅마다 wsl2의 ip를 잡아 특정 포트를 포트포워딩 하는 방법을 남기려고 한다.
-
-사용자 생성 모든 db,table에 접근 가능한 root권한을 가진 사용자로 외부에서 db를 접근하는 것은 위험한 일일 수 있으니 외부에서 접근하고자 하는 db만 접근권한을 가진 사용자를 생성하여 이를 이용해 접근하자.</description>
-    </item>
-    
-    <item>
-      <title>WSL2에서 Mysql 자동실행 설정하기</title>
-      <link>https://gowoonsori.site/wsl2/wsl2-mysql/</link>
-      <pubDate>Fri, 06 Nov 2020 18:41:47 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/wsl2/wsl2-mysql/</guid>
-      <description>[wsl2 설치가 안된 분은 여기를 참고하자]
-나는 이번년도에 wsl2를 알게 되어 wsl2을 통해 편하게 개발을 진행하였다.
-그런데, wsl2가 아직 여럿 불편한 점이 있었고 그 중 하나가 wsl2의 자동 실행 미지원이다.
-wsl2는 컴퓨터 시작시 자동 실행을 지원하지 않아 수동으로 ssh나 mysql, nginx와 같은 프로그램들을 실행시켜줘야하는 불편함이 있었다.
-그래서 정말 많은 구글링과 삽질끝에 해결한 방법을 공유하고자 글을 썼다.
-
-셋팅 방법  셋팅 방법은 생각보다 별거 없었고 원리는 window에서 컴퓨터 시작할때마다 스크립트 파일을 통해 자동으로 실행 시켜주는 것이다.</description>
-    </item>
-    
-  </channel>
-</rss>
