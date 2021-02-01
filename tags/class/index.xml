@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>class on Gowoonsori&#39;s TechBlog</title>
+    <link>https://gowoonsori.site/tags/class/</link>
+    <description>Recent content in class on Gowoonsori&#39;s TechBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Feb 2021 01:21:12 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/class/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>클래스 (Class)</title>
+      <link>https://gowoonsori.site/java/class/</link>
+      <pubDate>Mon, 01 Feb 2021 01:21:12 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/java/class/</guid>
+      <description>객체 지향의 중심 객체를 정의하는 일종의 틀 같은 것으로 상태(변수) / 행동(메서드)이 있을 수 있다.
+이로 인해 추상화, 캡슐화, 상속, 다형성 등을 가능하게 하여 개발 / 유지보수를 쉽게 해준다.
+
+클래스 정의하는 방법 class키워드를 통해 클래스를 새로 정의할 수 있다.
+class Fruit{ private String name; Fruit(String name){this.name = name;} public String getName(){ return name; } } ◾ 필드 변수를 뜻하며 두가지 종류가 존재한다.
+  인스턴스 변수 : Fruit이라는 객체를 새로 생성할때마다 각각 독립적인 값을 갖는 변수로 heap 영역에 저장 된다.</description>
+    </item>
+    
+  </channel>
+</rss>

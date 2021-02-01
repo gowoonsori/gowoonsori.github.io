@@ -1,0 +1,1762 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+	클래스 (Class) :: Gowoonsori&#39;s TechBlog
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2021-02-02T01:51:01 KST">
+<meta name="robots" content="index,follow" /> 
+<meta name="googlebot" content="index,follow" />
+
+<title>클래스 (Class) :: Gowoonsori&#39;s TechBlog</title>
+
+<meta name="author" content="gowoonsori">
+
+<meta name="description" content="Java의 클래스와 생성자, this에 대해 정리합니다.">
+<link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
+<link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
+
+<meta property="og:title" content="클래스 (Class)" />
+<meta property="og:description" content="Java의 클래스와 생성자, this에 대해 정리합니다." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://gowoonsori.site/java/class/" />
+<meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
+<meta property="og:updated_time" content="2021-02-01T01:21:12+09:00" />
+
+
+
+
+
+
+<link rel="stylesheet" href='https://gowoonsori.site/sass/layout.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.main.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.menu.css'>
+<link href='/vendor/FontAwesome/fontawesome-free-5.14.0-web/css/all.min.css' rel="stylesheet"> 
+<link rel="stylesheet" href='/css/docport.css'>
+
+
+
+
+
+<script src='/vendor/jquery/jquery-3.5.1.min.js'></script>
+<script src='/js/docport.js'></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/gowoonsori.site";
+</script>
+<script>
+      (function(j,en,ni,fer) {
+          j['dmndata']=[];j['jenniferFront']=function(args){window.dmndata.push(args)};
+          j['dmnaid']=fer;j['dmnatime']=new Date();j['dmnanocookie']=false;j['dmnajennifer']='JENNIFER_FRONT@INTG';
+          var b=Math.floor(new Date().getTime() / 60000) * 60000;var a=en.createElement(ni);
+          a.src='https://d-collect.jennifersoft.com/'+fer+'/demian.js?'+b;a.async=true;
+          en.getElementsByTagName(ni)[0].parentNode.appendChild(a);
+      }(window,document,'script','b13ba63e'));
+  </script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-178493752-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+    
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script> 
+    
+  <style type="text/css">
+    #debug{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 3.5rem;
+    margin-bottom: .35rem;
+    padding: 0 2rem;
+    position: fixed;
+    left: 0;      right: 0;     top: 0;
+   
+    top:0px;
+    
+    min-height: 150px;
+
+    background-color: white;
+    border: 3px solid red;
+    z-index: 10000 ;
+    word-wrap: all;
+    overflow: auto;
+  }
+  </style>
+  </head>
+
+  <body data-url="/java/class/"
+
+  class="hidebreadcrumb ">
+
+ 
+
+
+    
+    
+    <header style="">
+        <div>
+    
+    <div class="burger ">
+        <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">&#9776;</a>
+    </div>
+    
+    <img src="/images/favicon.png" style="margin-top:3px; width: 20px; height: 20px;">
+    <div>
+	
+		
+	    	<a class='baselink' href='https://gowoonsori.site'>Gowoonsori's TechBlog</a>
+	  	
+	</div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/gowoonsori"  rel="noopener">
+                  Github
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://www.facebook.com/gowoonsori97"  rel="noopener">
+                  FaceBook
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="mailto:gowoonsori97@gmail.com"  rel="noopener">
+                  Gmail
+                </a>
+            </li>
+    </nav>
+
+</div>
+    </header>
+    
+
+    <article>
+      
+      <aside class="">
+        
+<div class="search">
+	<div class="searchbox">
+	  <input data-search-input id="search-by" type="text" placeholder="Type to search...">
+	</div>
+	<script type="text/javascript" src="/vendor/lunr/lunr.min.js"></script>
+	<script type="text/javascript" src="/vendor/auto-complete/auto-complete.js"></script>
+	<link href="/vendor/auto-complete/auto-complete.css" rel="stylesheet">
+	<script type="text/javascript">
+	  
+	      var baseurl = "https:\/\/gowoonsori.site";
+	  
+	</script>
+	<script type="text/javascript" src="/js/search.js"></script>
+</div>
+	
+		
+	    	
+	    
+	<div id="close_menu">
+  <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">
+      <i class="fa fa-lg fa-times"></i>
+  </a>
+</div>
+
+<ul class="menu">
+<div id="categories" style="">
+  <p>Categories</p>
+</div>
+
+    <li data-nav-id="https://gowoonsori.site/java/" class="dd-item parent haschildren
+        item_level_$level
+        ">
+
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/java/">Java</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/jvm/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/jvm/">JVM과 자바 실행</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/datatype/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/datatype/">DataType과 변수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/operator/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/operator/">연산자</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/controlstatement/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/controlstatement/">제어문</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/class/" class="dd-item parent active
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/class/">클래스 (Class)</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/junit5/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/junit5/">Junit5</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/thread/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/thread/">멀티 스레딩</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/enum/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/enum/">Enum</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/annotation/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/annotation/">어노테이션 (Annotation)</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/javascript/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/javascript/">JavaScript</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/react-project/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/javascript/react-project/">🌼 포인트 적립을 위한 웹 제작기</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/react-project/1/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/react-project/1/">1. 프로젝트 설계와 환경 구성</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/react-project/2/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/react-project/2/">2. front 개발환경 셋팅과 로그인 창 구현</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/react-project/3/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/react-project/3/">3. atom사용과 포인트 적립 페이지 만들기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/datatype/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/datatype/">DataType과 변수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/operator/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/operator/">연산자</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/data-structure/">자료구조 ( Data Structure )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/data-structure/tree/">트리</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/redblacktree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/redblacktree/">레드 블랙 트리 (Red Black Tree)</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/avltree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/avltree/">AVL Tree</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/algorithm/">알고리즘 ( Algorithm )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/algorithm/sorting-algorithm/">Sorting Algorithm</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/counting-sort/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/sorting-algorithm/counting-sort/">Counting Sort ( 계수 정렬 )</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/books/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/books/">Books</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/books/cleancode/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/books/cleancode/">Clean Code</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/linux/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/linux/">Linux</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/packet_capture/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/packet_capture/">packet capture program 만들기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/wsl2/">wsl2</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/port-forwarding/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/wsl2/port-forwarding/">WSL2 포트포워딩과 window에서 workbench로 접속하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/wsl2-mysql/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/wsl2/wsl2-mysql/">WSL2에서 Mysql 자동실행 설정하기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/home/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/home/">회고</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/start-blog/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/start-blog/">블로그 첫 시작 👋</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/2020-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/2020-retrospect/">2020년을 보내며</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/2month-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/2month-retrospect/">2020년 11월 회고</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/share/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/share/">기타 후기들</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/start-hugo/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/share/start-hugo/">Hugo와 Github page로 블로그 구축</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/start-hugo/custom/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/start-hugo/custom/">⭐ Hugo theme Custom 해보기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/kpu_sw_competition/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/share/kpu_sw_competition/">KPU S/W 경진대회 예선 후기</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/kpu_sw_competition/final/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/kpu_sw_competition/final/">KPU S/W 경진대회 본선 후기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    
+
+
+
+
+</ul>
+	
+		
+	    	<center>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/gowoonsori" aria-label="Follow @gowoonsori on GitHub">Follow@gowoonsori</a>
+<!-- Place this tag where you want the button to render. -->
+</center>
+<!-- <center style='margin-top:20px'>
+    <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgowoonsori.site&count_bg=%23426EAE&title_bg=%23555555&icon=&icon_color=%238E4F4F&title=%F0%9F%93%8C+Today+%2F+Total++&edge_flat=false"/></a>
+</center> -->
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+	    
+	
+      </aside>
+      
+
+      <section class="page ">
+      
+	
+		    
+    
+    
+
+    
+	
+		
+        
+		
+		
+		
+		
+		
+		
+
+		
+			<h1>클래스 (Class)</h1>
+        
+
+		
+										
+		
+
+		
+
+
+	
+	
+
+	
+	
+	<div class="jump-to-section">
+		<span onclick="$h = $(this);$h.next('nav').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('nav').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+  			Jump to Section
+  			<i style=";" class="fas fa-chevron-right"></i>
+		</span>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#클래스-정의하는-방법">클래스 정의하는 방법</a>
+      <ul>
+        <li><a href="#-필드">◾ 필드</a></li>
+        <li><a href="#-메서드">◾ 메서드</a></li>
+        <li><a href="#-생성자">◾ 생성자</a></li>
+        <li><a href="#-접근-제어자">◾ 접근 제어자</a></li>
+        <li><a href="#-키워드-종류">◾ 키워드 종류</a></li>
+      </ul>
+    </li>
+    <li><a href="#객체-만드는-방법">객체 만드는 방법</a></li>
+    <li><a href="#메소드-정의하는-방법">메소드 정의하는 방법</a></li>
+    <li><a href="#생성자-정의하는-방법">생성자 정의하는 방법</a></li>
+    <li><a href="#this-키워드-이해하기">this 키워드 이해하기</a></li>
+    <li><a href="#과제">과제</a>
+      <ul>
+        <li><a href="#binary-tree와-bfs-dfs-구현">Binary Tree와 BFS, DFS 구현</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+	
+	
+
+	<div class="content"><p>객체 지향의 중심 <code>객체</code>를 정의하는 일종의 틀 같은 것으로 상태(변수) / 행동(메서드)이 있을 수 있다.</p>
+<p>이로 인해 추상화, 캡슐화, 상속, 다형성 등을 가능하게 하여 개발 / 유지보수를 쉽게 해준다.</p>
+<p><br><br></p>
+<h2>클래스 정의하는 방법</h2><a class="anchor" id="클래스-정의하는-방법"></a>
+<p><code>class</code>키워드를 통해 클래스를 새로 정의할 수 있다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Fruit</span><span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">private</span> String name<span style="color:#555">;</span>
+
+    Fruit<span style="color:#555">(</span>String name<span style="color:#555">){</span><span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">name</span> <span style="color:#555">=</span> name<span style="color:#555">;}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> String <span style="color:#c0f">getName</span><span style="color:#555">(){</span>
+        <span style="color:#069;font-weight:bold">return</span> name<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><h3>◾ 필드</h3><a class="anchor" id="-필드"></a>
+<p>변수를 뜻하며 두가지 종류가 존재한다.</p>
+<ul>
+<li>
+<p>인스턴스 변수 : Fruit이라는 객체를 새로 생성할때마다 각각 독립적인 값을 갖는 변수로 <code>heap 영역</code>에 저장 된다.</p>
+</li>
+<li>
+<p>클래스 변수 : 인스턴스 변수 앞에 <code>static</code>키워드를 붙여 선언한 변수이다.
+딱 한번만 선언되는 변수로 <code>static 영역</code>에 할당되어 Fruit이라는 객체는 이 변수를 모두 공유한다.</p>
+</li>
+</ul>
+<br>
+<h3>◾ 메서드</h3><a class="anchor" id="-메서드"></a>
+<p>어떠한 행동을 정의한 형태로, 필드들을 수정하거나 참조, 반환을 할 수 있다.</p>
+<h3>◾ 생성자</h3><a class="anchor" id="-생성자"></a>
+<p>객체를 생성했을때 사용되는 일종의 메서드로 필드들을 초기화하는데 사용된다.</p>
+<br>
+<h3>◾ 접근 제어자</h3><a class="anchor" id="-접근-제어자"></a>
+<p>객체 내 정의된 필드, 메서드, 생성자들을 외부에서 접근을 제어하기 위한 키워드로 아래와 같이 4가지가 존재한다.</p>
+<p>default는 생략이 가능하다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">접근 제어자</th>
+<th style="text-align:center">동일 클래스</th>
+<th style="text-align:center">동일 패키지</th>
+<th style="text-align:center">자손 클래스</th>
+<th style="text-align:center">그 외</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">public</td>
+<td style="text-align:center">접근 가능</td>
+<td style="text-align:center">접근가능</td>
+<td style="text-align:center">접근가능</td>
+<td style="text-align:center">접근가능</td>
+</tr>
+<tr>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">접근가능</td>
+<td style="text-align:center">접근가능</td>
+<td style="text-align:center">접근가능</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">default</td>
+<td style="text-align:center">접근가능</td>
+<td style="text-align:center">접근가능</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">private</td>
+<td style="text-align:center">접근가능</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3>◾ 키워드 종류</h3><a class="anchor" id="-키워드-종류"></a>
+<p>필드, 메서드, 클래스 앞에 붙을수 있는 키워드들로 해당 키워드의 종류에 따라 기능이나 권한이 달라진다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">키워드</th>
+<th style="text-align:center">목적</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">static</td>
+<td style="text-align:center">메모리 할당을 한번만 한다. (클래스에 속한다.)</td>
+</tr>
+<tr>
+<td style="text-align:center">final</td>
+<td style="text-align:center">클래스에 붙을 경우 상속이 불가능하고, 필드/메서드에 붙을 경우 상수로써 수정이 불가능하다.</td>
+</tr>
+<tr>
+<td style="text-align:center">abstract</td>
+<td style="text-align:center">클래스 붙을 경우 객체 생성이 불가능하고, 이를 상속받아서만 이용이 가능하다. ( 메서드도 추상 클래스에서만 붙을 수 있고 선언만 가능하다.)</td>
+</tr>
+<tr>
+<td style="text-align:center">synchronized</td>
+<td style="text-align:center">한개의 스레드만 접근이 가능하다.</td>
+</tr>
+<tr>
+<td style="text-align:center">volatile</td>
+<td style="text-align:center">변수 접근을 캐시가 아닌 메모리로 접근한다.</td>
+</tr>
+<tr>
+<td style="text-align:center">transient</td>
+<td style="text-align:center">객체 직렬화시 무시한다.</td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<h2>객체 만드는 방법</h2><a class="anchor" id="객체-만드는-방법"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">ClassExample</span><span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">[]</span> args<span style="color:#555">){</span>
+        Fruit apple <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Fruit<span style="color:#555">(</span><span style="color:#c30">&#34;apple&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p><code>new</code>키워드를 이용하여 클래스의 생성자중 적절한 생성자로 객체를 만들어(<code>heap 영역</code>에 할당) 그 주소를 클래스 변수에 저장하는 방식으로 생성이 가능하다.</p>
+<p>이 과정을 <code>인스턴스화</code>한다고 하고 이 클래스 변수(객체)를 <code>인스턴스</code>라고 한다.</p>
+<p><br><br></p>
+<h2>메소드 정의하는 방법</h2><a class="anchor" id="메소드-정의하는-방법"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> String <span style="color:#c0f">getName</span><span style="color:#555">(){</span>
+    <span style="color:#069;font-weight:bold">return</span> name<span style="color:#555">;</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>위 와 같이 <code>접근 제어자</code> / <code>(키워드)</code> / <code>반환 타입</code> / <code>메서드 이름</code> / <code>매개변수</code>로 선언 할 수 있고 <code>코드 블럭( {} )</code>를 통해 행동을 정의, 구현 할 수 있다.</p>
+<ul>
+<li>
+<p><strong>접근 제어자</strong> : 위에서 설명한 접근제어자 4가지 중 한개가 올 수 있다.</p>
+</li>
+<li>
+<p><strong>키워드</strong> : 이도 마찬가지로 위에서 설명한 키워드중 여러개가 올 수 있으며 없을 수도 있다.</p>
+</li>
+<li>
+<p><strong>반환 타입</strong> : 함수의 구현부가 종료될때 반환하는 값의 타입을 지정해야 한다.</p>
+</li>
+<li>
+<p><strong>메서드 이름</strong> : 메서드를 구분하는 이름</p>
+</li>
+<li>
+<p><strong>매개변수</strong> : 함수에 사용할 매개변수를 정의 할 수 있으며 없을 수도 있고 여러개가 올수도 있다.</p>
+</li>
+</ul>
+<p><br><br></p>
+<h2>생성자 정의하는 방법</h2><a class="anchor" id="생성자-정의하는-방법"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Fruit</span><span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">private</span> String name<span style="color:#555">;</span>
+
+    <span style="color:#09f;font-style:italic">//Fruit(){}
+</span><span style="color:#09f;font-style:italic"></span>
+    Fruit<span style="color:#555">(</span>String name<span style="color:#555">){</span><span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">name</span> <span style="color:#555">=</span> name<span style="color:#555">;}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>반환타입을 빼고 클래스명을 이름으로한 메서드같이 정의할 수 있다.</p>
+<p>이를 정의 하지 않는다면 주석과 같은 기본생성자를 컴파일러가 자동으로 생성해주지만, 매개변수가 있는 타입만 정의시 매개변수가 없는 기본생성자를 자동으로 생성해주지 않으니 기본생성자도 직접 생성해주어야한다.</p>
+<p><br><br></p>
+<h2>this 키워드 이해하기</h2><a class="anchor" id="this-키워드-이해하기"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Fruit</span><span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">private</span> String name<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">int</span> price<span style="color:#555">;</span>
+
+    Fruit<span style="color:#555">(){}</span>
+    Fruit<span style="color:#555">(</span>String name<span style="color:#555">){</span><span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">name</span> <span style="color:#555">=</span> name<span style="color:#555">;}</span>
+
+    Fruit<span style="color:#555">(</span>String name<span style="color:#555">,</span> <span style="color:#078;font-weight:bold">int</span> price<span style="color:#555">){</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">(</span>name<span style="color:#555">);</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">price</span> <span style="color:#555">=</span> price<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> String <span style="color:#c0f">getName</span><span style="color:#555">(){</span>
+        <span style="color:#069;font-weight:bold">return</span> name<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#c0f">exStaticMethod</span><span style="color:#555">(){</span>
+        System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">name</span><span style="color:#555">);</span> <span style="color:#09f;font-style:italic">//error
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>this는 인스턴스된 객체 자기 자신을 가르키는 키워드로 Fruit이라는 생성자를 보면 <code>name</code>으로 변수명이 중복되지만 <code>this</code>키워드를 통해 객체내의 인스턴스 변수와 지역변수를 구분이 가능하게 한다.</p>
+<p>이런 이유로 static 메서드에서 this를 통한 접근은 불가능하다.
+<br>static으로 선언하면 클래스에 종속되기 때문에 인스턴스를 갖지 않기 때문이다.</p>
+<p><code>this()</code>를 통해 클래스내의 생성자를 호출할 수도 있다.</p>
+<br>
+<h2>과제</h2><a class="anchor" id="과제"></a>
+<h3>Binary Tree와 BFS, DFS 구현</h3><a class="anchor" id="binary-tree와-bfs-dfs-구현"></a>
+<ul>
+<li>int value, Node left, right를 가지고 있어야 합니다.</li>
+<li>BinrayTree라는 클래스를 정의하고 주어진 노드를 기준으로 출력하는 bfs(Node node)와 dfs(Node node) 메소드를 구현하세요.</li>
+<li>DFS는 왼쪽, 루트, 오른쪽 순으로 순회하세요.</li>
+</ul>
+
+<details>
+    <summary class = "detail" style="font-Weight : bold; font-size : 15px; color : #3158ad;" >코드 보기
+    </summary>
+    <div>
+        <h3>Node.java</h3><a class="anchor" id="nodejava"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">package</span> <span style="color:#0cf;font-weight:bold">javaStudy.BinaryTree</span><span style="color:#555">;</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Node</span> <span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">int</span> value<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">private</span> Node left<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">private</span> Node right<span style="color:#555">;</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">Node</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> value<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">value</span> <span style="color:#555">=</span> value<span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">left</span> <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">right</span> <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">getValue</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> value<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">setValue</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> value<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">value</span> <span style="color:#555">=</span> value<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> Node <span style="color:#c0f">getLeft</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> left<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">setLeft</span><span style="color:#555">(</span>Node left<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">left</span> <span style="color:#555">=</span> left<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> Node <span style="color:#c0f">getRight</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> right<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">setRight</span><span style="color:#555">(</span>Node right<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">right</span> <span style="color:#555">=</span> right<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+
+</code></pre></div><h3>BinaryTree.java</h3><a class="anchor" id="binarytreejava"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">package</span> <span style="color:#0cf;font-weight:bold">javaStudy.BinaryTree</span><span style="color:#555">;</span>
+
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.ArrayList</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.LinkedList</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.List</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.Queue</span><span style="color:#555">;</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">BinaryTree</span><span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">private</span> Node root<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">private</span> List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> bfsList<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">private</span> List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> dfsList<span style="color:#555">;</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">BinaryTree</span><span style="color:#555">(</span>Node root<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">root</span> <span style="color:#555">=</span> root<span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">bfsList</span> <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ArrayList<span style="color:#555">&lt;&gt;();</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">dfsList</span> <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ArrayList<span style="color:#555">&lt;&gt;();</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">bfs</span><span style="color:#555">(</span>Node node<span style="color:#555">){</span>
+        Queue<span style="color:#555">&lt;</span>Node<span style="color:#555">&gt;</span> q <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> LinkedList<span style="color:#555">&lt;&gt;();</span>
+        q<span style="color:#555">.</span><span style="color:#309">offer</span><span style="color:#555">(</span>node<span style="color:#555">);</span>
+
+        <span style="color:#069;font-weight:bold">while</span><span style="color:#555">(!</span>q<span style="color:#555">.</span><span style="color:#309">isEmpty</span><span style="color:#555">()){</span>
+            Node n <span style="color:#555">=</span> q<span style="color:#555">.</span><span style="color:#309">poll</span><span style="color:#555">();</span>
+            bfsList<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>n<span style="color:#555">.</span><span style="color:#309">getValue</span><span style="color:#555">());</span>
+
+            <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>n<span style="color:#555">.</span><span style="color:#309">getLeft</span><span style="color:#555">()</span> <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">){</span>
+                q<span style="color:#555">.</span><span style="color:#309">offer</span><span style="color:#555">(</span>n<span style="color:#555">.</span><span style="color:#309">getLeft</span><span style="color:#555">());</span>
+            <span style="color:#555">}</span>
+            <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>n<span style="color:#555">.</span><span style="color:#309">getRight</span><span style="color:#555">()</span> <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">){</span>
+                q<span style="color:#555">.</span><span style="color:#309">offer</span><span style="color:#555">(</span>n<span style="color:#555">.</span><span style="color:#309">getRight</span><span style="color:#555">());</span>
+            <span style="color:#555">}</span>
+        <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">dfs</span><span style="color:#555">(</span>Node node<span style="color:#555">){</span>
+        <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>node <span style="color:#555">==</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">)</span> <span style="color:#069;font-weight:bold">return</span><span style="color:#555">;</span>
+        dfsList<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>node<span style="color:#555">.</span><span style="color:#309">getValue</span><span style="color:#555">());</span>
+        dfs<span style="color:#555">(</span>node<span style="color:#555">.</span><span style="color:#309">getLeft</span><span style="color:#555">());</span>
+        dfs<span style="color:#555">(</span>node<span style="color:#555">.</span><span style="color:#309">getRight</span><span style="color:#555">());</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">addNode</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> value<span style="color:#555">){</span>
+        Node node <span style="color:#555">=</span> root<span style="color:#555">;</span>
+        Node newNode <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Node<span style="color:#555">(</span>value<span style="color:#555">);</span>
+
+        <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>node <span style="color:#555">==</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">){</span>
+            root <span style="color:#555">=</span> newNode<span style="color:#555">;</span>
+            <span style="color:#069;font-weight:bold">return</span><span style="color:#555">;</span>
+        <span style="color:#555">}</span>
+
+        Node p <span style="color:#555">=</span> node<span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">while</span><span style="color:#555">(</span>node <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">){</span>
+            p <span style="color:#555">=</span> node<span style="color:#555">;</span>
+            node <span style="color:#555">=</span> <span style="color:#555">(</span>node<span style="color:#555">.</span><span style="color:#309">getValue</span><span style="color:#555">()</span> <span style="color:#555">&gt;</span> value<span style="color:#555">)</span> <span style="color:#555">?</span> node<span style="color:#555">.</span><span style="color:#309">getLeft</span><span style="color:#555">()</span> <span style="color:#555">:</span> node<span style="color:#555">.</span><span style="color:#309">getRight</span><span style="color:#555">();</span>
+        <span style="color:#555">}</span>
+        <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>p<span style="color:#555">.</span><span style="color:#309">getValue</span><span style="color:#555">()</span> <span style="color:#555">&gt;</span> value<span style="color:#555">){</span>
+            p<span style="color:#555">.</span><span style="color:#309">setLeft</span><span style="color:#555">(</span>newNode<span style="color:#555">);</span>
+        <span style="color:#555">}</span><span style="color:#069;font-weight:bold">else</span><span style="color:#555">{</span>
+            p<span style="color:#555">.</span><span style="color:#309">setRight</span><span style="color:#555">(</span>newNode<span style="color:#555">);</span>
+        <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> <span style="color:#c0f">getBfsList</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> bfsList<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> <span style="color:#c0f">getDfsList</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> dfsList<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+
+</code></pre></div><h3>BinaryTreeTest.java</h3><a class="anchor" id="binarytreetestjava"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">package</span> <span style="color:#0cf;font-weight:bold">test.BinaryTree</span><span style="color:#555">;</span>
+
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">javaStudy.BinaryTree.BinaryTree</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">javaStudy.BinaryTree.Node</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.junit.jupiter.api.Assertions</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.junit.jupiter.api.BeforeEach</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.junit.jupiter.api.Test</span><span style="color:#555">;</span>
+
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.Arrays</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.List</span><span style="color:#555">;</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">BinaryTreeTest</span> <span style="color:#555">{</span>
+
+    BinaryTree binaryTree<span style="color:#555">;</span>
+    Node root<span style="color:#555">;</span>
+
+    <span style="color:#99f">@BeforeEach</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">init</span><span style="color:#555">(){</span>
+        root <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Node<span style="color:#555">(</span>2<span style="color:#555">);</span>
+        binaryTree <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> BinaryTree<span style="color:#555">(</span>root<span style="color:#555">);</span>
+        binaryTree<span style="color:#555">.</span><span style="color:#309">addNode</span><span style="color:#555">(</span>1<span style="color:#555">);</span>
+        binaryTree<span style="color:#555">.</span><span style="color:#309">addNode</span><span style="color:#555">(</span>22<span style="color:#555">);</span>
+        binaryTree<span style="color:#555">.</span><span style="color:#309">addNode</span><span style="color:#555">(</span>12<span style="color:#555">);</span>
+        binaryTree<span style="color:#555">.</span><span style="color:#309">addNode</span><span style="color:#555">(</span>23<span style="color:#555">);</span>
+        binaryTree<span style="color:#555">.</span><span style="color:#309">addNode</span><span style="color:#555">(</span>24<span style="color:#555">);</span>
+        binaryTree<span style="color:#555">.</span><span style="color:#309">addNode</span><span style="color:#555">(</span>13<span style="color:#555">);</span>
+        binaryTree<span style="color:#555">.</span><span style="color:#309">addNode</span><span style="color:#555">(</span>5<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Test</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">bfsTest</span><span style="color:#555">(){</span>
+        binaryTree<span style="color:#555">.</span><span style="color:#309">bfs</span><span style="color:#555">(</span>root<span style="color:#555">);</span>
+        List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> arrayList <span style="color:#555">=</span> Arrays<span style="color:#555">.</span><span style="color:#309">asList</span><span style="color:#555">(</span>2<span style="color:#555">,</span>1<span style="color:#555">,</span>22<span style="color:#555">,</span>12<span style="color:#555">,</span>23<span style="color:#555">,</span>5<span style="color:#555">,</span>13<span style="color:#555">,</span>24<span style="color:#555">);</span>
+        Assertions<span style="color:#555">.</span><span style="color:#309">assertEquals</span><span style="color:#555">(</span>arrayList<span style="color:#555">,</span>binaryTree<span style="color:#555">.</span><span style="color:#309">getBfsList</span><span style="color:#555">());</span>
+    <span style="color:#555">}</span>
+    <span style="color:#99f">@Test</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">dfsTest</span><span style="color:#555">(){</span>
+        binaryTree<span style="color:#555">.</span><span style="color:#309">dfs</span><span style="color:#555">(</span>root<span style="color:#555">);</span>
+        List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> arrayList <span style="color:#555">=</span> Arrays<span style="color:#555">.</span><span style="color:#309">asList</span><span style="color:#555">(</span>2<span style="color:#555">,</span>1<span style="color:#555">,</span>22<span style="color:#555">,</span>12<span style="color:#555">,</span>5<span style="color:#555">,</span>13<span style="color:#555">,</span>23<span style="color:#555">,</span>24<span style="color:#555">);</span>
+        Assertions<span style="color:#555">.</span><span style="color:#309">assertEquals</span><span style="color:#555">(</span>arrayList<span style="color:#555">,</span>binaryTree<span style="color:#555">.</span><span style="color:#309">getDfsList</span><span style="color:#555">());</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div>
+    </div>
+</details>
+</div>
+
+	<div style="margin-top:200px;">
+		<script src="https://utteranc.es/client.js"
+				repo="gowoonsori/blog-comments"
+				issue-term="pathname"
+				theme="github-light"
+				crossorigin="anonymous"
+				async>
+		</script>
+	</div>
+
+
+	 
+	<div class="chevrons ">
+		<a class="next" href="/java/junit5/" title="Junit5" style="margin-right: 0px;">
+            <div>
+                <p>Next page</p>
+                <label>Junit5</label>
+            </div>
+            <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
+	</div>
+	
+	
+
+      </section>
+
+      
+      
+      <section class="right-menu ">
+      
+	
+	
+		
+	    	
+	  	
+	<div class="TableOfContents">
+    <label>What&#39;s on this page</label>
+    <nav>
+        <ul >
+            <li><a href="/java/class/">클래스 (Class)</a></li>
+        </ul>
+    </nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#클래스-정의하는-방법">클래스 정의하는 방법</a>
+      <ul>
+        <li><a href="#-필드">◾ 필드</a></li>
+        <li><a href="#-메서드">◾ 메서드</a></li>
+        <li><a href="#-생성자">◾ 생성자</a></li>
+        <li><a href="#-접근-제어자">◾ 접근 제어자</a></li>
+        <li><a href="#-키워드-종류">◾ 키워드 종류</a></li>
+      </ul>
+    </li>
+    <li><a href="#객체-만드는-방법">객체 만드는 방법</a></li>
+    <li><a href="#메소드-정의하는-방법">메소드 정의하는 방법</a></li>
+    <li><a href="#생성자-정의하는-방법">생성자 정의하는 방법</a></li>
+    <li><a href="#this-키워드-이해하기">this 키워드 이해하기</a></li>
+    <li><a href="#과제">과제</a>
+      <ul>
+        <li><a href="#binary-tree와-bfs-dfs-구현">Binary Tree와 BFS, DFS 구현</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+	
+		
+	    	
+	  	
+	<div class="Actions">
+	<nav>
+		<ul>
+				
+		    
+		    
+			
+		      <li>
+		          <i class='fas fa-calendar'></i>
+		          Last update on 01 February 2021
+		      </li>
+		    
+		    
+		</ul>
+		<div style="text-align: center;margin : 10px 40px 0 0;">
+			<a href="https://hits.seeyoufarm.com">
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fjava%2fclass%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+			</a>
+		</div>
+	</nav>
+    
+</div>
+
+      </section>
+      
+    </article>
+    
+    
+    <footer>
+      
+	
+		
+	    	<style type="text/css">
+
+.footer-gray {
+  width: 100%;
+  color: #888;
+}
+
+.footer-custom {
+  font: normal normal 12px/1.4 sans-serif;
+  /*max-width: 1008px;*/
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.footer-custom:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-lists:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-hdr {
+  color: white;
+  font: 22px/1.4  sans-serif;
+  margin: 1em 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .ftr-hdr {
+    font-size: 18px;
+  }
+}
+
+.footer-list-wrap {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 568px) {
+  .footer-list-wrap {
+    width: 33.3333%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-list-wrap {
+    width: 25%;
+  }
+}
+
+.ftr-links-sub {
+  padding: 0;
+  margin: 0;
+}
+
+.ftr-links-sub:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-links-sub li {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0;
+  color: #888;
+  font: normal normal 12px sans-serif;
+  text-transform: uppercase;
+  /*width: 150px;*/
+}
+
+.footer-custom a,
+.footer-custom a:link,
+.footer-custom a:visited,
+.ftr-links-sub li .link {
+  text-decoration: none;
+  color: #888;
+  padding: 5px 0;
+  display: block;
+}
+
+.footer-custom .footer-legal a {
+  display: inline;
+}
+
+.footer-custom a:hover,
+.footer-custom a:active,
+.ftr-links-sub li .link:hover {
+  text-decoration: underline;
+  color: #888;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-custom a, .footer-custom a:link, .footer-custom a:visited, .ftr-links-sub li .link {
+    padding: 0;
+  }
+}
+/* BEGIN EMAIL CAPTURE STYLES*/
+
+.footer-email {
+  text-align: center;
+}
+
+#ftrEmailForm {
+  height: 44px;
+}
+
+#ftrEmailForm .error {
+  display: none;
+  color: red;
+  text-align: left;
+}
+
+#ftrEmailForm #ftrEmailInput {
+  background: none repeat scroll 0 0 #FFF;
+  border: 1px solid #D6D6D6;
+  box-sizing: border-box;
+  color: #888;
+  float: left;
+  font: normal normal 14px/1.4 sans-serif;
+  padding: 5px;
+  width: 70%;
+  height: 100%;
+}
+
+#ftrEmailForm #ftrEmailInput:hover {
+  border: 1px solid #888;
+}
+
+#ftrEmailForm #ftrEmailInput:focus {
+  border: 1px solid #ef9223;
+  outline: #ef9223 auto 5px;
+}
+
+#ftrEmailForm .button {
+  width: 30%;
+  height: 100%;
+  padding: 5px;
+  float: left;
+  border: 1px solid #DFDFDF;
+  box-sizing: border-box;
+  color: #000;
+  font: normal bold 18px/1 sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FFF;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e1e1e1));
+  background: -webkit-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -moz-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -ms-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -o-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: linear-gradient(to bottom, white 0, #e1e1e1 100%);
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+}
+
+#ftrEmailForm .button:hover,
+#ftrEmailForm .button:active {
+  background: black;
+  color: #FFF;
+  outline: none;
+}
+/* BEGIN SOCIAL STYLES*/
+
+.footer-social {
+  text-align: center;
+}
+
+.footer-social ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-social ul:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-social li {
+  float: left;
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-lists {
+    width: 100%;
+  }
+  .footer-email {
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+  .footer-social {
+    width: 45%;
+    margin-left: 5%;
+    float: left;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-lists {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-email {
+    width: 33.3333%;
+  }
+  .footer-social {
+    width: 33.3333%;
+    float: right;
+    margin-left: 0;
+  }
+}
+
+.footer-legal {
+  padding: 15px 0 0;
+  clear: left;
+}
+
+.footer-payment {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-legal {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-payment {
+    width: 33.3333%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment {
+    text-align: left;
+  }
+}
+
+.footer-payment ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-payment ul li {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment ul li.ftr-stella {
+    margin-left: 0;
+  }
+}
+
+
+</style>
+  <div class="footer-gray">
+    <div class="footer-custom">
+      <div class="footer-lists">
+        <h6 class = "ftr-hdr">Contact me</h6>
+        <p>E-mail : gowoonsori97@gmail.com  |  gowoonsori97@naver.com</p>
+      </div>
+      <div class="footer-social">
+        <h6 class="ftr-hdr">Follow Us</h6>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/gowoonsori97/" title="Facebook">
+              <img width="24" height="24" alt="Like us on Facebook" src="/images/fb.png">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.github.com/gowoonosori" title="Github">
+             <i class="fab fa-github" style="font-size:24px"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <p>Copyrihgt &copy; gowoonsori.site All Rights Reserved. </p>
+      </div>
+    </div>
+  </div>
+  <!--/.footer-gray-->
+	    
+	
+    </footer>
+    
+
+
+
+  </body>
+</html>

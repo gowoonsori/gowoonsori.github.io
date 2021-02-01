@@ -14,18 +14,18 @@
       
       <guid>https://gowoonsori.site/algorithm/</guid>
       <description>computer algorithm관련 내용을 포스팅할 예정입니다. 
-Sorting Algorithm (정렬 알고리즘)정렬 알고리즘들을 정리하여 한페이지로 보기 쉽게 포스팅 합니다
-</description>
+Sorting Algorithm데이터를 오름차순 / 내림차순으로 나열 하는 것. 종류 선택 정렬 ( Selection Sort ) 삽입 정렬 ( Insertion Sort ) 버블 정렬 ( Bubble Sort ) 셸 정렬 ( Shel ...
+ </description>
     </item>
     
     <item>
-      <title>Sorting Algorithm (정렬 알고리즘)</title>
+      <title>Sorting Algorithm</title>
       <link>https://gowoonsori.site/algorithm/sorting-algorithm/</link>
       <pubDate>Sun, 20 Sep 2020 19:15:05 +0900</pubDate>
       
       <guid>https://gowoonsori.site/algorithm/sorting-algorithm/</guid>
-      <description>정렬 데이터를 오름차순 / 내림차순으로 나열 하는 것.
-✔ 종류  선택 정렬 ( Selection Sort ) 삽입 정렬 ( Insertion Sort ) 버블 정렬 ( Bubble Sort ) 셸 정렬 ( Shell Sort ) 퀵 정렬 ( Quick Sort ) 힙 정렬 ( Heap Sort ) 합병 정렬 ( Merge Sort ) 기수 정렬 ( Radix Sort ) 계수(카운트) 정렬 ( Count Sort ) 트리 정렬 (업로드 예정) 큐브 정렬 (업로드 예정) 팀 정렬 (업로드 예정)</description>
+      <description>데이터를 오름차순 / 내림차순으로 나열 하는 것.
+종류  선택 정렬 ( Selection Sort ) 삽입 정렬 ( Insertion Sort ) 버블 정렬 ( Bubble Sort ) 셸 정렬 ( Shell Sort ) 퀵 정렬 ( Quick Sort ) 힙 정렬 ( Heap Sort ) 합병 정렬 ( Merge Sort ) 기수 정렬 ( Radix Sort ) 계수(카운트) 정렬 ( Count Sort ) 트리 정렬 (업로드 예정) 큐브 정렬 (업로드 예정) 팀 정렬 (업로드 예정)</description>
     </item>
     
   </channel>

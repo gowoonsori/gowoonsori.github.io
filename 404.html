@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-01T01:18:21 KST">
+<meta name="revised" content="2021-02-02T01:51:00 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -74,14 +74,32 @@ if (!doNotTrack) {
 
 
     
-  </head>
-
-  <body data-url="/404.html"
-
-  class="hidenav hidebreadcrumb hidetoc hidenextpage ">
-
-<style type="text/css">
-  #debug{
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script> 
+    
+  <style type="text/css">
+    #debug{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -101,7 +119,13 @@ if (!doNotTrack) {
     word-wrap: all;
     overflow: auto;
   }
-</style>
+  </style>
+  </head>
+
+  <body data-url="/404.html"
+
+  class="hidenav hidebreadcrumb hidetoc hidenextpage ">
+
  
 
 
@@ -144,8 +168,7 @@ if (!doNotTrack) {
 
       <section class="page page">
       
-	
-    
+	    
     
     
 

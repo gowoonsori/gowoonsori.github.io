@@ -318,3 +318,23 @@ article section.page div.content {
       border-radius: 5px;
       font-weight: inherit;
       background-color: inherit; }
+  article section.page div.content ul.page{
+    padding:0;
+  }
+  article section.page div.content ul div.content-page{
+    border-bottom: solid 1px #888888 ;
+    margin-bottom : 20px;
+    color : #7b7b7b;
+    font-size: 0.9em;
+  }
+  article section.page div.content ul div.content-page a{
+    color : #027f51;
+    font-size : 1.3em;
+  }
+  article section.page div.content ul div.content-page p {
+    margin-top : 10px;
+  }
+  article section.page div.content ul.children-li{
+    padding-left: 25px;
+    padding-right: 40px;
+  }

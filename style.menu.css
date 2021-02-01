@@ -5,8 +5,9 @@
 article > aside {
   /*background-color: $c_light3;*/
   background-color: rgba(115, 115, 115, 0.1);
-  background-color: #f3f3f3;
-  padding: 2rem 0rem 1rem 0rem; }
+  background-color: #f9f9f9;
+  margin-top: 2rem;
+  padding: 0rem 0rem 1rem 0rem; }
   article > aside div.search {
     position: absolute;
     left: 0px;
@@ -22,26 +23,36 @@ article > aside {
   article > aside .menu {
     list-style-type: none;
     line-height: 2rem;
-    margin-top: 2rem; }
+    padding-left: 34px;
+     }
     article > aside .menu ul {
       display: none; }
+    article > aside .menu #categories {
+      margin:4.5rem 0 1rem;
+       border-bottom: solid rgba(0,0,0,.1) 1px; 
+       margin-right: 20px;  
+        color: #4d4d4d;
+        line-height: 20px;
+        font-size: 1.5rem;
+        font-weight: 700;}
     article > aside .menu .ddexp {
       cursor: pointer; }
-    article > aside .menu > .dd-item {
-      margin-top: 24px; }
       article > aside .menu > .dd-item > a {
         font-weight: 700;
         font-size: 16px; }
       article > aside .menu > .dd-item > i {
         color: #646464;
         position: absolute;
-        left: 21px;
+        left: 13px;
         font-size: 1em;
         font-size: 20px;
+        padding-top: 3px;
         line-height: inherit; }
     article > aside .menu .dd-item {
-      padding: 10px 0px 10px 16px;
+      padding: 10px 0px 10px 4px;
       list-style: none; }
+      article > aside .menu .dd-item:hover{
+      }
       article > aside .menu .dd-item a {
         text-decoration: none; }
       article > aside .menu .dd-item > a {
@@ -56,6 +67,9 @@ article > aside {
         padding-inline-start: 0px; }
       article > aside .menu .dd-item li {
         /*border-left: 1px solid #eee;*/ }
+        article > aside .menu .dd-item li:hover{
+          background : rgba(115, 115, 115, 0.1); 
+        }
       article > aside .menu .dd-item.haschildren.parent > a {
         font-weight: 600; }
       article > aside .menu .dd-item.parent > ul {

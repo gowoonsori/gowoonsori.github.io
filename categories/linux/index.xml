@@ -13,7 +13,8 @@
       <pubDate>Fri, 11 Dec 2020 00:43:18 +0900</pubDate>
       
       <guid>https://gowoonsori.site/linux/</guid>
-      <description>packet capture program 만들기</description>
+      <description>packet capture program 만들기Linux환경에서 C를 이용해 raw socket을 이용한 tcpdump의 interface를 모방하는 패킷 캡쳐 프로그램 작성하는 것을 목표로 시작했습니다. 캡쳐할 정보는 IPv4(이더넷 타입이 0x080 ...
+ </description>
     </item>
     
     <item>

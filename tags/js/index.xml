@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Jan 2021 19:31:09 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/tags/js/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>DataType</title>
+      <title>DataType과 변수</title>
       <link>https://gowoonsori.site/javascript/datatype/</link>
       <pubDate>Thu, 28 Jan 2021 17:46:19 +0900</pubDate>
       
@@ -17,6 +17,17 @@
 기본 자료형 ( Primitive ) ◾ boolean 다른 언어들과 마찬가지로 true와 false값을 갖는다.
 ◾ null 값이 비어있다는 것을 표시하는 데이터 형으로 비교 연산시 false로 취급한다. 값이 존재하지 않는 다는 것(변수가 어떤 객체도 가리키고 있지 않음)을 의도적으로 가리키기 위해 사용하기 때문에 typeof null연산에 object를 반환한다.
 ◾ undefined 전역 객체의 속성을 가리키는 값으로 변수에 값을 할당하지 않은 상태이다.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://gowoonsori.site/javascript/</link>
+      <pubDate>Thu, 28 Jan 2021 17:43:07 +0900</pubDate>
+      
+      <guid>https://gowoonsori.site/javascript/</guid>
+      <description>🌼 포인트 적립을 위한 웹 제작기방학때 엄마집에 있으며 엄마 가게를 도와주다가 갑자기 엄마가 운영하는 꽃집에 포인트 적립을 한번 도입해보고 싶다고 하셨다. 지류로 하는 도장형식은 하기 싫다고 하셨고 운영도 애매하다 하시면서 요즘 태블릿으로 ...
+DataType과 변수요즘 핫한 TS가 아닌 원래의 기본 JS는 동적 타입(느슨한 타입) 언어이기 때문에 타입을 미리 선언할 필요가 없다. 기본 자료형 ( Primitive ) ◾ boolean 다른 언어들과 마찬가지로 true ...
+연산자new 정의한 생성자 (객체 생성 메서드)를 통해 객체를 생성하여 할당하는 연산자 Optional Chaining ( ?</description>
     </item>
     
     <item>
@@ -29,15 +40,6 @@
 Optional Chaining ( ?. ) 왼쪽 피연산자가 null이거나 undefined라면 undefined를 반환하고 아니면 오른쪽 피연산자를 반환하는 연산자
 주로 객체에 접근할때 사용하는데, 만약 중첩객체라고 한다면, 중간 프로퍼티가 undefined라면 그 아래의 데이터에는 접근을 하지못하고 error가 뜨는 것을 방지하기 위함이다.
 let user = { name: &amp;#39;hong&amp;#39;, likes: { fruit: &amp;#39;apple&amp;#39;, sports: &amp;#39;tennis&amp;#39;, }, }; console.log(user.pw?.createdDate); //undefined console.log(user.pw.createdDate); //TypeError 본래라면 undefined의 프로퍼티를 찾으려고 하기 때문에 에러가 뜨는데 이를 막아주는 역할을 한다.</description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://gowoonsori.site/javascript/</link>
-      <pubDate>Thu, 28 Jan 2021 17:43:07 +0900</pubDate>
-      
-      <guid>https://gowoonsori.site/javascript/</guid>
-      <description>DataType연산자</description>
     </item>
     
   </channel>
