@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on Gowoonsori&#39;s TechBlog</title>
-    <link>https://blog.gowoonsori.site/java/</link>
+    <link>https://gowoonsori.site/java/</link>
     <description>Recent content in Java on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jan 2021 11:03:48 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jan 2021 11:03:48 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/java/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

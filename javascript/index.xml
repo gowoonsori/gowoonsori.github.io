@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript on Gowoonsori&#39;s TechBlog</title>
-    <link>https://blog.gowoonsori.site/javascript/</link>
+    <link>https://gowoonsori.site/javascript/</link>
     <description>Recent content in JavaScript on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jan 2021 17:43:07 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Jan 2021 17:43:07 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/javascript/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

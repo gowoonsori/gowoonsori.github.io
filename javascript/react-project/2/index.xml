@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2. front 개발환경 셋팅과 로그인 창 구현 on Gowoonsori&#39;s TechBlog</title>
-    <link>https://blog.gowoonsori.site/javascript/react-project/2/</link>
+    <link>https://gowoonsori.site/javascript/react-project/2/</link>
     <description>Recent content in 2. front 개발환경 셋팅과 로그인 창 구현 on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Jan 2021 14:09:48 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/javascript/react-project/2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jan 2021 14:09:48 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/javascript/react-project/2/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

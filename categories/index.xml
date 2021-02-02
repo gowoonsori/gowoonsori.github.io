@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Gowoonsori&#39;s TechBlog</title>
-    <link>https://blog.gowoonsori.site/categories/</link>
+    <link>https://gowoonsori.site/categories/</link>
     <description>Recent content in Categories on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://blog.gowoonsori.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://gowoonsori.site/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
