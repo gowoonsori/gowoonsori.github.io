@@ -4,7 +4,7 @@
 <html>
   <head>
     <title>
-	DataType과 변수 :: Gowoonsori&#39;s TechBlog
+	Function :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -12,20 +12,20 @@
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>DataType과 변수 :: Gowoonsori&#39;s TechBlog</title>
+<title>Function :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀">
+<meta name="description" content="Js의 함수">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="DataType과 변수" />
-<meta property="og:description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀" />
+<meta property="og:title" content="Function" />
+<meta property="og:description" content="Js의 함수" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.gowoonsori.site/javascript/datatype/" />
+<meta property="og:url" content="https://blog.gowoonsori.site/javascript/function/" />
 <meta property="og:image" content="https://blog.gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2021-01-28T17:46:19+09:00" />
+<meta property="og:updated_time" content="2021-02-02T13:02:39+09:00" />
 
 
 
@@ -122,7 +122,7 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/javascript/datatype/"
+  <body data-url="/javascript/function/"
 
   class="hidebreadcrumb ">
 
@@ -460,7 +460,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://blog.gowoonsori.site/javascript/datatype/" class="dd-item parent active
+    <li data-nav-id="https://blog.gowoonsori.site/javascript/datatype/" class="dd-item
         item_level_$level
         ">
 
@@ -494,7 +494,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://blog.gowoonsori.site/javascript/function/" class="dd-item
+    <li data-nav-id="https://blog.gowoonsori.site/javascript/function/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -967,7 +967,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>DataType과 변수</h1>
+			<h1>Function</h1>
         
 
 		
@@ -989,184 +989,145 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#기본-자료형--primitive-">기본 자료형 ( Primitive )</a>
+    <li><a href="#정의-방법">정의 방법</a>
       <ul>
-        <li><a href="#-boolean">◾ boolean</a></li>
-        <li><a href="#-null">◾ null</a></li>
-        <li><a href="#-undefined">◾ undefined</a></li>
-        <li><a href="#-number">◾ number</a></li>
-        <li><a href="#-string">◾ String</a></li>
-        <li><a href="#-symbol">◾ symbol</a></li>
+        <li><a href="#-선언식">◾ 선언식</a></li>
+        <li><a href="#-표현식">◾ 표현식</a></li>
+        <li><a href="#-두-방법의-차이점">◾ 두 방법의 차이점</a></li>
+        <li><a href="#-호출-방식">◾ 호출 방식</a></li>
       </ul>
     </li>
-    <li><a href="#객체">객체</a>
+    <li><a href="#콜백-함수">콜백 함수</a></li>
+    <li><a href="#화살표-함수">화살표 함수</a>
       <ul>
-        <li><a href="#-데이터-속성">◾ 데이터 속성</a></li>
-        <li><a href="#-접근자-속성">◾ 접근자 속성</a></li>
+        <li><a href="#-특징">◾ 특징</a></li>
       </ul>
     </li>
-    <li><a href="#형변환">형변환</a>
-      <ul>
-        <li><a href="#-명시적-형변환">◾ 명시적 형변환</a></li>
-        <li><a href="#-자동-형변환">◾ 자동 형변환</a></li>
-      </ul>
-    </li>
-    <li><a href="#refernece">Refernece</a></li>
   </ul>
 </nav>
 	</div>
 	
 	
 
-	<div class="content"><p>요즘 핫한 <code>TS</code>가 아닌 원래의 기본 <code>JS</code>는 <code>동적 타입(느슨한 타입)</code> 언어이기 때문에 타입을 미리 선언할 필요가 없다.</p>
-<h2>기본 자료형 ( Primitive )</h2><a class="anchor" id="기본-자료형--primitive-"></a>
-<h3>◾ boolean</h3><a class="anchor" id="-boolean"></a>
-<p>다른 언어들과 마찬가지로 true와 false값을 갖는다.</p>
-<h3>◾ null</h3><a class="anchor" id="-null"></a>
-<p>값이 비어있다는 것을 표시하는 데이터 형으로 비교 연산시 <code>false</code>로 취급한다.
-<br>값이 존재하지 않는 다는 것(변수가 어떤 객체도 가리키고 있지 않음)을 의도적으로 가리키기 위해 사용하기 때문에 <code>typeof null</code>연산에 <code>object</code>를 반환한다.</p>
-<h3>◾ undefined</h3><a class="anchor" id="-undefined"></a>
-<p><code>전역 객체</code>의 속성을 가리키는 값으로 변수에 값을 할당하지 않은 상태이다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">null</span> <span style="color:#555">==</span> <span style="color:#069;font-weight:bold">undefined</span>; <span style="color:#09f;font-style:italic">//true
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">null</span> <span style="color:#555">===</span> <span style="color:#069;font-weight:bold">undefined</span>; <span style="color:#09f;font-style:italic">//false
-</span></code></pre></div><p>undefined도 비교 연산시 <code>false</code>로 취급한다.
-<br>때문에 null과 동등 연산(==)시 true이지만, 엄연히 다른 타입이기 때문에 null과 <code>일치 연산자(===)</code>시에 false가 반환된다.</p>
-<h3>◾ number</h3><a class="anchor" id="-number"></a>
-<p>다른 언어들과는 다르게 고정/부동 소수점 방식에 따라 자료형을 나누지 않고 통일된 형태로 사용된다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">const</span> bigInt <span style="color:#555">=</span> <span style="color:#f60">123456789</span>n;
-</code></pre></div><p>타입의 표현 범위는 <code>-(2^53-1) ~ 2^53-1</code>이다.
-<br>이보다 더 큰 숫자를 표현 하고 싶다면 숫자 끝에 <code>n</code>을 붙인 <code>BigInt</code>형을 사용할 수도 있다.</p>
-<h4>Infinity</h4><a class="anchor" id="infinity"></a>
-<p>이름 그대로 가장 큰 값(∞)을 표현하는 데 사용되고, 다른 언어들과 달리 특정 숫자를 <code>0</code>으로 나눌 수 있는데 이때 <code>Infinity</code>값이 반환된다.</p>
-<p>또한, Js는 0을 <code>+0</code>과 <code>-0</code> 두가지로 표현할 수 있는데, 나누는 부호에 따라 Infinity도 부호가 결정된다.</p>
-<h4>NaN</h4><a class="anchor" id="nan"></a>
-<p>약자 그대로 숫자가 아니라는 것을 표현하는 값이다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js">console.log(<span style="color:#c30">&#39;문자열 나누기 숫자&#39;</span> <span style="color:#555">/</span> <span style="color:#f60">2</span>); <span style="color:#09f;font-style:italic">//NaN
-</span></code></pre></div><br>
-<h3>◾ String</h3><a class="anchor" id="-string"></a>
-<p>2byte의 unsigned 정수값 들의 집합이다.
-<br>한번 생성되면 <code>immutable</code> 하다.</p>
-<h3>◾ symbol</h3><a class="anchor" id="-symbol"></a>
-<p>유일하고 immutable한 원시 값이기 때문에, <code>객체의 식별자(일종의 private한 key값)</code>에 사용된다.</p>
-<p><code>Symbol()</code> 메서드를 이용하여 고유한 심볼값을 반환받을 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js">Symbol(<span style="color:#c30">&#39;ex&#39;</span>) <span style="color:#555">===</span> Symbol(<span style="color:#c30">&#39;ex&#39;</span>); <span style="color:#09f;font-style:italic">//false
-</span><span style="color:#09f;font-style:italic"></span>Symbol(<span style="color:#c30">&#39;ex&#39;</span>) <span style="color:#555">==</span> Symbol(<span style="color:#c30">&#39;ex&#39;</span>); <span style="color:#09f;font-style:italic">//false
-</span><span style="color:#09f;font-style:italic"></span>
-<span style="color:#069;font-weight:bold">var</span> ex <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Symbol(); <span style="color:#09f;font-style:italic">//error
-</span><span style="color:#09f;font-style:italic"></span>Symbol(<span style="color:#f60">12</span>) <span style="color:#555">+</span> <span style="color:#f60">1</span>; <span style="color:#09f;font-style:italic">//error
-</span><span style="color:#09f;font-style:italic"></span>Symbol(<span style="color:#f60">12</span>) <span style="color:#555">+</span> <span style="color:#c30">&#39;1&#39;</span>; <span style="color:#09f;font-style:italic">//error
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">typeof</span> Symbol() <span style="color:#555">===</span> <span style="color:#c30">&#39;symbol&#39;</span>;
-</code></pre></div><h4>특징</h4><a class="anchor" id="특징"></a>
-<ul>
-<li>
-<p>비열거형 (for&hellip;in사용 불가)</p>
-</li>
-<li>
-<p>new 키워드를 지원하지 않는다.</p>
-</li>
-<li>
-<p>숫자나 문자열로 형변환 되지 않는다. (TypeError)</p>
-</li>
-<li>
-<p><code>Object.getOwnPropertyNames()</code> 메서드에서 심볼 속성은 반환되지 않는다.</p>
-<ul>
-<li>JSON.stringify()에서도 무시된다.</li>
-</ul>
-</li>
-<li>
-<p>Object.assign() 은 심볼포함 모든 프로퍼티를 복사한다.</p>
-</li>
-<li>
-<p>Symbol.for() 을 통해 <strong>전역 심볼</strong>을 만들 수 있다.</p>
-</li>
-</ul>
-<br>
-<h2>객체</h2><a class="anchor" id="객체"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> { name<span style="color:#555">:</span> <span style="color:#c30">&#39;hong&#39;</span> };
-<span style="color:#069;font-weight:bold">let</span> user2 <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#366">Object</span>();
-</code></pre></div><p><code>식별자</code>를 통해 참조할 수 있는 Refrerence Type 이다.</p>
-<p>여러 데이터들을 담을 수 있는 데이터타입으로 일종의 collection.
-<br><code>key</code>와 <code>value</code>를 쌍으로 갖는 데이터 타입으로 key에는 <code>문자열</code>만 올 수 있따.</p>
-<p>객체 안의 데이터를 변환하지 못하게 하는 속성이나 객체에 접근할 수 있게 하는 속성 두개의 속성이 있으며 둘 중 한개만 갖을 수 있다.
-<br></p>
-<h3>◾ 데이터 속성</h3><a class="anchor" id="-데이터-속성"></a>
-<p>객체 내 데이터를 수정하지 못하게 하는 속성</p>
-<ul>
-<li>
-<p><strong>[[Writable]]</strong> : 객체안의 값의 수정 권한을 지정 (true면 수정 가능)</p>
-</li>
-<li>
-<p><strong>[[Enumerable]]</strong> : 열거형으로 사용 가능한지 지정 (true면 열거형으로 for&hellip;in 사용가능)</p>
-</li>
-<li>
-<p><strong>[[Configurable]]</strong> : false라면 Configurable과 Enumerable을 수정이 불가능하다.</p>
-</li>
-</ul>
-<h3>◾ 접근자 속성</h3><a class="anchor" id="-접근자-속성"></a>
-<p>객체내 접근자 함수(get/set)를 기술하는 속성</p>
-<ul>
-<li>
-<p><strong>[[Get]]</strong> : 객체 내의 get 키워드를 통해 정의된 메서드를 호출하고 그 반환값을 가져온다.</p>
-</li>
-<li>
-<p><strong>[[Set]]</strong> : 할당된 값을 인자로 객체 내의 set 키워드를 통해 정의된 메서드를 호출</p>
-</li>
-<li>
-<p><strong>[[Enumerable]]</strong> : 열거형으로 사용 가능한지 지정</p>
-</li>
-<li>
-<p><strong>[[Configurable]]</strong> : flase라면 Configurable과 데이터 속성을 수정할 수 없다.</p>
-</li>
-</ul>
-<br>
-<h4>Primitive Wrapper Object (원시 래퍼 객체)</h4><a class="anchor" id="primitive-wrapper-object-원시-래퍼-객체"></a>
-<p>앞서 나열한 <code>원시값</code>이 메서드나 프로퍼티에 접근할 수 있게 해주는 특수 객체</p>
-<p>String, Number, Boolean, Symbol과 같다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> <span style="color:#c30">&#39;hong&#39;</span>;
-console.log(user.toUpperCase()); <span style="color:#09f;font-style:italic">//HONG
-</span></code></pre></div><p>원시값을 래퍼객체의 함수를 이용하여 접근하는 순간 래퍼 객체가 자동으로 만들어져 메서드를 이용하고 반환값을 반환한 후 래퍼 객체는 자동 소멸된다.</p>
-<h4>Array</h4><a class="anchor" id="array"></a>
-<p>순서가 있는 객체를 표현하고, key를 문자열이 아닌 정수를 갖을 수 있는 객체</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> [<span style="color:#c30">&#39;hong&#39;</span>, <span style="color:#c30">&#39;kim&#39;</span>];
-
-alert(user[<span style="color:#f60">1</span>]); <span style="color:#09f;font-style:italic">//kim
-</span></code></pre></div><p><code>대괄호 []</code>로 표현이 가능하고 key를 정수로 접근이 가능하다.</p>
-<h4>그 외 Set, Map 등이 객체에 속한다.</h4><a class="anchor" id="그-외-set-map-등이-객체에-속한다"></a>
+	<div class="content"><p>다른 언어의 함수와 같이 어떠한 행동을 정의하는 부분이다.</p>
+<p>다른점이라고 한다면 <code>행동</code>으로 취급하는 것이 아닌 이 행동또한 <code>값</code>으로 취급하여 함수를 복사도 가능하고 다른 변수에 할당도 가능하다.</p>
 <p><br><br></p>
-<h2>형변환</h2><a class="anchor" id="형변환"></a>
-<h3>◾ 명시적 형변환</h3><a class="anchor" id="-명시적-형변환"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">typeof</span> <span style="color:#366">String</span>(<span style="color:#f60">1</span>); <span style="color:#09f;font-style:italic">//&#34;string&#34;
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">typeof</span> <span style="color:#366">Number</span>(<span style="color:#c30">&#39;1&#39;</span>); <span style="color:#09f;font-style:italic">//&#34;number&#34;
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">typeof</span> <span style="color:#366">Boolean</span>(<span style="color:#f60">0</span>); <span style="color:#09f;font-style:italic">//&#34;boolean&#34;
+<h2>정의 방법</h2><a class="anchor" id="정의-방법"></a>
+<h3>◾ 선언식</h3><a class="anchor" id="-선언식"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">function</span> sayHello() {
+  console.log(<span style="color:#c30">&#39;hello&#39;</span>);
+}
+sayHello(); <span style="color:#09f;font-style:italic">//&#39;hello&#39;
 </span><span style="color:#09f;font-style:italic"></span>
-console.log(<span style="color:#366">Number</span>(<span style="color:#c30">&#39;12&#39;</span>)); <span style="color:#09f;font-style:italic">//12
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Number</span>(<span style="color:#c30">&#39;hello&#39;</span>)); <span style="color:#09f;font-style:italic">//NaN
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Number</span>(<span style="color:#069;font-weight:bold">undefined</span>)); <span style="color:#09f;font-style:italic">//0
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Number</span>(<span style="color:#069;font-weight:bold">NaN</span>)); <span style="color:#09f;font-style:italic">//0
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Number</span>(<span style="color:#069;font-weight:bold">null</span>)); <span style="color:#09f;font-style:italic">//0
+<span style="color:#069;font-weight:bold">let</span> func <span style="color:#555">=</span> sayHello(); <span style="color:#09f;font-style:italic">//변수에 할당 가능
+</span><span style="color:#09f;font-style:italic"></span>fucn(); <span style="color:#09f;font-style:italic">//&#39;hello&#39;
+</span></code></pre></div><p><code>function</code>키워드를 이용해 정의하며, JS는 자료형 타입을 명시하지 않기 때문에 반환이 존재하는 함수여도 자료형 타입을 명시안해주어도 된다.</p>
+<h3>◾ 표현식</h3><a class="anchor" id="-표현식"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> sayHello <span style="color:#555">=</span> fucntion(){
+    alert( <span style="color:#c30">&#34;hello&#34;</span>);
+}
+
+sayHello();
+</code></pre></div><p>익명함수를 이용하여 바로 변수에 할당하는 방식</p>
+<br>
+<h3>◾ 두 방법의 차이점</h3><a class="anchor" id="-두-방법의-차이점"></a>
+<h4>1. JS엔진이 함수를 생성하는 시기</h4><a class="anchor" id="1-js엔진이-함수를-생성하는-시기"></a>
+<p>함수 표현식은 함수가 실제로 실행될때 생성되고, 함수 선언문은 <code>호이스팅</code>에 의해 스크립트 실행전 생성되어 정의부분보다 일찍 호출할 수 있다. <br>여기서 생성된다는 것은 메모리에 할당된다는 의미이다.</p>
+
+<link rel="stylesheet" type="text/css" href='https://blog.gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices primary">
+	<p>호이스팅?
+<br>
+함수 실행전에 함수안에 필요한 변수들을 모두 찾아 최상단에 선언하는 것</p>
+
+</div>
+
+<br>
+<h4>2. 스코프</h4><a class="anchor" id="2-스코프"></a>
+<p>함수 선언식은 함수가 선언된 코드 블럭안에서만 유효하다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#09f;font-style:italic">//선언식
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">if</span> (<span style="color:#069;font-weight:bold">true</span>) {
+  <span style="color:#069;font-weight:bold">function</span> welcome() {
+    alert(<span style="color:#c30">&#39;안녕!&#39;</span>);
+  }
+}
+welcome(); <span style="color:#09f;font-style:italic">// Error: welcome is not defined
 </span><span style="color:#09f;font-style:italic"></span>
-console.log(<span style="color:#366">Boolean</span>(<span style="color:#f60">0</span>)); <span style="color:#09f;font-style:italic">//false
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Boolean</span>(<span style="color:#069;font-weight:bold">null</span>)); <span style="color:#09f;font-style:italic">//false
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Boolean</span>(<span style="color:#069;font-weight:bold">undefined</span>)); <span style="color:#09f;font-style:italic">//false
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Boolean</span>(<span style="color:#069;font-weight:bold">NaN</span>)); <span style="color:#09f;font-style:italic">//false
-</span></code></pre></div><p>형 변환을 명시적으로 해주는 것으로 예제와 같은 결과값을 갖는다.</p>
-<h3>◾ 자동 형변환</h3><a class="anchor" id="-자동-형변환"></a>
-<p>명시적으로 지시 하지 않아도 대부분 자동형변환을 통해 적절하게 변환된다.</p>
-<p>이를 이용해 String을 숫자로 쉽게 변환 시킬 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js">console.log(<span style="color:#069;font-weight:bold">typeof</span> <span style="color:#555">+</span><span style="color:#c30">&#39;11&#39;</span>); <span style="color:#09f;font-style:italic">//number
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#069;font-weight:bold">typeof</span> <span style="color:#f60">1</span> <span style="color:#555">*</span> <span style="color:#c30">&#39;11&#39;</span>); <span style="color:#09f;font-style:italic">//number
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#069;font-weight:bold">typeof</span> <span style="color:#c30">&#39;11&#39;</span> <span style="color:#555">/</span> <span style="color:#f60">1</span>); <span style="color:#09f;font-style:italic">//number
-</span></code></pre></div><p>연산을 수행해도 값이 변하지 않는 1을 곱하거나 나누는 방식이나 <code>+</code>연산자를 붙이는 방법으로 쉽게 변환이 가능하다.</p>
-<p>하지만, String이 모두 숫자가 아닌 문자가 섞여있다면 <code>NaN</code>을 반환하기 때문에 <code>parseInt()/parseFloat()</code>을 사용해 앞에서부터 읽을 수 있는 자리까지 변환 하는 방법이 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js">console.log(<span style="color:#555">+</span><span style="color:#c30">&#39;100a&#39;</span>); <span style="color:#09f;font-style:italic">//NaN
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">parseInt</span>(<span style="color:#c30">&#39;100px&#39;</span>)); <span style="color:#09f;font-style:italic">//100
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">parseInt</span>(<span style="color:#c30">&#39;12.3&#39;</span>)); <span style="color:#09f;font-style:italic">// 12, 정수 부분만 반환
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">parseFloat</span>(<span style="color:#c30">&#39;12.3.4&#39;</span>)); <span style="color:#09f;font-style:italic">// 12.3, 첫번째 점까지만 반환
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">parseInt</span>(<span style="color:#c30">&#39;a123&#39;</span>)); <span style="color:#09f;font-style:italic">// NaN
-</span></code></pre></div><p><br><br></p>
-<hr>
-<h2>Refernece</h2><a class="anchor" id="refernece"></a>
-<p><a href="https://ko.javascript.info/">https://ko.javascript.info/</a></p>
+<span style="color:#09f;font-style:italic">//표현식
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">let</span> welcome;
+<span style="color:#069;font-weight:bold">if</span>(<span style="color:#069;font-weight:bold">true</span>){
+    welcome <span style="color:#555">=</span> fuction(){
+        alert(<span style="color:#c30">&#34;안녕!&#34;</span>);
+    }
+}
+welcome(); <span style="color:#09f;font-style:italic">//안녕!
+</span></code></pre></div><br>
+<h3>◾ 호출 방식</h3><a class="anchor" id="-호출-방식"></a>
+<p>호출 방식에 따라 <code>this</code>가 어떤 객체에 바인딩 되는지 달라진다.</p>
+<h4>1. 함수 호출</h4><a class="anchor" id="1-함수-호출"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> boo <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">function</span> () {
+  console.log(<span style="color:#069;font-weight:bold">this</span>);
+};
+boo();
+</code></pre></div><p>함수, 내부 함수, 콜백 함수모두 기본적으로는 전역 객체에 <code>this</code>가 바인딩 된다.</p>
+<h4>2. 메소드 호출</h4><a class="anchor" id="2-메소드-호출"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">var</span> user <span style="color:#555">=</span> {
+  name <span style="color:#555">:</span> <span style="color:#c30">&#34;hong&#34;</span>,
+  sayHi<span style="color:#555">:</span> fucntion(){
+    console.log(<span style="color:#069;font-weight:bold">this</span>.name);
+  }
+}
+user.sayHi();
+</code></pre></div><p>객체의 프로퍼티 값으로 들어있는 메서드에서의 <code>this</code>는 해당 메소드를 갖고있는 객체에 바인딩된다.</p>
+<h4>3. 생성자 함수 호출</h4><a class="anchor" id="3-생성자-함수-호출"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">function</span> User(name) {
+  <span style="color:#069;font-weight:bold">this</span>.name <span style="color:#555">=</span> name;
+}
+<span style="color:#069;font-weight:bold">let</span> me <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> User(<span style="color:#c30">&#39;hong&#39;</span>);
+</code></pre></div><p>JS의 생성자 함수는 일반 함수에 <code>new</code>키워드를 붙여 생성하면 생성자 함수가 된다.</p>
+<p>new키워드를 통해 생성하면 함수 코드 실행전에 빈 객체를 만들어 이 객체에 <code>this</code>를 바인딩 시킨 후 코드를 동작시키고 결과 객체를 반환하게 된다. (암묵적으로 this반환)</p>
+<p>new키워드 없이 생성자함수를 호출하면 일반 함수를 호출하는 것과 다를 바가 없어 전역객체에 this가 바인딩 되고 <code>this</code>를 반환하지도 않는다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">if</span> (<span style="color:#555">!</span>(<span style="color:#069;font-weight:bold">this</span> <span style="color:#069;font-weight:bold">instanceof</span> arguments.callee)) {
+  <span style="color:#069;font-weight:bold">return</span> <span style="color:#069;font-weight:bold">new</span> arguments.callee(arg);
+}
+</code></pre></div><p>위와 같이 new없이 생성되는 것을 방지할 수 도 있다.</p>
+<h4>4. apply/call/bind 호출</h4><a class="anchor" id="4-applycallbind-호출"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js">func.apply(thisObj, [args]); <span style="color:#09f;font-style:italic">// args라는 유사 배열객체를 매개변수로 func를 호출 해 thisObj 에 this를 바인딩한다.
+</span><span style="color:#09f;font-style:italic"></span>func.call(thisObj, arg1, arg2, ...);
+func.bind(thisObj);
+</code></pre></div><p>함수를 통해 특정 객체에 this를 바인딩해 그 바인딩된 새로운 함수를 return하는 함수들이다.</p>
+<p><br><br></p>
+<h2>콜백 함수</h2><a class="anchor" id="콜백-함수"></a>
+<p>처음에 말한것과 같이 JS는 함수를 값으로 취급하기 때문에 함수의 매개변수로 함수도 대입이 가능한데, 이를 함수를 필요할때 다시 호출한다고 해서 <code>콜백 함수</code>라고 한다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">function</span> ask(question, yes, no) {
+  <span style="color:#069;font-weight:bold">if</span> (confirm(question)) yes();
+  <span style="color:#069;font-weight:bold">else</span> no();
+}
+
+ask(
+  <span style="color:#c30">&#39;동의하십니까?&#39;</span>,
+  <span style="color:#069;font-weight:bold">function</span> () {
+    alert(<span style="color:#c30">&#39;동의하셨습니다.&#39;</span>);
+  },
+  <span style="color:#069;font-weight:bold">function</span> () {
+    alert(<span style="color:#c30">&#39;취소 버튼을 누르셨습니다.&#39;</span>);
+  }
+);
+</code></pre></div><p><br><br></p>
+<h2>화살표 함수</h2><a class="anchor" id="화살표-함수"></a>
+<p>함수 표현식을 더 간결하게 생성이 가능한 방식이다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> sum <span style="color:#555">=</span> (a) =&gt; a <span style="color:#555">+</span> <span style="color:#f60">2</span>;
+</code></pre></div><p>java의 람다식과 비슷하게 인수가 하나면 괄호는 생략이 가능하고, 함수내용이 한줄이면 이도 생략이 가능하다.</p>
+<h3>◾ 특징</h3><a class="anchor" id="-특징"></a>
+<h4>자신의 this가 없다.</h4><a class="anchor" id="자신의-this가-없다"></a>
+<p><code>this</code>는 객체 자신을 가리키는 키워드로 화살표 함수는 <code>this</code>가 없어 외부에서 값을 찾는다.</p>
+<p>이렇게 this는 상위 스코프를 가리키기 때문에 <code>Lexical this</code>라고 한다.</p>
+<p>따라서 생성자 함수로 사용이 불가능하다. (인스턴스에 값을 할당해주지 못하기 때문에)
+<br>대신에 this를 항상 상위에서 찾기 때문에 <code>콜백 함수</code>, <code>내부 함수</code>로 사용하기 좋다.</p>
+<h4>매개변수</h4><a class="anchor" id="매개변수"></a>
+<p>함수에 정의함 매개변수보다 많이 넣어도 에러가 발생하지 않고 <code>arguments</code>라는 <code>유사 배열 객체</code>가 존재해 모든 인수에 접근 가능하다.</p>
+<h4>arguments가 없다.</h4><a class="anchor" id="arguments가-없다"></a>
+<p>자기 자신의 this가 없기 때문에 이도 상위 스코프의 arguments를 참조한다.</p>
 </div>
 
 	
@@ -1186,10 +1147,10 @@ console.log(<span style="color:#366">Boolean</span>(<span style="color:#f60">0</
 
 	 
 	<div class="chevrons ">
-		<a class="next" href="/javascript/operator/" title="연산자" style="margin-right: 0px;">
+		<a class="next" href="/data-structure/" title="자료구조 ( Data Structure )" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>연산자</label>
+                <label>자료구조 ( Data Structure )</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1211,34 +1172,25 @@ console.log(<span style="color:#366">Boolean</span>(<span style="color:#f60">0</
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/javascript/datatype/">DataType과 변수</a></li>
+            <li><a href="/javascript/function/">Function</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#기본-자료형--primitive-">기본 자료형 ( Primitive )</a>
+    <li><a href="#정의-방법">정의 방법</a>
       <ul>
-        <li><a href="#-boolean">◾ boolean</a></li>
-        <li><a href="#-null">◾ null</a></li>
-        <li><a href="#-undefined">◾ undefined</a></li>
-        <li><a href="#-number">◾ number</a></li>
-        <li><a href="#-string">◾ String</a></li>
-        <li><a href="#-symbol">◾ symbol</a></li>
+        <li><a href="#-선언식">◾ 선언식</a></li>
+        <li><a href="#-표현식">◾ 표현식</a></li>
+        <li><a href="#-두-방법의-차이점">◾ 두 방법의 차이점</a></li>
+        <li><a href="#-호출-방식">◾ 호출 방식</a></li>
       </ul>
     </li>
-    <li><a href="#객체">객체</a>
+    <li><a href="#콜백-함수">콜백 함수</a></li>
+    <li><a href="#화살표-함수">화살표 함수</a>
       <ul>
-        <li><a href="#-데이터-속성">◾ 데이터 속성</a></li>
-        <li><a href="#-접근자-속성">◾ 접근자 속성</a></li>
+        <li><a href="#-특징">◾ 특징</a></li>
       </ul>
     </li>
-    <li><a href="#형변환">형변환</a>
-      <ul>
-        <li><a href="#-명시적-형변환">◾ 명시적 형변환</a></li>
-        <li><a href="#-자동-형변환">◾ 자동 형변환</a></li>
-      </ul>
-    </li>
-    <li><a href="#refernece">Refernece</a></li>
   </ul>
 </nav>
 </div>
@@ -1255,14 +1207,14 @@ console.log(<span style="color:#366">Boolean</span>(<span style="color:#f60">0</
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 28 January 2021
+		          Last update on 02 February 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://blog.gowoonsori.site%2fjavascript%2fdatatype%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://blog.gowoonsori.site%2fjavascript%2ffunction%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>

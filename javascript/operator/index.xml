@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>연산자 on Gowoonsori&#39;s TechBlog</title>
-    <link>https://gowoonsori.site/javascript/operator/</link>
+    <link>https://blog.gowoonsori.site/javascript/operator/</link>
     <description>Recent content in 연산자 on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jan 2021 19:31:09 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/javascript/operator/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Jan 2021 19:31:09 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/javascript/operator/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

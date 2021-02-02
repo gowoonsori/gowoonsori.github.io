@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>자료구조 ( Data Structure ) on Gowoonsori&#39;s TechBlog</title>
-    <link>https://gowoonsori.site/data-structure/</link>
+    <link>https://blog.gowoonsori.site/data-structure/</link>
     <description>Recent content in 자료구조 ( Data Structure ) on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Sep 2020 01:28:37 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/data-structure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 01:28:37 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/data-structure/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

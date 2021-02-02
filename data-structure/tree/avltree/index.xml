@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AVL Tree on Gowoonsori&#39;s TechBlog</title>
-    <link>https://gowoonsori.site/data-structure/tree/avltree/</link>
+    <link>https://blog.gowoonsori.site/data-structure/tree/avltree/</link>
     <description>Recent content in AVL Tree on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Oct 2020 17:53:52 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/data-structure/tree/avltree/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Oct 2020 17:53:52 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/data-structure/tree/avltree/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JVM과 자바 실행 on Gowoonsori&#39;s TechBlog</title>
-    <link>https://gowoonsori.site/java/jvm/</link>
+    <link>https://blog.gowoonsori.site/java/jvm/</link>
     <description>Recent content in JVM과 자바 실행 on Gowoonsori&#39;s TechBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jan 2021 11:03:39 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/java/jvm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jan 2021 11:03:39 +0900</lastBuildDate><atom:link href="https://blog.gowoonsori.site/java/jvm/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
