@@ -4,28 +4,28 @@
 <html>
   <head>
     <title>
-	Linux :: Gowoonsori&#39;s TechBlog
+	객체 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-11T01:48:34 KST">
+<meta name="revised" content="2021-02-11T01:48:33 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>Linux :: Gowoonsori&#39;s TechBlog</title>
+<title>객체 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="Linux에 관한 개발기, 공부한 내용">
+<meta name="description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="Linux" />
-<meta property="og:description" content="Linux에 관한 개발기, 공부한 내용" />
+<meta property="og:title" content="객체" />
+<meta property="og:description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/linux/" />
+<meta property="og:url" content="https://gowoonsori.site/javascript/object/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2020-12-11T00:43:18+09:00" />
+<meta property="og:updated_time" content="2021-02-04T14:24:10+09:00" />
 
 
 
@@ -122,7 +122,7 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/linux/"
+  <body data-url="/javascript/object/"
 
   class="hidebreadcrumb ">
 
@@ -389,12 +389,13 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/javascript/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/javascript/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
           
       
@@ -510,7 +511,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/javascript/object/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/javascript/object/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -709,13 +710,12 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/linux/" class="dd-item parent active haschildren
+    <li data-nav-id="https://gowoonsori.site/linux/" class="dd-item haschildren
         item_level_$level
         ">
 
       
-      
-          <i class="fas fa-chevron-down ddexp"></i>
+      <i class="fas fa-chevron-right ddexp"></i>
       
           
       
@@ -1001,7 +1001,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>Linux</h1>
+			<h1>객체</h1>
         
 
 		
@@ -1021,45 +1021,193 @@ if (!doNotTrack) {
   			Jump to Section
   			<i style=";" class="fas fa-chevron-right"></i>
 		</span>
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#생성-방법">생성 방법</a>
+      <ul>
+        <li><a href="#-new-키워드-이용-사용자-정의-객체">◾ new 키워드 이용 (사용자 정의 객체)</a></li>
+        <li><a href="#-리터럴-방식">◾ 리터럴 방식</a></li>
+      </ul>
+    </li>
+    <li><a href="#특징">특징</a>
+      <ul>
+        <li><a href="#-참조에-의해-저장-복사-된다">◾ 참조에 의해 저장, 복사 된다</a></li>
+        <li><a href="#-프로퍼티의-key로-복수-단어도-가능하다">◾ 프로퍼티의 key로 복수 단어도 가능하다</a></li>
+        <li><a href="#-프로퍼티-key로-외부변수도-가능하다">◾ 프로퍼티 key로 외부변수도 가능하다</a></li>
+        <li><a href="#-프로퍼티-value로-함수도-가능하다">◾ 프로퍼티 value로 함수도 가능하다.</a></li>
+        <li><a href="#-const-객체더라도-내부의-프로퍼티-수정은-가능하다">◾ const 객체더라도 내부의 프로퍼티 수정은 가능하다</a></li>
+        <li><a href="#-존재하지-않는-프로퍼티에-접근해도-에러를-발생-시키지-않는다">◾ 존재하지 않는 프로퍼티에 접근해도 에러를 발생 시키지 않는다</a></li>
+        <li><a href="#-프로퍼티-key가-정수라면-자동-정렬-된다">◾ 프로퍼티 key가 정수라면 자동 정렬 된다</a></li>
+        <li><a href="#-논리-평가시-참을-반환한다">◾ 논리 평가시 참을 반환한다</a></li>
+      </ul>
+    </li>
+    <li><a href="#복제">복제</a>
+      <ul>
+        <li><a href="#-for--in">◾ for &hellip; in</a></li>
+        <li><a href="#-objectassign">◾ Object.assign()</a></li>
+      </ul>
+    </li>
+    <li><a href="#기타-메서드">기타 메서드</a>
+      <ul>
+        <li><a href="#-objectfromentriesiterable">◾ Object.fromEntries(iterable)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 	</div>
 	
 	
 
-	<div class="content">
+	<div class="content"><p><code>key : value</code> 의 쌍의 형태의 값을 갖는 자료형으로 key에는 문자/심볼형, value에는 모든 자료형이 올 수 있다.
+<br>이 때, 이 한 쌍을 <code>프로퍼티(property)</code>라고 부른다.</p>
+<br>
+<br>
+<h2>생성 방법</h2><a class="anchor" id="생성-방법"></a>
+<h3>◾ new 키워드 이용 (사용자 정의 객체)</h3><a class="anchor" id="-new-키워드-이용-사용자-정의-객체"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#366">Object</span>();
+</code></pre></div><p>생성자 함수를 이용한 방식으로 생성자 함수 앞에 <code>new</code>키워드를 통해 생성이 가능하다.</p>
+<h3>◾ 리터럴 방식</h3><a class="anchor" id="-리터럴-방식"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> {};
+</code></pre></div><p>중괄호 <code>{}</code>를 이용하여 생성해줄 수 도 있다.</p>
+<p><br><br></p>
+<h2>특징</h2><a class="anchor" id="특징"></a>
+<h3>◾ 참조에 의해 저장, 복사 된다</h3><a class="anchor" id="-참조에-의해-저장-복사-된다"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> admin <span style="color:#555">=</span> { name<span style="color:#555">:</span> <span style="color:#c30">&#39;kim&#39;</span> };
+<span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> admin;
 
+admin.name <span style="color:#555">=</span> <span style="color:#c30">&#39;hong&#39;</span>;
+console.log(user.name); <span style="color:#09f;font-style:italic">//&#39;hong&#39;
+</span></code></pre></div><br>
+<h3>◾ 프로퍼티의 key로 복수 단어도 가능하다</h3><a class="anchor" id="-프로퍼티의-key로-복수-단어도-가능하다"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> {
+  <span style="color:#c30">&#39;first name&#39;</span><span style="color:#555">:</span> <span style="color:#c30">&#39;gildong&#39;</span>,
+};
+</code></pre></div><p>key로 공백이 포함된 복수 단어도 가능한데 <code>따옴표</code>로 묶어줘야 사용이 가능하다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js">user.<span style="color:#c30">&#39;first name&#39;</span>; <span style="color:#09f;font-style:italic">// error
+</span><span style="color:#09f;font-style:italic"></span>user[<span style="color:#c30">&#39;first name&#39;</span>]; <span style="color:#09f;font-style:italic">// &#39;gildong&#39;
+</span></code></pre></div><p>만약, 복수 단어의 key라면 `점 표기법으로 값을 읽을 수 없다.</p>
+<br>
+<h3>◾ 프로퍼티 key로 외부변수도 가능하다</h3><a class="anchor" id="-프로퍼티-key로-외부변수도-가능하다"></a>
+<p>객체를 생성할때 객체 리터럴 내에서 외부변수를 <code>대괄호</code>로 묶어 사용할 수 있는데
+이런 프로퍼티를 계산된 프로퍼티라고 한다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> key <span style="color:#555">=</span> <span style="color:#c30">&#39;name&#39;</span>;
 
- 
+<span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> {
+  [key]<span style="color:#555">:</span> <span style="color:#c30">&#39;hong&#39;</span>,
+};
+</code></pre></div><br>
+<h3>◾ 프로퍼티 value로 함수도 가능하다.</h3><a class="anchor" id="-프로퍼티-value로-함수도-가능하다"></a>
+<h4>1. 객체 외부에서 할당</h4><a class="anchor" id="1-객체-외부에서-할당"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> {};
+<span style="color:#069;font-weight:bold">function</span> sayHello() {
+  console.log(<span style="color:#c30">&#39;Hello&#39;</span>);
+}
 
+user.sayHi <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">function</span> () {
+  console.log(<span style="color:#c30">&#39;Hi&#39;</span>);
+};
+user.sayHello <span style="color:#555">=</span> sayHello;
+</code></pre></div><h4>2. 객체 내부에서 선언</h4><a class="anchor" id="2-객체-내부에서-선언"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> {
+     name <span style="color:#555">:</span> <span style="color:#c30">&#34;hong&#34;</span>
+     sayHi <span style="color:#555">:</span> <span style="color:#069;font-weight:bold">function</span>{
+        console.log(<span style="color:#c30">&#39;Hi&#39;</span>);
+     },
+     sayHello(){
+       console.log(<span style="color:#c30">&#39;Hello&#39;</span>);
+     }
+   };
+</code></pre></div><p>객체 내부에서 함수를 선언할 때 ES6부터는 <code>key</code>와 <code>function</code>키워드를 생략이 가능하다.</p>
+<br>
+<h3>◾ const 객체더라도 내부의 프로퍼티 수정은 가능하다</h3><a class="anchor" id="-const-객체더라도-내부의-프로퍼티-수정은-가능하다"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">const</span> user <span style="color:#555">=</span> {
+  <span style="color:#c30">&#39;first name&#39;</span><span style="color:#555">:</span> <span style="color:#c30">&#39;gildong&#39;</span>,
+};
+user <span style="color:#555">=</span> {}; <span style="color:#09f;font-style:italic">//error
+</span><span style="color:#09f;font-style:italic"></span>user[<span style="color:#c30">&#39;last name&#39;</span>] <span style="color:#555">=</span> <span style="color:#c30">&#39;hong&#39;</span>; <span style="color:#09f;font-style:italic">//success
+</span></code></pre></div><p>user라는 변수가 const인 것이지 user가 참조하고 있는 객체가 불변이 아니기 때문에 객체 내부는 수정이 가능하다.</p>
+<br>
+<h3>◾ 존재하지 않는 프로퍼티에 접근해도 에러를 발생 시키지 않는다</h3><a class="anchor" id="-존재하지-않는-프로퍼티에-접근해도-에러를-발생-시키지-않는다"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> {};
+console.log(user.name <span style="color:#555">===</span> <span style="color:#069;font-weight:bold">undefined</span>); <span style="color:#09f;font-style:italic">//true
+</span></code></pre></div><p>없는 프로퍼티에 접근할때 에러가 아닌 <code>undefined</code>를 반환 한다.</p>
+<br>
+<h3>◾ 프로퍼티 key가 정수라면 자동 정렬 된다</h3><a class="anchor" id="-프로퍼티-key가-정수라면-자동-정렬-된다"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> foo <span style="color:#555">=</span> {
+  <span style="color:#f60">3</span><span style="color:#555">:</span> <span style="color:#f60">3</span>,
+  a<span style="color:#555">:</span> <span style="color:#c30">&#39;a&#39;</span>,
+  <span style="color:#f60">1</span><span style="color:#555">:</span> <span style="color:#f60">1</span>,
+};
+console.log(foo); <span style="color:#09f;font-style:italic">// {1: 1, 3: 3, a: &#39;a&#34;}
+</span></code></pre></div><h3>◾ 논리 평가시 참을 반환한다</h3><a class="anchor" id="-논리-평가시-참을-반환한다"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> {};
+<span style="color:#069;font-weight:bold">if</span> (user) console.log(<span style="color:#c30">&#39;yes&#39;</span>); <span style="color:#09f;font-style:italic">//yes
+</span></code></pre></div><p><br><br></p>
+<h2>복제</h2><a class="anchor" id="복제"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> admin <span style="color:#555">=</span> { name<span style="color:#555">:</span> <span style="color:#c30">&#39;admin&#39;</span> };
+<span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> admin;
+</code></pre></div><p>객체는 참조타입이기 때문에 위와 같이 복제를 하려고 하면 두 변수모두 같은 객체를 가리키게 된다.</p>
+<p>새로운 객체변수에 참조가 아닌 값을 그대로 복제하고 싶다면 <code>for문</code>을 이용하여 프로퍼티를 복제하거나 <code>Object.assign()</code>함수를 이용하여 복제할 수 있다.</p>
+<h3>◾ for &hellip; in</h3><a class="anchor" id="-for--in"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">for</span> (<span style="color:#069;font-weight:bold">let</span> key <span style="color:#069;font-weight:bold">in</span> admin) {
+  user[key] <span style="color:#555">=</span> admin[key];
+}
+</code></pre></div><p><code>for ... in </code> 구문은 해당 객체내에 있는 <code>모든 키</code>를 순회하는 반복문이다.</p>
+<br>
+<h3>◾ Object.assign()</h3><a class="anchor" id="-objectassign"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#366">Object</span>.assgin(target, source);
 
+<span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> <span style="color:#366">Object</span>.assgin({}, admin);
+</code></pre></div><p>source의 객체를 target의 객체로 복사하는 함수로써, target의 프로퍼티 key 중에서 source의 프로퍼티 key와 중복되는 것이 있으면 source의 프로퍼티 값으로 덮어씌운채로 복사가 된다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> a <span style="color:#555">=</span> { a<span style="color:#555">:</span> <span style="color:#c30">&#39;a&#39;</span> };
+<span style="color:#069;font-weight:bold">let</span> b <span style="color:#555">=</span> {};
+<span style="color:#069;font-weight:bold">let</span> c <span style="color:#555">=</span> <span style="color:#366">Object</span>.assign(b, a);
 
-<ul class="page">
-    
-        <div class = "content-page">
-            <a href="/linux/packet_capture/" >packet capture program 만들기</a>
-            <p>Linux환경에서 C를 이용해 raw socket을 이용한 tcpdump의 interface를 모방하는 패킷 캡쳐 프로그램 작성하는 것을 목표로 시작했습니다.
-캡쳐할 정보는 IPv ...</p>
-        </div>
-</ul>   
+console.log(b <span style="color:#555">===</span> c); <span style="color:#09f;font-style:italic">//true
+</span></code></pre></div><p>반환 타입으로 복사된 target객체를 반환한다.</p>
+<br>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> {
+  name<span style="color:#555">:</span> <span style="color:#c30">&#39;hong&#39;</span>
+  likes<span style="color:#555">:</span> {
+    fruit<span style="color:#555">:</span> <span style="color:#c30">&#39;apple&#39;</span>,
+    baverage<span style="color:#555">:</span> <span style="color:#c30">&#39;coffe&#39;</span>,
+  },
+};
 
-    
-    
+<span style="color:#069;font-weight:bold">let</span> clone <span style="color:#555">=</span> Objcect.assgin({}, user);
+clone.likes.fruit <span style="color:#555">=</span> <span style="color:#c30">&#39;banana&#39;</span>;
 
-
-
+console.log(user.likes.fruit); <span style="color:#09f;font-style:italic">//banana
+</span><span style="color:#09f;font-style:italic"></span>console.log(user.likes <span style="color:#555">===</span> clone.likes); <span style="color:#09f;font-style:italic">// true
+</span></code></pre></div><p><code>Object.assign</code>메서드는 열거할 수 있는 프로퍼티만 복사가 되며, target 객체의 <code>[[Get]]</code>, <code>[[Set]]</code>을 이용하여 프로퍼티의 값을 복사하기 때문에, 객체내의 프로퍼티 값이 객체를 가지고 있는 <code>이중 객체</code>라면 프로퍼티 값으로 참조형 값을 복사하게 되어 완전한 복사가 되지 않는다.</p>
+<p>이런 객체안의 객체도 복사하는 방법을 <code>깊은 복사(deep cloning)</code>이라고 하며, 깊은 복사를 하는 방법에는 프로퍼티 값을 for문을 통해 한번 더 검사하거나, <code>lodash</code>라이브러리의 <code>_.cloneDeep(obj)</code>를 이용하거나, <code>JSON.parse(JSON.stringify(obj))</code>와 같이 객체를 json형태로 바꾸었다가 다시 객체로 바꾸는 방법이 존재한다.</p>
+<p><br><br></p>
+<h2>기타 메서드</h2><a class="anchor" id="기타-메서드"></a>
+<h3>◾ Object.fromEntries(iterable)</h3><a class="anchor" id="-objectfromentriesiterable"></a>
+<p>Array, Map, Set과 같은 반복 가능한 객체를 객체로 바꿔주는 메서드</p>
 </div>
 
 	
+    <div style="margin-top:200px;">
+		<script src="https://utteranc.es/client.js"
+				repo="gowoonsori/blog-comments"
+				issue-term="pathname"
+				theme="github-light"
+				crossorigin="anonymous"
+				async>
+		</script>
+	</div>
+    
 
 	
 
 
 	 
 	<div class="chevrons ">
-		<a class="next" href="/linux/packet_capture/" title="packet capture program 만들기" style="margin-right: 0px;">
+		<a class="next" href="/javascript/function/" title="함수" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>packet capture program 만들기</label>
+                <label>함수</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1081,10 +1229,42 @@ if (!doNotTrack) {
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/linux/">Linux</a></li>
+            <li><a href="/javascript/object/">객체</a></li>
         </ul>
     </nav>
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#생성-방법">생성 방법</a>
+      <ul>
+        <li><a href="#-new-키워드-이용-사용자-정의-객체">◾ new 키워드 이용 (사용자 정의 객체)</a></li>
+        <li><a href="#-리터럴-방식">◾ 리터럴 방식</a></li>
+      </ul>
+    </li>
+    <li><a href="#특징">특징</a>
+      <ul>
+        <li><a href="#-참조에-의해-저장-복사-된다">◾ 참조에 의해 저장, 복사 된다</a></li>
+        <li><a href="#-프로퍼티의-key로-복수-단어도-가능하다">◾ 프로퍼티의 key로 복수 단어도 가능하다</a></li>
+        <li><a href="#-프로퍼티-key로-외부변수도-가능하다">◾ 프로퍼티 key로 외부변수도 가능하다</a></li>
+        <li><a href="#-프로퍼티-value로-함수도-가능하다">◾ 프로퍼티 value로 함수도 가능하다.</a></li>
+        <li><a href="#-const-객체더라도-내부의-프로퍼티-수정은-가능하다">◾ const 객체더라도 내부의 프로퍼티 수정은 가능하다</a></li>
+        <li><a href="#-존재하지-않는-프로퍼티에-접근해도-에러를-발생-시키지-않는다">◾ 존재하지 않는 프로퍼티에 접근해도 에러를 발생 시키지 않는다</a></li>
+        <li><a href="#-프로퍼티-key가-정수라면-자동-정렬-된다">◾ 프로퍼티 key가 정수라면 자동 정렬 된다</a></li>
+        <li><a href="#-논리-평가시-참을-반환한다">◾ 논리 평가시 참을 반환한다</a></li>
+      </ul>
+    </li>
+    <li><a href="#복제">복제</a>
+      <ul>
+        <li><a href="#-for--in">◾ for &hellip; in</a></li>
+        <li><a href="#-objectassign">◾ Object.assign()</a></li>
+      </ul>
+    </li>
+    <li><a href="#기타-메서드">기타 메서드</a>
+      <ul>
+        <li><a href="#-objectfromentriesiterable">◾ Object.fromEntries(iterable)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </div>
 	
 		
@@ -1099,14 +1279,14 @@ if (!doNotTrack) {
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 11 December 2020
+		          Last update on 04 February 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2flinux%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fjavascript%2fobject%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>

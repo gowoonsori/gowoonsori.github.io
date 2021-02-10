@@ -1,0 +1,1972 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+	I/O :: Gowoonsori&#39;s TechBlog
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2021-02-11T01:48:33 KST">
+<meta name="robots" content="index,follow" /> 
+<meta name="googlebot" content="index,follow" />
+
+<title>I/O :: Gowoonsori&#39;s TechBlog</title>
+
+<meta name="author" content="gowoonsori">
+
+<meta name="description" content="자바의 Input과 Ouput에 대해 학습합니다.">
+<link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
+<link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
+
+<meta property="og:title" content="I/O" />
+<meta property="og:description" content="자바의 Input과 Ouput에 대해 학습합니다." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://gowoonsori.site/java/io/" />
+<meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
+<meta property="og:updated_time" content="2021-02-09T22:05:09+09:00" />
+
+
+
+
+
+
+<link rel="stylesheet" href='https://gowoonsori.site/sass/layout.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.main.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.menu.css'>
+<link href='/vendor/FontAwesome/fontawesome-free-5.14.0-web/css/all.min.css' rel="stylesheet"> 
+<link rel="stylesheet" href='/css/docport.css'>
+
+
+
+
+
+<script src='/vendor/jquery/jquery-3.5.1.min.js'></script>
+<script src='/js/docport.js'></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/gowoonsori.site";
+</script>
+<script>
+      (function(j,en,ni,fer) {
+          j['dmndata']=[];j['jenniferFront']=function(args){window.dmndata.push(args)};
+          j['dmnaid']=fer;j['dmnatime']=new Date();j['dmnanocookie']=false;j['dmnajennifer']='JENNIFER_FRONT@INTG';
+          var b=Math.floor(new Date().getTime() / 60000) * 60000;var a=en.createElement(ni);
+          a.src='https://d-collect.jennifersoft.com/'+fer+'/demian.js?'+b;a.async=true;
+          en.getElementsByTagName(ni)[0].parentNode.appendChild(a);
+      }(window,document,'script','b13ba63e'));
+  </script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-178493752-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+    
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script> 
+    
+  <style type="text/css">
+    #debug{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 3.5rem;
+    margin-bottom: .35rem;
+    padding: 0 2rem;
+    position: fixed;
+    left: 0;      right: 0;     top: 0;
+   
+    top:0px;
+    
+    min-height: 150px;
+
+    background-color: white;
+    border: 3px solid red;
+    z-index: 10000 ;
+    word-wrap: all;
+    overflow: auto;
+  }
+  </style>
+  </head>
+
+  <body data-url="/java/io/"
+
+  class="hidebreadcrumb ">
+
+ 
+
+
+    
+    
+    <header style="">
+        <div>
+    
+    <div class="burger ">
+        <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">&#9776;</a>
+    </div>
+    
+    <img src="/images/favicon.png" style="margin-top:3px; width: 20px; height: 20px;">
+    <div>
+	
+		
+	    	<a class='baselink' href='https://gowoonsori.site'>Gowoonsori's TechBlog</a>
+	  	
+	</div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/gowoonsori"  rel="noopener">
+                  Github
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://www.facebook.com/gowoonsori97"  rel="noopener">
+                  FaceBook
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="mailto:gowoonsori97@gmail.com"  rel="noopener">
+                  Gmail
+                </a>
+            </li>
+    </nav>
+
+</div>
+    </header>
+    
+
+    <article>
+      
+      <aside class="">
+        
+<div class="search">
+	<div class="searchbox">
+	  <input data-search-input id="search-by" type="text" placeholder="Type to search...">
+	</div>
+	<script type="text/javascript" src="/vendor/lunr/lunr.min.js"></script>
+	<script type="text/javascript" src="/vendor/auto-complete/auto-complete.js"></script>
+	<link href="/vendor/auto-complete/auto-complete.css" rel="stylesheet">
+	<script type="text/javascript">
+	  
+	      var baseurl = "https:\/\/gowoonsori.site";
+	  
+	</script>
+	<script type="text/javascript" src="/js/search.js"></script>
+</div>
+	
+		
+	    	
+	    
+	<div id="close_menu">
+  <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">
+      <i class="fa fa-lg fa-times"></i>
+  </a>
+</div>
+
+<ul class="menu">
+<div id="categories" style="">
+  <p>Categories</p>
+</div>
+
+    <li data-nav-id="https://gowoonsori.site/java/" class="dd-item parent haschildren
+        item_level_$level
+        ">
+
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/java/">Java</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/jvm/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/jvm/">JVM과 자바 실행</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/datatype/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/datatype/">DataType과 변수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/operator/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/operator/">연산자</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/controlstatement/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/controlstatement/">제어문</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/class/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/class/">클래스 (Class)</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/junit5/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/junit5/">Junit5</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/thread/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/thread/">멀티 스레딩</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/enum/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/enum/">Enum</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/annotation/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/annotation/">어노테이션 (Annotation)</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/io/" class="dd-item parent active
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/io/">I/O</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/javascript/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/javascript/">JavaScript</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/react-project/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/javascript/react-project/">🌼 포인트 적립을 위한 웹 제작기</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/react-project/1/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/react-project/1/">1. 프로젝트 설계와 환경 구성</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/react-project/2/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/react-project/2/">2. front 개발환경 셋팅과 로그인 창 구현</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/react-project/3/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/react-project/3/">3. atom사용과 포인트 적립 페이지 만들기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/datatype/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/datatype/">DataType과 변수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/operator/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/operator/">연산자</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/object/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/object/">객체</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/function/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/function/">함수</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/data-structure/">자료구조 ( Data Structure )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/data-structure/tree/">트리</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/redblacktree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/redblacktree/">레드 블랙 트리 (Red Black Tree)</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/avltree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/avltree/">AVL Tree</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/algorithm/">알고리즘 ( Algorithm )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/algorithm/sorting-algorithm/">Sorting Algorithm</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/counting-sort/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/sorting-algorithm/counting-sort/">Counting Sort ( 계수 정렬 )</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/books/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/books/">Books</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/books/cleancode/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/books/cleancode/">Clean Code</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/linux/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/linux/">Linux</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/packet_capture/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/packet_capture/">packet capture program 만들기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/wsl2/">wsl2</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/port-forwarding/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/wsl2/port-forwarding/">WSL2 포트포워딩과 window에서 workbench로 접속하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/wsl2-mysql/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/wsl2/wsl2-mysql/">WSL2에서 Mysql 자동실행 설정하기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/home/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/home/">회고</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/start-blog/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/start-blog/">블로그 첫 시작 👋</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/2020-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/2020-retrospect/">2020년을 보내며</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/home/2month-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/home/2month-retrospect/">2020년 11월 회고</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/share/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/share/">기타 후기들</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/start-hugo/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/share/start-hugo/">Hugo와 Github page로 블로그 구축</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/start-hugo/custom/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/start-hugo/custom/">⭐ Hugo theme Custom 하기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/kpu_sw_competition/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/share/kpu_sw_competition/">KPU S/W 경진대회 예선 후기</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/kpu_sw_competition/final/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/kpu_sw_competition/final/">KPU S/W 경진대회 본선 후기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    
+
+
+
+
+</ul>
+	
+		
+	    	<center>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/gowoonsori" aria-label="Follow @gowoonsori on GitHub">Follow@gowoonsori</a>
+<!-- Place this tag where you want the button to render. -->
+</center>
+<!-- <center style='margin-top:20px'>
+    <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgowoonsori.site&count_bg=%23426EAE&title_bg=%23555555&icon=&icon_color=%238E4F4F&title=%F0%9F%93%8C+Today+%2F+Total++&edge_flat=false"/></a>
+</center> -->
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+	    
+	
+      </aside>
+      
+
+      <section class="page ">
+      
+	
+		    
+    
+    
+
+    
+	
+		
+        
+		
+		
+		
+		
+		
+		
+
+		
+			<h1>I/O</h1>
+        
+
+		
+										
+		
+
+		
+
+
+	
+	
+
+	
+	
+	<div class="jump-to-section">
+		<span onclick="$h = $(this);$h.next('nav').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('nav').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+  			Jump to Section
+  			<i style=";" class="fas fa-chevron-right"></i>
+		</span>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#스트림--버퍼--채널-기반의-io">스트림 / 버퍼 / 채널 기반의 I/O</a>
+      <ul>
+        <li><a href="#-스트림">◾ 스트림</a></li>
+        <li><a href="#-버퍼">◾ 버퍼</a></li>
+        <li><a href="#-채널">◾ 채널</a></li>
+      </ul>
+    </li>
+    <li><a href="#inputstream과-outputstream">InputStream과 OutputStream</a>
+      <ul>
+        <li><a href="#-inputstream">◾ InputStream</a></li>
+        <li><a href="#-outputstream">◾ OutputStream</a></li>
+      </ul>
+    </li>
+    <li><a href="#byte와-character-스트림">Byte와 Character 스트림</a>
+      <ul>
+        <li><a href="#-byte-stream">◾ Byte Stream</a></li>
+        <li><a href="#-char-stream">◾ Char Stream</a></li>
+      </ul>
+    </li>
+    <li><a href="#표준-스트림-systemin-systemout-systemerr">표준 스트림 (System.in, System.out, System.err)</a>
+      <ul>
+        <li><a href="#-키보드-문자-입력-방법">◾ 키보드 문자 입력 방법</a></li>
+      </ul>
+    </li>
+    <li><a href="#파일-읽고-쓰기">파일 읽고 쓰기</a>
+      <ul>
+        <li><a href="#-바이트-기반-스트림-filestream">◾ 바이트 기반 스트림 (FileStream)</a></li>
+        <li><a href="#-문자기반-스트림">◾ 문자기반 스트림</a></li>
+        <li><a href="#-차이점">◾ 차이점</a></li>
+      </ul>
+    </li>
+    <li><a href="#인코딩">인코딩</a>
+      <ul>
+        <li><a href="#-inputstreamreader">◾ InputStreamReader</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+	
+	
+
+	<div class="content"><p>컴퓨터의 5대 기능인 입력/출력/연산/저장/제어 중 입력(Input)과 출력(Ouput)을 줄여 I/O라고 말한다.</p>
+<p><br><br></p>
+<h2>스트림 / 버퍼 / 채널 기반의 I/O</h2><a class="anchor" id="스트림--버퍼--채널-기반의-io"></a>
+<h3>◾ 스트림</h3><a class="anchor" id="-스트림"></a>
+<p>입출력을 도와주는 모듈로써 Stream이라는 단어 그대로 <code>흐름</code>을 의미하며, 한 방향으로만 진행하는 <code>단방향통신</code>이다.</p>
+<h3>◾ 버퍼</h3><a class="anchor" id="-버퍼"></a>
+<p>일종의 데이터 공간으로 메모리간, 컴퓨터와 사용자간의 속도차이로 생기는 <code>병목현상</code>을 줄이기 위한 공간</p>
+<p>데이터를 쌓아두고 한번에 찾을 수 있는 데이터 공간으로 이를 이용하여 데이터를 입출력하는 방식으로 속도향상을 꾀할 수 있다.</p>
+<h3>◾ 채널</h3><a class="anchor" id="-채널"></a>
+<p>스트림과 다르게 <code>양방향 통신</code>이 가능한 방법으로 non-blocking/비동기 방식 모두 지원한다.</p>
+<p>버퍼를 통해 데이터를 읽고 쓴다.</p>
+<h4>Selector</h4><a class="anchor" id="selector"></a>
+<p>socket과 채널이 연결되어 클라이언트 연결시 스레드를 생성하는 대신 하나의 selector에 여러개의 채널을 생성하여 다수의 클라이언트를 대응할 수 있다.</p>
+<p><br><br></p>
+<h2>InputStream과 OutputStream</h2><a class="anchor" id="inputstream과-outputstream"></a>
+<p>Stream기반의 클래스의 최상위 클래스(추상 클래스) 이다.</p>
+<p>바이트 스트림들이 갖는 메서드가 다음과 같이 존재한다.</p>
+<h3>◾ InputStream</h3><a class="anchor" id="-inputstream"></a>
+<h4>메서드</h4><a class="anchor" id="메서드"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">메서드</th>
+<th style="text-align:center">기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">read()</td>
+<td style="text-align:center">입력 스트림으로부터 1바이트를 읽고 읽은 바이트를 리턴한다.</td>
+</tr>
+<tr>
+<td style="text-align:center">read(byte[] b)</td>
+<td style="text-align:center">입력 스트림으로부터 읽은 바이트들을 매개값으로 주어진 바이트 배열b에 저장하고 실제로 읽은 바이트 수를 리턴한다.</td>
+</tr>
+<tr>
+<td style="text-align:center">read(byte[] b, int off, int len)</td>
+<td style="text-align:center">입력 스트림으로부터 len개의 바이트만큼 읽고 매개값으로 주어진 바이트 배열 b[off]부터 len개까지 저장한다. 그리고 실제로 읽은 바이트 수인 len개를 리턴한다. 만약 len개를 모두 읽지 못하면 실제로 읽은 바이트 수를 리턴한다.</td>
+</tr>
+<tr>
+<td style="text-align:center">close()</td>
+<td style="text-align:center">사용한 시스템 자원을 반납하고 입력스트림을 닫는다.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3>◾ OutputStream</h3><a class="anchor" id="-outputstream"></a>
+<h4>메서드</h4><a class="anchor" id="메서드-1"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">메서드</th>
+<th style="text-align:center">기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">write(int b)</td>
+<td style="text-align:center">출력 스트림으로 부터 1바이트를 보낸다.</td>
+</tr>
+<tr>
+<td style="text-align:center">write(byte[ ] b)</td>
+<td style="text-align:center">출력 스트림으로부터 주어진 바이트 배열 b의 모든 바이트를 보낸다.</td>
+</tr>
+<tr>
+<td style="text-align:center">write(byte[ ] b, int off, int len)</td>
+<td style="text-align:center">출력 스트림으로 주어진 바이트 배열 b[off]부터 len개까지의 바이트를 보낸다.</td>
+</tr>
+<tr>
+<td style="text-align:center">flush()</td>
+<td style="text-align:center">버퍼에 잔류하는 모든 바이트를 출력한다.</td>
+</tr>
+<tr>
+<td style="text-align:center">close()</td>
+<td style="text-align:center">사용한 시스템 자원을 반납하고 출력 스트림을 닫는다.</td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<h2>Byte와 Character 스트림</h2><a class="anchor" id="byte와-character-스트림"></a>
+<h3>◾ Byte Stream</h3><a class="anchor" id="-byte-stream"></a>
+<p>데이터를 Byte단위로 전송하며 바이트로 구성된 파일인 오디오,이미지,동영상 등을 읽고 쓰는데 적합한 스트림이다.</p>
+<h4>Input 종류</h4><a class="anchor" id="input-종류"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">클래스</th>
+<th style="text-align:center">기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">AudioInputStream</td>
+<td style="text-align:center">오디오 포맷에 특화된 프레임 단위 스트림 입력</td>
+</tr>
+<tr>
+<td style="text-align:center">ByteArrayInputStream</td>
+<td style="text-align:center">바이트 배열을 바이트 스트림으로 변환 입력</td>
+</tr>
+<tr>
+<td style="text-align:center">BufferedInputStream</td>
+<td style="text-align:center">버퍼를 이용한 바이트 스트림 입력</td>
+</tr>
+<tr>
+<td style="text-align:center">FileInputStream</td>
+<td style="text-align:center">파일을 바이트 단위로 읽어들여 바이트 스트림 입력</td>
+</tr>
+<tr>
+<td style="text-align:center">FilterInputStream</td>
+<td style="text-align:center">버퍼와 같은 필터에 의한 바이트 스트림 입력</td>
+</tr>
+<tr>
+<td style="text-align:center">InputStream</td>
+<td style="text-align:center">바이트 스트림의 입력을 위한 추상 클래스</td>
+</tr>
+<tr>
+<td style="text-align:center">ObjectInputStream</td>
+<td style="text-align:center">자바 객체를 직렬화 시켜 읽어들여 스트림으로 변환</td>
+</tr>
+<tr>
+<td style="text-align:center">PipedInputStream</td>
+<td style="text-align:center">바이트 스트림을 읽어들여 연결된 PipedOutputStream으로 동시에 전달</td>
+</tr>
+<tr>
+<td style="text-align:center">SequenceInputStream</td>
+<td style="text-align:center">서로 다른 InpustStream을 순차적으로 입력하기 위한 클래스</td>
+</tr>
+<tr>
+<td style="text-align:center">StringBufferInputStream</td>
+<td style="text-align:center">문자열 스트림 입력을 위한 클래스, JDK 1.1 이후 StreamReader 클래스로 대체되었다.</td>
+</tr>
+</tbody>
+</table>
+<h4>Output 종류</h4><a class="anchor" id="output-종류"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">클래스</th>
+<th style="text-align:center">기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ByteArrayOutputStream</td>
+<td style="text-align:center">바이트 스트림을 바이트 배열로 출력</td>
+</tr>
+<tr>
+<td style="text-align:center">FileOutputStream</td>
+<td style="text-align:center">바이트 스트림을 바이트 파일로 출력</td>
+</tr>
+<tr>
+<td style="text-align:center">FilterOutputStream</td>
+<td style="text-align:center">버퍼와 같은 필터가 추가된 바이트 스트림 출력을 위한 추상 클래스</td>
+</tr>
+<tr>
+<td style="text-align:center">ObjectOutputStream</td>
+<td style="text-align:center">바이트 스트림을 직렬화된 객체 형식으로 출력</td>
+</tr>
+<tr>
+<td style="text-align:center">OutputStream</td>
+<td style="text-align:center">바이트 출력 스트림을 위한 추상 클래스</td>
+</tr>
+<tr>
+<td style="text-align:center">PipedOutputStream</td>
+<td style="text-align:center">PipedInputStream의 입력 스트림을 출력</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">byteArrayTest</span><span style="color:#555">(){</span>
+        <span style="color:#078;font-weight:bold">byte</span><span style="color:#555">[]</span> input <span style="color:#555">=</span> <span style="color:#555">{</span>0<span style="color:#555">,</span>1<span style="color:#555">,</span>2<span style="color:#555">,</span>3<span style="color:#555">,</span>4<span style="color:#555">,</span>5<span style="color:#555">,</span>6<span style="color:#555">,</span>7<span style="color:#555">,</span>8<span style="color:#555">,</span>9<span style="color:#555">};</span>
+        <span style="color:#078;font-weight:bold">byte</span><span style="color:#555">[]</span> output <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+
+        <span style="color:#078;font-weight:bold">byte</span><span style="color:#555">[]</span> temp <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#078;font-weight:bold">byte</span><span style="color:#555">[</span>4<span style="color:#555">];</span>
+
+        ByteArrayInputStream inputStream <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ByteArrayInputStream<span style="color:#555">(</span>input<span style="color:#555">);</span>
+        ByteArrayOutputStream outputStream <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ByteArrayOutputStream<span style="color:#555">();</span>
+
+        <span style="color:#078;font-weight:bold">int</span> len<span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">try</span> <span style="color:#555">{</span>
+            <span style="color:#069;font-weight:bold">while</span> <span style="color:#555">((</span>len <span style="color:#555">=</span> inputStream<span style="color:#555">.</span><span style="color:#309">read</span><span style="color:#555">(</span>temp<span style="color:#555">))</span> <span style="color:#555">!=</span> <span style="color:#555">-</span>1<span style="color:#555">){</span>
+                outputStream<span style="color:#555">.</span><span style="color:#309">write</span><span style="color:#555">(</span>temp<span style="color:#555">,</span>0<span style="color:#555">,</span>len<span style="color:#555">);</span> <span style="color:#09f;font-style:italic">//read함수를 통해 읽은 데이터를 outputStream에 write
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#555">}</span>
+
+            output <span style="color:#555">=</span> outputStream<span style="color:#555">.</span><span style="color:#309">toByteArray</span><span style="color:#555">();</span>  <span style="color:#09f;font-style:italic">//OutputStream의 데이터를 output배열에 저장
+</span><span style="color:#09f;font-style:italic"></span>            System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;output : &#34;</span><span style="color:#555">+</span> Arrays<span style="color:#555">.</span><span style="color:#309">toString</span><span style="color:#555">(</span>output<span style="color:#555">));</span>
+
+            inputStream<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+            outputStream<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+        <span style="color:#555">}</span><span style="color:#069;font-weight:bold">catch</span> <span style="color:#555">(</span>IOException e<span style="color:#555">){</span>
+            e<span style="color:#555">.</span><span style="color:#309">printStackTrace</span><span style="color:#555">();</span>
+        <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
+</code></pre></div><p>inputStream의 read함수가 더이상 데이터를 읽지 못하면 -1을 리턴하는 것을 이용해서 while문을 통해 inputStream을 끝까지 읽을 수 있으며, <code>ByteArray~</code>스트림을 이용하여 4바이트 단위로 데이터를 읽고 쓸 수도 있다.</p>
+<br>
+<h3>◾ Char Stream</h3><a class="anchor" id="-char-stream"></a>
+<p>자바는 char형도 2바이트이기 때문에 바이트단위 스트림은 문자열(text)를 전송하는데 적합하지 않을 수 있기 때문에 문자 기반의 스트림을 제공한다.</p>
+<p>클래스명도 뒤에 Stream이 아닌 <code>Reader</code>를 붙여 사용한다.</p>
+<h4>Input 종류 (Reader)</h4><a class="anchor" id="input-종류-reader"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">클래스</th>
+<th style="text-align:center">기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">BufferedReader</td>
+<td style="text-align:center">버퍼를 이용한 문자 스트림 입력</td>
+</tr>
+<tr>
+<td style="text-align:center">CharArrayReader</td>
+<td style="text-align:center">문자 배열의 입력</td>
+</tr>
+<tr>
+<td style="text-align:center">FileReader</td>
+<td style="text-align:center">파일을 문자 스트림으로 변환해 입력</td>
+</tr>
+<tr>
+<td style="text-align:center">FilterReader</td>
+<td style="text-align:center">버퍼와 같은 필터에 의한 문자 스트림 입력</td>
+</tr>
+<tr>
+<td style="text-align:center">InputStreamReader</td>
+<td style="text-align:center">바이트 스트림을 문자 스트림으로 변환</td>
+</tr>
+<tr>
+<td style="text-align:center">LineNumberReader</td>
+<td style="text-align:center">버퍼를 이용한 문자 스트림 입력, 라인번호 저장</td>
+</tr>
+<tr>
+<td style="text-align:center">PipedReader</td>
+<td style="text-align:center">문자 스트림을 읽어들여 연결된 PipedWriter로 동시에 전달</td>
+</tr>
+<tr>
+<td style="text-align:center">Reader</td>
+<td style="text-align:center">바이트 입력 스트림을 문자 스트림으로 변환하기 위한 추상 클래스</td>
+</tr>
+<tr>
+<td style="text-align:center">StringReader</td>
+<td style="text-align:center">문자열 데이터를 문자 스트림으로 입력</td>
+</tr>
+</tbody>
+</table>
+<h4>Output 종류 (Writer)</h4><a class="anchor" id="output-종류-writer"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">클래스</th>
+<th style="text-align:center">기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">BufferedWriter</td>
+<td style="text-align:center">문자 스트림을 버퍼를 이용해 문자열 단위로 출력</td>
+</tr>
+<tr>
+<td style="text-align:center">CharArrayWriter</td>
+<td style="text-align:center">문자 스트림을 문자 배열 단위로 출력</td>
+</tr>
+<tr>
+<td style="text-align:center">FilterWriter</td>
+<td style="text-align:center">버퍼와 같은 필터가 추가된 문자 스트림 출력을 위한 추상 클래스</td>
+</tr>
+<tr>
+<td style="text-align:center">OutputStreamWriter</td>
+<td style="text-align:center">문자 스트림을 바이트 스트림으로 변환 출력</td>
+</tr>
+<tr>
+<td style="text-align:center">PipedWriter</td>
+<td style="text-align:center">PipedReader에서 전달받은 문자 스트림을 바로 출력</td>
+</tr>
+<tr>
+<td style="text-align:center">PrintWriter</td>
+<td style="text-align:center">형식이 있는 Writer 객체를 문자 스트림으로 출력</td>
+</tr>
+<tr>
+<td style="text-align:center">StringWriter</td>
+<td style="text-align:center">문자 스트림을 문자열 데이터로 출력</td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<h2>표준 스트림 (System.in, System.out, System.err)</h2><a class="anchor" id="표준-스트림-systemin-systemout-systemerr"></a>
+<p>표준 입출력 장치(콘솔)에 입출력을 위해 자바에서 제공하는 스트림이다.</p>
+<p><code>java.lang</code>패키지에 <code>System</code> 클래스를 통해 제공한다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">변수</th>
+<th style="text-align:center">입출력</th>
+<th style="text-align:center">기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">System.in</td>
+<td style="text-align:center">Input</td>
+<td style="text-align:center">콘솔의 데이터를 입력받음</td>
+</tr>
+<tr>
+<td style="text-align:center">System.out</td>
+<td style="text-align:center">Output</td>
+<td style="text-align:center">콘솔에 데이터를 출력</td>
+</tr>
+<tr>
+<td style="text-align:center">System.err</td>
+<td style="text-align:center">Output</td>
+<td style="text-align:center">콘솔에 에러를 출력</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3>◾ 키보드 문자 입력 방법</h3><a class="anchor" id="-키보드-문자-입력-방법"></a>
+<h4>Scanner 이용</h4><a class="anchor" id="scanner-이용"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">Scanner scanner <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Scanner<span style="color:#555">(</span>System<span style="color:#555">.</span><span style="color:#309">in</span><span style="color:#555">);</span>
+</code></pre></div><p>Scanner 클래스를 통해 표준입출력장치로 부터 데이터를 받아올 수 있으며 <code>next()</code>, <code>nextLine()</code>, <code>nextByte()</code>, <code>nextDouble</code>&hellip;과 같은 메서드를 통해 읽어 올 수 있다.</p>
+<br>
+<h4>System.in.read() 이용</h4><a class="anchor" id="systeminread-이용"></a>
+<p>System클래스에서 제공하는 read함수를 이용하여 입력을 받을 수 있으며, 1byte씩만 데이터를 읽어 ascii코드에 해당하는 int형을 리턴하는 함수이다.</p>
+<br>
+<h4>BufferedReader 이용</h4><a class="anchor" id="bufferedreader-이용"></a>
+<p>한문자씩 스트림에서 읽어오는 <code>InputStreamReader</code>를 버퍼를 사용해서 문자열 처리를 편하게 해주는 방법이 있다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">BufferedReader in <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> BufferedReader<span style="color:#555">(</span><span style="color:#069;font-weight:bold">new</span> InputStreamReader<span style="color:#555">(</span>System<span style="color:#555">.</span><span style="color:#309">in</span><span style="color:#555">));</span>
+
+String str <span style="color:#555">=</span> in<span style="color:#555">.</span><span style="color:#309">readLine</span><span style="color:#555">();</span>
+</code></pre></div><p><br><br></p>
+<h2>파일 읽고 쓰기</h2><a class="anchor" id="파일-읽고-쓰기"></a>
+<h3>◾ 바이트 기반 스트림 (FileStream)</h3><a class="anchor" id="-바이트-기반-스트림-filestream"></a>
+<p>FileInputStream, FileOutputStream을 이용한 방법</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">FileOutputStreamTest</span><span style="color:#555">(){</span>
+        FileOutputStream fileOutputStream <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+        FileInputStream fileInputStream <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">try</span><span style="color:#555">{</span>
+            fileOutputStream <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> FileOutputStream<span style="color:#555">(</span><span style="color:#c30">&#34;src/test/IoTest/outputFile&#34;</span><span style="color:#555">);</span>
+            <span style="color:#069;font-weight:bold">for</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">char</span> ch<span style="color:#555">=</span><span style="color:#c30">&#39;a&#39;</span><span style="color:#555">;</span> ch <span style="color:#555">&lt;=</span><span style="color:#c30">&#39;z&#39;</span><span style="color:#555">;</span> ch<span style="color:#555">++){</span>
+                fileOutputStream<span style="color:#555">.</span><span style="color:#309">write</span><span style="color:#555">(</span>ch<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+
+            File file <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> File<span style="color:#555">(</span><span style="color:#c30">&#34;src/test/IoTest/outputFile&#34;</span><span style="color:#555">);</span>
+            fileInputStream <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> FileInputStream<span style="color:#555">(</span>file<span style="color:#555">);</span>
+
+            <span style="color:#078;font-weight:bold">int</span> c<span style="color:#555">;</span>
+            <span style="color:#069;font-weight:bold">while</span><span style="color:#555">((</span>c <span style="color:#555">=</span> fileInputStream<span style="color:#555">.</span><span style="color:#309">read</span><span style="color:#555">())</span> <span style="color:#555">!=</span> <span style="color:#555">-</span>1<span style="color:#555">){</span>
+                System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">print</span><span style="color:#555">((</span><span style="color:#078;font-weight:bold">char</span><span style="color:#555">)</span> c<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+
+            fileInputStream<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+            fileOutputStream<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+        <span style="color:#555">}</span><span style="color:#069;font-weight:bold">catch</span> <span style="color:#555">(</span>FileNotFoundException e<span style="color:#555">){</span>
+            System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;Not Found file&#34;</span><span style="color:#555">);</span>
+        <span style="color:#555">}</span><span style="color:#069;font-weight:bold">catch</span> <span style="color:#555">(</span>IOException e<span style="color:#555">){</span>
+            System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;IO Exception&#34;</span><span style="color:#555">);</span>
+        <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
+</code></pre></div><br>
+<h3>◾ 문자기반 스트림</h3><a class="anchor" id="-문자기반-스트림"></a>
+<p>FileReader와 FileWriter를 이용하여 사용하는 방법</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">fileWriterTest</span><span style="color:#555">(){</span>
+        FileWriter fileWriter <span style="color:#555">=</span><span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+        FileReader fileReader <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">try</span><span style="color:#555">{</span>
+            fileWriter <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> FileWriter<span style="color:#555">(</span><span style="color:#c30">&#34;src/test/IoTest/fileWriter.txt&#34;</span><span style="color:#555">);</span>
+
+            <span style="color:#069;font-weight:bold">for</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> i<span style="color:#555">=</span>0<span style="color:#555">;</span> i <span style="color:#555">&lt;</span> 10<span style="color:#555">;</span> i<span style="color:#555">++){</span>
+                fileWriter<span style="color:#555">.</span><span style="color:#309">write</span><span style="color:#555">(</span>i<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+            fileWriter<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+
+            fileReader <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> FileReader<span style="color:#555">(</span><span style="color:#c30">&#34;src/test/IoTest/fileWriter.txt&#34;</span><span style="color:#555">);</span>
+            <span style="color:#078;font-weight:bold">int</span> c<span style="color:#555">;</span>
+            <span style="color:#069;font-weight:bold">while</span><span style="color:#555">((</span>c <span style="color:#555">=</span> fileReader<span style="color:#555">.</span><span style="color:#309">read</span><span style="color:#555">())</span> <span style="color:#555">!=</span> <span style="color:#555">-</span>1<span style="color:#555">){</span>
+                System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">print</span><span style="color:#555">(</span>c<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+            fileReader<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+
+        <span style="color:#555">}</span><span style="color:#069;font-weight:bold">catch</span> <span style="color:#555">(</span>IOException e<span style="color:#555">){</span>
+            e<span style="color:#555">.</span><span style="color:#309">printStackTrace</span><span style="color:#555">();</span>
+        <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
+</code></pre></div><br>
+<h3>◾ 차이점</h3><a class="anchor" id="-차이점"></a>
+<p><code>FileInputStream/FileOutputStream</code>은 <code>InputStream/OutputStream</code>을 상속받고 있고 <code>FileReader/FileWriter</code>은 <code>Reader/Writer</code>를 상속받고 있다.</p>
+<p>때문에, FileReader/Writer은 바이트를 문자로 변환하여 입출력을 처리하고 FileInput/OutputStream은 1바이트 이상인 <code>한글</code>등을 처리하기 위해서 버퍼를 사용해서 처리해야 한다.</p>
+<p>또 테스트 코드를 작성하다 발견한 건데, <code>byte</code>방식은 outputStream을 close안해도 input에서 <code>읽을 수 있고</code> <code>char</code>방식은 close를 안하면 reader로 <code>읽을 수가 없다.</code></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">FileOutputStreamTest</span><span style="color:#555">(){</span>
+        FileOutputStream fileOutputStream <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+        FileInputStream fileInputStream <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">try</span><span style="color:#555">{</span>
+            fileOutputStream <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> FileOutputStream<span style="color:#555">(</span><span style="color:#c30">&#34;src/test/IoTest/outputFile&#34;</span><span style="color:#555">);</span>
+            <span style="color:#069;font-weight:bold">for</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> i<span style="color:#555">=</span>0<span style="color:#555">;</span> i<span style="color:#555">&lt;</span> 10<span style="color:#555">;</span> i<span style="color:#555">++){</span>
+                fileOutputStream<span style="color:#555">.</span><span style="color:#309">write</span><span style="color:#555">(</span>i<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+
+            File file <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> File<span style="color:#555">(</span><span style="color:#c30">&#34;src/test/IoTest/outputFile&#34;</span><span style="color:#555">);</span>
+            fileInputStream <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> FileInputStream<span style="color:#555">(</span>file<span style="color:#555">);</span>
+
+            <span style="color:#078;font-weight:bold">int</span> c<span style="color:#555">;</span>
+            <span style="color:#069;font-weight:bold">while</span><span style="color:#555">((</span>c <span style="color:#555">=</span> fileInputStream<span style="color:#555">.</span><span style="color:#309">read</span><span style="color:#555">())</span> <span style="color:#555">!=</span> <span style="color:#555">-</span>1<span style="color:#555">){</span>
+                System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">print</span><span style="color:#555">(</span>c<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+
+            fileInputStream<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+            fileOutputStream<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+        <span style="color:#555">}</span><span style="color:#069;font-weight:bold">catch</span> <span style="color:#555">(</span>FileNotFoundException e<span style="color:#555">){</span>
+            System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;Not Found file&#34;</span><span style="color:#555">);</span>
+        <span style="color:#555">}</span><span style="color:#069;font-weight:bold">catch</span> <span style="color:#555">(</span>IOException e<span style="color:#555">){</span>
+            System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;IO Exception&#34;</span><span style="color:#555">);</span>
+        <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
+</code></pre></div><p>byte방식인 FileInputStream으로 close하지 않은 파일을 읽는게 가능하다.</p>
+<br>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">fileWriterTest</span><span style="color:#555">(){</span>
+        FileWriter fileWriter <span style="color:#555">=</span><span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+        FileReader fileReader <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">try</span><span style="color:#555">{</span>
+            fileWriter <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> FileWriter<span style="color:#555">(</span><span style="color:#c30">&#34;src/test/IoTest/fileWriter.txt&#34;</span><span style="color:#555">);</span>
+
+            <span style="color:#069;font-weight:bold">for</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> i<span style="color:#555">=</span>0<span style="color:#555">;</span> i <span style="color:#555">&lt;</span> 10<span style="color:#555">;</span> i<span style="color:#555">++){</span>
+                fileWriter<span style="color:#555">.</span><span style="color:#309">write</span><span style="color:#555">(</span>i<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+
+            fileReader <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> FileReader<span style="color:#555">(</span><span style="color:#c30">&#34;src/test/IoTest/fileWriter.txt&#34;</span><span style="color:#555">);</span>
+            <span style="color:#078;font-weight:bold">int</span> c<span style="color:#555">;</span>
+            <span style="color:#069;font-weight:bold">while</span><span style="color:#555">((</span>c <span style="color:#555">=</span> fileReader<span style="color:#555">.</span><span style="color:#309">read</span><span style="color:#555">())</span> <span style="color:#555">!=</span> <span style="color:#555">-</span>1<span style="color:#555">){</span>
+                System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">print</span><span style="color:#555">(</span>c<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+            fileWriter<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+            fileReader<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+
+        <span style="color:#555">}</span><span style="color:#069;font-weight:bold">catch</span> <span style="color:#555">(</span>IOException e<span style="color:#555">){</span>
+            e<span style="color:#555">.</span><span style="color:#309">printStackTrace</span><span style="color:#555">();</span>
+        <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
+</code></pre></div><p>char방식인 FileReader은 close하지 않은 파일을 읽으려고 하면 읽히지 않는다.</p>
+<p><br><br></p>
+<h2>인코딩</h2><a class="anchor" id="인코딩"></a>
+<p>byte단위로 입출력하는 FileInputStream/FileOutputStream에서 아스키코드가 아닌 그 외 문자들을 제대로 출력하기 위한 인코딩을 설정해주어야한다.</p>
+<p>Reader의 클래스중 하나인 Input/OutputStreamReader를 이용할 수 있다.</p>
+<h3>◾ InputStreamReader</h3><a class="anchor" id="-inputstreamreader"></a>
+<p>파일의 인코딩 방식을 지정할 수 있고, <code>바이트입력 스트림</code>에 연결되어 <code>문자입력스트림</code>인 Reader로 변환시킨다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">encodingTest</span><span style="color:#555">(){</span>
+        <span style="color:#069;font-weight:bold">try</span> <span style="color:#555">{</span>
+            FileOutputStream fileOutputStream <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> FileOutputStream<span style="color:#555">(</span><span style="color:#c30">&#34;src/test/IoTest/encoding.txt&#34;</span><span style="color:#555">);</span>
+            OutputStreamWriter outputStreamWriter <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> OutputStreamWriter<span style="color:#555">(</span>fileOutputStream<span style="color:#555">,</span><span style="color:#c30">&#34;utf-8&#34;</span><span style="color:#555">);</span>
+            outputStreamWriter<span style="color:#555">.</span><span style="color:#309">write</span><span style="color:#555">(</span><span style="color:#c30">&#34;안녕하세요&#34;</span><span style="color:#555">);</span>
+
+            outputStreamWriter<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+            fileOutputStream<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+
+            FileInputStream fileInputStream <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> FileInputStream<span style="color:#555">(</span><span style="color:#c30">&#34;src/test/IoTest/encoding.txt&#34;</span><span style="color:#555">);</span>
+            InputStreamReader inputStreamReader <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> InputStreamReader<span style="color:#555">(</span>fileInputStream<span style="color:#555">,</span><span style="color:#c30">&#34;utf-8&#34;</span><span style="color:#555">);</span>
+            <span style="color:#078;font-weight:bold">int</span> c<span style="color:#555">;</span>
+            <span style="color:#069;font-weight:bold">while</span><span style="color:#555">((</span>c <span style="color:#555">=</span> inputStreamReader<span style="color:#555">.</span><span style="color:#309">read</span><span style="color:#555">())</span> <span style="color:#555">!=</span> <span style="color:#555">-</span>1<span style="color:#555">){</span>
+                System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">print</span><span style="color:#555">((</span><span style="color:#078;font-weight:bold">char</span><span style="color:#555">)</span> c<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+
+            inputStreamReader<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+            fileInputStream<span style="color:#555">.</span><span style="color:#309">close</span><span style="color:#555">();</span>
+        <span style="color:#555">}</span><span style="color:#069;font-weight:bold">catch</span> <span style="color:#555">(</span>IOException e<span style="color:#555">){</span>
+            e<span style="color:#555">.</span><span style="color:#309">printStackTrace</span><span style="color:#555">();</span>
+        <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
+</code></pre></div><p><br><br><br></p>
+<hr>
+<h3>Reference</h3><a class="anchor" id="reference"></a>
+<p><a href="https://velog.io/@godkimchichi/Java-7-IO-File">https://velog.io/@godkimchichi/Java-7-IO-File</a></p>
+</div>
+
+	
+    <div style="margin-top:200px;">
+		<script src="https://utteranc.es/client.js"
+				repo="gowoonsori/blog-comments"
+				issue-term="pathname"
+				theme="github-light"
+				crossorigin="anonymous"
+				async>
+		</script>
+	</div>
+    
+
+	
+
+
+	 
+	<div class="chevrons ">
+		<a class="next" href="/javascript/" title="JavaScript" style="margin-right: 0px;">
+            <div>
+                <p>Next page</p>
+                <label>JavaScript</label>
+            </div>
+            <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
+	</div>
+	
+	
+
+      </section>
+
+      
+      
+      <section class="right-menu ">
+      
+	
+	
+		
+	    	
+	  	
+	<div class="TableOfContents">
+    <label>What&#39;s on this page</label>
+    <nav>
+        <ul >
+            <li><a href="/java/io/">I/O</a></li>
+        </ul>
+    </nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#스트림--버퍼--채널-기반의-io">스트림 / 버퍼 / 채널 기반의 I/O</a>
+      <ul>
+        <li><a href="#-스트림">◾ 스트림</a></li>
+        <li><a href="#-버퍼">◾ 버퍼</a></li>
+        <li><a href="#-채널">◾ 채널</a></li>
+      </ul>
+    </li>
+    <li><a href="#inputstream과-outputstream">InputStream과 OutputStream</a>
+      <ul>
+        <li><a href="#-inputstream">◾ InputStream</a></li>
+        <li><a href="#-outputstream">◾ OutputStream</a></li>
+      </ul>
+    </li>
+    <li><a href="#byte와-character-스트림">Byte와 Character 스트림</a>
+      <ul>
+        <li><a href="#-byte-stream">◾ Byte Stream</a></li>
+        <li><a href="#-char-stream">◾ Char Stream</a></li>
+      </ul>
+    </li>
+    <li><a href="#표준-스트림-systemin-systemout-systemerr">표준 스트림 (System.in, System.out, System.err)</a>
+      <ul>
+        <li><a href="#-키보드-문자-입력-방법">◾ 키보드 문자 입력 방법</a></li>
+      </ul>
+    </li>
+    <li><a href="#파일-읽고-쓰기">파일 읽고 쓰기</a>
+      <ul>
+        <li><a href="#-바이트-기반-스트림-filestream">◾ 바이트 기반 스트림 (FileStream)</a></li>
+        <li><a href="#-문자기반-스트림">◾ 문자기반 스트림</a></li>
+        <li><a href="#-차이점">◾ 차이점</a></li>
+      </ul>
+    </li>
+    <li><a href="#인코딩">인코딩</a>
+      <ul>
+        <li><a href="#-inputstreamreader">◾ InputStreamReader</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+	
+		
+	    	
+	  	
+	<div class="Actions">
+	<nav>
+		<ul>
+				
+		    
+		    
+			
+		      <li>
+		          <i class='fas fa-calendar'></i>
+		          Last update on 09 February 2021
+		      </li>
+		    
+		    
+		</ul>
+		<div style="text-align: center;margin : 10px 40px 0 0;">
+			<a href="https://hits.seeyoufarm.com">
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fjava%2fio%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+			</a>
+		</div>
+	</nav>
+    
+</div>
+
+      </section>
+      
+    </article>
+    
+    
+    <footer>
+      
+	
+		
+	    	<style type="text/css">
+
+.footer-gray {
+  width: 100%;
+  color: #888;
+}
+
+.footer-custom {
+  font: normal normal 12px/1.4 sans-serif;
+  /*max-width: 1008px;*/
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.footer-custom:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-lists:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-hdr {
+  color: white;
+  font: 22px/1.4  sans-serif;
+  margin: 1em 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .ftr-hdr {
+    font-size: 18px;
+  }
+}
+
+.footer-list-wrap {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 568px) {
+  .footer-list-wrap {
+    width: 33.3333%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-list-wrap {
+    width: 25%;
+  }
+}
+
+.ftr-links-sub {
+  padding: 0;
+  margin: 0;
+}
+
+.ftr-links-sub:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-links-sub li {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0;
+  color: #888;
+  font: normal normal 12px sans-serif;
+  text-transform: uppercase;
+  /*width: 150px;*/
+}
+
+.footer-custom a,
+.footer-custom a:link,
+.footer-custom a:visited,
+.ftr-links-sub li .link {
+  text-decoration: none;
+  color: #888;
+  padding: 5px 0;
+  display: block;
+}
+
+.footer-custom .footer-legal a {
+  display: inline;
+}
+
+.footer-custom a:hover,
+.footer-custom a:active,
+.ftr-links-sub li .link:hover {
+  text-decoration: underline;
+  color: #888;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-custom a, .footer-custom a:link, .footer-custom a:visited, .ftr-links-sub li .link {
+    padding: 0;
+  }
+}
+/* BEGIN EMAIL CAPTURE STYLES*/
+
+.footer-email {
+  text-align: center;
+}
+
+#ftrEmailForm {
+  height: 44px;
+}
+
+#ftrEmailForm .error {
+  display: none;
+  color: red;
+  text-align: left;
+}
+
+#ftrEmailForm #ftrEmailInput {
+  background: none repeat scroll 0 0 #FFF;
+  border: 1px solid #D6D6D6;
+  box-sizing: border-box;
+  color: #888;
+  float: left;
+  font: normal normal 14px/1.4 sans-serif;
+  padding: 5px;
+  width: 70%;
+  height: 100%;
+}
+
+#ftrEmailForm #ftrEmailInput:hover {
+  border: 1px solid #888;
+}
+
+#ftrEmailForm #ftrEmailInput:focus {
+  border: 1px solid #ef9223;
+  outline: #ef9223 auto 5px;
+}
+
+#ftrEmailForm .button {
+  width: 30%;
+  height: 100%;
+  padding: 5px;
+  float: left;
+  border: 1px solid #DFDFDF;
+  box-sizing: border-box;
+  color: #000;
+  font: normal bold 18px/1 sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FFF;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e1e1e1));
+  background: -webkit-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -moz-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -ms-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -o-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: linear-gradient(to bottom, white 0, #e1e1e1 100%);
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+}
+
+#ftrEmailForm .button:hover,
+#ftrEmailForm .button:active {
+  background: black;
+  color: #FFF;
+  outline: none;
+}
+/* BEGIN SOCIAL STYLES*/
+
+.footer-social {
+  text-align: center;
+}
+
+.footer-social ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-social ul:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-social li {
+  float: left;
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-lists {
+    width: 100%;
+  }
+  .footer-email {
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+  .footer-social {
+    width: 45%;
+    margin-left: 5%;
+    float: left;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-lists {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-email {
+    width: 33.3333%;
+  }
+  .footer-social {
+    width: 33.3333%;
+    float: right;
+    margin-left: 0;
+  }
+}
+
+.footer-legal {
+  padding: 15px 0 0;
+  clear: left;
+}
+
+.footer-payment {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-legal {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-payment {
+    width: 33.3333%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment {
+    text-align: left;
+  }
+}
+
+.footer-payment ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-payment ul li {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment ul li.ftr-stella {
+    margin-left: 0;
+  }
+}
+
+
+</style>
+  <div class="footer-gray">
+    <div class="footer-custom">
+      <div class="footer-lists">
+        <h6 class = "ftr-hdr">Contact me</h6>
+        <p>E-mail : gowoonsori97@gmail.com  |  gowoonsori97@naver.com</p>
+      </div>
+      <div class="footer-social">
+        <h6 class="ftr-hdr">Follow Us</h6>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/gowoonsori97/" title="Facebook">
+              <img width="24" height="24" alt="Like us on Facebook" src="/images/fb.png">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.github.com/gowoonosori" title="Github">
+             <i class="fab fa-github" style="font-size:24px"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <p>Copyrihgt &copy; gowoonsori.site All Rights Reserved. </p>
+      </div>
+    </div>
+  </div>
+  <!--/.footer-gray-->
+
+	    
+	
+    </footer>
+    
+
+
+
+  </body>
+</html>

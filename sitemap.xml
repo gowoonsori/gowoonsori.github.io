@@ -73,13 +73,18 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/javascript/function/</loc>
-    <lastmod>2021-02-02T13:02:39+09:00</lastmod>
+    <loc>https://gowoonsori.site/javascript/object/</loc>
+    <lastmod>2021-02-04T14:24:10+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://gowoonsori.site/java/controlstatement/</loc>
     <lastmod>2021-01-25T20:11:16+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/javascript/function/</loc>
+    <lastmod>2021-02-02T13:02:39+09:00</lastmod>
   </url>
   
   <url>
@@ -115,6 +120,11 @@
   <url>
     <loc>https://gowoonsori.site/java/annotation/</loc>
     <lastmod>2021-01-31T20:38:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/java/io/</loc>
+    <lastmod>2021-02-09T22:05:09+09:00</lastmod>
   </url>
   
   <url>
