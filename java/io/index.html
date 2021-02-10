@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-11T01:48:33 KST">
+<meta name="revised" content="2021-02-11T01:51:37 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -1042,7 +1042,7 @@ if (!doNotTrack) {
         <li><a href="#-char-stream">◾ Char Stream</a></li>
       </ul>
     </li>
-    <li><a href="#표준-스트림-systemin-systemout-systemerr">표준 스트림 (System.in, System.out, System.err)</a>
+    <li><a href="#표준-스트림">표준 스트림</a>
       <ul>
         <li><a href="#-키보드-문자-입력-방법">◾ 키보드 문자 입력 방법</a></li>
       </ul>
@@ -1056,7 +1056,7 @@ if (!doNotTrack) {
     </li>
     <li><a href="#인코딩">인코딩</a>
       <ul>
-        <li><a href="#-inputstreamreader">◾ InputStreamReader</a></li>
+        <li><a href="#-inputstreamreader--outputstreamreader">◾ InputStreamReader / OutputStreamReader</a></li>
         <li><a href="#reference">Reference</a></li>
       </ul>
     </li>
@@ -1350,7 +1350,7 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <p><br><br></p>
-<h2>표준 스트림 (System.in, System.out, System.err)</h2><a class="anchor" id="표준-스트림-systemin-systemout-systemerr"></a>
+<h2>표준 스트림</h2><a class="anchor" id="표준-스트림"></a>
 <p>표준 입출력 장치(콘솔)에 입출력을 위해 자바에서 제공하는 스트림이다.</p>
 <p><code>java.lang</code>패키지에 <code>System</code> 클래스를 통해 제공한다.</p>
 <table>
@@ -1506,7 +1506,7 @@ String str <span style="color:#555">=</span> in<span style="color:#555">.</span>
 <h2>인코딩</h2><a class="anchor" id="인코딩"></a>
 <p>byte단위로 입출력하는 FileInputStream/FileOutputStream에서 아스키코드가 아닌 그 외 문자들을 제대로 출력하기 위한 인코딩을 설정해주어야한다.</p>
 <p>Reader의 클래스중 하나인 Input/OutputStreamReader를 이용할 수 있다.</p>
-<h3>◾ InputStreamReader</h3><a class="anchor" id="-inputstreamreader"></a>
+<h3>◾ InputStreamReader / OutputStreamReader</h3><a class="anchor" id="-inputstreamreader--outputstreamreader"></a>
 <p>파일의 인코딩 방식을 지정할 수 있고, <code>바이트입력 스트림</code>에 연결되어 <code>문자입력스트림</code>인 Reader로 변환시킨다.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">encodingTest</span><span style="color:#555">(){</span>
         <span style="color:#069;font-weight:bold">try</span> <span style="color:#555">{</span>
@@ -1534,6 +1534,7 @@ String str <span style="color:#555">=</span> in<span style="color:#555">.</span>
 <hr>
 <h3>Reference</h3><a class="anchor" id="reference"></a>
 <p><a href="https://velog.io/@godkimchichi/Java-7-IO-File">https://velog.io/@godkimchichi/Java-7-IO-File</a></p>
+<p><a href="https://hyeonstorage.tistory.com/248">https://hyeonstorage.tistory.com/248</a></p>
 </div>
 
 	
@@ -1602,7 +1603,7 @@ String str <span style="color:#555">=</span> in<span style="color:#555">.</span>
         <li><a href="#-char-stream">◾ Char Stream</a></li>
       </ul>
     </li>
-    <li><a href="#표준-스트림-systemin-systemout-systemerr">표준 스트림 (System.in, System.out, System.err)</a>
+    <li><a href="#표준-스트림">표준 스트림</a>
       <ul>
         <li><a href="#-키보드-문자-입력-방법">◾ 키보드 문자 입력 방법</a></li>
       </ul>
@@ -1616,7 +1617,7 @@ String str <span style="color:#555">=</span> in<span style="color:#555">.</span>
     </li>
     <li><a href="#인코딩">인코딩</a>
       <ul>
-        <li><a href="#-inputstreamreader">◾ InputStreamReader</a></li>
+        <li><a href="#-inputstreamreader--outputstreamreader">◾ InputStreamReader / OutputStreamReader</a></li>
         <li><a href="#reference">Reference</a></li>
       </ul>
     </li>
