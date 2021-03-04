@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-03-02T23:21:40 KST">
+<meta name="revised" content="2021-03-05T01:36:40 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -1063,8 +1063,22 @@ if (!doNotTrack) {
         <li><a href="#-함수형-인터페이스-선언">◾ 함수형 인터페이스 선언</a></li>
       </ul>
     </li>
-    <li><a href="#variable-capture">Variable Capture</a></li>
+    <li><a href="#variable-capture">Variable Capture</a>
+      <ul>
+        <li><a href="#-final-지역-변수에-접근">◾ final 지역 변수에 접근</a></li>
+        <li><a href="#-final이-아니고-한번만-초기화-된-변수에-접근">◾ final이 아니고 한번만 초기화 된 변수에 접근</a></li>
+        <li><a href="#-람다식-외부에서-정의된-값을-변경할-수는-없다">◾ 람다식 외부에서 정의된 값을 변경할 수는 없다.</a></li>
+        <li><a href="#-람다식-외부의-지역변수가-아니라면-변경-가능하다">◾ 람다식 외부의 지역변수가 아니라면 변경 가능하다.</a></li>
+      </ul>
+    </li>
     <li><a href="#메소드-생성자-레퍼런스">메소드, 생성자 레퍼런스</a>
+      <ul>
+        <li><a href="#-static-메소드">◾ Static 메소드</a></li>
+        <li><a href="#-instance-메서드">◾ Instance 메서드</a></li>
+        <li><a href="#-생성자-constructor-메서드">◾ 생성자 (Constructor) 메서드</a></li>
+      </ul>
+    </li>
+    <li><a href="#자주-사용하는-함수형-인터페이스">자주 사용하는 함수형 인터페이스</a>
       <ul>
         <li><a href="#reference">Reference</a></li>
       </ul>
@@ -1111,7 +1125,7 @@ if (!doNotTrack) {
 </span><span style="color:#09f;font-style:italic"></span>
         IntStream<span style="color:#555">.</span><span style="color:#309">range</span><span style="color:#555">(</span>0<span style="color:#555">,</span> 10<span style="color:#555">).</span><span style="color:#309">forEach</span><span style="color:#555">(</span>value <span style="color:#555">-&gt;</span> System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>value<span style="color:#555">));</span>  <span style="color:#09f;font-style:italic">//매개변수가 하나일때 괄호 생략
 </span><span style="color:#09f;font-style:italic"></span>
-        IntStream<span style="color:#555">.</span><span style="color:#309">range</span><span style="color:#555">(</span>0<span style="color:#555">,</span> 10<span style="color:#555">).</span><span style="color:#309">forEach</span><span style="color:#555">(</span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">::</span>println<span style="color:#555">);</span> <span style="color:#09f;font-style:italic">//매서드 참조 사용
+        IntStream<span style="color:#555">.</span><span style="color:#309">range</span><span style="color:#555">(</span>0<span style="color:#555">,</span> 10<span style="color:#555">).</span><span style="color:#309">forEach</span><span style="color:#555">(</span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">::</span>println<span style="color:#555">);</span> <span style="color:#09f;font-style:italic">//매서드 레퍼런스 사용
 </span><span style="color:#09f;font-style:italic"></span>    <span style="color:#555">}</span>
 
 </code></pre></div><p><br><br></p>
@@ -1145,14 +1159,213 @@ if (!doNotTrack) {
 <img src="./err2.png?classes=border,shadow" alt="err2"></p>
 <p><br><br></p>
 <h2>Variable Capture</h2><a class="anchor" id="variable-capture"></a>
-<p><br><br></p>
+<p>람다식은 람다식 외부의 final 지역 변수 또는 final이 아니지만 딱 한번만 초기화 된 변수에 접근할 수 있다.</p>
+<h3>◾ final 지역 변수에 접근</h3><a class="anchor" id="-final-지역-변수에-접근"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Main</span> <span style="color:#555">{</span>
+  <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">[]</span> argv<span style="color:#555">)</span> <span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">final</span> String x <span style="color:#555">=</span> <span style="color:#c30">&#34;Hello&#34;</span><span style="color:#555">;</span>
+    Function<span style="color:#555">&lt;</span>String<span style="color:#555">,</span>String<span style="color:#555">&gt;</span> func1 <span style="color:#555">=</span> str <span style="color:#555">-&gt;</span> <span style="color:#555">{</span><span style="color:#069;font-weight:bold">return</span> str <span style="color:#555">+</span> <span style="color:#c30">&#34; &#34;</span><span style="color:#555">+</span> x <span style="color:#555">;};</span>
+    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>func1<span style="color:#555">.</span><span style="color:#309">apply</span><span style="color:#555">(</span><span style="color:#c30">&#34;Lambda Study&#34;</span><span style="color:#555">));</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><h3>◾ final이 아니고 한번만 초기화 된 변수에 접근</h3><a class="anchor" id="-final이-아니고-한번만-초기화-된-변수에-접근"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Main</span> <span style="color:#555">{</span>
+  <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">[]</span> argv<span style="color:#555">)</span> <span style="color:#555">{</span>
+    String x <span style="color:#555">=</span> <span style="color:#c30">&#34;Hello&#34;</span><span style="color:#555">;</span>
+    Function<span style="color:#555">&lt;</span>String<span style="color:#555">,</span>String<span style="color:#555">&gt;</span> func1 <span style="color:#555">=</span> str <span style="color:#555">-&gt;</span> <span style="color:#555">{</span><span style="color:#069;font-weight:bold">return</span> str <span style="color:#555">+</span> <span style="color:#c30">&#34; &#34;</span><span style="color:#555">+</span> x <span style="color:#555">;};</span>
+    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>func1<span style="color:#555">.</span><span style="color:#309">apply</span><span style="color:#555">(</span><span style="color:#c30">&#34;Lambda Study&#34;</span><span style="color:#555">));</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><h3>◾ 람다식 외부에서 정의된 값을 변경할 수는 없다.</h3><a class="anchor" id="-람다식-외부에서-정의된-값을-변경할-수는-없다"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Main</span> <span style="color:#555">{</span>
+  <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span> <span style="color:#555">(</span>String <span style="color:#555">[]</span> argv<span style="color:#555">)</span> <span style="color:#555">{</span>
+    String x <span style="color:#555">=</span> <span style="color:#c30">&#34;Hello&#34;</span> <span style="color:#555">;</span>
+    Function <span style="color:#555">&lt;</span>String<span style="color:#555">,</span>String<span style="color:#555">&gt;</span> func1 <span style="color:#555">=</span> str<span style="color:#555">-&gt;</span> <span style="color:#555">{</span> x <span style="color:#555">=</span> <span style="color:#c30">&#34;a&#34;</span><span style="color:#555">;</span> <span style="color:#069;font-weight:bold">return</span> str <span style="color:#555">+</span> <span style="color:#c30">&#34;&#34;</span> <span style="color:#555">+</span> x<span style="color:#555">;};</span>  <span style="color:#09f;font-style:italic">//compile error
+</span><span style="color:#09f;font-style:italic"></span>    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span> <span style="color:#555">(</span>func1<span style="color:#555">.</span><span style="color:#309">apply</span> <span style="color:#555">(</span> <span style="color:#c30">&#34;Lambda Study&#34;</span> <span style="color:#555">));</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><h3>◾ 람다식 외부의 지역변수가 아니라면 변경 가능하다.</h3><a class="anchor" id="-람다식-외부의-지역변수가-아니라면-변경-가능하다"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Main</span> <span style="color:#555">{</span>
+  String x <span style="color:#555">=</span> <span style="color:#c30">&#34;Hello&#34;</span> <span style="color:#555">;</span>
+  <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span> <span style="color:#555">(</span>String <span style="color:#555">[]</span> argv<span style="color:#555">)</span> <span style="color:#555">{</span>
+    Function <span style="color:#555">&lt;</span>String<span style="color:#555">,</span>String<span style="color:#555">&gt;</span> func1 <span style="color:#555">=</span> str<span style="color:#555">-&gt;</span> <span style="color:#555">{</span> x <span style="color:#555">=</span> <span style="color:#c30">&#34;Hi&#34;</span><span style="color:#555">;</span> <span style="color:#069;font-weight:bold">return</span> str <span style="color:#555">+</span> <span style="color:#c30">&#34;&#34;</span> <span style="color:#555">+</span> x<span style="color:#555">;};</span>
+    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span> <span style="color:#555">(</span>func1<span style="color:#555">.</span><span style="color:#309">apply</span> <span style="color:#555">(</span> <span style="color:#c30">&#34;Lambda Study&#34;</span> <span style="color:#555">));</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p><br><br></p>
 <h2>메소드, 생성자 레퍼런스</h2><a class="anchor" id="메소드-생성자-레퍼런스"></a>
+<p>메소드, 생성자 레퍼런스는 람다식을 더 간단하게 표현하는 방법이로 함수의 축약형이라고 할 수 있다.
+<br>명시적으로 메서드를 참조함으로써 가독성을 높이고, 람다를 편하게 사용할 수 있게 해준다.</p>
+<p>람다식 사용법 설명에서 사용했던 <code>System.out::println</code>과 같은 방법으로 <code>ClassName::MethodName</code>의 형식으로 사용하게 된다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">Consumer<span style="color:#555">&lt;</span>String<span style="color:#555">&gt;</span> func <span style="color:#555">=</span> str <span style="color:#555">-&gt;</span> System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>str<span style="color:#555">);</span>
+<span style="color:#555">=&gt;</span>
+Consumer<span style="color:#555">&lt;</span>String<span style="color:#555">&gt;</span> func <span style="color:#555">=</span> System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">::</span>println<span style="color:#555">;</span>
+</code></pre></div><p>위의 코드와 같이 축약해 사용할 수 있으며, String 매개변수 한개를 받아 void를 출력시키는 함수라는 의미가 생략되어있다.
+<br>때문에 <code>사용하려는 메서드의 매개변수와 리턴 타입을 잘 알고 있어야 사용이 가능하다.</code></p>
+<h3>◾ Static 메소드</h3><a class="anchor" id="-static-메소드"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">LambdaTest</span> <span style="color:#555">{</span>
+  <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">sayHello</span><span style="color:#555">(</span>String name<span style="color:#555">){</span>
+    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;Hello&#34;</span> <span style="color:#555">+</span> name<span style="color:#555">);</span>
+  <span style="color:#555">}</span>
+
+  <span style="color:#99f">@Test</span>
+  <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">methodReferenceTest</span><span style="color:#555">(){</span>
+    Consumer<span style="color:#555">&lt;</span>String<span style="color:#555">&gt;</span> consumer <span style="color:#555">=</span> LambdaTest<span style="color:#555">::</span>sayHello<span style="color:#555">;</span>
+    <span style="color:#09f;font-style:italic">//Consumer&lt;String&gt; consumer = str -&gt; LambdaTest.sayHello(str);
+</span><span style="color:#09f;font-style:italic"></span>    consumer<span style="color:#555">.</span><span style="color:#309">accept</span><span style="color:#555">(</span><span style="color:#c30">&#34;홍길동&#34;</span><span style="color:#555">);</span>
+  <span style="color:#555">}</span>
+</code></pre></div><p>여기서 <code>Consumer&lt;T&gt;</code> 자바에서 제공하는 함수형 인터페이스로 T 타입 매개변수를 받아 void를 리턴하는 함수형 인터페이스이다.</p>
+<p>주석처리된 람다식을 메서드 레퍼런스를 이용해 더 축약해 사용할 수 있게 되었다.</p>
+<h3>◾ Instance 메서드</h3><a class="anchor" id="-instance-메서드"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">User</span> <span style="color:#555">{</span>
+    String name<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">User</span><span style="color:#555">(</span>String name<span style="color:#555">){</span><span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">name</span> <span style="color:#555">=</span> name<span style="color:#555">;}</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">sayHello</span><span style="color:#555">(){</span>
+        System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;Hello &#34;</span> <span style="color:#555">+</span> name<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">LambdaTest</span> <span style="color:#555">{</span>
+  <span style="color:#99f">@Test</span>
+  <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">methodReferenceTest</span><span style="color:#555">(){</span>
+    Consumer<span style="color:#555">&lt;</span>User<span style="color:#555">&gt;</span> consumer <span style="color:#555">=</span> User<span style="color:#555">::</span>sayHello<span style="color:#555">;</span>
+    consumer<span style="color:#555">.</span><span style="color:#309">accept</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">new</span> User<span style="color:#555">(</span><span style="color:#c30">&#34;홍길동&#34;</span><span style="color:#555">));</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>첫번째와 같은 static 메서드가 아닌 인스턴스 객체의 메서드를 참조하는 방식으로 <code>Consumer</code>의 매개변수로 <code>User</code>클래스를 주어 다음과 같이 사용할 수 있다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">User</span> <span style="color:#555">{</span>
+    String name<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">User</span><span style="color:#555">(</span>String name<span style="color:#555">){</span><span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">name</span> <span style="color:#555">=</span> name<span style="color:#555">;}</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">sayHello</span><span style="color:#555">(){</span>
+        System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;Hello &#34;</span> <span style="color:#555">+</span> name<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">LambdaTest</span> <span style="color:#555">{</span>
+  <span style="color:#99f">@Test</span>
+  <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">methodReferenceTest</span><span style="color:#555">(){</span>
+    List<span style="color:#555">&lt;</span>User<span style="color:#555">&gt;</span> users <span style="color:#555">=</span> Arrays<span style="color:#555">.</span><span style="color:#309">asList</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">new</span> User<span style="color:#555">(</span><span style="color:#c30">&#34;고길동&#34;</span><span style="color:#555">),</span> <span style="color:#069;font-weight:bold">new</span> User<span style="color:#555">(</span><span style="color:#c30">&#34;둘리&#34;</span><span style="color:#555">),</span> <span style="color:#069;font-weight:bold">new</span> User<span style="color:#555">(</span><span style="color:#c30">&#34;또치&#34;</span><span style="color:#555">));</span>
+    users<span style="color:#555">.</span><span style="color:#309">stream</span><span style="color:#555">().</span><span style="color:#309">forEach</span><span style="color:#555">(</span>User<span style="color:#555">::</span>sayHello<span style="color:#555">);</span>
+    <span style="color:#09f;font-style:italic">//users.stream().forEach(user -&gt; user.sayHello());
+</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>이를 조금더 응용해보면 배열의 <code>forEach</code>와 함께 사용한다면 더욱더 축약해서 표현이 가능하다.</p>
+<h3>◾ 생성자 (Constructor) 메서드</h3><a class="anchor" id="-생성자-constructor-메서드"></a>
+<p>생성자 메서드를 참조하여 축약해서 표현할 수 있게 한 방법이다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">User</span> <span style="color:#555">{</span>
+    String name<span style="color:#555">;</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">User</span><span style="color:#555">(</span>String name<span style="color:#555">){</span><span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">name</span> <span style="color:#555">=</span> name<span style="color:#555">;}</span>
+<span style="color:#555">}</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">LambdaTest</span> <span style="color:#555">{</span>
+  <span style="color:#99f">@Test</span>
+  <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">methodReferenceTest</span><span style="color:#555">(){</span>
+    User user <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> User<span style="color:#555">(</span><span style="color:#c30">&#34;홍길동&#34;</span><span style="color:#555">);</span>
+
+    Function<span style="color:#555">&lt;</span>String<span style="color:#555">,</span> User<span style="color:#555">&gt;</span> userConstructor <span style="color:#555">=</span> name <span style="color:#555">-&gt;</span> <span style="color:#069;font-weight:bold">new</span> User<span style="color:#555">(</span>name<span style="color:#555">);</span>
+
+    Function<span style="color:#555">&lt;</span>String<span style="color:#555">,</span> User<span style="color:#555">&gt;</span> userConstructor1 <span style="color:#555">=</span> User<span style="color:#555">::</span><span style="color:#069;font-weight:bold">new</span><span style="color:#555">;</span>
+    User user2 <span style="color:#555">=</span> userConstructor1<span style="color:#555">.</span><span style="color:#309">apply</span><span style="color:#555">(</span><span style="color:#c30">&#34;홍길동&#34;</span><span style="color:#555">);</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p><code>Function</code> 함수형 인터페이스를 이용하여 User의 생성자 메서드를 특정 변수에 할당해줄 수 있고 <code>new</code>키워드가 없어도 <code>apply()</code>메서드를 통해 생성자 메서드처럼 사용이 가능하다.</p>
+<blockquote>
+<p>Fucntion&lt;T,R&gt;은 Consumer와 마찬가지로 자바에서 제공해주는 함수형 인터페이스로 T타입 매개변수를 받아 R타입을 return하는 함수형 인터페이스이다.</p>
+</blockquote>
+<p><br><br></p>
+<h2>자주 사용하는 함수형 인터페이스</h2><a class="anchor" id="자주-사용하는-함수형-인터페이스"></a>
+<p>자바에서 제공하는 함수형 인터페이스가 존재하는데 바로 위에서 사용했던 <code>Consumer</code>, <code>Function</code>과 멀티 프로그래밍의 <code>Runnable</code>등 이 존재한다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">함수형 인터페이스</th>
+<th style="text-align:center">반환 타입</th>
+<th style="text-align:center">추상 메서드 이름</th>
+<th style="text-align:center">다른 메서드</th>
+<th style="text-align:center">기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Runnable</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">run</td>
+<td style="text-align:center">없음</td>
+<td style="text-align:center">코드 수행</td>
+</tr>
+<tr>
+<td style="text-align:center">Supplier<T></td>
+<td style="text-align:center">T타입</td>
+<td style="text-align:center">get</td>
+<td style="text-align:center">없음</td>
+<td style="text-align:center">T타입 값 return</td>
+</tr>
+<tr>
+<td style="text-align:center">Consumer<T></td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">accept</td>
+<td style="text-align:center">andThen</td>
+<td style="text-align:center">T타입 값을 파라미터로 이용</td>
+</tr>
+<tr>
+<td style="text-align:center">BiConsumer&lt;T,U&gt;</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">accept</td>
+<td style="text-align:center">andThen</td>
+<td style="text-align:center">T,U 타입 값을 파라미터로 이용</td>
+</tr>
+<tr>
+<td style="text-align:center">Function&lt;T,R&gt;</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">apply</td>
+<td style="text-align:center">compose, andThen, identity</td>
+<td style="text-align:center">T타입 값을 파라미터로 이용하고 R타입 return</td>
+</tr>
+<tr>
+<td style="text-align:center">BiFunction&lt;T,U,R&gt;</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">apply</td>
+<td style="text-align:center">andThen</td>
+<td style="text-align:center">T,U타입 값을 파라미터로 이용하고 R타입 return</td>
+</tr>
+<tr>
+<td style="text-align:center">UnaryOperator<T></td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">apply</td>
+<td style="text-align:center">compose, andThen, identity</td>
+<td style="text-align:center">T타입 값을 파라미터로 이용하고 T타입 return</td>
+</tr>
+<tr>
+<td style="text-align:center">BinaryOperator&lt;T,T&gt;</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">apply</td>
+<td style="text-align:center">andThen, maxBy, minBy</td>
+<td style="text-align:center">T타입 값 두개의 파라미터를 이용하고 T타입 return</td>
+</tr>
+<tr>
+<td style="text-align:center">Predicate<T></td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">test</td>
+<td style="text-align:center">and, or, negate, isEqual</td>
+<td style="text-align:center">T타입 값을 파라미터로 이용하고 boolean return</td>
+</tr>
+<tr>
+<td style="text-align:center">BiPredicate&lt;T,U&gt;</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">test</td>
+<td style="text-align:center">and, or, negate</td>
+<td style="text-align:center">T,U타입 값을 파라미터로 이용하고 boolean return</td>
+</tr>
+</tbody>
+</table>
 <p><br><br><br></p>
 <hr>
 <h3>Reference</h3><a class="anchor" id="reference"></a>
 <p><a href="https://namu.wiki/w/%EB%9E%8C%EB%8B%A4%EC%8B%9D">https://namu.wiki/w/%EB%9E%8C%EB%8B%A4%EC%8B%9D</a></p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">
-</code></pre></div></div>
+<p><a href="https://codechacha.com/ko/java8-method-reference/">https://codechacha.com/ko/java8-method-reference/</a></p>
+<p><a href="https://m.blog.naver.com/PostView.nhn?blogId=2feelus&amp;logNo=220706354421&amp;proxyReferer=https:%2F%2Fwww.google.com%2F">https://m.blog.naver.com/PostView.nhn?blogId=2feelus&amp;logNo=220706354421&amp;proxyReferer=https:%2F%2Fwww.google.com%2F</a></p>
+</div>
 
 	
     <div style="margin-top:200px;">
@@ -1207,8 +1420,22 @@ if (!doNotTrack) {
         <li><a href="#-함수형-인터페이스-선언">◾ 함수형 인터페이스 선언</a></li>
       </ul>
     </li>
-    <li><a href="#variable-capture">Variable Capture</a></li>
+    <li><a href="#variable-capture">Variable Capture</a>
+      <ul>
+        <li><a href="#-final-지역-변수에-접근">◾ final 지역 변수에 접근</a></li>
+        <li><a href="#-final이-아니고-한번만-초기화-된-변수에-접근">◾ final이 아니고 한번만 초기화 된 변수에 접근</a></li>
+        <li><a href="#-람다식-외부에서-정의된-값을-변경할-수는-없다">◾ 람다식 외부에서 정의된 값을 변경할 수는 없다.</a></li>
+        <li><a href="#-람다식-외부의-지역변수가-아니라면-변경-가능하다">◾ 람다식 외부의 지역변수가 아니라면 변경 가능하다.</a></li>
+      </ul>
+    </li>
     <li><a href="#메소드-생성자-레퍼런스">메소드, 생성자 레퍼런스</a>
+      <ul>
+        <li><a href="#-static-메소드">◾ Static 메소드</a></li>
+        <li><a href="#-instance-메서드">◾ Instance 메서드</a></li>
+        <li><a href="#-생성자-constructor-메서드">◾ 생성자 (Constructor) 메서드</a></li>
+      </ul>
+    </li>
+    <li><a href="#자주-사용하는-함수형-인터페이스">자주 사용하는 함수형 인터페이스</a>
       <ul>
         <li><a href="#reference">Reference</a></li>
       </ul>
