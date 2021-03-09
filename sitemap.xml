@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://gowoonsori.site/javascript/react-project/</loc>
+    <loc>https://gowoonsori.site/share/react-project/</loc>
     <lastmod>2021-01-24T14:09:48+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/javascript/react-project/1/</loc>
+    <loc>https://gowoonsori.site/share/react-project/1/</loc>
     <lastmod>2021-01-24T13:41:25+09:00</lastmod>
   </url>
   
@@ -28,7 +28,7 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/home/start-blog/</loc>
+    <loc>https://gowoonsori.site/share/start-blog/</loc>
     <lastmod>2020-09-18T18:51:53+09:00</lastmod>
   </url>
   
@@ -43,7 +43,7 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/javascript/react-project/2/</loc>
+    <loc>https://gowoonsori.site/share/react-project/2/</loc>
     <lastmod>2021-01-24T14:09:48+09:00</lastmod>
   </url>
   
@@ -58,7 +58,7 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/javascript/react-project/3/</loc>
+    <loc>https://gowoonsori.site/share/react-project/3/</loc>
     <lastmod>2021-01-29T23:44:32+09:00</lastmod>
   </url>
   
@@ -188,13 +188,18 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/home/</loc>
-    <lastmod>2020-09-20T19:32:01+09:00</lastmod>
+    <loc>https://gowoonsori.site/share/</loc>
+    <lastmod>2021-02-02T01:15:40+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/</loc>
-    <lastmod>2021-02-02T01:15:40+09:00</lastmod>
+    <loc>https://gowoonsori.site/share/spring-graphql/</loc>
+    <lastmod>2021-03-09T20:03:04+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/java/inheritance/</loc>
+    <lastmod>2021-03-07T20:27:47+09:00</lastmod>
   </url>
   
   <url>
@@ -203,7 +208,7 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/home/2020-retrospect/</loc>
+    <loc>https://gowoonsori.site/share/2020-retrospect/</loc>
     <lastmod>2021-01-05T23:53:36+09:00</lastmod>
   </url>
   
@@ -218,7 +223,7 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/home/2month-retrospect/</loc>
+    <loc>https://gowoonsori.site/share/2month-retrospect/</loc>
     <lastmod>2020-11-07T14:58:55+09:00</lastmod>
   </url>
   
