@@ -94,7 +94,7 @@ body:not(.render_raw) {
   body:not(.render_raw) footer {
     background-color: #333333;
     color: #cccccc;
-    padding: 3rem; }
+    padding: 1rem; }
     body:not(.render_raw) footer a {
       color: #cccccc; }
 
@@ -338,3 +338,70 @@ article section.page div.content {
     padding-left: 25px;
     padding-right: 40px;
   }
+
+article section.page div.content div.pagination-container{
+  text-align: center;
+  margin: 25px auto;
+  width: 100%;
+}
+article section.page div.content div.pagination-container ul.pagination {
+  display: inline-flex;
+  width: auto;
+  list-style: none;
+  border-radius: 0.25rem;
+}
+
+article section.page div.content div.pagination-container ul.pagination li.page-item a.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #027f51;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+article section.page div.content div.pagination-container ul.pagination li.page-item .page-link:hover {
+  z-index: 2;
+  color: #0056b3;
+  text-decoration: none;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+article section.page div.content div.pagination-container ul.pagination li.page-item-active a.page-link{
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #fff;
+  background-color: #027f51;
+  border: 1px solid #dee2e6;
+}
+
+article section.page div.content div.pagination-container ul.pagination li.page-item-active .page-link:hover {
+  z-index: 2;
+  color: #0056b3;
+  text-decoration: none;
+  background-color: #dee2e6;
+  border-color: #e9ecef;
+}
+
+article section.page div.content div.pagination-container ul.pagination li.page-item .page-link:focus {
+  z-index: 3;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+article section.page div.content div.pagination-container ul.pagination li.page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+article section.page div.content div.pagination-container ul.pagination li.page-item:last-child .page-link {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}

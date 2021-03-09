@@ -18,7 +18,7 @@
 	"title": "Java",
 	"tags": [],
 	"description": "Java를 사용하고 공부하면서 얻은 지식들을 정리합니다.",
-	"content": "\rJVM과 자바 실행\r백기선님의 유튜브로 진행하시는 스터디를 진행하며 올리는 정리 블로그입니다. JVM Java Virtual Machine의 약자로 Java와 OS사이에서 중개자 역할을 하여 메모리 ...\n\rDataType과 변수\r백기선님의 유튜브로 진행하시는 스터디를 진행하며 올리는 정리 블로그입니다. 자바에서 데이터 타입은 크게 원시(Primitive) 타입과 참조(Reference) 타입이 있다. Pr ...\n\r연산자\r백기선님의 유튜브로 진행하시는 스터디를 진행하며 올리는 정리 블로그입니다. 산술 연산자 두개의 피연산자를 갖는 이항 연산자로써, 기본적인 사칙연산을 다루는 연산자 ◾ 더하기 (\u0026#43; ...\n\r제어문\r조건문 ◾ Switch 특정 데이터의 값에 따라 수행할 작업을 선택하는 구문으로 switch를 사용한다. 일반적인 사용법은 C/C\u0026#43;\u0026#43;와 다르지 않다. public class exa ...\n\r클래스 (Class)\r객체 지향의 중심 객체를 정의하는 일종의 틀 같은 것으로 상태(변수) / 행동(메서드)이 있을 수 있다. 이로 인해 추상화, 캡슐화, 상속, 다형성 등을 가능하게 하여 개발 / 유 ...\n\rJunit5\r자바 프로그래밍용 Unit 테스트 프레임워크 런타임시 Java 8이상이 필요하며 컴파일 타임시에 JAR로서 링크된다. Spring Boot를 이용하면 내부에 dependency가 ...\n\r멀티 스레딩\r백기선님의 유튜브로 진행하시는 스터디를 진행하며 올리는 정리 블로그입니다. Thread란? 쓰레드라는 개념을 이해하기 위해서는 프로세스와 병행성(Concurrency)의 개념을 알 ...\n\rEnum\r백기선님의 유튜브로 진행하시는 스터디를 진행하며 올리는 정리 블로그입니다. Java의 Enum도 기본적으로 c나 c\u0026#43;\u0026#43;의 enum과 같은 목적을 위한 클래스로 JDK 1.5이후에 ...\n\r어노테이션 (Annotation)\r메서드를 오버라이딩 할때 사용했던 @Override와 같이 @ 기호를 사용하는 문법 요소로 Java5부터 등장했다. 단어의 의미인 주석과는 비슷하지만 다른 역할로써 사용되는데 메서 ...\n\rI/O\r컴퓨터의 5대 기능인 입력/출력/연산/저장/제어 중 입력(Input)과 출력(Ouput)을 줄여 I/O라고 말한다. 스트림 / 버퍼 / 채널 기반의 I/O ◾ 스트림 입출력을 도 ...\n\r제네릭\r제네릭은 클래스 내부에서 사용할 데이터 타입을 외부에서 지정하는 기법으로 컴파일 시에 더 많은 버그를 탐지할 수 있도록해 코드의 안전성을 더한다. C\u0026#43;\u0026#43;의 템플릿과 처리 과정이나 ...\n\r람다식\r람다식은 익명함수를 지칭하는 용어로 함수 지향적인 표현에 가까운 표현식이다. 람다식은 런타임시에 익명 구현 객체를 생성하여 사용한다. 코드의 간결성, 지연 연산을 통한 성능 향상, ...\n\rInheritance\r특징 super 메소드 오버라이딩 Dynamic Method Dispatch 추상 클래스 final 클래스 Object 클래스 dddddddddddddddddddddd ...\n\r "
+	"content": ""
 },
 {
 	"uri": "https://gowoonsori.site/java/jvm/",
@@ -53,7 +53,7 @@
 	"title": "JavaScript",
 	"tags": [],
 	"description": "바닐라 Js부터 es6, react등 js프레임워크,라이브러리등을 공부하고 정리합니다.",
-	"content": "\rDataType과 변수\r요즘 핫한 TS가 아닌 원래의 기본 JS는 동적 타입(느슨한 타입) 언어이기 때문에 타입을 미리 선언할 필요가 없다. 기본 자료형 ( Primitive ) ◾ boolean 다른 ...\n\r연산자\rnew 정의한 생성자 (객체 생성 메서드)를 통해 객체를 생성하여 할당하는 연산자 Optional Chaining ( ?. ) 왼쪽 피연산자가 null이거나 undefined라면 ...\n\r객체\rkey : value 의 쌍의 형태의 값을 갖는 자료형으로 key에는 문자/심볼형, value에는 모든 자료형이 올 수 있다. 이 때, 이 한 쌍을 프로퍼티(property)라고 ...\n\r함수\r다른 언어의 함수와 같이 어떠한 행동을 정의하는 부분이다. 다른점이라고 한다면 행동으로 취급하는 것이 아닌 이 행동또한 값으로 취급하여 함수를 복사도 가능하고 다른 변수에 할당도 ...\n\r "
+	"content": ""
 },
 {
 	"uri": "https://gowoonsori.site/share/react-project/2/",
@@ -193,7 +193,7 @@
 	"title": "자료구조 ( Data Structure )",
 	"tags": [],
 	"description": "앞으로 자료구조들을 업로드 할 예정입니다.",
-	"content": "\r트리\r그래프의 일종으로, 여러 노드가 한개의 노드를 가리킬 수 없는 구조 선형구조가 아닌 (비선형), 부모자식의 관계를 가지는 계층형 구조 용어 개념 (설명) Node (노드) : ...\n\r "
+	"content": ""
 },
 {
 	"uri": "https://gowoonsori.site/data-structure/tree/",
@@ -221,7 +221,7 @@
 	"title": "알고리즘 ( Algorithm )",
 	"tags": [],
 	"description": "computer algorithm관련 내용을 포스팅합니다.",
-	"content": "computer algorithm관련 내용을 포스팅할 예정입니다. \nSorting Algorithm\r데이터를 오름차순 / 내림차순으로 나열 하는 것. 종류 선택 정렬 ( Selection Sort ) 삽입 정렬 ( Insertion Sort ) 버블 정렬 ( Bubble Sor ...\n\r "
+	"content": ""
 },
 {
 	"uri": "https://gowoonsori.site/algorithm/sorting-algorithm/",
@@ -242,28 +242,28 @@
 	"title": "Books",
 	"tags": [],
 	"description": "책들을 읽고 난 후 간단한 소감과 요약내용, 서평 등을 올릴 예정입니다.",
-	"content": "책들을 읽고 난 후 간단한 소감과 요약내용을 올릴 예정입니다 📑\nClean Code\r1장 깨끗한 코드 코드 품질을 측정하는 유일한 척도 = 분당 내지르는 \u0026amp;lsquo;WTF!\u0026amp;rsquo; 횟수 코드는 요구사항을 상세히 표현하는 수단 ( 기계가 실행할 정도로 ...\n\r "
+	"content": "책들을 읽고 난 후 간단한 소감과 요약내용을 올릴 예정입니다 📑\n"
 },
 {
 	"uri": "https://gowoonsori.site/linux/",
 	"title": "Linux",
 	"tags": [],
 	"description": "Linux에 관한 개발기, 공부한 내용",
-	"content": "\rpacket capture program 만들기\rLinux환경에서 C를 이용해 raw socket을 이용한 tcpdump의 interface를 모방하는 패킷 캡쳐 프로그램 작성하는 것을 목표로 시작했습니다. 캡쳐할 정보는 IPv ...\n\r "
+	"content": ""
 },
 {
 	"uri": "https://gowoonsori.site/wsl2/",
 	"title": "wsl2",
 	"tags": [],
 	"description": "wsl2에 대한 환경설정, 오류에 관한 글",
-	"content": "\rWSL2 포트포워딩과 window에서 workbench로 접속하기\rWSL2를 이용하여 개발을 진행서 외부에서 접근하고 싶거나, 배포를 위해 접근하고 싶을 수가 있는데, 문제가 되는 것이 WSL2는 VM과 같은 환경이라 별도의 IP를 갖는다는 점이 ...\n\rWSL2에서 Mysql 자동실행 설정하기\r[wsl2 설치가 안된 분은 여기를 참고하자] 나는 이번년도에 wsl2를 알게 되어 wsl2을 통해 편하게 개발을 진행하였다. 그런데, wsl2가 아직 여럿 불편한 점이 있었고 그 ...\n\r "
+	"content": ""
 },
 {
 	"uri": "https://gowoonsori.site/share/",
 	"title": "경험 공유",
 	"tags": [],
 	"description": "각종 체험기, 후기, 제작기, 공유하고 싶은 내용들을 포스팅 할 예정입니다.",
-	"content": "꾸준한 글쓰기로 많은 사람들에 도움이 되는 것을 꿈꾸고 있어요. 😀 🌼 포인트 적립을 위한 웹 제작기\r방학때 엄마집에 있으며 엄마 가게를 도와주다가 갑자기 엄마가 운영하는 꽃집에 포인트 적립을 한번 도입해보고 싶다고 하셨다. 지류로 하는 도장형식은 하기 싫다고 하셨고 운영도 애매하 ...\n\r블로그 첫 시작 👋\r우선, 나는 말수가 적은 편이다. 말을 적게한다고 생각을 안하는 것이 아니라 머리속에서 생각은 정말 많으나, 그것을 입밖으로 꺼낼때 정리가 되지 않아 버벅거리기도 하고, 조사를 잘 ...\n\rHugo와 Github page로 블로그 구축\r블로그를 작성하기로 마음 먹은 후에 가장 먼저 할 일이 블로그를 만드는 것이었다. hugo와 github을 사용하면서 블로그를 open하는 과정과 겪었던 문제점들, 추가한 내용들을 ...\n\rKPU S/W 경진대회 예선 후기\r학교공부에 치여 살다보니 알고리즘 문제 풀이를 안한지 3달정도가 지났는 데 학교 엘레베이터에 위와 같은 코테 포스터가 붙여진 것을 보았다. 실력 테스트도 해보고 상금도 노릴겸 해서 ...\n\rSpring boot로 GraphQL 서버 구축하기\r이번에 버스 공공api를 이용해 현재 gps를 기반으로한 승차 예약 시스템 프로젝트를 진행중에 있는데, 이때의 구축과정기를 작성하려고 합니다. Spring boot에 GraphQL ...\n\r2020년을 보내며\r2019년도에 했던 2020년 다짐으로 3학년 복학을 하면서 웹 개발 전반적으로 공부도하면서 학점관리와 토익, 토이 프로젝트를 진행하고자 했었다. 진행한 프로젝트 my-tech ...\n\r2020년 11월 회고\r블로그 시작한지 2달째 작성해보는 회고 첫 작성한 블로그 보기 블로그 작성을 9월을 시작으로 벌써 2달이라는 시간이 지났다. 두달동안 나름 블로그를 열심히 작성해보겠다고 게시글들을 ...\n\r "
+	"content": "꾸준한 글쓰기로 많은 사람들에 도움이 되는 것을 꿈꾸고 있어요. 😀 "
 },
 {
 	"uri": "https://gowoonsori.site/share/spring-graphql/",

@@ -70,12 +70,14 @@ body:not(.render_raw) {
       position: -webkit-sticky;
       position: sticky;
       overflow-y: auto;
-      top: 45px; }
+      top: 45px;
+      padding-bottom: 40px; }
     body:not(.render_raw) article section.page {
       -webkit-box-flex: 1;
       flex: 1 auto;
       max-width: 100%;
-      min-width: 320px; }
+      min-width: 320px; 
+      margin-bottom: 50px;}
       body:not(.render_raw) article section.page .jump-to-section {
         display: none;
         margin-top: 1em;
