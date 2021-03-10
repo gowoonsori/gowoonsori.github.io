@@ -326,6 +326,7 @@ article section.page div.content {
     margin-bottom : 20px;
     color : #7b7b7b;
     font-size: 0.9em;
+    padding : 5px 0 15px;
   }
   article section.page div.content ul div.content-page a{
     color : #027f51;
