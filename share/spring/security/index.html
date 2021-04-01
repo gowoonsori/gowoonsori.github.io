@@ -1,0 +1,1803 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+	GraphQL서버에 SpringSecurity 적용해보기 :: Gowoonsori&#39;s TechBlog
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2021-04-01T17:17:41 KST">
+<meta name="robots" content="index,follow" /> 
+<meta name="googlebot" content="index,follow" />
+
+<title>GraphQL서버에 SpringSecurity 적용해보기 :: Gowoonsori&#39;s TechBlog</title>
+
+<meta name="author" content="gowoonsori">
+
+<meta name="description" content="springboot GraphQL서버에 SpringSecurity 적용해보기">
+<link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
+<link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
+
+<meta property="og:title" content="GraphQL서버에 SpringSecurity 적용해보기" />
+<meta property="og:description" content="springboot GraphQL서버에 SpringSecurity 적용해보기" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://gowoonsori.site/share/spring/security/" />
+<meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
+<meta property="og:updated_time" content="2021-04-01T15:15:33+09:00" />
+
+
+
+
+
+
+<link rel="stylesheet" href='https://gowoonsori.site/sass/layout.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.main.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.menu.css'>
+<link href='/vendor/FontAwesome/fontawesome-free-5.14.0-web/css/all.min.css' rel="stylesheet"> 
+<link rel="stylesheet" href='/css/docport.css'>
+
+
+
+
+
+<script src='/vendor/jquery/jquery-3.5.1.min.js'></script>
+<script src='/js/docport.js'></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/gowoonsori.site";
+</script>
+<script>
+      (function(j,en,ni,fer) {
+          j['dmndata']=[];j['jenniferFront']=function(args){window.dmndata.push(args)};
+          j['dmnaid']=fer;j['dmnatime']=new Date();j['dmnanocookie']=false;j['dmnajennifer']='JENNIFER_FRONT@INTG';
+          var b=Math.floor(new Date().getTime() / 60000) * 60000;var a=en.createElement(ni);
+          a.src='https://d-collect.jennifersoft.com/'+fer+'/demian.js?'+b;a.async=true;
+          en.getElementsByTagName(ni)[0].parentNode.appendChild(a);
+      }(window,document,'script','b13ba63e'));
+  </script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-178493752-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+    
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script> 
+    
+  <style type="text/css">
+    #debug{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 3.5rem;
+    margin-bottom: .35rem;
+    padding: 0 2rem;
+    position: fixed;
+    left: 0;      right: 0;     top: 0;
+   
+    top:0px;
+    
+    min-height: 150px;
+
+    background-color: white;
+    border: 3px solid red;
+    z-index: 10000 ;
+    word-wrap: all;
+    overflow: auto;
+  }
+  </style>
+  </head>
+
+  <body data-url="/share/spring/security/"
+
+  class="hidebreadcrumb ">
+
+ 
+
+
+    
+    
+    <header style="">
+        <div>
+    
+    <div class="burger ">
+        <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">&#9776;</a>
+    </div>
+    
+    <img src="/images/favicon.png" style="margin-top:3px; width: 20px; height: 20px;">
+    <div>
+	
+		
+	    	<a class='baselink' href='https://gowoonsori.site'>Gowoonsori's TechBlog</a>
+	  	
+	</div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/gowoonsori"  rel="noopener">
+                  Github
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://www.facebook.com/gowoonsori97"  rel="noopener">
+                  FaceBook
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="mailto:gowoonsori97@gmail.com"  rel="noopener">
+                  Gmail
+                </a>
+            </li>
+    </nav>
+
+</div>
+    </header>
+    
+
+    <article>
+      
+      <aside class="">
+        
+<div class="search">
+	<div class="searchbox">
+	  <input data-search-input id="search-by" type="text" placeholder="Type to search...">
+	</div>
+	<script type="text/javascript" src="/vendor/lunr/lunr.min.js"></script>
+	<script type="text/javascript" src="/vendor/auto-complete/auto-complete.js"></script>
+	<link href="/vendor/auto-complete/auto-complete.css" rel="stylesheet">
+	<script type="text/javascript">
+	  
+	      var baseurl = "https:\/\/gowoonsori.site";
+	  
+	</script>
+	<script type="text/javascript" src="/js/search.js"></script>
+</div>
+	
+		
+	    	
+	    
+	<div id="close_menu">
+  <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">
+      <i class="fa fa-lg fa-times"></i>
+  </a>
+</div>
+
+<ul class="menu">
+<div id="categories" style="">
+  <p>Categories</p>
+</div>
+
+    <li data-nav-id="https://gowoonsori.site/java/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/java/">Java</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/jvm/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/jvm/">JVM과 자바 실행</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/datatype/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/datatype/">DataType과 변수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/string/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/string/">문자열</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/operator/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/operator/">연산자</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/controlstatement/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/controlstatement/">제어문</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/class/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/class/">클래스 (Class)</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/junit5/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/junit5/">Junit5</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/thread/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/thread/">멀티 스레딩</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/enum/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/enum/">Enum</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/annotation/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/annotation/">어노테이션 (Annotation)</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/io/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/io/">I/O</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/generic/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/generic/">제네릭</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/lambda/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/lambda/">람다식</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/sort/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/sort/">자바에서의 정렬</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/inheritance/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/inheritance/">상속 (Inheritance)</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/javascript/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/javascript/">JavaScript</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/datatype/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/datatype/">DataType과 변수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/operator/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/operator/">연산자</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/object/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/object/">객체</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/function/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/function/">함수</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/data-structure/">자료구조 ( Data Structure )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/data-structure/tree/">트리</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/redblacktree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/redblacktree/">레드 블랙 트리 (Red Black Tree)</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/avltree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/avltree/">AVL Tree</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/algorithm/">알고리즘 ( Algorithm )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/algorithm/sorting-algorithm/">Sorting Algorithm</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/counting-sort/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/sorting-algorithm/counting-sort/">Counting Sort ( 계수 정렬 )</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/books/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/books/">Books</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/books/cleancode/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/books/cleancode/">Clean Code</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/linux/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/linux/">Linux</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/packet_capture/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/packet_capture/">packet capture program 만들기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/wsl2/">wsl2</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/port-forwarding/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/wsl2/port-forwarding/">WSL2 포트포워딩과 window에서 workbench로 접속하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/wsl2/wsl2-mysql/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/wsl2/wsl2-mysql/">WSL2에서 Mysql 자동실행 설정하기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/share/" class="dd-item parent haschildren
+        item_level_$level
+        ">
+
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/share/">경험 공유</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/react-project/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/share/react-project/">🌼 포인트 적립을 위한 웹 제작기</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/react-project/1/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/react-project/1/">1. 프로젝트 설계와 환경 구성</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/react-project/2/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/react-project/2/">2. front 개발환경 셋팅과 로그인 창 구현</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/react-project/3/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/react-project/3/">3. atom사용과 포인트 적립 페이지 만들기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/start-hugo/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/share/start-hugo/">Hugo와 Github page로 블로그 구축</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/start-hugo/custom/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/start-hugo/custom/">Hugo theme Custom 하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/start-hugo/pagination/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/start-hugo/pagination/">페이징 기능 추가하기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/spring/" class="dd-item parent haschildren
+        item_level_$level
+        ">
+
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+      
+      
+          <a href="/share/spring/">spring boot</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/spring/security/" class="dd-item parent active
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/spring/security/">GraphQL서버에 SpringSecurity 적용해보기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/spring/elk/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/spring/elk/">spring boot와 EK스택 연결하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/spring/spring-graphql/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/spring/spring-graphql/">Spring boot로 GraphQL 서버 구축하기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/2020-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/2020-retrospect/">2020년을 보내며</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/2month-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/2month-retrospect/">2020년 11월 회고</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/kpu_sw_competition/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/share/kpu_sw_competition/">KPU S/W 경진대회 예선 후기</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/kpu_sw_competition/final/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/kpu_sw_competition/final/">KPU S/W 경진대회 본선 후기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/share/start-blog/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/share/start-blog/">블로그 첫 시작 👋</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+
+
+
+</ul>
+	
+		
+	    	<center>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/gowoonsori" aria-label="Follow @gowoonsori on GitHub">Follow@gowoonsori</a>
+<!-- Place this tag where you want the button to render. -->
+</center>
+<!-- <center style='margin-top:20px'>
+    <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgowoonsori.site&count_bg=%23426EAE&title_bg=%23555555&icon=&icon_color=%238E4F4F&title=%F0%9F%93%8C+Today+%2F+Total++&edge_flat=false"/></a>
+</center> -->
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+	    
+	
+      </aside>
+      
+
+      <section class="page ">
+      
+	    
+    
+    
+
+    
+	
+		
+        
+		
+		
+		
+		
+		
+		
+
+		
+			<h1>GraphQL서버에 SpringSecurity 적용해보기</h1>
+        
+
+		
+										
+		
+
+		
+
+
+	
+	
+
+	
+	
+	<div class="jump-to-section">
+		<span onclick="$h = $(this);$h.next('nav').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('nav').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+  			Jump to Section
+  			<i style=";" class="fas fa-chevron-right"></i>
+		</span>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#라이브러리-추가">라이브러리 추가</a></li>
+    <li><a href="#websecurityconfigureradapter를-상속받은-config클래스-생성">WebSecurityConfigurerAdapter를 상속받은 Config클래스 생성</a></li>
+    <li><a href="#filter-추가">Filter 추가</a>
+      <ul>
+        <li><a href="#-커스텀-인증-객체-생성">◾ 커스텀 인증 객체 생성</a></li>
+      </ul>
+    </li>
+    <li><a href="#provider-생성">Provider 생성</a></li>
+    <li><a href="#controller의-메서드들에-preauthorize추가">controller의 메서드들에 @PreAuthorize추가</a></li>
+    <li><a href="#결과">결과</a></li>
+  </ul>
+</nav>
+	</div>
+	
+	
+
+	<div class="content"><p>지난번에 spring boot를 이용해서 graphQL서버를 구성해보았는데, 서비스를 운영할때 가장 중요한 <code>보안</code>을 설정하기 위해 springSecurity를 적용한 사례를 작성해보려고 합니다.</p>
+<p>우선, 인증 방식을 선택해야 하는데, 버스정보 어플같은 경우 사용자를 구분할 별도의 인증이 필요없기 때문에 간단하게 <code>api-key</code>를 통한 인증을 구현해보겠습니다.</p>
+<h2>라이브러리 추가</h2><a class="anchor" id="라이브러리-추가"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">dependencies {
+  ... 그 외 라이브러리
+
+  //spring security
+  compile &#34;org.springframework.boot:spring-boot-starter-security&#34;
+}
+</code></pre></div><p>gradle은 위와 같이 한줄을 추가 해주면 되고 maven은 <a href="https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security">maven repository</a>에서 버전을 선택해 의존성 추가해주면된다.</p>
+<p><br><br></p>
+<h2>WebSecurityConfigurerAdapter를 상속받은 Config클래스 생성</h2><a class="anchor" id="websecurityconfigureradapter를-상속받은-config클래스-생성"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@EnableWebSecurity</span>
+<span style="color:#99f">@EnableGlobalMethodSecurity</span><span style="color:#555">(</span>prePostEnabled <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">true</span><span style="color:#555">)</span>
+<span style="color:#99f">@RequiredArgsConstructor</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">GraphQLSecurityConfig</span> <span style="color:#069;font-weight:bold">extends</span> WebSecurityConfigurerAdapter <span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#069;font-weight:bold">final</span> String USER_ID_PRE_AUTH_HEADER <span style="color:#555">=</span> <span style="color:#c30">&#34;api_key&#34;</span><span style="color:#555">;</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">protected</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">configure</span><span style="color:#555">(</span>HttpSecurity http<span style="color:#555">)</span> <span style="color:#069;font-weight:bold">throws</span> Exception <span style="color:#555">{</span>
+        http
+            <span style="color:#09f;font-style:italic">// api-key auth 필터 추가
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#555">.</span><span style="color:#309">addFilterBefore</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">new</span> ApiKeyAuthenticationFilter<span style="color:#555">(),</span> UsernamePasswordAuthenticationFilter<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">)</span>
+            <span style="color:#555">.</span><span style="color:#309">authorizeRequests</span><span style="color:#555">()</span>
+            <span style="color:#09f;font-style:italic">// 모든 endpoint는 인증이 필요
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#555">.</span><span style="color:#309">anyRequest</span><span style="color:#555">().</span><span style="color:#309">authenticated</span><span style="color:#555">()</span>
+            <span style="color:#555">.</span><span style="color:#309">and</span><span style="color:#555">()</span>
+            <span style="color:#09f;font-style:italic">// session manager filter 사용 x
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#555">.</span><span style="color:#309">sessionManagement</span><span style="color:#555">().</span><span style="color:#309">sessionCreationPolicy</span><span style="color:#555">(</span>SessionCreationPolicy<span style="color:#555">.</span><span style="color:#309">STATELESS</span><span style="color:#555">)</span>
+            <span style="color:#555">.</span><span style="color:#309">and</span><span style="color:#555">()</span>
+            <span style="color:#555">.</span><span style="color:#309">csrf</span><span style="color:#555">().</span><span style="color:#309">disable</span><span style="color:#555">()</span>
+            <span style="color:#555">.</span><span style="color:#309">httpBasic</span><span style="color:#555">().</span><span style="color:#309">disable</span><span style="color:#555">()</span>
+            <span style="color:#09f;font-style:italic">// Disable the /logout filter
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#555">.</span><span style="color:#309">logout</span><span style="color:#555">().</span><span style="color:#309">disable</span><span style="color:#555">()</span>
+            <span style="color:#09f;font-style:italic">// Disable anonymous users
+</span><span style="color:#09f;font-style:italic"></span>            <span style="color:#555">.</span><span style="color:#309">anonymous</span><span style="color:#555">().</span><span style="color:#309">disable</span><span style="color:#555">();</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">configure</span><span style="color:#555">(</span>WebSecurity web<span style="color:#555">)</span> <span style="color:#555">{</span>
+        web<span style="color:#555">.</span><span style="color:#309">ignoring</span><span style="color:#555">().</span><span style="color:#309">antMatchers</span><span style="color:#555">(</span><span style="color:#c30">&#34;/playground&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>spiring security를 의존성 추가만 해줘도 springsecurity filter들이 자동으로 등록되어 모든 도메인에대한 접속이 인증이 필요하게 되는데 우리는 서버 접속에 id/pw방식을 사용하지 않을 것이기 때문에 filter를 custom해주어야한다.</p>
+<p>그래서 WebSecurityConfigurerAdapter를 상속하여 <code>configure</code>메서드를 오버라이딩 해주어 재설정 해주면된다. <code>@EnableWebSecurity</code>어노테이션을 달면 springSecurity filter들이 자동으로 포함되고, <code>@EnableGlobalMethodSecurity(prePostEnabled = true)</code>어노테이션을 통해 컨트롤러에 존재하는 메서드들에 <code>@PreAuthorize()</code>어노테이션을 통해 권한여부를 파악할 수 있게 해준다.</p>
+<p>graphQL은 endpoint가 한개이므로 도메인별 권한을 부여하기 힘들기 대문에 이 어노테이션을 통해 권한을 인증하는 방식으로 구성하였다.</p>
+<p>configure메서드를 통해 기본인증방식인 form방식/session/httpBasic등을 비활성화 해주고, 웹으로 <code>/playground</code>접속을 할 수 있게 WebSecurity를 매개변수로 갖는 configure메서드에서 위와 같이 추가해주었다.</p>
+<p><br><br></p>
+<h2>Filter 추가</h2><a class="anchor" id="filter-추가"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import static</span> <span style="color:#0cf;font-weight:bold">wetayo.wetayoapi.config.security.GraphQLSecurityConfig.USER_ID_PRE_AUTH_HEADER</span><span style="color:#555">;</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">ApiKeyAuthenticationFilter</span> <span style="color:#069;font-weight:bold">implements</span> Filter <span style="color:#555">{</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">doFilter</span><span style="color:#555">(</span>ServletRequest request<span style="color:#555">,</span> ServletResponse response<span style="color:#555">,</span> FilterChain chain<span style="color:#555">)</span> <span style="color:#069;font-weight:bold">throws</span> IOException<span style="color:#555">,</span> ServletException <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>request <span style="color:#069;font-weight:bold">instanceof</span> HttpServletRequest <span style="color:#555">&amp;&amp;</span> response <span style="color:#069;font-weight:bold">instanceof</span> HttpServletResponse<span style="color:#555">){</span>
+            String apiKey <span style="color:#555">=</span> getApiKey<span style="color:#555">((</span>HttpServletRequest<span style="color:#555">)</span> request<span style="color:#555">);</span>
+            <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>apiKey <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">){</span>
+                ApiKeyAuthenticationToken apiToken <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ApiKeyAuthenticationToken<span style="color:#555">(</span>apiKey<span style="color:#555">);</span>
+                SecurityContextHolder<span style="color:#555">.</span><span style="color:#309">getContext</span><span style="color:#555">().</span><span style="color:#309">setAuthentication</span><span style="color:#555">(</span>apiToken<span style="color:#555">);</span>
+            <span style="color:#555">}</span><span style="color:#069;font-weight:bold">else</span> <span style="color:#555">{</span>
+                HttpServletResponse httpResponse <span style="color:#555">=</span> <span style="color:#555">(</span>HttpServletResponse<span style="color:#555">)</span> response<span style="color:#555">;</span>
+                httpResponse<span style="color:#555">.</span><span style="color:#309">setStatus</span><span style="color:#555">(</span>403<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+            chain<span style="color:#555">.</span><span style="color:#309">doFilter</span><span style="color:#555">(</span>request<span style="color:#555">,</span> response<span style="color:#555">);</span>
+        <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
+    <span style="color:#069;font-weight:bold">private</span> String <span style="color:#c0f">getApiKey</span><span style="color:#555">(</span>HttpServletRequest httpRequest<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> httpRequest<span style="color:#555">.</span><span style="color:#309">getHeader</span><span style="color:#555">(</span>USER_ID_PRE_AUTH_HEADER<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>필터를 하나 생성하여 http요청 헤더에서 <code>api-key</code>라는 헤더가 있는지 검사하는 로직을 수행하게 해주었는데, filter를 custom으로 생성을 해주었으면 <code>chain.doFilter(req,res)</code>를 꼭 넣어줘어야 필터체인의 다음 필터를 이어서 수행하기 때문에 빼먹지말자.</p>
+<p>헤더에 api-key가 존재하면 해당 api-key가 유요한 key인지 인증(검사)를 해야 하기 때문에 를 Set해주면 된다.</p>
+<h3>◾ 커스텀 인증 객체 생성</h3><a class="anchor" id="-커스텀-인증-객체-생성"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">ApiKeyAuthenticationToken</span> <span style="color:#069;font-weight:bold">extends</span> AbstractAuthenticationToken <span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">private</span> String apiKey<span style="color:#555">;</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">ApiKeyAuthenticationToken</span><span style="color:#555">(</span>String apiKey<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">super</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">null</span><span style="color:#555">);</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">apiKey</span> <span style="color:#555">=</span> apiKey<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">ApiKeyAuthenticationToken</span><span style="color:#555">(</span>Collection<span style="color:#555">&lt;?</span> <span style="color:#069;font-weight:bold">extends</span> GrantedAuthority<span style="color:#555">&gt;</span> authorities<span style="color:#555">,</span> String apiKey<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">super</span><span style="color:#555">(</span>authorities<span style="color:#555">);</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">apiKey</span> <span style="color:#555">=</span> apiKey<span style="color:#555">;</span>
+        setAuthenticated<span style="color:#555">(</span><span style="color:#069;font-weight:bold">true</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> Object <span style="color:#c0f">getCredentials</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">return</span> <span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> Object <span style="color:#c0f">getPrincipal</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> apiKey<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>SecurityContexholder에 추가해줄 Custom한 Authentication객체를 만들어야 하는데 <code>AbstractAuthenticationToken</code>을 상속받아 객체를 정의 해주면 되고 apiKey만 파라미터로하는 생성자는 인증전의 객체이며, Role을 담은 authorities를 포함하여 객체를 생성하면 인증 후의 객체로 <code>setAuthrenticatd(true)</code>을 수행해주면 된다.</p>
+<p>위의 필터에서는 apikey만을 파라미터로 주고있기 때문에 apikey가 있는지 검사하는 필터일 뿐이지 인증을 수행하지는 않은 상태이다.</p>
+<p><br><br></p>
+<h2>Provider 생성</h2><a class="anchor" id="provider-생성"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@Component</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">ApiKeyProvider</span> <span style="color:#069;font-weight:bold">implements</span> AuthenticationProvider <span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> AuthProperties authProperties<span style="color:#555">;</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">ApiKeyProvider</span><span style="color:#555">(</span>AuthProperties authProperties<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">authProperties</span> <span style="color:#555">=</span> authProperties<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> Authentication <span style="color:#c0f">authenticate</span><span style="color:#555">(</span>Authentication authentication<span style="color:#555">)</span> <span style="color:#069;font-weight:bold">throws</span> AuthenticationException <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>authentication<span style="color:#555">.</span><span style="color:#309">isAuthenticated</span><span style="color:#555">())</span> <span style="color:#069;font-weight:bold">return</span> authentication<span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>authentication<span style="color:#555">.</span><span style="color:#309">getPrincipal</span><span style="color:#555">().</span><span style="color:#309">toString</span><span style="color:#555">().</span><span style="color:#309">equals</span><span style="color:#555">(</span>authProperties<span style="color:#555">.</span><span style="color:#309">getApiKey</span><span style="color:#555">().</span><span style="color:#309">get</span><span style="color:#555">(</span><span style="color:#c30">&#34;user&#34;</span><span style="color:#555">))){</span>
+            ApiKeyAuthenticationToken token <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ApiKeyAuthenticationToken<span style="color:#555">(</span>AuthorityUtils<span style="color:#555">.</span><span style="color:#309">createAuthorityList</span><span style="color:#555">(</span><span style="color:#c30">&#34;user&#34;</span><span style="color:#555">),</span>authentication<span style="color:#555">.</span><span style="color:#309">getPrincipal</span><span style="color:#555">().</span><span style="color:#309">toString</span><span style="color:#555">());</span>
+            token<span style="color:#555">.</span><span style="color:#309">setAuthenticated</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">true</span><span style="color:#555">);</span>
+            <span style="color:#069;font-weight:bold">return</span> token<span style="color:#555">;</span>
+        <span style="color:#555">}</span><span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>authentication<span style="color:#555">.</span><span style="color:#309">getPrincipal</span><span style="color:#555">().</span><span style="color:#309">toString</span><span style="color:#555">().</span><span style="color:#309">equals</span><span style="color:#555">(</span>authProperties<span style="color:#555">.</span><span style="color:#309">getApiKey</span><span style="color:#555">().</span><span style="color:#309">get</span><span style="color:#555">(</span><span style="color:#c30">&#34;bus&#34;</span><span style="color:#555">))){</span>
+            ApiKeyAuthenticationToken token <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ApiKeyAuthenticationToken<span style="color:#555">(</span>AuthorityUtils<span style="color:#555">.</span><span style="color:#309">createAuthorityList</span><span style="color:#555">(</span><span style="color:#c30">&#34;bus&#34;</span><span style="color:#555">),</span>authentication<span style="color:#555">.</span><span style="color:#309">getPrincipal</span><span style="color:#555">().</span><span style="color:#309">toString</span><span style="color:#555">());</span>
+            token<span style="color:#555">.</span><span style="color:#309">setAuthenticated</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">true</span><span style="color:#555">);</span>
+            <span style="color:#069;font-weight:bold">return</span> token<span style="color:#555">;</span>
+        <span style="color:#555">}</span>
+        <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">throw</span> <span style="color:#069;font-weight:bold">new</span> AccessDeniedException<span style="color:#555">(</span><span style="color:#c30">&#34;invalid api-key&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">boolean</span> <span style="color:#c0f">supports</span><span style="color:#555">(</span>Class<span style="color:#555">&lt;?&gt;</span> authentication<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> ApiKeyAuthenticationToken<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">.</span><span style="color:#309">isAssignableFrom</span><span style="color:#555">(</span>authentication<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p><code>UsernamePasswordAuthenticationFilter</code>, <code>BasicAuthenticationFilter</code>, <code>FilterSecurityInterceptor</code>에서 Authentication Manager를 통해 Authentication객체의 인증을 수행하게 되는데 이때 Manger는 각종 Provider를 이용해서 인증객체를 인증한다.</p>
+<p>많은 Provider중에서 <code>supports</code>메서드를 통해 인증할 객체타입에 맞는 Provider를 찾아 인증을 수행하기 때문에 일일히 Filter에서 특정 Provider를 사용하도록 Manager에게 알려줄 필요가 없다. 그래서 Provider를 정의할때는 supports도 override하여 해당 객체타입임을 알려주어야 한다.</p>
+<p>Manager가 적합한 provider를 찾으면 수행하는 메서드인 <code>authenticate</code>를 override하여 여기에 인증 과정을 정의해주면 된다. 나는 application.properties에 미리 api-key를 생성해놓고 이를 이용해 비교로직을 수행하기 위해 AuthProperties라는 객체를 따로 빈으로 생성해서 .properties의 값을 가져오도록 했다.</p>
+<p>값이 같다면 역할(Authority)을 포함한 인증객체를 생성해 return하여 인증객체가 인증되었음(<code>setAuthenticated(true)</code>)을 수행토록 했다.</p>
+<p><br><br></p>
+<h2>controller의 메서드들에 @PreAuthorize추가</h2><a class="anchor" id="controller의-메서드들에-preauthorize추가"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@Component</span>
+<span style="color:#99f">@Slf4j</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WetayoQuery</span> <span style="color:#069;font-weight:bold">implements</span> GraphQLQueryResolver <span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> StationService stationService<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> RouteStationService routeStationService<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> RideService rideService<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> RouteService routeService<span style="color:#555">;</span>
+
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> ModelMapper modelMapper<span style="color:#555">;</span>
+
+
+    WetayoQuery<span style="color:#555">(</span>StationService stationService<span style="color:#555">,</span> ModelMapper modelMapper<span style="color:#555">,</span> RouteStationService routeStationService
+            <span style="color:#555">,</span> RideService rideService<span style="color:#555">,</span> RouteService routeService<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">stationService</span> <span style="color:#555">=</span> stationService<span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">modelMapper</span> <span style="color:#555">=</span> modelMapper<span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">routeStationService</span> <span style="color:#555">=</span> routeStationService<span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">rideService</span> <span style="color:#555">=</span> rideService<span style="color:#555">;</span>
+        <span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">routeService</span> <span style="color:#555">=</span> routeService<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@PreAuthorize</span><span style="color:#555">(</span><span style="color:#c30">&#34;hasAuthority(&#39;user&#39;)&#34;</span><span style="color:#555">)</span>
+    <span style="color:#069;font-weight:bold">public</span> List<span style="color:#555">&lt;</span>RouteStationGraphQLDto<span style="color:#555">&gt;</span> <span style="color:#c0f">getStations</span><span style="color:#555">(</span>Double x<span style="color:#555">,</span> Double y<span style="color:#555">,</span> Double distance<span style="color:#555">,</span> DataFetchingEnvironment e<span style="color:#555">)</span> <span style="color:#555">{</span>
+        List<span style="color:#555">&lt;</span>Station<span style="color:#555">&gt;</span> stations <span style="color:#555">=</span> stationService<span style="color:#555">.</span><span style="color:#309">getNearByStations</span><span style="color:#555">(</span>x<span style="color:#555">,</span> y<span style="color:#555">,</span> distance<span style="color:#555">);</span>
+        List<span style="color:#555">&lt;</span>RouteStationGraphQLDto<span style="color:#555">&gt;</span> routeStationDtos <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ArrayList<span style="color:#555">&lt;&gt;();</span> <span style="color:#09f;font-style:italic">// = Arrays.asList(modelMapper.map(stations, RouteStationGraphQLDto[].class));
+</span><span style="color:#09f;font-style:italic"></span>
+        stations<span style="color:#555">.</span><span style="color:#309">forEach</span><span style="color:#555">(</span>station <span style="color:#555">-&gt;</span> <span style="color:#555">{</span>
+            RouteStationGraphQLDto tmp <span style="color:#555">=</span> modelMapper<span style="color:#555">.</span><span style="color:#309">map</span><span style="color:#555">(</span>station<span style="color:#555">,</span>RouteStationGraphQLDto<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">);</span>
+            tmp<span style="color:#555">.</span><span style="color:#309">setDistance</span><span style="color:#555">(</span>GeometryUtil<span style="color:#555">.</span><span style="color:#309">calculateDistance</span><span style="color:#555">(</span>x<span style="color:#555">,</span> y<span style="color:#555">,</span> station<span style="color:#555">.</span><span style="color:#309">getGps</span><span style="color:#555">().</span><span style="color:#309">getX</span><span style="color:#555">(),</span> station<span style="color:#555">.</span><span style="color:#309">getGps</span><span style="color:#555">().</span><span style="color:#309">getY</span><span style="color:#555">()));</span>
+            routeStationDtos<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>tmp<span style="color:#555">);</span>
+        <span style="color:#555">});</span>
+        routeStationDtos<span style="color:#555">.</span><span style="color:#309">sort</span><span style="color:#555">(</span>Comparator<span style="color:#555">.</span><span style="color:#309">comparing</span><span style="color:#555">(</span>RouteStationGraphQLDto<span style="color:#555">::</span>getDistance<span style="color:#555">));</span>
+
+        <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>e<span style="color:#555">.</span><span style="color:#309">getSelectionSet</span><span style="color:#555">().</span><span style="color:#309">contains</span><span style="color:#555">(</span><span style="color:#c30">&#34;routes&#34;</span><span style="color:#555">))</span> <span style="color:#555">{</span>
+            <span style="color:#069;font-weight:bold">for</span> <span style="color:#555">(</span>RouteStationGraphQLDto routeStationDto <span style="color:#555">:</span> routeStationDtos<span style="color:#555">)</span> <span style="color:#555">{</span>
+                List<span style="color:#555">&lt;</span>RouteStation<span style="color:#555">&gt;</span> routeStations <span style="color:#555">=</span> routeStationService<span style="color:#555">.</span><span style="color:#309">findByStationId</span><span style="color:#555">(</span>routeStationDto<span style="color:#555">.</span><span style="color:#309">getStationId</span><span style="color:#555">());</span>
+                List<span style="color:#555">&lt;</span>RouteDto<span style="color:#555">&gt;</span> routeGraphQLDtos <span style="color:#555">=</span> Arrays<span style="color:#555">.</span><span style="color:#309">asList</span><span style="color:#555">(</span>modelMapper<span style="color:#555">.</span><span style="color:#309">map</span><span style="color:#555">(</span>routeStations<span style="color:#555">,</span> RouteDto<span style="color:#555">[].</span><span style="color:#309">class</span><span style="color:#555">));</span>
+                routeStationDto<span style="color:#555">.</span><span style="color:#309">setRoutes</span><span style="color:#555">(</span>routeGraphQLDtos<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+        <span style="color:#555">}</span>
+        log<span style="color:#555">.</span><span style="color:#309">info</span><span style="color:#555">(</span><span style="color:#c30">&#34;Query Stations (요청 gps : &#34;</span> <span style="color:#555">+</span> x <span style="color:#555">+</span> <span style="color:#c30">&#34;, &#34;</span> <span style="color:#555">+</span> y <span style="color:#555">+</span> <span style="color:#c30">&#34;) = &#34;</span> <span style="color:#555">+</span> routeStationDtos<span style="color:#555">);</span>
+        <span style="color:#069;font-weight:bold">return</span> routeStationDtos<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@PreAuthorize</span><span style="color:#555">(</span><span style="color:#c30">&#34;hasAuthority(&#39;bus&#39;)&#34;</span><span style="color:#555">)</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">boolean</span> <span style="color:#c0f">getRide</span><span style="color:#555">(</span>Integer stationId<span style="color:#555">,</span> Integer routeId<span style="color:#555">)</span> <span style="color:#555">{</span>
+        rideService<span style="color:#555">.</span><span style="color:#309">getRide</span><span style="color:#555">(</span>stationId<span style="color:#555">,</span> routeId<span style="color:#555">);</span>
+        log<span style="color:#555">.</span><span style="color:#309">info</span><span style="color:#555">(</span><span style="color:#c30">&#34;Query Ride(stationId : &#34;</span> <span style="color:#555">+</span> stationId <span style="color:#555">+</span> <span style="color:#c30">&#34;, routeId : &#34;</span> <span style="color:#555">+</span> routeId <span style="color:#555">);</span>
+        <span style="color:#069;font-weight:bold">return</span> <span style="color:#069;font-weight:bold">true</span><span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@PreAuthorize</span><span style="color:#555">(</span><span style="color:#c30">&#34;hasAuthority(&#39;bus&#39;)&#34;</span><span style="color:#555">)</span>
+    <span style="color:#069;font-weight:bold">public</span> List<span style="color:#555">&lt;</span>RouteDto<span style="color:#555">&gt;</span> <span style="color:#c0f">getRoutes</span><span style="color:#555">(</span>String regionName<span style="color:#555">)</span> <span style="color:#555">{</span>
+        List<span style="color:#555">&lt;</span>Route<span style="color:#555">&gt;</span> routes <span style="color:#555">=</span> routeService<span style="color:#555">.</span><span style="color:#309">getRoutes</span><span style="color:#555">(</span><span style="color:#c30">&#34;%&#34;</span> <span style="color:#555">+</span> regionName <span style="color:#555">+</span> <span style="color:#c30">&#34;%&#34;</span><span style="color:#555">);;</span>
+        List<span style="color:#555">&lt;</span>RouteDto<span style="color:#555">&gt;</span> routeDtos <span style="color:#555">=</span> Arrays<span style="color:#555">.</span><span style="color:#309">asList</span><span style="color:#555">(</span>modelMapper<span style="color:#555">.</span><span style="color:#309">map</span><span style="color:#555">(</span>routes<span style="color:#555">,</span> RouteDto<span style="color:#555">[].</span><span style="color:#309">class</span><span style="color:#555">));;</span>
+
+        log<span style="color:#555">.</span><span style="color:#309">info</span><span style="color:#555">(</span><span style="color:#c30">&#34;Query Routes (요청 지역 이름 : &#34;</span> <span style="color:#555">+</span> regionName <span style="color:#555">+</span> <span style="color:#c30">&#34;) = &#34;</span> <span style="color:#555">+</span> routeDtos<span style="color:#555">);</span>
+        <span style="color:#069;font-weight:bold">return</span> routeDtos<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>GraphQL의 contoller역할을 수행하는 QueryResolver의 메서드들에 어노테이션들을 붙여, api-key에 따른 역할을 구분하고 권한인증을 처리하도록 수행해주면 간단한 api-key를 통한 인증이 마무리 된다.</p>
+<p><br><br></p>
+<h2>결과</h2><a class="anchor" id="결과"></a>
+<p><img src="./result.PNG?classes=shadow,border" alt="result"></p>
+<p>http://localhost:8080/playground에 접속해서 header를 셋팅하고 query를 날려보면 정상적으로 응답이 잘 오는 것을 볼 수 있다. 꼭 playground가 아니고 postman과 같은 프로그램을 이용해도 무방하다.</p>
+</div>
+
+	
+    <div style="margin-top:200px;">
+		<script src="https://utteranc.es/client.js"
+				repo="gowoonsori/blog-comments"
+				issue-term="pathname"
+				theme="github-light"
+				crossorigin="anonymous"
+				async>
+		</script>
+	</div>
+    
+
+	
+	
+	
+	
+	 
+	<div class="chevrons ">
+		<a class="next" href="/share/spring/elk/" title="spring boot와 EK스택 연결하기" style="margin-right: 0px;">
+            <div>
+                <p>Next page</p>
+                <label>spring boot와 EK스택 연결하기</label>
+            </div>
+            <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
+	</div>
+	
+
+      </section>
+
+      
+      
+      <section class="right-menu ">
+      
+	
+	
+		
+	    	
+	  	
+	<div class="TableOfContents">
+    <label>What&#39;s on this page</label>
+    <nav>
+        <ul >
+            <li><a href="/share/spring/security/">GraphQL서버에 SpringSecurity 적용해보기</a></li>
+        </ul>
+    </nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#라이브러리-추가">라이브러리 추가</a></li>
+    <li><a href="#websecurityconfigureradapter를-상속받은-config클래스-생성">WebSecurityConfigurerAdapter를 상속받은 Config클래스 생성</a></li>
+    <li><a href="#filter-추가">Filter 추가</a>
+      <ul>
+        <li><a href="#-커스텀-인증-객체-생성">◾ 커스텀 인증 객체 생성</a></li>
+      </ul>
+    </li>
+    <li><a href="#provider-생성">Provider 생성</a></li>
+    <li><a href="#controller의-메서드들에-preauthorize추가">controller의 메서드들에 @PreAuthorize추가</a></li>
+    <li><a href="#결과">결과</a></li>
+  </ul>
+</nav>
+</div>
+	
+		
+	    	
+	  	
+	<div class="Actions">
+	<nav>
+		<ul>
+				
+		    
+		    
+			
+		      <li>
+		          <i class='fas fa-calendar'></i>
+		          Last update on 01 April 2021
+		      </li>
+		    
+		    
+		</ul>
+		<div style="text-align: center;margin : 10px 40px 0 0;">
+			<a href="https://hits.seeyoufarm.com">
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fshare%2fspring%2fsecurity%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+			</a>
+		</div>
+	</nav>
+    
+</div>
+
+      </section>
+      
+    </article>
+    
+    
+    <footer>
+      
+	
+		
+	    	<style type="text/css">
+
+.footer-gray {
+  width: 100%;
+  color: #888;
+}
+
+.footer-custom {
+  font: normal normal 12px/1.4 sans-serif;
+  /*max-width: 1008px;*/
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.footer-custom:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-lists:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-hdr {
+  color: white;
+  font: 22px/1.4  sans-serif;
+  margin: 1em 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .ftr-hdr {
+    font-size: 18px;
+  }
+}
+
+.footer-list-wrap {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 568px) {
+  .footer-list-wrap {
+    width: 33.3333%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-list-wrap {
+    width: 25%;
+  }
+}
+
+.ftr-links-sub {
+  padding: 0;
+  margin: 0;
+}
+
+.ftr-links-sub:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-links-sub li {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0;
+  color: #888;
+  font: normal normal 12px sans-serif;
+  text-transform: uppercase;
+  /*width: 150px;*/
+}
+
+.footer-custom a,
+.footer-custom a:link,
+.footer-custom a:visited,
+.ftr-links-sub li .link {
+  text-decoration: none;
+  color: #888;
+  padding: 5px 0;
+  display: block;
+}
+
+.footer-custom .footer-legal a {
+  display: inline;
+}
+
+.footer-custom a:hover,
+.footer-custom a:active,
+.ftr-links-sub li .link:hover {
+  text-decoration: underline;
+  color: #888;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-custom a, .footer-custom a:link, .footer-custom a:visited, .ftr-links-sub li .link {
+    padding: 0;
+  }
+}
+/* BEGIN EMAIL CAPTURE STYLES*/
+
+.footer-email {
+  text-align: center;
+}
+
+#ftrEmailForm {
+  height: 44px;
+}
+
+#ftrEmailForm .error {
+  display: none;
+  color: red;
+  text-align: left;
+}
+
+#ftrEmailForm #ftrEmailInput {
+  background: none repeat scroll 0 0 #FFF;
+  border: 1px solid #D6D6D6;
+  box-sizing: border-box;
+  color: #888;
+  float: left;
+  font: normal normal 14px/1.4 sans-serif;
+  padding: 5px;
+  width: 70%;
+  height: 100%;
+}
+
+#ftrEmailForm #ftrEmailInput:hover {
+  border: 1px solid #888;
+}
+
+#ftrEmailForm #ftrEmailInput:focus {
+  border: 1px solid #ef9223;
+  outline: #ef9223 auto 5px;
+}
+
+#ftrEmailForm .button {
+  width: 30%;
+  height: 100%;
+  padding: 5px;
+  float: left;
+  border: 1px solid #DFDFDF;
+  box-sizing: border-box;
+  color: #000;
+  font: normal bold 18px/1 sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FFF;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e1e1e1));
+  background: -webkit-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -moz-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -ms-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -o-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: linear-gradient(to bottom, white 0, #e1e1e1 100%);
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+}
+
+#ftrEmailForm .button:hover,
+#ftrEmailForm .button:active {
+  background: black;
+  color: #FFF;
+  outline: none;
+}
+/* BEGIN SOCIAL STYLES*/
+
+.footer-social {
+  text-align: center;
+}
+
+.footer-social ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-social ul:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-social li {
+  float: left;
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-lists {
+    width: 100%;
+  }
+  .footer-email {
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+  .footer-social {
+    width: 45%;
+    margin-left: 5%;
+    float: left;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-lists {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-email {
+    width: 33.3333%;
+  }
+  .footer-social {
+    width: 33.3333%;
+    float: right;
+    margin-left: 0;
+  }
+}
+
+.footer-legal {
+  padding: 15px 0 0;
+  clear: left;
+}
+
+.footer-payment {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-legal {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-payment {
+    width: 33.3333%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment {
+    text-align: left;
+  }
+}
+
+.footer-payment ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-payment ul li {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment ul li.ftr-stella {
+    margin-left: 0;
+  }
+}
+
+
+</style>
+  <div class="footer-gray">
+    <div class="footer-custom">
+      <div class="footer-lists">
+        <h6 class = "ftr-hdr">Contact me</h6>
+        <p>E-mail : gowoonsori97@gmail.com  |  gowoonsori97@naver.com</p>
+      </div>
+      <div class="footer-social">
+        <h6 class="ftr-hdr">Follow Us</h6>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/gowoonsori97/" title="Facebook">
+              <img width="24" height="24" alt="Like us on Facebook" src="/images/fb.png">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.github.com/gowoonosori" title="Github">
+             <i class="fab fa-github" style="font-size:24px"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <p>Copyrihgt &copy; gowoonsori.site All Rights Reserved. </p>
+      </div>
+    </div>
+  </div>
+  <!--/.footer-gray-->
+
+	    
+	
+    </footer>
+    
+
+
+
+  </body>
+</html>
