@@ -3,26 +3,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>
+	spring boot Graphql 요청 Environment :: Gowoonsori&#39;s TechBlog
+</title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2021-04-04T01:13:39 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>Categories :: Gowoonsori&#39;s TechBlog</title>
+<title>spring boot Graphql 요청 Environment :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀">
+<meta name="description" content="spring boot Graphql에서 datafetchingenvironment를 이용해서 쿼리명, 파라미터, 필드에 접근하는 방법을 포스팅합니다.">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="Categories" />
-<meta property="og:description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀" />
+<meta property="og:title" content="spring boot Graphql 요청 Environment" />
+<meta property="og:description" content="spring boot Graphql에서 datafetchingenvironment를 이용해서 쿼리명, 파라미터, 필드에 접근하는 방법을 포스팅합니다." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/categories/" />
-
+<meta property="og:url" content="https://gowoonsori.site/share/spring/graphql-environment/" />
+<meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
+<meta property="og:updated_time" content="2021-04-03T23:53:22+09:00" />
 
 
 
@@ -94,14 +97,9 @@ if (!doNotTrack) {
     }
   });
 </script> 
-  </head>
-
-  <body data-url="/categories/"
-
-  class="">
-
-<style type="text/css">
-  #debug{
+    
+  <style type="text/css">
+    #debug{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -121,7 +119,13 @@ if (!doNotTrack) {
     word-wrap: all;
     overflow: auto;
   }
-</style>
+  </style>
+  </head>
+
+  <body data-url="/share/spring/graphql-environment/"
+
+  class="hidebreadcrumb ">
+
  
 
 
@@ -809,12 +813,13 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/share/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/share/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
           
       
@@ -949,12 +954,13 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/share/spring/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/share/spring/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
       
           <a href="/share/spring/">spring boot</a>
@@ -983,7 +989,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/share/spring/graphql-environment/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/share/spring/graphql-environment/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -1147,30 +1153,530 @@ if (!doNotTrack) {
       </aside>
       
 
-
-      <div class="categories">
-        <h1>CATEGORIES</h1>
-        <p></p>
-        <ul>
-          
-          
-          
-        </ul>
-      </div>
+      <section class="page ">
       
+	    
+    
+    
+
+    
+	
+		
+        
+		
+		
+		
+		
+		
+		
+
+		
+			<h1>spring boot Graphql 요청 Environment</h1>
+        
+
+		
+										
+		
+
+		
+
+
+	
+	
+
+	
+	
+	<div class="jump-to-section">
+		<span onclick="$h = $(this);$h.next('nav').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('nav').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+  			Jump to Section
+  			<i style=";" class="fas fa-chevron-right"></i>
+		</span>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#적용-예">적용 예</a></li>
+    <li><a href="#제공-메서드들">제공 메서드들</a>
+      <ul>
+        <li><a href="#-getfield">◾ getField</a></li>
+        <li><a href="#-getarguments">◾ getArguments()</a></li>
+        <li><a href="#-getcontext">◾ getContext()</a></li>
+        <li><a href="#-getselectionset">◾ getSelectionSet()</a></li>
+        <li><a href="#-getexecutionid">◾ getExecutionId()</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+	</div>
+	
+	
+
+	<div class="content"><p>이번에는 Spring Boot GraphQL 환경변수(쿼리명, 파라미터명, 값, 받고자하는 데이터명 등)들을 Controller에서 접근하는 방법을 포스팅하려고 합니다.</p>
+<p>보통 Rest한 서버의 Controller에서는 <code>@PathVariable</code>, <code>@RequestBody</code>등과 같은 어노테이션을 이용해서 파라미터들에 접근할 수 있는데 요청자체가 body안에 json형태로 들어오는 graphQL은 위와 같은 어노테이션을 사용하기에 다소 무리가 있습니다.</p>
+<p>그래서 지난번에 포스팅한 <a href="https://www.graphql-java.com/">graphql-java</a>에서는 <code>DataFetchingEnvironment</code>라는 객체를 제공합니다.</p>
+<p><code>DataFetchingEnvironment</code>는 쿼리의 필드, 필드의 인수, 타입, 쿼리 루트 객체, 쿼리 컨텍스트와 같은 정보를 포함하고 있는 객체입니다.</p>
+<br>
+<h2>적용 예</h2><a class="anchor" id="적용-예"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-graphql" data-lang="graphql"><span style="color:#069;font-weight:bold">query</span>{<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#0a8;font-weight:bold">getstaion</span>(double<span style="color:#bbb"> </span>x,<span style="color:#bbb"> </span>double<span style="color:#bbb"> </span>y,<span style="color:#bbb"> </span>double<span style="color:#bbb"> </span>distance){<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>stationId<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>stationName<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>distance<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>routes{<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>routeId<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>routeName<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"> <span style="color:#99f">@PreAuthorize</span><span style="color:#555">(</span><span style="color:#c30">&#34;hasAuthority(&#39;user&#39;)&#34;</span><span style="color:#555">)</span>
+    <span style="color:#069;font-weight:bold">public</span> List<span style="color:#555">&lt;</span>RouteStation<span style="color:#555">&gt;</span> <span style="color:#c0f">getStations</span><span style="color:#555">(</span>Double x<span style="color:#555">,</span> Double y<span style="color:#555">,</span> Double distance<span style="color:#555">,</span> DataFetchingEnvironment environment<span style="color:#555">)</span> <span style="color:#555">{</span>
+        List<span style="color:#555">&lt;</span>Station<span style="color:#555">&gt;</span> stations <span style="color:#555">=</span> stationService<span style="color:#555">.</span><span style="color:#309">getNearByStations</span><span style="color:#555">(</span>x<span style="color:#555">,</span> y<span style="color:#555">,</span> distance<span style="color:#555">);</span>
+        List<span style="color:#555">&lt;</span>RouteStation<span style="color:#555">&gt;</span> routeStations <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ArrayList<span style="color:#555">&lt;&gt;();</span>
+
+        <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>environment<span style="color:#555">.</span><span style="color:#309">getSelectionSet</span><span style="color:#555">().</span><span style="color:#309">contains</span><span style="color:#555">(</span><span style="color:#c30">&#34;routes&#34;</span><span style="color:#555">))</span> <span style="color:#555">{</span>
+            <span style="color:#069;font-weight:bold">for</span> <span style="color:#555">(</span>RouteStation routeStation <span style="color:#555">:</span> routeStationDtos<span style="color:#555">)</span> <span style="color:#555">{</span>
+                List<span style="color:#555">&lt;</span>RouteStation<span style="color:#555">&gt;</span> routeStations <span style="color:#555">=</span> routeStationService<span style="color:#555">.</span><span style="color:#309">findByStationId</span><span style="color:#555">(</span>routeStation<span style="color:#555">.</span><span style="color:#309">getStationId</span><span style="color:#555">());</span>
+                routeStation<span style="color:#555">.</span><span style="color:#309">setRoutes</span><span style="color:#555">(</span>routeGraphQLDtos<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+        <span style="color:#555">}</span>
+        <span style="color:#069;font-weight:bold">return</span> routeStations<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+</code></pre></div><p>DataFetchingEnvironment를 사용하는 방법은 간단한데 기존에 존재하는 Resolver내의 메서드의 매개변수 인자로 주어주면 사용이 가능합니다.</p>
+<p>graphQL은 요청 파라미터에 따라 응답이 달라지게 되는데 routes정보를 뺀 getStations를 호출하게 되도 getStations메서드가 실행되면서 routes정보를 조회하는 쿼리가 실행되고 응답이 반환되게 됩니다. 이런 문제를 <code>DataFetchingEnvironment</code>를 이용해서 요청 파라미터에 있는지 확인을 먼저하여 성능향상을 꾀할 수 있게 됩니다.</p>
+<p>요청 필드명을 <code>DataFetchingFieldSelectionSet</code>이라는 객체로 변환하여 맵핑시킨 <code>environment.getSelectionSet()</code>을 이용해 요청 파라미터를 확인해볼 수 있습니다.</p>
+<p><br><br></p>
+<h2>제공 메서드들</h2><a class="anchor" id="제공-메서드들"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-graphql" data-lang="graphql">getstaion(double<span style="color:#bbb"> </span>x,<span style="color:#bbb"> </span>double<span style="color:#bbb"> </span>y,<span style="color:#bbb"> </span>double<span style="color:#bbb"> </span>distance){<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>stationId<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>stationName<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>distance<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>routes{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>routeId<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>routeName<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></code></pre></div><p>다음과 같은 쿼리를 예시로 설명하겠습니다.</p>
+<h3>◾ getField</h3><a class="anchor" id="-getfield"></a>
+<p>쿼리명(getStation), 파라미터(x, y, distance), 요청 필드(stationId, stationName&hellip;)들을 담고있는 객체가 반환되어 이 객체에서 <code>getArgument()</code>, <code>getSelectionSet()</code>과 같은 메서드로 변수들을 접근할 수 있습니다.</p>
+<h3>◾ getArguments()</h3><a class="anchor" id="-getarguments"></a>
+<p>요청 필드(stationId, staionName &hellip;)들을 담고있는 <code>Map</code>을 반환 받고 Map이기 때문에 <code>get()</code>메서드로 접근이 가능한데 <code>getField().getArgument()</code>와 차이점은 getField의 getArgument는 <code>List</code>이기 때문에 index로만 접근이 가능하지만 <code>getArguments()</code>는 Map이기 때문에 필드명으로 접근이 가능합니다.</p>
+<h3>◾ getContext()</h3><a class="anchor" id="-getcontext"></a>
+<p>현재 쿼리를 담당하는 Context를 반환하는 메서드로 <code>DefaultGraphQLServletContext</code>가 반환되고 <code>GraphQLServeltContextBuilder</code> 인터페이스를 상속받아 Custom Context를 만들어서 요청, 응답 헤더에 접근이 가능합니다.</p>
+<p>다음글로 CustomContext를 만드는 것을 포스팅 할 예정입니다.</p>
+<h3>◾ getSelectionSet()</h3><a class="anchor" id="-getselectionset"></a>
+<p>DataFetchingFieldSelectionSet 이라는 객체로 반환이 되며 <code>contains() / containsAnyOf() / containsAllOf()</code>메서드로 필드명이 존재하는 지 확인이 가능하고 <code>getFields()</code>를 이용해 <code>정규표현식</code>에 부합한 필드를 반환받을 수도 있습니다.</p>
+<h3>◾ getExecutionId()</h3><a class="anchor" id="-getexecutionid"></a>
+<p>각 쿼리 실행에 고유한 Id가 부여되고 이를 이용해서 각각의 쿼리에 대해 로그를 찍을때 태그를 지정할 수 있습니다.</p>
+<p><br><br></p>
+<hr>
+<h2>Reference</h2><a class="anchor" id="reference"></a>
+<p><a href="https://www.graphql-java.com/documentation/v11/data-fetching/">https://www.graphql-java.com/documentation/v11/data-fetching/</a></p>
+</div>
+
+	
+    <div style="margin-top:200px;">
+		<script src="https://utteranc.es/client.js"
+				repo="gowoonsori/blog-comments"
+				issue-term="pathname"
+				theme="github-light"
+				crossorigin="anonymous"
+				async>
+		</script>
+	</div>
+    
+
+	
+	
+	
+	
+	 
+	<div class="chevrons ">
+		<a class="next" href="/share/spring/security/" title="GraphQL서버에 SpringSecurity 적용해보기" style="margin-right: 0px;">
+            <div>
+                <p>Next page</p>
+                <label>GraphQL서버에 SpringSecurity 적용해보기</label>
+            </div>
+            <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
+	</div>
+	
+
+      </section>
 
       
       
       <section class="right-menu ">
       
-      
+	
+	
+		
+	    	
+	  	
+	<div class="TableOfContents">
+    <label>What&#39;s on this page</label>
+    <nav>
+        <ul >
+            <li><a href="/share/spring/graphql-environment/">spring boot Graphql 요청 Environment</a></li>
+        </ul>
+    </nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#적용-예">적용 예</a></li>
+    <li><a href="#제공-메서드들">제공 메서드들</a>
+      <ul>
+        <li><a href="#-getfield">◾ getField</a></li>
+        <li><a href="#-getarguments">◾ getArguments()</a></li>
+        <li><a href="#-getcontext">◾ getContext()</a></li>
+        <li><a href="#-getselectionset">◾ getSelectionSet()</a></li>
+        <li><a href="#-getexecutionid">◾ getExecutionId()</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+</div>
+	
+		
+	    	
+	  	
+	<div class="Actions">
+	<nav>
+		<ul>
+				
+		    
+		    
+			
+		      <li>
+		          <i class='fas fa-calendar'></i>
+		          Last update on 03 April 2021
+		      </li>
+		    
+		    
+		</ul>
+		<div style="text-align: center;margin : 10px 40px 0 0;">
+			<a href="https://hits.seeyoufarm.com">
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fshare%2fspring%2fgraphql-environment%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+			</a>
+		</div>
+	</nav>
+    
+</div>
+
       </section>
       
     </article>
+    
+    
+    <footer>
+      
+	
+		
+	    	<style type="text/css">
+
+.footer-gray {
+  width: 100%;
+  color: #888;
+}
+
+.footer-custom {
+  font: normal normal 12px/1.4 sans-serif;
+  /*max-width: 1008px;*/
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.footer-custom:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-lists:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-hdr {
+  color: white;
+  font: 22px/1.4  sans-serif;
+  margin: 1em 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .ftr-hdr {
+    font-size: 18px;
+  }
+}
+
+.footer-list-wrap {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 568px) {
+  .footer-list-wrap {
+    width: 33.3333%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-list-wrap {
+    width: 25%;
+  }
+}
+
+.ftr-links-sub {
+  padding: 0;
+  margin: 0;
+}
+
+.ftr-links-sub:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-links-sub li {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0;
+  color: #888;
+  font: normal normal 12px sans-serif;
+  text-transform: uppercase;
+  /*width: 150px;*/
+}
+
+.footer-custom a,
+.footer-custom a:link,
+.footer-custom a:visited,
+.ftr-links-sub li .link {
+  text-decoration: none;
+  color: #888;
+  padding: 5px 0;
+  display: block;
+}
+
+.footer-custom .footer-legal a {
+  display: inline;
+}
+
+.footer-custom a:hover,
+.footer-custom a:active,
+.ftr-links-sub li .link:hover {
+  text-decoration: underline;
+  color: #888;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-custom a, .footer-custom a:link, .footer-custom a:visited, .ftr-links-sub li .link {
+    padding: 0;
+  }
+}
+/* BEGIN EMAIL CAPTURE STYLES*/
+
+.footer-email {
+  text-align: center;
+}
+
+#ftrEmailForm {
+  height: 44px;
+}
+
+#ftrEmailForm .error {
+  display: none;
+  color: red;
+  text-align: left;
+}
+
+#ftrEmailForm #ftrEmailInput {
+  background: none repeat scroll 0 0 #FFF;
+  border: 1px solid #D6D6D6;
+  box-sizing: border-box;
+  color: #888;
+  float: left;
+  font: normal normal 14px/1.4 sans-serif;
+  padding: 5px;
+  width: 70%;
+  height: 100%;
+}
+
+#ftrEmailForm #ftrEmailInput:hover {
+  border: 1px solid #888;
+}
+
+#ftrEmailForm #ftrEmailInput:focus {
+  border: 1px solid #ef9223;
+  outline: #ef9223 auto 5px;
+}
+
+#ftrEmailForm .button {
+  width: 30%;
+  height: 100%;
+  padding: 5px;
+  float: left;
+  border: 1px solid #DFDFDF;
+  box-sizing: border-box;
+  color: #000;
+  font: normal bold 18px/1 sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FFF;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e1e1e1));
+  background: -webkit-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -moz-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -ms-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -o-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: linear-gradient(to bottom, white 0, #e1e1e1 100%);
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+}
+
+#ftrEmailForm .button:hover,
+#ftrEmailForm .button:active {
+  background: black;
+  color: #FFF;
+  outline: none;
+}
+/* BEGIN SOCIAL STYLES*/
+
+.footer-social {
+  text-align: center;
+}
+
+.footer-social ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-social ul:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-social li {
+  float: left;
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-lists {
+    width: 100%;
+  }
+  .footer-email {
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+  .footer-social {
+    width: 45%;
+    margin-left: 5%;
+    float: left;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-lists {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-email {
+    width: 33.3333%;
+  }
+  .footer-social {
+    width: 33.3333%;
+    float: right;
+    margin-left: 0;
+  }
+}
+
+.footer-legal {
+  padding: 15px 0 0;
+  clear: left;
+}
+
+.footer-payment {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-legal {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-payment {
+    width: 33.3333%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment {
+    text-align: left;
+  }
+}
+
+.footer-payment ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-payment ul li {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment ul li.ftr-stella {
+    margin-left: 0;
+  }
+}
+
+
+</style>
+  <div class="footer-gray">
+    <div class="footer-custom">
+      <div class="footer-lists">
+        <h6 class = "ftr-hdr">Contact me</h6>
+        <p>E-mail : gowoonsori97@gmail.com  |  gowoonsori97@naver.com</p>
+      </div>
+      <div class="footer-social">
+        <h6 class="ftr-hdr">Follow Us</h6>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/gowoonsori97/" title="Facebook">
+              <img width="24" height="24" alt="Like us on Facebook" src="/images/fb.png">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.github.com/gowoonosori" title="Github">
+             <i class="fab fa-github" style="font-size:24px"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <p>Copyrihgt &copy; gowoonsori.site All Rights Reserved. </p>
+      </div>
+    </div>
+  </div>
+  <!--/.footer-gray-->
+
+	    
+	
+    </footer>
+    
 
 
 
   </body>
 </html>
-
-
