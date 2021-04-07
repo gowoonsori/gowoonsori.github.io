@@ -4,28 +4,28 @@
 <html>
   <head>
     <title>
-	제네릭 :: Gowoonsori&#39;s TechBlog
+	Spring boot Graphql CustomContext 생성하기 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-07T23:44:25 KST">
+<meta name="revised" content="2021-04-07T23:44:26 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>제네릭 :: Gowoonsori&#39;s TechBlog</title>
+<title>Spring boot Graphql CustomContext 생성하기 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="Java의 제네릭에 대해서 정리합니다.">
+<meta name="description" content="Spring boot Graphql CustomContext 생성하기">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="제네릭" />
-<meta property="og:description" content="Java의 제네릭에 대해서 정리합니다." />
+<meta property="og:title" content="Spring boot Graphql CustomContext 생성하기" />
+<meta property="og:description" content="Spring boot Graphql CustomContext 생성하기" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/java/generic/" />
+<meta property="og:url" content="https://gowoonsori.site/share/spring/graphql-customcontext/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2021-02-24T14:18:25+09:00" />
+<meta property="og:updated_time" content="2021-04-07T23:05:12+09:00" />
 
 
 
@@ -122,7 +122,7 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/java/generic/"
+  <body data-url="/share/spring/graphql-customcontext/"
 
   class="hidebreadcrumb ">
 
@@ -200,13 +200,12 @@ if (!doNotTrack) {
   <p>Categories</p>
 </div>
 
-    <li data-nav-id="https://gowoonsori.site/java/" class="dd-item parent haschildren
+    <li data-nav-id="https://gowoonsori.site/java/" class="dd-item haschildren
         item_level_$level
         ">
 
       
-      
-          <i class="fas fa-chevron-down ddexp"></i>
+      <i class="fas fa-chevron-right ddexp"></i>
       
           
       
@@ -405,7 +404,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/java/generic/" class="dd-item parent active
+    <li data-nav-id="https://gowoonsori.site/java/generic/" class="dd-item
         item_level_$level
         ">
 
@@ -814,12 +813,13 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/share/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/share/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
           
       
@@ -954,12 +954,13 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/share/spring/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/share/spring/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
       
           <a href="/share/spring/">spring boot</a>
@@ -1005,7 +1006,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/share/spring/graphql-customcontext/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/share/spring/graphql-customcontext/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -1187,7 +1188,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>제네릭</h1>
+			<h1>Spring boot Graphql CustomContext 생성하기</h1>
         
 
 		
@@ -1209,266 +1210,107 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#장점">장점</a></li>
-    <li><a href="#제네릭-사용법">제네릭 사용법</a></li>
-    <li><a href="#제네릭-주요-개념">제네릭 주요 개념</a>
-      <ul>
-        <li><a href="#-제네릭에-오는-타입-변수">◾ 제네릭에 오는 타입 변수</a></li>
-        <li><a href="#-바운디드-타입-bounded-type">◾ 바운디드 타입 (Bounded Type)</a></li>
-        <li><a href="#-와일드-카드">◾ 와일드 카드</a></li>
-        <li><a href="#-제네릭과-와일드카드">◾ 제네릭과 와일드카드</a></li>
-        <li><a href="#-캡쳐-에러">◾ 캡쳐 에러</a></li>
-      </ul>
-    </li>
-    <li><a href="#제네릭-메소드-만들기">제네릭 메소드 만들기</a></li>
-    <li><a href="#genric-type-erasure">Genric Type Erasure</a>
-      <ul>
-        <li><a href="#실체화와-실체-불가타입">실체화와 실체 불가타입</a></li>
-        <li><a href="#reference">Reference</a></li>
-      </ul>
-    </li>
+    <li><a href="#customcontext-정의">CustomContext 정의</a></li>
+    <li><a href="#graphqlserveltcontextbuilder">GraphQLServeltContextBuilder</a></li>
   </ul>
 </nav>
 	</div>
 	
 	
 
-	<div class="content"><p>제네릭은 클래스 내부에서 사용할 데이터 타입을 외부에서 지정하는 기법으로 컴파일 시에 더 많은 버그를 탐지할 수 있도록해 코드의 안전성을 더한다.</p>
-<p>C++의 템플릿과 처리 과정이나 방법의 차이점이 존재하지만 <code>타입을 제거</code>기술이라는 개념에서는 비슷하다고 볼 수 도 있다.</p>
-<ul>
-<li>
-<p>Java 제네릭</p>
-<ul>
-<li>
-<p>컴파일타임에 에러를 검출할 수 있찌만 실제 동작코드는 제네릭을 사용하지 않을때와 동일해 성능도 동일하다.</p>
-</li>
-<li>
-<p>static 변수는 모든 객체가 공유하고, 모든 타입은 Object를 상속해야 하기 때문에 원시형 타입이 사용이 불가능 하다.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>C++ 템플릿 : 사용하지 않으면 컴파일을 하지 않는다.</p>
-<ul>
-<li>컴파일러는 각각 타입에 대해 별도의 템플릿 코드를 생성하기 때문에, static변수를 공유하지 않고, 원시형 타입이 사용가능하다.</li>
-</ul>
-</li>
-</ul>
+	<div class="content"><p>GraphQL의 요청을 핸들링하는 GraphQLServletContextBuilder를 implements하여 grpahQL요청에 대해 커스텀Context를 반환하도록 만들 수 있습니다.</p>
+<p>예를들어 요청의 헤더에 접근하여 Context에 특정 헤더값을 저장하는 식으로의 custom이 가능합니다. 이번 예시에서는 헤더에 api-key가 포함되어있고 이 key를 분리하여 context도 저장하고있는 context를 만들어보려고 합니다.</p>
 <br>
-<h2>장점</h2><a class="anchor" id="장점"></a>
-<ol>
-<li>
-<p>강력한 타입 체크 : 런타임이 아닌 컴파일 타임에 에러를 출력한다.</p>
-</li>
-<li>
-<p>편한 캐스팅 : <code>Object</code>로 선언하여 <code>(Integer)</code>와 같이 캐스팅을 하지 않아도 컴파일러에 의해 자동으로 형변환이 이루어진다.</p>
-</li>
-<li>
-<p>코드의 재사용성이 높아진다. (코드 중복 최소화)</p>
-</li>
-</ol>
-<br>
-<h2>제네릭 사용법</h2><a class="anchor" id="제네릭-사용법"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">ExampleArrayList</span> <span style="color:#555">{</span>
-  <span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">int</span> size<span style="color:#555">;</span>
-  <span style="color:#069;font-weight:bold">private</span> Object<span style="color:#555">[]</span> arr <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Object<span style="color:#555">[</span>5<span style="color:#555">];</span>
+<h2>CustomContext 정의</h2><a class="anchor" id="customcontext-정의"></a>
+<p>GraphQLServletContext를 implements하여 총6개의 메서드들을 정의해주면 됩니다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@Getter</span>
+<span style="color:#99f">@RequiredArgsConstructor</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">CustomGraphQLContext</span> <span style="color:#069;font-weight:bold">implements</span> GraphQLServletContext <span style="color:#555">{</span>
 
-  <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">add</span><span style="color:#555">(</span>Object val<span style="color:#555">){</span>
-    arr<span style="color:#555">[</span>size<span style="color:#555">++]</span> <span style="color:#555">=</span> val<span style="color:#555">;</span>
-  <span style="color:#555">}</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> String apiKey<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> GraphQLServletContext context<span style="color:#555">;</span>
 
-  <span style="color:#069;font-weight:bold">public</span> Object <span style="color:#c0f">get</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> index<span style="color:#555">){</span>
-    <span style="color:#069;font-weight:bold">return</span> arr<span style="color:#555">[</span>index<span style="color:#555">];</span>
-  <span style="color:#555">}</span>
-<span style="color:#555">}</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">GenericTest</span> <span style="color:#555">{</span>
-    ExampleArrayList list<span style="color:#555">;</span>
-
-    <span style="color:#99f">@BeforeEach</span>
-    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">init</span><span style="color:#555">(){</span>
-        list <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ExampleArrayList<span style="color:#555">();</span>
-        list<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span><span style="color:#c30">&#34;hi&#34;</span><span style="color:#555">);</span>
-        list<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span><span style="color:#c30">&#34;hello&#34;</span><span style="color:#555">);</span>
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> List<span style="color:#555">&lt;</span>Part<span style="color:#555">&gt;</span> <span style="color:#c0f">getFileParts</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> context<span style="color:#555">.</span><span style="color:#309">getFileParts</span><span style="color:#555">();</span>
     <span style="color:#555">}</span>
 
-    <span style="color:#99f">@Test</span>
-    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">ObjectList</span><span style="color:#555">(){</span>
-        Integer val <span style="color:#555">=</span> <span style="color:#555">(</span>Integer<span style="color:#555">)</span> list<span style="color:#555">.</span><span style="color:#309">get</span><span style="color:#555">(</span>0<span style="color:#555">);</span>
-
-        System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>val<span style="color:#555">);</span>
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> Map<span style="color:#555">&lt;</span>String<span style="color:#555">,</span> List<span style="color:#555">&lt;</span>Part<span style="color:#555">&gt;&gt;</span> <span style="color:#c0f">getParts</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> context<span style="color:#555">.</span><span style="color:#309">getParts</span><span style="color:#555">();</span>
     <span style="color:#555">}</span>
 
-<span style="color:#555">}</span>
-</code></pre></div><p>다음과 같이 Object형 배열을 갖는 ArrayList를 만들어 Integer형 배열로 사용하려고 하는데 String을 넣고 사용한다면 <code>컴파일 타임</code>에는 에러가 발생하지 않는데 <code>런타임시 에러</code>가 발생하게 된다.</p>
-
-<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/alert.css'>
-<div class="alert danger" role="alert"><p>java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader &lsquo;bootstrap&rsquo;)</p>
-</div>
-
-<br>
-<p><code>누가 Integer배열에 String을 집어넣냐</code>라고 할 수 있지만 내가 작성한 코드가 아니거나, 시간이 지나면 잊어버리기 때문에 잘못 사용될 수 있고 이를 컴파일 타임에 발견하기 위해 사용하게 된다.</p>
-<p>애초에 Object로 선언하지 않고 Integer, String으로 선언해서 사용하몀 된다는 말도 나올 수 있는데, <code>파라미터</code>, <code>반환</code> 각 클래스별 선언을 해주어야하고 그만큼 코드 중복이 발생하게 된다.</p>
-<p>이를 아래와 같이 <code>제네릭</code>을 이용하여 문제를 해결할 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">GenericArrayList</span><span style="color:#555">&lt;</span>T<span style="color:#555">&gt;</span> <span style="color:#555">{</span>
-    <span style="color:#069;font-weight:bold">private</span> Object<span style="color:#555">[]</span> arr <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Object<span style="color:#555">[</span>5<span style="color:#555">];</span>
-    <span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">int</span> size<span style="color:#555">;</span>
-
-    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">add</span><span style="color:#555">(</span>T val<span style="color:#555">)</span> <span style="color:#555">{</span>
-        arr<span style="color:#555">[</span>size<span style="color:#555">++]</span> <span style="color:#555">=</span> val<span style="color:#555">;</span>
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> HttpServletRequest <span style="color:#c0f">getHttpServletRequest</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> context<span style="color:#555">.</span><span style="color:#309">getHttpServletRequest</span><span style="color:#555">();</span>
     <span style="color:#555">}</span>
 
-    <span style="color:#069;font-weight:bold">public</span> T <span style="color:#c0f">get</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> idx<span style="color:#555">)</span> <span style="color:#555">{</span>
-        <span style="color:#069;font-weight:bold">return</span> <span style="color:#555">(</span>T<span style="color:#555">)</span> arr<span style="color:#555">[</span>idx<span style="color:#555">];</span>
-    <span style="color:#555">}</span>
-<span style="color:#555">}</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@Test</span>
-<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">GenericListTest</span><span style="color:#555">(){</span>
-  GenericArrayList<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> genericArrayList <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> GenericArrayList<span style="color:#555">&lt;&gt;();</span>
-  genericArrayList<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span><span style="color:#c30">&#34;hi&#34;</span><span style="color:#555">);</span>
-  genericArrayList<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span><span style="color:#c30">&#34;hello&#34;</span><span style="color:#555">);</span>
-<span style="color:#555">}</span>
-</code></pre></div><p>Integer의 List에 String을 집어넣으려고 한다면 컴파일타임에 에러가 발생한다.</p>
-<p><img src="./error.png?classes=shadow,border" alt="compileError"></p>
-<p><br><br></p>
-<h2>제네릭 주요 개념</h2><a class="anchor" id="제네릭-주요-개념"></a>
-<h3>◾ 제네릭에 오는 타입 변수</h3><a class="anchor" id="-제네릭에-오는-타입-변수"></a>
-<p>위의 코드 처럼 <code>T</code>와 같은 변수로 어떤 문자를 사용해도 상관없으나 일반적으로 사용목적에 맞는 특정 문자를 약속으로 사용하고 있다.</p>
-<ul>
-<li>
-<p>T : type</p>
-</li>
-<li>
-<p>K : key</p>
-</li>
-<li>
-<p>V : value</p>
-</li>
-<li>
-<p>N : number</p>
-</li>
-<li>
-<p>E : element</p>
-</li>
-<li>
-<p>S : 두번째 파라미터</p>
-</li>
-<li>
-<p>U : 세번째 파라미터</p>
-</li>
-<li>
-<p>V : 네번째 파라미터</p>
-</li>
-</ul>
-<br>
-<h3>◾ 바운디드 타입 (Bounded Type)</h3><a class="anchor" id="-바운디드-타입-bounded-type"></a>
-<p><code>타입 변수</code>를 특정 타입에 제한 할 수 있게 한다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">GenericArrayList</span><span style="color:#555">&lt;</span>T <span style="color:#069;font-weight:bold">extends</span> String<span style="color:#555">&gt;</span>  <span style="color:#555">{</span>
-    <span style="color:#069;font-weight:bold">private</span> Object<span style="color:#555">[]</span> arr <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Object<span style="color:#555">[</span>5<span style="color:#555">];</span>
-    <span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">int</span> size<span style="color:#555">;</span>
-
-    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">add</span><span style="color:#555">(</span>T val<span style="color:#555">)</span> <span style="color:#555">{</span>
-        arr<span style="color:#555">[</span>size<span style="color:#555">++]</span> <span style="color:#555">=</span> val<span style="color:#555">;</span>
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> HttpServletResponse <span style="color:#c0f">getHttpServletResponse</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> context<span style="color:#555">.</span><span style="color:#309">getHttpServletResponse</span><span style="color:#555">();</span>
     <span style="color:#555">}</span>
 
-    <span style="color:#069;font-weight:bold">public</span> T <span style="color:#c0f">get</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> idx<span style="color:#555">)</span> <span style="color:#555">{</span>
-        <span style="color:#069;font-weight:bold">return</span> <span style="color:#555">(</span>T<span style="color:#555">)</span> arr<span style="color:#555">[</span>idx<span style="color:#555">];</span>
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> Optional<span style="color:#555">&lt;</span>Subject<span style="color:#555">&gt;</span> <span style="color:#c0f">getSubject</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> context<span style="color:#555">.</span><span style="color:#309">getSubject</span><span style="color:#555">();</span>
     <span style="color:#555">}</span>
-<span style="color:#555">}</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">GenericTest</span> <span style="color:#555">{</span>
-    <span style="color:#99f">@Test</span>
-    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">boundedTest</span><span style="color:#555">(){</span>
-        GenericArrayList<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> genericArrayList <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> GenericArrayList<span style="color:#555">&lt;&gt;();</span>
-    <span style="color:#555">}</span>
-<span style="color:#555">}</span>
-</code></pre></div><p><img src="./bounded.png?classes=shadow,border" alt="bounded"></p>
-<p>String으로 제한을 했기 때문에 Integer로 사용하려고 한다면 컴파일타임에 에러를 발생 시킨다.</p>
-<Br>
-<h3>◾ 와일드 카드</h3><a class="anchor" id="-와일드-카드"></a>
-<p><code>?</code>를 일반적으로 와일드 카드라고 부르며, <code>제네릭 객체</code>를 <code>메서드의 매개변수</code>로 받을 때 데이터 타입에 상관없이 사용하고자 할때 사용할 수 있다</p>
-<p>종류</p>
-<h4>Unbounded 와일드카드</h4><a class="anchor" id="unbounded-와일드카드"></a>
-<p>타입파라미터를 <code>?</code>만 사용하는 방법으로 어떤 클래스나 인터페이스 타입이 올 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#555">&lt;?&gt;</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">List<span style="color:#555">&lt;?&gt;</span> list <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ArrayList<span style="color:#555">&lt;&gt;();</span>
-<span style="color:#555">==&gt;</span> List<span style="color:#555">&lt;?</span> <span style="color:#069;font-weight:bold">extends</span> Object<span style="color:#555">&gt;</span> list <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ArrayList<span style="color:#555">&lt;&gt;();</span>
-</code></pre></div><p>위와 같이 내부적으로 Object가 생략된 형태로 <code>타입에 상관없는 메서드</code>를 정의할 때 사용할 수 있다.</p>
-<h4>UpperBounded 와일드 카드</h4><a class="anchor" id="upperbounded-와일드-카드"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#555">&lt;?</span> <span style="color:#069;font-weight:bold">extends</span> T<span style="color:#555">&gt;</span>
-</code></pre></div><p>T와 그 자손들을 구현한 객체들만 매개변수로 가능하다.</p>
-<h4>LowerBounded 와일드 카드</h4><a class="anchor" id="lowerbounded-와일드-카드"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#555">&lt;?</span> <span style="color:#069;font-weight:bold">super</span> T<span style="color:#555">&gt;</span>
-</code></pre></div><p>T와 그 조상 객체들로만 매개변수로 가능하다.</p>
-<br>
-<h3>◾ 제네릭과 와일드카드</h3><a class="anchor" id="-제네릭과-와일드카드"></a>
-<p><code>타입 파라미터</code>가 의미있게 사용된다면(<code>지금은 타입을 모르지만 정해지면 목적에 맞게 사용</code>) 제네릭 아니면 와일드카드를 사용 (<code>지금도 타입을 모르고 앞으로도 모를 것이다! 할때 사용</code>)</p>
-<p>List의 <code>size, clear</code>등 타입과 상관없는 기능등을 구현하고 <code>add</code>와 같은 타입에 상관있는 기능을 사용하지 않고자 한다면 와일드 카드</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@Test</span>
-<span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">example</span><span style="color:#555">()</span> <span style="color:#555">{</span>
-  List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> integerList <span style="color:#555">=</span> Arrays<span style="color:#555">.</span><span style="color:#309">asList</span><span style="color:#555">(</span>1<span style="color:#555">,</span> 2<span style="color:#555">,</span> 3<span style="color:#555">);</span>
-    wildCardExample<span style="color:#555">(</span>integerList<span style="color:#555">);</span>
-    genericExample<span style="color:#555">(</span>integerList<span style="color:#555">);</span>
-  <span style="color:#555">}</span>
 
-  <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">wildCardExample</span><span style="color:#555">(</span>List<span style="color:#555">&lt;?&gt;</span> list<span style="color:#555">)</span> <span style="color:#555">{</span>
-     list<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>list<span style="color:#555">.</span><span style="color:#309">get</span><span style="color:#555">(</span>1<span style="color:#555">));</span>  <span style="color:#09f;font-style:italic">//컴파일 에러
-</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#555">}</span>
-  <span style="color:#069;font-weight:bold">static</span> <span style="color:#555">&lt;</span>T<span style="color:#555">&gt;</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">genericExamplelist</span><span style="color:#555">(</span>List<span style="color:#555">&lt;</span>T<span style="color:#555">&gt;</span> list<span style="color:#555">)</span> <span style="color:#555">{</span>
-     list<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>list<span style="color:#555">.</span><span style="color:#309">get</span><span style="color:#555">(</span>1<span style="color:#555">));</span>
-  <span style="color:#555">}</span>
-</code></pre></div><p>wildCardExample의 list.add는 타입에 관심이 없기 때문에 <code>add</code>메서드를 사용 못해 컴파일 에러가 난다.</p>
-<p><code>null</code>은 가능하다.</p>
-<br>
-<h3>◾ 캡쳐 에러</h3><a class="anchor" id="-캡쳐-에러"></a>
-<p><img src="./capture.png?classes=border,shadow" alt="caputre Error"></p>
-<p>와일드 카드를 사용하는 데 컴파일러가 타입추론을 하지못하거나 구체적인 타입이 필요할때 발생한다.</p>
-<h4>해결 방법</h4><a class="anchor" id="해결-방법"></a>
-<ol>
-<li>제네릭으로 변경</li>
-<li>강제적으로 캡쳐하도록 헬퍼클래스 사용</li>
-<li>제너릭 와일드 카드 사용없이 Raw type 사용</li>
-</ol>
-<p><br><br></p>
-<h2>제네릭 메소드 만들기</h2><a class="anchor" id="제네릭-메소드-만들기"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">GeneralClass</span> <span style="color:#555">{</span>
-  <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#555">&lt;</span>T<span style="color:#555">&gt;</span> <span style="color:#c0f">genericMethodExample1</span><span style="color:#555">(</span>T t<span style="color:#555">)</span> <span style="color:#555">{</span>
-    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;hi&#34;</span> <span style="color:#555">+</span> t<span style="color:#555">);</span>
-  <span style="color:#555">}</span>
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> DataLoaderRegistry <span style="color:#c0f">getDataLoaderRegistry</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> context<span style="color:#555">.</span><span style="color:#309">getDataLoaderRegistry</span><span style="color:#555">();</span>
+    <span style="color:#555">}</span>
 <span style="color:#555">}</span>
-</code></pre></div><p>static 옆에 <code>&lt;T&gt;</code>를 붙여 만든 메서드로 위와 같이 사용이 가능하고 주로 일반 클래스에서 특정 메서드만 <code>제네릭</code>하게 만들때 사용한다.</p>
-<p><code>제네릭 클래스 안에서 메서드를 만들면 그게 제네릭 메서드가 아니냐</code>라고 할 수 있는데 아래의 코드를 돌려보면 에러를 발생하는 것을 볼 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">GenericClass</span><span style="color:#555">&lt;</span>T<span style="color:#555">&gt;</span> <span style="color:#555">{</span>
-  <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">genericMethodExample2</span><span style="color:#555">(</span>T t<span style="color:#555">)</span> <span style="color:#555">{</span>
-    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;hi&#34;</span> <span style="color:#555">+</span> t<span style="color:#555">);</span>
-  <span style="color:#555">}</span>
+</code></pre></div><p>기본적인 ServletContext의 정보를 갖고있을 context 변수와 예시로 헤더값에 포함된 <code>api-key</code>를 저장할 필드를 포함한 커스텀context를 정의 해주면 됩니다.</p>
+<br>
+<h2>GraphQLServeltContextBuilder</h2><a class="anchor" id="graphqlserveltcontextbuilder"></a>
+<p>실제로 GraphQLServletContext를 생성하는 Builder도 구현해주어야 우리가 생성한 CustomContext로 Context가 생성이 됩니다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@Component</span>
+<span style="color:#99f">@RequiredArgsConstructor</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">CustomGraphQLContextBuilder</span> <span style="color:#069;font-weight:bold">implements</span> GraphQLServletContextBuilder <span style="color:#555">{</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> GraphQLContext <span style="color:#c0f">build</span><span style="color:#555">(</span>HttpServletRequest httpServletRequest<span style="color:#555">,</span>
+                                HttpServletResponse httpServletResponse<span style="color:#555">)</span> <span style="color:#555">{</span>
+
+        String apiKey <span style="color:#555">=</span> httpServletRequest<span style="color:#555">.</span><span style="color:#309">getHeader</span><span style="color:#555">(</span><span style="color:#c30">&#34;api-key&#34;</span><span style="color:#555">);</span>
+
+        DefaultGraphQLServeltContext context <span style="color:#555">=</span> DefaultGraphQLServletContext<span style="color:#555">.</span><span style="color:#309">createServletContext</span><span style="color:#555">()</span>
+                <span style="color:#555">.</span><span style="color:#309">with</span><span style="color:#555">(</span>httpServletRequest<span style="color:#555">)</span>
+                <span style="color:#555">.</span><span style="color:#309">with</span><span style="color:#555">(</span>httpServletResponse<span style="color:#555">)</span>
+                <span style="color:#555">.</span><span style="color:#309">build</span><span style="color:#555">();</span>
+
+        <span style="color:#069;font-weight:bold">return</span> <span style="color:#069;font-weight:bold">new</span> CustomGraphQLContext<span style="color:#555">(</span>apiKey<span style="color:#555">,</span> context<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> GraphQLContext <span style="color:#c0f">build</span><span style="color:#555">(</span>Session session<span style="color:#555">,</span> HandshakeRequest handshakeRequest<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">throw</span> <span style="color:#069;font-weight:bold">new</span> IllegalStateException<span style="color:#555">(</span><span style="color:#c30">&#34;Unsupported&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> GraphQLContext <span style="color:#c0f">build</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">throw</span> <span style="color:#069;font-weight:bold">new</span> IllegalStateException<span style="color:#555">(</span><span style="color:#c30">&#34;Unsupported&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
 <span style="color:#555">}</span>
-</code></pre></div><p>에러가 발생하는 이유는 <code>static</code>의 특징과 제네릭의 특징때문인데 <code>제네릭타입</code>은 인스턴스가 생성될 때 결정이 되고, static은 인스턴스 생성과 별도로 메모리에 적재된다.</p>
-<p>static으로 선언된 메서드가 메모리에 적재될때 제네릭 타입을 매개변수로 받게 되면 타입을 알 수 없기 때문에 에러가 발생하는 것이다. 반면에 제네릭 메서드는 <code>호출되는 시점</code>에 타입이 결정되기 때문에 에러가 발생하지 않는다.</p>
-<p><br><br></p>
-<h2>Genric Type Erasure</h2><a class="anchor" id="genric-type-erasure"></a>
-<p>제네릭은 눈속임과 비슷하고 코드 작성시점 (컴파일 타임)의 편의성을 위한 기능으로 실제 강력한 타입제한을 하지 않는다.</p>
-<p>타입을 컴파일 타임에만 검사하고 런타임에는 타입 정보를 지워 알 수 없게 하기 때문이다.</p>
-<p><code>List&lt;T&gt;</code> 가 사실은 <code>List&lt;? extends Object&gt;</code>으로 바뀌게 되고 내부적으로 type casting, Bridge Method등을 제공한다.</p>
-<br>
-<h3>실체화와 실체 불가타입</h3><a class="anchor" id="실체화와-실체-불가타입"></a>
-<ul>
-<li>
-<p>실체화 : 타입정보를 런타임에 완벽하게 사용할 수 있는 타입</p>
-<p>String[], Number[]와 같은 배열</p>
-</li>
-<li>
-<p>실체 불가 타입 : 런타임에는 타입 정보를 갖지않고 컴파일 타임에 타입 소거가 되는 타입</p>
-<p>List<String>, List<Integer>와 같은 리스트</p>
-</li>
-</ul>
-<br>
-<p>런타임에 타입을 추론하는 <code>Array</code>가 아닌 컴파일타임에 타입을 추론하는 <code>List</code>를 제네릭과 함께 사용해야 안전성을 보장 받을 수 있다.</p>
-<p><br><Br><Br></p>
-<hr>
-<h3>Reference</h3><a class="anchor" id="reference"></a>
-<p><a href="https://chchang.tistory.com/entry/C%EC%9D%98-template%EA%B3%BC-Java-generic-method-%EC%99%80%EC%9D%98-%EA%B3%B5%ED%86%B5%EC%A0%90%EA%B3%BC-%EC%B0%A8%EC%9D%B4%EC%A0%90">https://chchang.tistory.com/entry/C%EC%9D%98-template%EA%B3%BC-Java-generic-method-%EC%99%80%EC%9D%98-%EA%B3%B5%ED%86%B5%EC%A0%90%EA%B3%BC-%EC%B0%A8%EC%9D%B4%EC%A0%90</a></p>
-<p><a href="https://vvshinevv.tistory.com/55">https://vvshinevv.tistory.com/55</a></p>
-<p><a href="https://jinbroing.tistory.com/228">https://jinbroing.tistory.com/228</a></p>
-<p><a href="https://jyami.tistory.com/99">https://jyami.tistory.com/99</a></p>
+</code></pre></div><p>build() 메서드 3개를 Override해 정의 해주어야 하는데, session방식은 사용하지 않기 때문에 Exception처리 해주었고 build의 매개변수인 httpServletRequest의 <code>getHeader</code>를 통해 api-key의 값을 꺼내고 만들어둔 CustomGraphQLContext에 apiKey를 포함하여 return하면 실제<code> QueryResolver</code>를 처리하는 Context는 우리가 만든 CustomContext가 처리하게 됩니다.</p>
+<p>그래서 이전에 설명한 Environment의 <code>getContext()</code>메서드를 통해서 특정 필드에 접근도 가능합니다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@Component</span>
+<span style="color:#99f">@Slf4j</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WetayoQuery</span> <span style="color:#069;font-weight:bold">implements</span> GraphQLQueryResolver <span style="color:#555">{</span>
+    <span style="color:#09f;font-style:italic">//... 각종 Service들과 Constructor
+</span><span style="color:#09f;font-style:italic"></span>
+    <span style="color:#069;font-weight:bold">public</span> List<span style="color:#555">&lt;</span>RouteStationGraphQLDto<span style="color:#555">&gt;</span> <span style="color:#c0f">getStations</span><span style="color:#555">(</span>Double x<span style="color:#555">,</span> Double y<span style="color:#555">,</span> Double distance<span style="color:#555">,</span> DataFetchingEnvironment e<span style="color:#555">)</span> <span style="color:#555">{</span>
+        CustomGraphQLContext context <span style="color:#555">=</span> e<span style="color:#555">.</span><span style="color:#309">getContext</span><span style="color:#555">();</span>
+        log<span style="color:#555">.</span><span style="color:#309">info</span><span style="color:#555">(</span>context<span style="color:#555">.</span><span style="color:#309">getApiKey</span><span style="color:#555">());</span>  <span style="color:#09f;font-style:italic">//헤더의 api-key  값 출력
+</span><span style="color:#09f;font-style:italic"></span>
+        <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(!</span>context<span style="color:#555">.</span><span style="color:#309">getApiKey</span><span style="color:#555">().</span><span style="color:#309">equals</span><span style="color:#555">(</span><span style="color:#c30">&#34;123456789&#34;</span><span style="color:#555">))</span> <span style="color:#069;font-weight:bold">throw</span> <span style="color:#069;font-weight:bold">new</span> UnAuthorizedAccessExeption<span style="color:#555">(</span><span style="color:#c30">&#34;유효하지 않은 api key&#34;</span><span style="color:#555">);</span>
+
+        <span style="color:#09f;font-style:italic">//비즈니스 로직
+</span><span style="color:#09f;font-style:italic"></span>
+        <span style="color:#069;font-weight:bold">return</span> routeStationDtos<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>위와 같이 Controller의 메서드에서 context의 필드에도 접근,조회가 가능하게 된다. 하지만 위의 방법은 <code>단일 책임 원칙</code>에 위배되고 AOP스럽지도 못하기 때문에 썩 그렇게 좋은 코드는 아니고 예시로만 봐주면 될 것 같습니다.</p>
 </div>
 
 	
@@ -1489,10 +1331,10 @@ if (!doNotTrack) {
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/java/lambda/" title="람다식" style="margin-right: 0px;">
+		<a class="next" href="/share/spring/security/" title="GraphQL서버에 SpringSecurity 적용해보기" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>람다식</label>
+                <label>GraphQL서버에 SpringSecurity 적용해보기</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1513,29 +1355,13 @@ if (!doNotTrack) {
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/java/generic/">제네릭</a></li>
+            <li><a href="/share/spring/graphql-customcontext/">Spring boot Graphql CustomContext 생성하기</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#장점">장점</a></li>
-    <li><a href="#제네릭-사용법">제네릭 사용법</a></li>
-    <li><a href="#제네릭-주요-개념">제네릭 주요 개념</a>
-      <ul>
-        <li><a href="#-제네릭에-오는-타입-변수">◾ 제네릭에 오는 타입 변수</a></li>
-        <li><a href="#-바운디드-타입-bounded-type">◾ 바운디드 타입 (Bounded Type)</a></li>
-        <li><a href="#-와일드-카드">◾ 와일드 카드</a></li>
-        <li><a href="#-제네릭과-와일드카드">◾ 제네릭과 와일드카드</a></li>
-        <li><a href="#-캡쳐-에러">◾ 캡쳐 에러</a></li>
-      </ul>
-    </li>
-    <li><a href="#제네릭-메소드-만들기">제네릭 메소드 만들기</a></li>
-    <li><a href="#genric-type-erasure">Genric Type Erasure</a>
-      <ul>
-        <li><a href="#실체화와-실체-불가타입">실체화와 실체 불가타입</a></li>
-        <li><a href="#reference">Reference</a></li>
-      </ul>
-    </li>
+    <li><a href="#customcontext-정의">CustomContext 정의</a></li>
+    <li><a href="#graphqlserveltcontextbuilder">GraphQLServeltContextBuilder</a></li>
   </ul>
 </nav>
 </div>
@@ -1552,14 +1378,14 @@ if (!doNotTrack) {
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 24 February 2021
+		          Last update on 07 April 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fjava%2fgeneric%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fshare%2fspring%2fgraphql-customcontext%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>
