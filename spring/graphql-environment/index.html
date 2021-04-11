@@ -4,28 +4,28 @@
 <html>
   <head>
     <title>
-	spring boot와 EK스택 연결하기 :: Gowoonsori&#39;s TechBlog
+	[Springboot GraphQL] 요청 Environment :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-07T23:44:26 KST">
+<meta name="revised" content="2021-04-11T23:23:34 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>spring boot와 EK스택 연결하기 :: Gowoonsori&#39;s TechBlog</title>
+<title>[Springboot GraphQL] 요청 Environment :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="spring boot와 filebeat를 통해 EK스택 연결하기">
+<meta name="description" content="spring boot Graphql에서 datafetchingenvironment를 이용해서 쿼리명, 파라미터, 필드에 접근하는 방법을 포스팅합니다.">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="spring boot와 EK스택 연결하기" />
-<meta property="og:description" content="spring boot와 filebeat를 통해 EK스택 연결하기" />
+<meta property="og:title" content="[Springboot GraphQL] 요청 Environment" />
+<meta property="og:description" content="spring boot Graphql에서 datafetchingenvironment를 이용해서 쿼리명, 파라미터, 필드에 접근하는 방법을 포스팅합니다." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/share/spring/elk/" />
+<meta property="og:url" content="https://gowoonsori.site/spring/graphql-environment/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2021-03-24T15:12:34+09:00" />
+<meta property="og:updated_time" content="2021-04-03T23:53:22+09:00" />
 
 
 
@@ -122,7 +122,7 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/share/spring/elk/"
+  <body data-url="/spring/graphql-environment/"
 
   class="hidebreadcrumb ">
 
@@ -474,6 +474,145 @@ if (!doNotTrack) {
     </li>
     
 
+    <li data-nav-id="https://gowoonsori.site/spring/" class="dd-item parent haschildren
+        item_level_$level
+        ">
+
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/spring/">Spring</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/elk/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/elk/">Spring boot와 EK스택 연결하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/security-get-userdetails/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/security-get-userdetails/">[Spring Security] Security</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/onetomanyerror/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/onetomanyerror/">[Error 해결] @OneToMany 관계시 발생한 에러</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/graphql-customcontext/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/graphql-customcontext/">[Springboot GraphQL] CustomContext 생성하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/graphql-environment/" class="dd-item parent active
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/graphql-environment/">[Springboot GraphQL] 요청 Environment</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/graphql-security/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/graphql-security/">[Springboot GraphQL] Spring Security 적용해보기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/spring-graphql/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/spring-graphql/">[Springboot GraphQL] GraphQL 서버 구축하기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
     <li data-nav-id="https://gowoonsori.site/javascript/" class="dd-item haschildren
         item_level_$level
         ">
@@ -772,7 +911,7 @@ if (!doNotTrack) {
       
         
       
-          <a href="/wsl2/">wsl2</a>
+          <a href="/wsl2/">WSL2</a>
       
         <ul>
               
@@ -813,13 +952,12 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/share/" class="dd-item parent haschildren
+    <li data-nav-id="https://gowoonsori.site/share/" class="dd-item haschildren
         item_level_$level
         ">
 
       
-      
-          <i class="fas fa-chevron-down ddexp"></i>
+      <i class="fas fa-chevron-right ddexp"></i>
       
           
       
@@ -944,111 +1082,6 @@ if (!doNotTrack) {
       
       
           <a href="/share/start-hugo/pagination/">페이징 기능 추가하기</a>
-          
-      
-      
-        
-      
-    </li>
-        </ul>
-    </li>
-              
-
-    <li data-nav-id="https://gowoonsori.site/share/spring/" class="dd-item parent haschildren
-        item_level_$level
-        ">
-
-      
-      
-          <i class="fas fa-chevron-down ddexp"></i>
-      
-      
-          <a href="/share/spring/">spring boot</a>
-          
-      
-      
-        
-      
-        <ul>
-              
-
-    <li data-nav-id="https://gowoonsori.site/share/spring/spring-graphql/" class="dd-item
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/share/spring/spring-graphql/">Spring boot로 GraphQL 서버 구축하기</a>
-          
-      
-      
-        
-      
-    </li>
-              
-
-    <li data-nav-id="https://gowoonsori.site/share/spring/graphql-environment/" class="dd-item
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/share/spring/graphql-environment/">spring boot Graphql 요청 Environment</a>
-          
-      
-      
-        
-      
-    </li>
-              
-
-    <li data-nav-id="https://gowoonsori.site/share/spring/graphql-customcontext/" class="dd-item
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/share/spring/graphql-customcontext/">Spring boot Graphql CustomContext 생성하기</a>
-          
-      
-      
-        
-      
-    </li>
-              
-
-    <li data-nav-id="https://gowoonsori.site/share/spring/security/" class="dd-item
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/share/spring/security/">GraphQL서버에 SpringSecurity 적용해보기</a>
-          
-      
-      
-        
-      
-    </li>
-              
-
-    <li data-nav-id="https://gowoonsori.site/share/spring/elk/" class="dd-item parent active
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/share/spring/elk/">spring boot와 EK스택 연결하기</a>
           
       
       
@@ -1188,7 +1221,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>spring boot와 EK스택 연결하기</h1>
+			<h1>[Springboot GraphQL] 요청 Environment</h1>
         
 
 		
@@ -1210,23 +1243,14 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#spring-boot에-로그-설정">spring boot에 로그 설정</a>
+    <li><a href="#적용-예">적용 예</a></li>
+    <li><a href="#제공-메서드들">제공 메서드들</a>
       <ul>
-        <li><a href="#-라이브러리-추가">◾ 라이브러리 추가</a></li>
-        <li><a href="#-logback-설정">◾ logback 설정</a></li>
-      </ul>
-    </li>
-    <li><a href="#filebeat-설치-및-설정">Filebeat 설치 및 설정</a>
-      <ul>
-        <li><a href="#-설치">◾ 설치</a></li>
-        <li><a href="#-설정파일-수정">◾ 설정파일 수정</a></li>
-        <li><a href="#-설정파일-등록set-up">◾ 설정파일 등록(Set up)</a></li>
-        <li><a href="#-filebeat-실행">◾ filebeat 실행</a></li>
-      </ul>
-    </li>
-    <li><a href="#kibana로-확인">Kibana로 확인</a>
-      <ul>
-        <li><a href="#-나만의-앱-생성">◾ 나만의 앱 생성</a></li>
+        <li><a href="#-getfield">◾ getField</a></li>
+        <li><a href="#-getarguments">◾ getArguments()</a></li>
+        <li><a href="#-getcontext">◾ getContext()</a></li>
+        <li><a href="#-getselectionset">◾ getSelectionSet()</a></li>
+        <li><a href="#-getexecutionid">◾ getExecutionId()</a></li>
       </ul>
     </li>
     <li><a href="#reference">Reference</a></li>
@@ -1236,117 +1260,66 @@ if (!doNotTrack) {
 	
 	
 
-	<div class="content"><p>현재 진행하고있는 spring boot 프로젝트에 쿼리 통계를 위해 <code>ElasticSearch</code>와 <code>Kibana</code>를 도입하기로 했고 이에 맞게 로깅방법이나 세팅 방법을 기록하기 위해 글을 작성하게 됬다.</p>
+	<div class="content"><p>이번에는 Spring Boot GraphQL 환경변수(쿼리명, 파라미터명, 값, 받고자하는 데이터명 등)들을 Controller에서 접근하는 방법을 포스팅하려고 합니다.</p>
+<p>보통 Rest한 서버의 Controller에서는 <code>@PathVariable</code>, <code>@RequestBody</code>등과 같은 어노테이션을 이용해서 파라미터들에 접근할 수 있는데 요청자체가 body안에 json형태로 들어오는 graphQL은 위와 같은 어노테이션을 사용하기에 다소 무리가 있습니다.</p>
+<p>그래서 지난번에 포스팅한 <a href="https://www.graphql-java.com/">graphql-java</a>에서는 <code>DataFetchingEnvironment</code>라는 객체를 제공합니다.</p>
+<p><code>DataFetchingEnvironment</code>는 쿼리의 필드, 필드의 인수, 타입, 쿼리 루트 객체, 쿼리 컨텍스트와 같은 정보를 포함하고 있는 객체입니다.</p>
 <br>
-<p><img src="./diagram.PNG?classes=shadow,border" alt="diagram"></p>
-<p>구성은 다음과 같은데 서버로 <code>EC2 프리티어</code>를 사용하고 있어 사양이 안좋기 때문에 서버 내부에 <code>logstash</code>없이 <code>filebeat</code>를 이용하여 로그를 전송하기로 했다. ELK스택으로는 <code>Elastic Cloud</code> 프리티어를 이용해 빠르게 구축하는 것을 테스트해볼 생각이다.</p>
-<p><br><br></p>
-<h2>spring boot에 로그 설정</h2><a class="anchor" id="spring-boot에-로그-설정"></a>
-<p>우선, <code>filebeat</code>에서 file을 이용해 log를 감시하게 할 목적이기 때문에 springboot에서 log를 파일로 저장되게 해주어야한다.</p>
-<p>spring boot는 내부에 기본 로깅프레임워크로 <code>logback</code>이 설정되어 있고, <code>slf4j</code>와 <code>bridge</code>모듈을 함께 포함하고 있기 때문에 별도의 라이브러리는 추가해주지 않아도 된다. 그리고 <code>Lombok</code>을 사용중이라면 <code>@Slf4j</code>어노테이션을 붙이면 쉽게 이용이 가능하다.</p>
-<br>
-<h3>◾ 라이브러리 추가</h3><a class="anchor" id="-라이브러리-추가"></a>
-<p>log message를 ELK가 읽을 수 있는 json형태의 로그로 변경을 위해 <code>logstash-logback-encoder</code>를 추가해주어야 한다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-gradle" data-lang="gradle"><span style="color:#09f;font-style:italic">// https://mvnrepository.com/artifact/net.logstash.logback/logstash-logback-encoder
-</span><span style="color:#09f;font-style:italic"></span>implementation <span style="color:#99f">group:</span> <span style="color:#c30">&#39;net.logstash.logback&#39;</span><span style="color:#555">,</span> <span style="color:#99f">name:</span> <span style="color:#c30">&#39;logstash-logback-encoder&#39;</span><span style="color:#555">,</span> <span style="color:#99f">version:</span> <span style="color:#c30">&#39;6.3&#39;</span>
-</code></pre></div><br>
-<h3>◾ logback 설정</h3><a class="anchor" id="-logback-설정"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">spring.profiles.active=local
-logging.config=classpath:logback-${spring.profiles.active}.xml
-</code></pre></div><p><code>./src/main/resources/</code>에 <code>logback-spring.xml</code>를 추가하여 logback설정을 해줄 수 있는데 <code>application.properties</code>파일로 개발/프로덕션 환경에 따른 설정을 해줄 수 도 있다.</p>
-<br>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#09f;font-style:italic">&lt;!--logback-spring.xml--&gt;</span>
-<span style="color:#099">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-<span style="color:#309;font-weight:bold">&lt;configuration&gt;</span>
-    <span style="color:#309;font-weight:bold">&lt;property</span> <span style="color:#309">name=</span><span style="color:#c30">&#34;CONSOLE_LOG_PATTERN&#34;</span>
-              <span style="color:#309">value=</span><span style="color:#c30">&#34;%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %magenta(%-4relative) --- [ %thread{10} ] %cyan(%logger{20}) : %msg%n&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>
-    <span style="color:#309;font-weight:bold">&lt;property</span> <span style="color:#309">name=</span><span style="color:#c30">&#34;LOG_PATH&#34;</span> <span style="color:#309">value=</span><span style="color:#c30">&#34;./logs&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>
-    <span style="color:#309;font-weight:bold">&lt;property</span> <span style="color:#309">name=</span><span style="color:#c30">&#34;FILE_NAME&#34;</span> <span style="color:#309">value=</span><span style="color:#c30">&#34;wetayo-logs&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>
+<h2>적용 예</h2><a class="anchor" id="적용-예"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-graphql" data-lang="graphql"><span style="color:#069;font-weight:bold">query</span>{<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#0a8;font-weight:bold">getstaion</span>(double<span style="color:#bbb"> </span>x,<span style="color:#bbb"> </span>double<span style="color:#bbb"> </span>y,<span style="color:#bbb"> </span>double<span style="color:#bbb"> </span>distance){<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>stationId<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>stationName<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>distance<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>routes{<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>routeId<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>routeName<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"> <span style="color:#99f">@PreAuthorize</span><span style="color:#555">(</span><span style="color:#c30">&#34;hasAuthority(&#39;user&#39;)&#34;</span><span style="color:#555">)</span>
+    <span style="color:#069;font-weight:bold">public</span> List<span style="color:#555">&lt;</span>RouteStation<span style="color:#555">&gt;</span> <span style="color:#c0f">getStations</span><span style="color:#555">(</span>Double x<span style="color:#555">,</span> Double y<span style="color:#555">,</span> Double distance<span style="color:#555">,</span> DataFetchingEnvironment environment<span style="color:#555">)</span> <span style="color:#555">{</span>
+        List<span style="color:#555">&lt;</span>Station<span style="color:#555">&gt;</span> stations <span style="color:#555">=</span> stationService<span style="color:#555">.</span><span style="color:#309">getNearByStations</span><span style="color:#555">(</span>x<span style="color:#555">,</span> y<span style="color:#555">,</span> distance<span style="color:#555">);</span>
+        List<span style="color:#555">&lt;</span>RouteStation<span style="color:#555">&gt;</span> routeStations <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ArrayList<span style="color:#555">&lt;&gt;();</span>
 
-    <span style="color:#309;font-weight:bold">&lt;appender</span> <span style="color:#309">name=</span><span style="color:#c30">&#34;CONSOLE&#34;</span> <span style="color:#309">class=</span><span style="color:#c30">&#34;ch.qos.logback.core.ConsoleAppender&#34;</span><span style="color:#309;font-weight:bold">&gt;</span>
-        <span style="color:#309;font-weight:bold">&lt;encoder</span> <span style="color:#309">class=</span><span style="color:#c30">&#34;ch.qos.logback.classic.encoder.PatternLayoutEncoder&#34;</span><span style="color:#309;font-weight:bold">&gt;</span>
-            <span style="color:#309;font-weight:bold">&lt;pattern&gt;</span>${CONSOLE_LOG_PATTERN}<span style="color:#309;font-weight:bold">&lt;/pattern&gt;</span>
-        <span style="color:#309;font-weight:bold">&lt;/encoder&gt;</span>
-    <span style="color:#309;font-weight:bold">&lt;/appender&gt;</span>
-
-    <span style="color:#309;font-weight:bold">&lt;appender</span> <span style="color:#309">name=</span><span style="color:#c30">&#34;FILE&#34;</span> <span style="color:#309">class=</span><span style="color:#c30">&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span style="color:#309;font-weight:bold">&gt;</span>
-        <span style="color:#309;font-weight:bold">&lt;file&gt;</span>${LOG_PATH}/${FILE_NAME}-json.log<span style="color:#309;font-weight:bold">&lt;/file&gt;</span>
-        <span style="color:#309;font-weight:bold">&lt;encoder</span> <span style="color:#309">class=</span><span style="color:#c30">&#34;net.logstash.logback.encoder.LogstashEncoder&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>
-        <span style="color:#309;font-weight:bold">&lt;rollingPolicy</span> <span style="color:#309">class=</span><span style="color:#c30">&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span style="color:#309;font-weight:bold">&gt;</span>
-            <span style="color:#309;font-weight:bold">&lt;fileNamePattern&gt;</span>${LOG_PATH}/${FILE_NAME}_%d{yyyy-MM-dd}.%i.log<span style="color:#309;font-weight:bold">&lt;/fileNamePattern&gt;</span>
-            <span style="color:#309;font-weight:bold">&lt;maxHistory&gt;</span>90<span style="color:#309;font-weight:bold">&lt;/maxHistory&gt;</span>
-            <span style="color:#309;font-weight:bold">&lt;timeBasedFileNamingAndTriggeringPolicy</span>
-                    <span style="color:#309">class=</span><span style="color:#c30">&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&#34;</span><span style="color:#309;font-weight:bold">&gt;</span>
-                <span style="color:#309;font-weight:bold">&lt;maxFileSize&gt;</span>10MB<span style="color:#309;font-weight:bold">&lt;/maxFileSize&gt;</span>
-            <span style="color:#309;font-weight:bold">&lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</span>
-        <span style="color:#309;font-weight:bold">&lt;/rollingPolicy&gt;</span>
-    <span style="color:#309;font-weight:bold">&lt;/appender&gt;</span>
-
-    <span style="color:#309;font-weight:bold">&lt;root</span> <span style="color:#309">level =</span> <span style="color:#c30">&#34;INFO&#34;</span><span style="color:#309;font-weight:bold">&gt;</span>
-        <span style="color:#309;font-weight:bold">&lt;appender-ref</span> <span style="color:#309">ref=</span><span style="color:#c30">&#34;FILE&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>
-        <span style="color:#309;font-weight:bold">&lt;appender-ref</span> <span style="color:#309">ref=</span><span style="color:#c30">&#34;CONSOLE&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>
-    <span style="color:#309;font-weight:bold">&lt;/root&gt;</span>
-<span style="color:#309;font-weight:bold">&lt;/configuration&gt;</span>
-</code></pre></div><p><code>RollingFileAppender</code>를 이용하여 file로 log를 저장하며 <code>encoder</code>의 속성으로 <code>logstashEncoder</code>를 주어 자동으로 json포맷에 맞게 변경시켜주도록 설정을 해주었다.</p>
+        <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>environment<span style="color:#555">.</span><span style="color:#309">getSelectionSet</span><span style="color:#555">().</span><span style="color:#309">contains</span><span style="color:#555">(</span><span style="color:#c30">&#34;routes&#34;</span><span style="color:#555">))</span> <span style="color:#555">{</span>
+            <span style="color:#069;font-weight:bold">for</span> <span style="color:#555">(</span>RouteStation routeStation <span style="color:#555">:</span> routeStationDtos<span style="color:#555">)</span> <span style="color:#555">{</span>
+                List<span style="color:#555">&lt;</span>RouteStation<span style="color:#555">&gt;</span> routeStations <span style="color:#555">=</span> routeStationService<span style="color:#555">.</span><span style="color:#309">findByStationId</span><span style="color:#555">(</span>routeStation<span style="color:#555">.</span><span style="color:#309">getStationId</span><span style="color:#555">());</span>
+                routeStation<span style="color:#555">.</span><span style="color:#309">setRoutes</span><span style="color:#555">(</span>routeGraphQLDtos<span style="color:#555">);</span>
+            <span style="color:#555">}</span>
+        <span style="color:#555">}</span>
+        <span style="color:#069;font-weight:bold">return</span> routeStations<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+</code></pre></div><p>DataFetchingEnvironment를 사용하는 방법은 간단한데 기존에 존재하는 Resolver내의 메서드의 매개변수 인자로 주어주면 사용이 가능합니다.</p>
+<p>graphQL은 요청 파라미터에 따라 응답이 달라지게 되는데 routes정보를 뺀 getStations를 호출하게 되도 getStations메서드가 실행되면서 routes정보를 조회하는 쿼리가 실행되고 응답이 반환되게 됩니다. 이런 문제를 <code>DataFetchingEnvironment</code>를 이용해서 요청 파라미터에 있는지 확인을 먼저하여 성능향상을 꾀할 수 있게 됩니다.</p>
+<p>요청 필드명을 <code>DataFetchingFieldSelectionSet</code>이라는 객체로 변환하여 맵핑시킨 <code>environment.getSelectionSet()</code>을 이용해 요청 파라미터를 확인해볼 수 있습니다.</p>
 <p><br><br></p>
-<h2>Filebeat 설치 및 설정</h2><a class="anchor" id="filebeat-설치-및-설정"></a>
-<h3>◾ 설치</h3><a class="anchor" id="-설치"></a>
-<p>나는 EC2에 Ubuntu 20.04를 사용하고 있고, <a href="https://www.elastic.co/guide/en/beats/filebeat/7.12/setup-repositories.html#_apt">공식 사이트</a>를 참고하여 filebeat를 설치 해주었다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.12.0-amd64.deb
-sudo dpkg -i filebeat-7.12.0-amd64.deb
-</code></pre></div><br>
-<h3>◾ 설정파일 수정</h3><a class="anchor" id="-설정파일-수정"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">sudo vi /etc/filebeat/filebeat.yml
-</code></pre></div><p>설치가 완료되었다면 filebeat.yml 파일을 수정하여 input 모듈, output할 logstash/elastic search/kibana를 설정해주어야 한다.</p>
-<p>설정하는 법도 <a href="https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-installation-configuration.html">공식 사이트</a>에 잘 나와있어 개인상황에 맞게 설정해주면 될 것 같다.</p>
-<h4>input</h4><a class="anchor" id="input"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">filebeat.input:
-  - type: log
-    enabled: true
-    path: &#34;/home/gowoo/logs/*.log&#34;
-</code></pre></div><p>이번에는 특정 모듈(nginx, mysql&hellip;)들의 로그가 아닌 별도의 로그파일을 input으로 관리할 것이기 때문에 다음과 같이 추가해주었다.</p>
-<h4>output</h4><a class="anchor" id="output"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">cloud.id: &#34;cloudId&#34;
-cloud.auth: &#34;username:passwd&#34;
-</code></pre></div><p>내부/외부 서버에 ELK를 설치하여 사용한다면 각 ip로 설정을 해주면 되고, 나는 <code>Elastic Cloud</code>를 이용하고 있어 <code>cloud:</code>로 쉽게 연결을 할 수 있었다.</p>
-<p>또한, 간단한 로깅이기 때문에 filtering은 필요성을 못느껴 별도의 logstash는 사용하지 않았고 <code>index pattern</code>도 기본인 <code>filebeat-*</code>로 해도 괜찮다고 판단해 추가는 해주지 않았다.</p>
-<br>
-<h3>◾ 설정파일 등록(Set up)</h3><a class="anchor" id="-설정파일-등록set-up"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">sudo filebeat setup -e
-</code></pre></div><p>를 입력하면 설정파일이 등록이 되며 이 단계에서 각종 <code>output</code>이 연결되었는 지 확인하는 등에 작업을 거치게 된다.</p>
-<p>그런데 여기서 <code>--machine-learning</code> 모듈부분에서 자꾸 에러가 발생했는데 나는 <code>ml</code>기능을 이용하지 않기때문에 이를 제외하고 사용하는 설정만 setup시켜 주었다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">sudo filebeat setup -e --dashboards --templete //output연결 검사
-</code></pre></div><br>
-<h3>◾ filebeat 실행</h3><a class="anchor" id="-filebeat-실행"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">sudo service filebeat start
-sudo service filebeat status
-</code></pre></div><p>start로 실행시키고 status로 정상적으로 enabled되었는지 확인이 가능하다.</p>
+<h2>제공 메서드들</h2><a class="anchor" id="제공-메서드들"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-graphql" data-lang="graphql">getstaion(double<span style="color:#bbb"> </span>x,<span style="color:#bbb"> </span>double<span style="color:#bbb"> </span>y,<span style="color:#bbb"> </span>double<span style="color:#bbb"> </span>distance){<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>stationId<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>stationName<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>distance<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>routes{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>routeId<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>routeName<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></code></pre></div><p>다음과 같은 쿼리를 예시로 설명하겠습니다.</p>
+<h3>◾ getField</h3><a class="anchor" id="-getfield"></a>
+<p>쿼리명(getStation), 파라미터(x, y, distance), 요청 필드(stationId, stationName&hellip;)들을 담고있는 객체가 반환되어 이 객체에서 <code>getArgument()</code>, <code>getSelectionSet()</code>과 같은 메서드로 변수들을 접근할 수 있습니다.</p>
+<h3>◾ getArguments()</h3><a class="anchor" id="-getarguments"></a>
+<p>요청 필드(stationId, staionName &hellip;)들을 담고있는 <code>Map</code>을 반환 받고 Map이기 때문에 <code>get()</code>메서드로 접근이 가능한데 <code>getField().getArgument()</code>와 차이점은 getField의 getArgument는 <code>List</code>이기 때문에 index로만 접근이 가능하지만 <code>getArguments()</code>는 Map이기 때문에 필드명으로 접근이 가능합니다.</p>
+<h3>◾ getContext()</h3><a class="anchor" id="-getcontext"></a>
+<p>현재 쿼리를 담당하는 Context를 반환하는 메서드로 <code>DefaultGraphQLServletContext</code>가 반환되고 <code>GraphQLServeltContextBuilder</code> 인터페이스를 상속받아 Custom Context를 만들어서 요청, 응답 헤더에 접근이 가능합니다.</p>
+<p>다음글로 CustomContext를 만드는 것을 포스팅 할 예정입니다.</p>
+<h3>◾ getSelectionSet()</h3><a class="anchor" id="-getselectionset"></a>
+<p>DataFetchingFieldSelectionSet 이라는 객체로 반환이 되며 <code>contains() / containsAnyOf() / containsAllOf()</code>메서드로 필드명이 존재하는 지 확인이 가능하고 <code>getFields()</code>를 이용해 <code>정규표현식</code>에 부합한 필드를 반환받을 수도 있습니다.</p>
+<h3>◾ getExecutionId()</h3><a class="anchor" id="-getexecutionid"></a>
+<p>각 쿼리 실행에 고유한 Id가 부여되고 이를 이용해서 각각의 쿼리에 대해 로그를 찍을때 태그를 지정할 수 있습니다.</p>
 <p><br><br></p>
-<h2>Kibana로 확인</h2><a class="anchor" id="kibana로-확인"></a>
-<p><img src="./logs.PNG?classes=shadow,border" alt="logs">
-우선 서비스를 돌리고 log를 생성시켜준 후 <code>path</code>로 잡아준 경로에 log파일이 잘생성되었는 지 확인을 해보자.</p>
-<br>
-<p><img src="./kibana_discover.PNG?classes=shadow,border" alt="Discover">
-log들은 잘 생성 되었으니, kibana에 접속해 <code>Discover</code>에 <code>index pattern</code>으로 <code>filebeat-*</code>를 검색해보면 다음과 같이 로그들이 수집된 것을 볼 수 있다.</p>
-<br>
-<p><img src="./day.PNG?classes=shadow,border" alt="day">
-만일 아무 로그가 보이지 않는다면 기본 설정이 15분전 이므로 데이터가 포함되어있는 기간으로 설정해주면 안보이던 데이터가 보일 것이다.</p>
-<p><br><br></p>
-<h3>◾ 나만의 앱 생성</h3><a class="anchor" id="-나만의-앱-생성"></a>
-<p>메뉴에 visualize -&gt; Create visualization -&gt; (다양한 앱들 중 선택) 을 통해 로그를 특정 필터에 맞게 앱을 생성할 수 있다.</p>
-<br>
-<p><img src="./pie.PNG?classes=shadow,border" alt="new pie">
-예를 들어 쿼리들의 종류에 대한 분포를 pie로 보여주고자 한다면 <code>Aggregation based</code>의 <code>pie</code>를 선택하고 index pattern 으로 <code>filebeat-*</code>을 이용해 만들 수 있다.</p>
-<br>
-<p><img src="./bucket.PNG?classes=shadow,border" alt="bucket">
-여기서, 나는 logstash를 이용해 쿼리종류들마다 field들을 다르게 추가해준다던지의 작업은 하지 않았기 때문에 <code>filter</code>옵션으로 message의 내용을 filtering해 항목들을 추가해 bucket에 담아 주었다.</p>
-<p>bucket에 담고 <code>update</code>를 하고 날짜 수정을 해주면 이쁘게 잘 보이는 것을 볼 수 있다.</p>
-<br>
-<p>logstash 없이 filebeat와 Elastic Cloud를 이용해 쉽게 로그관리를 한번 해보았는데 확실히 Elastic Cloud를 이용하니 쉽게 되고 좋았는데 프리티어가 끝나게 되면, 학생입장으로써 가격이 부담되서 개인 서버로 새로 구축하게 될 것 같다.</p>
-<p><br><br><br></p>
 <hr>
 <h2>Reference</h2><a class="anchor" id="reference"></a>
-<p><a href="https://www.elastic.co/guide/en/beats/filebeat/current/index.html">https://www.elastic.co/guide/en/beats/filebeat/current/index.html</a></p>
+<p><a href="https://www.graphql-java.com/documentation/v11/data-fetching/">https://www.graphql-java.com/documentation/v11/data-fetching/</a></p>
 </div>
 
 	
@@ -1367,10 +1340,10 @@ log들은 잘 생성 되었으니, kibana에 접속해 <code>Discover</code>에 
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/share/2020-retrospect/" title="2020년을 보내며" style="margin-right: 0px;">
+		<a class="next" href="/spring/graphql-security/" title="[Springboot GraphQL] Spring Security 적용해보기" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>2020년을 보내며</label>
+                <label>[Springboot GraphQL] Spring Security 적용해보기</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1391,28 +1364,19 @@ log들은 잘 생성 되었으니, kibana에 접속해 <code>Discover</code>에 
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/share/spring/elk/">spring boot와 EK스택 연결하기</a></li>
+            <li><a href="/spring/graphql-environment/">[Springboot GraphQL] 요청 Environment</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#spring-boot에-로그-설정">spring boot에 로그 설정</a>
+    <li><a href="#적용-예">적용 예</a></li>
+    <li><a href="#제공-메서드들">제공 메서드들</a>
       <ul>
-        <li><a href="#-라이브러리-추가">◾ 라이브러리 추가</a></li>
-        <li><a href="#-logback-설정">◾ logback 설정</a></li>
-      </ul>
-    </li>
-    <li><a href="#filebeat-설치-및-설정">Filebeat 설치 및 설정</a>
-      <ul>
-        <li><a href="#-설치">◾ 설치</a></li>
-        <li><a href="#-설정파일-수정">◾ 설정파일 수정</a></li>
-        <li><a href="#-설정파일-등록set-up">◾ 설정파일 등록(Set up)</a></li>
-        <li><a href="#-filebeat-실행">◾ filebeat 실행</a></li>
-      </ul>
-    </li>
-    <li><a href="#kibana로-확인">Kibana로 확인</a>
-      <ul>
-        <li><a href="#-나만의-앱-생성">◾ 나만의 앱 생성</a></li>
+        <li><a href="#-getfield">◾ getField</a></li>
+        <li><a href="#-getarguments">◾ getArguments()</a></li>
+        <li><a href="#-getcontext">◾ getContext()</a></li>
+        <li><a href="#-getselectionset">◾ getSelectionSet()</a></li>
+        <li><a href="#-getexecutionid">◾ getExecutionId()</a></li>
       </ul>
     </li>
     <li><a href="#reference">Reference</a></li>
@@ -1432,14 +1396,14 @@ log들은 잘 생성 되었으니, kibana에 접속해 <code>Discover</code>에 
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 24 March 2021
+		          Last update on 03 April 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fshare%2fspring%2felk%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fspring%2fgraphql-environment%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>

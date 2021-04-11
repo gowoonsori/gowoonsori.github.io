@@ -4,28 +4,28 @@
 <html>
   <head>
     <title>
-	spring boot Graphql 요청 Environment :: Gowoonsori&#39;s TechBlog
+	[Springboot GraphQL] CustomContext 생성하기 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-07T23:44:26 KST">
+<meta name="revised" content="2021-04-11T23:23:34 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>spring boot Graphql 요청 Environment :: Gowoonsori&#39;s TechBlog</title>
+<title>[Springboot GraphQL] CustomContext 생성하기 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="spring boot Graphql에서 datafetchingenvironment를 이용해서 쿼리명, 파라미터, 필드에 접근하는 방법을 포스팅합니다.">
+<meta name="description" content="Spring boot Graphql CustomContext 생성하기">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="spring boot Graphql 요청 Environment" />
-<meta property="og:description" content="spring boot Graphql에서 datafetchingenvironment를 이용해서 쿼리명, 파라미터, 필드에 접근하는 방법을 포스팅합니다." />
+<meta property="og:title" content="[Springboot GraphQL] CustomContext 생성하기" />
+<meta property="og:description" content="Spring boot Graphql CustomContext 생성하기" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/share/spring/graphql-environment/" />
+<meta property="og:url" content="https://gowoonsori.site/spring/graphql-customcontext/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2021-04-03T23:53:22+09:00" />
+<meta property="og:updated_time" content="2021-04-07T23:05:12+09:00" />
 
 
 
@@ -122,7 +122,7 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/share/spring/graphql-environment/"
+  <body data-url="/spring/graphql-customcontext/"
 
   class="hidebreadcrumb ">
 
@@ -474,6 +474,145 @@ if (!doNotTrack) {
     </li>
     
 
+    <li data-nav-id="https://gowoonsori.site/spring/" class="dd-item parent haschildren
+        item_level_$level
+        ">
+
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/spring/">Spring</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/elk/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/elk/">Spring boot와 EK스택 연결하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/security-get-userdetails/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/security-get-userdetails/">[Spring Security] Security</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/onetomanyerror/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/onetomanyerror/">[Error 해결] @OneToMany 관계시 발생한 에러</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/graphql-customcontext/" class="dd-item parent active
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/graphql-customcontext/">[Springboot GraphQL] CustomContext 생성하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/graphql-environment/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/graphql-environment/">[Springboot GraphQL] 요청 Environment</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/graphql-security/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/graphql-security/">[Springboot GraphQL] Spring Security 적용해보기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/spring-graphql/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/spring-graphql/">[Springboot GraphQL] GraphQL 서버 구축하기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
     <li data-nav-id="https://gowoonsori.site/javascript/" class="dd-item haschildren
         item_level_$level
         ">
@@ -772,7 +911,7 @@ if (!doNotTrack) {
       
         
       
-          <a href="/wsl2/">wsl2</a>
+          <a href="/wsl2/">WSL2</a>
       
         <ul>
               
@@ -813,13 +952,12 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/share/" class="dd-item parent haschildren
+    <li data-nav-id="https://gowoonsori.site/share/" class="dd-item haschildren
         item_level_$level
         ">
 
       
-      
-          <i class="fas fa-chevron-down ddexp"></i>
+      <i class="fas fa-chevron-right ddexp"></i>
       
           
       
@@ -944,111 +1082,6 @@ if (!doNotTrack) {
       
       
           <a href="/share/start-hugo/pagination/">페이징 기능 추가하기</a>
-          
-      
-      
-        
-      
-    </li>
-        </ul>
-    </li>
-              
-
-    <li data-nav-id="https://gowoonsori.site/share/spring/" class="dd-item parent haschildren
-        item_level_$level
-        ">
-
-      
-      
-          <i class="fas fa-chevron-down ddexp"></i>
-      
-      
-          <a href="/share/spring/">spring boot</a>
-          
-      
-      
-        
-      
-        <ul>
-              
-
-    <li data-nav-id="https://gowoonsori.site/share/spring/spring-graphql/" class="dd-item
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/share/spring/spring-graphql/">Spring boot로 GraphQL 서버 구축하기</a>
-          
-      
-      
-        
-      
-    </li>
-              
-
-    <li data-nav-id="https://gowoonsori.site/share/spring/graphql-environment/" class="dd-item parent active
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/share/spring/graphql-environment/">spring boot Graphql 요청 Environment</a>
-          
-      
-      
-        
-      
-    </li>
-              
-
-    <li data-nav-id="https://gowoonsori.site/share/spring/graphql-customcontext/" class="dd-item
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/share/spring/graphql-customcontext/">Spring boot Graphql CustomContext 생성하기</a>
-          
-      
-      
-        
-      
-    </li>
-              
-
-    <li data-nav-id="https://gowoonsori.site/share/spring/security/" class="dd-item
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/share/spring/security/">GraphQL서버에 SpringSecurity 적용해보기</a>
-          
-      
-      
-        
-      
-    </li>
-              
-
-    <li data-nav-id="https://gowoonsori.site/share/spring/elk/" class="dd-item
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/share/spring/elk/">spring boot와 EK스택 연결하기</a>
           
       
       
@@ -1188,7 +1221,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>spring boot Graphql 요청 Environment</h1>
+			<h1>[Springboot GraphQL] CustomContext 생성하기</h1>
         
 
 		
@@ -1210,83 +1243,107 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#적용-예">적용 예</a></li>
-    <li><a href="#제공-메서드들">제공 메서드들</a>
-      <ul>
-        <li><a href="#-getfield">◾ getField</a></li>
-        <li><a href="#-getarguments">◾ getArguments()</a></li>
-        <li><a href="#-getcontext">◾ getContext()</a></li>
-        <li><a href="#-getselectionset">◾ getSelectionSet()</a></li>
-        <li><a href="#-getexecutionid">◾ getExecutionId()</a></li>
-      </ul>
-    </li>
-    <li><a href="#reference">Reference</a></li>
+    <li><a href="#customcontext-정의">CustomContext 정의</a></li>
+    <li><a href="#graphqlserveltcontextbuilder">GraphQLServeltContextBuilder</a></li>
   </ul>
 </nav>
 	</div>
 	
 	
 
-	<div class="content"><p>이번에는 Spring Boot GraphQL 환경변수(쿼리명, 파라미터명, 값, 받고자하는 데이터명 등)들을 Controller에서 접근하는 방법을 포스팅하려고 합니다.</p>
-<p>보통 Rest한 서버의 Controller에서는 <code>@PathVariable</code>, <code>@RequestBody</code>등과 같은 어노테이션을 이용해서 파라미터들에 접근할 수 있는데 요청자체가 body안에 json형태로 들어오는 graphQL은 위와 같은 어노테이션을 사용하기에 다소 무리가 있습니다.</p>
-<p>그래서 지난번에 포스팅한 <a href="https://www.graphql-java.com/">graphql-java</a>에서는 <code>DataFetchingEnvironment</code>라는 객체를 제공합니다.</p>
-<p><code>DataFetchingEnvironment</code>는 쿼리의 필드, 필드의 인수, 타입, 쿼리 루트 객체, 쿼리 컨텍스트와 같은 정보를 포함하고 있는 객체입니다.</p>
+	<div class="content"><p>GraphQL의 요청을 핸들링하는 GraphQLServletContextBuilder를 implements하여 grpahQL요청에 대해 커스텀Context를 반환하도록 만들 수 있습니다.</p>
+<p>예를들어 요청의 헤더에 접근하여 Context에 특정 헤더값을 저장하는 식으로의 custom이 가능합니다. 이번 예시에서는 헤더에 api-key가 포함되어있고 이 key를 분리하여 context도 저장하고있는 context를 만들어보려고 합니다.</p>
 <br>
-<h2>적용 예</h2><a class="anchor" id="적용-예"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-graphql" data-lang="graphql"><span style="color:#069;font-weight:bold">query</span>{<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#0a8;font-weight:bold">getstaion</span>(double<span style="color:#bbb"> </span>x,<span style="color:#bbb"> </span>double<span style="color:#bbb"> </span>y,<span style="color:#bbb"> </span>double<span style="color:#bbb"> </span>distance){<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>stationId<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>stationName<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>distance<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>routes{<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>routeId<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>routeName<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
-</span><span style="color:#bbb"></span>}<span style="color:#bbb">
-</span></code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"> <span style="color:#99f">@PreAuthorize</span><span style="color:#555">(</span><span style="color:#c30">&#34;hasAuthority(&#39;user&#39;)&#34;</span><span style="color:#555">)</span>
-    <span style="color:#069;font-weight:bold">public</span> List<span style="color:#555">&lt;</span>RouteStation<span style="color:#555">&gt;</span> <span style="color:#c0f">getStations</span><span style="color:#555">(</span>Double x<span style="color:#555">,</span> Double y<span style="color:#555">,</span> Double distance<span style="color:#555">,</span> DataFetchingEnvironment environment<span style="color:#555">)</span> <span style="color:#555">{</span>
-        List<span style="color:#555">&lt;</span>Station<span style="color:#555">&gt;</span> stations <span style="color:#555">=</span> stationService<span style="color:#555">.</span><span style="color:#309">getNearByStations</span><span style="color:#555">(</span>x<span style="color:#555">,</span> y<span style="color:#555">,</span> distance<span style="color:#555">);</span>
-        List<span style="color:#555">&lt;</span>RouteStation<span style="color:#555">&gt;</span> routeStations <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ArrayList<span style="color:#555">&lt;&gt;();</span>
+<h2>CustomContext 정의</h2><a class="anchor" id="customcontext-정의"></a>
+<p>GraphQLServletContext를 implements하여 총6개의 메서드들을 정의해주면 됩니다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@Getter</span>
+<span style="color:#99f">@RequiredArgsConstructor</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">CustomGraphQLContext</span> <span style="color:#069;font-weight:bold">implements</span> GraphQLServletContext <span style="color:#555">{</span>
 
-        <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span>environment<span style="color:#555">.</span><span style="color:#309">getSelectionSet</span><span style="color:#555">().</span><span style="color:#309">contains</span><span style="color:#555">(</span><span style="color:#c30">&#34;routes&#34;</span><span style="color:#555">))</span> <span style="color:#555">{</span>
-            <span style="color:#069;font-weight:bold">for</span> <span style="color:#555">(</span>RouteStation routeStation <span style="color:#555">:</span> routeStationDtos<span style="color:#555">)</span> <span style="color:#555">{</span>
-                List<span style="color:#555">&lt;</span>RouteStation<span style="color:#555">&gt;</span> routeStations <span style="color:#555">=</span> routeStationService<span style="color:#555">.</span><span style="color:#309">findByStationId</span><span style="color:#555">(</span>routeStation<span style="color:#555">.</span><span style="color:#309">getStationId</span><span style="color:#555">());</span>
-                routeStation<span style="color:#555">.</span><span style="color:#309">setRoutes</span><span style="color:#555">(</span>routeGraphQLDtos<span style="color:#555">);</span>
-            <span style="color:#555">}</span>
-        <span style="color:#555">}</span>
-        <span style="color:#069;font-weight:bold">return</span> routeStations<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> String apiKey<span style="color:#555">;</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> GraphQLServletContext context<span style="color:#555">;</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> List<span style="color:#555">&lt;</span>Part<span style="color:#555">&gt;</span> <span style="color:#c0f">getFileParts</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> context<span style="color:#555">.</span><span style="color:#309">getFileParts</span><span style="color:#555">();</span>
     <span style="color:#555">}</span>
-</code></pre></div><p>DataFetchingEnvironment를 사용하는 방법은 간단한데 기존에 존재하는 Resolver내의 메서드의 매개변수 인자로 주어주면 사용이 가능합니다.</p>
-<p>graphQL은 요청 파라미터에 따라 응답이 달라지게 되는데 routes정보를 뺀 getStations를 호출하게 되도 getStations메서드가 실행되면서 routes정보를 조회하는 쿼리가 실행되고 응답이 반환되게 됩니다. 이런 문제를 <code>DataFetchingEnvironment</code>를 이용해서 요청 파라미터에 있는지 확인을 먼저하여 성능향상을 꾀할 수 있게 됩니다.</p>
-<p>요청 필드명을 <code>DataFetchingFieldSelectionSet</code>이라는 객체로 변환하여 맵핑시킨 <code>environment.getSelectionSet()</code>을 이용해 요청 파라미터를 확인해볼 수 있습니다.</p>
-<p><br><br></p>
-<h2>제공 메서드들</h2><a class="anchor" id="제공-메서드들"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-graphql" data-lang="graphql">getstaion(double<span style="color:#bbb"> </span>x,<span style="color:#bbb"> </span>double<span style="color:#bbb"> </span>y,<span style="color:#bbb"> </span>double<span style="color:#bbb"> </span>distance){<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>stationId<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>stationName<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>distance<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>routes{<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>routeId<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>routeName<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
-</span><span style="color:#bbb"></span>}<span style="color:#bbb">
-</span></code></pre></div><p>다음과 같은 쿼리를 예시로 설명하겠습니다.</p>
-<h3>◾ getField</h3><a class="anchor" id="-getfield"></a>
-<p>쿼리명(getStation), 파라미터(x, y, distance), 요청 필드(stationId, stationName&hellip;)들을 담고있는 객체가 반환되어 이 객체에서 <code>getArgument()</code>, <code>getSelectionSet()</code>과 같은 메서드로 변수들을 접근할 수 있습니다.</p>
-<h3>◾ getArguments()</h3><a class="anchor" id="-getarguments"></a>
-<p>요청 필드(stationId, staionName &hellip;)들을 담고있는 <code>Map</code>을 반환 받고 Map이기 때문에 <code>get()</code>메서드로 접근이 가능한데 <code>getField().getArgument()</code>와 차이점은 getField의 getArgument는 <code>List</code>이기 때문에 index로만 접근이 가능하지만 <code>getArguments()</code>는 Map이기 때문에 필드명으로 접근이 가능합니다.</p>
-<h3>◾ getContext()</h3><a class="anchor" id="-getcontext"></a>
-<p>현재 쿼리를 담당하는 Context를 반환하는 메서드로 <code>DefaultGraphQLServletContext</code>가 반환되고 <code>GraphQLServeltContextBuilder</code> 인터페이스를 상속받아 Custom Context를 만들어서 요청, 응답 헤더에 접근이 가능합니다.</p>
-<p>다음글로 CustomContext를 만드는 것을 포스팅 할 예정입니다.</p>
-<h3>◾ getSelectionSet()</h3><a class="anchor" id="-getselectionset"></a>
-<p>DataFetchingFieldSelectionSet 이라는 객체로 반환이 되며 <code>contains() / containsAnyOf() / containsAllOf()</code>메서드로 필드명이 존재하는 지 확인이 가능하고 <code>getFields()</code>를 이용해 <code>정규표현식</code>에 부합한 필드를 반환받을 수도 있습니다.</p>
-<h3>◾ getExecutionId()</h3><a class="anchor" id="-getexecutionid"></a>
-<p>각 쿼리 실행에 고유한 Id가 부여되고 이를 이용해서 각각의 쿼리에 대해 로그를 찍을때 태그를 지정할 수 있습니다.</p>
-<p><br><br></p>
-<hr>
-<h2>Reference</h2><a class="anchor" id="reference"></a>
-<p><a href="https://www.graphql-java.com/documentation/v11/data-fetching/">https://www.graphql-java.com/documentation/v11/data-fetching/</a></p>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> Map<span style="color:#555">&lt;</span>String<span style="color:#555">,</span> List<span style="color:#555">&lt;</span>Part<span style="color:#555">&gt;&gt;</span> <span style="color:#c0f">getParts</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> context<span style="color:#555">.</span><span style="color:#309">getParts</span><span style="color:#555">();</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> HttpServletRequest <span style="color:#c0f">getHttpServletRequest</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> context<span style="color:#555">.</span><span style="color:#309">getHttpServletRequest</span><span style="color:#555">();</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> HttpServletResponse <span style="color:#c0f">getHttpServletResponse</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> context<span style="color:#555">.</span><span style="color:#309">getHttpServletResponse</span><span style="color:#555">();</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> Optional<span style="color:#555">&lt;</span>Subject<span style="color:#555">&gt;</span> <span style="color:#c0f">getSubject</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> context<span style="color:#555">.</span><span style="color:#309">getSubject</span><span style="color:#555">();</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> DataLoaderRegistry <span style="color:#c0f">getDataLoaderRegistry</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">return</span> context<span style="color:#555">.</span><span style="color:#309">getDataLoaderRegistry</span><span style="color:#555">();</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>기본적인 ServletContext의 정보를 갖고있을 context 변수와 예시로 헤더값에 포함된 <code>api-key</code>를 저장할 필드를 포함한 커스텀context를 정의 해주면 됩니다.</p>
+<br>
+<h2>GraphQLServeltContextBuilder</h2><a class="anchor" id="graphqlserveltcontextbuilder"></a>
+<p>실제로 GraphQLServletContext를 생성하는 Builder도 구현해주어야 우리가 생성한 CustomContext로 Context가 생성이 됩니다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@Component</span>
+<span style="color:#99f">@RequiredArgsConstructor</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">CustomGraphQLContextBuilder</span> <span style="color:#069;font-weight:bold">implements</span> GraphQLServletContextBuilder <span style="color:#555">{</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> GraphQLContext <span style="color:#c0f">build</span><span style="color:#555">(</span>HttpServletRequest httpServletRequest<span style="color:#555">,</span>
+                                HttpServletResponse httpServletResponse<span style="color:#555">)</span> <span style="color:#555">{</span>
+
+        String apiKey <span style="color:#555">=</span> httpServletRequest<span style="color:#555">.</span><span style="color:#309">getHeader</span><span style="color:#555">(</span><span style="color:#c30">&#34;api-key&#34;</span><span style="color:#555">);</span>
+
+        DefaultGraphQLServeltContext context <span style="color:#555">=</span> DefaultGraphQLServletContext<span style="color:#555">.</span><span style="color:#309">createServletContext</span><span style="color:#555">()</span>
+                <span style="color:#555">.</span><span style="color:#309">with</span><span style="color:#555">(</span>httpServletRequest<span style="color:#555">)</span>
+                <span style="color:#555">.</span><span style="color:#309">with</span><span style="color:#555">(</span>httpServletResponse<span style="color:#555">)</span>
+                <span style="color:#555">.</span><span style="color:#309">build</span><span style="color:#555">();</span>
+
+        <span style="color:#069;font-weight:bold">return</span> <span style="color:#069;font-weight:bold">new</span> CustomGraphQLContext<span style="color:#555">(</span>apiKey<span style="color:#555">,</span> context<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> GraphQLContext <span style="color:#c0f">build</span><span style="color:#555">(</span>Session session<span style="color:#555">,</span> HandshakeRequest handshakeRequest<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">throw</span> <span style="color:#069;font-weight:bold">new</span> IllegalStateException<span style="color:#555">(</span><span style="color:#c30">&#34;Unsupported&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> GraphQLContext <span style="color:#c0f">build</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">throw</span> <span style="color:#069;font-weight:bold">new</span> IllegalStateException<span style="color:#555">(</span><span style="color:#c30">&#34;Unsupported&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>build() 메서드 3개를 Override해 정의 해주어야 하는데, session방식은 사용하지 않기 때문에 Exception처리 해주었고 build의 매개변수인 httpServletRequest의 <code>getHeader</code>를 통해 api-key의 값을 꺼내고 만들어둔 CustomGraphQLContext에 apiKey를 포함하여 return하면 실제<code> QueryResolver</code>를 처리하는 Context는 우리가 만든 CustomContext가 처리하게 됩니다.</p>
+<p>그래서 이전에 설명한 Environment의 <code>getContext()</code>메서드를 통해서 특정 필드에 접근도 가능합니다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@Component</span>
+<span style="color:#99f">@Slf4j</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WetayoQuery</span> <span style="color:#069;font-weight:bold">implements</span> GraphQLQueryResolver <span style="color:#555">{</span>
+    <span style="color:#09f;font-style:italic">//... 각종 Service들과 Constructor
+</span><span style="color:#09f;font-style:italic"></span>
+    <span style="color:#069;font-weight:bold">public</span> List<span style="color:#555">&lt;</span>RouteStationGraphQLDto<span style="color:#555">&gt;</span> <span style="color:#c0f">getStations</span><span style="color:#555">(</span>Double x<span style="color:#555">,</span> Double y<span style="color:#555">,</span> Double distance<span style="color:#555">,</span> DataFetchingEnvironment e<span style="color:#555">)</span> <span style="color:#555">{</span>
+        CustomGraphQLContext context <span style="color:#555">=</span> e<span style="color:#555">.</span><span style="color:#309">getContext</span><span style="color:#555">();</span>
+        log<span style="color:#555">.</span><span style="color:#309">info</span><span style="color:#555">(</span>context<span style="color:#555">.</span><span style="color:#309">getApiKey</span><span style="color:#555">());</span>  <span style="color:#09f;font-style:italic">//헤더의 api-key  값 출력
+</span><span style="color:#09f;font-style:italic"></span>
+        <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(!</span>context<span style="color:#555">.</span><span style="color:#309">getApiKey</span><span style="color:#555">().</span><span style="color:#309">equals</span><span style="color:#555">(</span><span style="color:#c30">&#34;123456789&#34;</span><span style="color:#555">))</span> <span style="color:#069;font-weight:bold">throw</span> <span style="color:#069;font-weight:bold">new</span> UnAuthorizedAccessExeption<span style="color:#555">(</span><span style="color:#c30">&#34;유효하지 않은 api key&#34;</span><span style="color:#555">);</span>
+
+        <span style="color:#09f;font-style:italic">//비즈니스 로직
+</span><span style="color:#09f;font-style:italic"></span>
+        <span style="color:#069;font-weight:bold">return</span> routeStationDtos<span style="color:#555">;</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>위와 같이 Controller의 메서드에서 context의 필드에도 접근,조회가 가능하게 된다. 하지만 위의 방법은 <code>단일 책임 원칙</code>에 위배되고 AOP스럽지도 못하기 때문에 썩 그렇게 좋은 코드는 아니고 예시로만 봐주면 될 것 같습니다.</p>
 </div>
 
 	
@@ -1307,10 +1364,10 @@ if (!doNotTrack) {
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/share/spring/graphql-customcontext/" title="Spring boot Graphql CustomContext 생성하기" style="margin-right: 0px;">
+		<a class="next" href="/spring/graphql-environment/" title="[Springboot GraphQL] 요청 Environment" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>Spring boot Graphql CustomContext 생성하기</label>
+                <label>[Springboot GraphQL] 요청 Environment</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1331,22 +1388,13 @@ if (!doNotTrack) {
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/share/spring/graphql-environment/">spring boot Graphql 요청 Environment</a></li>
+            <li><a href="/spring/graphql-customcontext/">[Springboot GraphQL] CustomContext 생성하기</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#적용-예">적용 예</a></li>
-    <li><a href="#제공-메서드들">제공 메서드들</a>
-      <ul>
-        <li><a href="#-getfield">◾ getField</a></li>
-        <li><a href="#-getarguments">◾ getArguments()</a></li>
-        <li><a href="#-getcontext">◾ getContext()</a></li>
-        <li><a href="#-getselectionset">◾ getSelectionSet()</a></li>
-        <li><a href="#-getexecutionid">◾ getExecutionId()</a></li>
-      </ul>
-    </li>
-    <li><a href="#reference">Reference</a></li>
+    <li><a href="#customcontext-정의">CustomContext 정의</a></li>
+    <li><a href="#graphqlserveltcontextbuilder">GraphQLServeltContextBuilder</a></li>
   </ul>
 </nav>
 </div>
@@ -1363,14 +1411,14 @@ if (!doNotTrack) {
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 03 April 2021
+		          Last update on 07 April 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fshare%2fspring%2fgraphql-environment%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fspring%2fgraphql-customcontext%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>
