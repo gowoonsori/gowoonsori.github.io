@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-11T23:23:33 KST">
+<meta name="revised" content="2021-04-12T19:41:53 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -16,15 +16,15 @@
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="Clean Code를 읽으면서 작성해나가는 내용 요약">
+<meta name="description" content="Clean Code를 읽으면서 작성해나가는 내용 요약과 생각한 점 정리">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
 <meta property="og:title" content="Clean Code" />
-<meta property="og:description" content="Clean Code를 읽으면서 작성해나가는 내용 요약" />
+<meta property="og:description" content="Clean Code를 읽으면서 작성해나가는 내용 요약과 생각한 점 정리" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gowoonsori.site/books/cleancode/" />
-<meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
+<meta property="og:image" content="https://gowoonsori.site/images/faviconpng" />
 <meta property="og:updated_time" content="2021-01-22T10:32:58+09:00" />
 
 
@@ -516,7 +516,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/spring/security-get-userdetails/">[Spring Security] Security</a>
+          <a href="/spring/security-get-userdetails/">[Spring Security] 인증된 사용자 정보 조회</a>
           
       
       
@@ -821,6 +821,125 @@ if (!doNotTrack) {
       
     </li>
         </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/floyd-warshall/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/floyd-warshall/">[APSP] Floyd Warshall알고리즘</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/prim/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/prim/">[MST] Prim알고리즘</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/union-find/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/union-find/">[Disjoint Set] Union Find 알고리즘</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/kruskal/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/kruskal/">[MST] Kruskal알고리즘</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/dijkstra/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/dijkstra/">[SPSP] Dijkstra 알고리즘</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/bellman-ford/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/bellman-ford/">[SPSP] Bellman Ford</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/topological-sort/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/topological-sort/">Topological Sort(위상 정렬)</a>
+          
+      
+      
+        
+      
     </li>
         </ul>
     </li>
@@ -1249,6 +1368,11 @@ if (!doNotTrack) {
     <li><a href="#4장-주석">4장 주석</a></li>
     <li><a href="#코드-컨벤션">코드 컨벤션</a></li>
     <li><a href="#객체와-자료구조">객체와 자료구조</a></li>
+    <li><a href="#오류">오류</a></li>
+    <li><a href="#깔끔하게-외부-소스-사용하기">깔끔하게 외부 소스 사용하기</a></li>
+    <li><a href="#테스트-코드">테스트 코드</a></li>
+    <li><a href="#클래스">클래스</a></li>
+    <li><a href="#시스템">시스템</a></li>
   </ul>
 </nav>
 	</div>
@@ -1268,7 +1392,7 @@ if (!doNotTrack) {
 <p><em>( 기계가 실행할 정도로 상세하게 요구사항을 명시하는 작업 = 프로그래밍 )</em></p>
 </li>
 <li>
-<p>작성자가 아닌 사람도 읽고 고치기 쉽고 단순하고 직접적이다.</p>
+<p>작성자가 아닌 사람도 읽고 고치기 쉽고 단순하고 직접적이다</p>
 </li>
 <li>
 <p>중복을 피하고 한 기능만 수행하게 작제 추상화하기</p>
@@ -1307,10 +1431,10 @@ if (!doNotTrack) {
 <p>단순히 컴파일러나 인터프리터를 통과할 목적의 네이밍하지 말자</p>
 </li>
 <li>
-<p>a1,a2&hellip;와 같이 연속된 숫자나, 불용어를 지양하자</p>
+<p>a1,a2와 같이 연속된 숫자나, 불용어를 지양하자</p>
 </li>
 <li>
-<p>ex. <code>getAccount()</code>,<code>getAccounts()</code>, <code>getAccountInfo()</code>와 같은 메서드가 있다면 새로운 프로젝트 참가자는 메서드를 구분하기 힘들다.</p>
+<p>ex <code>getAccount()</code>,<code>getAccounts()</code>, <code>getAccountInfo()</code>와 같은 메서드가 있다면 새로운 프로젝트 참가자는 메서드를 구분하기 힘들다</p>
 </li>
 </ul>
 </li>
@@ -1321,8 +1445,8 @@ if (!doNotTrack) {
 <p>검색하기 쉬운 이름을 사용하자</p>
 <ul>
 <li>
-<p>간단한 메서드에서 로컬 변수는 한 문자를 사용하더라도 상수나 대부분의 변수는 <code>긴 이름</code>이름이 검색하기에도 더 편하다.</p>
-<p>요즘 좋은 IDE들은 몇자 타이핑 안해도 <code>자동 추천</code>해주니 검색성능 면에서는 긴이름이 더 좋다.</p>
+<p>간단한 메서드에서 로컬 변수는 한 문자를 사용하더라도 상수나 대부분의 변수는 <code>긴 이름</code>이름이 검색하기에도 더 편하다</p>
+<p>요즘 좋은 IDE들은 몇자 타이핑 안해도 <code>자동 추천</code>해주니 검색성능 면에서는 긴이름이 더 좋다</p>
 </li>
 </ul>
 </li>
@@ -1339,26 +1463,57 @@ if (!doNotTrack) {
 <p>fetch/get/retrieve 나 controller/manager/driver와 같이 비슷한 의미의 단어를 혼용해서 사용하는 것을 지양하자</p>
 </li>
 <li>
-<p>add/insert/append 와 같이 추가하는 메서드라고 하더라고 맥락이 다르면 다른 단어를 사용하자. ( <strong>의도</strong> 를 명확하게 밝히는 것이 중요! )</p>
+<p>add/insert/append 와 같이 추가하는 메서드라고 하더라고 맥락이 다르면 다른 단어를 사용하자 ( <strong>의도</strong> 를 명확하게 밝히는 것이 중요! )</p>
 </li>
 </ul>
 </li>
 </ul>
 <br>
 <h2>3장 함수</h2><a class="anchor" id="3장-함수"></a>
-<p>가능한 한 작고 한가지 기능만 수행하도록 작성하자.</p>
-<p>함수 매개변수로 boolean형 플래그를 넘기는 순간 함수에서 여러가지 일을 하도록 하는 것이다.</p>
+<p>가능한 한 작고 한가지 기능만 수행하도록 작성하자</p>
+<p>함수 매개변수로 boolean형 플래그를 넘기는 순간 함수에서 여러가지 일을 하도록 하는 것이다</p>
 <br>
 <h2>4장 주석</h2><a class="anchor" id="4장-주석"></a>
-<p>최대한 코드로 의도를 표현하자.</p>
-<p>법적인 내용이나, 정보 제공, 경고, TODO등에 주석을 사용할 수 있다.</p>
+<p>최대한 코드로 의도를 표현하자</p>
+<p>법적인 내용이나, 정보 제공, 경고, TODO등에 주석을 사용할 수 있다</p>
 <br>
 <h2>코드 컨벤션</h2><a class="anchor" id="코드-컨벤션"></a>
 <p>최대한 피해야할 형식들이 존재하고 개개인마다 다르지만, 팀의 컨벤션을 최우선시 하자</p>
 <br>
 <h2>객체와 자료구조</h2><a class="anchor" id="객체와-자료구조"></a>
-<p>모든 부분이 객체지향으로 짤 수 없고 이것이 장점만 있는 것은 아니다.
-<bR>자료구조,절차지향이 더 장점인 부분도 존재하기 때문에 적절히 사용하자.</p>
+<p>모든 부분이 객체지향으로 짤 수 없고 이것이 장점만 있는 것은 아니다
+<bR>자료구조,절차지향이 더 장점인 부분도 존재하기 때문에 적절히 사용하자</p>
+<blockquote>
+<p>디미터의 법칙? 모듈은 자신이 조작하는 객체의 속사정을 몰라야한다</p>
+</blockquote>
+<h2>오류</h2><a class="anchor" id="오류"></a>
+<p>if와 같은 코드보다는 예외처리를 사용하자</p>
+<p>null을 반환하지 말자 (Collection이라면 빈 Collection을 반환)</p>
+<h2>깔끔하게 외부 소스 사용하기</h2><a class="anchor" id="깔끔하게-외부-소스-사용하기"></a>
+<p><code>학습 테스트</code>라고 하는 해당 라이브러리의 사용법에 대한 테스트 케이스를 작성해보면서 API의 사용법을 익히자. <code>Adapter</code>패턴을 이용해 원하는 인터페이스로 변환하는 방법도 있다.</p>
+<h2>테스트 코드</h2><a class="anchor" id="테스트-코드"></a>
+<p>TDD가 핫하고 테스트가 중요하다고 해서 개수만 많이, 품질이 떨어지는 테스트 코드는 오히려 독이다. 테스트 코드도 깔끔하게 작성하자.</p>
+<p>given/when/then 으로 나누어 코드를 작성하거나 assert문 하나에 함수하나씩 작성하다 보면 보일러플레이트가 너무 많아지니 <code>TEMPLATE METHOD</code> 패턴을 이용하자</p>
+<p>깨끗한 테스트의 규칙 5가지</p>
+<ul>
+<li>F : Fast</li>
+<li>I : Independent</li>
+<li>R : Repeatable</li>
+<li>S : Self-Validating (로그 파일을 읽는 것이 아닌 true/false로 딱 끝나게하자. 주관적인 판단이 필요없게)</li>
+<li>T : Timely</li>
+</ul>
+<h2>클래스</h2><a class="anchor" id="클래스"></a>
+<p>SOLID, 응집도, 캡슐화 등의 객체지향의 기본 개념들이 나온다.</p>
+<p>응집도를 유지하다보면 메서드내에 변수를 사용하지 않는 부분이 나오고 이부분을 메서드로 분리하고 이렇게 응집도가 낮아진 메서드, 변수가 늘어나다보면 여러 클래스로 쪼갤수 있어진다.</p>
+<h2>시스템</h2><a class="anchor" id="시스템"></a>
+<p>DI, AOP, Proxy, Factory Pattern 등 조금 더 객체지향적으로 자바를 작성할 수 있게 시작한 프로젝트인 <code>스프링</code>의 기본 개념들이 나온다.</p>
+<p>처음부터 완벽한 코드는 없다. <code>에자일/TDD/Refactoring</code>과 같은 작업으로 매일매일 점진적인 코드를 작성하면 된다. (어제 작성한 코드로 Lagecy라는 말이 있다&hellip;)</p>
+<p>SRP를 준수한다는 개념도 극으로 달하다보면 이도 오히려 독이다. 많아진 클래스와 메서드를 하나하나 관리하는 것이 더 일이다.</p>
+<p><br><br></p>
+<p>큰 제목들은 지금까지 목차였고 각 목차에 관한 설명들이 있었고 이 이후부터는 Junit, Main의 args를 데이터 타입에 맞게 분석할 유틸리티, SerialDate와 같은 API를 리팩토링하는 과정을 보여주고 있다.</p>
+<p>내가 이 책을 읽으면서 좋았던 점이 바로 이점인데, 위의 개념설명들은 조금 공부를 진행하다보면 한번씩 들어본 개념들이다. 위 개념들을 실제 어떻게 적용하는지 팀원들간의 어떻게 사용하는지 자세하게 모르는 학생입장에서는 실제 뛰어난 개발자의 의식의 흐름대로 리팩토링하는 과정을 볼 수 있어서 너무 좋았다. (어떤 목적과 어떤 생각으로 왜 어떻게 리팩토링을 수행하였는가를 들을 수 있는점이 좋았다.)</p>
+<p>처음 테스트 코드는 배보다 배꼽이 더 크다고 생각도 했으나 현재는 완벽한 모든 모듈마다 테스트 코드를 작성하지는 못하지만, 프로젝트를 할 때 중요 기능과 실패하는 이유, 코딩 작성전 확인여부같은 것이 필요할때 작성을 하고있고 이것이 정말 도움이 많이 된다는 것을 느끼고 있다. (코드 리팩토링, 오류 수정을 하다보면 필연적으로 로직들이 깨질때가 있는 데 이때 기존의 기능들이 깨지지는 않았는가 아주 간단하게 확인해볼 수 있기 때문이었다.)</p>
+<p>이 책을 읽고 생각한 점은 프로젝트를 진행하면 혼자 진행할 수는 없기 때문에 이런 규칙들을 지켜야겠다는 고집보다는 팀원들의 규칙을 정하고 지키자는 것과 이런 <code>클린 코드, 객체 지향</code>은 결국 무조건 응집도를 강하게 하기 위해 작게 작게 나누는 것이 아닌 <code>중복을 제거하고 의도를 깔끔하게 표현</code>할 수 있을 정도로 유지하는 것이 클린 코드라고 말하는 것 같았다.</p>
 </div>
 
 	
@@ -1414,6 +1569,11 @@ if (!doNotTrack) {
     <li><a href="#4장-주석">4장 주석</a></li>
     <li><a href="#코드-컨벤션">코드 컨벤션</a></li>
     <li><a href="#객체와-자료구조">객체와 자료구조</a></li>
+    <li><a href="#오류">오류</a></li>
+    <li><a href="#깔끔하게-외부-소스-사용하기">깔끔하게 외부 소스 사용하기</a></li>
+    <li><a href="#테스트-코드">테스트 코드</a></li>
+    <li><a href="#클래스">클래스</a></li>
+    <li><a href="#시스템">시스템</a></li>
   </ul>
 </nav>
 </div>

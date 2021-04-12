@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>[MST] Kruskal알고리즘 on Gowoonsori&#39;s TechBlog</title>
+    <link>https://gowoonsori.site/algorithm/kruskal/</link>
+    <description>Recent content in [MST] Kruskal알고리즘 on Gowoonsori&#39;s TechBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Apr 2021 19:19:18 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/algorithm/kruskal/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
