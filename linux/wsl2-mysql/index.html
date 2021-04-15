@@ -4,28 +4,28 @@
 <html>
   <head>
     <title>
-	WSL2 :: Gowoonsori&#39;s TechBlog
+	[WSL2] Mysql 자동실행 설정하기 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-12T19:41:54 KST">
+<meta name="revised" content="2021-04-15T13:36:25 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>WSL2 :: Gowoonsori&#39;s TechBlog</title>
+<title>[WSL2] Mysql 자동실행 설정하기 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="wsl2에 대한 환경설정, 오류에 관한 글">
+<meta name="description" content="wsl2에서 service 자동실행 설정하기">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="WSL2" />
-<meta property="og:description" content="wsl2에 대한 환경설정, 오류에 관한 글" />
+<meta property="og:title" content="[WSL2] Mysql 자동실행 설정하기" />
+<meta property="og:description" content="wsl2에서 service 자동실행 설정하기" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/wsl2/" />
+<meta property="og:url" content="https://gowoonsori.site/linux/wsl2-mysql/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2020-11-06T18:42:08+09:00" />
+<meta property="og:updated_time" content="2020-11-06T18:41:47+09:00" />
 
 
 
@@ -122,9 +122,9 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/wsl2/"
+  <body data-url="/linux/wsl2-mysql/"
 
-  class="hidebreadcrumb hidetoc hidenextpage ">
+  class="hidebreadcrumb ">
 
  
 
@@ -981,12 +981,13 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/linux/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/linux/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
           
       
@@ -1013,29 +1014,62 @@ if (!doNotTrack) {
         
       
     </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/port-forwarding/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/port-forwarding/">[WSL2] 포트포워딩과 window에서 workbench로 접속하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/wsl2-mysql/" class="dd-item parent active
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/wsl2-mysql/">[WSL2] Mysql 자동실행 설정하기</a>
+          
+      
+      
+        
+      
+    </li>
         </ul>
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/wsl2/" class="dd-item parent active haschildren
+    <li data-nav-id="https://gowoonsori.site/error/" class="dd-item haschildren
         item_level_$level
         ">
 
       
-      
-          <i class="fas fa-chevron-down ddexp"></i>
+      <i class="fas fa-chevron-right ddexp"></i>
       
           
       
       
         
       
-          <a href="/wsl2/">WSL2</a>
+          <a href="/error/">에러들</a>
       
         <ul>
               
 
-    <li data-nav-id="https://gowoonsori.site/wsl2/port-forwarding/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/error/intellij-error/" class="dd-item
         item_level_$level
         ">
 
@@ -1043,24 +1077,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/wsl2/port-forwarding/">WSL2 포트포워딩과 window에서 workbench로 접속하기</a>
-          
-      
-      
-        
-      
-    </li>
-              
-
-    <li data-nav-id="https://gowoonsori.site/wsl2/wsl2-mysql/" class="dd-item
-        item_level_$level
-        ">
-
-      
-      
-      
-      
-          <a href="/wsl2/wsl2-mysql/">WSL2에서 Mysql 자동실행 설정하기</a>
+          <a href="/error/intellij-error/">Intellij Error</a>
           
       
       
@@ -1083,7 +1100,7 @@ if (!doNotTrack) {
       
         
       
-          <a href="/share/">경험 공유</a>
+          <a href="/share/">기타</a>
       
         <ul>
               
@@ -1340,7 +1357,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>WSL2</h1>
+			<h1>[WSL2] Mysql 자동실행 설정하기</h1>
         
 
 		
@@ -1355,59 +1372,276 @@ if (!doNotTrack) {
 
 	
 	
-	
-
-	<div class="content"></div>
-
-	
-
-	
-	
-		
-<div class = "content">
-  <ul class="page">
-
-    <div class = "content-page">
-      <a href="/wsl2/port-forwarding/" >WSL2 포트포워딩과 window에서 workbench로 접속하기</a>
-      
-      <p>WSL2를 이용하여 개발을 진행서 외부에서 접근하고 싶거나, 배포를 위해 접근하고 싶을 수가 있는데, 문제가 되는 것이 WSL2는 VM과 같은 환경이라 별도의 IP를 갖는다는 점이 ...</p>
-      
-  </div>
-
-    <div class = "content-page">
-      <a href="/wsl2/wsl2-mysql/" >WSL2에서 Mysql 자동실행 설정하기</a>
-      
-      <p>[wsl2 설치가 안된 분은 여기를 참고하자]
-나는 이번년도에 wsl2를 알게 되어 wsl2을 통해 편하게 개발을 진행하였다.
-그런데, wsl2가 아직 여럿 불편한 점이 있었고 그 ...</p>
-      
-  </div>
-
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<div class="jump-to-section">
+		<span onclick="$h = $(this);$h.next('nav').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('nav').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+  			Jump to Section
+  			<i style=";" class="fas fa-chevron-right"></i>
+		</span>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#셋팅-방법">셋팅 방법</a>
+      <ul>
+        <li><a href="#-공통-작업">🔸 공통 작업</a></li>
+        <li><a href="#-1번방법--시작-프로그램-폴더에-파일-등록">🔸 1번방법 : 시작 프로그램 폴더에 파일 등록</a></li>
+        <li><a href="#-2번방법--gpeditmsc에-파일-등록">🔸 2번방법 : gpedit.msc에 파일 등록</a></li>
+        <li><a href="#-3번방법--작업-스케줄러에-작업-새로만들기">🔸 3번방법 : 작업 스케줄러에 작업 새로만들기</a></li>
+      </ul>
+    </li>
+    <li><a href="#재부팅-후-확인">재부팅 후 확인</a>
+      <ul>
+        <li><a href="#참고-사이트-">참고 사이트 :</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
 	
 	
+
+	<div class="content"><p>[wsl2 설치가 안된 분은 <a href="https://www.44bits.io/ko/post/wsl2-install-and-basic-usage">여기를 참고하자</a>]</p>
+<br>
+<p>나는 이번년도에 wsl2를 알게 되어 wsl2을 통해 편하게 개발을 진행하였다.</p>
+<p>그런데, wsl2가 아직 여럿 불편한 점이 있었고 그 중 하나가 wsl2의 자동 실행 미지원이다.</p>
+<p>wsl2는 컴퓨터 시작시 자동 실행을 지원하지 않아 수동으로 <code>ssh</code>나 <code>mysql</code>, <code>nginx</code>와 같은 프로그램들을 실행시켜줘야하는 불편함이 있었다.</p>
+<p>그래서 정말 많은 구글링과 삽질끝에 해결한 방법을 공유하고자 글을 썼다.</p>
+<p><br><br></p>
+<h2>셋팅 방법</h2><a class="anchor" id="셋팅-방법"></a>
+<hr>
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/panel.css'>
+
+<div class="card "><div class="card-body">
+    <p class="card-text"><p>셋팅 방법은 생각보다 별거 없었고 원리는 window에서 컴퓨터 시작할때마다 스크립트 파일을 통해 자동으로 실행 시켜주는 것이다.</p>
+<p>방법은 여러 가지가 있는데 아래 방법중 한가지만 택해서 진행하면 된다.</p>
+</p>
+  </div></div>
+
+<ol>
+<li>
+<p><code>윈도우의 시작 - 모든 프로그램 - 시작 프로그램</code> 폴더에 파일 등록</p>
+</li>
+<li>
+<p><code>로컬 그룹 정책 (gpedit.msc)</code>에 스크립트 파일 등록</p>
+</li>
+<li>
+<p><code>작업 스케줄러</code> 에서 작업 등록</p>
+</li>
+</ol>
+<br>
+<h3>🔸 공통 작업</h3><a class="anchor" id="-공통-작업"></a>
+<h4>1 .bat파일 (스크립트 파일) 작성</h4><a class="anchor" id="1-bat파일-스크립트-파일-작성"></a>
+<p>우선 자동 실행을 위해 프로그램들을 실행시켜줄 명령어들을 모은 스크립트 파일을 작성해야한다.</p>
+<p>메모장을 열고 본인이 자동실행 시킬 프로그램 명령어를 아래와 같이 앞에 <code>wsl</code>을 붙여 입력하면 된다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">wsl sudo service mysql start
+wsl sudo service ssh start
+wsl sudo service nginx start
+wsl sudo service docker start
+wsl sudo service apache2 start
+</code></pre></div><p>그 후에 저장을 하는데 저장시 <strong>주의사항</strong>으로 아래 사진과 같이 <code>모든 파일 형식</code>에 <code>파일이름</code>뒤에 <code>.bat</code>을 붙여 저장하면 된다.</p>
+<p>귀찮으신분은 아래 파일을 다운받아 고쳐 사용해도 된다.
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/attachments.css'>
+<section class="attachments">
+<i class="fas fa-paperclip"></i>	
+
+<label>
+bat 파일
+</label>
+
+
+
 	
+
+
+			<li>
+				<a href="https://gowoonsori.site/linux/wsl2-mysql/_files/auto-start.bat" download>
+					auto-start.bat
+				</a>
+				&nbsp;(0 kB)
+			</li>
+		</section>
+</p>
+<p>파일 저장은 편한곳에 하면 되는데 나는 <code>C</code>바로 밑에 <code>wsl2-setting</code>폴더를 하나 만들어 저장했다.</p>
+<br>
+<h4>2 sudo 권한 service 명령어 비밀번호 해제</h4><a class="anchor" id="2-sudo-권한-service-명령어-비밀번호-해제"></a>
+<p>된
+해당 파일을 실행시키면 sudo권한 실행을 위해 비밀번호 입력때문에 자동실행이 막히게 되기 때문에 비밀번호를 해제해줘야 자동실행이 된다.</p>
+<p>window 검색창에 <code>bash.exe</code>를 검색하여 실행시키거나, <code>wsl2</code>를 실행시켜 <code>sudo visudo</code> 명령어를 입력하여 설정파일을 열면 nano편집기로 열릴텐데 <code>아래 명령어</code>를 추가하고 <code>ctrl+s</code>로 저장하고 <code>ctrl+x</code>를 눌러 빠져나오자.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">%sudo ALL=NOPASSWD: /usr/sbin/service
+</code></pre></div><p>모든 service명령어를 비밀번호 해제하는게 나는 두렵다(?)라고 생각하시는 분은 아래와 같이 해당 명령어만 비밀번호를 해제 해도 된다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service mysql *
+%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service ssh *
+</code></pre></div><p>
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/alert.css'>
+<div class="alert info" role="alert">여기서 중요한 점은 <code>%sudo ALL=(ALL:ALL) ALL</code> 명령어보다 아래에 작성해야 한다는 점이다.</div>
+
+해당 명령어보다 위에 작성하면 해제해놓은것이 막히기 때문에 명령어보다 아래에 작성하거나 맘편히 맨 아래 작성하면 된다.</p>
+<p><br><br></p>
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices primary">
+	<p>여기서부터는 3가지 방법 중 한가지만 따라하면 된다.
+<br><br>
+▪ 시작 프로그램 폴더에 파일 등록<br>
+▪ 로컬 그룹 정책 (gpedit.msc)에 스크립트 파일 등록<br>
+▪ 작업 스케줄러 에서 작업 등록<br>
+<br>
+나는 <code>gpedit.msc</code>에 파일을 등록하는 방법으로 설정했다.</p>
+
+</div>
+
+<br>
+<h3>🔸 1번방법 : 시작 프로그램 폴더에 파일 등록</h3><a class="anchor" id="-1번방법--시작-프로그램-폴더에-파일-등록"></a>
+<p><code>window + R</code>을 눌러 <code>shell:startup</code>을 입력하여 폴더를 열어 아까 만들어 두었던 <code>.bat</code>파일을 이 폴더 안에 <code>복사</code> 해주면 된다.</p>
+<p><br><br></p>
+<h3>🔸 2번방법 : gpedit.msc에 파일 등록</h3><a class="anchor" id="-2번방법--gpeditmsc에-파일-등록"></a>
+<p>윈도우 검색창에 <code>gpedit.msc</code>를 검색해서 클릭하면 아래와 같이 열릴 것이다.
+<img src="./gpedit_open.PNG?classes=border,shadow" alt="gpedit_open">
+사진을 보면 <strong>스크립트 (시작/종료)</strong> 가 있고 <strong>(로그온/로그오프가)</strong> 가 있는데 <code>시작</code>과 <code>로그온</code>은 컴퓨터가 켜졌을때 실행되는 것으로 동작은 비슷하나 시작이 속도가 조금더 빠르다고 한다.</p>
+<p>시작은 켜지면서 실행되고, 로그온은 컴퓨터가 다켜져 바탕화면이 보일때 동작한다고 한다.</p>
+<br>
+<p>하지만, <code>시작</code>으로 설정해놓고 컴퓨터에 비밀번호가 걸려있으면 이상하게 작동이 잘 되지 않아서, <code>로그온</code>으로 등록하였다.</p>
+<p><img src="script.PNG?classes=border,shadow" alt="script">
+<code>스크립트(로그온/로그오프)</code>를 클릭하고 <code>로그온</code>을 더블클릭하면 위에와 같은 창이 열리는데 <code>PowerShell 스크립트</code>가 아닌 <code>스크립트</code>에 아까 만들어 두었던 <code>.bat</code>파일을 넣어줄 것이다.</p>
+<br>
+<p><code>추가</code>버튼을 클랙 했으면, 아래와 같은 창이 뜨는데 <code>찾아보기</code>버튼을 클릭하여 <code>.bat</code>파일을 넣어주면 된다.</p>
+<p><code>매개변수</code>는 작성해줄 필요 없다.
+<img src="add.PNG?classes=border,shadow" alt="add"></p>
+<p><br><br></p>
+<h3>🔸 3번방법 : 작업 스케줄러에 작업 새로만들기</h3><a class="anchor" id="-3번방법--작업-스케줄러에-작업-새로만들기"></a>
+<p><img src="./schedule.jpg?classes=border,shadow" alt="schedule"></p>
+<p>윈도우 검색창에 <code>작업 스케줄러</code>를 검색하여 스케줄러를 띄운 후 작업만들기를 클릭하고 설정들을 아래와 같이 해주면된다.</p>
+<br>
+<h4>1. 일반</h4><a class="anchor" id="1-일반"></a>
+<p><img src="./1.PNG?classes=border,shadow" alt="이름"></p>
+<p>이름은 마음대로 지어도 상관없으며, mysql을 자동실행할 프로그램이라 mysqld라 지었고, 간단하게 설명도 작성해주면 된다.</p>
+<br>
+<p><img src="./system.PNG?classes=border,shadow" alt="system">
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices primary">
+	<p>여기서 중요한 것이 <code>사용자 또는 그룹 변경</code>을 클릭해서 SYSTEM으로 실행을 시켜줘야 백그라운드로 동작한다.
+<br><br>
+변경을 안해주면 부팅시마다 까만 cmd창이 꺼졋다 켜지는 것을 볼 수 있다.
+<br>
+안해줘도 무방하나 상당히 거슬리기에 SYSTEM으로 실행시키는 것을 추천드린다.</p>
+
+</div>
+</p>
+<br>
+<h4>2. 트리거</h4><a class="anchor" id="2-트리거"></a>
+<p><img src="./start.PNG?classes=border,shadow" alt="start">
+트리거는 새로만들기를 클릭하여 <code>작업시작</code>에서 <code>로그온할 때</code>를 클릭하고 확인을 누르면 된다.</p>
+<p><code>시작할 때</code>가 <code>로그온 할때</code>보다 살짝 더 빠르다고 하는데, 노트북에 비밀번호가 걸려있는 경우에 trigger가 작동하지 않기도 해서 <code>로그온 할때</code>를 추천한다.</p>
+<br>
+<h4>3. 동작</h4><a class="anchor" id="3-동작"></a>
+<p><img src="./action.PNG?classes=border,shadow" alt="action">
+<code>찾아보기</code>를 클릭하여 아까 만들어두었던 <code>.bat</code>파일을 등록시켜주면 된다</p>
+<br>
+<h4>4. 기타 설정</h4><a class="anchor" id="4-기타-설정"></a>
+<p><code>조건</code> 이나 <code>설정</code>등 보면서 필요없는 사항들은 체크,체크 해제 해주면된다.</p>
+<p>나는 <code>조건</code>에 충전기 연결 안되도 자동 실행 되게 <code>전원</code>부분은 모두 해제 했다.</p>
+<p><br><br><br><br></p>
+<h2>재부팅 후 확인</h2><a class="anchor" id="재부팅-후-확인"></a>
+<hr>
+<p>재부팅 후 mysql 접속을 시도해보면 잘 접속이 되는 것을 볼 수 있다.</p>
+<p><img src="./connect.PNG?classes=border,shadow" alt="connect"></p>
+<p><br><br></p>
+<h3>참고 사이트 :</h3><a class="anchor" id="참고-사이트-"></a>
+<p><a href="https://www.how2shout.com/linux/how-to-start-wsl-services-automatically-on-ubuntu-with-windows-10-startup/">https://www.how2shout.com/linux/how-to-start-wsl-services-automatically-on-ubuntu-with-windows-10-startup/</a></p>
+</div>
+
+	
+    <div style="margin-top:200px;">
+		<script src="https://utteranc.es/client.js"
+				repo="gowoonsori/blog-comments"
+				issue-term="pathname"
+				theme="github-light"
+				crossorigin="anonymous"
+				async>
+		</script>
+	</div>
+    
+
+	
+	
+	
+	
+	 
+	<div class="chevrons ">
+		<a class="next" href="/error/" title="에러들" style="margin-right: 0px;">
+            <div>
+                <p>Next page</p>
+                <label>에러들</label>
+            </div>
+            <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
+	</div>
 	
 
       </section>
 
       
+      
+      <section class="right-menu ">
+      
+	
+	
+		
+	    	
+	  	
+	<div class="TableOfContents">
+    <label>What&#39;s on this page</label>
+    <nav>
+        <ul >
+            <li><a href="/linux/wsl2-mysql/">[WSL2] Mysql 자동실행 설정하기</a></li>
+        </ul>
+    </nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#셋팅-방법">셋팅 방법</a>
+      <ul>
+        <li><a href="#-공통-작업">🔸 공통 작업</a></li>
+        <li><a href="#-1번방법--시작-프로그램-폴더에-파일-등록">🔸 1번방법 : 시작 프로그램 폴더에 파일 등록</a></li>
+        <li><a href="#-2번방법--gpeditmsc에-파일-등록">🔸 2번방법 : gpedit.msc에 파일 등록</a></li>
+        <li><a href="#-3번방법--작업-스케줄러에-작업-새로만들기">🔸 3번방법 : 작업 스케줄러에 작업 새로만들기</a></li>
+      </ul>
+    </li>
+    <li><a href="#재부팅-후-확인">재부팅 후 확인</a>
+      <ul>
+        <li><a href="#참고-사이트-">참고 사이트 :</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+	
+		
+	    	
+	  	
+	<div class="Actions">
+	<nav>
+		<ul>
+				
+		    
+		    
+			
+		      <li>
+		          <i class='fas fa-calendar'></i>
+		          Last update on 06 November 2020
+		      </li>
+		    
+		    
+		</ul>
+		<div style="text-align: center;margin : 10px 40px 0 0;">
+			<a href="https://hits.seeyoufarm.com">
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2flinux%2fwsl2-mysql%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+			</a>
+		</div>
+	</nav>
+    
+</div>
+
+      </section>
       
     </article>
     
