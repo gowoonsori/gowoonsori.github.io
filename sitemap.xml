@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://gowoonsori.site/share/react-project/</loc>
+    <loc>https://gowoonsori.site/etc/react-project/</loc>
     <lastmod>2021-01-24T14:09:48+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/react-project/1/</loc>
+    <loc>https://gowoonsori.site/etc/react-project/1/</loc>
     <lastmod>2021-01-24T13:41:25+09:00</lastmod>
   </url>
   
@@ -23,17 +23,17 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/start-hugo/custom/</loc>
+    <loc>https://gowoonsori.site/etc/start-hugo/custom/</loc>
     <lastmod>2020-09-23T17:45:19+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/start-hugo/</loc>
+    <loc>https://gowoonsori.site/etc/start-hugo/</loc>
     <lastmod>2020-09-23T17:45:19+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/start-hugo/pagination/</loc>
+    <loc>https://gowoonsori.site/etc/start-hugo/pagination/</loc>
     <lastmod>2021-03-10T20:49:41+09:00</lastmod>
   </url>
   
@@ -53,7 +53,7 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/react-project/2/</loc>
+    <loc>https://gowoonsori.site/etc/react-project/2/</loc>
     <lastmod>2021-01-24T14:09:48+09:00</lastmod>
   </url>
   
@@ -68,7 +68,7 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/react-project/3/</loc>
+    <loc>https://gowoonsori.site/etc/react-project/3/</loc>
     <lastmod>2021-01-29T23:44:32+09:00</lastmod>
   </url>
   
@@ -113,7 +113,7 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/kpu_sw_competition/final/</loc>
+    <loc>https://gowoonsori.site/etc/kpu_sw_competition/final/</loc>
     <lastmod>2020-10-18T19:22:51+09:00</lastmod>
   </url>
   
@@ -198,8 +198,13 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/</loc>
+    <loc>https://gowoonsori.site/etc/</loc>
     <lastmod>2021-02-02T01:15:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gowoonsori.site/etc/start-hugo/gallery-swipe/</loc>
+    <lastmod>2021-04-15T20:31:12+09:00</lastmod>
   </url>
   
   <url>
@@ -293,7 +298,7 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/2020-retrospect/</loc>
+    <loc>https://gowoonsori.site/etc/2020-retrospect/</loc>
     <lastmod>2021-01-05T23:53:36+09:00</lastmod>
   </url>
   
@@ -308,7 +313,7 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/2month-retrospect/</loc>
+    <loc>https://gowoonsori.site/etc/2month-retrospect/</loc>
     <lastmod>2020-11-07T14:58:55+09:00</lastmod>
   </url>
   
@@ -323,7 +328,7 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/kpu_sw_competition/</loc>
+    <loc>https://gowoonsori.site/etc/kpu_sw_competition/</loc>
     <lastmod>2020-10-16T20:39:09+09:00</lastmod>
   </url>
   
@@ -338,7 +343,7 @@
   </url>
   
   <url>
-    <loc>https://gowoonsori.site/share/start-blog/</loc>
+    <loc>https://gowoonsori.site/etc/start-blog/</loc>
     <lastmod>2020-09-18T18:51:53+09:00</lastmod>
   </url>
   
