@@ -4,27 +4,28 @@
 <html>
   <head>
     <title>
-	Footer :: Gowoonsori&#39;s TechBlog
+	DTO를 Enity로 맵핑시 방법 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-15T16:23:35 KST">
+<meta name="revised" content="2021-04-15T16:23:36 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>Footer :: Gowoonsori&#39;s TechBlog</title>
+<title>DTO를 Enity로 맵핑시 방법 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="Footer">
+<meta name="description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="Footer" />
-<meta property="og:description" content="Footer" />
+<meta property="og:title" content="DTO를 Enity로 맵핑시 방법" />
+<meta property="og:description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/_layout/footer/" />
-<meta property="og:updated_time" content="2020-08-20T15:41:15+00:00" />
+<meta property="og:url" content="https://gowoonsori.site/spring/dto/" />
+<meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
+<meta property="og:updated_time" content="2021-04-15T15:36:32+09:00" />
 
 
 
@@ -121,9 +122,9 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/_layout/footer/"
+  <body data-url="/spring/dto/"
 
-  class="">
+  class="hidebreadcrumb ">
 
  
 
@@ -473,12 +474,13 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/spring/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/spring/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
           
       
@@ -507,7 +509,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/spring/dto/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/spring/dto/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -1358,38 +1360,6 @@ if (!doNotTrack) {
       
 	    
     
-    <nav id="breadcrumb" aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        
-  
-  	
-		
-  
-  	
-	<li class="breadcrumb-item ">
-      <a class="text-link" href="https://gowoonsori.site">
-        Home
-      </a>
-    </li>
-	
-  
-    <li class="breadcrumb-item ">
-      <a class="text-link" href="/_layout/">
-        _layouts
-      </a>
-    </li>
-	
-  	
-  
-    <li class="breadcrumb-item active">
-      
-        Footer
-      
-    </li>
-
-      </ol>
-    </nav>
-    
     
 
     
@@ -1404,7 +1374,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>Footer</h1>
+			<h1>DTO를 Enity로 맵핑시 방법</h1>
         
 
 		
@@ -1424,312 +1394,62 @@ if (!doNotTrack) {
   			Jump to Section
   			<i style=";" class="fas fa-chevron-right"></i>
 		</span>
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#변환-수행-계층">변환 수행 계층</a></li>
+    <li><a href="#변환-방법">변환 방법</a>
+      <ul>
+        <li><a href="#1-modelmapper와-같은-라이브러리-이용">1. ModelMapper와 같은 라이브러리 이용</a></li>
+        <li><a href="#2-entity의-builder를-이용해-dto값으로-생성">2. Entity의 Builder를 이용해 DTO값으로 생성</a></li>
+        <li><a href="#3-static-팩토리-메서드-이용">3. static 팩토리 메서드 이용</a></li>
+        <li><a href="#3-entity-파라미터들을-갖는-생성자로-생성">3. Entity 파라미터들을 갖는 생성자로 생성</a></li>
+        <li><a href="#4-dto를-파라미터로-갖는-entity생성자-생성">4. DTO를 파라미터로 갖는 Entity생성자 생성</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 	</div>
 	
 	
 
-	<div class="content"><style type="text/css">
-
-.footer-gray {
-  width: 100%;
-  color: #888;
-}
-
-.footer-custom {
-  font: normal normal 12px/1.4 sans-serif;
-  /*max-width: 1008px;*/
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 24px;
-}
-
-.footer-custom:after {
-  display: table;
-  clear: both;
-  content: "";
-}
-
-.footer-lists:after {
-  display: table;
-  clear: both;
-  content: "";
-}
-
-.ftr-hdr {
-  color: white;
-  font: 22px/1.4  sans-serif;
-  margin: 1em 0 0;
-}
-
-@media only screen and (min-width: 768px) {
-  .ftr-hdr {
-    font-size: 18px;
-  }
-}
-
-.footer-list-wrap {
-  width: 50%;
-  float: left;
-  box-sizing: border-box;
-}
-
-@media only screen and (min-width: 568px) {
-  .footer-list-wrap {
-    width: 33.3333%;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .footer-list-wrap {
-    width: 25%;
-  }
-}
-
-.ftr-links-sub {
-  padding: 0;
-  margin: 0;
-}
-
-.ftr-links-sub:after {
-  display: table;
-  clear: both;
-  content: "";
-}
-
-.ftr-links-sub li {
-  display: block;
-  list-style-type: none;
-  margin: 0;
-  padding: 3px 0;
-  color: #888;
-  font: normal normal 12px sans-serif;
-  text-transform: uppercase;
-  /*width: 150px;*/
-}
-
-.footer-custom a,
-.footer-custom a:link,
-.footer-custom a:visited,
-.ftr-links-sub li .link {
-  text-decoration: none;
-  color: #888;
-  padding: 5px 0;
-  display: block;
-}
-
-.footer-custom .footer-legal a {
-  display: inline;
-}
-
-.footer-custom a:hover,
-.footer-custom a:active,
-.ftr-links-sub li .link:hover {
-  text-decoration: underline;
-  color: #888;
-  cursor: pointer;
-}
-
-@media only screen and (min-width: 768px) {
-  .footer-custom a, .footer-custom a:link, .footer-custom a:visited, .ftr-links-sub li .link {
-    padding: 0;
-  }
-}
-/* BEGIN EMAIL CAPTURE STYLES*/
-
-.footer-email {
-  text-align: center;
-}
-
-#ftrEmailForm {
-  height: 44px;
-}
-
-#ftrEmailForm .error {
-  display: none;
-  color: red;
-  text-align: left;
-}
-
-#ftrEmailForm #ftrEmailInput {
-  background: none repeat scroll 0 0 #FFF;
-  border: 1px solid #D6D6D6;
-  box-sizing: border-box;
-  color: #888;
-  float: left;
-  font: normal normal 14px/1.4 sans-serif;
-  padding: 5px;
-  width: 70%;
-  height: 100%;
-}
-
-#ftrEmailForm #ftrEmailInput:hover {
-  border: 1px solid #888;
-}
-
-#ftrEmailForm #ftrEmailInput:focus {
-  border: 1px solid #ef9223;
-  outline: #ef9223 auto 5px;
-}
-
-#ftrEmailForm .button {
-  width: 30%;
-  height: 100%;
-  padding: 5px;
-  float: left;
-  border: 1px solid #DFDFDF;
-  box-sizing: border-box;
-  color: #000;
-  font: normal bold 18px/1 sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  background: #FFF;
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e1e1e1));
-  background: -webkit-linear-gradient(top, white 0, #e1e1e1 100%);
-  background: -moz-linear-gradient(top, white 0, #e1e1e1 100%);
-  background: -ms-linear-gradient(top, white 0, #e1e1e1 100%);
-  background: -o-linear-gradient(top, white 0, #e1e1e1 100%);
-  background: linear-gradient(to bottom, white 0, #e1e1e1 100%);
-  cursor: pointer;
-  vertical-align: middle;
-  outline: none;
-}
-
-#ftrEmailForm .button:hover,
-#ftrEmailForm .button:active {
-  background: black;
-  color: #FFF;
-  outline: none;
-}
-/* BEGIN SOCIAL STYLES*/
-
-.footer-social {
-  text-align: center;
-}
-
-.footer-social ul {
-  padding: 0;
-  display: inline-block;
-  list-style-type: none;
-}
-
-.footer-social ul:after {
-  display: table;
-  clear: both;
-  content: "";
-}
-
-.footer-social li {
-  float: left;
-  margin: 0 15px 0 0;
-  padding: 0;
-}
-
-@media only screen and (min-width: 768px) {
-  .footer-lists {
-    width: 100%;
-  }
-  .footer-email {
-    width: 50%;
-    float: left;
-    text-align: left;
-  }
-  .footer-social {
-    width: 45%;
-    margin-left: 5%;
-    float: left;
-    text-align: left;
-  }
-}
-
-@media only screen and (min-width: 1008px) {
-  .footer-lists {
-    width: 66.6666%;
-    float: left;
-  }
-  .footer-email {
-    width: 33.3333%;
-  }
-  .footer-social {
-    width: 33.3333%;
-    float: right;
-    margin-left: 0;
-  }
-}
-
-.footer-legal {
-  padding: 15px 0 0;
-  clear: left;
-}
-
-.footer-payment {
-  text-align: center;
-}
-
-@media only screen and (min-width: 768px) {
-  .footer-legal {
-    width: 66.6666%;
-    float: left;
-  }
-  .footer-payment {
-    width: 33.3333%;
-    float: left;
-  }
-}
-
-@media only screen and (min-width: 1008px) {
-  .footer-payment {
-    text-align: left;
-  }
-}
-
-.footer-payment ul {
-  padding: 0;
-  display: inline-block;
-  list-style-type: none;
-}
-
-.footer-payment ul li {
-  display: inline-block;
-  margin: 0 6px;
-}
-
-@media only screen and (min-width: 1008px) {
-  .footer-payment ul li.ftr-stella {
-    margin-left: 0;
-  }
-}
-
-
-</style>
-  <div class="footer-gray">
-    <div class="footer-custom">
-      <div class="footer-lists">
-        <h6 class = "ftr-hdr">Contact me</h6>
-        <p>E-mail : gowoonsori97@gmail.com  |  gowoonsori97@naver.com</p>
-      </div>
-      <div class="footer-social">
-        <h6 class="ftr-hdr">Follow Us</h6>
-        <ul>
-          <li>
-            <a href="https://www.facebook.com/gowoonsori97/" title="Facebook">
-              <img width="24" height="24" alt="Like us on Facebook" src="/images/fb.png">
-            </a>
-          </li>
-          <li>
-            <a href="https://www.github.com/gowoonosori" title="Github">
-             <i class="fab fa-github" style="font-size:24px"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer-legal">
-        <p>Copyrihgt &copy; gowoonsori.site All Rights Reserved. </p>
-      </div>
-    </div>
-  </div>
-  <!--/.footer-gray-->
+	<div class="content"><p>Spring boot 공부하면서 DTO의 개념과 깔끔하게 관리하는 방법등 생각하게 되는 데 다른사람들의 의견도 듣고싶고 방법을 기록하기 위해 글을 작성한다.</p>
+<br>
+<h2>변환 수행 계층</h2><a class="anchor" id="변환-수행-계층"></a>
+<ul>
+<li>
+<ol>
+<li>Controller</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Service</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Repository</li>
+</ol>
+</li>
+</ul>
+<p>데이터의 전달을 수행하는 Controller단이 가장 일반적이고 적합하다고 생각이 들지만, 다른사람들의 글을 보면 Service나 Repository에서 수행하는 것을 보기도 했다.수정사항이 별로 없는 기능에 대해서는 Repository에서 바로 Dto를 이용한다면 별도의 Mapping이 필요없고 간단하다는 글을 어디서 봤는데 이는 계층의 영역을 침범하는 것 같고 수정사항이 생기면 수정이 힘들것 같다.</p>
+<br>
+<h2>변환 방법</h2><a class="anchor" id="변환-방법"></a>
+<h3>1. ModelMapper와 같은 라이브러리 이용</h3><a class="anchor" id="1-modelmapper와-같은-라이브러리-이용"></a>
+<p><code>백기선</code>님의 rest Api강의를 보다가 처음 사용해본 라이브러리 인데 ModelMapper의 <code>map()</code>메서드를 통해 쉽게 맵핑할 수 있는 방법</p>
+<p>간단하지만 외부 모듈을 한개 더 의존하게 된다.</p>
+<h3>2. Entity의 Builder를 이용해 DTO값으로 생성</h3><a class="anchor" id="2-entity의-builder를-이용해-dto값으로-생성"></a>
+<p>Entity의 파라미터를 갖는 생성자보다 더 명시적이라 괜찮은 방법이라 생각이 들지만, 코드가 길어질 수 있다.</p>
+<h3>3. static 팩토리 메서드 이용</h3><a class="anchor" id="3-static-팩토리-메서드-이용"></a>
+<p>필드들에 따라 의미있는 메서드명이 필요할때 사용하면 괜찮다고 생각이 든다. 오히려 Builder패턴보다 맵핑하는 계층에서는 깔끔하게 보일 수 있을 것 같다.</p>
+<h3>3. Entity 파라미터들을 갖는 생성자로 생성</h3><a class="anchor" id="3-entity-파라미터들을-갖는-생성자로-생성"></a>
+<p>기본적인 방법으로 재사용성이 좋아지고 로직이 정말 간단한 경우에는 이것이 제일 간단할 수도 있다.</p>
+<h3>4. DTO를 파라미터로 갖는 Entity생성자 생성</h3><a class="anchor" id="4-dto를-파라미터로-갖는-entity생성자-생성"></a>
+<p>맵핑을 하는 계층에서는 편하긴 하겠지만 엔티티가 DTO를 의존하게 되기때문에 별로인 것 같다.</p>
+<p><br><br></p>
+<p>이외에도 복합해서 사용한다던지 방법은 많은 것 같고 정답은 없는 것 같다.
+어떤 상황에서는 어떤 방법이 더 괜찮은가 계속 고민하고 나만의 철학(?), 방법을 정립해 일관되게 사용하는 것이 좋을 것 같다고 생각이 들었다.</p>
+<p>중요한건 중복을 피하면서 가장 간단하고 편한 방법을 상황에맞게 사용하는 것 같다.</p>
 </div>
 
 	
@@ -1750,10 +1470,10 @@ if (!doNotTrack) {
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/java/" title="Java" style="margin-right: 0px;">
+		<a class="next" href="/spring/security-get-userdetails/" title="[Spring Security] 인증된 사용자 정보 조회" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>Java</label>
+                <label>[Spring Security] 인증된 사용자 정보 조회</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1774,10 +1494,23 @@ if (!doNotTrack) {
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/_layout/footer/">Footer</a></li>
+            <li><a href="/spring/dto/">DTO를 Enity로 맵핑시 방법</a></li>
         </ul>
     </nav>
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#변환-수행-계층">변환 수행 계층</a></li>
+    <li><a href="#변환-방법">변환 방법</a>
+      <ul>
+        <li><a href="#1-modelmapper와-같은-라이브러리-이용">1. ModelMapper와 같은 라이브러리 이용</a></li>
+        <li><a href="#2-entity의-builder를-이용해-dto값으로-생성">2. Entity의 Builder를 이용해 DTO값으로 생성</a></li>
+        <li><a href="#3-static-팩토리-메서드-이용">3. static 팩토리 메서드 이용</a></li>
+        <li><a href="#3-entity-파라미터들을-갖는-생성자로-생성">3. Entity 파라미터들을 갖는 생성자로 생성</a></li>
+        <li><a href="#4-dto를-파라미터로-갖는-entity생성자-생성">4. DTO를 파라미터로 갖는 Entity생성자 생성</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </div>
 	
 		
@@ -1792,14 +1525,14 @@ if (!doNotTrack) {
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 20 August 2020
+		          Last update on 15 April 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2f_layout%2ffooter%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fspring%2fdto%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>
