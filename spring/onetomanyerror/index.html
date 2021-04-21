@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-15T22:54:13 KST">
+<meta name="revised" content="2021-04-21T19:41:06 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -985,6 +985,23 @@ if (!doNotTrack) {
         <ul>
               
 
+    <li data-nav-id="https://gowoonsori.site/books/5minute-wine/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/books/5minute-wine/">5분 와인</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
     <li data-nav-id="https://gowoonsori.site/books/cleancode/" class="dd-item
         item_level_$level
         ">
@@ -1443,6 +1460,14 @@ if (!doNotTrack) {
   <span style="color:#069;font-weight:bold">private</span> List<span style="color:#555">&lt;</span>Customer<span style="color:#555">&gt;</span> customers<span style="color:#555">;</span>
 <span style="color:#555">}</span>
 </code></pre></div><p>아직 연관관계맺는것에 익숙하지 않아 다른 필드와 같이 선언만 해주고 초기화 코드가 없었고, 새로운 User를 선언하거나 수정할때 해당 cutomer가 null이 되서 아무 것도 참조하지 않는다고 에러가 뜬 것이었습니다.</p>
+<p>엔티티를 영속 상태로 만들때 컬렉션 필드를 효율적으로 관리하기 위해 하이버네이트에서 미리 만들어둔 Wrapper클래스로 감싸(변경하여) 저장하기 때문에 즉시 초기화해서 사용하는 것을 권장한다고 한다.</p>
+<ul>
+<li>PersistentBag : Collection/List (중복 허용o / 순서 x)</li>
+<li>PersistentSet : Set (중복 허용 x / 순서 x)</li>
+<li>PersistentList : List + @OrderColumn (중복 허용 o / 순서 o)</li>
+</ul>
+<h4>번외) @OrderColumn잘 사용하지 않는 이유</h4><a class="anchor" id="번외-ordercolumn잘-사용하지-않는-이유"></a>
+<p>OrderColumn을 사용하면 순서를 저장하기 위해 position컬럼도 추가로 저장외 되는데 1:N의 관계에서 키를 1이 가지는 경우의 문제처럼 1에서 N을 저장하려고 할때 position을 모르기 때문에 insert시 처음 position없이 삽입하고 다시 update하는 sql문이 추가로 발생하게 되나.</p>
 <h4>해결방법</h4><a class="anchor" id="해결방법"></a>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">User</span><span style="color:#555">{</span>
   <span style="color:#99f">@Id</span>
@@ -1455,8 +1480,7 @@ if (!doNotTrack) {
 </code></pre></div><p>초기화 문제이기 때문에 생성자등으로 초기화를 해주거나 위와 같이 처음부터 비어있는 ArrayList를 갖도록 바꾸어 주었습니다.</p>
 <br>
 <h3>문제점 2. Update시에 똑같은 에러 발생</h3><a class="anchor" id="문제점-2-update시에-똑같은-에러-발생"></a>
-<p>JpaRepository의 <code>save()</code> 메서드를 이용해서 update를 수행하려고 하면, 모든 column에 대해서 update를 수행하게 됩니다. 그래서 검색해본 결과 <code>@DynamicUpdate</code>를 추가 해주면 null값은 제외하고 update를 수행한다고 하여 붙여주고 update를 수행했습니다.</p>
-<p>그런데 Update시에 Dto를 이용해서 입력을 받아오고 새로운 Entity객체를 만들어 save하려고 보니 위의 에러가 발생했습니다. 정확한 이유는 알 수 없었지만 많은 고민끝에 빈 컬렉션이라고 해도 기존의 User엔티티가 참조하고 있는 customers와 새로운 entity의 customers가 같지 않기 때문에 (hashcode가 다르다.) 새로운 객체로 삽입시 참조가 끊기기 때문에 에러가 발생한 거라고 추측하고 새로운 Entity에도 기존의 customers를 추가하는 방법으로 해결했습니다.</p>
+<p>Update시에 Dto를 이용해서 입력을 받아오고 새로운 Entity객체를 만들어 save하려고 보니 위의 에러가 발생했습니다. 정확한 이유는 알 수 없었지만 많은 고민끝에 빈 컬렉션이라고 해도 기존의 User엔티티가 참조하고 있는 customers와 새로운 entity의 customers가 같지 않기 때문에 (hashcode가 다르다.) 새로운 객체로 삽입시 참조가 끊기기 때문에 에러가 발생한 거라고 추측하고 새로운 Entity에도 기존의 customers를 추가하는 방법으로 해결했습니다.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@PatchMapping</span><span style="color:#555">(</span><span style="color:#c30">&#34;/me&#34;</span><span style="color:#555">)</span>
 <span style="color:#069;font-weight:bold">public</span> ApiResult<span style="color:#555">&lt;</span>User<span style="color:#555">.</span><span style="color:#309">Info</span><span style="color:#555">&gt;</span> <span style="color:#c0f">updateMyInfo</span><span style="color:#555">(</span><span style="color:#99f">@Valid</span> <span style="color:#99f">@RequestBody</span> UpdateInfoRequest updateInfoRequest<span style="color:#555">,</span>
                                              JwtAuthenticationToken authentication<span style="color:#555">){</span>

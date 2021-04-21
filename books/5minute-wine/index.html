@@ -4,32 +4,40 @@
 <html>
   <head>
     <title>
-	Junit5 :: Gowoonsori&#39;s TechBlog
+	5분 와인 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-04-21T19:41:05 KST">
+<meta name="revised" content="2021-04-21T19:41:04 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>Junit5 :: Gowoonsori&#39;s TechBlog</title>
+<title>5분 와인 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="Junit 5의 개념, 기본 어노테이션과 예제를 통해 복습해봅니다">
+<meta name="description" content="웅가가 알려주는 5분와인을 읽은 간단한 느낌">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="Junit5" />
-<meta property="og:description" content="Junit 5의 개념, 기본 어노테이션과 예제를 통해 복습해봅니다" />
+<meta property="og:title" content="5분 와인" />
+<meta property="og:description" content="웅가가 알려주는 5분와인을 읽은 간단한 느낌" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/java/junit5/" />
+<meta property="og:url" content="https://gowoonsori.site/books/5minute-wine/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2021-01-25T20:13:58+09:00" />
+<meta property="og:updated_time" content="2021-04-21T19:23:15+09:00" />
 
 
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="/js/load-photoswipe.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 
 
 
@@ -127,7 +135,7 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/java/junit5/"
+  <body data-url="/books/5minute-wine/"
 
   class="hidebreadcrumb ">
 
@@ -205,13 +213,12 @@ if (!doNotTrack) {
   <p>Categories</p>
 </div>
 
-    <li data-nav-id="https://gowoonsori.site/java/" class="dd-item parent haschildren
+    <li data-nav-id="https://gowoonsori.site/java/" class="dd-item haschildren
         item_level_$level
         ">
 
       
-      
-          <i class="fas fa-chevron-down ddexp"></i>
+      <i class="fas fa-chevron-right ddexp"></i>
       
           
       
@@ -325,7 +332,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/java/junit5/" class="dd-item parent active
+    <li data-nav-id="https://gowoonsori.site/java/junit5/" class="dd-item
         item_level_$level
         ">
 
@@ -968,12 +975,13 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/books/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/books/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
           
       
@@ -985,7 +993,7 @@ if (!doNotTrack) {
         <ul>
               
 
-    <li data-nav-id="https://gowoonsori.site/books/5minute-wine/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/books/5minute-wine/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -1413,7 +1421,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>Junit5</h1>
+			<h1>5분 와인</h1>
         
 
 		
@@ -1433,101 +1441,24 @@ if (!doNotTrack) {
   			Jump to Section
   			<i style=";" class="fas fa-chevron-right"></i>
 		</span>
-		<nav id="TableOfContents">
-  <ul>
-    <li><a href="#구조">구조</a></li>
-    <li><a href="#assertion">Assertion</a></li>
-    <li><a href="#어노테이션">어노테이션</a>
-      <ul>
-        <li><a href="#-ignore">◾ @Ignore</a></li>
-        <li><a href="#-test">◾ @Test</a></li>
-        <li><a href="#-parameterizedtest">◾ @ParameterizedTest</a></li>
-        <li><a href="#-testfactory">◾ @TestFactory</a></li>
-        <li><a href="#-displayname">◾ @DisplayName</a></li>
-        <li><a href="#-displaynamegenration">◾ @DisplayNameGenration</a></li>
-        <li><a href="#-disabled">◾ @Disabled</a></li>
-        <li><a href="#-beforeeach--beforeall">◾ @BeforeEach / @BeforeAll</a></li>
-        <li><a href="#-aftereach--afterall">◾ @AfterEach / @AfterAll</a></li>
-        <li><a href="#-nested">◾ @Nested</a></li>
-        <li><a href="#-repeated-test">◾ @Repeated Test</a></li>
-        <li><a href="#-tag">◾ @Tag</a></li>
-        <li><a href="#-testinstancetestinstancelifecycleper_class">◾ @TestInstance(TestInstance.LifeCycle.PER_CLASS)</a></li>
-        <li><a href="#-testmethodordermethodordererorderannotationclass">◾ @TestMethodOrder(MethodOrderer.OrderAnnotation.class)</a></li>
-        <li><a href="#refernce">Refernce</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+		<nav id="TableOfContents"></nav>
 	</div>
 	
 	
 
-	<div class="content"><p>자바 프로그래밍용 Unit 테스트 프레임워크</p>
-<p>런타임시 Java 8이상이 필요하며 컴파일 타임시에 JAR로서 링크된다.</p>
-<p>Spring Boot를 이용하면 내부에 dependency가 포함되어 있다.</p>
-<p><br><br></p>
-<h2>구조</h2><a class="anchor" id="구조"></a>
-<ul>
-<li>
-<p>JUnit Platform : 테스트를 발견하고 계획을 생성하는 <code>TestEngine</code>인터페이스를 갖고 있다.</p>
-<p>이를 통해 테스트를 발견,실행,보고한다.</p>
-</li>
-<li>
-<p>JUnit Jupiter : TestEngine의 실제 구현체는 별도 모듈중 하나로 <code>Juptier-API</code>를 이용한 테스트 코드를 발견하고 실행</p>
-<blockquote>
-<p>Jupiter API는 JUnit5에 새롭게 추가된 테스트 코드용 API</p>
-</blockquote>
-</li>
-<li>
-<p>JUnit Vintage : 기존 버전으로 작성한 테스트 코드를 실행할때 이 모듈을 이용</p>
-</li>
-</ul>
-<p><br><br></p>
-<h2>Assertion</h2><a class="anchor" id="assertion"></a>
-<p>Assertion은 기본적인것만 제공하기 때문에 <code>AssertJ</code>와 같은 것들을 추가로 사용할 수도 있다.</p>
-<ul>
-<li>assertThat / assertTrue : 전제조건 검증</li>
-<li>assertAll() : 전체 실행</li>
-<li>assertThrows/assertDoesNotThrow() : 예외상태 검증</li>
-<li>assertTimeout() : 타</li>
-</ul>
-<p><br><br></p>
-<h2>어노테이션</h2><a class="anchor" id="어노테이션"></a>
-<h3>◾ @Ignore</h3><a class="anchor" id="-ignore"></a>
-<p>테스트로 안쓰이는 클래스</p>
-<p>테스트내 중복 코드제거를 위해 클래스 상속을 이용하여 만들때 사용해주어야한다.</p>
-<h3>◾ @Test</h3><a class="anchor" id="-test"></a>
-<p>테스트 메서드 임을 알리는 어노테이션</p>
-<h3>◾ @ParameterizedTest</h3><a class="anchor" id="-parameterizedtest"></a>
-<p>매개 변수화 된 테스트</p>
-<h3>◾ @TestFactory</h3><a class="anchor" id="-testfactory"></a>
-<p>동적 테스트를 위한 테스트 팩토리</p>
-<h3>◾ @DisplayName</h3><a class="anchor" id="-displayname"></a>
-<p>해당 테스트 클래스 or 메서드의 console에 보여지는 이름을 정의</p>
-<h3>◾ @DisplayNameGenration</h3><a class="anchor" id="-displaynamegenration"></a>
-<p>테스트 클래스에 대해 사용자 정의 이름을 선언</p>
-<h3>◾ @Disabled</h3><a class="anchor" id="-disabled"></a>
-<p>테스트 클래스 or 메서드를 비활성화</p>
-<h3>◾ @BeforeEach / @BeforeAll</h3><a class="anchor" id="-beforeeach--beforeall"></a>
-<p>@Test, @RepeatedTest, @Parameterized, @TestFactory가 붙은 메서드 전에 실행되는 테스트</p>
-<h3>◾ @AfterEach / @AfterAll</h3><a class="anchor" id="-aftereach--afterall"></a>
-<p>@Test, @RepeatedTest, @Parameterized, @TestFactory가 붙은 메서드 후에 실행되는 테스트</p>
-<h3>◾ @Nested</h3><a class="anchor" id="-nested"></a>
-<p>테스트 클래스안에서 내부 클레스를 정의</p>
-<h3>◾ @Repeated Test</h3><a class="anchor" id="-repeated-test"></a>
-<p>반복 테스트를 위한 테스트 템플릿임을 알림</p>
-<h3>◾ @Tag</h3><a class="anchor" id="-tag"></a>
-<p>필터링을 위한 태그</p>
-<h3>◾ @TestInstance(TestInstance.LifeCycle.PER_CLASS)</h3><a class="anchor" id="-testinstancetestinstancelifecycleper_class"></a>
-<p>테스트 메서드간의 상태를 유지해주는 어노테이션</p>
-<h3>◾ @TestMethodOrder(MethodOrderer.OrderAnnotation.class)</h3><a class="anchor" id="-testmethodordermethodordererorderannotationclass"></a>
-<ul>
-<li>@Order() : 메서드간 순서를 지정해줄 수 있따.</li>
-</ul>
-<p><br><br></p>
-<hr>
-<h3>Refernce</h3><a class="anchor" id="refernce"></a>
-<p><a href="https://reiphiel.tistory.com/entry/junit5-features">https://reiphiel.tistory.com/entry/junit5-features</a></p>
+	<div class="content"><p>제목에서 그대로 보이듯이 와인에 대해 깊고 많은 역사를 알려주는 책이 아닌 <code>집에서 보관방법</code>, <code>와인 구매장소</code>, <code>마트에서 좋은 와인 고르기</code>, <code>선물용 와인</code> 등 과 같이 가벼운 내용위주의 책들이라 간단하게 보기 좋고 책에서 언급하는 대로 <code>아는 체</code>,<code>있어보이는 척</code> 하기에 괜찮은 책이다.</p>
+<p><code>샴페인</code>을 한번 먹어본 이후로 <code>화이트와인</code>과 <code>스파클링 와인</code>에 빠져서 <code>화이트와인</code>을 만드는 포도 품종이나 지역 등을 한번 공부하고자 읽었고 책의 내용도 가벼우면서 얻고자하는 필요한 내용들은 모두 들어있었고 저자도 뭔가 고상한척 있어보이려고 하지 않고 친근한 어투로 설명해서 간단하게 훑어보기 좋은 책이다.</p>
+<br>
+<p>이 책과는 별개로 요즘 빠진 화이트와인 하나를 추천하려고 한다.</p>
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="./russian-jack.png" />
+    </div>
+    <a href="./russian-jack.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+<p>러시안 잭 소비뇽블랑 이라는 화이트 와인인데 <code>뉴질랜드</code> 와인으로 자몽이나 패션후르츠와 같은 향이 느껴지며 적당히 상큼해 식전에 입맛을 돋구거나 가볍게 마시기에 좋고 가격도 2만원대로 괜찮아 요즘 자주 마시고 있는 와인이다.</p>
 </div>
 
 	
@@ -1548,14 +1479,63 @@ if (!doNotTrack) {
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/java/thread/" title="멀티 스레딩" style="margin-right: 0px;">
+		<a class="next" href="/books/cleancode/" title="Clean Code" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>멀티 스레딩</label>
+                <label>Clean Code</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
 	
+
+
+		
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
 
 
 
@@ -1574,34 +1554,10 @@ if (!doNotTrack) {
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/java/junit5/">Junit5</a></li>
+            <li><a href="/books/5minute-wine/">5분 와인</a></li>
         </ul>
     </nav>
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#구조">구조</a></li>
-    <li><a href="#assertion">Assertion</a></li>
-    <li><a href="#어노테이션">어노테이션</a>
-      <ul>
-        <li><a href="#-ignore">◾ @Ignore</a></li>
-        <li><a href="#-test">◾ @Test</a></li>
-        <li><a href="#-parameterizedtest">◾ @ParameterizedTest</a></li>
-        <li><a href="#-testfactory">◾ @TestFactory</a></li>
-        <li><a href="#-displayname">◾ @DisplayName</a></li>
-        <li><a href="#-displaynamegenration">◾ @DisplayNameGenration</a></li>
-        <li><a href="#-disabled">◾ @Disabled</a></li>
-        <li><a href="#-beforeeach--beforeall">◾ @BeforeEach / @BeforeAll</a></li>
-        <li><a href="#-aftereach--afterall">◾ @AfterEach / @AfterAll</a></li>
-        <li><a href="#-nested">◾ @Nested</a></li>
-        <li><a href="#-repeated-test">◾ @Repeated Test</a></li>
-        <li><a href="#-tag">◾ @Tag</a></li>
-        <li><a href="#-testinstancetestinstancelifecycleper_class">◾ @TestInstance(TestInstance.LifeCycle.PER_CLASS)</a></li>
-        <li><a href="#-testmethodordermethodordererorderannotationclass">◾ @TestMethodOrder(MethodOrderer.OrderAnnotation.class)</a></li>
-        <li><a href="#refernce">Refernce</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+    <nav id="TableOfContents"></nav>
 </div>
 	
 		
@@ -1616,14 +1572,14 @@ if (!doNotTrack) {
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 25 January 2021
+		          Last update on 21 April 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fjava%2fjunit5%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fbooks%2f5minute-wine%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>

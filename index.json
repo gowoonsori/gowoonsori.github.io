@@ -256,7 +256,7 @@
 	"title": "Books",
 	"tags": [],
 	"description": "책들을 읽고 난 후 간단한 소감과 요약내용, 서평 등을 올릴 예정입니다.",
-	"content": "책들을 읽고 난 후 간단한 소감과 요약내용을 올릴 예정입니다 📑\n"
+	"content": "개발관련 책뿐만이 아닌 자기계발, 소설, 비소설 등 다양한 책들을 읽고 난 후 간단한 소감이나 요약내용을 올릴 예정입니다 📑\n"
 },
 {
 	"uri": "https://gowoonsori.site/linux/",
@@ -278,6 +278,13 @@
 	"tags": [],
 	"description": "각종 체험기, 후기, 제작기, 공유하고 싶은 내용들을 포스팅 할 예정입니다.",
 	"content": "꾸준한 글쓰기로 많은 사람들에 도움이 되는 것을 꿈꾸고 있어요. 😀 "
+},
+{
+	"uri": "https://gowoonsori.site/books/5minute-wine/",
+	"title": "5분 와인",
+	"tags": [],
+	"description": "웅가가 알려주는 5분와인을 읽은 간단한 느낌",
+	"content": "제목에서 그대로 보이듯이 와인에 대해 깊고 많은 역사를 알려주는 책이 아닌 집에서 보관방법, 와인 구매장소, 마트에서 좋은 와인 고르기, 선물용 와인 등 과 같이 가벼운 내용위주의 책들이라 간단하게 보기 좋고 책에서 언급하는 대로 아는 체,있어보이는 척 하기에 괜찮은 책이다.\n샴페인을 한번 먹어본 이후로 화이트와인과 스파클링 와인에 빠져서 화이트와인을 만드는 포도 품종이나 지역 등을 한번 공부하고자 읽었고 책의 내용도 가벼우면서 얻고자하는 필요한 내용들은 모두 들어있었고 저자도 뭔가 고상한척 있어보이려고 하지 않고 친근한 어투로 설명해서 간단하게 훑어보기 좋은 책이다.\n이 책과는 별개로 요즘 빠진 화이트와인 하나를 추천하려고 한다.\n\r\r\r 러시안 잭 소비뇽블랑 이라는 화이트 와인인데 뉴질랜드 와인으로 자몽이나 패션후르츠와 같은 향이 느껴지며 적당히 상큼해 식전에 입맛을 돋구거나 가볍게 마시기에 좋고 가격도 2만원대로 괜찮아 요즘 자주 마시고 있는 와인이다.\n"
 },
 {
 	"uri": "https://gowoonsori.site/etc/start-hugo/gallery-swipe/",
@@ -361,7 +368,7 @@
 	"title": "[Error 해결] @OneToMany 관계시 발생한 에러",
 	"tags": [],
 	"description": "&#34;A collection with cascade=&#34;all-delete-orphan&#34; was no longer referenced by the owning entity instance&#34;에러 해결하기",
-	"content": "JPA의 구현체인 hiberante를 이용해서 엔티티간의 상속관계를 설정하고 처음 사용해보는데 발생한 에러인 A collection with cascade=\u0026quot;all-delete-orphan\u0026quot; was no longer referenced by the owning entity instance 문제 해결한 방법을 기록하려고 합니다.\nUser의 엔티티와 Customer엔티티간의 1:N의 연관관계를 맺기 위해 User에는 @OneToMany를 Customer에는 @ManyToOne관계를 설정을 하고 로직을 돌려보는데 위와 같은 에러가 발생했습니다.\n문제점 1. 초기화를 하지 않았다. public class User{ @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @OneToMany(mappedBy = \u0026#34;user\u0026#34;, cascade = CascadeType.ALL, orphanRemoval = true) private List\u0026lt;Customer\u0026gt; customers; } 아직 연관관계맺는것에 익숙하지 않아 다른 필드와 같이 선언만 해주고 초기화 코드가 없었고, 새로운 User를 선언하거나 수정할때 해당 cutomer가 null이 되서 아무 것도 참조하지 않는다고 에러가 뜬 것이었습니다.\n해결방법 public class User{ @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @OneToMany(mappedBy = \u0026#34;user\u0026#34;, cascade = CascadeType.ALL, orphanRemoval = true) private List\u0026lt;Customer\u0026gt; customers = new ArrayList\u0026lt;\u0026gt;(); } 초기화 문제이기 때문에 생성자등으로 초기화를 해주거나 위와 같이 처음부터 비어있는 ArrayList를 갖도록 바꾸어 주었습니다.\n문제점 2. Update시에 똑같은 에러 발생 JpaRepository의 save() 메서드를 이용해서 update를 수행하려고 하면, 모든 column에 대해서 update를 수행하게 됩니다. 그래서 검색해본 결과 @DynamicUpdate를 추가 해주면 null값은 제외하고 update를 수행한다고 하여 붙여주고 update를 수행했습니다.\n그런데 Update시에 Dto를 이용해서 입력을 받아오고 새로운 Entity객체를 만들어 save하려고 보니 위의 에러가 발생했습니다. 정확한 이유는 알 수 없었지만 많은 고민끝에 빈 컬렉션이라고 해도 기존의 User엔티티가 참조하고 있는 customers와 새로운 entity의 customers가 같지 않기 때문에 (hashcode가 다르다.) 새로운 객체로 삽입시 참조가 끊기기 때문에 에러가 발생한 거라고 추측하고 새로운 Entity에도 기존의 customers를 추가하는 방법으로 해결했습니다.\n@PatchMapping(\u0026#34;/me\u0026#34;) public ApiResult\u0026lt;User.Info\u0026gt; updateMyInfo(@Valid @RequestBody UpdateInfoRequest updateInfoRequest, JwtAuthenticationToken authentication){ User user = (User)authentication.getDetails(); User updateUser = User.builder() .id(user.getId()) .customers(user.getCustomers()) //추가한 부분 (기존에는 빼놓고 작성해서 다른 비어있는 ArrayList가 들어갔을 것이다.)  .accumulationRate(updateInfoRequest.getAccumulationRate()) .email(updateInfoRequest.getEmail()) .name(updateInfoRequest.getName()) .password(updateInfoRequest.getPassword()) .phoneNumber(updateInfoRequest.getPhoneNumber()) .build(); return success(User.Info.of(userService.insert(updateUser)) ); } \n일단은 이렇게 에러는 해결했는데 글을 보시고 문제점이 있는 부분을 말씀해주시면 공부하고 수정하도록 하겠습니다.\n"
+	"content": "JPA의 구현체인 hiberante를 이용해서 엔티티간의 상속관계를 설정하고 처음 사용해보는데 발생한 에러인 A collection with cascade=\u0026quot;all-delete-orphan\u0026quot; was no longer referenced by the owning entity instance 문제 해결한 방법을 기록하려고 합니다.\nUser의 엔티티와 Customer엔티티간의 1:N의 연관관계를 맺기 위해 User에는 @OneToMany를 Customer에는 @ManyToOne관계를 설정을 하고 로직을 돌려보는데 위와 같은 에러가 발생했습니다.\n문제점 1. 초기화를 하지 않았다. public class User{ @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @OneToMany(mappedBy = \u0026#34;user\u0026#34;, cascade = CascadeType.ALL, orphanRemoval = true) private List\u0026lt;Customer\u0026gt; customers; } 아직 연관관계맺는것에 익숙하지 않아 다른 필드와 같이 선언만 해주고 초기화 코드가 없었고, 새로운 User를 선언하거나 수정할때 해당 cutomer가 null이 되서 아무 것도 참조하지 않는다고 에러가 뜬 것이었습니다.\n엔티티를 영속 상태로 만들때 컬렉션 필드를 효율적으로 관리하기 위해 하이버네이트에서 미리 만들어둔 Wrapper클래스로 감싸(변경하여) 저장하기 때문에 즉시 초기화해서 사용하는 것을 권장한다고 한다.\n PersistentBag : Collection/List (중복 허용o / 순서 x) PersistentSet : Set (중복 허용 x / 순서 x) PersistentList : List + @OrderColumn (중복 허용 o / 순서 o)  번외) @OrderColumn잘 사용하지 않는 이유 OrderColumn을 사용하면 순서를 저장하기 위해 position컬럼도 추가로 저장외 되는데 1:N의 관계에서 키를 1이 가지는 경우의 문제처럼 1에서 N을 저장하려고 할때 position을 모르기 때문에 insert시 처음 position없이 삽입하고 다시 update하는 sql문이 추가로 발생하게 되나.\n해결방법 public class User{ @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @OneToMany(mappedBy = \u0026#34;user\u0026#34;, cascade = CascadeType.ALL, orphanRemoval = true) private List\u0026lt;Customer\u0026gt; customers = new ArrayList\u0026lt;\u0026gt;(); } 초기화 문제이기 때문에 생성자등으로 초기화를 해주거나 위와 같이 처음부터 비어있는 ArrayList를 갖도록 바꾸어 주었습니다.\n문제점 2. Update시에 똑같은 에러 발생 Update시에 Dto를 이용해서 입력을 받아오고 새로운 Entity객체를 만들어 save하려고 보니 위의 에러가 발생했습니다. 정확한 이유는 알 수 없었지만 많은 고민끝에 빈 컬렉션이라고 해도 기존의 User엔티티가 참조하고 있는 customers와 새로운 entity의 customers가 같지 않기 때문에 (hashcode가 다르다.) 새로운 객체로 삽입시 참조가 끊기기 때문에 에러가 발생한 거라고 추측하고 새로운 Entity에도 기존의 customers를 추가하는 방법으로 해결했습니다.\n@PatchMapping(\u0026#34;/me\u0026#34;) public ApiResult\u0026lt;User.Info\u0026gt; updateMyInfo(@Valid @RequestBody UpdateInfoRequest updateInfoRequest, JwtAuthenticationToken authentication){ User user = (User)authentication.getDetails(); User updateUser = User.builder() .id(user.getId()) .customers(user.getCustomers()) //추가한 부분 (기존에는 빼놓고 작성해서 다른 비어있는 ArrayList가 들어갔을 것이다.)  .accumulationRate(updateInfoRequest.getAccumulationRate()) .email(updateInfoRequest.getEmail()) .name(updateInfoRequest.getName()) .password(updateInfoRequest.getPassword()) .phoneNumber(updateInfoRequest.getPhoneNumber()) .build(); return success(User.Info.of(userService.insert(updateUser)) ); } \n일단은 이렇게 에러는 해결했는데 글을 보시고 문제점이 있는 부분을 말씀해주시면 공부하고 수정하도록 하겠습니다.\n"
 },
 {
 	"uri": "https://gowoonsori.site/spring/graphql-customcontext/",
