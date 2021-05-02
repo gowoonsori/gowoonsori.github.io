@@ -4,7 +4,7 @@
 <html>
   <head>
     <title>
-	_layouts :: Gowoonsori&#39;s TechBlog
+	Spring Security Cors Mapping Error :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -12,19 +12,20 @@
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>_layouts :: Gowoonsori&#39;s TechBlog</title>
+<title>Spring Security Cors Mapping Error :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀">
+<meta name="description" content="Spring Security를 이용해 cors설정 시에 발생한 mapping error">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="_layouts" />
-<meta property="og:description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀" />
+<meta property="og:title" content="Spring Security Cors Mapping Error" />
+<meta property="og:description" content="Spring Security를 이용해 cors설정 시에 발생한 mapping error" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/_layout/" />
-<meta property="og:updated_time" content="2020-09-21T18:04:26+09:00" />
+<meta property="og:url" content="https://gowoonsori.site/error/springsecurity-cors/" />
+<meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
+<meta property="og:updated_time" content="2021-05-02T21:17:07+09:00" />
 
 
 
@@ -126,9 +127,9 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/_layout/"
+  <body data-url="/error/springsecurity-cors/"
 
-  class="">
+  class="hidebreadcrumb ">
 
  
 
@@ -1159,12 +1160,13 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/error/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/error/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
           
       
@@ -1176,7 +1178,7 @@ if (!doNotTrack) {
         <ul>
               
 
-    <li data-nav-id="https://gowoonsori.site/error/springsecurity-cors/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/error/springsecurity-cors/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -1484,27 +1486,6 @@ if (!doNotTrack) {
       
 	    
     
-    <nav id="breadcrumb" aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        
-  
-  	
-	<li class="breadcrumb-item ">
-      <a class="text-link" href="https://gowoonsori.site">
-        Home
-      </a>
-    </li>
-	
-  
-    <li class="breadcrumb-item active">
-      
-        _layouts
-      
-    </li>
-
-      </ol>
-    </nav>
-    
     
 
     
@@ -1519,7 +1500,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>_layouts</h1>
+			<h1>Spring Security Cors Mapping Error</h1>
         
 
 		
@@ -1539,12 +1520,18 @@ if (!doNotTrack) {
   			Jump to Section
   			<i style=";" class="fas fa-chevron-right"></i>
 		</span>
-		
+		<nav id="TableOfContents"></nav>
 	</div>
 	
 	
 
-	<div class="content"></div>
+	<div class="content"><p>front 서버와 back서버의 주소(포트)가 다르면 cors에러가 발생한다. (chrome은 cors 기본정책이 strict-origin-when-cross-origin)</p>
+<p>그래서 서버단에서 특정 origin을 허용할 수 있게 cors설정을 해줘야 하는데 spring security를 이용한다면 <code>.cors()</code>를 통해 cors설정을 해주는 데 이때 발생한 에러이다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">java<span style="color:#555">.</span><span style="color:#309">lang</span><span style="color:#555">.</span><span style="color:#309">IllegalArgumentException</span><span style="color:#555">:</span> When allowCredentials is <span style="color:#069;font-weight:bold">true</span><span style="color:#555">,</span> allowedOrigins cannot contain the special value <span style="color:#c30">&#34;*&#34;</span>since that cannot be set on the <span style="color:#c30">&#34;Access-Control-Allow-Origin&#34;</span> response header<span style="color:#555">.</span> To allow credentials to a set of origins<span style="color:#555">,</span> list them explicitly or consider using <span style="color:#c30">&#34;allowedOriginPatterns&#34;</span> instead<span style="color:#555">.</span>
+</code></pre></div><p>에러 메세지만 잘 읽어도 무엇이 문제인지 바로 알 수 있는데 spring security에서 cors설정을 할때 <code>.addAllOrigin(&quot;*&quot;)</code> 과 <code>.allowCrededentials(true)</code>를 동시에 사용할 수 없어서 나는 에러이다.</p>
+<p>allowCredential이 true라면 &ldquo;Access-Control-Allow-Origin&rdquo; 응답 헤더헤더를 설정 할 수 없기 때문에 특수 값인 <code>&quot;*&quot;</code>를 사용 못하는 것이다.</p>
+<p>해결방법은 특정 주소만 허락하거나, <code>.addAllOriginPatterns(&quot;*&quot;)</code>를 사용하면 된다.</p>
+</div>
 
 	
     <div style="margin-top:200px;">
@@ -1564,10 +1551,10 @@ if (!doNotTrack) {
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/java/" title="Java" style="margin-right: 0px;">
+		<a class="next" href="/error/intellij-error/" title="Intellij Error" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>Java</label>
+                <label>Intellij Error</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1590,10 +1577,10 @@ if (!doNotTrack) {
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/_layout/">_layouts</a></li>
+            <li><a href="/error/springsecurity-cors/">Spring Security Cors Mapping Error</a></li>
         </ul>
     </nav>
-    
+    <nav id="TableOfContents"></nav>
 </div>
 	
 		
@@ -1608,14 +1595,14 @@ if (!doNotTrack) {
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 21 September 2020
+		          Last update on 02 May 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2f_layout%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2ferror%2fspringsecurity-cors%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>

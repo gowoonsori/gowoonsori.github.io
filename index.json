@@ -301,6 +301,13 @@
 	"content": "꾸준한 글쓰기로 많은 사람들에 도움이 되는 것을 꿈꾸고 있어요. 😀 "
 },
 {
+	"uri": "https://gowoonsori.site/error/springsecurity-cors/",
+	"title": "Spring Security Cors Mapping Error",
+	"tags": [],
+	"description": "Spring Security를 이용해 cors설정 시에 발생한 mapping error",
+	"content": "front 서버와 back서버의 주소(포트)가 다르면 cors에러가 발생한다. (chrome은 cors 기본정책이 strict-origin-when-cross-origin)\n그래서 서버단에서 특정 origin을 허용할 수 있게 cors설정을 해줘야 하는데 spring security를 이용한다면 .cors()를 통해 cors설정을 해주는 데 이때 발생한 에러이다.\njava.lang.IllegalArgumentException: When allowCredentials is true, allowedOrigins cannot contain the special value \u0026#34;*\u0026#34;since that cannot be set on the \u0026#34;Access-Control-Allow-Origin\u0026#34; response header. To allow credentials to a set of origins, list them explicitly or consider using \u0026#34;allowedOriginPatterns\u0026#34; instead. 에러 메세지만 잘 읽어도 무엇이 문제인지 바로 알 수 있는데 spring security에서 cors설정을 할때 .addAllOrigin(\u0026quot;*\u0026quot;) 과 .allowCrededentials(true)를 동시에 사용할 수 없어서 나는 에러이다.\nallowCredential이 true라면 \u0026ldquo;Access-Control-Allow-Origin\u0026rdquo; 응답 헤더헤더를 설정 할 수 없기 때문에 특수 값인 \u0026quot;*\u0026quot;를 사용 못하는 것이다.\n해결방법은 특정 주소만 허락하거나, .addAllOriginPatterns(\u0026quot;*\u0026quot;)를 사용하면 된다.\n"
+},
+{
 	"uri": "https://gowoonsori.site/books/speech1/",
 	"title": "돈버는 말투, 돈 버리는 말투",
 	"tags": [],
