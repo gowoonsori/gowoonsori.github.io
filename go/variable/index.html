@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-05-11T16:25:09 KST">
+<meta name="revised" content="2021-05-12T01:07:46 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -765,6 +765,23 @@ if (!doNotTrack) {
       
       
           <a href="/go/variable/">변수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/io/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/io/">표준 입출력</a>
           
       
       
@@ -1542,27 +1559,29 @@ if (!doNotTrack) {
     <li><a href="#변수-선언">변수 선언</a>
       <ul>
         <li><a href="#-기본-방법">◾ 기본 방법</a></li>
+        <li><a href="#-타입-추론">◾ 타입 추론</a></li>
         <li><a href="#--short-assignment-statement">◾ := (Short Assignment Statement)</a></li>
         <li><a href="#-여러개-지정">◾ 여러개 지정</a></li>
-        <li><a href="#상수">상수</a></li>
+        <li><a href="#-상수">◾ 상수</a></li>
       </ul>
     </li>
     <li><a href="#데이터-타입">데이터 타입</a>
       <ul>
-        <li><a href="#1-bool">1. bool</a></li>
-        <li><a href="#2-string">2. string</a></li>
-        <li><a href="#3-int">3. int</a></li>
-        <li><a href="#4-실수-복소수">4. 실수, 복소수</a></li>
-        <li><a href="#5-byte">5. byte</a></li>
-        <li><a href="#6-rune">6. rune</a></li>
-        <li><a href="#7-별칭-타입">7. 별칭 타입</a></li>
+        <li><a href="#-bool">◾ bool</a></li>
+        <li><a href="#-문자열string">◾ 문자열(string)</a></li>
+        <li><a href="#-정수int">◾ 정수(int)</a></li>
+        <li><a href="#-실수-복소수">◾ 실수, 복소수</a></li>
+        <li><a href="#-byte">◾ byte</a></li>
+        <li><a href="#-rune">◾ rune</a></li>
+        <li><a href="#-그-외-타입">◾ 그 외 타입</a></li>
       </ul>
     </li>
     <li><a href="#타입-변환">타입 변환</a>
       <ul>
-        <li><a href="#reference">Reference</a></li>
+        <li><a href="#-strconv">◾ strconv</a></li>
       </ul>
     </li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 	</div>
@@ -1573,18 +1592,24 @@ if (!doNotTrack) {
 <h3>◾ 기본 방법</h3><a class="anchor" id="-기본-방법"></a>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> a <span style="color:#078;font-weight:bold">int</span>
 <span style="color:#069;font-weight:bold">var</span> a <span style="color:#078;font-weight:bold">int</span> = <span style="color:#f60">10</span>
-<span style="color:#069;font-weight:bold">var</span> b,c,d <span style="color:#078;font-weight:bold">int</span> = <span style="color:#f60">1</span>,<span style="color:#f60">2</span>,<span style="color:#f60">3</span>
-<span style="color:#069;font-weight:bold">var</span> q,w,e = <span style="color:#f60">1</span>, <span style="color:#069;font-weight:bold">true</span>, <span style="color:#c30">&#34;#&#34;</span>
-</code></pre></div><p><code>var</code>키워드로 변수를 선언하고 변수명 다음 <code>데이터 타입</code>을 명시해주어야 하고, 선언만 하고 초기화를 해주지 않으면 go는 <code>Zero value</code>를 할당한다.</p>
-<h4>Zero Value</h4><a class="anchor" id="zero-value"></a>
-<ul>
-<li>숫자 = 0</li>
-<li>bool = false</li>
-<li>string = &quot;&quot;</li>
-</ul>
+<span style="color:#069;font-weight:bold">var</span> b,c,d <span style="color:#078;font-weight:bold">int</span> = <span style="color:#f60">1</span>,<span style="color:#f60">2</span>,<span style="color:#f60">3</span>  <span style="color:#09f;font-style:italic">//동시에 여러개 변수 선언도 가능하다.
+</span></code></pre></div><p><code>var</code>키워드로 변수를 선언하고 변수명 다음 <code>데이터 타입</code>을 명시해주어야 하고, 선언만 하고 초기화를 해주지 않으면 go는 <code>Zero value</code>를 할당한다.</p>
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices primary">
+	<p><strong>Zero Value</strong>
 <br>
+◾ 숫자 = 0<br>
+◾ bool = false<br>
+◾ string = &ldquo;&quot;<br></p>
+
+</div>
+
+<br>
+<h3>◾ 타입 추론</h3><a class="anchor" id="-타입-추론"></a>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> a = <span style="color:#f60">10</span>
-</code></pre></div><p>위 처럼 타입추론도 가능하다.</p>
+<span style="color:#069;font-weight:bold">var</span> q,w,e = <span style="color:#f60">1</span>, <span style="color:#069;font-weight:bold">true</span>, <span style="color:#c30">&#34;#&#34;</span>   <span style="color:#09f;font-style:italic">//동시에 여러개 변수 선언을 할때 다른 타입이더라도 추론을 통해 선언해준다.
+</span></code></pre></div><p>위 처럼 변수 뒤의 타입형태를 제외한 형식의 타입추론도 가능하다.</p>
 <br>
 <h3>◾ := (Short Assignment Statement)</h3><a class="anchor" id="--short-assignment-statement"></a>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">package</span> main
@@ -1607,19 +1632,23 @@ a <span style="color:#555">:=</span> <span style="color:#f60">10</span>     <spa
 </code></pre></div><br>
 <h3>◾ 여러개 지정</h3><a class="anchor" id="-여러개-지정"></a>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> (
-  a = <span style="color:#f60">1</span>
+  	a = <span style="color:#f60">1</span>
 	b = <span style="color:#f60">10</span>
-  c = <span style="color:#f60">20</span>
+  	c = <span style="color:#f60">20</span>
 )
 </code></pre></div><p>중괄호 로 묶어 한번에 선언을 할 수도 있고 함수밖에 선언하면 같은 패키지에서 모두 사용할 수 있는 <code>패키지 전역변수</code>로 선언된다.</p>
 <p><br><Br></p>
-<h3>상수</h3><a class="anchor" id="상수"></a>
-<p>상수 키워드는 <code>const</code>로 선언방식은 변수 var와 같고 <code>short assginment statement</code>는 var키워드 전용이기 때문에 const는 사용이 불가능 하다.</p>
+<h3>◾ 상수</h3><a class="anchor" id="-상수"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">const</span> a <span style="color:#078;font-weight:bold">int</span> = <span style="color:#f60">1</span>
+<span style="color:#069;font-weight:bold">const</span> b <span style="color:#078;font-weight:bold">string</span> = <span style="color:#c30">&#34;hi&#34;</span>
+<span style="color:#069;font-weight:bold">const</span> a,b,c  = <span style="color:#f60">1</span>, <span style="color:#069;font-weight:bold">true</span>, <span style="color:#c30">&#34;hi&#34;</span>
+d <span style="color:#555">:=</span> <span style="color:#f60">10</span> <span style="color:#09f;font-style:italic">//이는 자동으로 var 형태의 변수로 선언이 되기 때문에 상수가 될 수 없다.
+</span></code></pre></div><p>상수 키워드는 <code>const</code>로 선언방식은 변수 var와 같고 <code>short assginment statement</code>는 var키워드 전용이기 때문에 상수는 짧은 대입문 사용이 불가능 하다.</p>
 <p><br><br></p>
 <h2>데이터 타입</h2><a class="anchor" id="데이터-타입"></a>
-<h3>1. bool</h3><a class="anchor" id="1-bool"></a>
-<p>true와 false만 갖는 bool형</p>
-<h3>2. string</h3><a class="anchor" id="2-string"></a>
+<h3>◾ bool</h3><a class="anchor" id="-bool"></a>
+<p>true와 false만 갖는 bool형으로 기본 값은 <code>false</code>이고 c처럼 0이 false가 되지는 않는다.</p>
+<h3>◾ 문자열(string)</h3><a class="anchor" id="-문자열string"></a>
 <p>문자열을 나타내는 데이터 타입으로 Java와 같이 Immutable하기 때문에 한번 생성되면 수정 할 수 없다.</p>
 <p>특정 변수의 문자열을 수정하는 것은 메모리내의 문자열을 수정하는 것이 아닌 다른 메모리에 수정한 문자열을 할당하고 그 메모리를 가르키도록 바꾼 것.</p>
 <p>문자열 리터럴은 백틱(``), 이중인용부호(&quot;&quot;)를 이용해서 표현할 수 있다.</p>
@@ -1642,26 +1671,31 @@ ddd
   str <span style="color:#555">:=</span> <span style="color:#c30">&#34;ddd\nddd\nddd&#34;</span>  <span style="color:#09f;font-style:italic">//success
 </span><span style="color:#09f;font-style:italic"></span>	fmt.<span style="color:#c0f">Println</span>(str)
 }
-</code></pre></div><br>
-<h3>3. int</h3><a class="anchor" id="3-int"></a>
+</code></pre></div><p>기본값은 빈 문자열 (<code>&quot;&quot;</code>)이다.</p>
+<br>
+<h3>◾ 정수(int)</h3><a class="anchor" id="-정수int"></a>
 <p>뒤의 숫자는 메모리크기(bit)로 int32는 32bit(4byte)의 크기를 갖는 int타입인 것이다.</p>
-<h4>◾ 부호 있는 정수</h4><a class="anchor" id="-부호-있는-정수"></a>
+<p>기본 값은 <code>0</code>이다.</p>
+<h4>1. 부호 있는 정수</h4><a class="anchor" id="1-부호-있는-정수"></a>
 <p>int / int8 / int16/ int32/ int64</p>
 <p>int는 컴퓨터의 환경에 따라 바뀌며 32bit컴퓨터는 int32, 64bit컴퓨터는 int64를 의미한다.</p>
-<h4>◾ 부호 없는 양의 정수</h4><a class="anchor" id="-부호-없는-양의-정수"></a>
+<h4>2. 부호 없는 양의 정수</h4><a class="anchor" id="2-부호-없는-양의-정수"></a>
 <p>uint / uint8 / uint15/ uint32 / uint64 / uintptr</p>
 <p>uint는 int와 마찬가지로 컴퓨터의 환경에 따라 바뀌며 32bit컴퓨터는 uint32, 64bit컴퓨터는 uint64를 의미한다.</p>
 <br>
-<h3>4. 실수, 복소수</h3><a class="anchor" id="4-실수-복소수"></a>
-<h4>◾ 실수</h4><a class="anchor" id="-실수"></a>
+<h3>◾ 실수, 복소수</h3><a class="anchor" id="-실수-복소수"></a>
+<p>기본 값은 <code>0.0</code>이다.</p>
+<h4>1. 실수</h4><a class="anchor" id="1-실수"></a>
 <p>float32 / float64</p>
-<h4>◾ 복소수</h4><a class="anchor" id="-복소수"></a>
+<p>float64는 8byte를 갖으며 다른 언어의 double과 비슷하다</p>
+<h4>2. 복소수</h4><a class="anchor" id="2-복소수"></a>
 <p>complex64 : 진수와 가수 범위는 float32와 같다.
 complex128 : 진수와 가수 범위는 float64와 같다.</p>
 <br>
-<h3>5. byte</h3><a class="anchor" id="5-byte"></a>
+<h3>◾ byte</h3><a class="anchor" id="-byte"></a>
 <p>byte는 uint8의 aliasing(별칭)타입이다. uint8이 결국 1byte크기의 숫자 데이터이므로 byte와 같다.</p>
-<h3>6. rune</h3><a class="anchor" id="6-rune"></a>
+<p>int의 별칭형이기 때문에 기본값은 <code>0</code>이다.</p>
+<h3>◾ rune</h3><a class="anchor" id="-rune"></a>
 <p>문자 한개를 나타내는 타입으로 rune이 모여 string이 된다.</p>
 <p>문자 1개는 <code>UTF-8</code>로 해당 인코딩 크기는 1~3byte의 가변 크기이므로 최소 3byte이상을 가져야 하는데 이진수를 활용하는 컴퓨터가 계산하기 편하게 4byte크기를 갖는 데이터 타입으로 int32의 aliasing이다.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>(){
@@ -1670,22 +1704,131 @@ complex128 : 진수와 가수 범위는 float64와 같다.</p>
 </span><span style="color:#09f;font-style:italic"></span>  fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;%c&#34;</span>,a)  <span style="color:#09f;font-style:italic">//홍
 </span><span style="color:#09f;font-style:italic"></span>
 }
-</code></pre></div><br>
-<h3>7. 별칭 타입</h3><a class="anchor" id="7-별칭-타입"></a>
+</code></pre></div><p>int의 별칭형이기 때문에 기본값은 <code>0</code>이다.</p>
+<br>
+<h3>◾ 그 외 타입</h3><a class="anchor" id="-그-외-타입"></a>
+<p>기본 값은 <code>nil</code>로 nil은 정의되지 않은 메모리 주소를 나타내는 Go만의 <code>키워드</code> 이다.</p>
+<h4>1. type</h4><a class="anchor" id="1-type"></a>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">type</span> myInt <span style="color:#078;font-weight:bold">int</span>
 </code></pre></div><p>c++의 typedef와 같이 <code>type</code>키워드를 이용해서 데이터타입에 대한 별칭을 정의 할 수 있다.</p>
-<p><br><Br></p>
+<h4>2. 배열</h4><a class="anchor" id="2-배열"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> a [<span style="color:#f60">4</span>]<span style="color:#078;font-weight:bold">int</span>
+
+b <span style="color:#555">:=</span> [<span style="color:#f60">5</span>]<span style="color:#078;font-weight:bold">int</span>{<span style="color:#f60">1</span>,<span style="color:#f60">2</span>,<span style="color:#f60">3</span>,<span style="color:#f60">4</span>,<span style="color:#f60">5</span>}
+
+<span style="color:#069;font-weight:bold">var</span> d [<span style="color:#f60">2</span>][<span style="color:#f60">2</span>]<span style="color:#078;font-weight:bold">int</span>
+</code></pre></div><h4>3. 슬라이스</h4><a class="anchor" id="3-슬라이스"></a>
+<p>배열의 일부로 <code>동적 배열</code>이라고 생각하면 된다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">a <span style="color:#555">:=</span> <span style="color:#366">make</span>([]<span style="color:#078;font-weight:bold">int</span>, <span style="color:#f60">3</span>)
+<span style="color:#069;font-weight:bold">var</span> b <span style="color:#555">:=</span> []<span style="color:#078;font-weight:bold">int</span>{<span style="color:#f60">1</span>,<span style="color:#f60">2</span>,<span style="color:#f60">3</span>}
+<span style="color:#069;font-weight:bold">var</span> c []<span style="color:#078;font-weight:bold">int</span> = []<span style="color:#078;font-weight:bold">int</span>{}
+</code></pre></div><p>배열과 생성방법은 비슷하나 배열길이를 처음에 명시하지 않으면 slice이며 길이가 0인상태로 생성된다.</p>
+<p>내부에 길이를 뜻하는 len뿐만이 아닌 수용가능한 양을 표현하는 capacity도 있다.</p>
+<h4>4. 구조체</h4><a class="anchor" id="4-구조체"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">type</span> Person <span style="color:#069;font-weight:bold">struct</span>{
+	name <span style="color:#078;font-weight:bold">string</span>
+}
+</code></pre></div><p><code>type</code>키워드를 이용해서 구조체를 정의할 수 있고, go는 class키워드가 존재하지 않고 필드의 집합인 <code>struct</code>과 메서드들도 클래스를 구현할 수 있다.</p>
+<h4>5. 포인터</h4><a class="anchor" id="5-포인터"></a>
+<p>메모리를 가르키는 포인터변수이며, C의 포인터와 비슷한 개념이다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> a <span style="color:#078;font-weight:bold">int</span> = <span style="color:#f60">1</span>
+b <span style="color:#555">:=</span> <span style="color:#555">&amp;</span>a
+fmt.<span style="color:#c0f">Println</span>(b)
+<span style="color:#555">*</span>b = <span style="color:#f60">3</span>
+fmt.<span style="color:#c0f">Println</span>(<span style="color:#555">*</span>b)
+</code></pre></div><h4>6. Map</h4><a class="anchor" id="6-map"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> a <span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span> = <span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>
+b <span style="color:#555">:=</span> <span style="color:#366">make</span>(<span style="color:#069;font-weight:bold">map</span>[<span style="color:#078;font-weight:bold">string</span>]<span style="color:#078;font-weight:bold">int</span>)
+</code></pre></div><h4>7. 인터페이스</h4><a class="anchor" id="7-인터페이스"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">type</span> Robot <span style="color:#069;font-weight:bold">interface</span>{
+	<span style="color:#c0f">getPrice</span>() <span style="color:#078;font-weight:bold">int</span>
+}
+</code></pre></div><p>인터페이스는 메서드들의 집합으로 <code>type</code> 키워드를 이용해서 인터페이스를 정의할 수 있다.</p>
+<h4>8. 채널</h4><a class="anchor" id="8-채널"></a>
+<p>스레드의 일종인 <code>고루틴</code>간의 데이터 통신을 위한 데이터 타입이다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">ch <span style="color:#555">:=</span> <span style="color:#366">make</span>(<span style="color:#069;font-weight:bold">chan</span> <span style="color:#078;font-weight:bold">int</span>)
+ch <span style="color:#555">&lt;-</span> <span style="color:#f60">123</span>   <span style="color:#09f;font-style:italic">//채널에 123을 전송
+</span><span style="color:#09f;font-style:italic"></span>i = <span style="color:#555">&lt;-</span> ch	<span style="color:#09f;font-style:italic">//채널로부터 데이터를 받아옴
+</span></code></pre></div><p><br><Br></p>
 <h2>타입 변환</h2><a class="anchor" id="타입-변환"></a>
-<p><code>데이터타입()</code> 함수를 이용해 데이터 타입을 변환 할 수 있다.</p>
+<p>기본적인 방법으로 <code>데이터타입()</code> 함수를 이용해 데이터 타입을 변환 할 수 있다.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>(){
-	a  <span style="color:#555">:=</span> <span style="color:#f60">10</span>
+	a <span style="color:#555">:=</span> <span style="color:#f60">10</span>
 	<span style="color:#069;font-weight:bold">var</span> b = <span style="color:#f60">3.15</span>
 	<span style="color:#069;font-weight:bold">var</span> c = <span style="color:#366">float64</span>(a) <span style="color:#555">*</span> b
 	fmt.<span style="color:#c0f">Println</span>(c)
+
+	d <span style="color:#555">:=</span> <span style="color:#366">int64</span>(a)
+	e <span style="color:#555">:=</span> <span style="color:#366">int32</span>(d)
+	fmt.<span style="color:#c0f">Println</span>(<span style="color:#366">string</span>(d))
 }
+</code></pre></div><p>하지만 이는 bool이나 실수를 string등으로 형변환 할 수 없어 <code>strconv</code>모듈을 import하여 형변환을 수행할 수 도 있다.</p>
+<h3>◾ strconv</h3><a class="anchor" id="-strconv"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">import</span> (
+	<span style="color:#c30">&#34;fmt&#34;</span>
+	<span style="color:#c30">&#34;reflect&#34;</span>	<span style="color:#09f;font-style:italic">//변수 type을 알아보기 위한 모듈
+</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#c30">&#34;strconv&#34;</span>  	<span style="color:#09f;font-style:italic">//형변환
+</span><span style="color:#09f;font-style:italic"></span>)
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>() {
+	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;say hi&#34;</span>)
+
+	<span style="color:#09f;font-style:italic">// Itoa : 정수를 문자열로 변환
+</span><span style="color:#09f;font-style:italic"></span>	a <span style="color:#555">:=</span> strconv.<span style="color:#c0f">Itoa</span>(<span style="color:#f60">100</span>)
+	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;a: &#34;</span>, a)                      <span style="color:#09f;font-style:italic">// a: 100
+</span><span style="color:#09f;font-style:italic"></span>	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;type a: &#34;</span>, reflect.<span style="color:#c0f">TypeOf</span>(a)) <span style="color:#09f;font-style:italic">// type a: string
+</span><span style="color:#09f;font-style:italic"></span>
+	<span style="color:#09f;font-style:italic">// Atoi : 문자열을 정수로 변환
+</span><span style="color:#09f;font-style:italic"></span>	b, _ <span style="color:#555">:=</span> strconv.<span style="color:#c0f">Atoi</span>(<span style="color:#c30">&#34;100&#34;</span>)
+	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;b: &#34;</span>, b)                      <span style="color:#09f;font-style:italic">// b:  100
+</span><span style="color:#09f;font-style:italic"></span>	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;type b: &#34;</span>, reflect.<span style="color:#c0f">TypeOf</span>(b)) <span style="color:#09f;font-style:italic">// type b: int
+</span><span style="color:#09f;font-style:italic"></span>
+	<span style="color:#09f;font-style:italic">// FormatInt : 특정값(100)을 특정 진수(10진수) 문자열로 변환
+</span><span style="color:#09f;font-style:italic"></span>	aa <span style="color:#555">:=</span> strconv.<span style="color:#c0f">FormatInt</span>(<span style="color:#f60">100</span>, <span style="color:#f60">10</span>)
+	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;aa: &#34;</span>, aa)                      <span style="color:#09f;font-style:italic">// aa: 100
+</span><span style="color:#09f;font-style:italic"></span>	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;type aa: &#34;</span>, reflect.<span style="color:#c0f">TypeOf</span>(aa)) <span style="color:#09f;font-style:italic">// type aa: string
+</span><span style="color:#09f;font-style:italic"></span>
+	<span style="color:#09f;font-style:italic">// FormatBool : bool을 문자열로 변환
+</span><span style="color:#09f;font-style:italic"></span>	c <span style="color:#555">:=</span> strconv.<span style="color:#c0f">FormatBool</span>(<span style="color:#069;font-weight:bold">true</span>)
+	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;c: &#34;</span>, c)                      <span style="color:#09f;font-style:italic">// c: true
+</span><span style="color:#09f;font-style:italic"></span>	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;type c: &#34;</span>, reflect.<span style="color:#c0f">TypeOf</span>(c)) <span style="color:#09f;font-style:italic">// type c: string
+</span><span style="color:#09f;font-style:italic"></span>
+	<span style="color:#09f;font-style:italic">/*FormatFloat : 실수를 문자열로 변환
+</span><span style="color:#09f;font-style:italic">	  첫번째 인자 : 변경할 실수 값
+</span><span style="color:#09f;font-style:italic">	  두번째 인자 : &#39;f&#39; : ddd.ddd와 같은 포맷 | &#39;e&#39; : d.ddde+dd 포맷
+</span><span style="color:#09f;font-style:italic">	  세번째 인자 : 실수의 정밀도로 지수를 제외한 숫자의 자리수 ( -1입력시 자동으로 지정 )
+</span><span style="color:#09f;font-style:italic">	  네번째 인자 : 부동소수점 비트 수로 32,64 지정 */</span>
+	d <span style="color:#555">:=</span> strconv.<span style="color:#c0f">FormatFloat</span>(<span style="color:#f60">1.3</span>, <span style="color:#c30">&#39;f&#39;</span>, <span style="color:#555">-</span><span style="color:#f60">1</span>, <span style="color:#f60">32</span>)
+	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;d: &#34;</span>, d)                      <span style="color:#09f;font-style:italic">// d: 1.3
+</span><span style="color:#09f;font-style:italic"></span>	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;type d: &#34;</span>, reflect.<span style="color:#c0f">TypeOf</span>(d)) <span style="color:#09f;font-style:italic">//type d: string
+</span><span style="color:#09f;font-style:italic"></span>
+	<span style="color:#09f;font-style:italic">//ParseInt : 문자열 100을 10진수 64bit크기의 정수형으로 변환
+</span><span style="color:#09f;font-style:italic"></span>	bb, _ <span style="color:#555">:=</span> strconv.<span style="color:#c0f">ParseInt</span>(<span style="color:#c30">&#34;100&#34;</span>, <span style="color:#f60">10</span>, <span style="color:#f60">64</span>)
+	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;bb: &#34;</span>, bb)                      <span style="color:#09f;font-style:italic">// bb: 100
+</span><span style="color:#09f;font-style:italic"></span>	fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;type bb: &#34;</span>, reflect.<span style="color:#c0f">TypeOf</span>(bb)) <span style="color:#09f;font-style:italic">// type bb: int64
+</span><span style="color:#09f;font-style:italic"></span>
+	<span style="color:#09f;font-style:italic">//ParseBool : bool형태의 문자열을 bool로 변환
+</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#069;font-weight:bold">var</span> b1 <span style="color:#078;font-weight:bold">bool</span>
+	b1, err = strconv.<span style="color:#c0f">ParseBool</span>(<span style="color:#c30">&#34;true&#34;</span>)
+	fmt.<span style="color:#c0f">Println</span>(b1, err) <span style="color:#09f;font-style:italic">// true &lt;nil&gt;
+</span><span style="color:#09f;font-style:italic"></span>
+	<span style="color:#09f;font-style:italic">//AppendBool : bool값을 문자열로 변환 후 slice뒤에 추가
+</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#069;font-weight:bold">var</span> s []<span style="color:#078;font-weight:bold">byte</span> = <span style="color:#366">make</span>([]<span style="color:#078;font-weight:bold">byte</span>, <span style="color:#f60">0</span>)
+	s = strconv.<span style="color:#c0f">AppendBool</span>(s, <span style="color:#069;font-weight:bold">true</span>)
+	fmt.<span style="color:#c0f">Println</span>(<span style="color:#366">string</span>(s)) <span style="color:#09f;font-style:italic">// true
+</span><span style="color:#09f;font-style:italic"></span>
+	<span style="color:#09f;font-style:italic">//AppendFloat : 실수값을 문자열로 변환 후 slice뒤에 추가
+</span><span style="color:#09f;font-style:italic"></span>	s = strconv.<span style="color:#c0f">AppendFloat</span>(s, <span style="color:#f60">1.3</span>, <span style="color:#c30">&#39;f&#39;</span>, <span style="color:#555">-</span><span style="color:#f60">1</span>, <span style="color:#f60">32</span>)
+	fmt.<span style="color:#c0f">Println</span>(<span style="color:#366">string</span>(s)) <span style="color:#09f;font-style:italic">// true1.3
+</span><span style="color:#09f;font-style:italic"></span>
+	<span style="color:#09f;font-style:italic">//AppendInt : 정수값을 문자열로 변환 후 slice뒤에 추가
+</span><span style="color:#09f;font-style:italic"></span>	s = strconv.<span style="color:#c0f">AppendInt</span>(s, <span style="color:#555">-</span><span style="color:#f60">10</span>, <span style="color:#f60">10</span>)
+	fmt.<span style="color:#c0f">Println</span>(<span style="color:#366">string</span>(s)) <span style="color:#09f;font-style:italic">// true1.3-10
+</span><span style="color:#09f;font-style:italic"></span>}
 </code></pre></div><p><br><br><br></p>
 <hr>
-<h3>Reference</h3><a class="anchor" id="reference"></a>
+<h2>Reference</h2><a class="anchor" id="reference"></a>
+<p>『Tucker의 Go 언어 프로그래밍』 스터디 요약 노트</p>
 <p><a href="https://www.youtube.com/watch?v=ELOihQ1HYBY">Tucker의 Go 강좌</a></p>
 </div>
 
@@ -1707,10 +1850,10 @@ complex128 : 진수와 가수 범위는 float64와 같다.</p>
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/data-structure/" title="자료구조 ( Data Structure )" style="margin-right: 0px;">
+		<a class="next" href="/go/io/" title="표준 입출력" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>자료구조 ( Data Structure )</label>
+                <label>표준 입출력</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1741,27 +1884,29 @@ complex128 : 진수와 가수 범위는 float64와 같다.</p>
     <li><a href="#변수-선언">변수 선언</a>
       <ul>
         <li><a href="#-기본-방법">◾ 기본 방법</a></li>
+        <li><a href="#-타입-추론">◾ 타입 추론</a></li>
         <li><a href="#--short-assignment-statement">◾ := (Short Assignment Statement)</a></li>
         <li><a href="#-여러개-지정">◾ 여러개 지정</a></li>
-        <li><a href="#상수">상수</a></li>
+        <li><a href="#-상수">◾ 상수</a></li>
       </ul>
     </li>
     <li><a href="#데이터-타입">데이터 타입</a>
       <ul>
-        <li><a href="#1-bool">1. bool</a></li>
-        <li><a href="#2-string">2. string</a></li>
-        <li><a href="#3-int">3. int</a></li>
-        <li><a href="#4-실수-복소수">4. 실수, 복소수</a></li>
-        <li><a href="#5-byte">5. byte</a></li>
-        <li><a href="#6-rune">6. rune</a></li>
-        <li><a href="#7-별칭-타입">7. 별칭 타입</a></li>
+        <li><a href="#-bool">◾ bool</a></li>
+        <li><a href="#-문자열string">◾ 문자열(string)</a></li>
+        <li><a href="#-정수int">◾ 정수(int)</a></li>
+        <li><a href="#-실수-복소수">◾ 실수, 복소수</a></li>
+        <li><a href="#-byte">◾ byte</a></li>
+        <li><a href="#-rune">◾ rune</a></li>
+        <li><a href="#-그-외-타입">◾ 그 외 타입</a></li>
       </ul>
     </li>
     <li><a href="#타입-변환">타입 변환</a>
       <ul>
-        <li><a href="#reference">Reference</a></li>
+        <li><a href="#-strconv">◾ strconv</a></li>
       </ul>
     </li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 </div>
