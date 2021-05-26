@@ -4,28 +4,28 @@
 <html>
   <head>
     <title>
-	에러들 :: Gowoonsori&#39;s TechBlog
+	배열 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-05-27T00:14:49 KST">
+<meta name="revised" content="2021-05-27T00:14:50 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>에러들 :: Gowoonsori&#39;s TechBlog</title>
+<title>배열 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="각종 에러들과 해결방법을 정리한 글">
+<meta name="description" content="Go Lang의 배열에 대해 정리한 글">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="에러들" />
-<meta property="og:description" content="각종 에러들과 해결방법을 정리한 글" />
+<meta property="og:title" content="배열" />
+<meta property="og:description" content="Go Lang의 배열에 대해 정리한 글" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/error/" />
+<meta property="og:url" content="https://gowoonsori.site/go/array/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2021-04-15T12:12:22+09:00" />
+<meta property="og:updated_time" content="2021-05-26T22:59:42+09:00" />
 
 
 
@@ -127,9 +127,9 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/error/"
+  <body data-url="/go/array/"
 
-  class="hidebreadcrumb hidetoc hidenextpage ">
+  class="hidebreadcrumb ">
 
  
 
@@ -721,12 +721,13 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/go/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/go/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
           
       
@@ -823,7 +824,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/go/array/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/go/array/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -1245,13 +1246,12 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/error/" class="dd-item parent active haschildren
+    <li data-nav-id="https://gowoonsori.site/error/" class="dd-item haschildren
         item_level_$level
         ">
 
       
-      
-          <i class="fas fa-chevron-down ddexp"></i>
+      <i class="fas fa-chevron-right ddexp"></i>
       
           
       
@@ -1585,7 +1585,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>에러들</h1>
+			<h1>배열</h1>
         
 
 		
@@ -1600,54 +1600,83 @@ if (!doNotTrack) {
 
 	
 	
-	
-
-	<div class="content"></div>
-
-	
-
-	
-	
-		
-<div class = "content">
-  <ul class="page">
-
-    <div class = "content-page">
-      <a href="/error/springsecurity-cors/" >Spring Security Cors Mapping Error</a>
-      
-      <p>front 서버와 back서버의 주소(포트)가 다르면 cors에러가 발생한다. (chrome은 cors 기본정책이 strict-origin-when-cross-origin)
-그래서 ...</p>
-      
-  </div>
-
-    <div class = "content-page">
-      <a href="/error/intellij-error/" >Intellij Error</a>
-      
-      <p>저만 그런지는 모르겠지만 IntelliJ를 쓰다보면 꽤 자주 발생하는 에러입니다.
-Internal error. Please refer to https://jb.gg/ide/crit ...</p>
-      
-  </div>
-
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<div class="jump-to-section">
+		<span onclick="$h = $(this);$h.next('nav').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('nav').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+  			Jump to Section
+  			<i style=";" class="fas fa-chevron-right"></i>
+		</span>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#선언-방식">선언 방식</a></li>
+    <li><a href="#배열의-사용법">배열의 사용법</a></li>
+    <li><a href="#배열의-메모리-크기">배열의 메모리 크기</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+	</div>
 	
 	
+
+	<div class="content"><p>배열은 연속된 메모리에 저장된 자료구조로 다른 자료구조 중 Random Access가 가장빠르고 고정된 길이의 자료구조이다. 배열과 비슷한 자료구조로 go에는 slice가 존재하는데 slice는 동적인 길이의 배열과 같다.</p>
+<h2>선언 방식</h2><a class="anchor" id="선언-방식"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>(){
+  <span style="color:#069;font-weight:bold">var</span> a [<span style="color:#f60">5</span>]<span style="color:#078;font-weight:bold">int</span>
+}
+</code></pre></div><p>배열은 고정된 size의 자료구조이기 때문에 변수를 선언하는 방식에서 타입을 <code>[]</code>를 이용해서 size를 선언해주면 된다. 배열안의 값들의 기본값은 제로값(zero value)로 할당된다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">a <span style="color:#555">:=</span> [<span style="color:#f60">5</span>]<span style="color:#078;font-weight:bold">int</span>{<span style="color:#f60">1</span>,<span style="color:#f60">2</span>,<span style="color:#f60">3</span>,<span style="color:#f60">4</span>,<span style="color:#f60">5</span>}
+b <span style="color:#555">:=</span> [<span style="color:#f60">5</span>]<span style="color:#078;font-weight:bold">int</span>{<span style="color:#f60">1</span>,<span style="color:#f60">2</span>,<span style="color:#f60">3</span>}
+
+<span style="color:#069;font-weight:bold">for</span> _,v <span style="color:#555">:=</span> <span style="color:#069;font-weight:bold">range</span> a{
+  fmt.<span style="color:#c0f">Print</span>(v,<span style="color:#c30">&#34; &#34;</span>) <span style="color:#09f;font-style:italic">//1,2,3,4,5
+</span><span style="color:#09f;font-style:italic"></span>}
+
+<span style="color:#069;font-weight:bold">for</span> _,v <span style="color:#555">:=</span> <span style="color:#069;font-weight:bold">range</span> b{
+  fmt.<span style="color:#c0f">Print</span>(v,<span style="color:#c30">&#34; &#34;</span>) <span style="color:#09f;font-style:italic">//1,2,3,0,0
+</span><span style="color:#09f;font-style:italic"></span>}
+
+</code></pre></div><p>배열을 선언하면서 바로 초기화를 하고 싶은 경우에는 <code>:=</code>를 이용해서 위와 같이 선언과 초기화를 동시에 할 수 있으며 초기화를 하지 않은 메모리에는 zero value가 들어간다.</p>
+<p><br><br></p>
+<h2>배열의 사용법</h2><a class="anchor" id="배열의-사용법"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">a <span style="color:#555">:=</span> [<span style="color:#f60">5</span>]<span style="color:#078;font-weight:bold">int</span>{<span style="color:#f60">1</span>,<span style="color:#f60">2</span>,<span style="color:#f60">3</span>,<span style="color:#f60">4</span>,<span style="color:#f60">5</span>}
+
+fmt.<span style="color:#c0f">Print</span>(a[<span style="color:#f60">1</span>]) <span style="color:#09f;font-style:italic">//2
+</span><span style="color:#09f;font-style:italic"></span>a[<span style="color:#f60">1</span>] = <span style="color:#f60">0</span>;
+fmt.<span style="color:#c0f">Print</span>(a[<span style="color:#f60">1</span>]) <span style="color:#09f;font-style:italic">//0
+</span></code></pre></div><p>다른 언어의 배열 사용법과 같이 변수뒤에 <code>[]</code>를 이용하여 특정 index메모리에 접근을 할 수 있으며 조회,수정,삽입이 가능하다.</p>
+<p><br><br></p>
+<h2>배열의 메모리 크기</h2><a class="anchor" id="배열의-메모리-크기"></a>
+<p>1차원 배열,2차원 배열, 그 이상의 배열이더라도 <code>총 선언된 길이 * 자료형 메모리 크기</code>의 메모리 size를 갖는다.</p>
+<p>예를 들어 <code>a := [5]int</code>라면 int가 32bit(4byte)이므로 4byte _ 5의 메모리 size만큼을 갖으며, <code>b := [2][5]int</code>라면 4byte _ 2 * 5 만큼의 size를 갖는다.</p>
+<p><br><br><br></p>
+<h2>Reference</h2><a class="anchor" id="reference"></a>
+<p>『Tucker의 Go 언어 프로그래밍』 스터디 요약 노트</p>
+</div>
+
 	
+    <div style="margin-top:200px;">
+		<script src="https://utteranc.es/client.js"
+				repo="gowoonsori/blog-comments"
+				issue-term="pathname"
+				theme="github-light"
+				crossorigin="anonymous"
+				async>
+		</script>
+	</div>
+    
+
+	
+	
+	
+	
+	 
+	<div class="chevrons ">
+		<a class="next" href="/data-structure/" title="자료구조 ( Data Structure )" style="margin-right: 0px;">
+            <div>
+                <p>Next page</p>
+                <label>자료구조 ( Data Structure )</label>
+            </div>
+            <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
+	</div>
 	
 
 
@@ -1655,6 +1684,58 @@ Internal error. Please refer to https://jb.gg/ide/crit ...</p>
       </section>
 
       
+      
+      <section class="right-menu ">
+      
+	
+	
+		
+	    	
+	  	
+	<div class="TableOfContents">
+    <label>What&#39;s on this page</label>
+    <nav>
+        <ul >
+            <li><a href="/go/array/">배열</a></li>
+        </ul>
+    </nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#선언-방식">선언 방식</a></li>
+    <li><a href="#배열의-사용법">배열의 사용법</a></li>
+    <li><a href="#배열의-메모리-크기">배열의 메모리 크기</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+</div>
+	
+		
+	    	
+	  	
+	<div class="Actions">
+	<nav>
+		<ul>
+				
+		    
+		    
+			
+		      <li>
+		          <i class='fas fa-calendar'></i>
+		          Last update on 26 May 2021
+		      </li>
+		    
+		    
+		</ul>
+		<div style="text-align: center;margin : 10px 40px 0 0;">
+			<a href="https://hits.seeyoufarm.com">
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fgo%2farray%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+			</a>
+		</div>
+	</nav>
+    
+</div>
+
+      </section>
       
     </article>
     
