@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-05-28T16:58:56 KST">
+<meta name="revised" content="2021-05-31T15:07:49 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -1662,12 +1662,14 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#-list---object">◾ List -&gt; Object[]</a></li>
         <li><a href="#-list---int">◾ List -&gt; int[]</a></li>
+        <li><a href="#-이중-list---int">◾ 이중 List -&gt; int[][]</a></li>
       </ul>
     </li>
     <li><a href="#2-array---list">2. Array -&gt; List</a>
       <ul>
         <li><a href="#-integer---list">◾ Integer[] -&gt; List</a></li>
         <li><a href="#-int---list">◾ int[] -&gt; List</a></li>
+        <li><a href="#-int---이중-list">◾ int[][] -&gt; 이중 List</a></li>
       </ul>
     </li>
   </ul>
@@ -1697,6 +1699,29 @@ Object<span style="color:#555">[]</span> objectArr <span style="color:#555">=</s
 </span><span style="color:#09f;font-style:italic"></span><span style="color:#078;font-weight:bold">double</span><span style="color:#555">[]</span> arr2 <span style="color:#555">=</span> integerList<span style="color:#555">.</span><span style="color:#309">stream</span><span style="color:#555">().</span><span style="color:#309">mapToDouble</span><span style="color:#555">(</span>Integer<span style="color:#555">::</span>intValue<span style="color:#555">).</span><span style="color:#309">toArray</span><span style="color:#555">();</span>
 </code></pre></div><p>int나 double, long과 같이 primitive 타입의 배열로 바꾸고 싶을때는 IntStream,DoubleStream,LongStream의 <code>toArray()</code>를 이용하면 원시타입배열로 바꿀 수 있다.</p>
 <p>List를 stream으로 바꾼 후 <code>mapToInt()</code>,<code>mapToDouble()</code>&hellip;와 같은 스트림api의 함수를 이용해 해당타입의 Strema으로 변경할 수 있다. 위의 함수는 <code>map</code>과 동일하지만 결과물이 특정타입의 Stream으로 변환된다는 차이가 있다.</p>
+<br>
+<h3>◾ 이중 List -&gt; int[][]</h3><a class="anchor" id="-이중-list---int"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#09f;font-style:italic">//2차원
+</span><span style="color:#09f;font-style:italic"></span>List<span style="color:#555">&lt;</span>List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;&gt;</span> list <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ArrayList<span style="color:#555">&lt;&gt;();</span>
+
+<span style="color:#078;font-weight:bold">int</span><span style="color:#555">[][]</span> arr2 <span style="color:#555">=</span> list<span style="color:#555">.</span><span style="color:#309">stream</span><span style="color:#555">()</span>
+                <span style="color:#555">.</span><span style="color:#309">map</span><span style="color:#555">(</span>l <span style="color:#555">-&gt;</span> l<span style="color:#555">.</span><span style="color:#309">stream</span><span style="color:#555">()</span>
+                              <span style="color:#555">.</span><span style="color:#309">mapToInt</span><span style="color:#555">(</span>Integer<span style="color:#555">::</span>intValue<span style="color:#555">)</span>
+                              <span style="color:#555">.</span><span style="color:#309">toArray</span><span style="color:#555">())</span>
+                <span style="color:#555">.</span><span style="color:#309">toArray</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span><span style="color:#555">[][]::</span><span style="color:#069;font-weight:bold">new</span><span style="color:#555">);</span>
+
+<span style="color:#09f;font-style:italic">//3차원
+</span><span style="color:#09f;font-style:italic"></span>List<span style="color:#555">&lt;</span>List<span style="color:#555">&lt;</span>List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;&gt;&gt;</span> list <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ArrayList<span style="color:#555">&lt;&gt;();</span>
+
+<span style="color:#078;font-weight:bold">int</span><span style="color:#555">[][][]</span> arr3 <span style="color:#555">=</span> list<span style="color:#555">.</span><span style="color:#309">stream</span><span style="color:#555">()</span>
+                <span style="color:#555">.</span><span style="color:#309">map</span><span style="color:#555">(</span> l1 <span style="color:#555">-&gt;</span> l1<span style="color:#555">.</span><span style="color:#309">stream</span><span style="color:#555">()</span>
+                        <span style="color:#555">.</span><span style="color:#309">map</span><span style="color:#555">(</span>l2 <span style="color:#555">-&gt;</span> l2<span style="color:#555">.</span><span style="color:#309">stream</span><span style="color:#555">()</span>
+                                        <span style="color:#555">.</span><span style="color:#309">mapToInt</span><span style="color:#555">(</span>Integer<span style="color:#555">::</span>intValue<span style="color:#555">)</span>
+                                        <span style="color:#555">.</span><span style="color:#309">toArray</span><span style="color:#555">())</span>
+                        <span style="color:#555">.</span><span style="color:#309">toArray</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span><span style="color:#555">[][]::</span><span style="color:#069;font-weight:bold">new</span><span style="color:#555">))</span>
+                <span style="color:#555">.</span><span style="color:#309">toArray</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span><span style="color:#555">[][][]::</span><span style="color:#069;font-weight:bold">new</span><span style="color:#555">);</span>
+</code></pre></div><p>다중 List를 다중 배열로 바꾸기 위해서는 <code>map</code>을 이용해서 계속 한 차원씩 줄이고, 1차원으로 줄여졌을때는 <code>mapToInt</code>를 이용해서 앞에서 설명한것 과 같이 만들어 주면 된다.</p>
+<p>하지만 메서드 chaining이 복잡해져 헷갈릴 수 있기 때문에 for문을 작성하는게 편할 수도 있다.</p>
 <p><br><br></p>
 <h2>2. Array -&gt; List</h2><a class="anchor" id="2-array---list"></a>
 <h3>◾ Integer[] -&gt; List</h3><a class="anchor" id="-integer---list"></a>
@@ -1718,6 +1743,27 @@ List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</sp
 <p><code>boxed()</code>를 사용하기 위해 Arrays.stream()으로 특정타입의 Stream으로 바꾸어주면 되고 boxed()로 바꾸어진 Stream을 <code>collect</code>메서드로 새로 list를 만들어 주면 된다.</p>
 <br>
 <p>IntStream의 boxed()메서드를 이용하기 위해 Arrays의 stream()을 이용해도 되고 IntStream의 <code>of()</code>를 이용해서 InstStream을 만들 수 있다.</p>
+<br>
+<h3>◾ int[][] -&gt; 이중 List</h3><a class="anchor" id="-int---이중-list"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#09f;font-style:italic">//2차원
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#078;font-weight:bold">int</span><span style="color:#555">[][]</span> arr2 <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#078;font-weight:bold">int</span><span style="color:#555">[][]{{</span>1<span style="color:#555">,</span>2<span style="color:#555">},{</span>2<span style="color:#555">,</span>3<span style="color:#555">}};</span>
+List<span style="color:#555">&lt;</span>List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;&gt;</span> list2 <span style="color:#555">=</span> Arrays<span style="color:#555">.</span><span style="color:#309">stream</span><span style="color:#555">(</span>arr<span style="color:#555">)</span>
+              <span style="color:#555">.</span><span style="color:#309">map</span><span style="color:#555">(</span>tmp <span style="color:#555">-&gt;</span> IntStream<span style="color:#555">.</span><span style="color:#309">of</span><span style="color:#555">(</span>tmp<span style="color:#555">)</span>
+                      <span style="color:#555">.</span><span style="color:#309">boxed</span><span style="color:#555">()</span>
+                      <span style="color:#555">.</span><span style="color:#309">collect</span><span style="color:#555">(</span>Collectors<span style="color:#555">.</span><span style="color:#309">toList</span><span style="color:#555">()))</span>
+              <span style="color:#555">.</span><span style="color:#309">collect</span><span style="color:#555">(</span>Collectors<span style="color:#555">.</span><span style="color:#309">toList</span><span style="color:#555">());</span>
+
+<span style="color:#09f;font-style:italic">//3차원
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#078;font-weight:bold">int</span><span style="color:#555">[][][]</span> arr3 <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#078;font-weight:bold">int</span><span style="color:#555">[][][]{{{</span>1<span style="color:#555">,</span>2<span style="color:#555">},{</span>2<span style="color:#555">,</span>3<span style="color:#555">}}};</span>
+List<span style="color:#555">&lt;</span>List<span style="color:#555">&lt;</span>List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;&gt;&gt;</span> list3 <span style="color:#555">=</span> Arrays<span style="color:#555">.</span><span style="color:#309">stream</span><span style="color:#555">(</span>arr3<span style="color:#555">)</span>
+                <span style="color:#555">.</span><span style="color:#309">map</span><span style="color:#555">(</span>tmp <span style="color:#555">-&gt;</span> Arrays<span style="color:#555">.</span><span style="color:#309">stream</span><span style="color:#555">(</span>tmp<span style="color:#555">).</span>
+                        map<span style="color:#555">(</span>tmp2 <span style="color:#555">-&gt;</span> IntStream<span style="color:#555">.</span><span style="color:#309">of</span><span style="color:#555">(</span>tmp2<span style="color:#555">)</span>
+                                <span style="color:#555">.</span><span style="color:#309">boxed</span><span style="color:#555">()</span>
+                                <span style="color:#555">.</span><span style="color:#309">collect</span><span style="color:#555">(</span>Collectors<span style="color:#555">.</span><span style="color:#309">toList</span><span style="color:#555">()))</span>
+                        <span style="color:#555">.</span><span style="color:#309">collect</span><span style="color:#555">(</span>Collectors<span style="color:#555">.</span><span style="color:#309">toList</span><span style="color:#555">()))</span>
+                <span style="color:#555">.</span><span style="color:#309">collect</span><span style="color:#555">(</span>Collectors<span style="color:#555">.</span><span style="color:#309">toList</span><span style="color:#555">());</span>
+</code></pre></div><p>다중 배열에서 List로 변환도 위에서 설명한 <code>다중 List -&gt; 다중 배열</code>과 같이 <code>map</code>을 이용해 1차원이 될때까지 분해후 List로 만들어 주면된다.</p>
+<p>여기서 <code>IntStram.of()</code>는 매개변수로 <code>1차원 배열</code>밖에 받지 않기 때문에 3차원을 2차원 Stream으로 바꾸기 위해서는 IntStram.of가 아니라 <code>Arrays.stream()</code>을 이용해야 한다.</p>
 <p><br><Br></p>
 </div>
 
@@ -1774,12 +1820,14 @@ List<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</sp
       <ul>
         <li><a href="#-list---object">◾ List -&gt; Object[]</a></li>
         <li><a href="#-list---int">◾ List -&gt; int[]</a></li>
+        <li><a href="#-이중-list---int">◾ 이중 List -&gt; int[][]</a></li>
       </ul>
     </li>
     <li><a href="#2-array---list">2. Array -&gt; List</a>
       <ul>
         <li><a href="#-integer---list">◾ Integer[] -&gt; List</a></li>
         <li><a href="#-int---list">◾ int[] -&gt; List</a></li>
+        <li><a href="#-int---이중-list">◾ int[][] -&gt; 이중 List</a></li>
       </ul>
     </li>
   </ul>
