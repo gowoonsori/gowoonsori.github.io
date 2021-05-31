@@ -4,7 +4,7 @@
 <html>
   <head>
     <title>
-	상수 :: Gowoonsori&#39;s TechBlog
+	구조체 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -12,20 +12,20 @@
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>상수 :: Gowoonsori&#39;s TechBlog</title>
+<title>구조체 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="Go Lang의 상수에 대해 정리한 글">
+<meta name="description" content="Go Lang의 구조체에 대해 정리한 글">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="상수" />
-<meta property="og:description" content="Go Lang의 상수에 대해 정리한 글" />
+<meta property="og:title" content="구조체" />
+<meta property="og:description" content="Go Lang의 구조체에 대해 정리한 글" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/go/constant/" />
+<meta property="og:url" content="https://gowoonsori.site/go/structure/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2021-05-26T23:18:14+09:00" />
+<meta property="og:updated_time" content="2021-05-31T22:01:25+09:00" />
 
 
 
@@ -127,7 +127,7 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/go/constant/"
+  <body data-url="/go/structure/"
 
   class="hidebreadcrumb ">
 
@@ -841,7 +841,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/go/constant/" class="dd-item parent active
+    <li data-nav-id="https://gowoonsori.site/go/constant/" class="dd-item
         item_level_$level
         ">
 
@@ -875,7 +875,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/go/structure/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/go/structure/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -1653,7 +1653,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>상수</h1>
+			<h1>구조체</h1>
         
 
 		
@@ -1675,9 +1675,16 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#상수-사용시기">상수 사용시기</a></li>
-    <li><a href="#enum">Enum</a></li>
-    <li><a href="#상수와-리터럴">상수와 리터럴</a></li>
+    <li><a href="#1-선언">1. 선언</a></li>
+    <li><a href="#2-초기화">2. 초기화</a></li>
+    <li><a href="#3-포함된-필드방식embedded-field">3. 포함된 필드방식(Embedded field)</a></li>
+    <li><a href="#4-구조체-크기">4. 구조체 크기</a></li>
+    <li><a href="#5-구조체-복사">5. 구조체 복사</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#6-구조체의-역할">6. 구조체의 역할</a></li>
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
@@ -1685,94 +1692,156 @@ if (!doNotTrack) {
 	
 	
 
-	<div class="content"><p><strong>상수</strong>는 Immutable(불변)한 특징을 갖으며 한 번 할당된 값을 변경할 수 없는 변수이다.</p>
-<p><br><br></p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">const</span> a <span style="color:#078;font-weight:bold">int</span> = <span style="color:#f60">1</span>
-<span style="color:#069;font-weight:bold">const</span> b <span style="color:#078;font-weight:bold">string</span> = <span style="color:#c30">&#34;hi&#34;</span>
-<span style="color:#069;font-weight:bold">const</span> d = <span style="color:#f60">10</span>  <span style="color:#09f;font-style:italic">//자료형을 생략가능하다.
-</span><span style="color:#09f;font-style:italic"></span>f <span style="color:#555">:=</span> <span style="color:#f60">10</span> <span style="color:#09f;font-style:italic">//이는 자동으로 var 형태의 변수로 선언이 되기 때문에 상수가 될 수 없다.
-</span><span style="color:#09f;font-style:italic"></span>
-<span style="color:#069;font-weight:bold">var</span> runTimeVar <span style="color:#078;font-weight:bold">int</span> = <span style="color:#f60">1</span>
-<span style="color:#069;font-weight:bold">const</span> e = runTimeVar <span style="color:#555">*</span> <span style="color:#f60">10</span>  <span style="color:#09f;font-style:italic">//runTimeVar는 런타임에 값이 할당되기 때문에 컴파일타임에 d의 값을 할당할 수 없어 error가 발생한다.
-</span></code></pre></div><p>상수 키워드는 <code>const</code>로 선언방식은 변수 var와 같고 <code>short assginment statement</code>는 var키워드 전용이기 때문에 상수는 짧은 대입문 사용이 불가능 하다. 또한, 반드시 <code>컴파일 타임</code>에 실행이 가능한 표현식이어야만 한다.</p>
+	<div class="content"><p>여러 필드를 묶어서 사용하는 타입으로 C의 structure와 비슷하며, go에서는 별도의 클래스를 키워드를 제공하지 않지만 구조체를 이용해서 클래스를 정의할 수 있다.</p>
 <br>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">const</span> a,b,c  = <span style="color:#f60">1</span>, <span style="color:#069;font-weight:bold">true</span>, <span style="color:#c30">&#34;hi&#34;</span>
-<span style="color:#069;font-weight:bold">const</span> d = [<span style="color:#f60">5</span>]<span style="color:#078;font-weight:bold">int</span>{<span style="color:#f60">1</span>,<span style="color:#f60">2</span>,<span style="color:#f60">3</span>,<span style="color:#f60">4</span>,<span style="color:#f60">5</span>}  <span style="color:#09f;font-style:italic">//error
-</span></code></pre></div><p>상수에는 <code>문자열</code>, <code>숫자</code>, <code>bool</code>타입만 가능하고, js같이 자료구조(배열,map 등)와 같이 내부적으로 포인터를 이용하는 타입들은 상수로 표현이 불가능하다. go에서 상수는 컴파일타임에 실행이 가능해야하기 때문에 내부의 값이 변할 수 있는 타입들은 상수로 표현이 불가능하다.</p>
+<h2>1. 선언</h2><a class="anchor" id="1-선언"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#09f;font-style:italic">/*
+</span><span style="color:#09f;font-style:italic">type 이름 sturct{
+</span><span style="color:#09f;font-style:italic">  ... 필드명
+</span><span style="color:#09f;font-style:italic">}
+</span><span style="color:#09f;font-style:italic">*/</span>
+<span style="color:#069;font-weight:bold">type</span> School <span style="color:#069;font-weight:bold">struct</span>{
+  Name <span style="color:#078;font-weight:bold">string</span>
+  CntTeacher <span style="color:#078;font-weight:bold">int</span>
+}
+
+<span style="color:#069;font-weight:bold">type</span> Student <span style="color:#069;font-weight:bold">struct</span> {
+  school School
+  Name <span style="color:#078;font-weight:bold">string</span>
+  score <span style="color:#078;font-weight:bold">float64</span>
+}
+
+<span style="color:#09f;font-style:italic">//Student형 변수 선언
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">var</span> student Student
+student.Name = <span style="color:#c30">&#34;홍길동&#34;</span>
+student.score = <span style="color:#f60">87.1</span>
+</code></pre></div><p>struct을 이용해서 구조체를 선언하고 해당 형식의 구조체를 <code>특정 이름</code>이라는 타입으로 부르도록 하겠다라는 의미로 type을 이용해서 선언을 해주면 된다.</p>
 <br>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-GO" data-lang="GO"><span style="color:#069;font-weight:bold">const</span> a1 <span style="color:#078;font-weight:bold">int</span> = <span style="color:#f60">1</span>
-<span style="color:#069;font-weight:bold">const</span> b1 <span style="color:#078;font-weight:bold">float64</span> = <span style="color:#f60">3</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#09f;font-style:italic">//student라는 패키지에 선언
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">type</span> Student <span style="color:#069;font-weight:bold">struct</span> {
+  schoolInfo School
+  Name <span style="color:#078;font-weight:bold">string</span>
+  score <span style="color:#078;font-weight:bold">float64</span>
+}
 
-<span style="color:#069;font-weight:bold">const</span> sum1 = a1 <span style="color:#555">+</span> b1
-fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;%d, %T\n&#34;</span>, sum, sum)  <span style="color:#09f;font-style:italic">//error
-</span><span style="color:#09f;font-style:italic"></span>
-<span style="color:#069;font-weight:bold">const</span> a2 = <span style="color:#f60">1</span>
-<span style="color:#069;font-weight:bold">const</span> b2 = <span style="color:#f60">3</span>
-
-<span style="color:#069;font-weight:bold">const</span> sum = a2 <span style="color:#555">+</span> b2
-fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;%d, %T\n&#34;</span>, sum, sum)  <span style="color:#09f;font-style:italic">//4, int
-</span><span style="color:#09f;font-style:italic"></span>
-<span style="color:#069;font-weight:bold">const</span> casting = <span style="color:#f60">1</span> <span style="color:#555">/</span> <span style="color:#f60">3.0</span> <span style="color:#09f;font-style:italic">//암묵적으로 형변환이 일어난다.
-</span><span style="color:#09f;font-style:italic"></span>fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;%g, %T\n&#34;</span>, sum, sum)  <span style="color:#09f;font-style:italic">// 0.333333.., float64
-</span></code></pre></div><p>타입을 생략해서 표현할 수 도 있는데 이렇게 되면 실제로 사용되는 시점(<code>명시적 형변환</code>)전까지는 type이 존재하지 않는다.</p>
-<p>그리고, 상수의 산술연산에서 <code>암묵적 형변환</code>을 지원해서 조금 더 유연하게 표현할 수 있다.</p>
-<p><br><br></p>
-<h2>상수 사용시기</h2><a class="anchor" id="상수-사용시기"></a>
-<p>상수는 변수에 비해 매우 큰 표현 범위를 갖을 수 있어 높은 정밀도를 제공하기 때문에 보다 정확한 계산을 위해 사용되거나 <code>열거형(Enum)</code>을 만드는데 사용할 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#c0f">fmt</span> (
-  <span style="color:#c30">&#34;fmt&#34;</span>
-  <span style="color:#c30">&#34;math&#34;</span>
+<span style="color:#09f;font-style:italic">//main 패키지
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">import</span> (
+	<span style="color:#c30">&#34;goStudy/student&#34;</span>
 )
 
-<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>(){
-  <span style="color:#069;font-weight:bold">const</span> maxInt = math.MaxInt64  <span style="color:#09f;font-style:italic">//int64의 최대값
-</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">const</span> maxConst = <span style="color:#f60">1</span> <span style="color:#555">&lt;&lt;</span> <span style="color:#f60">100</span>   <span style="color:#09f;font-style:italic">//int 표현의 범위를 벗어났지만 실제 int로 명시하기 전에는 int타입이 아니기 때문에 표현이 가능하다.
-</span><span style="color:#09f;font-style:italic"></span>
-  fmt.<span style="color:#c0f">Println</span>(maxInt)   <span style="color:#09f;font-style:italic">//9223372036854775807
-</span><span style="color:#09f;font-style:italic"></span>  fmt.<span style="color:#c0f">Println</span>(maxConst)  <span style="color:#09f;font-style:italic">//함수로 표현하려고 하면 타입의 명시가 일어나 int범위를 벗어나 overflow가 발생한다.
-</span><span style="color:#09f;font-style:italic"></span>  ftm.<span style="color:#c0f">Println</span>(maxConst <span style="color:#555">*</span> <span style="color:#f60">0.1</span>) <span style="color:#09f;font-style:italic">//1.2676506002282295e+29  &lt;-- 산술연산 중에 암묵적으로 float로 형변환이 일어나 overflow가 발생하지 않는다.
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>() {
+	student <span style="color:#555">:=</span> student.Student{}
+  student.score = <span style="color:#f60">98.1</span>  <span style="color:#09f;font-style:italic">//error
 </span><span style="color:#09f;font-style:italic"></span>}
-</code></pre></div><br>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">const</span> i1 = <span style="color:#f60">14345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</span>   <span style="color:#09f;font-style:italic">//error
-</span></code></pre></div><p>정수형 상수도 저장할 수 있는 한계가 존재하기는 한다.</p>
+
+</code></pre></div><p>구조체내부의 필드로 다른 구조체 타입을 포함할 수 도 있다. 이때 <code>go</code>만의 특징으로 go는 특정 문법을 강제하는 강타입 언어인데 구조체 내부의 필드를 패키지 외부에서 접근하기 위해서는 이름은 반드시 <code>대문자</code>로 시작을 해야 한다.
+<br><code>소문자</code>로 시작을 한다면 같은 패키지 내부에서만 접근 할 수 있다.</p>
 <p><br><br></p>
-<h2>Enum</h2><a class="anchor" id="enum"></a>
-<p>Go는 Java나 C++ 처럼 enum을 제공하지 않기 때문에 C에서 enum을 비슷하게 만들어 사용하는 것처럼 go도 <code>const</code>를 이용해서 enum을 만들어 사용할 수 있다. 또한, <code>iota</code>라는 <code>상수 생성자</code>를 제공해서 순차적으로 증가하는 상수값을 쉽게 선언 할 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">const</span> (
-  a = <span style="color:#f60">1</span>   <span style="color:#09f;font-style:italic">//1으로 시작
-</span><span style="color:#09f;font-style:italic"></span>  b       <span style="color:#09f;font-style:italic">//1
-</span><span style="color:#09f;font-style:italic"></span>  c       <span style="color:#09f;font-style:italic">//1
-</span><span style="color:#09f;font-style:italic"></span>)
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">const</span> (
-  a = <span style="color:#069;font-weight:bold">iota</span>  <span style="color:#09f;font-style:italic">//0으로 시작
-</span><span style="color:#09f;font-style:italic"></span>  b         <span style="color:#09f;font-style:italic">//1
-</span><span style="color:#09f;font-style:italic"></span>  c         <span style="color:#09f;font-style:italic">//2
-</span><span style="color:#09f;font-style:italic"></span>)
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">const</span> (
-  a = <span style="color:#069;font-weight:bold">iota</span> <span style="color:#555">+</span> <span style="color:#f60">1</span>   <span style="color:#09f;font-style:italic">//1으로 시작
-</span><span style="color:#09f;font-style:italic"></span>  b              <span style="color:#09f;font-style:italic">//2
-</span><span style="color:#09f;font-style:italic"></span>  c              <span style="color:#09f;font-style:italic">//3
-</span><span style="color:#09f;font-style:italic"></span>)
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">const</span> (
-  a = <span style="color:#f60">1</span> <span style="color:#555">&lt;&lt;</span> <span style="color:#069;font-weight:bold">iota</span>   <span style="color:#09f;font-style:italic">//1
-</span><span style="color:#09f;font-style:italic"></span>  b               <span style="color:#09f;font-style:italic">//2
-</span><span style="color:#09f;font-style:italic"></span>  c               <span style="color:#09f;font-style:italic">//4
-</span><span style="color:#09f;font-style:italic"></span>  d               <span style="color:#09f;font-style:italic">//8
-</span><span style="color:#09f;font-style:italic"></span>)
-</code></pre></div><p><br><br></p>
-<h2>상수와 리터럴</h2><a class="anchor" id="상수와-리터럴"></a>
-<p>리터럴은 변수의 값이 변하지 않는 데이터로 메모리 안의 존재하는 <code>값 그자체</code>를 의미한다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> a <span style="color:#078;font-weight:bold">int</span> = <span style="color:#f60">1</span>
-</code></pre></div><p>변수를 할당하는 데 있어 주로 우측에 오는 값으로 <code>1</code>이라는 값 그 자체는 변경할 수 없는데 이를 리터럴이라고 한다. 1이라는 값이 2가 될 수 없는 것이다.</p>
+<h2>2. 초기화</h2><a class="anchor" id="2-초기화"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> student Student  <span style="color:#09f;font-style:italic">//zero value를 갖는 구조체 변수
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#069;font-weight:bold">var</span> stdeunt Student = Student{<span style="color:#c30">&#34;홍길동&#34;</span>, <span style="color:#f60">12.1</span>}
+student <span style="color:#555">:=</span> Student{<span style="color:#c30">&#34;홍길동&#34;</span>, <span style="color:#f60">12.1</span>} <span style="color:#09f;font-style:italic">//타입 추론
+</span></code></pre></div><p><br><br></p>
+<h2>3. 포함된 필드방식(Embedded field)</h2><a class="anchor" id="3-포함된-필드방식embedded-field"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">type</span> School <span style="color:#069;font-weight:bold">struct</span>{
+  Name <span style="color:#078;font-weight:bold">string</span>
+  CntTeacher <span style="color:#078;font-weight:bold">int</span>
+}
+
+<span style="color:#069;font-weight:bold">type</span> Student <span style="color:#069;font-weight:bold">struct</span> {
+  School        <span style="color:#09f;font-style:italic">//Embedded field
+</span><span style="color:#09f;font-style:italic"></span>  Name <span style="color:#078;font-weight:bold">string</span>
+  score <span style="color:#078;font-weight:bold">float64</span>
+}
+</code></pre></div><p>구조체 내부에 변수명 없이 타입만 설정한 field로 다른 기본형 타입은 사용이 불가능하고 <code>구조체</code>타입만 사용이 가능하다. 해당 필드방식으로 사용하면 School 구조체타입의 내부 필드가 Student 필드로 들어가게 되어 변수명으로 접근을 하지 않고 바로 접근을 할 수 있다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> stdeunt Student
+
+student.schoolInfo.Name = <span style="color:#c30">&#34;길동고등학교&#34;</span> <span style="color:#09f;font-style:italic">//기존의 방식
+</span><span style="color:#09f;font-style:italic"></span>student.CntTeacher = <span style="color:#f60">4</span>  <span style="color:#09f;font-style:italic">//Embedded field사용한 경우
+</span><span style="color:#09f;font-style:italic"></span>student.School.Name = <span style="color:#c30">&#34;길동고등학교&#34;</span> <span style="color:#09f;font-style:italic">//필드명이 중복이 될 경우에는 구조체 타입을 이용해서 구분해주어야 한다.
+</span></code></pre></div><p><br><br></p>
+<h2>4. 구조체 크기</h2><a class="anchor" id="4-구조체-크기"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">type</span> User <span style="color:#069;font-weight:bold">struct</span>{
+  Age <span style="color:#078;font-weight:bold">int</span>
+  Score <span style="color:#078;font-weight:bold">float64</span>
+}
+
+<span style="color:#069;font-weight:bold">var</span> user User
+</code></pre></div><p><img src="size.PNG?classes=border,shadow" alt="size"></p>
 <br>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> s <span style="color:#078;font-weight:bold">string</span> = <span style="color:#c30">&#34;ex&#34;</span>
-</code></pre></div><p>string의 <code>&quot;ex&quot;</code>도 리터럴인데 ex라는 값이 heap에 한번 할당되고 값이 변경되지 않기 때문이다. 우리가 string변수를 <code>연산자</code>를 이용해서 문자열을 붙이는 것은 기존의 <code>ex</code>라는 값에 붙이는 것이 아니라 heap공간에 <code>ex+새로운 문자열</code>을 새로 할당하는 방식으로 동작하기 때문에 string의 우측에 오는 값도 리터럴이다.</p>
+<p>각 필드 타입의 크기를 모두 더한만큼 변수의 크기가 설정 된기 때문에 user는 8Byte(int) + 8Byte(float64) = 16byte가 된다.</p>
+<p><br><br></p>
+<h2>5. 구조체 복사</h2><a class="anchor" id="5-구조체-복사"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">type</span> User <span style="color:#069;font-weight:bold">struct</span>{
+  Age <span style="color:#078;font-weight:bold">int</span>
+  Score <span style="color:#078;font-weight:bold">float64</span>
+}
+
+<span style="color:#069;font-weight:bold">var</span> user1 User = User{<span style="color:#f60">23</span>, <span style="color:#f60">87.1</span>}
+
+<span style="color:#069;font-weight:bold">var</span> user2 User = user1
+</code></pre></div><p><code>대입</code>연산자를 이용해 새로운 변수에 값을 할당 해주면 go는 메모리의 값을 그대로 새로운 메모리에 할당을 해준다. 이는 Java의 class 변수를 <code>=</code>연산자로 할당해주면 <code>reference</code>를 넘겨주는 것과는 다르게 동작하기 때문에 헷갈리지 말자. (자바는 <code>얕은 복사</code>, go는 <code>깊은 복사</code>)</p>
 <br>
-<p>리터럴도 변하지 않는 값이기 때문에 상수와 햇갈릴 수 있지만, <strong><code>상수</code>는 값을 한번만 저장하고 변경이 불가능한 메모리 <code>공간</code>이고, <code>리터럴</code>은 값 그자체로 변경이 불가능한 <code>값</code>이다.</strong></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">user2.Age = <span style="color:#f60">56</span>
+
+fmt.<span style="color:#c0f">Println</span>(user1) <span style="color:#09f;font-style:italic">// {23 87.1}
+</span><span style="color:#09f;font-style:italic"></span>fmt.<span style="color:#c0f">Println</span>(unsafe.<span style="color:#c0f">Sizeof</span>(user1)) <span style="color:#09f;font-style:italic">//16
+</span><span style="color:#09f;font-style:italic"></span>
+fmt.<span style="color:#c0f">Println</span>(user2) <span style="color:#09f;font-style:italic">// {56 87.1}
+</span><span style="color:#09f;font-style:italic"></span>fmt.<span style="color:#c0f">Println</span>(unsafe.<span style="color:#c0f">Sizeof</span>(user2)) <span style="color:#09f;font-style:italic">//16
+</span><span style="color:#09f;font-style:italic"></span>
+user3 <span style="color:#555">:=</span> <span style="color:#555">&amp;</span>user
+user3.Age = <span style="color:#f60">1</span>
+fmt.<span style="color:#c0f">Println</span>(user1) <span style="color:#09f;font-style:italic">// {1 87.1}
+</span></code></pre></div><p>Reference를 넘겨주고 싶으면 <code>포인터 타입(*)</code>과 메모리주소를 넘겨주기 위한 키워드 <code>&amp;</code>를 사용하면 된다. (C와 비슷하다.)</p>
+<br>
+<h4>+추가)</h4><a class="anchor" id="추가"></a>
+<p>go의 표준 패키지로 <code>unsafe</code>라는 패키지가 있는데 이는 이름 그대로 안전하지 않은 함수를 제공한다. 그 중에 <code>SizeOf()</code>는 변수가 차지하고 있는 메모리 크기(Byte)를 반환하는 함수 이다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">type</span> User <span style="color:#069;font-weight:bold">struct</span>{
+  Age <span style="color:#078;font-weight:bold">int32</span>
+  Score <span style="color:#078;font-weight:bold">float64</span>
+}
+
+<span style="color:#069;font-weight:bold">var</span> user1 User
+fmt.<span style="color:#c0f">Println</span>(unsafe.<span style="color:#c0f">Sizeof</span>(user1)) <span style="color:#09f;font-style:italic">//16
+</span></code></pre></div><p>위에서 설명한대로라면 int32는 4byte, float64는 8byte이기 때문에 user는 12byte를 가져야 하는데 실제로는 16byte의 크기를 갖는다. 이는 컴퓨터(go)가 컴퓨터의 사양(32bit컴퓨터/64bit 컴퓨터)에 따라 관리하기 편한 방법으로 메모리를 정렬하기 때문이다.</p>
+<p>현재에는 대부분 64bit컴퓨터로 8byte단위로 값을 가져오는데 합이 12byte로 4byte가 끊기기 때문에 조금 더 효율적인 관리를 위해 4byte만큼을 추가 메모리를 할당(<code>Memory padding</code>)해서 관리를 한다. 이는 Age가 8Byte를 갖는 것이 아니라 4byte의 빈공간을 만들어 관리하는 것이다.</p>
+<p>한마디로 <code>성능</code>을 위해서 <code>메모리</code>를 희생하게 된다.</p>
+<br>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">type</span> User <span style="color:#069;font-weight:bold">struct</span>{
+  a <span style="color:#078;font-weight:bold">int8</span>
+  b <span style="color:#078;font-weight:bold">float64</span>
+  c <span style="color:#078;font-weight:bold">int8</span>
+}
+
+<span style="color:#069;font-weight:bold">var</span> user1 User
+fmt.<span style="color:#c0f">Println</span>(unsafe.<span style="color:#c0f">Sizeof</span>(user1)) <span style="color:#09f;font-style:italic">//24
+</span></code></pre></div><p>이는 위에서 설명한대로 8byte씩 끊어서 관리하기 때문에 24byte만큼 할당이 되었는데 8byte보다 작은 필드라면 앞으로 몰아서 필드를 선언하는 것이 <code>메모리 패딩</code>을 줄여 메모리를 절약할 수 있다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">type</span> User <span style="color:#069;font-weight:bold">struct</span>{
+  a <span style="color:#078;font-weight:bold">int8</span>
+  c <span style="color:#078;font-weight:bold">int8</span>
+  b <span style="color:#078;font-weight:bold">float64</span>
+}
+
+<span style="color:#069;font-weight:bold">var</span> user1 User
+fmt.<span style="color:#c0f">Println</span>(unsafe.<span style="color:#c0f">Sizeof</span>(user1)) <span style="color:#09f;font-style:italic">//16
+</span></code></pre></div><p><br><br></p>
+<h2>6. 구조체의 역할</h2><a class="anchor" id="6-구조체의-역할"></a>
+
+<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
+<div class="notices primary">
+	<p>결합도는 낮게 응집도는 높게</p>
+
+</div>
+
+<p><code>함수</code>는 비슷한 코드를, <code>배열</code>은 같은 타입의 데이터를 묶어 응집도를 높이는 것이라면 <code>구조체</code>는 관련된 데이터를 묶어 응집도를 높여 <code>재사용성</code>을 증가시키는데 사용한다.</p>
+<p><code>go</code>는 처음에 설명한 것처럼 <code>class</code>가 존재하지 않고 <code>structure</code>가 <code>객체</code>로써 사용되기 위한 방법으로 사용된다.</p>
 <p><br><br><br></p>
+<hr>
 <h2>Reference</h2><a class="anchor" id="reference"></a>
-<p><a href="https://tramamte.github.io/2018/07/03/deep-inside-constants/">https://tramamte.github.io/2018/07/03/deep-inside-constants/</a></p>
 <p>『Tucker의 Go 언어 프로그래밍』 스터디 요약 노트</p>
+<p><a href="https://www.youtube.com/watch?v=ELOihQ1HYBY">Tucker의 Go 강좌</a></p>
 </div>
 
 	
@@ -1793,10 +1862,10 @@ fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;%d, %T\
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/go/array/" title="배열" style="margin-right: 0px;">
+		<a class="next" href="/data-structure/" title="자료구조 ( Data Structure )" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>배열</label>
+                <label>자료구조 ( Data Structure )</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1819,14 +1888,21 @@ fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;%d, %T\
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/go/constant/">상수</a></li>
+            <li><a href="/go/structure/">구조체</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#상수-사용시기">상수 사용시기</a></li>
-    <li><a href="#enum">Enum</a></li>
-    <li><a href="#상수와-리터럴">상수와 리터럴</a></li>
+    <li><a href="#1-선언">1. 선언</a></li>
+    <li><a href="#2-초기화">2. 초기화</a></li>
+    <li><a href="#3-포함된-필드방식embedded-field">3. 포함된 필드방식(Embedded field)</a></li>
+    <li><a href="#4-구조체-크기">4. 구조체 크기</a></li>
+    <li><a href="#5-구조체-복사">5. 구조체 복사</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#6-구조체의-역할">6. 구조체의 역할</a></li>
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
@@ -1844,14 +1920,14 @@ fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;%d, %T\
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 26 May 2021
+		          Last update on 31 May 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fgo%2fconstant%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fgo%2fstructure%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>
