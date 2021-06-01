@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-05-31T23:12:49 KST">
+<meta name="revised" content="2021-06-01T20:48:54 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -850,6 +850,23 @@ if (!doNotTrack) {
       
       
           <a href="/go/constant/">상수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/control-statement/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/control-statement/">제어문</a>
           
       
       
@@ -1793,7 +1810,7 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td style="text-align:center">Scan()</td>
-<td style="text-align:center">표준 입력(키보드)에서 값을 입력</td>
+<td style="text-align:center">표준 입력(키보드)에서 공백과 개행을 기준으로 값을 입력</td>
 </tr>
 <tr>
 <td style="text-align:center">Scanf()</td>
@@ -1801,11 +1818,11 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td style="text-align:center">Scanln()</td>
-<td style="text-align:center">표준 입력에서 한 줄씩 값을 입력</td>
+<td style="text-align:center">표준 입력에서 공백을 기준으로 값을 입력</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Scan()과 Scanln()</strong> 차이점 : Scan()은 <code>공백</code>,<code>개행</code>을 기준으로 값을 나눠 입력받고, Scanln()은 <code>개행</code>을 기준으로 값을 나눠 입력받는다.</p>
+<p><strong>Scan()과 Scanln()</strong> 차이점 : Scan()은 <code>공백</code>,<code>개행</code>을 기준으로 값을 나눠 입력받고, Scanln()은 <code>공백</code>을 기준으로 값을 나눠 입력받는다.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">package</span> main
 
 <span style="color:#069;font-weight:bold">import</span> fmt
@@ -1848,7 +1865,37 @@ if (!doNotTrack) {
 		fmt.<span style="color:#c0f">Println</span>(n, a, b,c)
 	}
 }
-</code></pre></div><p><br><br></p>
+</code></pre></div><br>
+<p>위와 같이 기본 <code>Scan</code>함수들을 사용하면 문자열은 무조건 <code>공백</code>으로 구분을 하기 때문에 한줄씩 읽을 수가 없는데 개행으로 구분하고 싶다면 위와 비슷하게 구성하면 된다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#09f;font-style:italic">//개행을 구분으로 문자열 입력
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">import</span> (
+    <span style="color:#c30">&#34;fmt&#34;</span>
+    <span style="color:#c30">&#34;bufio&#34;</span>
+    <span style="color:#c30">&#34;os&#34;</span>
+)
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>() {
+
+  <span style="color:#09f;font-style:italic">//Reader이용
+</span><span style="color:#09f;font-style:italic"></span>    in <span style="color:#555">:=</span> bufio.<span style="color:#c0f">NewReader</span>(os.Stdin)
+    line, _ <span style="color:#555">:=</span> in.<span style="color:#c0f">ReadString</span>(<span style="color:#c30">&#39;\n&#39;</span>)
+
+    strings.<span style="color:#c0f">TrimSuffix</span>(line,<span style="color:#c30">&#34;\n&#34;</span>)
+    fmt.<span style="color:#c0f">Println</span>(line)
+
+  <span style="color:#09f;font-style:italic">//Scanner 이용
+</span><span style="color:#09f;font-style:italic"></span>    sc <span style="color:#555">:=</span> bufio.<span style="color:#c0f">NewScanner</span>(os.Stdin)
+    sc.<span style="color:#c0f">Scan</span>() <span style="color:#09f;font-style:italic">//한줄 읽기
+</span><span style="color:#09f;font-style:italic"></span>    str <span style="color:#555">:=</span> sc.<span style="color:#c0f">Text</span>() <span style="color:#09f;font-style:italic">//읽은 문자열을 변수에 할당
+</span><span style="color:#09f;font-style:italic"></span>
+  <span style="color:#09f;font-style:italic">//여러줄의 문자열 읽기
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">for</span> sc.<span style="color:#c0f">Scan</span>(){
+      fmt.<span style="color:#c0f">Println</span>(sc.<span style="color:#c0f">Text</span>())
+    }
+}
+</code></pre></div><p>ReadString()으로 읽은 string은 <code>구분문자(delimeter)</code>를 포함하여 반환하기 때문에 마지막에 <code>\n</code>을 제거하고 싶다면 한줄을 추가해주어야 한다.</p>
+<p>Scanner의 Scan()은 delimeter가 제거된 문자열을 반환해주기 때문에 조금더 편하게 사용할 수 있다. <code>NewReader</code>에는 <code>ReadByte</code>,<code>ReadBytes</code>등의 저수준의 데이터를 읽어올 수 있는 함수가 있기 때문에 상황에 맞게 사용하면 된다.</p>
+<p><br><br></p>
 <h2>추가 내용</h2><a class="anchor" id="추가-내용"></a>
 <h3>◾ go run</h3><a class="anchor" id="-go-run"></a>
 <p>실행파일을 만들지 않고 <code>스크립트</code>형태로 그냥 바로 실행시키는 명령어</p>

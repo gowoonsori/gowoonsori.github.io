@@ -4,28 +4,28 @@
 <html>
   <head>
     <title>
-	[Disjoint Set] Union Find 알고리즘 :: Gowoonsori&#39;s TechBlog
+	제어문 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-06-01T20:48:53 KST">
+<meta name="revised" content="2021-06-01T20:48:54 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>[Disjoint Set] Union Find 알고리즘 :: Gowoonsori&#39;s TechBlog</title>
+<title>제어문 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="서로소 집합을 구하는 알고리즘으로 Union Find알고리즘을 정리합니다.">
+<meta name="description" content="Go Lang에서 제어문(if, switch) 사용하는 방법을 정리한 글">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="[Disjoint Set] Union Find 알고리즘" />
-<meta property="og:description" content="서로소 집합을 구하는 알고리즘으로 Union Find알고리즘을 정리합니다." />
+<meta property="og:title" content="제어문" />
+<meta property="og:description" content="Go Lang에서 제어문(if, switch) 사용하는 방법을 정리한 글" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/algorithm/union-find/" />
+<meta property="og:url" content="https://gowoonsori.site/go/control-statement/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2021-04-12T19:23:47+09:00" />
+<meta property="og:updated_time" content="2021-06-01T19:40:06+09:00" />
 
 
 
@@ -127,7 +127,7 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/algorithm/union-find/"
+  <body data-url="/go/control-statement/"
 
   class="hidebreadcrumb ">
 
@@ -738,12 +738,13 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/go/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/go/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
           
       
@@ -857,7 +858,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/go/control-statement/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/go/control-statement/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -982,13 +983,12 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/algorithm/" class="dd-item parent haschildren
+    <li data-nav-id="https://gowoonsori.site/algorithm/" class="dd-item haschildren
         item_level_$level
         ">
 
       
-      
-          <i class="fas fa-chevron-down ddexp"></i>
+      <i class="fas fa-chevron-right ddexp"></i>
       
           
       
@@ -1087,7 +1087,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/algorithm/union-find/" class="dd-item parent active
+    <li data-nav-id="https://gowoonsori.site/algorithm/union-find/" class="dd-item
         item_level_$level
         ">
 
@@ -1670,7 +1670,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>[Disjoint Set] Union Find 알고리즘</h1>
+			<h1>제어문</h1>
         
 
 		
@@ -1692,130 +1692,177 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#disjoint-set">Disjoint Set</a></li>
-    <li><a href="#union-find">Union-Find</a></li>
-    <li><a href="#구현-방법">구현 방법</a></li>
-    <li><a href="#시간-복잡도">시간 복잡도</a></li>
-    <li><a href="#문제점">문제점</a></li>
-    <li><a href="#path-compression-경로-압축">path compression (경로 압축)</a></li>
-    <li><a href="#union-by-rank">union by rank</a></li>
-    <li><a href="#두-기법을-적용-후-시간-복잡도">두 기법을 적용 후 시간 복잡도</a></li>
-    <li><a href="#활용">활용</a></li>
+    <li><a href="#1-if문">1. if문</a>
+      <ul>
+        <li><a href="#-선언-방법">◾ 선언 방법</a></li>
+        <li><a href="#-error-발생하는-경우">◾ Error 발생하는 경우</a></li>
+      </ul>
+    </li>
+    <li><a href="#switch문">switch문</a>
+      <ul>
+        <li><a href="#-선언-방법-1">◾ 선언 방법</a></li>
+        <li><a href="#-특징">◾ 특징</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 	</div>
 	
 	
 
-	<div class="content"><h2>Disjoint Set</h2><a class="anchor" id="disjoint-set"></a>
-<p>번역하면 <code>서로소 집합</code>으로 서로 중복 되지 않는 부분 집합들로 이루어진 집합(set)으로 교집합이 존재 하지 않는 부분집합들로 이루어진 집합입니다.</p>
+	<div class="content"><h2>1. if문</h2><a class="anchor" id="1-if문"></a>
+<p>제어문 중에 하나로 다른 언어들과 사용목적은 동일하며 <code>if~else if~else</code>를 똑같이 지원한다.</p>
+<h3>◾ 선언 방법</h3><a class="anchor" id="-선언-방법"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">score <span style="color:#555">:=</span> <span style="color:#f60">56</span>
+
+<span style="color:#069;font-weight:bold">if</span> score &gt; <span style="color:#f60">80</span> {
+  fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;A&#34;</span>)
+} <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span>(score &gt; <span style="color:#f60">50</span>) {   <span style="color:#09f;font-style:italic">//소괄호로 감쌌지만 not Error
+</span><span style="color:#09f;font-style:italic"></span>  fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;B&#34;</span>)
+} <span style="color:#069;font-weight:bold">else</span> {
+  fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;C&#34;</span>)
+}
+
+<span style="color:#069;font-weight:bold">if</span> <span style="color:#069;font-weight:bold">true</span> {
+  fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;true&#34;</span>) <span style="color:#09f;font-style:italic">//조건이 bool이면 success
+</span><span style="color:#09f;font-style:italic"></span>}
+
+<span style="color:#069;font-weight:bold">if</span> <span style="color:#f60">1</span> {
+  fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;true&#34;</span>)  <span style="color:#09f;font-style:italic">//bool이 아니면 error
+</span><span style="color:#09f;font-style:italic"></span>}
+</code></pre></div><p>Java나 c처럼 <code>()</code>로 조건문을 감싸지 않고 바로 <code>조건문</code>을 작성하면 되고 <code>Java</code>처럼 조건문은 <code>bool</code>타입을 반환해야 한다. C/C++처럼 0이 false, 1이상이 true로 인식되지 않는다.</p>
+<p>소괄호로 감싸지 않는게 기본 문법이지만 감싼다고 해서 에러가 발생하지는 않는다.</p>
+<br>
+<h3>◾ Error 발생하는 경우</h3><a class="anchor" id="-error-발생하는-경우"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#09f;font-style:italic">//1
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">if</span> (socre &gt; <span style="color:#f60">80</span>) fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;A&#34;</span>)
+
+<span style="color:#09f;font-style:italic">//2
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">if</span> score &gt; <span style="color:#f60">80</span>
+{
+  fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;A&#34;</span>)
+}
+
+<span style="color:#09f;font-style:italic">//3
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">if</span> score &gt; <span style="color:#f60">80</span>{
+  fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;A&#34;</span>)
+}
+<span style="color:#069;font-weight:bold">else</span>{
+  fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;B&#34;</span>)
+}
+</code></pre></div><p>Go는 지금까지 설명한것처럼 특정 문법 형식을 강제하는 언어인데 <code>조건문</code>도 그 예외는 아니다.</p>
+<p>첫번째로 대부분의 언어에서 조건문 내부가 한줄이라면 중괄호를 생략해서 표현하기도 하는데 go는 무조건 중괄호로 묶어야 한다. 두번째는 조건문 키워드 옆에 바로 중괄호가 시작되어야 한다. 위의 예제처럼 다음줄에서 시작한다면 error를 발생한다.</p>
+<p>마지막으로는 <code>if~else if~else</code>를 작성할때 <code>else if</code>나 <code>else</code>는 위의 조건이 끝나는 중괄호 바로 옆에 작성해야 하기 때문에 다음 문단에서 시작된다면 에러를 발생시킨다.</p>
 <p><br><br></p>
-<h2>Union-Find</h2><a class="anchor" id="union-find"></a>
-<ul>
-<li>
-<p><code>Union</code> : 두개의 집합을 하나의 집합으로 합치는 것.</p>
-</li>
-<li>
-<p><code>Find</code> : 어떤 원소가 주어졌을 때 이 원소가 속한 집합을 반환하는(찾는) 것.</p>
-</li>
-</ul>
-<p>집합들을 <code>tree</code>구조로 나타내어 해당원소가 어떤 집합에 속하는지 판단할때 각 집합의 대표값(root)을 이용해서 집합이 같은지를 비교.</p>
-<br>
-<h2>구현 방법</h2><a class="anchor" id="구현-방법"></a>
-<ul>
-<li>연결리스트</li>
-</ul>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#069;font-weight:bold">typedef</span> <span style="color:#069;font-weight:bold">struct</span> <span style="color:#0a8;font-weight:bold">node</span>{
-    <span style="color:#078;font-weight:bold">int</span> data;
-    <span style="color:#069;font-weight:bold">struct</span> <span style="color:#0a8;font-weight:bold">node</span><span style="color:#555">*</span> parent;
-    <span style="color:#069;font-weight:bold">struct</span> <span style="color:#0a8;font-weight:bold">node</span><span style="color:#555">*</span> next;
-}node;
+<h2>switch문</h2><a class="anchor" id="switch문"></a>
+<h3>◾ 선언 방법</h3><a class="anchor" id="-선언-방법-1"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">const</span> (
+  apple = <span style="color:#069;font-weight:bold">iota</span>
+  banana
+  orange
+  strawberry
+  grape
+)
 
-<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">MakeSet</span>(node<span style="color:#555">*</span> p,<span style="color:#078;font-weight:bold">int</span> x){
-     p<span style="color:#555">-&gt;</span>data <span style="color:#555">=</span> x;
-     p<span style="color:#555">-&gt;</span>parent <span style="color:#555">=</span> p;<span style="color:#09f;font-style:italic">//처음은 다 원소가 하나씩있는 집합이므로 자기 자신이 root
-</span><span style="color:#09f;font-style:italic"></span>     p<span style="color:#555">-&gt;</span>next<span style="color:#555">=</span>null;
+<span style="color:#069;font-weight:bold">var</span> name <span style="color:#078;font-weight:bold">string</span>
+<span style="color:#069;font-weight:bold">var</span> fruit = apple
+
+<span style="color:#09f;font-style:italic">//case 1
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">switch</span> fruit {
+<span style="color:#069;font-weight:bold">case</span> apple:
+  name = <span style="color:#c30">&#34;Apple&#34;</span>
+<span style="color:#069;font-weight:bold">case</span> banana:
+  name = <span style="color:#c30">&#34;Banana&#34;</span>
+<span style="color:#069;font-weight:bold">case</span> orange, strawberry:
+  name = <span style="color:#c30">&#34;Orange and StrawBerry&#34;</span>
+<span style="color:#069;font-weight:bold">default</span>:
+  name = <span style="color:#c30">&#34;Other&#34;</span>
 }
 
-<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Find</span>(node<span style="color:#555">*</span> p,<span style="color:#078;font-weight:bold">int</span> x){
-    <span style="color:#069;font-weight:bold">if</span>(p<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>data <span style="color:#555">==</span> x) <span style="color:#069;font-weight:bold">return</span> x;  <span style="color:#09f;font-style:italic">//root값이 자기 자신이라면 집합의 대표값
-</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">return</span> Find(p<span style="color:#555">-&gt;</span>parent,x);  <span style="color:#09f;font-style:italic">//재귀적으로 집합 대표값 찾기
-</span><span style="color:#09f;font-style:italic"></span>}
+fmt.<span style="color:#366">println</span>(name)
 
-<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Union</span>(node<span style="color:#555">*</span> p1,node<span style="color:#555">*</span> p2,<span style="color:#078;font-weight:bold">int</span> x,<span style="color:#078;font-weight:bold">int</span> y){
-    x <span style="color:#555">=</span> Find(p1,x);
-    y <span style="color:#555">=</span> Find(p2,y);
-    p1<span style="color:#555">-&gt;</span>next <span style="color:#555">=</span> p2;
-    p2<span style="color:#555">-&gt;</span>parent <span style="color:#555">=</span> p1;
+<span style="color:#09f;font-style:italic">//case 2. Expression사용
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">switch</span> x<span style="color:#555">:=</span> fruit<span style="color:#555">-</span><span style="color:#f60">1</span>; x<span style="color:#555">+</span><span style="color:#f60">1</span> {
+	<span style="color:#069;font-weight:bold">case</span> apple:
+		name = <span style="color:#c30">&#34;Apple&#34;</span>
+	<span style="color:#069;font-weight:bold">case</span> banana:
+		name = <span style="color:#c30">&#34;Banana&#34;</span>
+	<span style="color:#069;font-weight:bold">case</span> orange, strawberry:
+		name = <span style="color:#c30">&#34;Orange and StrawBerry&#34;</span>
+	<span style="color:#069;font-weight:bold">default</span>:
+		name = <span style="color:#c30">&#34;Other&#34;</span>
+	}
+</code></pre></div><p>기본적으로 switch키워드 뒤에 변수를 선언하고 다른 언어들과 비슷한 문법으로 switch를 사용할 수 있지만 별도의 expression을 사용할경우에는 세미콜론(;)뒤에 case로 사용될 값을 정의해주면 된다.</p>
+<br>
+<h3>◾ 특징</h3><a class="anchor" id="-특징"></a>
+<h4>1. switch뒤에 변수가 없어도 된다.</h4><a class="anchor" id="1-switch뒤에-변수가-없어도-된다"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">score <span style="color:#555">:=</span> <span style="color:#f60">67</span>
+
+<span style="color:#069;font-weight:bold">switch</span> {
+	<span style="color:#069;font-weight:bold">case</span> score <span style="color:#555">&gt;=</span> <span style="color:#f60">80</span>:
+		fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;A&#34;</span>)
+	<span style="color:#069;font-weight:bold">case</span> score <span style="color:#555">&gt;=</span> <span style="color:#f60">60</span>:
+		fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;A&#34;</span>)
+	<span style="color:#069;font-weight:bold">case</span> score <span style="color:#555">&gt;=</span> <span style="color:#f60">40</span>:
+		fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;C&#34;</span>)
+	<span style="color:#069;font-weight:bold">default</span>:
+		fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;F&#34;</span>)
+	}
+</code></pre></div><p>다른 언어는 switch 키워드 뒤에 변수나 expression을 선언하지만 Go는 선언하지 않아도 되며 선언하지않으면 <code>true</code>로 생각해 첫번째 case문으로 이동을 한다. 이때 case 조건으로는 <code>bool</code>만 올 수 있다.</p>
+<br>
+<h4>2. case에 조건문 표현 가능</h4><a class="anchor" id="2-case에-조건문-표현-가능"></a>
+<p>위의 예시처럼 case에 특정 값(리터럴)을 표현하는 것이 아니라 <code>조건문</code>을 선언할 수 있다. 조건문으로 case를 표시할 경우에는 리터럴값과 혼용해서 사용할 수 없다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">score <span style="color:#555">:=</span> <span style="color:#f60">50</span>
+
+<span style="color:#069;font-weight:bold">switch</span> score{
+<span style="color:#069;font-weight:bold">case</span> <span style="color:#f60">67</span> :
+  fmt.<span style="color:#c0f">Println</span>(<span style="color:#f60">67</span>)
+<span style="color:#069;font-weight:bold">case</span> score <span style="color:#555">&gt;=</span> <span style="color:#f60">80</span>:   <span style="color:#09f;font-style:italic">//error
+</span><span style="color:#09f;font-style:italic"></span>  fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;A&#34;</span>)
+<span style="color:#069;font-weight:bold">default</span>:
+  fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;F&#34;</span>)
 }
 </code></pre></div><br>
-<ul>
-<li>Disjoint Set Forest ( Tree )</li>
-</ul>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#078;font-weight:bold">int</span> root[n];
+<h4>3. case에 변수 타입 가능</h4><a class="anchor" id="3-case에-변수-타입-가능"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> val <span style="color:#069;font-weight:bold">interface</span>{} = <span style="color:#f60">15</span>
 
-<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">MakeSet</span>(<span style="color:#078;font-weight:bold">int</span> x){
-     root[x] <span style="color:#555">=</span> x;    <span style="color:#09f;font-style:italic">//처음은 다 원소가 하나씩있는 집합이므로 자기 자신이 root
-</span><span style="color:#09f;font-style:italic"></span>}
+	<span style="color:#069;font-weight:bold">switch</span> val.(<span style="color:#069;font-weight:bold">type</span>) {
+	<span style="color:#069;font-weight:bold">case</span> <span style="color:#078;font-weight:bold">int</span>:
+		<span style="color:#366">println</span>(<span style="color:#c30">&#34;int&#34;</span>)
+	<span style="color:#069;font-weight:bold">case</span> <span style="color:#078;font-weight:bold">bool</span>:
+		<span style="color:#366">println</span>(<span style="color:#c30">&#34;bool&#34;</span>)
+	<span style="color:#069;font-weight:bold">case</span> <span style="color:#078;font-weight:bold">string</span>:
+		<span style="color:#366">println</span>(<span style="color:#c30">&#34;string&#34;</span>)
+	<span style="color:#069;font-weight:bold">default</span>:
+		<span style="color:#366">println</span>(<span style="color:#c30">&#34;unknown&#34;</span>)
+	}
 
-<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Find</span>(<span style="color:#078;font-weight:bold">int</span> x){
-    <span style="color:#069;font-weight:bold">if</span>(root[x] <span style="color:#555">==</span> x) <span style="color:#069;font-weight:bold">return</span> x;  <span style="color:#09f;font-style:italic">//root값이 자기 자신이라면 집합의 대표값
-</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">return</span> Find(root[x]);  <span style="color:#09f;font-style:italic">//재귀적으로 집합 대표값 찾기
-</span><span style="color:#09f;font-style:italic"></span>}
-
-<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Union</span>(<span style="color:#078;font-weight:bold">int</span> x,<span style="color:#078;font-weight:bold">int</span> y){
-    x <span style="color:#555">=</span> Find(x);
-    y <span style="color:#555">=</span> Find(y);
-    root[y] <span style="color:#555">=</span> x;
-}
-</code></pre></div><br>
-<h2>시간 복잡도</h2><a class="anchor" id="시간-복잡도"></a>
-<p><code>연결리스트</code>로 구현시<code> O(nlgn)</code>의 시간을 갖으며 <code>Tree</code>로 구현해도 불균형한 트리 (예 : skewd tree)와 같게 되면 연결리스트와 다를 것이 없어진다.</p>
+	fmt.<span style="color:#c0f">Println</span>(val)    <span style="color:#09f;font-style:italic">//int
+</span></code></pre></div><p>말그대로 case에 변수타입으로 분기할 수 있다. 이는 <code>.(type)</code>을 변수로 주어지면 사용할 수 있는데 이는 <code>동적 타입</code>을 갖는 인터페이스의 경우 인터페이스가 가지고 있는 실제 값에 접근하게 해주는 <code>type assertion</code>을 이용한 것이다.</p>
 <br>
-<h2>문제점</h2><a class="anchor" id="문제점"></a>
-<p>find시에 재귀적으로 찾기 때문에 만약에 set의 tree구조가 선형적인 형태라고 한다면 최악의 경우로 O(n)만큼의 시간이 소요 되게 된다.</p>
-<p>➡ <code>path compression (경로 압축)</code>기법 사용</p>
-<br>
-<p>또한, union시에 깊이가 작은 트리에 깊이가 깊은 트리를 붙이게 되면 깊이가 더 증가하여 시간에 악영향을 준다.</p>
-<p>➡ <code>union by rank</code> 기법 사용</p>
-<p><br><br></p>
-<h2>path compression (경로 압축)</h2><a class="anchor" id="path-compression-경로-압축"></a>
-<p>find 연산 수행시마다 트리의 구조를 평평하게 만드는 방법으로 각 root값을 재귀적으로 가리키는 것이 아닌 해당 집합의 속하는 원소는 <code>모두 동일한 root</code>를 가리키게 만드는 방법입니다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Find</span>(<span style="color:#078;font-weight:bold">int</span> x){
-    <span style="color:#09f;font-style:italic">/*find수행마다 해당 parent값을 root로 초기화*/</span>
-    <span style="color:#069;font-weight:bold">if</span>(root[x] <span style="color:#555">!=</span> x) root[x] <span style="color:#555">=</span> Find(root[x]);
-    <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">return</span> root[x];
-}
-</code></pre></div><br>
-<h2>union by rank</h2><a class="anchor" id="union-by-rank"></a>
-<p>항상 깊이가 깊은 트리에 작은 트리를 붙여 깊이를 유지하는 방법으로 깊이가 서로 같은 트리라면, 깊이를 1증가 시키게 됩니다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#078;font-weight:bold">int</span> root[n];
-<span style="color:#078;font-weight:bold">int</span> rank[n];
+<h4>4. break생략 가능</h4><a class="anchor" id="4-break생략-가능"></a>
+<p>기존의 다른언어들은 case가 끝날때 break를 생략하게되면 다음 case가 이어서 실행되는데 Go는 break를 사용하지 않아도 한 case를 실행하면 자동으로 종료 된다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">score <span style="color:#555">:=</span> <span style="color:#f60">67</span>
 
-<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">MakeSet</span>(<span style="color:#078;font-weight:bold">int</span> x){
-    root[x] <span style="color:#555">=</span> x;    <span style="color:#09f;font-style:italic">//처음은 다 원소가 하나씩있는 집합이므로 자기 자신이 root
-</span><span style="color:#09f;font-style:italic"></span>    rank[x] <span style="color:#555">=</span> <span style="color:#f60">0</span>;    <span style="color:#09f;font-style:italic">//깊이도 0으로 초기화
-</span><span style="color:#09f;font-style:italic"></span>}
-
-<span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Union</span>(<span style="color:#078;font-weight:bold">int</span> x,<span style="color:#078;font-weight:bold">int</span> y){
-    x <span style="color:#555">=</span> Find(x);    <span style="color:#09f;font-style:italic">//입력받은 x값의 root값을 저장
-</span><span style="color:#09f;font-style:italic"></span>    y <span style="color:#555">=</span> Find(y);    <span style="color:#09f;font-style:italic">//입력받은 y값의 root값을 저장
-</span><span style="color:#09f;font-style:italic"></span>
-    <span style="color:#069;font-weight:bold">if</span>(x<span style="color:#555">==</span>y)  <span style="color:#069;font-weight:bold">return</span>; <span style="color:#09f;font-style:italic">//root가 같다면 같은 집합
-</span><span style="color:#09f;font-style:italic"></span>
-    <span style="color:#069;font-weight:bold">if</span>(rank[x] <span style="color:#555">&lt;</span> rank[y])  root[x] <span style="color:#555">=</span> y; <span style="color:#09f;font-style:italic">//x의 root를 y로 변경
-</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span>(rank[x] <span style="color:#555">&gt;</span> rank[y]) root[y]<span style="color:#555">=</span> x; <span style="color:#09f;font-style:italic">//y의 root를 x로 변경
-</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">else</span>{
-        root[y] <span style="color:#555">=</span> x;
-        rank[x]<span style="color:#555">++</span>;  <span style="color:#09f;font-style:italic">//깊이가 같다면 x에 y를 붙였으므로 x깊이 증가
-</span><span style="color:#09f;font-style:italic"></span>    }
-
-</code></pre></div><br>
-<h2>두 기법을 적용 후 시간 복잡도</h2><a class="anchor" id="두-기법을-적용-후-시간-복잡도"></a>
-<p><code>O(lgn)</code></p>
-<br>
-<h2>활용</h2><a class="anchor" id="활용"></a>
-<p><code>Disjoint Set 자료구조</code>는 집합의 분할을 모델링 하기 때문에 <code>무방향 그래프(undirected graph)</code> 의 <code>연결된 요소들을 추적</code> 할 수 있어, 사이클이 발생하는지 / 같은 요소에 속하는지 확인 할 수 있고 대표적으로 <code>MST</code>를 찾는 <code>Kruskal 알고리즘</code>에 이용됩니다.</p>
+<span style="color:#069;font-weight:bold">switch</span> {
+	<span style="color:#069;font-weight:bold">case</span> score <span style="color:#555">&gt;=</span> <span style="color:#f60">80</span>:
+		fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;A&#34;</span>)
+    <span style="color:#069;font-weight:bold">fallthrough</span>
+	<span style="color:#069;font-weight:bold">case</span> score <span style="color:#555">&gt;=</span> <span style="color:#f60">60</span>:
+		fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;A&#34;</span>)
+    <span style="color:#069;font-weight:bold">fallthrough</span>
+	<span style="color:#069;font-weight:bold">case</span> score <span style="color:#555">&gt;=</span> <span style="color:#f60">40</span>:
+		fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;C&#34;</span>)
+    <span style="color:#069;font-weight:bold">fallthrough</span>
+	<span style="color:#069;font-weight:bold">default</span>:
+		fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;F&#34;</span>)
+	}
+</code></pre></div><p>만약에 다음 case도 이어서 실행을 하고 싶다면 <code>fallthrough</code>을 명시해주면 이어서 실행이 가능하다.</p>
+<p><br><br><br></p>
+<hr>
+<h2>Reference</h2><a class="anchor" id="reference"></a>
+<p>『Tucker의 Go 언어 프로그래밍』 스터디 요약 노트</p>
 </div>
 
 	
@@ -1836,10 +1883,10 @@ if (!doNotTrack) {
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/algorithm/kruskal/" title="[MST] Kruskal알고리즘" style="margin-right: 0px;">
+		<a class="next" href="/go/array/" title="배열" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>[MST] Kruskal알고리즘</label>
+                <label>배열</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1862,20 +1909,24 @@ if (!doNotTrack) {
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/algorithm/union-find/">[Disjoint Set] Union Find 알고리즘</a></li>
+            <li><a href="/go/control-statement/">제어문</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#disjoint-set">Disjoint Set</a></li>
-    <li><a href="#union-find">Union-Find</a></li>
-    <li><a href="#구현-방법">구현 방법</a></li>
-    <li><a href="#시간-복잡도">시간 복잡도</a></li>
-    <li><a href="#문제점">문제점</a></li>
-    <li><a href="#path-compression-경로-압축">path compression (경로 압축)</a></li>
-    <li><a href="#union-by-rank">union by rank</a></li>
-    <li><a href="#두-기법을-적용-후-시간-복잡도">두 기법을 적용 후 시간 복잡도</a></li>
-    <li><a href="#활용">활용</a></li>
+    <li><a href="#1-if문">1. if문</a>
+      <ul>
+        <li><a href="#-선언-방법">◾ 선언 방법</a></li>
+        <li><a href="#-error-발생하는-경우">◾ Error 발생하는 경우</a></li>
+      </ul>
+    </li>
+    <li><a href="#switch문">switch문</a>
+      <ul>
+        <li><a href="#-선언-방법-1">◾ 선언 방법</a></li>
+        <li><a href="#-특징">◾ 특징</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 </div>
@@ -1892,14 +1943,14 @@ if (!doNotTrack) {
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 12 April 2021
+		          Last update on 01 June 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2falgorithm%2funion-find%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fgo%2fcontrol-statement%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>
