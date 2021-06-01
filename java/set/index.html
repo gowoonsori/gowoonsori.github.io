@@ -4,28 +4,28 @@
 <html>
   <head>
     <title>
-	Hugo theme Custom 하기 :: Gowoonsori&#39;s TechBlog
+	Set :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-06-01T23:13:11 KST">
+<meta name="revised" content="2021-06-01T23:13:12 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>Hugo theme Custom 하기 :: Gowoonsori&#39;s TechBlog</title>
+<title>Set :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="Hugo theme Custom 하기 1 - shortcode 추가하기, css속성바꾸기, 방문자 수 표시하기">
+<meta name="description" content="Java의 Set Interface와 구현체인 HashSet,TreeSet,LinkedHashSet에 대해 정리한 글">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="Hugo theme Custom 하기" />
-<meta property="og:description" content="Hugo theme Custom 하기 1 - shortcode 추가하기, css속성바꾸기, 방문자 수 표시하기" />
+<meta property="og:title" content="Set" />
+<meta property="og:description" content="Java의 Set Interface와 구현체인 HashSet,TreeSet,LinkedHashSet에 대해 정리한 글" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/etc/start-hugo/custom/" />
+<meta property="og:url" content="https://gowoonsori.site/java/set/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2020-09-23T17:45:19+09:00" />
+<meta property="og:updated_time" content="2021-06-01T21:42:11+09:00" />
 
 
 
@@ -127,7 +127,7 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/etc/start-hugo/custom/"
+  <body data-url="/java/set/"
 
   class="hidebreadcrumb ">
 
@@ -205,12 +205,13 @@ if (!doNotTrack) {
   <p>Categories</p>
 </div>
 
-    <li data-nav-id="https://gowoonsori.site/java/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/java/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
           
       
@@ -443,7 +444,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/java/set/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/java/set/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -1400,13 +1401,12 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/etc/" class="dd-item parent haschildren
+    <li data-nav-id="https://gowoonsori.site/etc/" class="dd-item haschildren
         item_level_$level
         ">
 
       
-      
-          <i class="fas fa-chevron-down ddexp"></i>
+      <i class="fas fa-chevron-right ddexp"></i>
       
           
       
@@ -1488,13 +1488,12 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/etc/start-hugo/" class="dd-item parent haschildren
+    <li data-nav-id="https://gowoonsori.site/etc/start-hugo/" class="dd-item haschildren
         item_level_$level
         ">
 
       
-      
-          <i class="fas fa-chevron-down ddexp"></i>
+      <i class="fas fa-chevron-right ddexp"></i>
       
       
           <a href="/etc/start-hugo/">Hugo와 Github page로 블로그 구축</a>
@@ -1506,7 +1505,7 @@ if (!doNotTrack) {
         <ul>
               
 
-    <li data-nav-id="https://gowoonsori.site/etc/start-hugo/custom/" class="dd-item parent active
+    <li data-nav-id="https://gowoonsori.site/etc/start-hugo/custom/" class="dd-item
         item_level_$level
         ">
 
@@ -1688,7 +1687,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>Hugo theme Custom 하기</h1>
+			<h1>Set</h1>
         
 
 		
@@ -1710,179 +1709,314 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#code-태그-수정">Code 태그 수정</a>
+    <li><a href="#set-interface-제공-메서드">Set interface 제공 메서드</a></li>
+    <li><a href="#1-hashset">1. HashSet</a></li>
+    <li><a href="#2-linkedhashset">2. LinkedHashSet</a></li>
+    <li><a href="#3-treeset">3. TreeSet</a>
       <ul>
-        <li><a href="#-인라인-코드">◾ 인라인 코드</a></li>
-        <li><a href="#-블록-코드">◾ 블록 코드</a></li>
+        <li><a href="#-제공-메서드">◾ 제공 메서드</a></li>
+        <li><a href="#-사용-예">◾ 사용 예</a></li>
       </ul>
     </li>
-    <li><a href="#링크-태그a-꾸미기">링크 태그(a) 꾸미기</a></li>
-    <li><a href="#shortcode-추가하기">shortCode 추가하기</a>
-      <ul>
-        <li><a href="#-details">◾ details</a></li>
-        <li><a href="#-gist">◾ gist</a></li>
-      </ul>
-    </li>
-    <li><a href="#방문자-수-표시">방문자 수 표시</a></li>
-    <li><a href="#그-외">그 외</a></li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 	</div>
 	
 	
 
-	<div class="content"><p>우선 theme 마다 파일 경로나 파일이름, 설정방법은 조금씩 다를 수 있다는 것을 알리고 시작하겠습니다.</p>
-<p>저는 <a href="https://docport.netlify.app/shortcodes/panel/">theme-docport</a>를 사용하고 있고, 왼쪽에 카테고리 별로 구분할 수있는 기능과 오른쪽에 특정 header로의 이동기능이 있는 테마를 찾다가 이 테마를 선택하였습니다.</p>
+	<div class="content"><p>Set은 자바의 Collection중에 <code>객체</code>를 중복하지 않고 <code>하나</code>만 저장하는 자료구조로 List와 다르게 저장순서(index)를 따로 저장하지 않기 때문에 이를 통해 접근할 수 없다.</p>
+<h2>Set interface 제공 메서드</h2><a class="anchor" id="set-interface-제공-메서드"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">메서드</th>
+<th style="text-align:center">리턴 값</th>
+<th style="text-align:center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">add(E e)</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">객체 추가성공하면 true</td>
+</tr>
+<tr>
+<td style="text-align:center">addAll(Collection c)</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">컬렉션을 추가하면 데이터들을 Set에 맞게 저장</td>
+</tr>
+<tr>
+<td style="text-align:center">remove(Object o)</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">객체 삭제</td>
+</tr>
+<tr>
+<td style="text-align:center">contains(Object o)</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">객체가 포함되었는지 여부</td>
+</tr>
+<tr>
+<td style="text-align:center">eqauls(Object o)</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">같은지 비교</td>
+</tr>
+<tr>
+<td style="text-align:center">clear()</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">Set 초기화</td>
+</tr>
+<tr>
+<td style="text-align:center">iterator()</td>
+<td style="text-align:center">Iterator<E></td>
+<td style="text-align:center">set 요소 접근하기 위한 Iterator객체 반환</td>
+</tr>
+</tbody>
+</table>
 <p><br><br></p>
-<h2>Code 태그 수정</h2><a class="anchor" id="code-태그-수정"></a>
-<h3>◾ 인라인 코드</h3><a class="anchor" id="-인라인-코드"></a>
-<p>해당 code 태그의 css가 정의된 파일을 찾아야 되는데 hugo는 적용방식이 theme폴더 내의 파일을 이용하고 그 위의 루트파일에 같은 이름의 파일이 있으면 덮어씌워 적용하는 방식이다.</p>
-<p>그래서 theme/테마이름/assets/sass안에 있는 <code>main.css</code>에 code태그 속성이 정의 되어있길래 이를 root에 옮겨와 고쳐봤는데 수정이 되지 않았다.</p>
-<br>
-<p>찾다보니 root폴더에 resources/_gen/assets/scss/sass 폴더 내에 <code>main.scss_9fd32d87d247ca96761d3cae485087fe.content</code>라는 파일에 code가 정의되어 있는데 여기서 바꿔주니 수정이 되었다.<br> (아무래도 이 파일이 최종적으로 덮어지는 파일인 것 같다. 이 파일이 없으면 빌드가 되질 않는다.)</p>
-<p>css가 정의된 파일은 테마별로 다른 것 같으니 vscode를 이용한다면 <code>shift+ctrl+f</code>로 <code>public</code>폴더를 제외폴더로 놓고 찾아보면 수월하다.
-<br>나는 크롬 디버그모드로 code태그 색상값을 알아낸 후 색상값으로 검색하여 찾아냈다.</p>
-<br>
-<h3>◾ 블록 코드</h3><a class="anchor" id="-블록-코드"></a>
-<p>모든 테마 동일하게 hugo에서 코드 highlighting을 지원하고 있고 <code>config.toml</code>폴더 내의 내용을 수정하는 것으로 쉽게 변경이 가능하다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-toml" data-lang="toml"><span style="color:#09f;font-style:italic">#중략 ...</span>
+<h2>1. HashSet</h2><a class="anchor" id="1-hashset"></a>
+<p>Set을 구현한 구현체중에 하나로 Key를 Hash와 하여 저장하는 Set이다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#09f;font-style:italic">//선언
+</span><span style="color:#09f;font-style:italic"></span>Set<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> set <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> HashSet<span style="color:#555">&lt;&gt;();</span>
+<span style="color:#09f;font-style:italic">//add
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>1<span style="color:#555">));</span> <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>1<span style="color:#555">));</span> <span style="color:#09f;font-style:italic">//false
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>0<span style="color:#555">));</span> <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(-</span>1<span style="color:#555">));</span> <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>2<span style="color:#555">));</span> <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#09f;font-style:italic">//iterator를 이용한 모든 key 접근
+</span><span style="color:#09f;font-style:italic"></span>Iterator<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> it <span style="color:#555">=</span> set<span style="color:#555">.</span><span style="color:#309">iterator</span><span style="color:#555">();</span>
+<span style="color:#069;font-weight:bold">while</span><span style="color:#555">(</span>it<span style="color:#555">.</span><span style="color:#309">hasNext</span><span style="color:#555">()){</span>
+    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>it<span style="color:#555">.</span><span style="color:#309">next</span><span style="color:#555">());</span> <span style="color:#09f;font-style:italic">//0, -1, 1, 2
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span>
 
-<span style="color:#09f;font-style:italic"># Code highlight configuration</span>
-[markup.highlight]
-codeFences = <span style="color:#069;font-weight:bold">true</span>
-guessSyntax = <span style="color:#069;font-weight:bold">true</span>
-hl_Lines = <span style="color:#c30">&#34;&#34;</span>
-lineNoStart = <span style="color:#f60">1</span>
-lineNos = <span style="color:#069;font-weight:bold">false</span>
-lineNumbersInTable = <span style="color:#069;font-weight:bold">false</span>
-noClasses = <span style="color:#069;font-weight:bold">true</span>
-style = <span style="color:#c30">&#34;manni&#34;</span>
-<span style="color:#09f;font-style:italic">#style = &#34;native&#34;</span>
-tabWidth = <span style="color:#f60">2</span>
-</code></pre></div><ul>
-<li>
-<p><strong>codeFences</strong> : 이를 true로 해주어야 <code>div</code>로 한번 감싸 블록 코드로 표현이 가능하다.</p>
-</li>
-<li>
-<p><strong>guessSyntax</strong> : 해석 그대로 언어별로 문법을 추측하여 하이라이팅을 해준다.</p>
-</li>
-<li>
-<p><strong>hl_Lines</strong> : 지정 라인에 색상을 더 진하게 하이라이팅 줄 수 있다.</p>
-</li>
-<li>
-<p><strong>lineNoStart</strong> : 시작 라인 넘버를 지정해줄 수 있다.</p>
-</li>
-<li>
-<p><strong>lineNos</strong> : 블록 코드 왼쪽에 줄 번호를 표시할지 정할 수 있다.</p>
-</li>
-<li>
-<p><strong>lineNumbersInTable</strong> : 줄 번호 와 코드 사이에 간격을 지정할 수 있다.</p>
-<ul>
-<li>lineNos를 true로 했다면 이도 true로 해주는 게 좋다. (가시성도 문제지만 false로 하면 다른 사람이 코드를 복사해가려고 할 때 줄 번호도 같이 복사된다.)</li>
-</ul>
-</li>
-<li>
-<p><strong>noClasses</strong> : 클래스를 지정하는 것으로 코드 테마까지 커스텀할꺼 아니면 true로 하자.</p>
-</li>
-<li>
-<p><strong>style</strong> : 이를 통해 테마를 선택할 수 있다.</p>
-<ul>
-<li><a href="https://xyproto.github.io/splash/docs/longer/all.html">다양한 테마 보러가기</a></li>
-</ul>
-</li>
-<li>
-<p><strong>tabWidth</strong> : 탭 크기 지정</p>
-</li>
-</ul>
+<span style="color:#09f;font-style:italic">//remove
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">remove</span><span style="color:#555">(</span>1<span style="color:#555">));</span>    <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#09f;font-style:italic">//contains
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">contains</span><span style="color:#555">(</span>1<span style="color:#555">));</span>  <span style="color:#09f;font-style:italic">//false
+</span><span style="color:#09f;font-style:italic"></span>
+it <span style="color:#555">=</span> set<span style="color:#555">.</span><span style="color:#309">iterator</span><span style="color:#555">();</span>
+<span style="color:#069;font-weight:bold">while</span><span style="color:#555">(</span>it<span style="color:#555">.</span><span style="color:#309">hasNext</span><span style="color:#555">()){</span>
+    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>it<span style="color:#555">.</span><span style="color:#309">next</span><span style="color:#555">());</span> <span style="color:#09f;font-style:italic">//2
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span>
+</code></pre></div><p>HashSet은 Set에서 제공하는 메서드외에는 별도로 제공하는 메서드가 없고 내부적으로는 <code>HashMap</code>으로 동작하기 때문에 접근속도가 빠르다. 그리고 별도의 index를 가지지 않기 때문에 모든 데이터를 순회하고 싶을때는 <code>Iterator</code>를 이용해서 접근하면 된다.</p>
 <br>
-<p>위의 방법으로 테마를 설정해주고 css와 같은 방법으로 class명이 <code>highlight</code>인 부분을 가장 root css에서 찾아 border-radius를 조금 주고 margin-left가 -1.5em으로 되어있는 걸 없애 container크기에 맞추도록 해주었다.</p>
-<br>
-<h2>링크 태그(a) 꾸미기</h2><a class="anchor" id="링크-태그a-꾸미기"></a>
-<p>이 방법도 인라인 코드 수정 방법과 다르지 않다.</p>
-<p>root css파일에서 dom 트리중 a 태그를 찾아 수정해주면 된다.</p>
-<p>theme-docport는 <code>article section.page div.content a</code>라는 깊이에 a의 css가 정의 되어있어서 이부분에서 <code>color</code>와 <code>font-weight</code>, <code>cursor</code>옵션을 추가해 주었다.</p>
-<p>a태그 가 어딨는지 모르겠다면 <code>색상 코드</code>로 찾는 것도 꿀팁이다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#09f;font-style:italic">//HashSet 내부
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">transient</span> HashMap<span style="color:#555">&lt;</span>E<span style="color:#555">,</span>Object<span style="color:#555">&gt;</span> map<span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#069;font-weight:bold">final</span> Object PRESENT <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Object<span style="color:#555">();</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">HashSet</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+    map <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> HashMap<span style="color:#555">&lt;&gt;();</span>
+<span style="color:#555">}</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">boolean</span> <span style="color:#c0f">add</span><span style="color:#555">(</span>E e<span style="color:#555">)</span> <span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">return</span> map<span style="color:#555">.</span><span style="color:#309">put</span><span style="color:#555">(</span>e<span style="color:#555">,</span> PRESENT<span style="color:#555">)==</span><span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>위는 HashSet의 내부를 일부 가져온 것인데 살펴보면 내부 필드로 <code>HashMap</code>을 가지고 있어 이를 이용(<code>합성</code>)해서 HashSet을 구현하고 있고 add와 같은 메서드도 Map의 put메서드를 이용해서 데이터를 추가하는 것을 볼 수 있다.</p>
+<p>여기서 한가지 더 유심히 볼 부분이 <code>PRESENT</code>라는 객체인데 <code>Set</code>은 key만을 저장하는 자료구조이기 때문에 <code>value</code>는 어떤 객체가 오든 상관이없다. 그래서 HashSet을 만든 개발자는 어떤 HashSet에서든 모든 데이터는 value값을 동일한 value값을 가르키도록 <code>static</code>으로 PRESENT라는 객체를 생성해 메모리를 절약하는식으로 구성을 하였다.</p>
 <p><br><br></p>
-<h2>shortCode 추가하기</h2><a class="anchor" id="shortcode-추가하기"></a>
-<h3>◾ details</h3><a class="anchor" id="-details"></a>
-<p>간혹 코드가 길게 들어가는 글을 작성하다 보면 스크롤 내리는데 힘이 들어서 <code>코드 접기/펴기</code>를 <code>details</code>태그를 이용해서 사용하곤 했는 데 조금 편하게 사용하고자 shortCode로 만들었다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">{{ <span style="color:#a00;background-color:#faa">$</span>_hugo_config <span style="color:#555">:=</span> <span style="color:#c30">`{ &#34;version&#34;: 1 }`</span> }}
-&lt;details&gt;
-    &lt;summary class = <span style="color:#c30">&#34;detail-title&#34;</span> style=<span style="color:#c30">&#34;font-Weight : bold; font-size : 15px; color : #3158ad;&#34;</span> &gt;
-        {{<span style="color:#555">-</span> <span style="color:#069;font-weight:bold">if</span>  (.Get <span style="color:#c30">&#34;summary&#34;</span>)}}
-            {{<span style="color:#555">-</span> .Get <span style="color:#c30">&#34;summary&#34;</span> <span style="color:#555">-</span>}}
-        {{<span style="color:#555">-</span> <span style="color:#069;font-weight:bold">else</span>}}
-            <span style="color:#a00;background-color:#faa">📃</span> 코드  ( 접기 <span style="color:#555">/</span> 펼치기 )
-        {{end}}
-    &lt;<span style="color:#555">/</span>summary&gt;
-    &lt;div&gt;
-        {{.Inner}}
-    &lt;<span style="color:#555">/</span>div&gt;
-&lt;<span style="color:#555">/</span>details&gt;
-</code></pre></div><p><code>detail.html</code>을 root의 layouts/shortcodes에 새로 만들어주고 위의 코드와 같이 만들어 주었다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html">{{ %detail summary=&#34;title&#34;% }} 내용 {{ %/detail% }}
-</code></pre></div><p>내용은 별거 없는데 만약에 detail사용시 summary 옵션을 주면 해당 title로 생성이되고 없다면 <code>코드 (접기/펼기)</code>로 title을 지정하고 detail shortcode안의 내용을 <code>details</code>태그로 감싸라는 코드이다.</p>
-
-<details>
-    <summary class = "detail" style="font-Weight : bold; font-size : 15px; color : #3158ad;" >예시 보기
-    </summary>
-    <div>
-        <p><strong>이렇게 사용할 수 있습니다</strong> 😀</p>
-
-    </div>
-</details>
+<h2>2. LinkedHashSet</h2><a class="anchor" id="2-linkedhashset"></a>
+<p>HashSet과 거의 동일하지만 데이터의 입력된 순서대로 저장을하고 관리를 한다. 기본적으로는 HashSet보다는 성능이 조금 뒤쳐지지만, HashMap의 <code>capacity</code>가 커지는 경우에는 HashSet보다는 성능이 좋다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">Set<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> set <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> LinkedHashSet<span style="color:#555">&lt;&gt;();</span>
+System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>1<span style="color:#555">));</span> <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>0<span style="color:#555">));</span> <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(-</span>1<span style="color:#555">));</span> <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>2<span style="color:#555">));</span> <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>
+Iterator<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> it <span style="color:#555">=</span> set<span style="color:#555">.</span><span style="color:#309">iterator</span><span style="color:#555">();</span>
+<span style="color:#069;font-weight:bold">while</span><span style="color:#555">(</span>it<span style="color:#555">.</span><span style="color:#309">hasNext</span><span style="color:#555">()){</span>
+    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>it<span style="color:#555">.</span><span style="color:#309">next</span><span style="color:#555">());</span> <span style="color:#09f;font-style:italic">//1, 0, -1, 2
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span>
+</code></pre></div><p>LinkedHashSet도 Set의 메서드만을 갖고 있고, HashSet과 비교해해보면 데이터를 추가한 순서대로 출력하는 것을 볼 수 있다.</p>
 <p><br><br></p>
-<h3>◾ gist</h3><a class="anchor" id="-gist"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">&lt;script <span style="color:#069;font-weight:bold">type</span>=<span style="color:#c30">&#34;text/javascript&#34;</span> src=<span style="color:#c30">&#34;https://gist.github.com/{{ .Get 0 }}.js&#34;</span>&gt;&lt;<span style="color:#555">/</span>script&gt;
-</code></pre></div><p>코드가 있는 블로그를 작성할때 블로그에 코드를 그대로 붙여 넣는 것보다 <code>Gist</code>라는 곳에 코드 조각을 업로드하고 이를 붙여넣는 것이 수정에 있어 편할 수도 있다.</p>
-<p>코드에 수정이 생기면 원본코드도 수정하고 블로그도 수정하기 귀찮기 때문에 한곳만 수정해도 모두 수정이 되게 하기 위함이다.</p>
-<p>그래서 손쉽게 gist 코드를 붙여넣게 하기 위해 다음과 같이 shortCode를 만들어 주었다.</p>
-<p>사용방법은 다른 <code>{{ %gist 붙이고자하는 gist url 뒷 해시코드% }}</code>같이 사용하면 gist 코드가 삽입된다.</p>
-<p><br><br></p>
-<h2>방문자 수 표시</h2><a class="anchor" id="방문자-수-표시"></a>
-<p>보통 방문자 수 확인/분석은 구글 애널리스틱을 통해 할텐데 다른 사람들에게 현재 방문자수를 보여주고 싶을 수도 있을 것이다.</p>
-<p>따로 db를 이용하지 않는 한 힘들텐데, 이때 github 방문자수 표시를 위한 라이브러리인 <code>hits</code>를 이용하면 비교적 쉽게 이용할 수 있다.</p>
-<p><a href="https://hits.seeyoufarm.com/">hits</a>를 통해 이미지 링크를 만들고 이를 페이지에 삽입하면 다른사람이 해당 페이지에 접속할때마다 이 이미지를 불러올텐데 이때마다 count를 세는 방식이다.</p>
+<h2>3. TreeSet</h2><a class="anchor" id="3-treeset"></a>
+<p>TreeSet은 정렬된 상태의 Set을 사용하고 싶을때 사용할 수 있는 구현체로 <code>SortedSet</code>을 상속받은 <code>NavigableSet</code>을 구현한 구현체이다.</p>
+<h3>◾ 제공 메서드</h3><a class="anchor" id="-제공-메서드"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">메서드</th>
+<th style="text-align:center">리턴 값</th>
+<th style="text-align:center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">add(E e)</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">객체 추가성공하면 true</td>
+</tr>
+<tr>
+<td style="text-align:center">addAll(Collection c)</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">컬렉션을 추가하면 데이터들을 Set에 맞게 저장</td>
+</tr>
+<tr>
+<td style="text-align:center">remove(Object o)</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">객체 삭제</td>
+</tr>
+<tr>
+<td style="text-align:center">contains(Object o)</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">객체가 포함되었는지 여부</td>
+</tr>
+<tr>
+<td style="text-align:center">eqauls(Object o)</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">같은지 비교</td>
+</tr>
+<tr>
+<td style="text-align:center">clear()</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">Set 초기화</td>
+</tr>
+<tr>
+<td style="text-align:center">iterator()</td>
+<td style="text-align:center">Iterator<E></td>
+<td style="text-align:center">set 요소 접근하기 위한 Iterator객체 반환</td>
+</tr>
+<tr>
+<td style="text-align:center">descendingIterator()</td>
+<td style="text-align:center">Iterator<E></td>
+<td style="text-align:center">현재 정렬 순서의 반대로의 Iterator객체 반환</td>
+</tr>
+<tr>
+<td style="text-align:center">ceiling(E e)</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">객체보다 크거나 같은 객체중 가장 가까운 객체 return</td>
+</tr>
+<tr>
+<td style="text-align:center">higher(E e)</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">객체보다 큰 객체중 가장 가까운 객체 return</td>
+</tr>
+<tr>
+<td style="text-align:center">floor(E e)</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">객체보다 작거나 같은 객체중 가장 가까운 객체 return</td>
+</tr>
+<tr>
+<td style="text-align:center">lower(E e)</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">객체보다 작은 객체중 가장 가까운 객체 return</td>
+</tr>
+<tr>
+<td style="text-align:center">first()</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">첫번째 객체 return</td>
+</tr>
+<tr>
+<td style="text-align:center">last()</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">마지막 객체 return</td>
+</tr>
+<tr>
+<td style="text-align:center">headSet(E e)</td>
+<td style="text-align:center">SortedSet<E></td>
+<td style="text-align:center">객체보다 큰 객체들만 모아 Set return</td>
+</tr>
+<tr>
+<td style="text-align:center">headSet(E,boolean)</td>
+<td style="text-align:center">NavigableSet<E></td>
+<td style="text-align:center">headSet()에서 객체E를 포함할지 결정해서 return</td>
+</tr>
+<tr>
+<td style="text-align:center">subSet(E from,E to)</td>
+<td style="text-align:center">SorteSet<E></td>
+<td style="text-align:center">from는 포함하고 to는 포함하지 않고 to까지의 객체 Set return</td>
+</tr>
+<tr>
+<td style="text-align:center">subSet(E from,boolean, E to,boolean)</td>
+<td style="text-align:center">NavigableSet<E></td>
+<td style="text-align:center">from부터 to 각각 같은거 포함할지 결정해서 Set return</td>
+</tr>
+<tr>
+<td style="text-align:center">tailSet(E e)</td>
+<td style="text-align:center">SortedSet<E></td>
+<td style="text-align:center">객체보다 작거나 같은 객체Set return</td>
+</tr>
+<tr>
+<td style="text-align:center">tailSet(E,boolean)</td>
+<td style="text-align:center">NavigableSet<E></td>
+<td style="text-align:center">객체를 포함할지 결정해 Set return</td>
+</tr>
+<tr>
+<td style="text-align:center">pollFirst()</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">첫번째 객체 삭제하면서 return</td>
+</tr>
+<tr>
+<td style="text-align:center">pollLast()</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">마지막 객체 삭제하면서 return</td>
+</tr>
+</tbody>
+</table>
 <br>
-<p>우선 저 홈페이지에 가서 본인의 루트 홈페이지(본인 도메인)를 입력해서 태그를 생성하자.</p>
-<p>본인 입맞대로 커스텀을 하면 아래사진과 같이 태그가 생성된다.
-<img src="./hits.PNG?classes=border,shadow" alt="hits"></p>
-<br>
-<p>이 링크를 아래의 코드와 같이 div로 한번 감싸주고 img 링크를 수정해주어야 사용이 가능하다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;text-align: center;&#34;</span>&gt;
-  &lt;<span style="color:#309;font-weight:bold">a</span> <span style="color:#309">href</span><span style="color:#555">=</span><span style="color:#c30">&#34;https://hits.seeyoufarm.com&#34;</span>&gt;
-    &lt;<span style="color:#309;font-weight:bold">img</span>
-      <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgowoonsori.site&amp;count_bg=%230DC276&amp;title_bg=%23555555&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&amp;edge_flat=false&#34;</span>
-    /&gt;
-  &lt;/<span style="color:#309;font-weight:bold">a</span>&gt;
-&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
-</code></pre></div><p>그대로 붙여넣으면 어느 페이지를 가던지 루트 페이지의 방문자 수로 표시되기 때문에 제대로 된 페이지 방문자수 측정이 안된다.</p>
+<h3>◾ 사용 예</h3><a class="anchor" id="-사용-예"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">TreeSet<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> set <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> TreeSet<span style="color:#555">&lt;&gt;(</span>Arrays<span style="color:#555">.</span><span style="color:#309">asList</span><span style="color:#555">(</span>4<span style="color:#555">,</span>2<span style="color:#555">,</span>3<span style="color:#555">,-</span>1<span style="color:#555">,</span>0<span style="color:#555">,</span>8<span style="color:#555">,</span>4<span style="color:#555">,</span>2<span style="color:#555">,</span>7<span style="color:#555">,</span>10<span style="color:#555">));</span>
+System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">);</span>    <span style="color:#09f;font-style:italic">//[-1, 0, 2, 3, 4, 7, 8, 10]
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#09f;font-style:italic">//근접한 요소 접근
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">ceiling</span><span style="color:#555">(</span>4<span style="color:#555">));</span>   <span style="color:#09f;font-style:italic">//4
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">higher</span><span style="color:#555">(</span>4<span style="color:#555">));</span>    <span style="color:#09f;font-style:italic">//7
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">floor</span><span style="color:#555">(</span>2<span style="color:#555">));</span>     <span style="color:#09f;font-style:italic">//2
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">floor</span><span style="color:#555">(</span>2<span style="color:#555">));</span>     <span style="color:#09f;font-style:italic">//0
+</span><span style="color:#09f;font-style:italic"></span>
+System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">();</span>
 
-<link rel="stylesheet" type="text/css" href='https://gowoonsori.site/sass/shortcodes/notice.css'>
-<div class="notices primary">
-	<p>위의 코드를 본인에 맞게 안고치고 그대로 사용하면 내 블로그의 방문자수가 집계될 것이다.</p>
+<span style="color:#09f;font-style:italic">//부분집합 추출
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">headSet</span><span style="color:#555">(</span>3<span style="color:#555">));</span>             <span style="color:#09f;font-style:italic">//[-1, 0, 2]
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">headSet</span><span style="color:#555">(</span>3<span style="color:#555">,</span><span style="color:#069;font-weight:bold">true</span><span style="color:#555">));</span>        <span style="color:#09f;font-style:italic">//[-1, 0, 2, 3]
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">subSet</span><span style="color:#555">(</span>3<span style="color:#555">,</span>8<span style="color:#555">));</span>            <span style="color:#09f;font-style:italic">//[3, 4, 7]
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">subSet</span><span style="color:#555">(</span>3<span style="color:#555">,</span><span style="color:#069;font-weight:bold">false</span><span style="color:#555">,</span>8<span style="color:#555">,</span><span style="color:#069;font-weight:bold">true</span><span style="color:#555">));</span> <span style="color:#09f;font-style:italic">//[4, 7, 8]
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">tailSet</span><span style="color:#555">(</span>4<span style="color:#555">));</span>             <span style="color:#09f;font-style:italic">//[4, 7, 8, 10]
+</span><span style="color:#09f;font-style:italic"></span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>set<span style="color:#555">.</span><span style="color:#309">tailSet</span><span style="color:#555">(</span>4<span style="color:#555">,</span><span style="color:#069;font-weight:bold">false</span><span style="color:#555">));</span>       <span style="color:#09f;font-style:italic">//[7, 8, 10]
+</span><span style="color:#09f;font-style:italic"></span>
+System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">();</span>
 
-</div>
+<span style="color:#09f;font-style:italic">//Iterator
+</span><span style="color:#09f;font-style:italic"></span>Iterator it <span style="color:#555">=</span> set<span style="color:#555">.</span><span style="color:#309">iterator</span><span style="color:#555">();</span>
+<span style="color:#069;font-weight:bold">while</span><span style="color:#555">(</span>it<span style="color:#555">.</span><span style="color:#309">hasNext</span><span style="color:#555">()){</span>
+    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">print</span><span style="color:#555">(</span>it<span style="color:#555">.</span><span style="color:#309">next</span><span style="color:#555">()</span> <span style="color:#555">+</span> <span style="color:#c30">&#34; &#34;</span><span style="color:#555">);</span>    <span style="color:#09f;font-style:italic">//-1 0 2 3 4 7 8 10
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span>
+System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">();</span>
 
+<span style="color:#09f;font-style:italic">//역순 Iterator
+</span><span style="color:#09f;font-style:italic"></span>it <span style="color:#555">=</span> set<span style="color:#555">.</span><span style="color:#309">descendingIterator</span><span style="color:#555">();</span>          <span style="color:#09f;font-style:italic">//10 8 7 4 3 2 0 -1
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">while</span><span style="color:#555">(</span>it<span style="color:#555">.</span><span style="color:#309">hasNext</span><span style="color:#555">()){</span>
+    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">print</span><span style="color:#555">(</span>it<span style="color:#555">.</span><span style="color:#309">next</span><span style="color:#555">()</span> <span style="color:#555">+</span> <span style="color:#c30">&#34; &#34;</span><span style="color:#555">);</span>
+<span style="color:#555">}</span>
+System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">();</span>
+
+
+<span style="color:#09f;font-style:italic">//내림차순 TreeSet 선언
+</span><span style="color:#09f;font-style:italic"></span>TreeSet<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> descSet <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> TreeSet<span style="color:#555">&lt;&gt;(</span>Collections<span style="color:#555">.</span><span style="color:#309">reverseOrder</span><span style="color:#555">());</span>
+descSet<span style="color:#555">.</span><span style="color:#309">addAll</span><span style="color:#555">(</span>Arrays<span style="color:#555">.</span><span style="color:#309">asList</span><span style="color:#555">(</span>4<span style="color:#555">,</span>2<span style="color:#555">,</span>3<span style="color:#555">,-</span>1<span style="color:#555">,</span>0<span style="color:#555">,</span>8<span style="color:#555">,</span>4<span style="color:#555">,</span>2<span style="color:#555">,</span>7<span style="color:#555">,</span>10<span style="color:#555">));</span>
+System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>descSet<span style="color:#555">);</span>    <span style="color:#09f;font-style:italic">//[10, 8, 7, 4, 3, 2, 0, -1]
+</span></code></pre></div><p>TreeSet은 이름에서 유추할 수 있듯이 내부적으로 <code>Tree</code>로 구성되어있는 Set이다. 그렇기 때문에 특정 원소를 기준으로 다음,이전값이나 부분집합을 구할 수 있는 것인데 Tree는 데이터에따라 잘못하면 편향트리가 되어 접근하는데 O(N)이 소모되기 때문에 Balancing을 해주어야한다. 그래서 TreeSet도 내부를 봐보면 <code>HashSet</code>이 HashMap을 이용해서 <code>합성</code>한 것 처럼 <code>TreeSet</code>도 TreeMap을 이용해서 <code>합성</code>해 구현되어 있다.</p>
 <br>
-<p>위의 img태그의 <code>src</code>를 잘보면 <code>url=https%3A%2F%2Fgowoonsori.site</code>와 같이 <code>본인의 사이트 도메인</code>이 있고 <code>&amp;count_bg...</code>가 있다.
-<br>(여기서 %3A는 <code>:</code>, %2F는 <code>/</code>를 뜻한다.)</p>
-<p>이 사이에 <code>{{ .Site.BaseURL }}{{ .RelPermalink }}</code>를 넣어주면 아래와 같은 코드가 된다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;text-align: center;&#34;</span>&gt;
-  &lt;<span style="color:#309;font-weight:bold">a</span> <span style="color:#309">href</span><span style="color:#555">=</span><span style="color:#c30">&#34;https://hits.seeyoufarm.com&#34;</span>&gt;
-    &lt;<span style="color:#309;font-weight:bold">img</span>
-      <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;https://hits.seeyoufarm.com/api/count/incr/badge.svg?url={{ .Site.BaseURL }}{{ .RelPermalink }}&amp;count_bg=%230DC276&amp;title_bg=%23555555&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&amp;edge_flat=false&#34;</span>
-    /&gt;
-  &lt;/<span style="color:#309;font-weight:bold">a</span>&gt;
-&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
-</code></pre></div><p>완성된 위 코드를 원하는 layout에 삽입해주면 되는데 나는 <code>_layouts/partials/body-article-sidepage.html</code>에 삽입해 주었고, 다른 테마를 사용하거나 다른 곳에 넣고 싶다면 해당 문서를 잘 참고하여 원하는 layout안의 위치에다가 삽입해주면 된다.</p>
-<p><br><br></p>
-<h2>그 외</h2><a class="anchor" id="그-외"></a>
-<p>head에 <code>og</code>와 같은 메타데이터들을 추가해주었고 nav, menubar, 링크 등에 <code>cursor:pointer;</code>가 없어서 클릭할 수 있는 것들이 구분이 가지 않아서 각 태그들에 <code>:hover</code>옵션으로 추가 해 주었다.</p>
-<p>또, content의 min-width가 없이 <code>%</code>로만 지정이 되어있어서 끝도없이 사이즈가 줄여지길래 아이폰에 맞춰서 min-width를 320으로 설정해 주었다.</p>
-<br>
-<p>글꼴등 더 커스텀하고 싶은게 많은데 은근 시간을 많이 잡아먹어 이정도에 일단 만족하며 사용하고 있는 중이다.</p>
-<p>또 좋은 shortCode나 팁이 생기면 공유할 예정이다. 😄</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#09f;font-style:italic">//TreeSet 내부구조 중 일부
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">transient</span> NavigableMap<span style="color:#555">&lt;</span>E<span style="color:#555">,</span>Object<span style="color:#555">&gt;</span> m<span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#069;font-weight:bold">final</span> Object PRESENT <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Object<span style="color:#555">();</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">TreeSet</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+  <span style="color:#069;font-weight:bold">this</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">new</span> TreeMap<span style="color:#555">&lt;&gt;());</span>
+<span style="color:#555">}</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">boolean</span> <span style="color:#c0f">add</span><span style="color:#555">(</span>E e<span style="color:#555">)</span> <span style="color:#555">{</span>
+  <span style="color:#069;font-weight:bold">return</span> m<span style="color:#555">.</span><span style="color:#309">put</span><span style="color:#555">(</span>e<span style="color:#555">,</span> PRESENT<span style="color:#555">)==</span><span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>TreeMap은 SortedMap의 구현체로 내부적으로 <code>Red Black Tree</code>로 구현되어 있어 balancing을 수행한다. 이런 이유로 <code>HashSet</code>은 O(1)만에 데이터를 접근할 수 있지만 <code>TreeSet</code>은 접근도 O(logN), 삽입/수정도 balancing수행으로 O(logN)만큼의 시간이 소요된다.</p>
+<p>특정한 목적이 있지 않는이상 <code>HashSet</code>을 이용하는 것이 performance에 좋다.</p>
+<p><br><br><br></p>
+<hr>
+<h2>Reference</h2><a class="anchor" id="reference"></a>
+<p><a href="https://docs.oracle.com/javase/8/docs/api/">https://docs.oracle.com/javase/8/docs/api/</a></p>
 </div>
 
 	
@@ -1903,10 +2037,10 @@ tabWidth = <span style="color:#f60">2</span>
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/etc/start-hugo/pagination/" title="페이징 기능 추가하기" style="margin-right: 0px;">
+		<a class="next" href="/java/listtoarray_arraytolist/" title="List를 Array로 Array를 List로 변환" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>페이징 기능 추가하기</label>
+                <label>List를 Array로 Array를 List로 변환</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1929,26 +2063,21 @@ tabWidth = <span style="color:#f60">2</span>
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/etc/start-hugo/custom/">Hugo theme Custom 하기</a></li>
+            <li><a href="/java/set/">Set</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#code-태그-수정">Code 태그 수정</a>
+    <li><a href="#set-interface-제공-메서드">Set interface 제공 메서드</a></li>
+    <li><a href="#1-hashset">1. HashSet</a></li>
+    <li><a href="#2-linkedhashset">2. LinkedHashSet</a></li>
+    <li><a href="#3-treeset">3. TreeSet</a>
       <ul>
-        <li><a href="#-인라인-코드">◾ 인라인 코드</a></li>
-        <li><a href="#-블록-코드">◾ 블록 코드</a></li>
+        <li><a href="#-제공-메서드">◾ 제공 메서드</a></li>
+        <li><a href="#-사용-예">◾ 사용 예</a></li>
       </ul>
     </li>
-    <li><a href="#링크-태그a-꾸미기">링크 태그(a) 꾸미기</a></li>
-    <li><a href="#shortcode-추가하기">shortCode 추가하기</a>
-      <ul>
-        <li><a href="#-details">◾ details</a></li>
-        <li><a href="#-gist">◾ gist</a></li>
-      </ul>
-    </li>
-    <li><a href="#방문자-수-표시">방문자 수 표시</a></li>
-    <li><a href="#그-외">그 외</a></li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 </div>
@@ -1965,14 +2094,14 @@ tabWidth = <span style="color:#f60">2</span>
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 23 September 2020
+		          Last update on 01 June 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fetc%2fstart-hugo%2fcustom%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fjava%2fset%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>
