@@ -4,28 +4,28 @@
 <html>
   <head>
     <title>
-	[Error 해결] @OneToMany 관계시 발생한 에러 :: Gowoonsori&#39;s TechBlog
+	포인터 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-06-02T23:34:43 KST">
+<meta name="revised" content="2021-06-02T23:34:42 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>[Error 해결] @OneToMany 관계시 발생한 에러 :: Gowoonsori&#39;s TechBlog</title>
+<title>포인터 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="&#34;A collection with cascade=&#34;all-delete-orphan&#34; was no longer referenced by the owning entity instance&#34;에러 해결하기">
+<meta name="description" content="Go Lang의 포인터에 대해 정리한 글">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="[Error 해결] @OneToMany 관계시 발생한 에러" />
-<meta property="og:description" content="&#34;A collection with cascade=&#34;all-delete-orphan&#34; was no longer referenced by the owning entity instance&#34;에러 해결하기" />
+<meta property="og:title" content="포인터" />
+<meta property="og:description" content="Go Lang의 포인터에 대해 정리한 글" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/spring/onetomanyerror/" />
+<meta property="og:url" content="https://gowoonsori.site/go/pointer/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2021-04-11T20:51:45+09:00" />
+<meta property="og:updated_time" content="2021-06-02T22:06:54+09:00" />
 
 
 
@@ -127,7 +127,7 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/spring/onetomanyerror/"
+  <body data-url="/go/pointer/"
 
   class="hidebreadcrumb ">
 
@@ -513,13 +513,12 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/spring/" class="dd-item parent haschildren
+    <li data-nav-id="https://gowoonsori.site/spring/" class="dd-item haschildren
         item_level_$level
         ">
 
       
-      
-          <i class="fas fa-chevron-down ddexp"></i>
+      <i class="fas fa-chevron-right ddexp"></i>
       
           
       
@@ -582,7 +581,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/spring/onetomanyerror/" class="dd-item parent active
+    <li data-nav-id="https://gowoonsori.site/spring/onetomanyerror/" class="dd-item
         item_level_$level
         ">
 
@@ -756,12 +755,13 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/go/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/go/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
           
       
@@ -926,7 +926,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/go/pointer/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/go/pointer/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -1704,7 +1704,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>[Error 해결] @OneToMany 관계시 발생한 에러</h1>
+			<h1>포인터</h1>
         
 
 		
@@ -1726,69 +1726,193 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#1-선언-방법">1. 선언 방법</a></li>
+    <li><a href="#2-사용-방법">2. 사용 방법</a></li>
+    <li><a href="#3-특징">3. 특징</a>
       <ul>
-        <li><a href="#문제점-1-초기화를-하지-않았다">문제점 1. 초기화를 하지 않았다.</a></li>
-        <li><a href="#문제점-2-update시에-똑같은-에러-발생">문제점 2. Update시에 똑같은 에러 발생</a></li>
+        <li><a href="#-여러-변수에서-같은-메모리를-가리킬-수-있다">◾ 여러 변수에서 같은 메모리를 가리킬 수 있다.</a></li>
+        <li><a href="#-메모리주소는-16진수로-표현한다">◾ 메모리주소는 16진수로 표현한다.</a></li>
+        <li><a href="#-연산이-가능하다">◾ ==연산이 가능하다.</a></li>
+        <li><a href="#-기본값은-nil">◾ 기본값은 nil</a></li>
       </ul>
     </li>
+    <li><a href="#4-사용-목적">4. 사용 목적</a></li>
+    <li><a href="#5-구조체-포인터-초기화">5. 구조체 포인터 초기화</a></li>
+    <li><a href="#6-인스턴스">6. 인스턴스</a>
+      <ul>
+        <li><a href="#-삭제되는-시점">◾ 삭제되는 시점</a></li>
+        <li><a href="#-구조체-포인터를-이용해-객체-생성하기">◾ 구조체 포인터를 이용해 객체 생성하기</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 	</div>
 	
 	
 
-	<div class="content"><p>JPA의 구현체인 hiberante를 이용해서 <code>엔티티</code>간의 상속관계를 설정하고 처음 사용해보는데 발생한 에러인 <code>A collection with cascade=&quot;all-delete-orphan&quot; was no longer referenced by the owning entity instance</code> 문제 해결한 방법을 기록하려고 합니다.</p>
-<p><code>User</code>의 엔티티와 <code>Customer</code>엔티티간의 <code>1:N</code>의 연관관계를 맺기 위해 User에는 <code>@OneToMany</code>를 Customer에는 <code>@ManyToOne</code>관계를 설정을 하고 로직을 돌려보는데 위와 같은 에러가 발생했습니다.</p>
+	<div class="content"><p><code>메모리 주소</code>를 <code>값</code>으로 갖는 <code>데이터 타입</code></p>
 <br>
-<h3>문제점 1. 초기화를 하지 않았다.</h3><a class="anchor" id="문제점-1-초기화를-하지-않았다"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">User</span><span style="color:#555">{</span>
-  <span style="color:#99f">@Id</span>
-  <span style="color:#99f">@GeneratedValue</span><span style="color:#555">(</span>strategy<span style="color:#555">=</span>GenerationType<span style="color:#555">.</span><span style="color:#309">IDENTITY</span><span style="color:#555">)</span>
-  <span style="color:#069;font-weight:bold">private</span> Long id<span style="color:#555">;</span>
+<h2>1. 선언 방법</h2><a class="anchor" id="1-선언-방법"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> a <span style="color:#078;font-weight:bold">int</span>
+<span style="color:#069;font-weight:bold">var</span> p <span style="color:#555">*</span><span style="color:#078;font-weight:bold">int</span>
 
-  <span style="color:#99f">@OneToMany</span><span style="color:#555">(</span>mappedBy <span style="color:#555">=</span> <span style="color:#c30">&#34;user&#34;</span><span style="color:#555">,</span> cascade <span style="color:#555">=</span> CascadeType<span style="color:#555">.</span><span style="color:#309">ALL</span><span style="color:#555">,</span> orphanRemoval <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">true</span><span style="color:#555">)</span>
-  <span style="color:#069;font-weight:bold">private</span> List<span style="color:#555">&lt;</span>Customer<span style="color:#555">&gt;</span> customers<span style="color:#555">;</span>
-<span style="color:#555">}</span>
-</code></pre></div><p>아직 연관관계맺는것에 익숙하지 않아 다른 필드와 같이 선언만 해주고 초기화 코드가 없었고, 새로운 User를 선언하거나 수정할때 해당 cutomer가 null이 되서 아무 것도 참조하지 않는다고 에러가 뜬 것이었습니다.</p>
-<p>엔티티를 영속 상태로 만들때 컬렉션 필드를 효율적으로 관리하기 위해 하이버네이트에서 미리 만들어둔 Wrapper클래스로 감싸(변경하여) 저장하기 때문에 즉시 초기화해서 사용하는 것을 권장한다고 한다.</p>
-<ul>
-<li>PersistentBag : Collection/List (중복 허용o / 순서 x)</li>
-<li>PersistentSet : Set (중복 허용 x / 순서 x)</li>
-<li>PersistentList : List + @OrderColumn (중복 허용 o / 순서 o)</li>
-</ul>
-<h4>번외) @OrderColumn잘 사용하지 않는 이유</h4><a class="anchor" id="번외-ordercolumn잘-사용하지-않는-이유"></a>
-<p>OrderColumn을 사용하면 순서를 저장하기 위해 position컬럼도 추가로 저장외 되는데 1:N의 관계에서 키를 1이 가지는 경우의 문제처럼 1에서 N을 저장하려고 할때 position을 모르기 때문에 insert시 처음 position없이 삽입하고 다시 update하는 sql문이 추가로 발생하게 되나.</p>
-<h4>해결방법</h4><a class="anchor" id="해결방법"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">User</span><span style="color:#555">{</span>
-  <span style="color:#99f">@Id</span>
-  <span style="color:#99f">@GeneratedValue</span><span style="color:#555">(</span>strategy<span style="color:#555">=</span>GenerationType<span style="color:#555">.</span><span style="color:#309">IDENTITY</span><span style="color:#555">)</span>
-  <span style="color:#069;font-weight:bold">private</span> Long id<span style="color:#555">;</span>
+p = <span style="color:#555">&amp;</span>a
+</code></pre></div><p>메모리주소를 가리킬 데이터타입형에 <code>*</code>를 붙이면 해당 타입의 메모리주소를 담는 포인트형을 선언 할 수 있다. <code>&amp;</code>를 이용해서 변수의 메모리주소 시작값을 할당 할 수 있다.</p>
+<p>메모리 주소 시작값은 하나의 값으로 일종의 <code>숫자 값</code>이다.</p>
+<p><br><br></p>
+<h2>2. 사용 방법</h2><a class="anchor" id="2-사용-방법"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> a <span style="color:#078;font-weight:bold">int</span>
+<span style="color:#069;font-weight:bold">var</span> p <span style="color:#555">*</span><span style="color:#078;font-weight:bold">int</span>
+<span style="color:#069;font-weight:bold">var</span> b <span style="color:#555">*</span><span style="color:#078;font-weight:bold">int</span>
+<span style="color:#069;font-weight:bold">var</span> c <span style="color:#555">*</span><span style="color:#078;font-weight:bold">int</span>
 
-    <span style="color:#99f">@OneToMany</span><span style="color:#555">(</span>mappedBy <span style="color:#555">=</span> <span style="color:#c30">&#34;user&#34;</span><span style="color:#555">,</span> cascade <span style="color:#555">=</span> CascadeType<span style="color:#555">.</span><span style="color:#309">ALL</span><span style="color:#555">,</span> orphanRemoval <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">true</span><span style="color:#555">)</span>
-    <span style="color:#069;font-weight:bold">private</span> List<span style="color:#555">&lt;</span>Customer<span style="color:#555">&gt;</span> customers <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> ArrayList<span style="color:#555">&lt;&gt;();</span>
-<span style="color:#555">}</span>
-</code></pre></div><p>초기화 문제이기 때문에 생성자등으로 초기화를 해주거나 위와 같이 처음부터 비어있는 ArrayList를 갖도록 바꾸어 주었습니다.</p>
+p = <span style="color:#555">&amp;</span>a
+b = <span style="color:#555">&amp;</span>a
+c = <span style="color:#555">&amp;</span>a
+
+<span style="color:#555">*</span>p = <span style="color:#f60">20</span>     <span style="color:#09f;font-style:italic">//해당 메모리주소에 값을 할당
+</span><span style="color:#09f;font-style:italic"></span>p = <span style="color:#f60">20</span>      <span style="color:#09f;font-style:italic">//error
+</span><span style="color:#09f;font-style:italic"></span>
+fmt.<span style="color:#c0f">Println</span>(<span style="color:#555">*</span>b)     <span style="color:#09f;font-style:italic">//20
+</span></code></pre></div><p>포인터 변수를 선언할때 말고 사용하는 시점에 변수앞에 <code>*</code>를 붙이면 메모리주소에 들어있는 값을 의미하고 이를 이용해 메모리주소에 값을 할당 할 수 있다.</p>
+<p>만일, 포인터변수에 int값을 할당하려고 하면 <code>포인터타입 != int</code>이기 때문에 타입에러가 난다.</p>
+<p><br><br></p>
+<h2>3. 특징</h2><a class="anchor" id="3-특징"></a>
+<h3>◾ 여러 변수에서 같은 메모리를 가리킬 수 있다.</h3><a class="anchor" id="-여러-변수에서-같은-메모리를-가리킬-수-있다"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> a <span style="color:#078;font-weight:bold">int</span>
+<span style="color:#069;font-weight:bold">var</span> b <span style="color:#555">*</span><span style="color:#078;font-weight:bold">int</span>
+<span style="color:#069;font-weight:bold">var</span> c <span style="color:#555">*</span><span style="color:#078;font-weight:bold">int</span>
+
+b = <span style="color:#555">&amp;</span>a
+c = <span style="color:#555">&amp;</span>a
+
+a = <span style="color:#f60">20</span>
+
+fmt.<span style="color:#c0f">Println</span>(<span style="color:#555">*</span>b)     <span style="color:#09f;font-style:italic">//20
+</span><span style="color:#09f;font-style:italic"></span>fmt.<span style="color:#c0f">Println</span>(<span style="color:#555">*</span>c)     <span style="color:#09f;font-style:italic">//20
+</span></code></pre></div><p>포인터타입 변수도 <code>변수</code>이기 때문에 위 코드의 <code>b,c</code>는 같은 메모리 공간(a의 메모리주소)을 가리킬 수 있다.</p>
 <br>
-<h3>문제점 2. Update시에 똑같은 에러 발생</h3><a class="anchor" id="문제점-2-update시에-똑같은-에러-발생"></a>
-<p>Update시에 Dto를 이용해서 입력을 받아오고 새로운 Entity객체를 만들어 save하려고 보니 위의 에러가 발생했습니다. 정확한 이유는 알 수 없었지만 많은 고민끝에 빈 컬렉션이라고 해도 기존의 User엔티티가 참조하고 있는 customers와 새로운 entity의 customers가 같지 않기 때문에 (hashcode가 다르다.) 새로운 객체로 삽입시 참조가 끊기기 때문에 에러가 발생한 거라고 추측하고 새로운 Entity에도 기존의 customers를 추가하는 방법으로 해결했습니다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@PatchMapping</span><span style="color:#555">(</span><span style="color:#c30">&#34;/me&#34;</span><span style="color:#555">)</span>
-<span style="color:#069;font-weight:bold">public</span> ApiResult<span style="color:#555">&lt;</span>User<span style="color:#555">.</span><span style="color:#309">Info</span><span style="color:#555">&gt;</span> <span style="color:#c0f">updateMyInfo</span><span style="color:#555">(</span><span style="color:#99f">@Valid</span> <span style="color:#99f">@RequestBody</span> UpdateInfoRequest updateInfoRequest<span style="color:#555">,</span>
-                                             JwtAuthenticationToken authentication<span style="color:#555">){</span>
-  User user <span style="color:#555">=</span> <span style="color:#555">(</span>User<span style="color:#555">)</span>authentication<span style="color:#555">.</span><span style="color:#309">getDetails</span><span style="color:#555">();</span>
-  User updateUser <span style="color:#555">=</span> User<span style="color:#555">.</span><span style="color:#309">builder</span><span style="color:#555">()</span>
-                <span style="color:#555">.</span><span style="color:#309">id</span><span style="color:#555">(</span>user<span style="color:#555">.</span><span style="color:#309">getId</span><span style="color:#555">())</span>
-                <span style="color:#555">.</span><span style="color:#309">customers</span><span style="color:#555">(</span>user<span style="color:#555">.</span><span style="color:#309">getCustomers</span><span style="color:#555">())</span>   <span style="color:#09f;font-style:italic">//추가한 부분 (기존에는 빼놓고 작성해서 다른 비어있는 ArrayList가 들어갔을 것이다.)
-</span><span style="color:#09f;font-style:italic"></span>                <span style="color:#555">.</span><span style="color:#309">accumulationRate</span><span style="color:#555">(</span>updateInfoRequest<span style="color:#555">.</span><span style="color:#309">getAccumulationRate</span><span style="color:#555">())</span>
-                <span style="color:#555">.</span><span style="color:#309">email</span><span style="color:#555">(</span>updateInfoRequest<span style="color:#555">.</span><span style="color:#309">getEmail</span><span style="color:#555">())</span>
-                <span style="color:#555">.</span><span style="color:#309">name</span><span style="color:#555">(</span>updateInfoRequest<span style="color:#555">.</span><span style="color:#309">getName</span><span style="color:#555">())</span>
-                <span style="color:#555">.</span><span style="color:#309">password</span><span style="color:#555">(</span>updateInfoRequest<span style="color:#555">.</span><span style="color:#309">getPassword</span><span style="color:#555">())</span>
-                <span style="color:#555">.</span><span style="color:#309">phoneNumber</span><span style="color:#555">(</span>updateInfoRequest<span style="color:#555">.</span><span style="color:#309">getPhoneNumber</span><span style="color:#555">())</span>
-                <span style="color:#555">.</span><span style="color:#309">build</span><span style="color:#555">();</span>
-  <span style="color:#069;font-weight:bold">return</span> success<span style="color:#555">(</span>User<span style="color:#555">.</span><span style="color:#309">Info</span><span style="color:#555">.</span><span style="color:#309">of</span><span style="color:#555">(</span>userService<span style="color:#555">.</span><span style="color:#309">insert</span><span style="color:#555">(</span>updateUser<span style="color:#555">))</span> <span style="color:#555">);</span>
-<span style="color:#555">}</span>
-</code></pre></div><br>
-<p>일단은 이렇게 에러는 해결했는데 글을 보시고 문제점이 있는 부분을 말씀해주시면 공부하고 수정하도록 하겠습니다.</p>
+<h3>◾ 메모리주소는 16진수로 표현한다.</h3><a class="anchor" id="-메모리주소는-16진수로-표현한다"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">a <span style="color:#555">:=</span> <span style="color:#f60">1</span>
+b <span style="color:#555">:=</span> <span style="color:#555">&amp;</span>a
+
+fmt.<span style="color:#c0f">Println</span>(b)      <span style="color:#09f;font-style:italic">//0xc00007e010
+</span><span style="color:#09f;font-style:italic"></span>fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;%d&#34;</span>, b) <span style="color:#09f;font-style:italic">//824634236944
+</span></code></pre></div><p>보통 메모리주소는 16진수로 표현되는데 이는 10진수로 표현하게 되면 숫자가 너무 커지고 컴퓨터가 관리하기 더 수월하기 때문이다.</p>
+<br>
+<h3>◾ ==연산이 가능하다.</h3><a class="anchor" id="-연산이-가능하다"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">a <span style="color:#555">:=</span> <span style="color:#f60">1</span>
+b <span style="color:#555">:=</span> <span style="color:#555">&amp;</span>a
+c <span style="color:#555">:=</span> <span style="color:#555">&amp;</span>a
+d <span style="color:#555">:=</span> c
+
+fmt.<span style="color:#c0f">Println</span>(b <span style="color:#555">==</span> c) <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>fmt.<span style="color:#c0f">Println</span>(b <span style="color:#555">==</span> d) <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>fmt.<span style="color:#c0f">Println</span>(<span style="color:#555">&amp;</span>a <span style="color:#555">==</span> d) <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>fmt.<span style="color:#c0f">Println</span>(<span style="color:#555">*</span>d)     <span style="color:#09f;font-style:italic">//1
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#555">*</span><span style="color:#366">int</span>(<span style="color:#555">&amp;</span>a) <span style="color:#09f;font-style:italic">//error
+</span></code></pre></div><p>메모리 주소도 하나의 <code>값</code>으로 표현하고 관리하기 때문에 값 비교가 가능하다. C는 메모리주소를 포인터타입으로 변경이 가능하지만 Go는 다른 데이터타입에서 포인터타입으로의 형변환은 <code>금지</code>하고 있기 때문에 에러가 발생한다.</p>
+<br>
+<h3>◾ 기본값은 nil</h3><a class="anchor" id="-기본값은-nil"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">var</span> p <span style="color:#555">*</span><span style="color:#078;font-weight:bold">int</span>
+<span style="color:#069;font-weight:bold">if</span> p <span style="color:#555">==</span> <span style="color:#069;font-weight:bold">nil</span>{
+  fmt.<span style="color:#c0f">Println</span>(<span style="color:#c30">&#34;아무것도 안가리킵니다.&#34;</span>)
+}
+</code></pre></div><p>null과 같은 의미로 nil이 아니라는 소리는 p가 유효한 메모리 주소를 가리킨다는 뜻이다.</p>
+<p><br><br></p>
+<h2>4. 사용 목적</h2><a class="anchor" id="4-사용-목적"></a>
+<p>int변수 하나를 선언해서 함수에서 변수의 값을 증가시키는 프로그램을 만들어보면서 사용목적을 봐보자.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">import</span> (
+    <span style="color:#c30">&#34;fmt&#34;</span>
+)
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">addCount</span>(count <span style="color:#078;font-weight:bold">int</span>){
+    count<span style="color:#555">++</span>;
+}
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>() {
+    count <span style="color:#555">:=</span> <span style="color:#f60">0</span>
+    <span style="color:#c0f">addCount</span>(count)
+
+    fmt.<span style="color:#c0f">Println</span>(count)    <span style="color:#09f;font-style:italic">//0
+</span><span style="color:#09f;font-style:italic"></span>}
+</code></pre></div><p>함수의 매개변수로 기본데이터타입을 이용해서 넘겨주어 만들어보면 우리의 예상과는 다르게 값이 증가하지 않는 것을 볼 수 있다. 이는 각 함수마다 별도의 스택공간을 가지고있기 때문인데 이런이유로 서로다른 함수에서 같은 이름의 지역변수를 사용할 수 있는 것이다.</p>
+<p>그런데 매개변수로 기본데이터타입을 넘겨주면 addCount함수에서 count변수를 하나 새로 생성해서 main함수의 count변수의 <code>값</code>을 복사해오는 것이기 때문에 count라는 변수는 서로 엄연히 다른 변수이다. addCount에서 count를 아무리 증가시키고 줄이고 해도 main의 count는 아무런 영향이 없는 것이다.</p>
+<p>한마디로 <code>call by value</code>이기 때문이다. 이를 해결하려면 <code>call by reference</code>로 참조할수 있는 메모리 주소를 넘겨주면 되는데 이때 <code>Go</code>는 <code>포인터</code>를 이용해서 해결한다.</p>
+<br>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">addCount</span>(count <span style="color:#555">*</span><span style="color:#078;font-weight:bold">int</span>){
+    <span style="color:#555">*</span>count<span style="color:#555">++</span>;
+}
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>() {
+    count <span style="color:#555">:=</span> <span style="color:#f60">0</span>
+    <span style="color:#c0f">addCount</span>(<span style="color:#555">&amp;</span>count)
+
+    fmt.<span style="color:#c0f">Println</span>(count)    <span style="color:#09f;font-style:italic">//1
+</span><span style="color:#09f;font-style:italic"></span>}
+</code></pre></div><p>포인터타입을 매개변수로 받고 값을 변경시킬 데이터의 메모리주소를 <code>&amp;</code>이용해서 넘겨주어 제어하면 값이 변경되는 것을 볼 수 있다. 또한, call by value라면 인자의 메모리크기 그대로 새로 메모리에 할당하지만 포인터만 넘겨주게 되면 <code>포인터 타입 크기(8byte)</code>만큼만 할당되기 때문에 메모리를 절약할 수 있는 이점도 있다.</p>
+<p>이런 이점도 있지만 데이터가 의도치 않게 손상되지 않도록 조심해야 한다.</p>
+<p><br><br></p>
+<h2>5. 구조체 포인터 초기화</h2><a class="anchor" id="5-구조체-포인터-초기화"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#09f;font-style:italic">//case 1
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">var</span> data Data   <span style="color:#09f;font-style:italic">//Data타입 구조체 변수
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">var</span> p1 <span style="color:#555">*</span>Data = <span style="color:#555">&amp;</span>data
+
+<span style="color:#09f;font-style:italic">//case 2
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">var</span> p2 <span style="color:#555">*</span>Data = <span style="color:#555">&amp;</span>Data{}
+</code></pre></div><p>Data타입의 구조체변수를 선언해서 이 주소를 할당하는 방식이 기본이며, 구조체를 <code>익명</code> 생성하자마자 그 메모리를 할당하는 방법도 존재한다.</p>
+<p><br><br></p>
+<h2>6. 인스턴스</h2><a class="anchor" id="6-인스턴스"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#09f;font-style:italic">//1개의 인스턴스
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">var</span> data Data
+<span style="color:#069;font-weight:bold">var</span> p1 <span style="color:#555">:=</span> <span style="color:#555">&amp;</span>data
+<span style="color:#069;font-weight:bold">var</span> p2 <span style="color:#555">:=</span> <span style="color:#555">&amp;</span>data
+<span style="color:#069;font-weight:bold">var</span> p3 <span style="color:#555">:=</span> <span style="color:#555">&amp;</span>data
+
+<span style="color:#09f;font-style:italic">//4개의 인스턴스
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">var</span> data1 <span style="color:#555">:=</span> data
+<span style="color:#069;font-weight:bold">var</span> data2 <span style="color:#555">:=</span> data
+<span style="color:#069;font-weight:bold">var</span> data3 <span style="color:#555">:=</span> data
+</code></pre></div><p><code>인스턴스</code>는 실제로 메모리에 할당된 하나의 데이터로 위의 예제에서 p1~p3는 실제로는 <code>data</code>라는 변수의 한개의 데이터만을 가리키고있기 때문에 한개의 인스턴스가 생성된것으로 볼 수 있고 <code>data1~data3</code>는 값을 data의 값을 복사해서 새로운 메모리에 할당(인스턴스 샐성)한 것이기 때문에 각각의 인스턴스를 갖아 총 4개의 인스턴스가 생성된다.</p>
+<br>
+<h3>◾ 삭제되는 시점</h3><a class="anchor" id="-삭제되는-시점"></a>
+<p>인스턴스는 어떤 곳에서도 사용하지 않으면 (가리키지 않으면) 사라지는데 이는 <code>가비지 컬렉터</code>가 다음 GC타임에 자동으로 삭제를 해준다. 포인터가 있는 c/c++과 비교해서 Go는 GC가 있어 메모리관리가 조금더 편리한 것 같다.</p>
+<p>GC는 보통 Java에서 많이 들어봤는데 Java의 GC는 <code>가상머신</code>에서 동작하는데 비해 <code>Go</code>는 <code>실행파일 안</code>에 GC가 내장되어 생산성이 높고 Java같이 <code>힙 압축</code>, <code>세대별 GC</code>등과 같은 기능을 수행하지 않고 <code>CMS(Concurrent Mark &amp; Sweep)</code>만 수행하기 때문에 가벼운 특징이 있다.</p>
+<p><a href="https://engineering.linecorp.com/ko/blog/detail/342/">Go의 GC에 대해 자세히 정리한 글</a></p>
+<br>
+<h3>◾ 구조체 포인터를 이용해 객체 생성하기</h3><a class="anchor" id="-구조체-포인터를-이용해-객체-생성하기"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">type</span> User <span style="color:#069;font-weight:bold">struct</span>{
+  name <span style="color:#078;font-weight:bold">string</span>
+  age <span style="color:#078;font-weight:bold">int</span>
+}
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">NewUser</span>(name <span style="color:#078;font-weight:bold">string</span>, age <span style="color:#078;font-weight:bold">int</span>) <span style="color:#555">*</span>User {
+  <span style="color:#069;font-weight:bold">var</span> u = <span style="color:#c0f">User</span>(name,age)
+  <span style="color:#069;font-weight:bold">return</span> <span style="color:#555">&amp;</span>u
+}
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>(){
+  userPointer <span style="color:#555">:=</span> <span style="color:#c0f">NewUser</span>(<span style="color:#c30">&#34;AAA&#34;</span>,<span style="color:#f60">23</span>)
+
+  fmt.<span style="color:#c0f">Println</span>(userPointer)    <span style="color:#09f;font-style:italic">//&amp;{AAA 23}
+</span><span style="color:#09f;font-style:italic"></span>}
+</code></pre></div><p>지금까지 설명을 잘 들었다면 위의 코드에서 이상한점을 느낄 것이다. 함수내의 변수는 <code>스택</code>영역에 할당된다고 했는데 <code>NewUser()</code>에서 지역변수인 <code>u</code>의 메모리 주소를 return하고 있기 때문이다. 우리 생각대로라면 u의 메모리는 함수가 끝났기 때문에 없어지고 userPointer에는 쓰레기 값이나 error가 발생할 것 같은데 정상적으로 잘 동작한다.</p>
+<p>이는 Go의 특별한 기능인 <code>Escape analyzing(탈출 분석)</code>때문인데 <code>컴파일 타임</code>에 컴파일러가 메모리타입을 return할때 해당 변수가 <code>지역변수</code>라면 스택영역에서 <code>힙</code>영역으로 데이터를 옮겨주기 때문에 함수가 종료되어도 다른 함수내에서 선언한 변수를 접근할 수 있게 된다.</p>
+<p>Go는 이런 특징을 이용해서 <code>객체</code>를 생성하는 <code>생성자</code>를 선언할 수 있다.</p>
+<br>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#09f;font-style:italic">//case 1
+</span><span style="color:#09f;font-style:italic"></span>fmt.<span style="color:#c0f">Println</span>((<span style="color:#555">*</span>userPointer).name)    <span style="color:#09f;font-style:italic">//AAA
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#09f;font-style:italic">//case 2
+</span><span style="color:#09f;font-style:italic"></span>fmt.<span style="color:#c0f">Println</span>(userPointer.name)       <span style="color:#09f;font-style:italic">//AAA
+</span></code></pre></div><p>userPointer는 포인터타입기 때문에 값에 접근하기 위해서는 <code>case1</code>과 같이 사용해야하는데 <code>구조체 포인터</code>라면 내부의 필드를 접근할때 <code>*</code>를 생략해서 작성해도 접근할 수 있도록 제공을 하고 있다.</p>
+<p><br><br><br><br></p>
+<hr>
+<h2>Reference</h2><a class="anchor" id="reference"></a>
+<p>『Tucker의 Go 언어 프로그래밍』 스터디 요약 노트</p>
+<p><a href="https://www.youtube.com/watch?v=ELOihQ1HYBY">Tucker의 Go 강좌</a></p>
 </div>
 
 	
@@ -1809,10 +1933,10 @@ if (!doNotTrack) {
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/spring/graphql-customcontext/" title="[Springboot GraphQL] CustomContext 생성하기" style="margin-right: 0px;">
+		<a class="next" href="/data-structure/" title="자료구조 ( Data Structure )" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>[Springboot GraphQL] CustomContext 생성하기</label>
+                <label>자료구조 ( Data Structure )</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1835,17 +1959,30 @@ if (!doNotTrack) {
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/spring/onetomanyerror/">[Error 해결] @OneToMany 관계시 발생한 에러</a></li>
+            <li><a href="/go/pointer/">포인터</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#1-선언-방법">1. 선언 방법</a></li>
+    <li><a href="#2-사용-방법">2. 사용 방법</a></li>
+    <li><a href="#3-특징">3. 특징</a>
       <ul>
-        <li><a href="#문제점-1-초기화를-하지-않았다">문제점 1. 초기화를 하지 않았다.</a></li>
-        <li><a href="#문제점-2-update시에-똑같은-에러-발생">문제점 2. Update시에 똑같은 에러 발생</a></li>
+        <li><a href="#-여러-변수에서-같은-메모리를-가리킬-수-있다">◾ 여러 변수에서 같은 메모리를 가리킬 수 있다.</a></li>
+        <li><a href="#-메모리주소는-16진수로-표현한다">◾ 메모리주소는 16진수로 표현한다.</a></li>
+        <li><a href="#-연산이-가능하다">◾ ==연산이 가능하다.</a></li>
+        <li><a href="#-기본값은-nil">◾ 기본값은 nil</a></li>
       </ul>
     </li>
+    <li><a href="#4-사용-목적">4. 사용 목적</a></li>
+    <li><a href="#5-구조체-포인터-초기화">5. 구조체 포인터 초기화</a></li>
+    <li><a href="#6-인스턴스">6. 인스턴스</a>
+      <ul>
+        <li><a href="#-삭제되는-시점">◾ 삭제되는 시점</a></li>
+        <li><a href="#-구조체-포인터를-이용해-객체-생성하기">◾ 구조체 포인터를 이용해 객체 생성하기</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 </div>
@@ -1862,14 +1999,14 @@ if (!doNotTrack) {
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 11 April 2021
+		          Last update on 02 June 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fspring%2fonetomanyerror%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fgo%2fpointer%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>
