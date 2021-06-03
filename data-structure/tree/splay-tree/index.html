@@ -1,0 +1,2767 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+	Splay Tree :: Gowoonsori&#39;s TechBlog
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2021-06-03T23:17:59 KST">
+<meta name="robots" content="index,follow" /> 
+<meta name="googlebot" content="index,follow" />
+
+<title>Splay Tree :: Gowoonsori&#39;s TechBlog</title>
+
+<meta name="author" content="gowoonsori">
+
+<meta name="description" content="BBST중에 하나인 Splay Tree의 특징과 구현방법에 대해 정리하고 c&#43;&#43;을 이용해 직접 구현해보는 글">
+<link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
+<link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
+
+<meta property="og:title" content="Splay Tree" />
+<meta property="og:description" content="BBST중에 하나인 Splay Tree의 특징과 구현방법에 대해 정리하고 c&#43;&#43;을 이용해 직접 구현해보는 글" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://gowoonsori.site/data-structure/tree/splay-tree/" />
+<meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
+<meta property="og:updated_time" content="2021-06-03T21:55:46+09:00" />
+
+
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+
+
+
+
+
+
+
+<link rel="stylesheet" href='https://gowoonsori.site/sass/layout.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.main.css'>
+<link rel="stylesheet" href='https://gowoonsori.site/style.menu.css'>
+<link href='/vendor/FontAwesome/fontawesome-free-5.14.0-web/css/all.min.css' rel="stylesheet"> 
+<link rel="stylesheet" href='/css/docport.css'>
+
+
+
+
+
+<script src='/vendor/jquery/jquery-3.5.1.min.js'></script>
+<script src='/js/docport.js'></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/gowoonsori.site";
+</script>
+<script>
+      (function(j,en,ni,fer) {
+          j['dmndata']=[];j['jenniferFront']=function(args){window.dmndata.push(args)};
+          j['dmnaid']=fer;j['dmnatime']=new Date();j['dmnanocookie']=false;j['dmnajennifer']='JENNIFER_FRONT@INTG';
+          var b=Math.floor(new Date().getTime() / 60000) * 60000;var a=en.createElement(ni);
+          a.src='https://d-collect.jennifersoft.com/'+fer+'/demian.js?'+b;a.async=true;
+          en.getElementsByTagName(ni)[0].parentNode.appendChild(a);
+      }(window,document,'script','b13ba63e'));
+  </script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-178493752-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+    
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script> 
+    
+  <style type="text/css">
+    #debug{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 3.5rem;
+    margin-bottom: .35rem;
+    padding: 0 2rem;
+    position: fixed;
+    left: 0;      right: 0;     top: 0;
+   
+    top:0px;
+    
+    min-height: 150px;
+
+    background-color: white;
+    border: 3px solid red;
+    z-index: 10000 ;
+    word-wrap: all;
+    overflow: auto;
+  }
+  </style>
+  </head>
+
+  <body data-url="/data-structure/tree/splay-tree/"
+
+  class="hidebreadcrumb ">
+
+ 
+
+
+    
+    
+    <header style="">
+        <div>
+    
+    <div class="burger ">
+        <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">&#9776;</a>
+    </div>
+    
+    <img src="/images/favicon.png" style="margin-top:3px; width: 20px; height: 20px;">
+    <div>
+	
+		
+	    	<a class='baselink' href='https://gowoonsori.site'>Gowoonsori's TechBlog</a>
+	  	
+	</div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/gowoonsori"  rel="noopener">
+                  Github
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://www.facebook.com/gowoonsori97"  rel="noopener">
+                  FaceBook
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="mailto:gowoonsori97@gmail.com"  rel="noopener">
+                  Gmail
+                </a>
+            </li>
+    </nav>
+
+</div>
+    </header>
+    
+
+    <article>
+      
+      <aside class="">
+        
+<div class="search">
+	<div class="searchbox">
+	  <input data-search-input id="search-by" type="text" placeholder="Type to search...">
+	</div>
+	<script type="text/javascript" src="/vendor/lunr/lunr.min.js"></script>
+	<script type="text/javascript" src="/vendor/auto-complete/auto-complete.js"></script>
+	<link href="/vendor/auto-complete/auto-complete.css" rel="stylesheet">
+	<script type="text/javascript">
+	  
+	      var baseurl = "https:\/\/gowoonsori.site";
+	  
+	</script>
+	<script type="text/javascript" src="/js/search.js"></script>
+</div>
+	
+		
+	    	
+	    
+	<div id="close_menu">
+  <a href="javascript:void(0);" style="font-size:15px;" onclick="$('article > aside').toggleClass('responsive')">
+      <i class="fa fa-lg fa-times"></i>
+  </a>
+</div>
+
+<ul class="menu">
+<div id="categories" style="">
+  <p>Categories</p>
+</div>
+
+    <li data-nav-id="https://gowoonsori.site/java/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/java/">Java</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/jvm/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/jvm/">JVM과 자바 실행</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/datatype/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/datatype/">DataType과 변수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/string/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/string/">문자열</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/operator/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/operator/">연산자</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/controlstatement/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/controlstatement/">제어문</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/class/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/class/">클래스 (Class)</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/junit5/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/junit5/">Junit5</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/thread/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/thread/">멀티 스레딩</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/enum/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/enum/">Enum</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/annotation/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/annotation/">어노테이션 (Annotation)</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/io/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/io/">I/O</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/generic/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/generic/">제네릭</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/lambda/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/lambda/">람다식</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/set/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/set/">Set</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/listtoarray_arraytolist/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/listtoarray_arraytolist/">List를 Array로 Array를 List로 변환</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/sort/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/sort/">자바에서의 정렬</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/java/inheritance/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/java/inheritance/">상속 (Inheritance)</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/spring/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/spring/">Spring</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/elk/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/elk/">Spring boot와 EK스택 연결하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/dto/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/dto/">DTO에 대하여</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/security-get-userdetails/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/security-get-userdetails/">[Spring Security] 인증된 사용자 정보 조회</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/onetomanyerror/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/onetomanyerror/">[Error 해결] @OneToMany 관계시 발생한 에러</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/graphql-customcontext/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/graphql-customcontext/">[Springboot GraphQL] CustomContext 생성하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/graphql-environment/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/graphql-environment/">[Springboot GraphQL] 요청 Environment</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/graphql-security/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/graphql-security/">[Springboot GraphQL] Spring Security 적용해보기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/spring/spring-graphql/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/spring/spring-graphql/">[Springboot GraphQL] GraphQL 서버 구축하기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/javascript/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/javascript/">JavaScript</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/datatype/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/datatype/">DataType과 변수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/operator/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/operator/">연산자</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/object/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/object/">객체</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/javascript/function/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/javascript/function/">함수</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/go/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/go/">GoLang</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/golang/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/golang/">Golang 특징</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/variable/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/variable/">변수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/io/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/io/">표준 입출력</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/operator/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/operator/">연산자</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/function/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/function/">함수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/constant/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/constant/">상수</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/control-statement/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/control-statement/">제어문</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/array/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/array/">배열</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/structure/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/structure/">구조체</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/pointer/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/pointer/">포인터</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/" class="dd-item parent haschildren
+        item_level_$level
+        ">
+
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/data-structure/">자료구조 ( Data Structure )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/array-list/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/array-list/">Array와 List</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/stack-queue/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/stack-queue/">Stack Queue</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/" class="dd-item parent haschildren
+        item_level_$level
+        ">
+
+      
+      
+          <i class="fas fa-chevron-down ddexp"></i>
+      
+      
+          <a href="/data-structure/tree/">Tree</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/redblacktree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/redblacktree/">Red Black Tree</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/avltree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/avltree/">AVL Tree</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/splay-tree/" class="dd-item parent active
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/splay-tree/">Splay Tree</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/aa-tree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/aa-tree/">AA Tree</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/heap/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/heap/">Heap</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/graph/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/graph/">Graph</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/algorithm/">알고리즘 ( Algorithm )</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/algorithm/sorting-algorithm/">Sorting Algorithm</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/sorting-algorithm/counting-sort/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/sorting-algorithm/counting-sort/">Counting Sort ( 계수 정렬 )</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/longest-increasing-subsequence/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/longest-increasing-subsequence/">최장 증가 수열</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/permutation/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/permutation/">Permutation(순열)</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/floyd-warshall/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/floyd-warshall/">[APSP] Floyd Warshall알고리즘</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/prim/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/prim/">[MST] Prim알고리즘</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/union-find/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/union-find/">[Disjoint Set] Union Find 알고리즘</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/kruskal/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/kruskal/">[MST] Kruskal알고리즘</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/dijkstra/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/dijkstra/">[SPSP] Dijkstra 알고리즘</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/bellman-ford/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/bellman-ford/">[SPSP] Bellman Ford</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/topological-sort/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/topological-sort/">Topological Sort(위상 정렬)</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/books/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/books/">Books</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/books/speech1/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/books/speech1/">돈버는 말투, 돈 버리는 말투</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/books/5minute-wine/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/books/5minute-wine/">5분 와인</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/books/cleancode/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/books/cleancode/">Clean Code</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/linux/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/linux/">Linux</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/info/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/info/">리눅스란?</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/timezone/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/timezone/">Timezone 설정하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/packet_capture/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/packet_capture/">packet capture program 만들기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/port-forwarding/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/port-forwarding/">[WSL2] 포트포워딩과 window에서 workbench로 접속하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/wsl2-mysql/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/wsl2-mysql/">[WSL2] Mysql 자동실행 설정하기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/error/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/error/">에러들</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/error/springsecurity-cors/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/error/springsecurity-cors/">Spring Security Cors Mapping Error</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/error/intellij-error/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/error/intellij-error/">Intellij Error</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+    <li data-nav-id="https://gowoonsori.site/etc/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+          
+      
+      
+        
+      
+          <a href="/etc/">기타</a>
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/react-project/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/etc/react-project/">🌼 포인트 적립을 위한 웹 제작기</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/react-project/1/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/etc/react-project/1/">1. 프로젝트 설계와 환경 구성</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/react-project/2/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/etc/react-project/2/">2. front 개발환경 셋팅과 로그인 창 구현</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/react-project/3/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/etc/react-project/3/">3. atom사용과 포인트 적립 페이지 만들기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/start-hugo/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/etc/start-hugo/">Hugo와 Github page로 블로그 구축</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/start-hugo/custom/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/etc/start-hugo/custom/">Hugo theme Custom 하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/start-hugo/pagination/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/etc/start-hugo/pagination/">페이징 기능 추가하기</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/start-hugo/gallery-swipe/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/etc/start-hugo/gallery-swipe/">Gallery와 이미지 Swipe기능</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/2020-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/etc/2020-retrospect/">2020년을 보내며</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/2month-retrospect/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/etc/2month-retrospect/">2020년 11월 회고</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/kpu_sw_competition/" class="dd-item haschildren
+        item_level_$level
+        ">
+
+      
+      <i class="fas fa-chevron-right ddexp"></i>
+      
+      
+          <a href="/etc/kpu_sw_competition/">KPU S/W 경진대회 예선 후기</a>
+          
+      
+      
+        
+      
+        <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/kpu_sw_competition/final/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/etc/kpu_sw_competition/final/">KPU S/W 경진대회 본선 후기</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/etc/start-blog/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/etc/start-blog/">블로그 첫 시작 👋</a>
+          
+      
+      
+        
+      
+    </li>
+        </ul>
+    </li>
+    
+
+
+
+
+</ul>
+	
+		
+	    	<center>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/gowoonsori" aria-label="Follow @gowoonsori on GitHub">Follow@gowoonsori</a>
+<!-- Place this tag where you want the button to render. -->
+</center>
+<!-- <center style='margin-top:20px'>
+    <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgowoonsori.site&count_bg=%23426EAE&title_bg=%23555555&icon=&icon_color=%238E4F4F&title=%F0%9F%93%8C+Today+%2F+Total++&edge_flat=false"/></a>
+</center> -->
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+	    
+	
+      </aside>
+      
+
+      <section class="page ">
+      
+	    
+    
+    
+
+    
+	
+		
+        
+		
+		
+		
+		
+		
+		
+
+		
+			<h1>Splay Tree</h1>
+        
+
+		
+										
+		
+
+		
+
+
+	
+	
+
+	
+	
+	<div class="jump-to-section">
+		<span onclick="$h = $(this);$h.next('nav').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('nav').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+  			Jump to Section
+  			<i style=";" class="fas fa-chevron-right"></i>
+		</span>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-특징">1. 특징</a></li>
+    <li><a href="#2-사용-예">2. 사용 예</a></li>
+    <li><a href="#3-사용-기법">3. 사용 기법</a>
+      <ul>
+        <li><a href="#-rotate">◾ Rotate</a></li>
+        <li><a href="#-splay">◾ Splay</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-구현">4. 구현</a>
+      <ul>
+        <li><a href="#-삽입">📌 삽입</a></li>
+        <li><a href="#-삭제">📌 삭제</a></li>
+        <li><a href="#-순회-과정">📌 순회 과정</a></li>
+        <li><a href="#-탐색-과정">📌 탐색 과정</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-시간-복잡도">5. 시간 복잡도</a></li>
+    <li><a href="#구현-코드">구현 코드</a></li>
+  </ul>
+</nav>
+	</div>
+	
+	
+
+	<div class="content"><p><code>Splaying</code>이라는 기법이 사용되며, 이는 특정 노드에 대해 접근을 하면, 이를 루트로 위치하도록 재배치 하는 기법의 트리</p>
+<p><br><br></p>
+<h2>1. 특징</h2><a class="anchor" id="1-특징"></a>
+<ul>
+<li>
+<p>구현이 단순</p>
+</li>
+<li>
+<p>많이 접근한 노드에 대해서 빠른 접근이 가능하다</p>
+</li>
+<li>
+<p>접근 빈도가 불균등하거나 비 랜덤 패턴의 경우 O(lgn)보다 더 유리하다.</p>
+</li>
+<li>
+<p>AVL-Tree와 RB-Tree와 달리 추가 데이터 저장 필요 없다.</p>
+</li>
+<li>
+<p>최악의 경우 높이가 선형, 즉 O(n)이 나올 수 있다.</p>
+</li>
+<li>
+<p>세그먼트 트리로 이용이 가능하다.</p>
+<ul>
+<li>k번째 원소 찾기, 구간 합, lazy Propagation, 구간 뒤집기 모두 쉽게 할 수 있다.</li>
+<li>x노드를 접근한다면, splay를 통해 root로 올라오면서 x보다 작은 노드들은 Left에, 큰 노드들은 Right에 모이는 특성을 이용</li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+<h2>2. 사용 예</h2><a class="anchor" id="2-사용-예"></a>
+<p>캐시, 가비지 컬렉터 알고리즘</p>
+<p><br><br></p>
+<h2>3. 사용 기법</h2><a class="anchor" id="3-사용-기법"></a>
+<h3>◾ Rotate</h3><a class="anchor" id="-rotate"></a>
+<p>다른 balance binary search tree들과 같은 rotate 개념이다.</p>
+<h3>◾ Splay</h3><a class="anchor" id="-splay"></a>
+<p>rotate를 기본으로, 탐색/삽입/삭제한 노드를 root에 위치할 때 까지 rotate시켜가는 기법</p>
+<ul>
+<li>
+<p><strong>Zig : 기준 노드 x, z의 부모 노드 y가 root일 때</strong>
+<img src="zig.png?classes=shadow,border" alt="zig"></p>
+<p>y를 기준으로 rotate 해주는것을 Zig라고 한다.</p>
+</li>
+</ul>
+<br>
+<ul>
+<li>
+<p><strong>Zig-Zig : x의 할아버지 노드(z)에 대해 자식 y의 방향과 y에 대한 x의 방향이 같을 때</strong></p>
+<p>한마디로 <code>z-&gt;y 방향 == y-&gt;x 방향</code></p>
+<p><img src="zigZig.png?classes=shadow,border" alt="zigZig"></p>
+<p>rotate(y)후, rotate(x) 해주는 것을 Zig-Zig라고 한다.</p>
+</li>
+</ul>
+<br>
+<ul>
+<li>
+<p><strong>Zig-Zag: x의 할아버지 노드(z)에 대해 자식 y의 방향과 y에 대한 자식 x의 방향이 다를 때</strong></p>
+<p>한마디로 <code>z-&gt;y 방향 != y-&gt;x 방향</code></p>
+<p><img src="zigZag.png?classes=shadow,border" alt="zigZag"></p>
+<p>rotate(x)후,rotate(x) 해주는 것을 Zig-Zig라고 한다.</p>
+</li>
+</ul>
+<p><br><br></p>
+<h2>4. 구현</h2><a class="anchor" id="4-구현"></a>
+<h3>📌 삽입</h3><a class="anchor" id="-삽입"></a>
+<p>일반 BST와 동일하게 삽입한 후, 삽입한 노드 x를 기준으로 splay를 수행해 주면 된다.</p>
+<br>
+<h3>📌 삭제</h3><a class="anchor" id="-삭제"></a>
+<p>삭제도 삽입과 마찬가지로 일반 BST 삭제 연산과 방법은 동일하고 splay를 해주면되는데 삭제에는 추가로 여러 방법이 존재하는데, <code>삭제할 노드를 기준으로 splay를 수행 후, successor를 찾아 successor를 root로 만드는 방법</code>과 <code>삭제를 먼저 수행 후에 그 노드를 대신해서 오는 노드를 기준으로 splay를 수행</code>하면 된다.</p>
+<br>
+<h3>📌 순회 과정</h3><a class="anchor" id="-순회-과정"></a>
+<p>순회는 일반 BST와 동일하게 전위 / 중위 / 후위 순회로 순회가 가능하다.</p>
+<br>
+<h3>📌 탐색 과정</h3><a class="anchor" id="-탐색-과정"></a>
+<p>탐색 또한 일반 BST와 동일하게 찾으려는 key가 현재 노드보다 작다면 왼쪽으로, 크다면 오른쪽으로 탐색이 가능하지만, 많이 탐색한 key일수록 상단 부근에 위치하기 때문에 O(lgn)보다 유리하다.</p>
+<p><br><br></p>
+<h2>5. 시간 복잡도</h2><a class="anchor" id="5-시간-복잡도"></a>
+<p>삽입/탐색 시 가장 작은 숫자나 가장 큰 숫자를 접근한다면, 트리는 O(n)으로 선형적인 트리가 생성이 되지만, 무작위 splay를 통해 구조를 바꿔 줄 수도 있고, 자주 접근 하는 노드는 O(lgn)보다 빠르게 접근이 가능하기 때문에 상각 O(lgn)으로 볼 수 있다.</p>
+<p><br><br><br></p>
+<h2>구현 코드</h2><a class="anchor" id="구현-코드"></a>
+<p><a href="https://github.com/gowoonsori/my-tech/blob/master/dataStructure/Tree/SplayTree.cpp">github에서 보기</a></p>
+<details>
+<summary style="font-Weight : bold; font-size : 15px; color : #F90000;" >  📃 구현 코드 (c++) ( 접기 / 펼치기 )</summary>
+<div>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="color:#09f;font-style:italic">/*
+</span><span style="color:#09f;font-style:italic"> * C++ 이용하여 Splay Tree 구현하기
+</span><span style="color:#09f;font-style:italic"> *
+</span><span style="color:#09f;font-style:italic"> * 목적 : Splay Tree 공부 하기 위해 작성했으며,
+</span><span style="color:#09f;font-style:italic"> *       C++ 이용하여 작성하시는 분들에게 도움이 되고자 했다.
+</span><span style="color:#09f;font-style:italic"> *
+</span><span style="color:#09f;font-style:italic"> * 설명 : key 값은 int만 가능 하며 중복 key는 허용 x
+</span><span style="color:#09f;font-style:italic"> *       단순 연결 리스트로 구현
+</span><span style="color:#09f;font-style:italic"> *
+</span><span style="color:#09f;font-style:italic"> *       class SplayTree
+</span><span style="color:#09f;font-style:italic"> *
+</span><span style="color:#09f;font-style:italic"> *       변수 :   root =&gt; root node
+</span><span style="color:#09f;font-style:italic"> *
+</span><span style="color:#09f;font-style:italic"> *       생성자 : SplayTree =&gt;  root 를 null로 초기화
+</span><span style="color:#09f;font-style:italic"> *
+</span><span style="color:#09f;font-style:italic"> *       함수 :   IsKey =&gt; key값이 있는지 검사하는 함수
+</span><span style="color:#09f;font-style:italic"> *
+</span><span style="color:#09f;font-style:italic"> *               Insert =&gt; 일반 BST의 삽입함수에 끝에 Splay 추가 (return void)
+</span><span style="color:#09f;font-style:italic"> *               Delete =&gt; Splay후 successor를 root로 만드는 함수 (return void)
+</span><span style="color:#09f;font-style:italic"> *               Splay(x) =&gt; x를 root로 재조정 함수 ( return void)
+</span><span style="color:#09f;font-style:italic"> *               replace(x,y) =&gt; 삭제할 x와 successor 위치를 바꿔주는 함수 (return void)
+</span><span style="color:#09f;font-style:italic"> *
+</span><span style="color:#09f;font-style:italic"> *               RotateRight(x) =&gt; x기준 오른쪽으로 회전
+</span><span style="color:#09f;font-style:italic"> *               RotateLeft(x) =&gt; x기준 왼쪽으로 회전
+</span><span style="color:#09f;font-style:italic"> *
+</span><span style="color:#09f;font-style:italic"> *               Inorder,Preorder,Postorder =&gt; 순회 함수
+</span><span style="color:#09f;font-style:italic"> *               tree_minimum(x), tree_maximum(x) =&gt; 노드 x 기준으로 가장 왼쪽, 오른쪽 return 함수
+</span><span style="color:#09f;font-style:italic"> *
+</span><span style="color:#09f;font-style:italic"> *               DisplayMenu, SelectMenu =&gt; 초기 Menu판 print 함수
+</span><span style="color:#09f;font-style:italic"> *               Insert_helper,Delete_helper,order_helper,print_helper =&gt; 각각 이벤트 수행시 입력받고 조건 에러 처리 위한 함수 와 tree print
+</span><span style="color:#09f;font-style:italic"> * 해주는 함수
+</span><span style="color:#09f;font-style:italic"> *
+</span><span style="color:#09f;font-style:italic"> *
+</span><span style="color:#09f;font-style:italic"> * 작성자 : gowoonsori
+</span><span style="color:#09f;font-style:italic"> * github : https://github.com/gowoonsori/my-tech/tree/master/dataStructure/Tree
+</span><span style="color:#09f;font-style:italic"> */</span>
+
+<span style="color:#099">#include</span> <span style="color:#099">&lt;algorithm&gt;  // max() 함수 이용</span><span style="color:#099">
+</span><span style="color:#099">#include</span> <span style="color:#099">&lt;iostream&gt;</span><span style="color:#099">
+</span><span style="color:#099"></span>
+<span style="color:#069;font-weight:bold">struct</span> <span style="color:#0a8;font-weight:bold">node</span> {
+    <span style="color:#078;font-weight:bold">int</span> key;
+    node <span style="color:#555">*</span>left <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">nullptr</span>;
+    node <span style="color:#555">*</span>right <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">nullptr</span>;
+    node <span style="color:#555">*</span>parent <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">nullptr</span>;
+};
+<span style="color:#069;font-weight:bold">typedef</span> node <span style="color:#555">*</span>NodePtr;
+
+<span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">SplayTree</span> {
+   <span style="color:#069;font-weight:bold">private</span><span style="color:#555">:</span>
+    NodePtr root;  <span style="color:#09f;font-style:italic">//루트 노드
+</span><span style="color:#09f;font-style:italic"></span>
+    <span style="color:#09f;font-style:italic">// key값이 있는지 없는지 검사 있으면 pointer 값, 없으면 nullptr
+</span><span style="color:#09f;font-style:italic"></span>    NodePtr <span style="color:#c0f">IsKey</span>(<span style="color:#078;font-weight:bold">int</span> item) {
+        NodePtr t <span style="color:#555">=</span> root;
+
+        <span style="color:#09f;font-style:italic">/*key값을 찾거나 없다면 break*/</span>
+        <span style="color:#069;font-weight:bold">while</span> (t <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nullptr</span> <span style="color:#555">&amp;&amp;</span> t<span style="color:#555">-&gt;</span>key <span style="color:#555">!=</span> item) {
+            t <span style="color:#555">=</span> (item <span style="color:#555">&lt;</span> t<span style="color:#555">-&gt;</span>key) <span style="color:#555">?</span> t<span style="color:#555">-&gt;</span><span style="color:#99f">left</span> : t<span style="color:#555">-&gt;</span>right;
+        }
+        <span style="color:#069;font-weight:bold">return</span> t;
+    }
+
+    <span style="color:#09f;font-style:italic">/*새로운 key 삽입함수로 root노드 반환*/</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Insert</span>(<span style="color:#078;font-weight:bold">int</span> item) {
+        <span style="color:#09f;font-style:italic">/*새로운 노드 삽입*/</span>
+        <span style="color:#069;font-weight:bold">if</span> (<span style="color:#069;font-weight:bold">this</span><span style="color:#555">-&gt;</span>root <span style="color:#555">==</span> <span style="color:#069;font-weight:bold">nullptr</span>) {
+            NodePtr x <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> node;
+            x<span style="color:#555">-&gt;</span>key <span style="color:#555">=</span> item;
+            <span style="color:#069;font-weight:bold">this</span><span style="color:#555">-&gt;</span>root <span style="color:#555">=</span> x;
+            <span style="color:#069;font-weight:bold">return</span>;
+        }
+        NodePtr y;  <span style="color:#09f;font-style:italic">//삽입할 x의 부모노드 y
+</span><span style="color:#09f;font-style:italic"></span>        NodePtr y_next <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">this</span><span style="color:#555">-&gt;</span>root;
+
+        <span style="color:#09f;font-style:italic">/*부모노드 y찾기*/</span>
+        <span style="color:#069;font-weight:bold">while</span> (y_next) {
+            y <span style="color:#555">=</span> y_next;
+            y_next <span style="color:#555">=</span> (y<span style="color:#555">-&gt;</span>key <span style="color:#555">&gt;</span> item) <span style="color:#555">?</span> y<span style="color:#555">-&gt;</span><span style="color:#99f">left</span> : y<span style="color:#555">-&gt;</span>right;
+        }
+
+        <span style="color:#09f;font-style:italic">/*y의 자식으로 x붙여주기*/</span>
+        NodePtr x <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> node;
+        x<span style="color:#555">-&gt;</span>key <span style="color:#555">=</span> item;
+        x<span style="color:#555">-&gt;</span>parent <span style="color:#555">=</span> y;
+        <span style="color:#069;font-weight:bold">if</span> (y<span style="color:#555">-&gt;</span>key <span style="color:#555">&gt;</span> item)
+            y<span style="color:#555">-&gt;</span>left <span style="color:#555">=</span> x;
+        <span style="color:#069;font-weight:bold">else</span>
+            y<span style="color:#555">-&gt;</span>right <span style="color:#555">=</span> x;
+
+        Splay(x);
+    }
+
+    <span style="color:#09f;font-style:italic">/*key 삭제 함수*/</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Delete</span>(<span style="color:#078;font-weight:bold">int</span> item) {
+        node <span style="color:#555">*</span>z <span style="color:#555">=</span> IsKey(item);
+        Splay(z);  <span style="color:#09f;font-style:italic">//삭제할 노드를 root로 올린 후 resturcture
+</span><span style="color:#09f;font-style:italic"></span>
+        <span style="color:#069;font-weight:bold">if</span> (<span style="color:#555">!</span>z<span style="color:#555">-&gt;</span>left)  <span style="color:#09f;font-style:italic">// left child가 null
+</span><span style="color:#09f;font-style:italic"></span>            replace(z, z<span style="color:#555">-&gt;</span>right);
+        <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (<span style="color:#555">!</span>z<span style="color:#555">-&gt;</span>right)  <span style="color:#09f;font-style:italic">// left child가 null이 아니고 right child가 null일때
+</span><span style="color:#09f;font-style:italic"></span>            replace(z, z<span style="color:#555">-&gt;</span>left);
+        <span style="color:#069;font-weight:bold">else</span> {                                 <span style="color:#09f;font-style:italic">//자식이 둘다있을때
+</span><span style="color:#09f;font-style:italic"></span>            node <span style="color:#555">*</span>y <span style="color:#555">=</span> tree_minimum(z<span style="color:#555">-&gt;</span>right);  <span style="color:#09f;font-style:italic">// find successor
+</span><span style="color:#09f;font-style:italic"></span>
+            <span style="color:#09f;font-style:italic">/*succesoor가 z의 오른쪽 자식일때*/</span>
+            <span style="color:#069;font-weight:bold">if</span> (y<span style="color:#555">-&gt;</span>parent <span style="color:#555">!=</span> z) {
+                replace(y, y<span style="color:#555">-&gt;</span>right);
+                y<span style="color:#555">-&gt;</span>right <span style="color:#555">=</span> z<span style="color:#555">-&gt;</span>right;
+                y<span style="color:#555">-&gt;</span>right<span style="color:#555">-&gt;</span>parent <span style="color:#555">=</span> y;
+            }
+            replace(z, y);
+            y<span style="color:#555">-&gt;</span>left <span style="color:#555">=</span> z<span style="color:#555">-&gt;</span>left;
+            y<span style="color:#555">-&gt;</span>left<span style="color:#555">-&gt;</span>parent <span style="color:#555">=</span> y;
+        }
+
+        <span style="color:#069;font-weight:bold">delete</span> z;
+    }
+
+    <span style="color:#09f;font-style:italic">/* x를 기준으로 splay*/</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Splay</span>(NodePtr x) {
+        <span style="color:#09f;font-style:italic">/*x가 root가 될때까지*/</span>
+        <span style="color:#069;font-weight:bold">while</span> (x<span style="color:#555">-&gt;</span>parent) {
+            NodePtr p <span style="color:#555">=</span> x<span style="color:#555">-&gt;</span>parent;
+            NodePtr g <span style="color:#555">=</span> p<span style="color:#555">-&gt;</span>parent;
+
+            <span style="color:#09f;font-style:italic">/*x의 부모 노드가 root라면*/</span>
+            <span style="color:#069;font-weight:bold">if</span> (<span style="color:#555">!</span>x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>parent) {
+                <span style="color:#069;font-weight:bold">if</span> (x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>left <span style="color:#555">==</span> x)
+                    RotateRight(x<span style="color:#555">-&gt;</span>parent);
+                <span style="color:#069;font-weight:bold">else</span>
+                    RotateLeft(x<span style="color:#555">-&gt;</span>parent);
+            }
+            <span style="color:#09f;font-style:italic">/*zig zig*/</span>
+            <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>left <span style="color:#555">==</span> x <span style="color:#555">&amp;&amp;</span> x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>left <span style="color:#555">==</span> x<span style="color:#555">-&gt;</span>parent) {
+                RotateRight(x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>parent);
+                RotateRight(x<span style="color:#555">-&gt;</span>parent);
+            } <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>right <span style="color:#555">==</span> x <span style="color:#555">&amp;&amp;</span> x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>right <span style="color:#555">==</span> x<span style="color:#555">-&gt;</span>parent) {
+                RotateLeft(x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>parent);
+                RotateLeft(x<span style="color:#555">-&gt;</span>parent);
+            }
+            <span style="color:#09f;font-style:italic">/*zig zag*/</span>
+            <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>left <span style="color:#555">==</span> x <span style="color:#555">&amp;&amp;</span> x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>right <span style="color:#555">==</span> x<span style="color:#555">-&gt;</span>parent) {
+                RotateRight(x<span style="color:#555">-&gt;</span>parent);
+                RotateLeft(x<span style="color:#555">-&gt;</span>parent);
+            } <span style="color:#069;font-weight:bold">else</span> {
+                RotateLeft(x<span style="color:#555">-&gt;</span>parent);
+                RotateRight(x<span style="color:#555">-&gt;</span>parent);
+            }
+        }
+    } <span style="color:#09f;font-style:italic">/*x를 중심으로 왼쪽으로 회전*/</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">RotateLeft</span>(NodePtr x) {
+        NodePtr y <span style="color:#555">=</span> x<span style="color:#555">-&gt;</span>right;
+
+        x<span style="color:#555">-&gt;</span>right <span style="color:#555">=</span> y<span style="color:#555">-&gt;</span>left;
+        <span style="color:#069;font-weight:bold">if</span> (y<span style="color:#555">-&gt;</span>left) {
+            y<span style="color:#555">-&gt;</span>left<span style="color:#555">-&gt;</span>parent <span style="color:#555">=</span> x;
+        }
+        y<span style="color:#555">-&gt;</span>parent <span style="color:#555">=</span> x<span style="color:#555">-&gt;</span>parent;
+
+        <span style="color:#069;font-weight:bold">if</span> (<span style="color:#555">!</span>x<span style="color:#555">-&gt;</span>parent) {
+            root <span style="color:#555">=</span> y;
+        } <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (x <span style="color:#555">==</span> x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>left) {
+            x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>left <span style="color:#555">=</span> y;
+        } <span style="color:#069;font-weight:bold">else</span> {
+            x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>right <span style="color:#555">=</span> y;
+        }
+        x<span style="color:#555">-&gt;</span>parent <span style="color:#555">=</span> y;
+        y<span style="color:#555">-&gt;</span>left <span style="color:#555">=</span> x;
+    }
+    <span style="color:#09f;font-style:italic">/*x를 중심으로 오른쪽으로 회전*/</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">RotateRight</span>(NodePtr x) {
+        NodePtr y <span style="color:#555">=</span> x<span style="color:#555">-&gt;</span>left;
+
+        x<span style="color:#555">-&gt;</span>left <span style="color:#555">=</span> y<span style="color:#555">-&gt;</span>right;
+        <span style="color:#069;font-weight:bold">if</span> (y<span style="color:#555">-&gt;</span>right) {
+            y<span style="color:#555">-&gt;</span>right<span style="color:#555">-&gt;</span>parent <span style="color:#555">=</span> x;
+        }
+        y<span style="color:#555">-&gt;</span>parent <span style="color:#555">=</span> x<span style="color:#555">-&gt;</span>parent;
+
+        <span style="color:#069;font-weight:bold">if</span> (<span style="color:#555">!</span>x<span style="color:#555">-&gt;</span>parent) {
+            root <span style="color:#555">=</span> y;
+        } <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (x <span style="color:#555">==</span> x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>left) {
+            x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>left <span style="color:#555">=</span> y;
+        } <span style="color:#069;font-weight:bold">else</span> {
+            x<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>right <span style="color:#555">=</span> y;
+        }
+        x<span style="color:#555">-&gt;</span>parent <span style="color:#555">=</span> y;
+        y<span style="color:#555">-&gt;</span>right <span style="color:#555">=</span> x;
+    }
+
+    <span style="color:#09f;font-style:italic">/* 삭제시 */</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">replace</span>(NodePtr u, NodePtr v) {
+        <span style="color:#069;font-weight:bold">if</span> (<span style="color:#555">!</span>u<span style="color:#555">-&gt;</span>parent)
+            root <span style="color:#555">=</span> v;
+        <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (u <span style="color:#555">==</span> u<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>left)
+            u<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>left <span style="color:#555">=</span> v;
+        <span style="color:#069;font-weight:bold">else</span>
+            u<span style="color:#555">-&gt;</span>parent<span style="color:#555">-&gt;</span>right <span style="color:#555">=</span> v;
+        <span style="color:#069;font-weight:bold">if</span> (v) v<span style="color:#555">-&gt;</span>parent <span style="color:#555">=</span> u<span style="color:#555">-&gt;</span>parent;
+    }
+
+    <span style="color:#09f;font-style:italic">/*y를 중심으로 오른쪽으로 회전*/</span>
+
+    <span style="color:#09f;font-style:italic">/*show tree*/</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">print_helper</span>(NodePtr root, std<span style="color:#555">::</span>string indent, <span style="color:#078;font-weight:bold">bool</span> last) {
+        <span style="color:#09f;font-style:italic">// print the tree structure on the screen
+</span><span style="color:#09f;font-style:italic"></span>        <span style="color:#069;font-weight:bold">if</span> (root <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nullptr</span>) {
+            std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> indent;
+            <span style="color:#069;font-weight:bold">if</span> (last) {
+                std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;R----&#34;</span>;
+                indent <span style="color:#555">+=</span> <span style="color:#c30">&#34;     &#34;</span>;
+            } <span style="color:#069;font-weight:bold">else</span> {
+                std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;L----&#34;</span>;
+                indent <span style="color:#555">+=</span> <span style="color:#c30">&#34;|    &#34;</span>;
+            }
+
+            std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> root<span style="color:#555">-&gt;</span>key <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+            print_helper(root<span style="color:#555">-&gt;</span>left, indent, <span style="color:#366">false</span>);
+            print_helper(root<span style="color:#555">-&gt;</span>right, indent, <span style="color:#366">true</span>);
+        }
+    }
+
+    <span style="color:#09f;font-style:italic">/*중위순회*/</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Inorder</span>(NodePtr target) {
+        <span style="color:#069;font-weight:bold">if</span> (target <span style="color:#555">==</span> <span style="color:#069;font-weight:bold">nullptr</span>) <span style="color:#069;font-weight:bold">return</span>;
+        Inorder(target<span style="color:#555">-&gt;</span>left);
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> target<span style="color:#555">-&gt;</span>key <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34; &#34;</span>;
+        Inorder(target<span style="color:#555">-&gt;</span>right);
+    }
+    <span style="color:#09f;font-style:italic">/*후위순회*/</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Postorder</span>(NodePtr target) {
+        <span style="color:#069;font-weight:bold">if</span> (target <span style="color:#555">==</span> <span style="color:#069;font-weight:bold">nullptr</span>) <span style="color:#069;font-weight:bold">return</span>;
+        Postorder(target<span style="color:#555">-&gt;</span>left);
+        Postorder(target<span style="color:#555">-&gt;</span>right);
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> target<span style="color:#555">-&gt;</span>key <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34; &#34;</span>;
+    }
+    <span style="color:#09f;font-style:italic">/*전위순회*/</span>
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Preorder</span>(NodePtr target) {
+        <span style="color:#069;font-weight:bold">if</span> (target <span style="color:#555">==</span> <span style="color:#069;font-weight:bold">nullptr</span>) <span style="color:#069;font-weight:bold">return</span>;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> target<span style="color:#555">-&gt;</span>key <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34; &#34;</span>;
+        Preorder(target<span style="color:#555">-&gt;</span>left);
+        Preorder(target<span style="color:#555">-&gt;</span>right);
+    }
+
+   <span style="color:#069;font-weight:bold">public</span><span style="color:#555">:</span>
+    SplayTree() { <span style="color:#069;font-weight:bold">this</span><span style="color:#555">-&gt;</span>root <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">nullptr</span>; }
+    <span style="color:#09f;font-style:italic">//최솟값 찾기
+</span><span style="color:#09f;font-style:italic"></span>    NodePtr <span style="color:#c0f">tree_minimum</span>(NodePtr x) {
+        <span style="color:#069;font-weight:bold">while</span> (x<span style="color:#555">-&gt;</span>left <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nullptr</span>) {
+            x <span style="color:#555">=</span> x<span style="color:#555">-&gt;</span>left;
+        }
+        <span style="color:#069;font-weight:bold">return</span> x;
+    }
+    <span style="color:#09f;font-style:italic">//최댓값 찾기
+</span><span style="color:#09f;font-style:italic"></span>    NodePtr <span style="color:#c0f">tree_maximum</span>(NodePtr x) {
+        <span style="color:#069;font-weight:bold">while</span> (x<span style="color:#555">-&gt;</span>right <span style="color:#555">!=</span> <span style="color:#069;font-weight:bold">nullptr</span>) {
+            x <span style="color:#555">=</span> x<span style="color:#555">-&gt;</span>right;
+        }
+        <span style="color:#069;font-weight:bold">return</span> x;
+    }
+
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">DisplayMenuBoard</span>() {
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;         ** Splay Tree **     &#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;                            &#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;              Menu          &#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;          1. Insert Key     &#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;          2. Delete Key     &#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;          3. Show Tree      &#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;          4. choose order   &#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;          5. show Menu      &#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;          6. clear Display  &#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;          7. exit           &#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+    }
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">SelectMenu</span>() {
+        DisplayMenuBoard();
+        <span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#555">-</span><span style="color:#f60">1</span>;
+
+        <span style="color:#069;font-weight:bold">while</span> (i <span style="color:#555">!=</span> <span style="color:#f60">8</span>) {
+            std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;(show Menu : 5) --&gt;  select :   &#34;</span>;
+            std<span style="color:#555">::</span>cin <span style="color:#555">&gt;&gt;</span> i;
+            <span style="color:#069;font-weight:bold">switch</span> (i) {
+                <span style="color:#069;font-weight:bold">case</span> <span style="color:#f60">1</span><span style="color:#555">:</span>
+                    Insert_helper();
+                    <span style="color:#069;font-weight:bold">break</span>;
+                <span style="color:#069;font-weight:bold">case</span> <span style="color:#f60">2</span><span style="color:#555">:</span>
+                    Delete_helper();
+                    <span style="color:#069;font-weight:bold">break</span>;
+                <span style="color:#069;font-weight:bold">case</span> <span style="color:#f60">3</span><span style="color:#555">:</span>
+                    print_helper(root, <span style="color:#c30">&#34;&#34;</span>, <span style="color:#366">true</span>);
+                    <span style="color:#069;font-weight:bold">break</span>;
+                <span style="color:#069;font-weight:bold">case</span> <span style="color:#f60">4</span><span style="color:#555">:</span>
+                    Order_helper();
+                    <span style="color:#069;font-weight:bold">break</span>;
+                <span style="color:#069;font-weight:bold">case</span> <span style="color:#f60">5</span><span style="color:#555">:</span>
+                    DisplayMenuBoard();
+                    <span style="color:#069;font-weight:bold">break</span>;
+                <span style="color:#069;font-weight:bold">case</span> <span style="color:#f60">6</span><span style="color:#555">:</span>
+                    system(<span style="color:#c30">&#34;cls&#34;</span>);
+                    DisplayMenuBoard();
+                    <span style="color:#069;font-weight:bold">break</span>;
+                <span style="color:#069;font-weight:bold">case</span> <span style="color:#f60">7</span><span style="color:#555">:</span>
+                    <span style="color:#069;font-weight:bold">return</span>;
+                <span style="color:#069;font-weight:bold">default</span><span style="color:#555">:</span>
+                    std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34; !!! Wrong entered !!!</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+            }
+        }
+    }
+
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Insert_helper</span>() {
+        <span style="color:#078;font-weight:bold">int</span> item;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;Key to insert  :  &#34;</span>;
+        std<span style="color:#555">::</span>cin <span style="color:#555">&gt;&gt;</span> item;
+        <span style="color:#069;font-weight:bold">if</span> (IsKey(item)) {
+            std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;!!! &#34;</span> <span style="color:#555">&lt;&lt;</span> item <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34; is already exists !!!</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>;
+            <span style="color:#069;font-weight:bold">return</span>;
+        }
+        Insert(item);
+        <span style="color:#069;font-weight:bold">return</span>;
+    }
+
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Delete_helper</span>() {
+        <span style="color:#078;font-weight:bold">int</span> item;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;Key to delete  :  &#34;</span>;
+        std<span style="color:#555">::</span>cin <span style="color:#555">&gt;&gt;</span> item;
+        <span style="color:#069;font-weight:bold">if</span> (<span style="color:#555">!</span>IsKey(item)) {
+            std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;!!! &#34;</span> <span style="color:#555">&lt;&lt;</span> item <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34; is not exists !!!</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>;
+            <span style="color:#069;font-weight:bold">return</span>;
+        }
+        Delete(item);
+        <span style="color:#069;font-weight:bold">return</span>;
+    }
+
+    <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">Order_helper</span>() {
+        <span style="color:#078;font-weight:bold">int</span> i;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;         == Order Menu ==&#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;          1. PreOrder&#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;          2. InOrder&#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;          3. PostOrder&#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;          4. exit&#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+        std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34; --&gt; select  :  &#34;</span>;
+
+        std<span style="color:#555">::</span>cin <span style="color:#555">&gt;&gt;</span> i;
+        <span style="color:#069;font-weight:bold">switch</span> (i) {
+            <span style="color:#069;font-weight:bold">case</span> <span style="color:#f60">1</span><span style="color:#555">:</span>
+                Preorder(<span style="color:#069;font-weight:bold">this</span><span style="color:#555">-&gt;</span>root);
+                std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+                <span style="color:#069;font-weight:bold">break</span>;
+            <span style="color:#069;font-weight:bold">case</span> <span style="color:#f60">2</span><span style="color:#555">:</span>
+                Inorder(<span style="color:#069;font-weight:bold">this</span><span style="color:#555">-&gt;</span>root);
+                std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+                <span style="color:#069;font-weight:bold">break</span>;
+            <span style="color:#069;font-weight:bold">case</span> <span style="color:#f60">3</span><span style="color:#555">:</span>
+                Postorder(<span style="color:#069;font-weight:bold">this</span><span style="color:#555">-&gt;</span>root);
+                std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+                <span style="color:#069;font-weight:bold">break</span>;
+            <span style="color:#069;font-weight:bold">case</span> <span style="color:#f60">4</span><span style="color:#555">:</span>
+                <span style="color:#069;font-weight:bold">return</span>;
+            <span style="color:#069;font-weight:bold">default</span><span style="color:#555">:</span>
+                std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34; !!! Wrong enter !!!</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl;
+                <span style="color:#069;font-weight:bold">break</span>;
+        }
+        <span style="color:#069;font-weight:bold">return</span>;
+    }
+};
+
+<span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>() {
+    SplayTree tree;
+    tree.SelectMenu();
+
+    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+}
+</code></pre></div>  </div>
+</details>
+<p><br><br></p>
+</div>
+
+	
+    <div style="margin-top:200px;">
+		<script src="https://utteranc.es/client.js"
+				repo="gowoonsori/blog-comments"
+				issue-term="pathname"
+				theme="github-light"
+				crossorigin="anonymous"
+				async>
+		</script>
+	</div>
+    
+
+	
+	
+	
+	
+	 
+	<div class="chevrons ">
+		<a class="next" href="/data-structure/tree/aa-tree/" title="AA Tree" style="margin-right: 0px;">
+            <div>
+                <p>Next page</p>
+                <label>AA Tree</label>
+            </div>
+            <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
+	</div>
+	
+
+
+
+      </section>
+
+      
+      
+      <section class="right-menu ">
+      
+	
+	
+		
+	    	
+	  	
+	<div class="TableOfContents">
+    <label>What&#39;s on this page</label>
+    <nav>
+        <ul >
+            <li><a href="/data-structure/tree/splay-tree/">Splay Tree</a></li>
+        </ul>
+    </nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-특징">1. 특징</a></li>
+    <li><a href="#2-사용-예">2. 사용 예</a></li>
+    <li><a href="#3-사용-기법">3. 사용 기법</a>
+      <ul>
+        <li><a href="#-rotate">◾ Rotate</a></li>
+        <li><a href="#-splay">◾ Splay</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-구현">4. 구현</a>
+      <ul>
+        <li><a href="#-삽입">📌 삽입</a></li>
+        <li><a href="#-삭제">📌 삭제</a></li>
+        <li><a href="#-순회-과정">📌 순회 과정</a></li>
+        <li><a href="#-탐색-과정">📌 탐색 과정</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-시간-복잡도">5. 시간 복잡도</a></li>
+    <li><a href="#구현-코드">구현 코드</a></li>
+  </ul>
+</nav>
+</div>
+	
+		
+	    	
+	  	
+	<div class="Actions">
+	<nav>
+		<ul>
+				
+		    
+		    
+			
+		      <li>
+		          <i class='fas fa-calendar'></i>
+		          Last update on 03 June 2021
+		      </li>
+		    
+		    
+		</ul>
+		<div style="text-align: center;margin : 10px 40px 0 0;">
+			<a href="https://hits.seeyoufarm.com">
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fdata-structure%2ftree%2fsplay-tree%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+			</a>
+		</div>
+	</nav>
+    
+</div>
+
+      </section>
+      
+    </article>
+    
+    
+    <footer>
+      
+	
+		
+	    	<style type="text/css">
+
+.footer-gray {
+  width: 100%;
+  color: #888;
+}
+
+.footer-custom {
+  font: normal normal 12px/1.4 sans-serif;
+  /*max-width: 1008px;*/
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.footer-custom:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-lists:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-hdr {
+  color: white;
+  font: 22px/1.4  sans-serif;
+  margin: 1em 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .ftr-hdr {
+    font-size: 18px;
+  }
+}
+
+.footer-list-wrap {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 568px) {
+  .footer-list-wrap {
+    width: 33.3333%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-list-wrap {
+    width: 25%;
+  }
+}
+
+.ftr-links-sub {
+  padding: 0;
+  margin: 0;
+}
+
+.ftr-links-sub:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.ftr-links-sub li {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0;
+  color: #888;
+  font: normal normal 12px sans-serif;
+  text-transform: uppercase;
+  /*width: 150px;*/
+}
+
+.footer-custom a,
+.footer-custom a:link,
+.footer-custom a:visited,
+.ftr-links-sub li .link {
+  text-decoration: none;
+  color: #888;
+  padding: 5px 0;
+  display: block;
+}
+
+.footer-custom .footer-legal a {
+  display: inline;
+}
+
+.footer-custom a:hover,
+.footer-custom a:active,
+.ftr-links-sub li .link:hover {
+  text-decoration: underline;
+  color: #888;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-custom a, .footer-custom a:link, .footer-custom a:visited, .ftr-links-sub li .link {
+    padding: 0;
+  }
+}
+/* BEGIN EMAIL CAPTURE STYLES*/
+
+.footer-email {
+  text-align: center;
+}
+
+#ftrEmailForm {
+  height: 44px;
+}
+
+#ftrEmailForm .error {
+  display: none;
+  color: red;
+  text-align: left;
+}
+
+#ftrEmailForm #ftrEmailInput {
+  background: none repeat scroll 0 0 #FFF;
+  border: 1px solid #D6D6D6;
+  box-sizing: border-box;
+  color: #888;
+  float: left;
+  font: normal normal 14px/1.4 sans-serif;
+  padding: 5px;
+  width: 70%;
+  height: 100%;
+}
+
+#ftrEmailForm #ftrEmailInput:hover {
+  border: 1px solid #888;
+}
+
+#ftrEmailForm #ftrEmailInput:focus {
+  border: 1px solid #ef9223;
+  outline: #ef9223 auto 5px;
+}
+
+#ftrEmailForm .button {
+  width: 30%;
+  height: 100%;
+  padding: 5px;
+  float: left;
+  border: 1px solid #DFDFDF;
+  box-sizing: border-box;
+  color: #000;
+  font: normal bold 18px/1 sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FFF;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e1e1e1));
+  background: -webkit-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -moz-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -ms-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: -o-linear-gradient(top, white 0, #e1e1e1 100%);
+  background: linear-gradient(to bottom, white 0, #e1e1e1 100%);
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+}
+
+#ftrEmailForm .button:hover,
+#ftrEmailForm .button:active {
+  background: black;
+  color: #FFF;
+  outline: none;
+}
+/* BEGIN SOCIAL STYLES*/
+
+.footer-social {
+  text-align: center;
+}
+
+.footer-social ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-social ul:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-social li {
+  float: left;
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-lists {
+    width: 100%;
+  }
+  .footer-email {
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+  .footer-social {
+    width: 45%;
+    margin-left: 5%;
+    float: left;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-lists {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-email {
+    width: 33.3333%;
+  }
+  .footer-social {
+    width: 33.3333%;
+    float: right;
+    margin-left: 0;
+  }
+}
+
+.footer-legal {
+  padding: 15px 0 0;
+  clear: left;
+}
+
+.footer-payment {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-legal {
+    width: 66.6666%;
+    float: left;
+  }
+  .footer-payment {
+    width: 33.3333%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment {
+    text-align: left;
+  }
+}
+
+.footer-payment ul {
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.footer-payment ul li {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+@media only screen and (min-width: 1008px) {
+  .footer-payment ul li.ftr-stella {
+    margin-left: 0;
+  }
+}
+
+
+</style>
+  <div class="footer-gray">
+    <div class="footer-custom">
+      <div class="footer-lists">
+        <h6 class = "ftr-hdr">Contact me</h6>
+        <p>E-mail : gowoonsori97@gmail.com  |  gowoonsori97@naver.com</p>
+      </div>
+      <div class="footer-social">
+        <h6 class="ftr-hdr">Follow Us</h6>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/gowoonsori97/" title="Facebook">
+              <img width="24" height="24" alt="Like us on Facebook" src="/images/fb.png">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.github.com/gowoonosori" title="Github">
+             <i class="fab fa-github" style="font-size:24px"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <p>Copyrihgt &copy; gowoonsori.site All Rights Reserved. </p>
+      </div>
+    </div>
+  </div>
+  <!--/.footer-gray-->
+
+	    
+	
+    </footer>
+    
+
+
+
+  </body>
+</html>

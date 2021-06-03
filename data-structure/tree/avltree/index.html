@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-06-02T23:34:41 KST">
+<meta name="revised" content="2021-06-03T23:17:59 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
@@ -962,6 +962,40 @@ if (!doNotTrack) {
         <ul>
               
 
+    <li data-nav-id="https://gowoonsori.site/data-structure/array-list/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/array-list/">Array와 List</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/stack-queue/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/stack-queue/">Stack Queue</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
     <li data-nav-id="https://gowoonsori.site/data-structure/tree/" class="dd-item parent haschildren
         item_level_$level
         ">
@@ -971,7 +1005,7 @@ if (!doNotTrack) {
           <i class="fas fa-chevron-down ddexp"></i>
       
       
-          <a href="/data-structure/tree/">트리</a>
+          <a href="/data-structure/tree/">Tree</a>
           
       
       
@@ -988,7 +1022,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/data-structure/tree/redblacktree/">레드 블랙 트리 (Red Black Tree)</a>
+          <a href="/data-structure/tree/redblacktree/">Red Black Tree</a>
           
       
       
@@ -1012,7 +1046,75 @@ if (!doNotTrack) {
         
       
     </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/splay-tree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/splay-tree/">Splay Tree</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/tree/aa-tree/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/tree/aa-tree/">AA Tree</a>
+          
+      
+      
+        
+      
+    </li>
         </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/heap/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/heap/">Heap</a>
+          
+      
+      
+        
+      
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/data-structure/graph/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/data-structure/graph/">Graph</a>
+          
+      
+      
+        
+      
     </li>
         </ul>
     </li>
@@ -1068,6 +1170,23 @@ if (!doNotTrack) {
       
     </li>
         </ul>
+    </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/algorithm/longest-increasing-subsequence/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/algorithm/longest-increasing-subsequence/">최장 증가 수열</a>
+          
+      
+      
+        
+      
     </li>
               
 
@@ -1294,6 +1413,23 @@ if (!doNotTrack) {
           <a href="/linux/">Linux</a>
       
         <ul>
+              
+
+    <li data-nav-id="https://gowoonsori.site/linux/info/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/linux/info/">리눅스란?</a>
+          
+      
+      
+        
+      
+    </li>
               
 
     <li data-nav-id="https://gowoonsori.site/linux/timezone/" class="dd-item
@@ -1727,34 +1863,38 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#용어-개념-정리">용어 개념 정리</a></li>
-    <li><a href="#특징">특징</a></li>
-    <li><a href="#사용-예">사용 예</a></li>
-    <li><a href="#구현">구현</a>
+    <li><a href="#1-용어-개념-정리">1. 용어 개념 정리</a></li>
+    <li><a href="#2-특징">2. 특징</a></li>
+    <li><a href="#3-사용-예">3. 사용 예</a></li>
+    <li><a href="#4-구현시-살펴볼-경우의-수">4. 구현시 살펴볼 경우의 수</a>
       <ul>
         <li><a href="#-insert-삽입">◾ Insert (삽입)</a></li>
+        <li><a href="#-case-1--y는-z의-왼쪽-자식-x는-y의-왼쪽-자식--left-left-">📌 case 1 : y는 z의 왼쪽 자식, x는 y의 왼쪽 자식 ( left left )</a></li>
+        <li><a href="#-case-2--y는-z의-왼쪽-자식-x는-y의-오른쪽-자식--left-right-">📌 case 2 : y는 z의 왼쪽 자식, x는 y의 오른쪽 자식 ( left right )</a></li>
+        <li><a href="#-case-3--y는-z의-오른쪽-자식-x는-y의-오른쪽-자식--right-right-">📌 case 3 : y는 z의 오른쪽 자식, x는 y의 오른쪽 자식 ( right right )</a></li>
+        <li><a href="#-case-4--y는-z의-오른쪽-자식-x는-y의-왼쪽-자식--right-left-">📌 case 4 : y는 z의 오른쪽 자식, x는 y의 왼쪽 자식 ( right left )</a></li>
         <li><a href="#-delete-삭제">◾ Delete (삭제)</a></li>
         <li><a href="#-search--탐색-">◾ Search ( 탐색 )</a></li>
       </ul>
     </li>
+    <li><a href="#구현-코드">구현 코드</a></li>
   </ul>
 </nav>
 	</div>
 	
 	
 
-	<div class="content"><hr>
-<p>BST (이진 탐색 트리)를 기반으로 둔 Tree.</p>
+	<div class="content"><p>BST (이진 탐색 트리)를 기반으로 둔 Tree.</p>
 <p>어떤 노드를 기준으로 하더라도 왼쪽자식의 깊이와 오른쪽 자식의 <code>깊이 차이</code>가<code> 1을 넘지 않는</code> 트리</p>
 <p><br><br></p>
-<h2>용어 개념 정리</h2><a class="anchor" id="용어-개념-정리"></a>
+<h2>1. 용어 개념 정리</h2><a class="anchor" id="1-용어-개념-정리"></a>
 <hr>
 <ul>
-<li><code>균형치 (Balance factor)</code> : 자식노드의 깊이 차이 ( 왼쪽 서브트리의 높이 – 오른쪽 서브트리의 높이 )
+<li><strong>균형치 (Balance factor)</strong> : 자식노드의 깊이 차이 ( 왼쪽 서브트리의 높이 – 오른쪽 서브트리의 높이 )
 <br><code>BF</code>는 -1, 0, 1이 기준이며, 이 범위를 벗어난다면, 그 트리의 균형은 깨진것다.</li>
 </ul>
 <p><br><br></p>
-<h2>특징</h2><a class="anchor" id="특징"></a>
+<h2>2. 특징</h2><a class="anchor" id="2-특징"></a>
 <hr>
 <ul>
 <li>
@@ -1770,69 +1910,69 @@ if (!doNotTrack) {
 <p><code>RB Tree</code>는 Red/Black을 표현할 때 1 or 0<code> 1비트</code>만 있어도 되나 <code>AVL Tree</code>는 깊이를 저장할 <code>int</code>타입의 저장이 필요하다.</p>
 </li>
 <li>
-<p><code>삽입</code>, <code>삭제</code>, <code>탐색</code>의 시간복잡도는 <code>O(log n)</code></p>
+<p>삽입, 삭제, 탐색의 시간복잡도는 <code>O(log n)</code></p>
 </li>
 </ul>
 <p><br><br></p>
-<h2>사용 예</h2><a class="anchor" id="사용-예"></a>
+<h2>3. 사용 예</h2><a class="anchor" id="3-사용-예"></a>
 <hr>
 <ul>
 <li>더 빠른 검색이 필요한 DB에 사용</li>
 </ul>
 <p><br><br></p>
-<h2>구현</h2><a class="anchor" id="구현"></a>
+<h2>4. 구현시 살펴볼 경우의 수</h2><a class="anchor" id="4-구현시-살펴볼-경우의-수"></a>
 <hr>
-<br>
 <h3>◾ Insert (삽입)</h3><a class="anchor" id="-insert-삽입"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">BST의 일반 삽입 규칙에 맞게 삽입 후, 첫번째로 불균형한 노드를 찾는다.
-이때 불균형한 노드를 z라고 할때, 자식노드가 y, 손자 노드를 x라 한다.
-
-해당하는 case에 따라 z를 기준으로 부분트리를 회전을 통해 재배열 시켜준다.(rotation , restructuring)
-
-🔴 case 1 : y는 z의 왼쪽 자식, x는 y의 왼쪽 자식 ( left left )
-
-  ➡ z를 기준으로 right-rotate 시켜준다.
-
-🔴 case 2 : y는 z의 왼쪽 자식, x는 y의 오른쪽 자식 ( left right )
-
-  ➡ y를 기준으로 left-rotate 시켜준 후, z를 기준으로 right-rotate 시켜준다.
-
-🔴 case 3 : y는 z의 오른쪽 자식, x는 y의 오른쪽 자식 ( right right )
-
-   ➡ z를 기준으로 left-rotate 시켜준다.
-
-🔴 case 4 : y는 z의 오른쪽 자식, x는 y의 왼쪽 자식 ( right left )
-
-    ➡ y를 기준으로 right-rotate 시켜준 후, z를 기준으로 left-rotate 시켜준다.
-</code></pre></div><p><br><br></p>
+<p>BST의 일반 삽입 규칙에 맞게 삽입 후, 첫번째로 불균형한 노드를 찾는다.
+이때 <code>불균형한 노드를 z</code>라고 할때, <code>자식노드가 y</code>, <code>손자 노드를 x</code>라 한다.</p>
+<p>해당하는 case에 따라 z를 기준으로 부분트리를 회전을 통해 재배열 시켜준다.(rotation , restructuring)</p>
+<br>
+<h3>📌 case 1 : y는 z의 왼쪽 자식, x는 y의 왼쪽 자식 ( left left )</h3><a class="anchor" id="-case-1--y는-z의-왼쪽-자식-x는-y의-왼쪽-자식--left-left-"></a>
+<p><img src="ll.jpg?classes=shadow,border" alt="leftleft"></p>
+<p>➡ z를 기준으로 right-rotate 시켜준다.</p>
+<p><img src="ll2.jpg?classes=shadow,border" alt="leftleft2"></p>
+<p><br><br></p>
+<h3>📌 case 2 : y는 z의 왼쪽 자식, x는 y의 오른쪽 자식 ( left right )</h3><a class="anchor" id="-case-2--y는-z의-왼쪽-자식-x는-y의-오른쪽-자식--left-right-"></a>
+<p><img src="lr1.jpg?classes=shadow,border" alt="lr"></p>
+<p>➡ y를 기준으로 left-rotate 시켜준 후,
+<img src="lr2.jpg?classes=shadow,border" alt="lr"></p>
+<p>z를 기준으로 right-rotate 시켜준다.
+<img src="lr3.jpg?classes=shadow,border" alt="lr"></p>
+<p><br><br></p>
+<h3>📌 case 3 : y는 z의 오른쪽 자식, x는 y의 오른쪽 자식 ( right right )</h3><a class="anchor" id="-case-3--y는-z의-오른쪽-자식-x는-y의-오른쪽-자식--right-right-"></a>
+<p><img src="rr.jpg?classes=shadow,border" alt="rr">
+➡ z를 기준으로 left-rotate 시켜준다.
+<img src="rr2.jpg?classes=shadow,border" alt="rr"></p>
+<p><br><br></p>
+<h3>📌 case 4 : y는 z의 오른쪽 자식, x는 y의 왼쪽 자식 ( right left )</h3><a class="anchor" id="-case-4--y는-z의-오른쪽-자식-x는-y의-왼쪽-자식--right-left-"></a>
+<p><img src="rl.jpg?classes=shadow,border" alt="rl">
+➡ y를 기준으로 right-rotate 시켜준 후, z를 기준으로 left-rotate 시켜준다.
+<img src="rl2.png?classes=shadow,border" alt="rl"></p>
+<p><br><br></p>
 <h3>◾ Delete (삭제)</h3><a class="anchor" id="-delete-삭제"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">BST의 일반 삽입 규칙에 맞게 삭제 후, 첫번째로 불균형한 노드를 찾는다.
-이때 불균형한 노드를 z라고 할때, z의 자식노드중 깊이가 큰 자식 노드를 y, y의 자식노드중 깊이가 큰 자식 노드를 x라 하자.
+<p>BST의 일반 삽입 규칙에 맞게 삭제 후, 첫번째로 불균형한 노드를 찾는다.
+이때 불균형한 노드를 z라고 할때, z의 자식노드중 깊이가 큰 자식 노드를 y, y의 자식노드중 깊이가 큰 자식 노드를 x라 하자.</p>
+<p>해당하는 case에 따라 z를 기준으로 부분트리를 회전을 통해 재배열 시켜준다.(rotation , restructuring)
+재배열 과정은 삽입과 동일하다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">🔴 case 1 : y는 z의 왼쪽 자식, x는 y의 왼쪽 자식 ( left left )
 
-해당하는 case에 따라 z를 기준으로 부분트리를 회전을 통해 재배열 시켜준다.(rotation , restructuring)
-재배열 과정은 삽입과 동일하다.
+➡ z를 기준으로 right-rotate 시켜준다.
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">🔴 case 2 : y는 z의 왼쪽 자식, x는 y의 오른쪽 자식 ( left right )
 
-🔴 case 1 : y는 z의 왼쪽 자식, x는 y의 왼쪽 자식 ( left left )
+➡ y를 기준으로 left-rotate 시켜준 후, z를 기준으로 right-rotate 시켜준다.
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">🔴 case 3 : y는 z의 오른쪽 자식, x는 y의 오른쪽 자식 ( right right )
 
-  ➡ z를 기준으로 right-rotate 시켜준다.
+➡ z를 기준으로 left-rotate 시켜준다.
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">🔴 case 4 : y는 z의 오른쪽 자식, x는 y의 왼쪽 자식 ( right left )
 
-🔴 case 2 : y는 z의 왼쪽 자식, x는 y의 오른쪽 자식 ( left right )
-
-  ➡ y를 기준으로 left-rotate 시켜준 후, z를 기준으로 right-rotate 시켜준다.
-
-🔴 case 3 : y는 z의 오른쪽 자식, x는 y의 오른쪽 자식 ( right right )
-
-   ➡ z를 기준으로 left-rotate 시켜준다.
-
-🔴 case 4 : y는 z의 오른쪽 자식, x는 y의 왼쪽 자식 ( right left )
-
-    ➡ y를 기준으로 right-rotate 시켜준 후, z를 기준으로 left-rotate 시켜준다.
+➡ y를 기준으로 right-rotate 시켜준 후, z를 기준으로 left-rotate 시켜준다.
 </code></pre></div><p><br><br></p>
 <h3>◾ Search ( 탐색 )</h3><a class="anchor" id="-search--탐색-"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">AVL Tree도 BST의 일종이기 때문에 탐색의 밥법은 일반적인 Bianry Tree의 탐색 방법과 다르지 않다.
-
-찾는 값이 해당 노드보다 작다면 왼쪽으로 크다면 오른쪽으로 내려가며 값을 탐색
-</code></pre></div><br>
+<p>AVL Tree도 BST의 일종이기 때문에 탐색의 밥법은 일반적인 Bianry Tree의 탐색 방법과 다르지 않다.</p>
+<p>찾는 값이 해당 노드보다 작다면 왼쪽으로 크다면 오른쪽으로 내려가며 값을 탐색</p>
+<p><br><br></p>
+<h2>구현 코드</h2><a class="anchor" id="구현-코드"></a>
+<p><a href="https://github.com/gowoonsori/my-tech/blob/master/dataStructure/Tree/AvlTree.cpp">github에서 보기</a></p>
 <details>
   <summary style="font-Weight : bold; font-size : 15px; color : #F90000;" >  📃 코드  ( 접기 / 펼치기 )</summary>
   <div>
@@ -2229,10 +2369,10 @@ if (!doNotTrack) {
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/algorithm/" title="알고리즘 ( Algorithm )" style="margin-right: 0px;">
+		<a class="next" href="/data-structure/tree/splay-tree/" title="Splay Tree" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>알고리즘 ( Algorithm )</label>
+                <label>Splay Tree</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -2260,16 +2400,21 @@ if (!doNotTrack) {
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#용어-개념-정리">용어 개념 정리</a></li>
-    <li><a href="#특징">특징</a></li>
-    <li><a href="#사용-예">사용 예</a></li>
-    <li><a href="#구현">구현</a>
+    <li><a href="#1-용어-개념-정리">1. 용어 개념 정리</a></li>
+    <li><a href="#2-특징">2. 특징</a></li>
+    <li><a href="#3-사용-예">3. 사용 예</a></li>
+    <li><a href="#4-구현시-살펴볼-경우의-수">4. 구현시 살펴볼 경우의 수</a>
       <ul>
         <li><a href="#-insert-삽입">◾ Insert (삽입)</a></li>
+        <li><a href="#-case-1--y는-z의-왼쪽-자식-x는-y의-왼쪽-자식--left-left-">📌 case 1 : y는 z의 왼쪽 자식, x는 y의 왼쪽 자식 ( left left )</a></li>
+        <li><a href="#-case-2--y는-z의-왼쪽-자식-x는-y의-오른쪽-자식--left-right-">📌 case 2 : y는 z의 왼쪽 자식, x는 y의 오른쪽 자식 ( left right )</a></li>
+        <li><a href="#-case-3--y는-z의-오른쪽-자식-x는-y의-오른쪽-자식--right-right-">📌 case 3 : y는 z의 오른쪽 자식, x는 y의 오른쪽 자식 ( right right )</a></li>
+        <li><a href="#-case-4--y는-z의-오른쪽-자식-x는-y의-왼쪽-자식--right-left-">📌 case 4 : y는 z의 오른쪽 자식, x는 y의 왼쪽 자식 ( right left )</a></li>
         <li><a href="#-delete-삭제">◾ Delete (삭제)</a></li>
         <li><a href="#-search--탐색-">◾ Search ( 탐색 )</a></li>
       </ul>
     </li>
+    <li><a href="#구현-코드">구현 코드</a></li>
   </ul>
 </nav>
 </div>

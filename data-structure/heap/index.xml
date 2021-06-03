@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Heap on Gowoonsori&#39;s TechBlog</title>
+    <link>https://gowoonsori.site/data-structure/heap/</link>
+    <description>Recent content in Heap on Gowoonsori&#39;s TechBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Jun 2021 22:54:05 +0900</lastBuildDate><atom:link href="https://gowoonsori.site/data-structure/heap/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
