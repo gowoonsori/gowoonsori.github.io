@@ -4,7 +4,7 @@
 <html>
   <head>
     <title>
-	DataType과 변수 :: Gowoonsori&#39;s TechBlog
+	문자열 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -12,20 +12,20 @@
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>DataType과 변수 :: Gowoonsori&#39;s TechBlog</title>
+<title>문자열 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀">
+<meta name="description" content="Go Lang의 문자열(String)에 대해 정리한 글">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="DataType과 변수" />
-<meta property="og:description" content="꾸준하게 글을 쓰는 개발자가 되고 싶은 Hong 입니다. 😀" />
+<meta property="og:title" content="문자열" />
+<meta property="og:description" content="Go Lang의 문자열(String)에 대해 정리한 글" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://gowoonsori.site/javascript/datatype/" />
+<meta property="og:url" content="https://gowoonsori.site/go/string/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
-<meta property="og:updated_time" content="2021-01-28T17:46:19+09:00" />
+<meta property="og:updated_time" content="2021-06-07T22:02:17+09:00" />
 
 
 
@@ -127,7 +127,7 @@ if (!doNotTrack) {
   </style>
   </head>
 
-  <body data-url="/javascript/datatype/"
+  <body data-url="/go/string/"
 
   class="hidebreadcrumb ">
 
@@ -668,13 +668,12 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/javascript/" class="dd-item parent haschildren
+    <li data-nav-id="https://gowoonsori.site/javascript/" class="dd-item haschildren
         item_level_$level
         ">
 
       
-      
-          <i class="fas fa-chevron-down ddexp"></i>
+      <i class="fas fa-chevron-right ddexp"></i>
       
           
       
@@ -686,7 +685,7 @@ if (!doNotTrack) {
         <ul>
               
 
-    <li data-nav-id="https://gowoonsori.site/javascript/datatype/" class="dd-item parent active
+    <li data-nav-id="https://gowoonsori.site/javascript/datatype/" class="dd-item
         item_level_$level
         ">
 
@@ -756,12 +755,13 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://gowoonsori.site/go/" class="dd-item haschildren
+    <li data-nav-id="https://gowoonsori.site/go/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
       
           
       
@@ -943,7 +943,7 @@ if (!doNotTrack) {
     </li>
               
 
-    <li data-nav-id="https://gowoonsori.site/go/string/" class="dd-item
+    <li data-nav-id="https://gowoonsori.site/go/string/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -1857,7 +1857,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>DataType과 변수</h1>
+			<h1>문자열</h1>
         
 
 		
@@ -1879,184 +1879,250 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#기본-자료형--primitive-">기본 자료형 ( Primitive )</a>
+    <li><a href="#1-utf-8과-utf-16">1. UTF-8과 UTF-16</a></li>
+    <li><a href="#2-문자열-리터럴-표현-방식">2. 문자열 리터럴 표현 방식</a>
       <ul>
-        <li><a href="#-boolean">◾ boolean</a></li>
-        <li><a href="#-null">◾ null</a></li>
-        <li><a href="#-undefined">◾ undefined</a></li>
-        <li><a href="#-number">◾ number</a></li>
-        <li><a href="#-string">◾ String</a></li>
-        <li><a href="#-symbol">◾ symbol</a></li>
+        <li><a href="#-double-quote-">◾ Double Quote (&quot;&quot;)</a></li>
+        <li><a href="#-back-tick-">◾ Back Tick (``)</a></li>
       </ul>
     </li>
-    <li><a href="#객체">객체</a>
+    <li><a href="#3-문자열-순회">3. 문자열 순회</a>
       <ul>
-        <li><a href="#-데이터-속성">◾ 데이터 속성</a></li>
-        <li><a href="#-접근자-속성">◾ 접근자 속성</a></li>
+        <li><a href="#-rune">◾ []rune</a></li>
+        <li><a href="#-range">◾ range</a></li>
       </ul>
     </li>
-    <li><a href="#형변환">형변환</a>
+    <li><a href="#4-문자열-합산">4. 문자열 합산</a></li>
+    <li><a href="#5-문자열-비교">5. 문자열 비교</a>
       <ul>
-        <li><a href="#-명시적-형변환">◾ 명시적 형변환</a></li>
-        <li><a href="#-자동-형변환">◾ 자동 형변환</a></li>
+        <li><a href="#--">◾ ==, !=</a></li>
+        <li><a href="#-----">◾ &lt;, &gt; , &lt;= ,&gt;=</a></li>
       </ul>
     </li>
-    <li><a href="#refernece">Refernece</a></li>
+    <li><a href="#6-문자열-구조">6. 문자열 구조</a></li>
+    <li><a href="#7-문자열-불변">7. 문자열 불변</a></li>
+    <li><a href="#8-string-builder">8. String Builder</a></li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 	</div>
 	
 	
 
-	<div class="content"><p>요즘 핫한 <code>TS</code>가 아닌 원래의 기본 <code>JS</code>는 <code>동적 타입(느슨한 타입)</code> 언어이기 때문에 타입을 미리 선언할 필요가 없다.</p>
-<h2>기본 자료형 ( Primitive )</h2><a class="anchor" id="기본-자료형--primitive-"></a>
-<h3>◾ boolean</h3><a class="anchor" id="-boolean"></a>
-<p>다른 언어들과 마찬가지로 true와 false값을 갖는다.</p>
-<h3>◾ null</h3><a class="anchor" id="-null"></a>
-<p>값이 비어있다는 것을 표시하는 데이터 형으로 비교 연산시 <code>false</code>로 취급한다.
-<br>값이 존재하지 않는 다는 것(변수가 어떤 객체도 가리키고 있지 않음)을 의도적으로 가리키기 위해 사용하기 때문에 <code>typeof null</code>연산에 <code>object</code>를 반환한다.</p>
-<h3>◾ undefined</h3><a class="anchor" id="-undefined"></a>
-<p><code>전역 객체</code>의 속성을 가리키는 값으로 변수에 값을 할당하지 않은 상태이다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">null</span> <span style="color:#555">==</span> <span style="color:#069;font-weight:bold">undefined</span>; <span style="color:#09f;font-style:italic">//true
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">null</span> <span style="color:#555">===</span> <span style="color:#069;font-weight:bold">undefined</span>; <span style="color:#09f;font-style:italic">//false
-</span></code></pre></div><p>undefined도 비교 연산시 <code>false</code>로 취급한다.
-<br>때문에 null과 동등 연산(==)시 true이지만, 엄연히 다른 타입이기 때문에 null과 <code>일치 연산자(===)</code>시에 false가 반환된다.</p>
-<h3>◾ number</h3><a class="anchor" id="-number"></a>
-<p>다른 언어들과는 다르게 고정/부동 소수점 방식에 따라 자료형을 나누지 않고 통일된 형태로 사용된다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">const</span> bigInt <span style="color:#555">=</span> <span style="color:#f60">123456789</span>n;
-</code></pre></div><p>타입의 표현 범위는 <code>-(2^53-1) ~ 2^53-1</code>이다.
-<br>이보다 더 큰 숫자를 표현 하고 싶다면 숫자 끝에 <code>n</code>을 붙인 <code>BigInt</code>형을 사용할 수도 있다.</p>
-<h4>Infinity</h4><a class="anchor" id="infinity"></a>
-<p>이름 그대로 가장 큰 값(∞)을 표현하는 데 사용되고, 다른 언어들과 달리 특정 숫자를 <code>0</code>으로 나눌 수 있는데 이때 <code>Infinity</code>값이 반환된다.</p>
-<p>또한, Js는 0을 <code>+0</code>과 <code>-0</code> 두가지로 표현할 수 있는데, 나누는 부호에 따라 Infinity도 부호가 결정된다.</p>
-<h4>NaN</h4><a class="anchor" id="nan"></a>
-<p>약자 그대로 숫자가 아니라는 것을 표현하는 값이다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js">console.log(<span style="color:#c30">&#39;문자열 나누기 숫자&#39;</span> <span style="color:#555">/</span> <span style="color:#f60">2</span>); <span style="color:#09f;font-style:italic">//NaN
-</span></code></pre></div><br>
-<h3>◾ String</h3><a class="anchor" id="-string"></a>
-<p>2byte의 unsigned 정수값 들의 집합이다.
-<br>한번 생성되면 <code>immutable</code> 하다.</p>
-<h3>◾ symbol</h3><a class="anchor" id="-symbol"></a>
-<p>유일하고 immutable한 원시 값이기 때문에, <code>객체의 식별자(일종의 private한 key값)</code>에 사용된다.</p>
-<p><code>Symbol()</code> 메서드를 이용하여 고유한 심볼값을 반환받을 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js">Symbol(<span style="color:#c30">&#39;ex&#39;</span>) <span style="color:#555">===</span> Symbol(<span style="color:#c30">&#39;ex&#39;</span>); <span style="color:#09f;font-style:italic">//false
-</span><span style="color:#09f;font-style:italic"></span>Symbol(<span style="color:#c30">&#39;ex&#39;</span>) <span style="color:#555">==</span> Symbol(<span style="color:#c30">&#39;ex&#39;</span>); <span style="color:#09f;font-style:italic">//false
-</span><span style="color:#09f;font-style:italic"></span>
-<span style="color:#069;font-weight:bold">var</span> ex <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> Symbol(); <span style="color:#09f;font-style:italic">//error
-</span><span style="color:#09f;font-style:italic"></span>Symbol(<span style="color:#f60">12</span>) <span style="color:#555">+</span> <span style="color:#f60">1</span>; <span style="color:#09f;font-style:italic">//error
-</span><span style="color:#09f;font-style:italic"></span>Symbol(<span style="color:#f60">12</span>) <span style="color:#555">+</span> <span style="color:#c30">&#39;1&#39;</span>; <span style="color:#09f;font-style:italic">//error
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">typeof</span> Symbol() <span style="color:#555">===</span> <span style="color:#c30">&#39;symbol&#39;</span>;
-</code></pre></div><h4>특징</h4><a class="anchor" id="특징"></a>
-<ul>
-<li>
-<p>비열거형 (for&hellip;in사용 불가)</p>
-</li>
-<li>
-<p>new 키워드를 지원하지 않는다.</p>
-</li>
-<li>
-<p>숫자나 문자열로 형변환 되지 않는다. (TypeError)</p>
-</li>
-<li>
-<p><code>Object.getOwnPropertyNames()</code> 메서드에서 심볼 속성은 반환되지 않는다.</p>
-<ul>
-<li>JSON.stringify()에서도 무시된다.</li>
-</ul>
-</li>
-<li>
-<p>Object.assign() 은 심볼포함 모든 프로퍼티를 복사한다.</p>
-</li>
-<li>
-<p>Symbol.for() 을 통해 <strong>전역 심볼</strong>을 만들 수 있다.</p>
-</li>
-</ul>
+	<div class="content"><p>문자의 집합(배열)이라는 의미이다.</p>
+<p>기존의 문자는 ASCII코드로 1byte를 갖기 때문에 0~255로 총 255개의 문자를 표현할 수 있었는데 이 수로는 현재 존재하는 언어(문자)들을 모두 표시할 수 없기 때문에 더 큰 byte의 문자가 필요해졌다. 대표적으로 <code>UTF-8</code>이 있는데 이는 한 문자당 1~4byte를 갖고 <code>UTF-16</code>은 <code>2byte</code>를 갖는다.</p>
 <br>
-<h2>객체</h2><a class="anchor" id="객체"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> { name<span style="color:#555">:</span> <span style="color:#c30">&#39;hong&#39;</span> };
-<span style="color:#069;font-weight:bold">let</span> user2 <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#366">Object</span>();
-</code></pre></div><p><code>식별자</code>를 통해 참조할 수 있는 Refrerence Type 이다.</p>
-<p>여러 데이터들을 담을 수 있는 데이터타입으로 일종의 collection.
-<br><code>key</code>와 <code>value</code>를 쌍으로 갖는 데이터 타입으로 key에는 <code>문자열</code>만 올 수 있따.</p>
-<p>객체 안의 데이터를 변환하지 못하게 하는 속성이나 객체에 접근할 수 있게 하는 속성 두개의 속성이 있으며 둘 중 한개만 갖을 수 있다.
-<br></p>
-<h3>◾ 데이터 속성</h3><a class="anchor" id="-데이터-속성"></a>
-<p>객체 내 데이터를 수정하지 못하게 하는 속성</p>
-<ul>
-<li>
-<p><strong>[[Writable]]</strong> : 객체안의 값의 수정 권한을 지정 (true면 수정 가능)</p>
-</li>
-<li>
-<p><strong>[[Enumerable]]</strong> : 열거형으로 사용 가능한지 지정 (true면 열거형으로 for&hellip;in 사용가능)</p>
-</li>
-<li>
-<p><strong>[[Configurable]]</strong> : false라면 Configurable과 Enumerable을 수정이 불가능하다.</p>
-</li>
-</ul>
-<h3>◾ 접근자 속성</h3><a class="anchor" id="-접근자-속성"></a>
-<p>객체내 접근자 함수(get/set)를 기술하는 속성</p>
-<ul>
-<li>
-<p><strong>[[Get]]</strong> : 객체 내의 get 키워드를 통해 정의된 메서드를 호출하고 그 반환값을 가져온다.</p>
-</li>
-<li>
-<p><strong>[[Set]]</strong> : 할당된 값을 인자로 객체 내의 set 키워드를 통해 정의된 메서드를 호출</p>
-</li>
-<li>
-<p><strong>[[Enumerable]]</strong> : 열거형으로 사용 가능한지 지정</p>
-</li>
-<li>
-<p><strong>[[Configurable]]</strong> : flase라면 Configurable과 데이터 속성을 수정할 수 없다.</p>
-</li>
-</ul>
-<br>
-<h4>Primitive Wrapper Object (원시 래퍼 객체)</h4><a class="anchor" id="primitive-wrapper-object-원시-래퍼-객체"></a>
-<p>앞서 나열한 <code>원시값</code>이 메서드나 프로퍼티에 접근할 수 있게 해주는 특수 객체</p>
-<p>String, Number, Boolean, Symbol과 같다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> <span style="color:#c30">&#39;hong&#39;</span>;
-console.log(user.toUpperCase()); <span style="color:#09f;font-style:italic">//HONG
-</span></code></pre></div><p>원시값을 래퍼객체의 함수를 이용하여 접근하는 순간 래퍼 객체가 자동으로 만들어져 메서드를 이용하고 반환값을 반환한 후 래퍼 객체는 자동 소멸된다.</p>
-<h4>Array</h4><a class="anchor" id="array"></a>
-<p>순서가 있는 객체를 표현하고, key를 문자열이 아닌 정수를 갖을 수 있는 객체</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">let</span> user <span style="color:#555">=</span> [<span style="color:#c30">&#39;hong&#39;</span>, <span style="color:#c30">&#39;kim&#39;</span>];
-
-alert(user[<span style="color:#f60">1</span>]); <span style="color:#09f;font-style:italic">//kim
-</span></code></pre></div><p><code>대괄호 []</code>로 표현이 가능하고 key를 정수로 접근이 가능하다.</p>
-<h4>그 외 Set, Map 등이 객체에 속한다.</h4><a class="anchor" id="그-외-set-map-등이-객체에-속한다"></a>
+<h2>1. UTF-8과 UTF-16</h2><a class="anchor" id="1-utf-8과-utf-16"></a>
+<p>UTF-16이 공간을 더 적게 차지하기 때문에 UTF-16이 더 좋아보일 수 있다. 하지만, UTF-8은 <code>파레토의 법칙</code>으로 <code>데이터를 잘 봐보니 영어/숫자의 데이터가 대부분(80%)를 차지하더라</code>라는 개념으로 필요한 데이터크기에 맞게 크기를 할당하는 개념으로 크기가 동적으로 변한다.</p>
+<p>UTF-16은 2byte로 고정길이기 때문에 UTF-8이 더 효율적일 수도 있고 ASCII로 표현되는 데이터들을 2byte로 표현을 하다보니까 ASCII와 상호간에 호환이 잘 안되는 문제점이 있다.</p>
 <p><br><br></p>
-<h2>형변환</h2><a class="anchor" id="형변환"></a>
-<h3>◾ 명시적 형변환</h3><a class="anchor" id="-명시적-형변환"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">typeof</span> <span style="color:#366">String</span>(<span style="color:#f60">1</span>); <span style="color:#09f;font-style:italic">//&#34;string&#34;
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">typeof</span> <span style="color:#366">Number</span>(<span style="color:#c30">&#39;1&#39;</span>); <span style="color:#09f;font-style:italic">//&#34;number&#34;
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">typeof</span> <span style="color:#366">Boolean</span>(<span style="color:#f60">0</span>); <span style="color:#09f;font-style:italic">//&#34;boolean&#34;
+<h2>2. 문자열 리터럴 표현 방식</h2><a class="anchor" id="2-문자열-리터럴-표현-방식"></a>
+<h3>◾ Double Quote (&quot;&quot;)</h3><a class="anchor" id="-double-quote-"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">str <span style="color:#555">:=</span> <span style="color:#c30">&#34;\&#34;&#34;</span>
+fmt.<span style="color:#c0f">Println</span>(str)      <span style="color:#09f;font-style:italic">//&#34;
 </span><span style="color:#09f;font-style:italic"></span>
-console.log(<span style="color:#366">Number</span>(<span style="color:#c30">&#39;12&#39;</span>)); <span style="color:#09f;font-style:italic">//12
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Number</span>(<span style="color:#c30">&#39;hello&#39;</span>)); <span style="color:#09f;font-style:italic">//NaN
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Number</span>(<span style="color:#069;font-weight:bold">undefined</span>)); <span style="color:#09f;font-style:italic">//0
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Number</span>(<span style="color:#069;font-weight:bold">NaN</span>)); <span style="color:#09f;font-style:italic">//0
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Number</span>(<span style="color:#069;font-weight:bold">null</span>)); <span style="color:#09f;font-style:italic">//0
+str1 <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello\nWorld&#34;</span>
+fmt.<span style="color:#c0f">Println</span>(str1)     <span style="color:#09f;font-style:italic">//Hello
+</span><span style="color:#09f;font-style:italic"></span>                      <span style="color:#09f;font-style:italic">//World
 </span><span style="color:#09f;font-style:italic"></span>
-console.log(<span style="color:#366">Boolean</span>(<span style="color:#f60">0</span>)); <span style="color:#09f;font-style:italic">//false
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Boolean</span>(<span style="color:#069;font-weight:bold">null</span>)); <span style="color:#09f;font-style:italic">//false
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Boolean</span>(<span style="color:#069;font-weight:bold">undefined</span>)); <span style="color:#09f;font-style:italic">//false
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">Boolean</span>(<span style="color:#069;font-weight:bold">NaN</span>)); <span style="color:#09f;font-style:italic">//false
-</span></code></pre></div><p>형 변환을 명시적으로 해주는 것으로 예제와 같은 결과값을 갖는다.</p>
-<h3>◾ 자동 형변환</h3><a class="anchor" id="-자동-형변환"></a>
-<p>명시적으로 지시 하지 않아도 대부분 자동형변환을 통해 적절하게 변환된다.</p>
-<p>이를 이용해 String을 숫자로 쉽게 변환 시킬 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js">console.log(<span style="color:#069;font-weight:bold">typeof</span> <span style="color:#555">+</span><span style="color:#c30">&#39;11&#39;</span>); <span style="color:#09f;font-style:italic">//number
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#069;font-weight:bold">typeof</span> <span style="color:#f60">1</span> <span style="color:#555">*</span> <span style="color:#c30">&#39;11&#39;</span>); <span style="color:#09f;font-style:italic">//number
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#069;font-weight:bold">typeof</span> <span style="color:#c30">&#39;11&#39;</span> <span style="color:#555">/</span> <span style="color:#f60">1</span>); <span style="color:#09f;font-style:italic">//number
-</span></code></pre></div><p>연산을 수행해도 값이 변하지 않는 1을 곱하거나 나누는 방식이나 <code>+</code>연산자를 붙이는 방법으로 쉽게 변환이 가능하다.</p>
-<p>하지만, String이 모두 숫자가 아닌 문자가 섞여있다면 <code>NaN</code>을 반환하기 때문에 <code>parseInt()/parseFloat()</code>을 사용해 앞에서부터 읽을 수 있는 자리까지 변환 하는 방법이 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js">console.log(<span style="color:#555">+</span><span style="color:#c30">&#39;100a&#39;</span>); <span style="color:#09f;font-style:italic">//NaN
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">parseInt</span>(<span style="color:#c30">&#39;100px&#39;</span>)); <span style="color:#09f;font-style:italic">//100
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">parseInt</span>(<span style="color:#c30">&#39;12.3&#39;</span>)); <span style="color:#09f;font-style:italic">// 12, 정수 부분만 반환
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">parseFloat</span>(<span style="color:#c30">&#39;12.3.4&#39;</span>)); <span style="color:#09f;font-style:italic">// 12.3, 첫번째 점까지만 반환
-</span><span style="color:#09f;font-style:italic"></span>console.log(<span style="color:#366">parseInt</span>(<span style="color:#c30">&#39;a123&#39;</span>)); <span style="color:#09f;font-style:italic">// NaN
-</span></code></pre></div><p><br><br></p>
+str2 <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello
+</span><span style="color:#c30">World&#34;</span>    <span style="color:#09f;font-style:italic">//error
+</span></code></pre></div><p><code>&quot;&quot;</code>은 한 줄로 표현할 때 사용하며 개행을 하기 위해선 개행문자 <code>\n</code>을 이용해서 해야하고 예제처럼 한줄 띄어서 작성할 수 없다.</p>
+<p>Go에서 쌍따옴표로 열리고 닫힌 string을 <code>Interprected string</code>이라고 한다. 이 문자열은 escape 문자(<code>\</code>)를 이용해서 특수기호를 표시할 수 있다.</p>
+<br>
+<h3>◾ Back Tick (``)</h3><a class="anchor" id="-back-tick-"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">str <span style="color:#555">:=</span> <span style="color:#c30">`&#34;`</span>
+fmt.<span style="color:#c0f">Println</span>(str)      <span style="color:#09f;font-style:italic">//&#34;
+</span><span style="color:#09f;font-style:italic"></span>
+str1 <span style="color:#555">:=</span> <span style="color:#c30">`Hello\nWorld`</span>
+fmt.<span style="color:#c0f">Println</span>(str1)     <span style="color:#09f;font-style:italic">//Hello\nWorld
+</span><span style="color:#09f;font-style:italic"></span>
+str2 <span style="color:#555">:=</span> <span style="color:#c30">`Hello
+</span><span style="color:#c30">World`</span>
+fmt.<span style="color:#c0f">Println</span>(str2)     <span style="color:#09f;font-style:italic">//Hello
+</span><span style="color:#09f;font-style:italic"></span>                      <span style="color:#09f;font-style:italic">//World
+</span></code></pre></div><p>여러줄로 표현 가능하고 이를 이용한 string을 <code>Raw string</code>이라고 하고 이는 내부 특수기호를 그대로 표현해준다.</p>
+<p><br><br></p>
+<h2>3. 문자열 순회</h2><a class="anchor" id="3-문자열-순회"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">str <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello 월드&#34;</span>
+
+ftm.<span style="color:#c0f">Println</span>(<span style="color:#366">len</span>(str))     <span style="color:#09f;font-style:italic">//case 1
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#069;font-weight:bold">for</span> i<span style="color:#555">:=</span><span style="color:#f60">0</span>; i &lt; <span style="color:#366">len</span>(str); i<span style="color:#555">++</span> {
+  fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;타입: %T, 값: %d, 문자값: %c\n&#34;</span>,str[i],str[i],str[i])
+}
+fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;%c&#34;</span>,str[<span style="color:#f60">8</span>])   <span style="color:#09f;font-style:italic">//
+</span></code></pre></div><p>위에서 <code>case1</code>의 출력결과는 무엇일까?</p>
+<p>우리 예상은 <code>8</code>일 것 같지만 len()은 문자열의 <code>바이트 길이</code>를 반환하기 때문에 한글은 <code>3byte</code>씩 해서 총 <code>12</code>가 출력된다. 그렇기 때문에 위의 for문을 실행해보면 한글이 나오는 부분부터 깨지는 것을 볼 수 있다.</p>
+<p><code>[]</code>를 이용해 문자열을 접근하는 것은 <code>len</code>과 같이 메모리의 index에 접근하는 것이기 때문에 3byte로 저장된 한글 한문자중에서 1byte만 접근해 쓰레기값이 나오는 것이다.</p>
+<br>
+<h3>◾ []rune</h3><a class="anchor" id="-rune"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">str <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello 월드&#34;</span>
+arr <span style="color:#555">:=</span> []<span style="color:#366">rune</span>(str)
+
+<span style="color:#069;font-weight:bold">for</span> i<span style="color:#555">:=</span><span style="color:#f60">0</span>; i &lt; <span style="color:#366">len</span>(arr); i<span style="color:#555">++</span> {
+  fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;타입: %T, 값: %d, 문자값: %c\n&#34;</span>,arr[i],arr[i],arr[i])
+}
+
+ftm.<span style="color:#c0f">Println</span>(<span style="color:#366">len</span>(arr))     <span style="color:#09f;font-style:italic">//8
+</span></code></pre></div><p>rune은 int32의 별칭타입이기 때문에 4byte를 갖는다. 이를 이용해서 문자열을 <code>rune</code>타입 <code>슬라이스</code>로 만들어서 배열을 순회하면 우리가 원하는데로 동작한다.</p>
+<br>
+<h3>◾ range</h3><a class="anchor" id="-range"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">str <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello 월드&#34;</span>
+
+<span style="color:#069;font-weight:bold">for</span> _,v <span style="color:#555">:=</span> <span style="color:#069;font-weight:bold">range</span> str {
+  fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;타입: %T, 값: %d, 문자값: %c\n&#34;</span>,v,v,v)
+}
+</code></pre></div><p>정확한 길이가 필요한 것이 아니라 단순히 <code>순회</code>가 목적이라면 <code>range</code>를 이용하면 편하게 순회 할 수 있다.</p>
+<p><br><br></p>
+<h2>4. 문자열 합산</h2><a class="anchor" id="4-문자열-합산"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">str1 <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello&#34;</span>
+str2 <span style="color:#555">:=</span> <span style="color:#c30">&#34;World&#34;</span>
+
+str3 <span style="color:#555">:=</span> str1 <span style="color:#555">+</span> <span style="color:#c30">&#34; &#34;</span> <span style="color:#555">+</span> str2
+fmt.<span style="color:#c0f">Println</span>(str3)
+
+str3 <span style="color:#555">+=</span> <span style="color:#c30">&#34;Hi &#34;</span>
+fmt.<span style="color:#c0f">Println</span>(str3)
+</code></pre></div><p>go는 <code>+</code>를 통해 문자열 합을 지원하고 ptyhon같이 그 외의 연산(<code>*</code>&hellip;)을 지원하지 않는다.</p>
+<p><br><br></p>
+<h2>5. 문자열 비교</h2><a class="anchor" id="5-문자열-비교"></a>
+<h3>◾ ==, !=</h3><a class="anchor" id="--"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">str1 <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello 월드&#34;</span>
+str2 <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello 월드&#34;</span>
+fmt.<span style="color:#c0f">Println</span>(str1 <span style="color:#555">==</span> str2)   <span style="color:#09f;font-style:italic">//true
+</span><span style="color:#09f;font-style:italic"></span>
+str1 <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello 월드\n&#34;</span>
+str2 <span style="color:#555">:=</span> <span style="color:#c30">`Hello 월드
+</span><span style="color:#c30">`</span>
+fmt.<span style="color:#c0f">Println</span>(str1 <span style="color:#555">==</span> str2)   <span style="color:#09f;font-style:italic">//true
+</span></code></pre></div><p>문자열 두개가 서로 같은지 비교하는 연산을 지원한다.</p>
+<h3>◾ &lt;, &gt; , &lt;= ,&gt;=</h3><a class="anchor" id="-----"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">str1 <span style="color:#555">:=</span> <span style="color:#c30">&#34;apple&#34;</span>
+str2 <span style="color:#555">:=</span> <span style="color:#c30">&#34;Apple&#34;</span>
+
+fmt.<span style="color:#c0f">Println</span>(str1 &gt; str2) <span style="color:#09f;font-style:italic">//true
+</span></code></pre></div><p>go 는 대소 비교도 지원하는데 이때 사전식 비교로 <code>대문자</code>가 더 작다.</p>
+<h4>Ascii 코드 값</h4><a class="anchor" id="ascii-코드-값"></a>
+<ul>
+<li>
+<p><code>A-Z</code> : 65 - 90</p>
+</li>
+<li>
+<p><code>a-z</code> : 97 - 122</p>
+</li>
+</ul>
+<p><br><br></p>
+<h2>6. 문자열 구조</h2><a class="anchor" id="6-문자열-구조"></a>
+<p>지금까지 Go를 착실히 공부했다면 여기서 한가지 의문점이 들 것이다.</p>
+<p>분명히 Go는 강타입 언어라서 연산,대입을 할때 데이터타입이 크기까지 똑같아야 했다. <code>int8과 int32</code> 두 타입의 연산을 시도하면 error가 발생한다.
+<br>그런데 string은 데이터크기가 다 제각각인데 어떻게 합이나 비교, 대입이 가능할까?</p>
+<br>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">type</span> StringHeader <span style="color:#069;font-weight:bold">struct</span>{
+  Data <span style="color:#078;font-weight:bold">uintptr</span>
+  Len <span style="color:#078;font-weight:bold">int</span>
+}
+</code></pre></div><p>문자열은 내부적으로 데이터(문자열 리터럴)의 주소값을 <code>포인터변수</code>로 가지고 있기 때문에 string의 길이가 서로 달라도 <code>연산</code>이 가능하고 <code>대입</code>연산도 가능하다.</p>
+<br>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">import</span> (
+  <span style="color:#c30">&#34;fmt&#34;</span>
+  <span style="color:#c30">&#34;reflect&#34;</span>
+  <span style="color:#c30">&#34;unsafe&#34;</span>
+)
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>(){
+  str1 <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello 월드&#34;</span>
+  str2 <span style="color:#555">:=</span> str1
+
+  stringHeader1 <span style="color:#555">:=</span> (<span style="color:#555">*</span>reflect.StringHeader)(unsafe.<span style="color:#c0f">Pointer</span>(<span style="color:#555">&amp;</span>str1))
+  stringHeader2 <span style="color:#555">:=</span> (<span style="color:#555">*</span>reflect.StringHeader)(unsafe.<span style="color:#c0f">Pointer</span>(<span style="color:#555">&amp;</span>str2))
+
+  fmt.<span style="color:#c0f">Println</span>(stringHeader1)    <span style="color:#09f;font-style:italic">//&amp;{49633883 12}
+</span><span style="color:#09f;font-style:italic"></span>  fmt.<span style="color:#c0f">Println</span>(stringHeader2)    <span style="color:#09f;font-style:italic">//&amp;{49633883 12}
+</span><span style="color:#09f;font-style:italic"></span>}
+</code></pre></div><p>문자열을 poninter타입으로 변환후 reflect를 이용해 내부를 봐보면, 실제 문자열이 <code>저장된 위치(49633883)</code>와 <code>길이(12)</code>가 들어있는 것을 볼 수 있다.</p>
+<br>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">import</span> (
+  <span style="color:#c30">&#34;fmt&#34;</span>
+  <span style="color:#c30">&#34;unsafe&#34;</span>
+  <span style="color:#c30">&#34;reflect&#34;</span>
+)
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>(){
+  str1 <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello&#34;</span>
+  str2 <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello&#34;</span>
+
+  stringHeader1 <span style="color:#555">:=</span> (<span style="color:#555">*</span>reflect.StringHeader)(unsafe.<span style="color:#c0f">Pointer</span>(<span style="color:#555">&amp;</span>str1))
+  stringHeader2 <span style="color:#555">:=</span> (<span style="color:#555">*</span>reflect.StringHeader)(unsafe.<span style="color:#c0f">Pointer</span>(<span style="color:#555">&amp;</span>str2))
+
+  fmt.<span style="color:#c0f">Println</span>(stringHeader1)    <span style="color:#09f;font-style:italic">//&amp;{4989886 5}
+</span><span style="color:#09f;font-style:italic"></span>  fmt.<span style="color:#c0f">Println</span>(stringHeader2)    <span style="color:#09f;font-style:italic">//&amp;{4989886 5}
+</span><span style="color:#09f;font-style:italic"></span>}
+</code></pre></div><p>str2에 str1을 할당하는 것이 아니라 같은 <code>문자 리터럴</code>을 대입해도 같은 공간을 가리키는 것을 볼 수 있는데, 이는 <code>메모리(스택이나 힙)</code> 또는 <code>코드공간</code>에 해당 문자열이 있는지 확인하고 있다면 해당 공간의 주소를 대입시켜주기 때문이다.</p>
+<p><br><br></p>
+<h2>7. 문자열 불변</h2><a class="anchor" id="7-문자열-불변"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">str1 <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello World&#34;</span>
+slice <span style="color:#555">:=</span> []<span style="color:#366">byte</span>(str)
+
+str1[<span style="color:#f60">2</span>] = <span style="color:#c30">&#39;a&#39;</span> <span style="color:#09f;font-style:italic">//error
+</span><span style="color:#09f;font-style:italic"></span>slice[<span style="color:#f60">2</span>] = <span style="color:#c30">&#39;a&#39;</span>
+
+fmt.<span style="color:#c0f">Println</span>(str1)         <span style="color:#09f;font-style:italic">//Hello World
+</span><span style="color:#09f;font-style:italic"></span>fmt.<span style="color:#c0f">Printf</span>(<span style="color:#c30">&#34;%s\n&#34;</span>,slice)  <span style="color:#09f;font-style:italic">//Healo Wolrd
+</span></code></pre></div><p>문자열은 Immutable한 속성을 가지고 있어 문자리터럴값은 내부적으로 변경이 불가능하다. 그래서 문자열을 <code>[]</code>로 접근해서 일부만 수정하려고 하면 error가 발생한다.</p>
+<p>또한, Slice로 문자열을 복사하게 되면 두개의 문자열은 서로 다른 메모리(공간)으로 복사를 하기 때문에 slice를 수정을 해도 기존의 문자열은 변경이 되지 않는다.</p>
+<br>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">import</span> (
+  <span style="color:#c30">&#34;fmt&#34;</span>
+  <span style="color:#c30">&#34;unsafe&#34;</span>
+  <span style="color:#c30">&#34;reflect&#34;</span>
+)
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>(){
+  str1 <span style="color:#555">:=</span> <span style="color:#c30">&#34;Hello &#34;</span>
+  str2 <span style="color:#555">:=</span> str1
+
+  stringHeader1 <span style="color:#555">:=</span> (<span style="color:#555">*</span>reflect.StringHeader)(unsafe.<span style="color:#c0f">Pointer</span>(<span style="color:#555">&amp;</span>str1))
+  stringHeader2 <span style="color:#555">:=</span> (<span style="color:#555">*</span>reflect.StringHeader)(unsafe.<span style="color:#c0f">Pointer</span>(<span style="color:#555">&amp;</span>str2))
+
+  fmt.<span style="color:#c0f">Println</span>(stringHeader1)    <span style="color:#09f;font-style:italic">//&amp;{4990223 6}
+</span><span style="color:#09f;font-style:italic"></span>  fmt.<span style="color:#c0f">Println</span>(stringHeader2)    <span style="color:#09f;font-style:italic">//&amp;{4990223 6}
+</span><span style="color:#09f;font-style:italic"></span>
+  str2 <span style="color:#555">+=</span> <span style="color:#c30">&#34;World&#34;</span>
+
+  fmt.<span style="color:#c0f">Println</span>(stringHeader1)    <span style="color:#09f;font-style:italic">//&amp;{4990223 6}
+</span><span style="color:#09f;font-style:italic"></span>  fmt.<span style="color:#c0f">Println</span>(stringHeader2)    <span style="color:#09f;font-style:italic">//&amp;{824634237040 11}
+</span><span style="color:#09f;font-style:italic"></span>}
+</code></pre></div><p>두개의 문자열이 처음에는 같은 메모리를 가리키고 있다가 <code>+</code>연산을 수행하게 되면 기존의 문자열을 바꾸는 것이 아니라 새로운 공간에 합한 문자열을 할당하는 것을 볼 수 있다.</p>
+<p><br><br></p>
+<h2>8. String Builder</h2><a class="anchor" id="8-string-builder"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#069;font-weight:bold">import</span> (
+  <span style="color:#c30">&#34;strings&#34;</span>
+  <span style="color:#c30">&#34;fmt&#34;</span>
+)
+
+<span style="color:#069;font-weight:bold">func</span> <span style="color:#c0f">main</span>(){
+  str <span style="color:#555">:=</span> <span style="color:#c30">&#34;hello world&#34;</span>
+  builder <span style="color:#555">:=</span> strings.Builder{}
+
+  <span style="color:#069;font-weight:bold">for</span> _,c <span style="color:#555">:=</span> <span style="color:#069;font-weight:bold">range</span> str {
+    <span style="color:#069;font-weight:bold">if</span> c <span style="color:#555">&gt;=</span> <span style="color:#f60">97</span> <span style="color:#555">&amp;&amp;</span> c <span style="color:#555">&lt;=</span> <span style="color:#f60">122</span>{
+      builder.<span style="color:#c0f">WriteRune</span>(<span style="color:#c30">&#39;A&#39;</span> <span style="color:#555">+</span> (c <span style="color:#555">-</span> <span style="color:#c30">&#39;a&#39;</span>))
+    }<span style="color:#069;font-weight:bold">else</span> {
+      builder.<span style="color:#c0f">WriteRune</span>(c)
+    }
+  }
+  fmt.<span style="color:#c0f">Println</span>(builder.<span style="color:#c0f">String</span>())     <span style="color:#09f;font-style:italic">//HELLO WORLD
+</span><span style="color:#09f;font-style:italic"></span>  fmt.<span style="color:#c0f">Println</span>(strings.<span style="color:#c0f">ToUpper</span>(str)) <span style="color:#09f;font-style:italic">//HELLO WORLD
+</span><span style="color:#09f;font-style:italic"></span>}
+</code></pre></div><p>Java의 StringBuilder와 동일한 역할의 string builder이다.</p>
+<p>위에서 본 것처럼 문자열 합산연산시 <code>+</code>은 계속 새로운 공간을 할당해서 연산이 수행되는데 많은 문자열을 처리하는데 있어 이는 매우 비효율적이다. 계속 공간을 할당하고 GC가 지우고를 반복하기 때문이다.</p>
+<p>그런데 <code>strings.Builder</code>를 이용하면 공간할당을 새로하지 않으면서 붙일 수 있다. Builder 구조체 내부에 byte슬라이스(<code>[]byte</code>)를 이용해서 문자열을 관리하기 때문에 +연산시 새로 공간이 할당되는 문제를 해결할 수 있다.</p>
+<p><br><br><br></p>
 <hr>
-<h2>Refernece</h2><a class="anchor" id="refernece"></a>
-<p><a href="https://ko.javascript.info/">https://ko.javascript.info/</a></p>
+<h2>Reference</h2><a class="anchor" id="reference"></a>
+<p>『Tucker의 Go 언어 프로그래밍』 스터디 요약 노트</p>
+<p><a href="https://www.youtube.com/watch?v=ELOihQ1HYBY">Tucker의 Go 강좌</a></p>
 </div>
 
 	
@@ -2077,10 +2143,10 @@ console.log(<span style="color:#366">Boolean</span>(<span style="color:#f60">0</
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/javascript/operator/" title="연산자" style="margin-right: 0px;">
+		<a class="next" href="/data-structure/" title="자료구조 ( Data Structure )" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>연산자</label>
+                <label>자료구조 ( Data Structure )</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -2103,34 +2169,35 @@ console.log(<span style="color:#366">Boolean</span>(<span style="color:#f60">0</
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/javascript/datatype/">DataType과 변수</a></li>
+            <li><a href="/go/string/">문자열</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#기본-자료형--primitive-">기본 자료형 ( Primitive )</a>
+    <li><a href="#1-utf-8과-utf-16">1. UTF-8과 UTF-16</a></li>
+    <li><a href="#2-문자열-리터럴-표현-방식">2. 문자열 리터럴 표현 방식</a>
       <ul>
-        <li><a href="#-boolean">◾ boolean</a></li>
-        <li><a href="#-null">◾ null</a></li>
-        <li><a href="#-undefined">◾ undefined</a></li>
-        <li><a href="#-number">◾ number</a></li>
-        <li><a href="#-string">◾ String</a></li>
-        <li><a href="#-symbol">◾ symbol</a></li>
+        <li><a href="#-double-quote-">◾ Double Quote (&quot;&quot;)</a></li>
+        <li><a href="#-back-tick-">◾ Back Tick (``)</a></li>
       </ul>
     </li>
-    <li><a href="#객체">객체</a>
+    <li><a href="#3-문자열-순회">3. 문자열 순회</a>
       <ul>
-        <li><a href="#-데이터-속성">◾ 데이터 속성</a></li>
-        <li><a href="#-접근자-속성">◾ 접근자 속성</a></li>
+        <li><a href="#-rune">◾ []rune</a></li>
+        <li><a href="#-range">◾ range</a></li>
       </ul>
     </li>
-    <li><a href="#형변환">형변환</a>
+    <li><a href="#4-문자열-합산">4. 문자열 합산</a></li>
+    <li><a href="#5-문자열-비교">5. 문자열 비교</a>
       <ul>
-        <li><a href="#-명시적-형변환">◾ 명시적 형변환</a></li>
-        <li><a href="#-자동-형변환">◾ 자동 형변환</a></li>
+        <li><a href="#--">◾ ==, !=</a></li>
+        <li><a href="#-----">◾ &lt;, &gt; , &lt;= ,&gt;=</a></li>
       </ul>
     </li>
-    <li><a href="#refernece">Refernece</a></li>
+    <li><a href="#6-문자열-구조">6. 문자열 구조</a></li>
+    <li><a href="#7-문자열-불변">7. 문자열 불변</a></li>
+    <li><a href="#8-string-builder">8. String Builder</a></li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 </div>
@@ -2147,14 +2214,14 @@ console.log(<span style="color:#366">Boolean</span>(<span style="color:#f60">0</
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 28 January 2021
+		          Last update on 07 June 2021
 		      </li>
 		    
 		    
 		</ul>
 		<div style="text-align: center;margin : 10px 40px 0 0;">
 			<a href="https://hits.seeyoufarm.com">
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fjavascript%2fdatatype%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://gowoonsori.site%2fgo%2fstring%2f&count_bg=%230DC276&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=+%EB%B0%A9%EB%AC%B8%EC%9E%90+%EC%88%98+&edge_flat=false"/>
 			</a>
 		</div>
 	</nav>
