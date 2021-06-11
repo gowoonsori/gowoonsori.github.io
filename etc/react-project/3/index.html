@@ -4,24 +4,24 @@
 <html>
   <head>
     <title>
-	3. atom사용과 포인트 적립 페이지 만들기 :: Gowoonsori&#39;s TechBlog
+	3. back 개발환경 셋팅과 db설계 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-06-07T23:50:49 KST">
+<meta name="revised" content="2021-06-12T01:50:10 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>3. atom사용과 포인트 적립 페이지 만들기 :: Gowoonsori&#39;s TechBlog</title>
+<title>3. back 개발환경 셋팅과 db설계 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="recoil의 atom과 hook이용하여 전화번호 검색창, 자동완성 기능과 적립페이지 만들기">
+<meta name="description" content="spring 개발환경 세팅과 db전체적인 설계">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="3. atom사용과 포인트 적립 페이지 만들기" />
-<meta property="og:description" content="recoil의 atom과 hook이용하여 전화번호 검색창, 자동완성 기능과 적립페이지 만들기" />
+<meta property="og:title" content="3. back 개발환경 셋팅과 db설계" />
+<meta property="og:description" content="spring 개발환경 세팅과 db전체적인 설계" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gowoonsori.site/etc/react-project/3/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
@@ -957,6 +957,23 @@ if (!doNotTrack) {
         
       
     </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/module-package/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/module-package/">모듈과 패키지</a>
+          
+      
+      
+        
+      
+    </li>
         </ul>
     </li>
     
@@ -1614,7 +1631,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/etc/react-project/1/">1. 프로젝트 설계와 환경 구성</a>
+          <a href="/etc/react-project/1/">1. 프로젝트 설계와 환경 구성 (pointRee)</a>
           
       
       
@@ -1631,7 +1648,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/etc/react-project/2/">2. front 개발환경 셋팅과 로그인 창 구현</a>
+          <a href="/etc/react-project/2/">2. front 개발환경 셋팅과 전체적인 디자인</a>
           
       
       
@@ -1648,7 +1665,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/etc/react-project/3/">3. atom사용과 포인트 적립 페이지 만들기</a>
+          <a href="/etc/react-project/3/">3. back 개발환경 셋팅과 db설계</a>
           
       
       
@@ -1858,7 +1875,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>3. atom사용과 포인트 적립 페이지 만들기</h1>
+			<h1>3. back 개발환경 셋팅과 db설계</h1>
         
 
 		
@@ -1880,711 +1897,160 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#atom이용해-user-상태-선언">atom이용해 user 상태 선언</a></li>
-    <li><a href="#login-기능-추가">login 기능 추가</a></li>
-    <li><a href="#applayout에-state에-따른-nav-변화주기">AppLayout에 state에 따른 nav 변화주기</a></li>
-    <li><a href="#points-적립-페이지">points 적립 페이지</a>
-      <ul>
-        <li><a href="#-숫자-입력창-입력값-검증과-ux-최적해보기">◾ 숫자 입력창 입력값 검증과 UX 최적해보기</a></li>
-        <li><a href="#-자동완성-기능-추가">◾ 자동완성 기능 추가</a></li>
-        <li><a href="#-close-버튼">◾ close 버튼</a></li>
-        <li><a href="#-modal창-만들기">◾ Modal창 만들기</a></li>
-      </ul>
-    </li>
+    <li><a href="#db설계">db설계</a></li>
+    <li><a href="#applicationyml-설정">application.yml 설정</a></li>
+    <li><a href="#jdbcyml설정-적용해-실행해보기">jdbc.yml설정 적용해 실행해보기</a></li>
   </ul>
 </nav>
 	</div>
 	
 	
 
-	<div class="content"><p>지난 번에는 전체 레이아웃 적용과 nav창까지 만들었습니다.</p>
-<p>이번에는 atom을 사용해서 로그인 구현과 로그인에 따른 nav변경, 포인트 적립 페이지(전화번호 검색과 자동완성)를 만들어 보려고 합니다.</p>
-<h2>atom이용해 user 상태 선언</h2><a class="anchor" id="atom이용해-user-상태-선언"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> { atom } from <span style="color:#c30">&#39;recoil&#39;</span>;
+	<div class="content"><p>IntelliJ를 이용해서 pointRee폴더 내에 back폴더를 생성해주고 여기에 spring boot 2.4로 프로젝트를 시작했습니다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">dependencies {
+    implementation group: &#39;org.springframework.boot&#39;, name: &#39;spring-boot-starter-web&#39;
+    testImplementation &#39;org.springframework.boot:spring-boot-starter-test&#39;
 
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">const</span> user <span style="color:#555">=</span> atom({
-  key<span style="color:#555">:</span> <span style="color:#c30">&#39;user&#39;</span>,
-  <span style="color:#069;font-weight:bold">default</span><span style="color:#555">:</span> <span style="color:#069;font-weight:bold">null</span>,
-});
+    //db
+    implementation &#39;org.springframework.boot:spring-boot-starter-data-jpa&#39;
+    implementation &#39;org.springframework.boot:spring-boot-starter-validation&#39;
+    implementation &#39;com.h2database:h2&#39;
+    implementation &#39;mysql:mysql-connector-java&#39;
 
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">const</span> loginState <span style="color:#555">=</span> atom({
-  key<span style="color:#555">:</span> <span style="color:#c30">&#39;loginState&#39;</span>,
-  <span style="color:#069;font-weight:bold">default</span><span style="color:#555">:</span> {
-    loginError<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-    loginLoading<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-    loginDone<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-  },
-});
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">const</span> logOutState <span style="color:#555">=</span> atom({
-  key<span style="color:#555">:</span> <span style="color:#c30">&#39;logOutState&#39;</span>,
-  <span style="color:#069;font-weight:bold">default</span><span style="color:#555">:</span> {
-    logOutError<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-    logOutLoading<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-    logOutDone<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-  },
-});
-</code></pre></div><p>login / logout 이벤트 시에 사용하기 위해 <code>reducers/user.js</code>을 생성해서 다음과 같이 관리할 state를 생성해 주었습니다.</p>
-<br>
-<h2>login 기능 추가</h2><a class="anchor" id="login-기능-추가"></a>
-<p>reducer코드를 추가해주기 전에 input에 입력받은 <code>email</code>과 <code>password</code>의 값을 실시간으로 바꿔주기 위해 hook을 사용 하였는 데 <code>''</code>로 초기화 하고 set이벤트 등록해주는 코드가 중복되어 <code>custom hook</code>으로 따로 만들어 주었습니다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> { useState, useCallback } from <span style="color:#c30">&#39;react&#39;</span>;
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> (initialValue <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">null</span>) =&gt; {
-  <span style="color:#069;font-weight:bold">const</span> [value, setValue] <span style="color:#555">=</span> useState(initialValue);
-  <span style="color:#069;font-weight:bold">const</span> handler <span style="color:#555">=</span> useCallback((e) =&gt; {
-    setValue(e.target.value);
-  }, []);
-  <span style="color:#069;font-weight:bold">return</span> [value, handler, setValue];
-};
-</code></pre></div><p>그러면 다른 코드에서 불러와 코드량을 줄일 수 있습니다.</p>
-<p>저번에 만든 login 페이지에 다음과 같이 reducer 코드를 추가 해주었습니다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> { user, loginState } from <span style="color:#c30">&#39;../reducers/user&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> { useRecoilState } from <span style="color:#c30">&#39;recoil&#39;</span>;
-
-<span style="color:#069;font-weight:bold">const</span> [email, onChangeEmail] <span style="color:#555">=</span> useInput(<span style="color:#c30">&#39;&#39;</span>);
-<span style="color:#069;font-weight:bold">const</span> [password, onChangePassword] <span style="color:#555">=</span> useInput(<span style="color:#c30">&#39;&#39;</span>);
-<span style="color:#069;font-weight:bold">const</span> [userInfo, setUserInfo] <span style="color:#555">=</span> useRecoilState(user);
-<span style="color:#069;font-weight:bold">const</span> [loginStateInfo, setLoginStateInfo] <span style="color:#555">=</span> useRecoilState(loginState);
-
-<span style="color:#069;font-weight:bold">const</span> onLoginEvent <span style="color:#555">=</span> useCallback(() =&gt; {
-  <span style="color:#09f;font-style:italic">/*로그인 성공시 */</span>
-  setUserInfo(() =&gt; ({
-    email<span style="color:#555">:</span> email,
-    name<span style="color:#555">:</span> <span style="color:#c30">&#39;의성&#39;</span>,
-    telephone<span style="color:#555">:</span> <span style="color:#c30">&#39;010-1234-1234&#39;</span>,
-  }));
-
-  setLoginStateInfo({
-    loginError<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-    loginLoading<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-    loginDone<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
-  });
-}, [setUserInfo, setLoginStateInfo]);
-
-useEffect(() =&gt; {
-  <span style="color:#069;font-weight:bold">if</span> (loginStateInfo<span style="color:#555">?</span>.loginDone) {
-    setLoginStateInfo((state) =&gt; ({
-      ...state,
-      loginDone<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-    }));
-    Router.replace(<span style="color:#c30">&#39;/&#39;</span>);
-  }
-}, [userInfo, loginStateInfo, setLoginStateInfo]);
-</code></pre></div><p>위에서 만들어둔 커스텀 훅으로 email과 password <code>onchage이벤트</code>를 등록 해주었고, 로그인 버튼이 눌리면 동작할 이벤트를 선언해주었는 데 <code>api</code>가 있다면 api를 통해 받은 값을 <code>user</code>state에 넣을텐데 지금은 api가 없기 때문에 로그인 성공했다하고 임의로 값을 넣어 주었습니다.</p>
-<p>로그인 성공시에 loginState.loginDone을 true로 바꿔 로그인이 성공했다는 것을 알 수 있게 해주었고, 이를 useEffect이용해서 성공시 home('/')으로 돌아가게 해주었습니다.</p>
-<br>
-<h2>AppLayout에 state에 따른 nav 변화주기</h2><a class="anchor" id="applayout에-state에-따른-nav-변화주기"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> { useRecoilState } from <span style="color:#c30">&#39;recoil&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> { user, logOutState } from <span style="color:#c30">&#39;../reducers/user&#39;</span>;
-
-<span style="color:#069;font-weight:bold">const</span> [userInfo, setUserInfo] <span style="color:#555">=</span> useRecoilState(user);
-<span style="color:#069;font-weight:bold">const</span> [logOutStateInfo, setLogOutStateInfo] <span style="color:#555">=</span> useRecoilState(logOutState);
-
-<span style="color:#069;font-weight:bold">const</span> logOutEvent <span style="color:#555">=</span> useCallback(() =&gt; {
-  <span style="color:#069;font-weight:bold">const</span> doLogOut <span style="color:#555">=</span> confirm(<span style="color:#c30">&#39;로그아웃 하시겠습니까?&#39;</span>);
-  <span style="color:#069;font-weight:bold">if</span> (doLogOut) {
-    setUserInfo(<span style="color:#069;font-weight:bold">null</span>);
-    setLogOutStateInfo({
-      logOutError<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-      logOutLoading<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-      logOutDone<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
-    });
-  }
-}, [setUserInfo, setLogOutStateInfo]);
-
-<span style="color:#09f;font-style:italic">//.
-</span><span style="color:#09f;font-style:italic">//.
-</span><span style="color:#09f;font-style:italic">//.
-</span><span style="color:#09f;font-style:italic"></span>
-{
-  <span style="color:#555">!</span>userInfo <span style="color:#555">?</span> (
-    <span style="color:#555">&lt;</span>List<span style="color:#555">&gt;</span>
-      {[
-        { name<span style="color:#555">:</span> <span style="color:#c30">&#39;로그인&#39;</span>, link<span style="color:#555">:</span> <span style="color:#c30">&#39;login&#39;</span> },
-        { name<span style="color:#555">:</span> <span style="color:#c30">&#39;회원가입&#39;</span>, link<span style="color:#555">:</span> <span style="color:#c30">&#39;signup&#39;</span> },
-      ].map((text) =&gt; (
-        <span style="color:#555">&lt;</span>ListItem button key<span style="color:#555">=</span>{text.name} className<span style="color:#555">=</span>{classes.menuText}<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>ListItemText
-            primary<span style="color:#555">=</span>{text.name}
-            onClick<span style="color:#555">=</span>{() =&gt; {
-              Router.push(<span style="color:#c30">`/</span><span style="color:#a00">${</span>text.link<span style="color:#a00">}</span><span style="color:#c30">`</span>);
-            }}
-          <span style="color:#555">/&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/ListItem&gt;</span>
-      ))}
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/List&gt;</span>
-  ) <span style="color:#555">:</span> (
-    <span style="color:#555">&lt;</span>List<span style="color:#555">&gt;</span>
-      <span style="color:#555">&lt;</span>ListItem button key<span style="color:#555">=</span><span style="color:#c30">&#34;로그아웃&#34;</span> className<span style="color:#555">=</span>{classes.menuText}<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>ListItemText primary<span style="color:#555">=</span><span style="color:#c30">&#34;로그아웃&#34;</span> onClick<span style="color:#555">=</span>{logOutEvent}<span style="color:#555">&gt;&lt;</span><span style="color:#a00;background-color:#faa">/ListItemText&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/ListItem&gt;</span>
-      <span style="color:#555">&lt;</span>ListItem button key<span style="color:#555">=</span><span style="color:#c30">&#34;내정보 수정&#34;</span> className<span style="color:#555">=</span>{classes.menuText}<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>ListItemText
-          primary<span style="color:#555">=</span><span style="color:#c30">&#34;내정보 수정&#34;</span>
-          onClick<span style="color:#555">=</span>{() =&gt; {
-            Router.push(<span style="color:#c30">`/info`</span>);
-          }}
-        <span style="color:#555">/&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/ListItem&gt;</span>
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/List&gt;</span>
-  );
+    //lombok
+    compileOnly &#39;org.projectlombok:lombok&#39;
+    annotationProcessor &#39;org.projectlombok:lombok&#39;
 }
-</code></pre></div><p>userInfo가 null이면 nav를 로그인/회원가입 , 정보가 있다면 로그아웃/내정보 수정 으로 표현되도록 <code>?:</code>을 사용해주었습니다.</p>
-<p>또한, 로그아웃 nav에 onClick event를 달아 로그아웃을 희망한다면 userInfo를 null로 지워 로그아웃 처리를 해주었습니다.</p>
-<p>아직은 api가 없기 때문에 이렇게 임시로 로그인/로그아웃에 따른 nav처리를 해주었습니다.</p>
-<p><img src="./login.gif?classes=border,shadow" alt="login"></p>
+</code></pre></div><p>dependency는 위와 같이 추가해주었습니다.</p>
 <p><br><br></p>
-<h2>points 적립 페이지</h2><a class="anchor" id="points-적립-페이지"></a>
-<p>우선 전화번호를 입력하기 위한 <code>input</code>과 적립으로 넘어가기 위한 버튼으로 간단하게 위치만 구성해주었습니다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> React from <span style="color:#c30">&#39;react&#39;</span>;
-
-<span style="color:#069;font-weight:bold">import</span> { Button, Input } from <span style="color:#c30">&#39;@material-ui/core&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> CloseIcon from <span style="color:#c30">&#39;@material-ui/icons/Close&#39;</span>;
-
-<span style="color:#069;font-weight:bold">import</span> useStyles from <span style="color:#c30">&#39;../css/commonStyle&#39;</span>;
-
-<span style="color:#069;font-weight:bold">const</span> Points <span style="color:#555">=</span> () =&gt; {
-  <span style="color:#069;font-weight:bold">const</span> classes <span style="color:#555">=</span> useStyles();
-  <span style="color:#069;font-weight:bold">const</span> [phoneNumber, setPhoneNumber] <span style="color:#555">=</span> useState(<span style="color:#c30">&#39;&#39;</span>);
-
-  <span style="color:#069;font-weight:bold">return</span> (
-    <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-      <span style="color:#555">&lt;</span>div className<span style="color:#555">=</span>{classes.oneLineDiv}<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>Input
-          onChange<span style="color:#555">=</span>{onChangePhoneNumber}
-          value<span style="color:#555">=</span>{phoneNumber}
-          placeholder<span style="color:#555">=</span><span style="color:#c30">&#34;Search&#34;</span>
-          disableUnderline<span style="color:#555">=</span>{<span style="color:#069;font-weight:bold">true</span>}
-          className<span style="color:#555">=</span>{classes.phoneInput}
-        <span style="color:#555">/&gt;</span>
-        <span style="color:#555">&lt;</span>CloseIcon
-          className<span style="color:#555">=</span>{phoneNumber.length <span style="color:#555">&gt;</span> <span style="color:#f60">0</span> <span style="color:#555">?</span> classes.cancelButtonActive  <span style="color:#555">:</span> classes.cancelButtonInActive}
-          onClick<span style="color:#555">=</span>{cancelSearch}
-        <span style="color:#555">/&gt;</span>
-        <span style="color:#555">&lt;</span>Button variant<span style="color:#555">=</span><span style="color:#c30">&#34;contained&#34;</span> color<span style="color:#555">=</span><span style="color:#c30">&#34;secondary&#34;</span> className<span style="color:#555">=</span>{classes.earnButton} onClick<span style="color:#555">=</span>{onClickEarnPointsButton}<span style="color:#555">&gt;</span>
-          적립
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Button&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-      <span style="color:#555">&lt;</span>Modal
-        className<span style="color:#555">=</span>{classes.detailModal}
-        open<span style="color:#555">=</span>{isCustomer}
-        closeAfterTransition
-        onClose<span style="color:#555">=</span>{closeModal}
-        aria<span style="color:#555">-</span>labelledby<span style="color:#555">=</span><span style="color:#c30">&#34;simple-modal-title&#34;</span>
-        aria<span style="color:#555">-</span>describedby<span style="color:#555">=</span><span style="color:#c30">&#34;simple-modal-description&#34;</span>
-        Props<span style="color:#555">=</span>{{ keepMounted<span style="color:#555">:</span> <span style="color:#c30">&#39;false&#39;</span> }}
-      <span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>ItemDetail classes<span style="color:#555">=</span>{classes} phoneNumber<span style="color:#555">=</span>{phoneNumber} <span style="color:#555">/&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Modal&gt;</span>
-    <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-  );
-};
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> Points;
-</code></pre></div><p><code>useStyles</code>라는 class마다 css를 지정하고 그 객체를 반환하는 메서드를 만들어 사용했으며, material ui 의 input과 closeIcon, Button을 사용해서 구성해주었습니다.</p>
-<p><code>X</code>자 icon은 숫자가 입력되었을때만 보이게 하기 위해서 phoneNumber라는 hook을 생성하고 이 길이가 1이상일때만 보이게 해주었습니다.</p>
-<p>Modal의 prop중에 <code>Props</code>의 <code>keepMounted</code>를 false로 해야 크롬 개발자 모드에서 <code>aria-hidden</code>이 false로 되어 쉽게 디버깅을 할 수 있습니다.</p>
-<br>
-<h3>◾ 숫자 입력창 입력값 검증과 UX 최적해보기</h3><a class="anchor" id="-숫자-입력창-입력값-검증과-ux-최적해보기"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">const</span> onChangePhoneNumber <span style="color:#555">=</span> useCallback(
-  (e) =&gt; {
-    <span style="color:#069;font-weight:bold">const</span> number <span style="color:#555">=</span> e.target.value.replace(<span style="color:#3aa">/[^0-9]/g</span>, <span style="color:#c30">&#39;&#39;</span>);
-    <span style="color:#069;font-weight:bold">const</span> isSeoul <span style="color:#555">=</span> number.substring(<span style="color:#f60">0</span>, <span style="color:#f60">2</span>).indexOf(<span style="color:#c30">&#39;02&#39;</span>) <span style="color:#555">===</span> <span style="color:#f60">0</span> <span style="color:#555">?</span> <span style="color:#f60">0</span> <span style="color:#555">:</span> <span style="color:#f60">1</span>;
-    <span style="color:#069;font-weight:bold">if</span> (number.length <span style="color:#555">&lt;</span> <span style="color:#f60">3</span> <span style="color:#555">+</span> isSeoul) {
-      setPhoneNumber(number);
-    } <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (number.length <span style="color:#555">&lt;</span> <span style="color:#f60">6</span> <span style="color:#555">+</span> isSeoul) {
-      setPhoneNumber(number.substr(<span style="color:#f60">0</span>, <span style="color:#f60">2</span> <span style="color:#555">+</span> isSeoul) <span style="color:#555">+</span> <span style="color:#c30">&#39;-&#39;</span> <span style="color:#555">+</span> number.substr(<span style="color:#f60">2</span> <span style="color:#555">+</span> isSeoul));
-    } <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (number.length <span style="color:#555">&lt;</span> <span style="color:#f60">10</span> <span style="color:#555">+</span> isSeoul) {
-      setPhoneNumber(
-        number.substr(<span style="color:#f60">0</span>, <span style="color:#f60">2</span> <span style="color:#555">+</span> isSeoul) <span style="color:#555">+</span> <span style="color:#c30">&#39;-&#39;</span> <span style="color:#555">+</span> number.substr(<span style="color:#f60">2</span> <span style="color:#555">+</span> isSeoul, <span style="color:#f60">3</span>) <span style="color:#555">+</span> <span style="color:#c30">&#39;-&#39;</span> <span style="color:#555">+</span> number.substr(<span style="color:#f60">5</span> <span style="color:#555">+</span> isSeoul)
-      );
-    } <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (number.length <span style="color:#555">&lt;</span> <span style="color:#f60">11</span> <span style="color:#555">+</span> isSeoul) {
-      setPhoneNumber(
-        number.substr(<span style="color:#f60">0</span>, <span style="color:#f60">2</span> <span style="color:#555">+</span> isSeoul) <span style="color:#555">+</span> <span style="color:#c30">&#39;-&#39;</span> <span style="color:#555">+</span> number.substr(<span style="color:#f60">2</span> <span style="color:#555">+</span> isSeoul, <span style="color:#f60">4</span>) <span style="color:#555">+</span> <span style="color:#c30">&#39;-&#39;</span> <span style="color:#555">+</span> number.substr(<span style="color:#f60">6</span> <span style="color:#555">+</span> isSeoul)
-      );
-    }
-  },
-  [setPhoneNumber]
+<h2>db설계</h2><a class="anchor" id="db설계"></a>
+<p>포인트의 유효기간을 처음에 생각을 했었으나 db설계와 구현과정에 있어 많은 시간이 생각보다 소요될 것 같아 일단 유효기간이 없다고 생각하고 설계를 진행했습니다. 완성후 다른곳에 문제가 없다면 차차 추가할 생각입니다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#069;font-weight:bold">CREATE</span> <span style="color:#069;font-weight:bold">TABLE</span> <span style="color:#069;font-weight:bold">USER</span> (
+     id                 <span style="color:#366">bigint</span> <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span> AUTO_INCREMENT, <span style="color:#09f;font-style:italic">--사용자 PK
+</span><span style="color:#09f;font-style:italic"></span>     name               <span style="color:#366">varchar</span>(<span style="color:#f60">20</span>) <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span>,           <span style="color:#09f;font-style:italic">--사용자명
+</span><span style="color:#09f;font-style:italic"></span>     email              <span style="color:#366">varchar</span>(<span style="color:#f60">50</span>) <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span>,           <span style="color:#09f;font-style:italic">--로그인 이메일
+</span><span style="color:#09f;font-style:italic"></span>     passwd             <span style="color:#366">varchar</span>(<span style="color:#f60">80</span>) <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span>,           <span style="color:#09f;font-style:italic">--로그인 비밀번호
+</span><span style="color:#09f;font-style:italic"></span>     phone_number       <span style="color:#366">varchar</span>(<span style="color:#f60">20</span>) <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span>,           <span style="color:#09f;font-style:italic">--전화번호
+</span><span style="color:#09f;font-style:italic"></span>     accumulation_rate  <span style="color:#366">int</span> <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span> <span style="color:#069;font-weight:bold">DEFAULT</span> <span style="color:#f60">5</span>,         <span style="color:#09f;font-style:italic">--포인트 적립율
+</span><span style="color:#09f;font-style:italic"></span>     <span style="color:#069;font-weight:bold">role</span>               <span style="color:#366">varchar</span>(<span style="color:#f60">20</span>) <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span>,
+     created_time       datetime(<span style="color:#f60">6</span>) <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span> <span style="color:#069;font-weight:bold">DEFAULT</span> <span style="color:#069;font-weight:bold">CURRENT_TIMESTAMP</span>(<span style="color:#f60">6</span>),
+     <span style="color:#069;font-weight:bold">PRIMARY</span> <span style="color:#069;font-weight:bold">KEY</span> (id),
+     <span style="color:#069;font-weight:bold">CONSTRAINT</span> unq_user_email <span style="color:#069;font-weight:bold">UNIQUE</span> (email)
 );
-</code></pre></div><p>입력값 검증을 위해 Input창에 <code>onChange이벤트</code>를 이용하여 값이 바뀔때마다 값을 검증하는 위와같은 메서드를 등록해주었습니다.</p>
-<p><code>replace()</code>메서드와 <code>정규표현식</code>을 통해 숫자만 입력 받도록 해주었습니다.</p>
-<p>그리고 전화번호가 중간에 하이푼(-)이 없이 쭉 입력이 된다면 가시성이 좋지않고 사용자에게 입력을 요구하는 것은 엄마가 매우 귀찮아 할 것이기 때문에 자동으로 생성되도록 해주었는 데, 앞자리가 지역번호인 <code>02</code>만 두자리이고 나머지는 세자리이기 때문에 구분해서 만들어 주었습니다.</p>
-<p><code>?:</code>을 통해 02(서울)이면 <code>isSeoul</code>을 0으로 아니면 1로 초기화하여 2(3)/4/4
-자리마다 자동으로 <code>-</code>을 삽입해주었습니다.</p>
-<br>
-<h3>◾ 자동완성 기능 추가</h3><a class="anchor" id="-자동완성-기능-추가"></a>
-<p>자동완성 기능 때문에 고민을 많이 했었습니다.</p>
-<p>이 기능 때문에 굳이 <code>SSR</code>을 도입한 것이 었는데, 자동완성 기능은 많은 데이터를 제공해야하니 <code>CSR</code>로 그에 맞게 요청하는 것이 맞을 것이다.</p>
-<p>하지만 나는 엄마가 사용할 웹을 만들고 있는 것이고, 가게에 등록될 고객이 십~백만 단위로 가지 않기 때문에 현재는 엄마의 사용성(속도)를 위해 SSR을 하기로 했다.</p>
-<p>많지 않은 데이터라면 속도는 차이는 없을 수도 있지만, SSR을 도입해보고 싶었습니다.
-<br><em>(사실 이것이 주 이유다ㅎㅎ)</em></p>
-<p>우선 나중에 api에서 가져올 고객 정보들을 저장할 atom을 생성 해보자.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> { atom } from <span style="color:#c30">&#39;recoil&#39;</span>;
 
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">const</span> customers <span style="color:#555">=</span> atom({
-  key<span style="color:#555">:</span> <span style="color:#c30">&#39;customers&#39;</span>,
-  <span style="color:#069;font-weight:bold">default</span><span style="color:#555">:</span> [
-    { id<span style="color:#555">:</span> <span style="color:#f60">1</span>, telephone<span style="color:#555">:</span> <span style="color:#c30">&#39;010-1111-1111&#39;</span>, name<span style="color:#555">:</span> <span style="color:#c30">&#39;hong&#39;</span>, total<span style="color:#555">:</span> <span style="color:#f60">1234</span> },
-    { id<span style="color:#555">:</span> <span style="color:#f60">2</span>, telephone<span style="color:#555">:</span> <span style="color:#c30">&#39;02-1111-1112&#39;</span>, name<span style="color:#555">:</span> <span style="color:#c30">&#39;a&#39;</span>, total<span style="color:#555">:</span> <span style="color:#f60">123</span> },
-    { id<span style="color:#555">:</span> <span style="color:#f60">3</span>, telephone<span style="color:#555">:</span> <span style="color:#c30">&#39;011-1111-1113&#39;</span>, name<span style="color:#555">:</span> <span style="color:#c30">&#39;b&#39;</span>, total<span style="color:#555">:</span> <span style="color:#f60">12</span> },
-    { id<span style="color:#555">:</span> <span style="color:#f60">4</span>, telephone<span style="color:#555">:</span> <span style="color:#c30">&#39;051-1111-1114&#39;</span>, name<span style="color:#555">:</span> <span style="color:#c30">&#39;c&#39;</span>, total<span style="color:#555">:</span> <span style="color:#f60">124</span> },
-    { id<span style="color:#555">:</span> <span style="color:#f60">5</span>, telephone<span style="color:#555">:</span> <span style="color:#c30">&#39;062-1111-1115&#39;</span>, name<span style="color:#555">:</span> <span style="color:#c30">&#39;d&#39;</span>, total<span style="color:#555">:</span> <span style="color:#f60">4</span> },
-    { id<span style="color:#555">:</span> <span style="color:#f60">6</span>, telephone<span style="color:#555">:</span> <span style="color:#c30">&#39;070-1111-1116&#39;</span>, name<span style="color:#555">:</span> <span style="color:#c30">&#39;e&#39;</span>, total<span style="color:#555">:</span> <span style="color:#f60">234</span> },
-    { id<span style="color:#555">:</span> <span style="color:#f60">7</span>, telephone<span style="color:#555">:</span> <span style="color:#c30">&#39;022-1111-1117&#39;</span>, name<span style="color:#555">:</span> <span style="color:#c30">&#39;f&#39;</span>, total<span style="color:#555">:</span> <span style="color:#f60">23</span> },
-    { id<span style="color:#555">:</span> <span style="color:#f60">8</span>, telephone<span style="color:#555">:</span> <span style="color:#c30">&#39;031-1111-1118&#39;</span>, name<span style="color:#555">:</span> <span style="color:#c30">&#39;g&#39;</span>, total<span style="color:#555">:</span> <span style="color:#f60">134</span> },
-    { id<span style="color:#555">:</span> <span style="color:#f60">9</span>, telephone<span style="color:#555">:</span> <span style="color:#c30">&#39;041-1111-1119&#39;</span>, name<span style="color:#555">:</span> <span style="color:#c30">&#39;h&#39;</span>, total<span style="color:#555">:</span> <span style="color:#f60">1</span> },
-    { id<span style="color:#555">:</span> <span style="color:#f60">10</span>, telephone<span style="color:#555">:</span> <span style="color:#c30">&#39;022-1111-1110&#39;</span>, name<span style="color:#555">:</span> <span style="color:#c30">&#39;i&#39;</span>, total<span style="color:#555">:</span> <span style="color:#f60">2</span> },
-  ],
-});
-</code></pre></div><p>아직 db도 구체적으로 설계를 하지 않아서 id, 전화번호, 이름, 총 포인트 금액 이렇게 4가지가 있다고 가정하고 만들어 주었습니다.</p>
-<p>이제 이 데이터를 이용하여 input에 값을 입력할때마다 동적으로 변화 시켜주면 됩니다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> { useRecoilValue } from <span style="color:#c30">&#39;recoil&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> { customers } from <span style="color:#c30">&#39;../reducers/custmers&#39;</span>;
-
-<span style="color:#09f;font-style:italic">// 중략...
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">const</span> [previewNumber, setPreviewNumber] <span style="color:#555">=</span> useState([]);
-<span style="color:#069;font-weight:bold">const</span> customer <span style="color:#555">=</span> useRecoilValue(customers);
-
-<span style="color:#09f;font-style:italic">//onChangePhoneNumber 메서드 내에 정의
-</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">const</span> onChangePhoneNumber <span style="color:#555">=</span> useCallback(
-  (e) =&gt; {
-    <span style="color:#09f;font-style:italic">//중략..
-</span><span style="color:#09f;font-style:italic"></span>
-    <span style="color:#069;font-weight:bold">const</span> results <span style="color:#555">=</span> [];
-    customer.map((data) =&gt; {
-      <span style="color:#069;font-weight:bold">if</span> (data.telephone.replace(<span style="color:#3aa">/-/g</span>, <span style="color:#c30">&#39;&#39;</span>).includes(number)) {
-        results.push(data.telephone);
-      }
-    });
-    setPreviewNumber(results);
-  },
-  [setPreviewNumber, setPhoneNumber, phoneNumber, customer]
+<span style="color:#069;font-weight:bold">CREATE</span> <span style="color:#069;font-weight:bold">TABLE</span> CUSTOMER (
+    id                  <span style="color:#366">bigint</span> <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span> AUTO_INCREMENT,     <span style="color:#09f;font-style:italic">--고객 PK
+</span><span style="color:#09f;font-style:italic"></span>    user_id             <span style="color:#366">bigint</span> <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span>,                   <span style="color:#09f;font-style:italic">--user FK
+</span><span style="color:#09f;font-style:italic"></span>    phone_number        <span style="color:#366">varchar</span>(<span style="color:#f60">20</span>) <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span>,               <span style="color:#09f;font-style:italic">--전화번호
+</span><span style="color:#09f;font-style:italic"></span>    total_point         <span style="color:#366">int</span> <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span> <span style="color:#069;font-weight:bold">default</span> <span style="color:#f60">0</span>,                <span style="color:#09f;font-style:italic">--총 포인트
+</span><span style="color:#09f;font-style:italic"></span>    purchase_cnt        <span style="color:#366">int</span> <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span> <span style="color:#069;font-weight:bold">default</span> <span style="color:#f60">0</span>,               <span style="color:#09f;font-style:italic">--구매 횟수
+</span><span style="color:#09f;font-style:italic"></span>    created_time        datetime(<span style="color:#f60">6</span>) <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span> <span style="color:#069;font-weight:bold">DEFAULT</span> <span style="color:#069;font-weight:bold">CURRENT_TIMESTAMP</span>(<span style="color:#f60">6</span>),
+    <span style="color:#069;font-weight:bold">PRIMARY</span> <span style="color:#069;font-weight:bold">KEY</span> (id),
+    <span style="color:#069;font-weight:bold">CONSTRAINT</span> fk_user_id <span style="color:#069;font-weight:bold">FOREIGN</span> <span style="color:#069;font-weight:bold">KEY</span>(user_id) <span style="color:#069;font-weight:bold">REFERENCES</span> <span style="color:#069;font-weight:bold">USER</span> (id) <span style="color:#069;font-weight:bold">ON</span> <span style="color:#069;font-weight:bold">DELETE</span> <span style="color:#069;font-weight:bold">CASCADE</span> <span style="color:#069;font-weight:bold">ON</span> <span style="color:#069;font-weight:bold">UPDATE</span> <span style="color:#069;font-weight:bold">CASCADE</span>
 );
-</code></pre></div><p><code>useRecoilValue</code>를 통해 정의 해둔 customers정보를 불러오고 input이 바뀔때마다 현재 입력갑과 데이터에서 하이푼(-)을 제거한 값과 비교하여 일치한 데이터를 <code>PreviewNumber</code>라는 변수에 저장을 해주었습니다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#09f;font-style:italic">//중략 ...
-</span><span style="color:#09f;font-style:italic"></span>
-{
-  previewNumber.length <span style="color:#555">&gt;</span> <span style="color:#f60">0</span> <span style="color:#555">&amp;&amp;</span> phoneNumber.length <span style="color:#555">&gt;</span> <span style="color:#f60">0</span> <span style="color:#555">?</span> (
-    <span style="color:#555">&lt;</span>div className<span style="color:#555">=</span>{classes.searchPreviewContainer}<span style="color:#555">&gt;</span>
-      {previewNumber.map((phoneNumber, index) =&gt; {
-        <span style="color:#069;font-weight:bold">return</span> (
-          <span style="color:#555">&lt;</span>SearchPreview
-            index<span style="color:#555">=</span>{index}
-            phoneNumber<span style="color:#555">=</span>{phoneNumber}
-            classes<span style="color:#555">=</span>{classes}
-            updatePhoneNumber<span style="color:#555">=</span>{updatePhoneNumber}
-          <span style="color:#555">/&gt;</span>
-        );
-      })}
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-  ) <span style="color:#555">:</span> <span style="color:#069;font-weight:bold">null</span>;
-}
-</code></pre></div><p>그런 후 <code>Render()</code>안에 현재 입력값과 일치한 데이터인 <code>previewNumber</code>를 <code>map</code>을 이용하여 컴포넌트를 생성해주었습니다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> PropTypes from <span style="color:#c30">&#39;prop-types&#39;</span>;
 
-<span style="color:#069;font-weight:bold">const</span> SearchPreview <span style="color:#555">=</span> ({ index, phoneNumber, classes, updatePhoneNumber }) =&gt; {
-  <span style="color:#069;font-weight:bold">return</span> (
-    <span style="color:#555">&lt;</span>div key<span style="color:#555">=</span>{index} onClick<span style="color:#555">=</span>{() =&gt; updatePhoneNumber(phoneNumber)} className<span style="color:#555">=</span>{classes.searchPreviewContentBox}<span style="color:#555">&gt;</span>
-      <span style="color:#555">&lt;</span>p className<span style="color:#555">=</span>{classes.searchPreviewContent}<span style="color:#555">&gt;</span>{phoneNumber}<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/p&gt;</span>
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-  );
-};
-SearchPreview.propTypes <span style="color:#555">=</span> {
-  index<span style="color:#555">:</span> PropTypes.number.isRequired,
-  phoneNumber<span style="color:#555">:</span> PropTypes.string.isRequired,
-  classes<span style="color:#555">:</span> PropTypes.object.isRequired,
-  updatePhoneNumber<span style="color:#555">:</span> PropTypes.func.isRequired,
-};
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> SearchPreview;
-</code></pre></div><p>다음과 같이 컴포넌트를 생성해 주었으며 특별한건 없고 <code>updatePhoneNumber</code>메서드를 prop으로 넘겨주어 클릭이벤트에 매칭시켜서 클릭시에 바로 값이 입력되게 해주었습니다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">const</span> updatePhoneNumber <span style="color:#555">=</span> useCallback(
-  (number) =&gt; {
-    setPhoneNumber(number);
-    setPreviewNumber([]);
-  },
-  [setPhoneNumber, setPreviewNumber]
+<span style="color:#069;font-weight:bold">CREATE</span> <span style="color:#069;font-weight:bold">TABLE</span> ORDERS (
+    id                  <span style="color:#366">bigint</span> <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span> AUTO_INCREMENT,     <span style="color:#09f;font-style:italic">--구매기록 PK
+</span><span style="color:#09f;font-style:italic"></span>    customer_id         <span style="color:#366">bigint</span> <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span>,                   <span style="color:#09f;font-style:italic">--customer FK
+</span><span style="color:#09f;font-style:italic"></span>    price               <span style="color:#366">int</span> <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span>,                       <span style="color:#09f;font-style:italic">--가격
+</span><span style="color:#09f;font-style:italic"></span>    accumulation_rate   <span style="color:#366">int</span> <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span>,                       <span style="color:#09f;font-style:italic">--적립율(기본은 유저적립율)
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">save_point</span>          <span style="color:#366">int</span>,                                <span style="color:#09f;font-style:italic">--적립율과 가격에 따른 적립포인트
+</span><span style="color:#09f;font-style:italic"></span>    payment_type        <span style="color:#366">varchar</span>(<span style="color:#f60">20</span>) <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span> <span style="color:#069;font-weight:bold">DEFAULT</span> <span style="color:#c30">&#39;CASH&#39;</span>,                <span style="color:#09f;font-style:italic">--결제 방법
+</span><span style="color:#09f;font-style:italic"></span>    created_time        datetime(<span style="color:#f60">6</span>) <span style="color:#069;font-weight:bold">NOT</span> <span style="color:#069;font-weight:bold">NULL</span> <span style="color:#069;font-weight:bold">DEFAULT</span> <span style="color:#069;font-weight:bold">CURRENT_TIMESTAMP</span>(<span style="color:#f60">6</span>),
+    <span style="color:#069;font-weight:bold">PRIMARY</span> <span style="color:#069;font-weight:bold">KEY</span> (id),
+    <span style="color:#069;font-weight:bold">CONSTRAINT</span> fk_customer_id <span style="color:#069;font-weight:bold">FOREIGN</span> <span style="color:#069;font-weight:bold">KEY</span>(customer_id) <span style="color:#069;font-weight:bold">REFERENCES</span> CUSTOMER (id) <span style="color:#069;font-weight:bold">ON</span> <span style="color:#069;font-weight:bold">DELETE</span> <span style="color:#069;font-weight:bold">CASCADE</span> <span style="color:#069;font-weight:bold">ON</span> <span style="color:#069;font-weight:bold">UPDATE</span> <span style="color:#069;font-weight:bold">CASCADE</span>
 );
-</code></pre></div><p>update가 되었을때는 입력값을 바꿔주고 <code>preview</code>를 비워주도록 선언했습니다.</p>
-<br>
-<h3>◾ close 버튼</h3><a class="anchor" id="-close-버튼"></a>
-<p>숫자를 잘못입력했을 때 일일히 백스페이스로 지우기에는 사용성이 떨어지기 때문에 closeIcon에 이벤트를 달아 조금 더 편하게 사용할 수 있도록 하였습니다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">const</span> cancelSearch <span style="color:#555">=</span> useCallback(() =&gt; {
-  setPhoneNumber(<span style="color:#c30">&#39;&#39;</span>);
-}, [setPhoneNumber]);
-</code></pre></div><h3>◾ Modal창 만들기</h3><a class="anchor" id="-modal창-만들기"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">const</span> [isCustomer, setIsCustomer] <span style="color:#555">=</span> useState(<span style="color:#069;font-weight:bold">false</span>);
-<span style="color:#069;font-weight:bold">const</span> closeModal <span style="color:#555">=</span> useCallback(() =&gt; {
-  setIsCustomer(<span style="color:#069;font-weight:bold">false</span>);
-}, [setIsCustomer]);
-
-<span style="color:#555">&lt;</span>Modal
-  className<span style="color:#555">=</span>{classes.detailModal}
-  open<span style="color:#555">=</span>{isCustomer}
-  closeAfterTransition
-  onClose<span style="color:#555">=</span>{closeModal}
-  aria<span style="color:#555">-</span>labelledby<span style="color:#555">=</span><span style="color:#c30">&#34;simple-modal-title&#34;</span>
-  aria<span style="color:#555">-</span>describedby<span style="color:#555">=</span><span style="color:#c30">&#34;simple-modal-description&#34;</span>
-  Props<span style="color:#555">=</span>{{ keepMounted<span style="color:#555">:</span> <span style="color:#c30">&#39;false&#39;</span> }}
-<span style="color:#555">&gt;</span>
-  <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-    <span style="color:#555">&lt;</span>ItemDetail classes<span style="color:#555">=</span>{classes} phoneNumber<span style="color:#555">=</span>{phoneNumber} <span style="color:#555">/&gt;</span>
-  <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Modal&gt;;</span>
-</code></pre></div><p>검색할 전화번호를 입력후에 적립 버튼을 누르면 모달창이 뜨고 그 모달창으로 간단하게 구매정보들(물건이름, 가격, 결제 방법)을 입력할 수 있는 창을 만들고자 했기 때문에 Material-UI의 Modal을 이용했습니다.</p>
-<p>Modal 컨트롤 변수로 <code>isCustomer</code>이라는 변수를 hook으로 생성해주었습니다.
-고객정보가 있을때만 구매내역을 입력할 수 있고 없다면 고객정보를 입력하게 컨트롤 해주기 위해 <code>button</code>에 아래와 같이 이벤트를 달아주었습니다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">const</span> onClickEarnPointsButton <span style="color:#555">=</span> useCallback(() =&gt; {
-  <span style="color:#069;font-weight:bold">if</span> (phoneNumber <span style="color:#555">===</span> <span style="color:#c30">&#39;&#39;</span>) {
-    <span style="color:#069;font-weight:bold">return</span> alert(<span style="color:#c30">&#39;전화번호를 입력해 주세요.&#39;</span>);
-  }
-  customer.map((data) =&gt; {
-    <span style="color:#069;font-weight:bold">if</span> (data.telephone <span style="color:#555">===</span> phoneNumber) {
-      setIsCustomer(<span style="color:#069;font-weight:bold">true</span>);
-    }
-  });
-}, [customer, phoneNumber, setIsCustomer]);
-</code></pre></div><p>map을 통해 값이 일치하는 경우에만 모달이 열리게 했고, 없는 경우에는 modal창 내용에 이름 input을 추가해주도록 바꿀 예정인데 지금 목표는 아니기에 열리는 것만 동작하게 만들어 주었습니다.</p>
-<p><img src="./points.gif?classes=border,shadow" alt="points"></p>
-<p>작업하고 보니 css에 하나도 신경을 안쓰기도 했고, 기능 구현에 충실하다 보니 코드도 조금 스파게티 코드 같아 보이기는 한다&hellip;</p>
-<p>빨리 고객정보조회 페이지 table로 구현하고 api먼저 개발한 뒤 손 좀 봐야겠다.</p>
-<p>material-Ui도 걷어낼건 걷어내고 새로 디자인 해야지 다음에 사용할 <code>DataGrid</code> 보니까 커스텀이 힘들어서 결국은 내가 디자인 해야될 것 같다.
-<br>최종 목표는 front/back 기능 개발 끝낸 후에 컴포넌트들 나누는 것과 typeScript로의 변경이다!! (요즘 타입스크립트 공부하는 데 ptyhon을 싫어하고 C++/Java를 더 좋아하는 나로써는 더 좋은 것 같다.)</p>
-<h4>작업한 파일 전체 코드 보기 👇</h4><a class="anchor" id="작업한-파일-전체-코드-보기-"></a>
-
-<details>
-    <summary class = "detail" style="font-Weight : bold; font-size : 15px; color : #3158ad;" >
-            📃 코드  ( 접기 / 펼치기 )
-        
-    </summary>
-    <div>
-        <h4>login.js</h4><a class="anchor" id="loginjs"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> React, { useCallback, useEffect } from <span style="color:#c30">&#39;react&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> Router from <span style="color:#c30">&#39;next/router&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> { useRecoilState } from <span style="color:#c30">&#39;recoil&#39;</span>;
-
-<span style="color:#069;font-weight:bold">import</span> styled from <span style="color:#c30">&#39;styled-components&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> { Button, FormControl, InputLabel, Input } from <span style="color:#c30">&#39;@material-ui/core&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> useStyle from <span style="color:#c30">&#39;../css/commonStyle&#39;</span>;
-
-<span style="color:#069;font-weight:bold">import</span> useInput from <span style="color:#c30">&#39;../hooks/useInput&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> { user, loginState } from <span style="color:#c30">&#39;../reducers/user&#39;</span>;
-
-<span style="color:#069;font-weight:bold">const</span> LoginForm <span style="color:#555">=</span> styled.form<span style="color:#c30">`
-</span><span style="color:#c30">  min-width: 200px;
-</span><span style="color:#c30">  width: 80%;
-</span><span style="color:#c30">  max-width: 1000px;
-</span><span style="color:#c30">  margin: 200px auto 0;
-</span><span style="color:#c30">  border: 1px solid;
-</span><span style="color:#c30">`</span>;
-
-<span style="color:#069;font-weight:bold">const</span> Login <span style="color:#555">=</span> () =&gt; {
-  <span style="color:#069;font-weight:bold">const</span> [email, onChangeEmail] <span style="color:#555">=</span> useInput(<span style="color:#c30">&#39;&#39;</span>);
-  <span style="color:#069;font-weight:bold">const</span> [password, onChangePassword] <span style="color:#555">=</span> useInput(<span style="color:#c30">&#39;&#39;</span>);
-  <span style="color:#069;font-weight:bold">const</span> [userInfo, setUserInfo] <span style="color:#555">=</span> useRecoilState(user);
-  <span style="color:#069;font-weight:bold">const</span> [loginStateInfo, setLoginStateInfo] <span style="color:#555">=</span> useRecoilState(loginState);
-
-  <span style="color:#069;font-weight:bold">const</span> onLoginEvent <span style="color:#555">=</span> useCallback(() =&gt; {
-    <span style="color:#09f;font-style:italic">/*로그인 성공시 */</span>
-    setUserInfo(() =&gt; ({
-      email<span style="color:#555">:</span> email,
-      name<span style="color:#555">:</span> <span style="color:#c30">&#39;의성&#39;</span>,
-      telephone<span style="color:#555">:</span> <span style="color:#c30">&#39;010-1234-1234&#39;</span>,
-    }));
-
-    setLoginStateInfo({
-      loginError<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-      loginLoading<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-      loginDone<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
-    });
-  }, [setUserInfo, setLoginStateInfo]);
-
-  useEffect(() =&gt; {
-    console.log(<span style="color:#f60">1</span>);
-    <span style="color:#069;font-weight:bold">if</span> (loginStateInfo<span style="color:#555">?</span>.loginDone) {
-      setLoginStateInfo((state) =&gt; ({
-        ...state,
-        loginDone<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
-      }));
-      Router.replace(<span style="color:#c30">&#39;/&#39;</span>);
-    }
-  }, [userInfo, loginStateInfo, setLoginStateInfo]);
-
-  <span style="color:#069;font-weight:bold">const</span> classes <span style="color:#555">=</span> useStyle();
-  <span style="color:#069;font-weight:bold">return</span> (
-    <span style="color:#555">&lt;&gt;</span>
-      <span style="color:#555">&lt;</span>LoginForm<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>FormControl className<span style="color:#555">=</span>{classes.formControl}<span style="color:#555">&gt;</span>
-            <span style="color:#555">&lt;</span>InputLabel htmlFor<span style="color:#555">=</span><span style="color:#c30">&#34;email-input&#34;</span><span style="color:#555">&gt;</span>Email<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/InputLabel&gt;</span>
-            <span style="color:#555">&lt;</span>Input
-              id<span style="color:#555">=</span><span style="color:#c30">&#34;email-input&#34;</span>
-              type<span style="color:#555">=</span><span style="color:#c30">&#34;email&#34;</span>
-              value<span style="color:#555">=</span>{email}
-              onChange<span style="color:#555">=</span>{onChangeEmail}
-              className<span style="color:#555">=</span>{classes.input}
-              required
-            <span style="color:#555">/&gt;</span>
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/FormControl&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-        <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>FormControl className<span style="color:#555">=</span>{classes.formControl}<span style="color:#555">&gt;</span>
-            <span style="color:#555">&lt;</span>InputLabel htmlFor<span style="color:#555">=</span><span style="color:#c30">&#34;passwd-input&#34;</span><span style="color:#555">&gt;</span>Password<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/InputLabel&gt;</span>
-            <span style="color:#555">&lt;</span>Input
-              id<span style="color:#555">=</span><span style="color:#c30">&#34;passwd-input&#34;</span>
-              type<span style="color:#555">=</span><span style="color:#c30">&#34;password&#34;</span>
-              value<span style="color:#555">=</span>{password}
-              onChange<span style="color:#555">=</span>{onChangePassword}
-              className<span style="color:#555">=</span>{classes.input}
-              required
-            <span style="color:#555">/&gt;</span>
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/FormControl&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-        <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>Button variant<span style="color:#555">=</span><span style="color:#c30">&#34;contained&#34;</span> color<span style="color:#555">=</span><span style="color:#c30">&#34;secondary&#34;</span> onClick<span style="color:#555">=</span>{onLoginEvent} className<span style="color:#555">=</span>{classes.flexButton}<span style="color:#555">&gt;</span>
-            로그인
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Button&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/LoginForm&gt;</span>
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/&gt;</span>
-  );
-};
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> Login;
-</code></pre></div><h4>points.js</h4><a class="anchor" id="pointsjs"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> React, { useCallback, useState } from <span style="color:#c30">&#39;react&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> { useRecoilValue } from <span style="color:#c30">&#39;recoil&#39;</span>;
-
-<span style="color:#069;font-weight:bold">import</span> { Button, Input, Modal } from <span style="color:#c30">&#39;@material-ui/core&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> CloseIcon from <span style="color:#c30">&#39;@material-ui/icons/Close&#39;</span>;
-
-<span style="color:#069;font-weight:bold">import</span> { customers } from <span style="color:#c30">&#39;../reducers/custmers&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> useStyles from <span style="color:#c30">&#39;../css/commonStyle&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> SearchPreview from <span style="color:#c30">&#39;../components/SearchPreview&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> ItemDetail from <span style="color:#c30">&#39;../components/ItemDetail&#39;</span>;
-
-<span style="color:#069;font-weight:bold">const</span> Points <span style="color:#555">=</span> () =&gt; {
-  <span style="color:#069;font-weight:bold">const</span> classes <span style="color:#555">=</span> useStyles();
-  <span style="color:#069;font-weight:bold">const</span> [phoneNumber, setPhoneNumber] <span style="color:#555">=</span> useState(<span style="color:#c30">&#39;&#39;</span>);
-  <span style="color:#069;font-weight:bold">const</span> [isCustomer, setIsCustomer] <span style="color:#555">=</span> useState(<span style="color:#069;font-weight:bold">false</span>);
-  <span style="color:#069;font-weight:bold">const</span> [previewNumber, setPreviewNumber] <span style="color:#555">=</span> useState([]);
-  <span style="color:#069;font-weight:bold">const</span> customer <span style="color:#555">=</span> useRecoilValue(customers);
-
-  <span style="color:#09f;font-style:italic">/* Input입력창에 숫자가 바뀔때마다 수행
-</span><span style="color:#09f;font-style:italic">      숫자인지 확인하고 숫자만 저장
-</span><span style="color:#09f;font-style:italic">      입력한 숫자에 대해 customers  state랑 비교후 자동완성 기능위한
-</span><span style="color:#09f;font-style:italic">      correctNumber state에 저장
-</span><span style="color:#09f;font-style:italic">  */</span>
-  <span style="color:#069;font-weight:bold">const</span> onChangePhoneNumber <span style="color:#555">=</span> useCallback(
-    (e) =&gt; {
-      <span style="color:#069;font-weight:bold">const</span> number <span style="color:#555">=</span> e.target.value.replace(<span style="color:#3aa">/[^0-9]/g</span>, <span style="color:#c30">&#39;&#39;</span>);
-      <span style="color:#069;font-weight:bold">const</span> isSeoul <span style="color:#555">=</span> number.substring(<span style="color:#f60">0</span>, <span style="color:#f60">2</span>).indexOf(<span style="color:#c30">&#39;02&#39;</span>) <span style="color:#555">===</span> <span style="color:#f60">0</span> <span style="color:#555">?</span> <span style="color:#f60">0</span> <span style="color:#555">:</span> <span style="color:#f60">1</span>;
-      <span style="color:#069;font-weight:bold">if</span> (number.length <span style="color:#555">&lt;</span> <span style="color:#f60">3</span> <span style="color:#555">+</span> isSeoul) {
-        setPhoneNumber(number);
-      } <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (number.length <span style="color:#555">&lt;</span> <span style="color:#f60">6</span> <span style="color:#555">+</span> isSeoul) {
-        setPhoneNumber(number.substr(<span style="color:#f60">0</span>, <span style="color:#f60">2</span> <span style="color:#555">+</span> isSeoul) <span style="color:#555">+</span> <span style="color:#c30">&#39;-&#39;</span> <span style="color:#555">+</span> number.substr(<span style="color:#f60">2</span> <span style="color:#555">+</span> isSeoul));
-      } <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (number.length <span style="color:#555">&lt;</span> <span style="color:#f60">10</span> <span style="color:#555">+</span> isSeoul) {
-        setPhoneNumber(
-          number.substr(<span style="color:#f60">0</span>, <span style="color:#f60">2</span> <span style="color:#555">+</span> isSeoul) <span style="color:#555">+</span> <span style="color:#c30">&#39;-&#39;</span> <span style="color:#555">+</span> number.substr(<span style="color:#f60">2</span> <span style="color:#555">+</span> isSeoul, <span style="color:#f60">3</span>) <span style="color:#555">+</span> <span style="color:#c30">&#39;-&#39;</span> <span style="color:#555">+</span> number.substr(<span style="color:#f60">5</span> <span style="color:#555">+</span> isSeoul)
-        );
-      } <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (number.length <span style="color:#555">&lt;</span> <span style="color:#f60">11</span> <span style="color:#555">+</span> isSeoul) {
-        setPhoneNumber(
-          number.substr(<span style="color:#f60">0</span>, <span style="color:#f60">2</span> <span style="color:#555">+</span> isSeoul) <span style="color:#555">+</span> <span style="color:#c30">&#39;-&#39;</span> <span style="color:#555">+</span> number.substr(<span style="color:#f60">2</span> <span style="color:#555">+</span> isSeoul, <span style="color:#f60">4</span>) <span style="color:#555">+</span> <span style="color:#c30">&#39;-&#39;</span> <span style="color:#555">+</span> number.substr(<span style="color:#f60">6</span> <span style="color:#555">+</span> isSeoul)
-        );
-      }
-
-      <span style="color:#069;font-weight:bold">const</span> results <span style="color:#555">=</span> [];
-      customer.map((data) =&gt; {
-        <span style="color:#069;font-weight:bold">if</span> (data.telephone.replace(<span style="color:#3aa">/-/g</span>, <span style="color:#c30">&#39;&#39;</span>).includes(number)) {
-          results.push(data.telephone);
-        }
-      });
-      setPreviewNumber(results);
-    },
-    [setPreviewNumber, setPhoneNumber, phoneNumber, customer]
-  );
-
-  <span style="color:#09f;font-style:italic">/* 적립 버튼 이벤트 */</span>
-  <span style="color:#069;font-weight:bold">const</span> onClickEarnPointsButton <span style="color:#555">=</span> useCallback(() =&gt; {
-    <span style="color:#069;font-weight:bold">if</span> (phoneNumber <span style="color:#555">===</span> <span style="color:#c30">&#39;&#39;</span>) {
-      <span style="color:#069;font-weight:bold">return</span> alert(<span style="color:#c30">&#39;전화번호를 입력해 주세요.&#39;</span>);
-    }
-    customer.map((data) =&gt; {
-      <span style="color:#069;font-weight:bold">if</span> (data.telephone <span style="color:#555">===</span> phoneNumber) {
-        setIsCustomer(<span style="color:#069;font-weight:bold">true</span>);
-      }
-    });
-  }, [customer, phoneNumber, setIsCustomer]);
-
-  <span style="color:#09f;font-style:italic">/* 자동완성 preview 중에 선택 했을 때 이벤트 */</span>
-  <span style="color:#069;font-weight:bold">const</span> updatePhoneNumber <span style="color:#555">=</span> useCallback(
-    (number) =&gt; {
-      setPhoneNumber(number);
-      setPreviewNumber([]);
-    },
-    [setPhoneNumber, setPreviewNumber]
-  );
-
-  <span style="color:#09f;font-style:italic">/* 입력한 전화번호 전체 취소 이벤트 */</span>
-  <span style="color:#069;font-weight:bold">const</span> cancelSearch <span style="color:#555">=</span> useCallback(() =&gt; {
-    setPhoneNumber(<span style="color:#c30">&#39;&#39;</span>);
-  }, [setPhoneNumber]);
-
-  <span style="color:#069;font-weight:bold">const</span> closeModal <span style="color:#555">=</span> useCallback(() =&gt; {
-    setIsCustomer(<span style="color:#069;font-weight:bold">false</span>);
-  }, [setIsCustomer]);
-
-  <span style="color:#069;font-weight:bold">return</span> (
-    <span style="color:#555">&lt;&gt;</span>
-      <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>div className<span style="color:#555">=</span>{classes.oneLineDiv}<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>Input
-            onChange<span style="color:#555">=</span>{onChangePhoneNumber}
-            value<span style="color:#555">=</span>{phoneNumber}
-            placeholder<span style="color:#555">=</span><span style="color:#c30">&#34;Search&#34;</span>
-            disableUnderline<span style="color:#555">=</span>{<span style="color:#069;font-weight:bold">true</span>}
-            className<span style="color:#555">=</span>{classes.phoneInput}
-          <span style="color:#555">/&gt;</span>
-          <span style="color:#555">&lt;</span>CloseIcon
-            className<span style="color:#555">=</span>{phoneNumber.length <span style="color:#555">&gt;</span> <span style="color:#f60">0</span> <span style="color:#555">?</span> classes.cancelButtonActive <span style="color:#555">:</span> classes.cancelButtonInActive}
-            onClick<span style="color:#555">=</span>{cancelSearch}
-          <span style="color:#555">/&gt;</span>
-
-          <span style="color:#555">&lt;</span>Button
-            variant<span style="color:#555">=</span><span style="color:#c30">&#34;contained&#34;</span>
-            color<span style="color:#555">=</span><span style="color:#c30">&#34;secondary&#34;</span>
-            className<span style="color:#555">=</span>{classes.earnButton}
-            onClick<span style="color:#555">=</span>{onClickEarnPointsButton}
-          <span style="color:#555">&gt;</span>
-            적립
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Button&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-
-        {<span style="color:#09f;font-style:italic">/* 자동완성 결과 일치하는 것이 있고, 숫자를 입력한 상태면 자동완성 결과 보여주기 */</span>}
-        {previewNumber.length <span style="color:#555">&gt;</span> <span style="color:#f60">0</span> <span style="color:#555">&amp;&amp;</span> phoneNumber.length <span style="color:#555">&gt;</span> <span style="color:#f60">0</span> <span style="color:#555">?</span> (
-          <span style="color:#555">&lt;</span>div className<span style="color:#555">=</span>{classes.searchPreviewContainer}<span style="color:#555">&gt;</span>
-            {previewNumber.map((phoneNumber, index) =&gt; {
-              <span style="color:#069;font-weight:bold">return</span> (
-                <span style="color:#555">&lt;</span>SearchPreview
-                  index<span style="color:#555">=</span>{index}
-                  phoneNumber<span style="color:#555">=</span>{phoneNumber}
-                  classes<span style="color:#555">=</span>{classes}
-                  updatePhoneNumber<span style="color:#555">=</span>{updatePhoneNumber}
-                <span style="color:#555">/&gt;</span>
-              );
-            })}
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-        ) <span style="color:#555">:</span> <span style="color:#069;font-weight:bold">null</span>}
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-      <span style="color:#555">&lt;</span>Modal
-        className<span style="color:#555">=</span>{classes.detailModal}
-        open<span style="color:#555">=</span>{isCustomer}
-        closeAfterTransition
-        onClose<span style="color:#555">=</span>{closeModal}
-        aria<span style="color:#555">-</span>labelledby<span style="color:#555">=</span><span style="color:#c30">&#34;simple-modal-title&#34;</span>
-        aria<span style="color:#555">-</span>describedby<span style="color:#555">=</span><span style="color:#c30">&#34;simple-modal-description&#34;</span>
-        Props<span style="color:#555">=</span>{{ keepMounted<span style="color:#555">:</span> <span style="color:#c30">&#39;false&#39;</span> }}
-      <span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>ItemDetail classes<span style="color:#555">=</span>{classes} phoneNumber<span style="color:#555">=</span>{phoneNumber} <span style="color:#555">/&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Modal&gt;</span>
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/&gt;</span>
-  );
-};
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> Points;
-</code></pre></div><h4>useInput.js</h4><a class="anchor" id="useinputjs"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> { useState, useCallback } from <span style="color:#c30">&#39;react&#39;</span>;
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> (initialValue <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">null</span>) =&gt; {
-  <span style="color:#069;font-weight:bold">const</span> [value, setValue] <span style="color:#555">=</span> useState(initialValue);
-  <span style="color:#069;font-weight:bold">const</span> handler <span style="color:#555">=</span> useCallback((e) =&gt; {
-    setValue(e.target.value);
-  }, []);
-  <span style="color:#069;font-weight:bold">return</span> [value, handler, setValue];
-};
-</code></pre></div><h4>ItemDetail.js</h4><a class="anchor" id="itemdetailjs"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> { useCallback, useState } from <span style="color:#c30">&#39;react&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> PropTypes from <span style="color:#c30">&#39;prop-types&#39;</span>;
-
-<span style="color:#069;font-weight:bold">import</span> { Button, FormControl, InputLabel, Input, Select, MenuItem } from <span style="color:#c30">&#39;@material-ui/core&#39;</span>;
-
-<span style="color:#069;font-weight:bold">const</span> ItemDetail <span style="color:#555">=</span> (Props) =&gt; {
-  <span style="color:#069;font-weight:bold">const</span> { classes, phoneNumber } <span style="color:#555">=</span> Props;
-  <span style="color:#069;font-weight:bold">const</span> [payment, setPayment] <span style="color:#555">=</span> useState(<span style="color:#c30">&#39;&#39;</span>);
-
-  <span style="color:#09f;font-style:italic">/*결제 방법 selectbox 이벤트 */</span>
-  <span style="color:#069;font-weight:bold">const</span> selectPayment <span style="color:#555">=</span> useCallback(
-    (e) =&gt; {
-      setPayment(e.target.value);
-    },
-    [setPayment]
-  );
-
-  <span style="color:#069;font-weight:bold">return</span> (
-    <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-      <span style="color:#555">&lt;</span>form className<span style="color:#555">=</span>{classes.modalContainer}<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>{phoneNumber}<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-        <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>FormControl className<span style="color:#555">=</span>{classes.formControl}<span style="color:#555">&gt;</span>
-            <span style="color:#555">&lt;</span>InputLabel htmlFor<span style="color:#555">=</span><span style="color:#c30">&#34;item-input-label&#34;</span><span style="color:#555">&gt;</span>판매 물건<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/InputLabel&gt;</span>
-            <span style="color:#555">&lt;</span>Input id<span style="color:#555">=</span><span style="color:#c30">&#34;item-input-label&#34;</span> type<span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> className<span style="color:#555">=</span>{classes.input} required <span style="color:#555">/&gt;</span>
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/FormControl&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-        <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>FormControl className<span style="color:#555">=</span>{classes.formControl}<span style="color:#555">&gt;</span>
-            <span style="color:#555">&lt;</span>InputLabel htmlFor<span style="color:#555">=</span><span style="color:#c30">&#34;price-inpu-label&#34;</span><span style="color:#555">&gt;</span>가격<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/InputLabel&gt;</span>
-            <span style="color:#555">&lt;</span>Input id<span style="color:#555">=</span><span style="color:#c30">&#34;price-input-label&#34;</span> type<span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> required <span style="color:#555">/&gt;</span>
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/FormControl&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-        <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>FormControl className<span style="color:#555">=</span>{classes.formControl}<span style="color:#555">&gt;</span>
-            <span style="color:#555">&lt;</span>InputLabel htmlFor<span style="color:#555">=</span><span style="color:#c30">&#34;payment-input-label&#34;</span><span style="color:#555">&gt;</span>결제 방법<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/InputLabel&gt;</span>
-            <span style="color:#555">&lt;</span>Select labelId<span style="color:#555">=</span><span style="color:#c30">&#34;payment-input-label&#34;</span> id<span style="color:#555">=</span><span style="color:#c30">&#34;payment-select&#34;</span> value<span style="color:#555">=</span>{payment} onChange<span style="color:#555">=</span>{selectPayment}<span style="color:#555">&gt;</span>
-              <span style="color:#555">&lt;</span>MenuItem value<span style="color:#555">=</span>{<span style="color:#c30">&#39;card&#39;</span>}<span style="color:#555">&gt;</span>카드<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/MenuItem&gt;</span>
-              <span style="color:#555">&lt;</span>MenuItem value<span style="color:#555">=</span>{<span style="color:#c30">&#39;money&#39;</span>}<span style="color:#555">&gt;</span>현금<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/MenuItem&gt;</span>
-            <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Select&gt;</span>
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/FormControl&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-        <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>Button variant<span style="color:#555">=</span><span style="color:#c30">&#34;contained&#34;</span> color<span style="color:#555">=</span><span style="color:#c30">&#34;secondary&#34;</span> className<span style="color:#555">=</span>{classes.button}<span style="color:#555">&gt;</span>
-            적립
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Button&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/form&gt;</span>
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-  );
-};
-
-ItemDetail.propTypes <span style="color:#555">=</span> {
-  classes<span style="color:#555">:</span> PropTypes.object.isRequired,
-  phoneNumber<span style="color:#555">:</span> PropTypes.string.isRequired,
-};
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> ItemDetail;
-</code></pre></div><h4>SearchPreview.js</h4><a class="anchor" id="searchpreviewjs"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> PropTypes from <span style="color:#c30">&#39;prop-types&#39;</span>;
-
-<span style="color:#069;font-weight:bold">const</span> SearchPreview <span style="color:#555">=</span> ({ index, phoneNumber, classes, updatePhoneNumber }) =&gt; {
-  <span style="color:#069;font-weight:bold">return</span> (
-    <span style="color:#555">&lt;</span>div key<span style="color:#555">=</span>{index} onClick<span style="color:#555">=</span>{() =&gt; updatePhoneNumber(phoneNumber)} className<span style="color:#555">=</span>{classes.searchPreviewContentBox}<span style="color:#555">&gt;</span>
-      <span style="color:#555">&lt;</span>p className<span style="color:#555">=</span>{classes.searchPreviewContent}<span style="color:#555">&gt;</span>{phoneNumber}<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/p&gt;</span>
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-  );
-};
-SearchPreview.propTypes <span style="color:#555">=</span> {
-  index<span style="color:#555">:</span> PropTypes.number.isRequired,
-  phoneNumber<span style="color:#555">:</span> PropTypes.string.isRequired,
-  classes<span style="color:#555">:</span> PropTypes.object.isRequired,
-  updatePhoneNumber<span style="color:#555">:</span> PropTypes.func.isRequired,
-};
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> SearchPreview;
-</code></pre></div>
-    </div>
-</details>
+</code></pre></div><p>기능은 많지 않다보니 table 3개로 모두 구현가능 할 것 같아 위와같이 설계를 해주었고 지금은 시작 초기데이터도 몇개 추가해 주었습니다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sql" data-lang="sql"><span style="color:#09f;font-style:italic">--
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">INSERT</span> <span style="color:#069;font-weight:bold">INTO</span> <span style="color:#069;font-weight:bold">user</span>(id,name, email, password, phone_number,accumulation_rate,<span style="color:#069;font-weight:bold">role</span>) <span style="color:#069;font-weight:bold">VALUES</span> (<span style="color:#f60">1</span>,<span style="color:#c30">&#39;tester&#39;</span>, <span style="color:#c30">&#39;test@test.com&#39;</span>, <span style="color:#c30">&#39;$2a$10$mzF7/rMylsnxxwNcTsJTEOFhh1iaHv3xVox.vpf6JQybEhE4jDZI.&#39;</span>, <span style="color:#c30">&#39;010-0123-1111&#39;</span>, <span style="color:#f60">5</span>,<span style="color:#c30">&#39;ADMIN&#39;</span>);
+<span style="color:#069;font-weight:bold">INSERT</span> <span style="color:#069;font-weight:bold">INTO</span> <span style="color:#069;font-weight:bold">user</span>(id,name, email, password, phone_number,accumulation_rate,<span style="color:#069;font-weight:bold">role</span>) <span style="color:#069;font-weight:bold">VALUES</span> (<span style="color:#f60">2</span>,<span style="color:#c30">&#39;raon&#39;</span>, <span style="color:#c30">&#39;raon@gmail.com&#39;</span>, <span style="color:#c30">&#39;$2a$10$mzF7/rMylsnxxwNcTsJTEOFhh1iaHv3xVox.vpf6JQybEhE4jDZI.&#39;</span>, <span style="color:#c30">&#39;010-1234-1234&#39;</span>, <span style="color:#f60">10</span>,<span style="color:#c30">&#39;USER&#39;</span>);
+<span style="color:#069;font-weight:bold">INSERT</span> <span style="color:#069;font-weight:bold">INTO</span> customer(id,user_id, phone_number, total_point, purchase_cnt,created_time) <span style="color:#069;font-weight:bold">VALUES</span> (<span style="color:#f60">1</span>,<span style="color:#f60">1</span>,<span style="color:#c30">&#39;010-1111-1111&#39;</span>, <span style="color:#f60">3700</span>, <span style="color:#f60">3</span>,<span style="color:#c30">&#39;2021-04-10 20:41:10&#39;</span>);
+<span style="color:#069;font-weight:bold">INSERT</span> <span style="color:#069;font-weight:bold">INTO</span> customer(id,user_id, phone_number, total_point, purchase_cnt,created_time) <span style="color:#069;font-weight:bold">VALUES</span> (<span style="color:#f60">2</span>,<span style="color:#f60">1</span>,<span style="color:#c30">&#39;010-2222-2222&#39;</span>, <span style="color:#f60">600</span>, <span style="color:#f60">2</span>,<span style="color:#c30">&#39;2021-04-10 20:41:10&#39;</span>);
+<span style="color:#069;font-weight:bold">INSERT</span> <span style="color:#069;font-weight:bold">INTO</span> customer(id,user_id, phone_number, total_point, purchase_cnt,created_time) <span style="color:#069;font-weight:bold">VALUES</span> (<span style="color:#f60">3</span>,<span style="color:#f60">2</span>,<span style="color:#c30">&#39;010-4444-4444&#39;</span>, <span style="color:#f60">5000</span>, <span style="color:#f60">1</span>,<span style="color:#c30">&#39;2021-04-10 20:41:10&#39;</span>);
+<span style="color:#069;font-weight:bold">INSERT</span> <span style="color:#069;font-weight:bold">INTO</span> orders(price,<span style="color:#069;font-weight:bold">save_point</span>, accumulation_rate, payment_type,customer_id,created_time) <span style="color:#069;font-weight:bold">values</span> (<span style="color:#f60">12000</span>, <span style="color:#f60">600</span>, <span style="color:#f60">5</span>, <span style="color:#c30">&#39;CASH&#39;</span>, <span style="color:#f60">1</span>,<span style="color:#c30">&#39;2021-04-10 20:41:10&#39;</span>);
+<span style="color:#069;font-weight:bold">INSERT</span> <span style="color:#069;font-weight:bold">INTO</span> orders(price,<span style="color:#069;font-weight:bold">save_point</span>, accumulation_rate,payment_type,customer_id,created_time) <span style="color:#069;font-weight:bold">values</span> (<span style="color:#f60">20000</span>,<span style="color:#f60">1000</span>,<span style="color:#f60">5</span>, <span style="color:#c30">&#39;CASH&#39;</span>, <span style="color:#f60">1</span>,<span style="color:#c30">&#39;2021-04-12 20:41:10&#39;</span>);
+<span style="color:#069;font-weight:bold">INSERT</span> <span style="color:#069;font-weight:bold">INTO</span> orders(price,<span style="color:#069;font-weight:bold">save_point</span>, accumulation_rate,payment_type,customer_id,created_time) <span style="color:#069;font-weight:bold">values</span> (<span style="color:#f60">21000</span>,<span style="color:#f60">2100</span>,<span style="color:#f60">10</span>, <span style="color:#c30">&#39;CARD&#39;</span>, <span style="color:#f60">1</span>,<span style="color:#c30">&#39;2021-04-13 20:41:10&#39;</span>);
+<span style="color:#069;font-weight:bold">INSERT</span> <span style="color:#069;font-weight:bold">INTO</span> orders(price,<span style="color:#069;font-weight:bold">save_point</span>, accumulation_rate,payment_type,customer_id,created_time) <span style="color:#069;font-weight:bold">values</span> (<span style="color:#f60">12000</span>, <span style="color:#f60">600</span>, <span style="color:#f60">5</span>, <span style="color:#c30">&#39;CASH&#39;</span>, <span style="color:#f60">2</span>,<span style="color:#c30">&#39;2021-04-14 20:41:10&#39;</span>);
+<span style="color:#069;font-weight:bold">INSERT</span> <span style="color:#069;font-weight:bold">INTO</span> orders(price,<span style="color:#069;font-weight:bold">save_point</span>, accumulation_rate,payment_type,customer_id,created_time) <span style="color:#069;font-weight:bold">values</span> (<span style="color:#f60">100000</span>, <span style="color:#f60">5000</span>, <span style="color:#f60">5</span>, <span style="color:#c30">&#39;CARD&#39;</span>, <span style="color:#f60">3</span>, <span style="color:#c30">&#39;2021-04-16 20:41:10&#39;</span>);
+</code></pre></div><p><br><br></p>
+<h2>application.yml 설정</h2><a class="anchor" id="applicationyml-설정"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-yml" data-lang="yml"><span style="color:#309;font-weight:bold">spring</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">application</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>pointree<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">jpa</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">hibernate</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">ddl-auto</span>:<span style="color:#bbb"> </span>create-drop<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">properties</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">hibernate</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">format_sql</span>:<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">true</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">jdbc</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">          </span><span style="color:#309;font-weight:bold">lob</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#309;font-weight:bold">non_contextual_createion</span>:<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">true</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">hikari</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">minimum-idle</span>:<span style="color:#bbb"> </span><span style="color:#f60">1</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">maximum-pool-size</span>:<span style="color:#bbb"> </span><span style="color:#f60">5</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">show-sql</span>:<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">true</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">datasource</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">initialization-mode</span>:<span style="color:#bbb"> </span>always<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#09f;font-style:italic">#Server</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">server</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">port</span>:<span style="color:#bbb"> </span><span style="color:#f60">8999</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">http2</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">enabled</span>:<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">true</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">servlet</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">encoding</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">charset</span>:<span style="color:#bbb"> </span>UTF-8<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">enabled</span>:<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">true</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">force</span>:<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">true</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#09f;font-style:italic">#Logging</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">logging</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">level</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">org</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">hibernate</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">springframework</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">          </span><span style="color:#309;font-weight:bold">security</span>:<span style="color:#bbb"> </span>DEBUG<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">type</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">          </span><span style="color:#309;font-weight:bold">descrptor</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#309;font-weight:bold">sql</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">              </span><span style="color:#309;font-weight:bold">BasicBinder</span>:<span style="color:#bbb"> </span>TRACE<span style="color:#bbb">
+</span></code></pre></div><p>우선은 개발단계이기 때문에 db생성규칙은 create-drop으로 해주었고 port, hibernate logging등 을 설정해 주었고 github에 올릴예정으로 db정보는 아래와 같이 별도의 jdbc.yml을 작성해서 .gitignore에 추가해주었습니다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-yml" data-lang="yml"><span style="color:#309;font-weight:bold">spring</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">datasource</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">url</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#39;jdbc:mysql://127.0.0.1:3306/pointree?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Seoul&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">username</span>:<span style="color:#bbb"> </span>pointree<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">password</span>:<span style="color:#bbb"> </span>password<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">driver-class-name</span>:<span style="color:#bbb"> </span>com.mysql.cj.jdbc.Driver<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">jpa</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">database-platform</span>:<span style="color:#bbb"> </span>org.hibernate.dialect.MySQL8Dialect<span style="color:#bbb">
+</span></code></pre></div><br>
+<p>그리고 test는 좀더 빠른 실행을 위해 임베디드 db로 설정을 해주었습니다.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-yml" data-lang="yml"><span style="color:#309;font-weight:bold">spring</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">datasource</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">username</span>:<span style="color:#bbb"> </span>sa<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">password</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">url</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#39;jdbc:h2:mem:pointree;MODE=MYSQL;DB_CLOSE_DELAY=-1&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">driver-class-name</span>:<span style="color:#bbb"> </span>org.h2.Driver<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">jpa</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">database-platform</span>:<span style="color:#bbb"> </span>org.hibernate.dialect.H2Dialect<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">h2</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">console</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">enabled</span>:<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">true</span><span style="color:#bbb">
+</span></code></pre></div><p><br><br></p>
+<h2>jdbc.yml설정 적용해 실행해보기</h2><a class="anchor" id="jdbcyml설정-적용해-실행해보기"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#99f">@SpringBootApplication</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">PointreeApplication</span> <span style="color:#555">{</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">[]</span> args<span style="color:#555">)</span> <span style="color:#555">{</span>
+        <span style="color:#069;font-weight:bold">new</span> SpringApplicationBuilder<span style="color:#555">(</span>PointreeApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">)</span>
+                <span style="color:#555">.</span><span style="color:#309">properties</span><span style="color:#555">(</span>
+                        <span style="color:#c30">&#34;spring.config.location=&#34;</span> <span style="color:#555">+</span>
+                        <span style="color:#c30">&#34;classpath:/application.yml,&#34;</span><span style="color:#555">+</span>
+                        <span style="color:#c30">&#34;classpath:/jdbc.yml&#34;</span><span style="color:#555">).</span><span style="color:#309">run</span><span style="color:#555">(</span>args<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>IntelliJ의 실행 환경변수로 추가해줄 수도 있지만, terminal로 실행시킬때 매번 해주기 귀찮아 main함수에 위와 같이 config 경로를 설정해주고 실행을 했습니다.</p>
+<p>그러면 실행터미널에 우리가 앞에 생성해주었던 schema대로 table이 만들어지고 data가 만들어지는 것을 볼 수 있습니다.</p>
 </div>
 
 	
@@ -2631,22 +2097,14 @@ SearchPreview.propTypes <span style="color:#555">=</span> {
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/etc/react-project/3/">3. atom사용과 포인트 적립 페이지 만들기</a></li>
+            <li><a href="/etc/react-project/3/">3. back 개발환경 셋팅과 db설계</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#atom이용해-user-상태-선언">atom이용해 user 상태 선언</a></li>
-    <li><a href="#login-기능-추가">login 기능 추가</a></li>
-    <li><a href="#applayout에-state에-따른-nav-변화주기">AppLayout에 state에 따른 nav 변화주기</a></li>
-    <li><a href="#points-적립-페이지">points 적립 페이지</a>
-      <ul>
-        <li><a href="#-숫자-입력창-입력값-검증과-ux-최적해보기">◾ 숫자 입력창 입력값 검증과 UX 최적해보기</a></li>
-        <li><a href="#-자동완성-기능-추가">◾ 자동완성 기능 추가</a></li>
-        <li><a href="#-close-버튼">◾ close 버튼</a></li>
-        <li><a href="#-modal창-만들기">◾ Modal창 만들기</a></li>
-      </ul>
-    </li>
+    <li><a href="#db설계">db설계</a></li>
+    <li><a href="#applicationyml-설정">application.yml 설정</a></li>
+    <li><a href="#jdbcyml설정-적용해-실행해보기">jdbc.yml설정 적용해 실행해보기</a></li>
   </ul>
 </nav>
 </div>

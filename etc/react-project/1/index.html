@@ -4,15 +4,15 @@
 <html>
   <head>
     <title>
-	1. 프로젝트 설계와 환경 구성 :: Gowoonsori&#39;s TechBlog
+	1. 프로젝트 설계와 환경 구성 (pointRee) :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-06-07T23:50:49 KST">
+<meta name="revised" content="2021-06-12T01:50:10 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>1. 프로젝트 설계와 환경 구성 :: Gowoonsori&#39;s TechBlog</title>
+<title>1. 프로젝트 설계와 환경 구성 (pointRee) :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
@@ -20,7 +20,7 @@
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="1. 프로젝트 설계와 환경 구성" />
+<meta property="og:title" content="1. 프로젝트 설계와 환경 구성 (pointRee)" />
 <meta property="og:description" content="프로젝트 설계와 환경 구성에 대한 기록을 남깁니다." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gowoonsori.site/etc/react-project/1/" />
@@ -957,6 +957,23 @@ if (!doNotTrack) {
         
       
     </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/module-package/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/module-package/">모듈과 패키지</a>
+          
+      
+      
+        
+      
+    </li>
         </ul>
     </li>
     
@@ -1614,7 +1631,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/etc/react-project/1/">1. 프로젝트 설계와 환경 구성</a>
+          <a href="/etc/react-project/1/">1. 프로젝트 설계와 환경 구성 (pointRee)</a>
           
       
       
@@ -1631,7 +1648,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/etc/react-project/2/">2. front 개발환경 셋팅과 로그인 창 구현</a>
+          <a href="/etc/react-project/2/">2. front 개발환경 셋팅과 전체적인 디자인</a>
           
       
       
@@ -1648,7 +1665,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/etc/react-project/3/">3. atom사용과 포인트 적립 페이지 만들기</a>
+          <a href="/etc/react-project/3/">3. back 개발환경 셋팅과 db설계</a>
           
       
       
@@ -1858,7 +1875,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>1. 프로젝트 설계와 환경 구성</h1>
+			<h1>1. 프로젝트 설계와 환경 구성 (pointRee)</h1>
         
 
 		
@@ -1894,13 +1911,13 @@ if (!doNotTrack) {
 	<div class="content"><p>웹 전반적인 흐름도 익히고 프레임워크들도 공부하기 위해 <code>토이 프로젝트</code>로 간단한 고객 정보를 관리하고 포인트 적립을 하는 웹을 구현해보고자 한다.</p>
 <p>사용할 스택으로는 크게 <code>React</code>와 <code>spring boot</code>를 사용해서 개발해보려고 한다.</p>
 <p>React는 사용을 해본적이 있고 JS에 관심이 많기 때문에 선택을 하였고, 백을 <code>JS 프레임워크</code>가 아닌 굳이 <code>Spring boot</code>를 사용하는 이유는 현재 졸업작품에서도 사용을 하고 있고 현재 흥미가 많은 프레임워크이기 때문에 더많은 공부를 위해 사용하기로 했다.</p>
-<p>또한 <a href="https://slides.com/eungjun/rest#/1">그런 Rest API로 괜찮은가?</a> 를 꽤 감명깊게 봐서 Spring boot로 한번 Restful한 API를 만들어보고자 했고 이런 백엔드와 프론트영역을 완전히 분리하여 개발하려고 하고있고 현재 생각중인 기능에서 <code>SSR</code>이 필요하다고 생각해서 <code>next.js</code>도 사용하기로 했다.</p>
+<p>또한 <a href="https://slides.com/eungjun/rest#/1">그런 Rest API로 괜찮은가?</a> 를 꽤 감명깊게 봐서 Spring boot로 한번 Restful한 API를 만들어보고자 했고 이런 백엔드와 프론트영역을 완전히 분리하여 개발하려고 할생각이다.</p>
 <br>
-<p>개발은 wsl2에서 진행할 예정이고 <code>node 14.15</code> 버전과 <code>react 17</code>을 이용할 예정이다.</p>
-<p><code>state 관리</code>는 <code>redux와 saga</code>를 사용해본적이 있지만 현재는 많은 기능이 있는 것도 아니기 때문에 얼마전에 본 <code>recoil</code>을 한번 공부할겸 사용해볼 예정이다.</p>
-<p>디자인에는 감각이 없기 때문에 <code>Material UI</code>를 base로 이용하고 그 외는 <code>styled component</code>를 이용할 생각이다.</p>
+<p>개발은 wsl2에서 IntelliJ와 vscode로 진행할 예정이고 <code>react 17</code>을 이용할 예정이다.</p>
+<p><code>state 관리</code>는 <code>redux와 saga</code>를 사용해본적이 있지만 현재는 많은 기능이 있는 것도 아니고 코드량이 많아지기 때문에 최근에 본 <code>recoil</code>을 한번 공부할겸 사용해볼 예정이다. 아직 정식 버전이 나온것이 아니기 때문에 그렇게 추천은 못하겠다.</p>
+<p>전체적인 layout이나 기본 componenet는 <code>Material UI</code>를 이용할 생각이다.</p>
 <br>
-<p>백엔드는 <code>Java 11</code>버전, <code>HATEOES</code>, <code>SPRING REST DOCS</code>등을 이용할 생각이다.</p>
+<p>백엔드는 <code>Java 11</code>, <code>JPA</code>, <code>Security</code> 등을 이용할 생각이다.</p>
 <br>
 <h3>현재 생각 중인 기능</h3><a class="anchor" id="현재-생각-중인-기능"></a>
 <ul>
@@ -1917,8 +1934,6 @@ if (!doNotTrack) {
 <li>고객 정보 조회</li>
 <li>고객 정보 수정/삭제</li>
 </ul>
-<p>정도가 있고 <code>판매 물품을 미리 등록</code>해두는 기능도 추가할 생각이다.</p>
-<p>가장 문제가 <code>포인트 적립</code> 관련한 DB설계 였는데 <code>포인트 기간 설정</code> 때문에 현재도 어떤 방법이 좋을까 생각 중에 있다.</p>
 </div>
 
 	
@@ -1939,10 +1954,10 @@ if (!doNotTrack) {
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/etc/react-project/2/" title="2. front 개발환경 셋팅과 로그인 창 구현" style="margin-right: 0px;">
+		<a class="next" href="/etc/react-project/2/" title="2. front 개발환경 셋팅과 전체적인 디자인" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>2. front 개발환경 셋팅과 로그인 창 구현</label>
+                <label>2. front 개발환경 셋팅과 전체적인 디자인</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -1965,7 +1980,7 @@ if (!doNotTrack) {
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/etc/react-project/1/">1. 프로젝트 설계와 환경 구성</a></li>
+            <li><a href="/etc/react-project/1/">1. 프로젝트 설계와 환경 구성 (pointRee)</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">

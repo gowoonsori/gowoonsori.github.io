@@ -4,24 +4,24 @@
 <html>
   <head>
     <title>
-	2. front 개발환경 셋팅과 로그인 창 구현 :: Gowoonsori&#39;s TechBlog
+	2. front 개발환경 셋팅과 전체적인 디자인 :: Gowoonsori&#39;s TechBlog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-06-07T23:50:49 KST">
+<meta name="revised" content="2021-06-12T01:50:10 KST">
 <meta name="robots" content="index,follow" /> 
 <meta name="googlebot" content="index,follow" />
 
-<title>2. front 개발환경 셋팅과 로그인 창 구현 :: Gowoonsori&#39;s TechBlog</title>
+<title>2. front 개발환경 셋팅과 전체적인 디자인 :: Gowoonsori&#39;s TechBlog</title>
 
 <meta name="author" content="gowoonsori">
 
-<meta name="description" content="React와 Next, material Ui, Recoil을 사용하여 기본 화면과 로그인창, nav까지 구현 해보자.">
+<meta name="description" content="React와 material Ui, Recoil을 사용하여 전체적인 디자인 구현">
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 <link rel="preload" as="style" href='/fonts/Montserrat/Montserrat.css'>
 
-<meta property="og:title" content="2. front 개발환경 셋팅과 로그인 창 구현" />
-<meta property="og:description" content="React와 Next, material Ui, Recoil을 사용하여 기본 화면과 로그인창, nav까지 구현 해보자." />
+<meta property="og:title" content="2. front 개발환경 셋팅과 전체적인 디자인" />
+<meta property="og:description" content="React와 material Ui, Recoil을 사용하여 전체적인 디자인 구현" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://gowoonsori.site/etc/react-project/2/" />
 <meta property="og:image" content="https://gowoonsori.site/images/favicon.png" />
@@ -957,6 +957,23 @@ if (!doNotTrack) {
         
       
     </li>
+              
+
+    <li data-nav-id="https://gowoonsori.site/go/module-package/" class="dd-item
+        item_level_$level
+        ">
+
+      
+      
+      
+      
+          <a href="/go/module-package/">모듈과 패키지</a>
+          
+      
+      
+        
+      
+    </li>
         </ul>
     </li>
     
@@ -1614,7 +1631,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/etc/react-project/1/">1. 프로젝트 설계와 환경 구성</a>
+          <a href="/etc/react-project/1/">1. 프로젝트 설계와 환경 구성 (pointRee)</a>
           
       
       
@@ -1631,7 +1648,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/etc/react-project/2/">2. front 개발환경 셋팅과 로그인 창 구현</a>
+          <a href="/etc/react-project/2/">2. front 개발환경 셋팅과 전체적인 디자인</a>
           
       
       
@@ -1648,7 +1665,7 @@ if (!doNotTrack) {
       
       
       
-          <a href="/etc/react-project/3/">3. atom사용과 포인트 적립 페이지 만들기</a>
+          <a href="/etc/react-project/3/">3. back 개발환경 셋팅과 db설계</a>
           
       
       
@@ -1858,7 +1875,7 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>2. front 개발환경 셋팅과 로그인 창 구현</h1>
+			<h1>2. front 개발환경 셋팅과 전체적인 디자인</h1>
         
 
 		
@@ -1880,429 +1897,100 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#indexjs-작성">index.js 작성</a></li>
-    <li><a href="#_appjs">_app.js</a></li>
-    <li><a href="#applayout">AppLayout</a>
+    <li><a href="#indexjs-와-기본-route-구성">index.js 와 기본 route 구성</a>
       <ul>
-        <li><a href="#_appjs-수정">_app.js 수정</a></li>
+        <li><a href="#-indexjs">◾ index.js</a></li>
+        <li><a href="#-routejs">◾ route.js</a></li>
+        <li><a href="#-appjs">◾ App.js</a></li>
       </ul>
     </li>
-    <li><a href="#_documentjs">_document.js</a></li>
-    <li><a href="#theme-color-수정">Theme color 수정</a>
-      <ul>
-        <li><a href="#global-theme-provider-파일-작성">global Theme provider 파일 작성</a></li>
-        <li><a href="#_appjs-수정-1">_app.js 수정</a></li>
-      </ul>
-    </li>
-    <li><a href="#실행-화면">실행 화면</a></li>
-    <li><a href="#다음에-할-것">다음에 할 것</a></li>
+    <li><a href="#각-컴포넌트-디자인-해주기">각 컴포넌트 디자인 해주기</a></li>
   </ul>
 </nav>
 	</div>
 	
 	
 
-	<div class="content"><p>가장 먼저 <code>vscode</code>를 통해 <code>wsl2</code>에 접속하고 wsl2에 폴더를 만들어 주었다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">mkdir front
+	<div class="content"><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-shell" data-lang="shell">mkdir pointRee
+<span style="color:#366">cd</span> pointRee
+mkdir front
 <span style="color:#366">cd</span> front
 npm init -y
-npm install --save react react-dom next
-</code></pre></div><p>만든 프로젝트안에 <code>front</code>라는 폴더를 만들어 react와 next의 의존성을 추가해주었다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">&#34;scripts&#34;: {
-        &#34;dev&#34;: &#34;next -p 3060&#34;,
-        &#34;build&#34;: &#34;next build&#34;,
-        &#34;start&#34;: &#34;next start&#34;,
-    .
-    .
-    .
-</code></pre></div><p>package.json에 프로젝트 실행을 보다 간편하게 하기 위해 명령어를 수정해주었다.</p>
-<p><code>npm run dev</code>를 통해 개발모드로 실행 시키고 <code>npm run build</code>와 <code>npm start</code>로 실제 동작을 시킬 수 있다. (<code>test</code>와 <code>start</code> 명령은 <code>run</code>을 생략할 수 있다.)</p>
-<p><br><br></p>
-<h2>index.js 작성</h2><a class="anchor" id="indexjs-작성"></a>
-<p>프로젝트에 기본시작 파일은 <code>pages/index.js</code>가 되기 때문에 index.js를 다음과 같이 작성해 주었다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">const</span> Index <span style="color:#555">=</span> () =&gt; {
-  <span style="color:#069;font-weight:bold">return</span> <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>Hello Next.js<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;;</span>
-};
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> Index;
-</code></pre></div><p><code>npm run dev</code>를 통해 실행 시키면 잘 동작이 되는 것을 볼 수 있다.
-<img src="./hello.PNG?classes=shadow,border" alt="hello"></p>
+npm install react-create-app
+</code></pre></div><p>가장 먼저 <code>vscode</code>를 통해 <code>wsl2</code>에 접속하고 wsl2에 폴더를 만들어 주고 <code>react-create-app</code>으로 간단하게 react프로젝트를 시작했다. 그리고 <code>npm run start</code>로 시작해보면 정상적으로 프로젝트가 실행되는 것을 확인 할 수 있다.</p>
 <p>이때 나처럼 <code>wsl2</code>로 실행시킨 사람이라면 window의 브라우저에 <code>localhost:3060</code>을 타이핑해서 들어간다면 접속이 되지 않을 것이다.</p>
 <p>wsl2는 별도의 ip를 가지고 있기 때문인데, <code>wsl2의 ip:3060</code>으로 접속하거나 실행시킨 console창의 링크를 클릭하면 window의 브라우저에 포트번호가 변경되며 열릴 것이다.</p>
 <p><br><br></p>
-<h2>_app.js</h2><a class="anchor" id="_appjs"></a>
-<p>나는 왼쪽과 위쪽에 <code>메뉴바</code>가 고정으로 있는 디자인을 생각하고 있어 전체 layout은 유지하고 state를 유지하기 위해 모든 페이지에서 사용할 <code>_app.js</code>를 만들어 주었다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> React from <span style="color:#c30">&#39;react&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> Head from <span style="color:#c30">&#39;next/head&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> PropTypes from <span style="color:#c30">&#39;prop-types&#39;</span>;
+<h2>index.js 와 기본 route 구성</h2><a class="anchor" id="indexjs-와-기본-route-구성"></a>
+<p>이제 전체적인 틀을 짜야하는데 프로젝트에 기본시작 파일은 <code>index.js</code>가 되기 때문에 index.js와</p>
+<h3>◾ index.js</h3><a class="anchor" id="-indexjs"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> ReactDOM from <span style="color:#c30">&#39;react-dom&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> { BrowserRouter } from <span style="color:#c30">&#39;react-router-dom&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#555">*</span> as serviceWorker from <span style="color:#c30">&#39;./serviceWorker&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> App from <span style="color:#c30">&#39;./App&#39;</span>;
 
-<span style="color:#069;font-weight:bold">import</span> { RecoilRoot } from <span style="color:#c30">&#39;recoil&#39;</span>;
+ReactDOM.render(<span style="color:#555">&lt;</span>BrowserRouter<span style="color:#555">&gt;</span>{<span style="color:#555">&lt;</span>App <span style="color:#555">/&gt;</span>}<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/BrowserRouter&gt;, document.getElementById(&#39;root&#39;));</span>
 
-<span style="color:#069;font-weight:bold">const</span> PointsWeb <span style="color:#555">=</span> ({ Component }) =&gt; {
-  <span style="color:#069;font-weight:bold">return</span> (
-    <span style="color:#555">&lt;</span>RecoilRoot<span style="color:#555">&gt;</span>
-      <span style="color:#555">&lt;</span>Head<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>title<span style="color:#555">&gt;</span>포인트 적립<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/title&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Head&gt;</span>
-      <span style="color:#555">&lt;</span>Component <span style="color:#555">/&gt;</span>
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/RecoilRoot&gt;</span>
-  );
+serviceWorker.unregister();
+</code></pre></div><br>
+<h3>◾ route.js</h3><a class="anchor" id="-routejs"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> { Navigate } from <span style="color:#c30">&#39;react-router-dom&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> DashboardLayout from <span style="color:#c30">&#39;src/components/layout/DashboardLayout&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> Account from <span style="color:#c30">&#39;src/pages/Account&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> Customers from <span style="color:#c30">&#39;src/pages/Customers&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> Points from <span style="color:#c30">&#39;src/pages/Points&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> Dashboard from <span style="color:#c30">&#39;src/pages/Dashboard&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> Login from <span style="color:#c30">&#39;src/pages/Login&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> LogOut from <span style="color:#c30">&#39;src/pages/LogOut&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> NotFound from <span style="color:#c30">&#39;src/pages/NotFound&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> Register from <span style="color:#c30">&#39;src/pages/Register&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> Introduce from <span style="color:#c30">&#39;src/pages/Introduce&#39;</span>;
+
+<span style="color:#069;font-weight:bold">const</span> routes <span style="color:#555">=</span> [
+  {
+    path<span style="color:#555">:</span> <span style="color:#c30">&#39;/&#39;</span>,
+    element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>DashboardLayout <span style="color:#555">/&gt;</span>,
+    children<span style="color:#555">:</span> [
+      { path<span style="color:#555">:</span> <span style="color:#c30">&#39;404&#39;</span>, element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>NotFound <span style="color:#555">/&gt;</span> },
+      { path<span style="color:#555">:</span> <span style="color:#c30">&#39;/&#39;</span>, element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>Navigate to<span style="color:#555">=</span><span style="color:#c30">&#34;/pointree&#34;</span> <span style="color:#555">/&gt;</span> },
+      { path<span style="color:#555">:</span> <span style="color:#c30">&#39;*&#39;</span>, element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>Navigate to<span style="color:#555">=</span><span style="color:#c30">&#34;/404&#34;</span> <span style="color:#555">/&gt;</span> },
+    ],
+  },
+  {
+    path<span style="color:#555">:</span> <span style="color:#c30">&#39;pointree&#39;</span>,
+    element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>DashboardLayout <span style="color:#555">/&gt;</span>,
+    children<span style="color:#555">:</span> [
+      { path<span style="color:#555">:</span> <span style="color:#c30">&#39;/&#39;</span>, element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>Introduce <span style="color:#555">/&gt;</span> },
+      { path<span style="color:#555">:</span> <span style="color:#c30">&#39;account&#39;</span>, element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>Account <span style="color:#555">/&gt;</span> },
+      { path<span style="color:#555">:</span> <span style="color:#c30">&#39;logout&#39;</span>, element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>LogOut <span style="color:#555">/&gt;</span> },
+      { path<span style="color:#555">:</span> <span style="color:#c30">&#39;points&#39;</span>, element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>Points <span style="color:#555">/&gt;</span> },
+      { path<span style="color:#555">:</span> <span style="color:#c30">&#39;dashboard&#39;</span>, element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>Dashboard <span style="color:#555">/&gt;</span> },
+      { path<span style="color:#555">:</span> <span style="color:#c30">&#39;customers&#39;</span>, element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>Customers <span style="color:#555">/&gt;</span> },
+      { path<span style="color:#555">:</span> <span style="color:#c30">&#39;*&#39;</span>, element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>Navigate to<span style="color:#555">=</span><span style="color:#c30">&#34;/404&#34;</span> <span style="color:#555">/&gt;</span> },
+      { path<span style="color:#555">:</span> <span style="color:#c30">&#39;login&#39;</span>, element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>Login <span style="color:#555">/&gt;</span> },
+      { path<span style="color:#555">:</span> <span style="color:#c30">&#39;register&#39;</span>, element<span style="color:#555">:</span> <span style="color:#555">&lt;</span>Register <span style="color:#555">/&gt;</span> },
+    ],
+  },
+];
+
+<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> routes;
+</code></pre></div><h3>◾ App.js</h3><a class="anchor" id="-appjs"></a>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> { useRoutes } from <span style="color:#c30">&#39;react-router-dom&#39;</span>;
+<span style="color:#069;font-weight:bold">import</span> routes from <span style="color:#c30">&#39;src/routes&#39;</span>;
+
+<span style="color:#069;font-weight:bold">const</span> App <span style="color:#555">=</span> () =&gt; {
+  <span style="color:#069;font-weight:bold">const</span> routing <span style="color:#555">=</span> useRoutes(routes);
+
+  <span style="color:#069;font-weight:bold">return</span> { routing };
 };
 
-PointsWeb.propTypes <span style="color:#555">=</span> {
-  Component<span style="color:#555">:</span> PropTypes.elementType.isRequired,
-};
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> PointsWeb;
-</code></pre></div><p>모든 page(일종의 Component)들이 <code>Component</code>라는 <code>prop</code>으로 이용하여 해당 컴포넌트를 다른 <code>Layout(Component)</code>로 감싸는 구조이다.</p>
-<p>또한 이 _app.js가 최상단 Component로 state을 모든 Component에서 사용하기 위해 <RecoilRoot>로 이를 감싸 주었다.</p>
+<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> App;
+</code></pre></div><p>앞에서 계획한 기능에 따라 대략적으로 예상한 url경로마다 render할 컴포넌트를 설정해놓은 router를 따로 폴더에 설정을 해주었고, 후에 material-ui, recoil등 componenet depth가 늘어날텐데 index.js에 한번에 작성하는 것보다 별도의 <code>app.js</code>를 작성하는 것이 보기 좋을 것이라고 생각되어 위와같이 별도로 작성을 해주었다.</p>
 <p><br><br></p>
-<h2>AppLayout</h2><a class="anchor" id="applayout"></a>
-<p>모든 페이지에서 공통적으로 사용할 AppLayout을 정의한 컴포넌트이다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> React, { useState } from <span style="color:#c30">&#39;react&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> PropTypes from <span style="color:#c30">&#39;prop-types&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> Router from <span style="color:#c30">&#39;next/router&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> {
-  AppBar,
-  Drawer,
-  CssBaseline,
-  Divider,
-  Hidden,
-  IconButton,
-  Toolbar,
-  List,
-  ListItemText,
-  ListItem,
-  makeStyles,
-} from <span style="color:#c30">&#39;@material-ui/core&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> MenuIcon from <span style="color:#c30">&#39;@material-ui/icons/Menu&#39;</span>;
-
-<span style="color:#069;font-weight:bold">const</span> drawerWidth <span style="color:#555">=</span> <span style="color:#f60">180</span>;
-
-<span style="color:#069;font-weight:bold">const</span> useStyles <span style="color:#555">=</span> makeStyles((theme) =&gt; ({
-  root<span style="color:#555">:</span> {
-    display<span style="color:#555">:</span> <span style="color:#c30">&#39;flex&#39;</span>,
-  },
-  drawer<span style="color:#555">:</span> {
-    [theme.breakpoints.up(<span style="color:#c30">&#39;sm&#39;</span>)]<span style="color:#555">:</span> {
-      width<span style="color:#555">:</span> drawerWidth,
-      flexShrink<span style="color:#555">:</span> <span style="color:#f60">0</span>,
-    },
-  },
-  appBar<span style="color:#555">:</span> {
-    [theme.breakpoints.up(<span style="color:#c30">&#39;sm&#39;</span>)]<span style="color:#555">:</span> {
-      width<span style="color:#555">:</span> <span style="color:#c30">`calc(100% - </span><span style="color:#a00">${</span>drawerWidth<span style="color:#a00">}</span><span style="color:#c30">px)`</span>,
-      marginLeft<span style="color:#555">:</span> drawerWidth,
-    },
-  },
-  menuButton<span style="color:#555">:</span> {
-    marginRight<span style="color:#555">:</span> theme.spacing(<span style="color:#f60">2</span>),
-    [theme.breakpoints.up(<span style="color:#c30">&#39;sm&#39;</span>)]<span style="color:#555">:</span> {
-      display<span style="color:#555">:</span> <span style="color:#c30">&#39;none&#39;</span>,
-    },
-  },
-  menuText<span style="color:#555">:</span> {
-    textAlign<span style="color:#555">:</span> <span style="color:#c30">&#39;right&#39;</span>,
-    paddingRight<span style="color:#555">:</span> theme.spacing(<span style="color:#f60">4</span>),
-  },
-  toolbar<span style="color:#555">:</span> {
-    paddingTop<span style="color:#555">:</span> <span style="color:#c30">&#39;10px&#39;</span>,
-    ...theme.mixins.toolbar,
-  },
-  drawerPaper<span style="color:#555">:</span> {
-    width<span style="color:#555">:</span> drawerWidth,
-    background<span style="color:#555">:</span> <span style="color:#c30">&#39;#284D7A&#39;</span>,
-    color<span style="color:#555">:</span> <span style="color:#c30">&#39;#ffffff&#39;</span>,
-  },
-  contentContainer<span style="color:#555">:</span> {
-    flexGrow<span style="color:#555">:</span> <span style="color:#f60">1</span>,
-    padding<span style="color:#555">:</span> theme.spacing(<span style="color:#f60">3</span>),
-  },
-  content<span style="color:#555">:</span> {
-    textAlign<span style="color:#555">:</span> <span style="color:#c30">&#39;center&#39;</span>,
-    width<span style="color:#555">:</span> <span style="color:#c30">&#39;100%&#39;</span>,
-    height<span style="color:#555">:</span> <span style="color:#c30">&#39;100%&#39;</span>,
-  },
-}));
-
-<span style="color:#069;font-weight:bold">const</span> AppLayout <span style="color:#555">=</span> ({ children }) =&gt; {
-  <span style="color:#069;font-weight:bold">const</span> classes <span style="color:#555">=</span> useStyles();
-  <span style="color:#069;font-weight:bold">const</span> [mobileOpen, setMobileOpen] <span style="color:#555">=</span> useState(<span style="color:#069;font-weight:bold">false</span>);
-  <span style="color:#069;font-weight:bold">const</span> handleDrawerToggle <span style="color:#555">=</span> () =&gt; {
-    setMobileOpen(<span style="color:#555">!</span>mobileOpen);
-  };
-
-  <span style="color:#069;font-weight:bold">const</span> drawer <span style="color:#555">=</span> (
-    <span style="color:#555">&lt;</span>div<span style="color:#555">&gt;</span>
-      <span style="color:#555">&lt;</span>div className<span style="color:#555">=</span>{classes.toolbar}<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>ListItem button key<span style="color:#555">=</span><span style="color:#c30">&#34;Home&#34;</span> className<span style="color:#555">=</span>{classes.menuText}<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>ListItemText
-            primary<span style="color:#555">=</span><span style="color:#c30">&#34;Home&#34;</span>
-            onClick<span style="color:#555">=</span>{() =&gt; {
-              Router.push(<span style="color:#c30">&#39;/&#39;</span>);
-            }}
-          <span style="color:#555">/&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/ListItem&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-      <span style="color:#555">&lt;</span>Divider <span style="color:#555">/&gt;</span>
-      <span style="color:#555">&lt;</span>List<span style="color:#555">&gt;</span>
-        {[
-          { name<span style="color:#555">:</span> <span style="color:#c30">&#39;로그인&#39;</span>, link<span style="color:#555">:</span> <span style="color:#c30">&#39;login&#39;</span> },
-          { name<span style="color:#555">:</span> <span style="color:#c30">&#39;회원가입&#39;</span>, link<span style="color:#555">:</span> <span style="color:#c30">&#39;signup&#39;</span> },
-        ].map((text) =&gt; (
-          <span style="color:#555">&lt;</span>ListItem button key<span style="color:#555">=</span>{text.name} className<span style="color:#555">=</span>{classes.menuText}<span style="color:#555">&gt;</span>
-            <span style="color:#555">&lt;</span>ListItemText
-              primary<span style="color:#555">=</span>{text.name}
-              onClick<span style="color:#555">=</span>{() =&gt; {
-                Router.push(<span style="color:#c30">`</span><span style="color:#a00">${</span>text.link<span style="color:#a00">}</span><span style="color:#c30">`</span>);
-              }}
-            <span style="color:#555">/&gt;</span>
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/ListItem&gt;</span>
-        ))}
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/List&gt;</span>
-      <span style="color:#555">&lt;</span>Divider <span style="color:#555">/&gt;</span>
-      <span style="color:#555">&lt;</span>List<span style="color:#555">&gt;</span>
-        {[
-          { name<span style="color:#555">:</span> <span style="color:#c30">&#39;포인트 적립&#39;</span>, link<span style="color:#555">:</span> <span style="color:#c30">&#39;points&#39;</span> },
-          { name<span style="color:#555">:</span> <span style="color:#c30">&#39;고객 정보 보기&#39;</span>, link<span style="color:#555">:</span> <span style="color:#c30">&#39;customers&#39;</span> },
-        ].map((text) =&gt; (
-          <span style="color:#555">&lt;</span>ListItem button key<span style="color:#555">=</span>{text.name} className<span style="color:#555">=</span>{classes.menuText}<span style="color:#555">&gt;</span>
-            <span style="color:#555">&lt;</span>ListItemText
-              primary<span style="color:#555">=</span>{text.name}
-              onClick<span style="color:#555">=</span>{() =&gt; {
-                Router.push(<span style="color:#c30">`</span><span style="color:#a00">${</span>text.link<span style="color:#a00">}</span><span style="color:#c30">`</span>);
-              }}
-            <span style="color:#555">/&gt;</span>
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/ListItem&gt;</span>
-        ))}
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/List&gt;</span>
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-  );
-
-  <span style="color:#069;font-weight:bold">return</span> (
-    <span style="color:#555">&lt;</span>div className<span style="color:#555">=</span>{classes.root}<span style="color:#555">&gt;</span>
-      <span style="color:#555">&lt;</span>CssBaseline <span style="color:#555">/&gt;</span>
-      <span style="color:#555">&lt;</span>AppBar position<span style="color:#555">=</span><span style="color:#c30">&#34;fixed&#34;</span> className<span style="color:#555">=</span>{classes.appBar} color<span style="color:#555">=</span><span style="color:#c30">&#34;primary&#34;</span><span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>Toolbar<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>IconButton
-            color<span style="color:#555">=</span><span style="color:#c30">&#34;inherit&#34;</span>
-            aria<span style="color:#555">-</span>label<span style="color:#555">=</span><span style="color:#c30">&#34;open drawer&#34;</span>
-            edge<span style="color:#555">=</span><span style="color:#c30">&#34;start&#34;</span>
-            onClick<span style="color:#555">=</span>{handleDrawerToggle}
-            className<span style="color:#555">=</span>{classes.menuButton}
-          <span style="color:#555">&gt;</span>
-            <span style="color:#555">&lt;</span>MenuIcon <span style="color:#555">/&gt;</span>
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/IconButton&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Toolbar&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/AppBar&gt;</span>
-
-      <span style="color:#555">&lt;</span>nav className<span style="color:#555">=</span>{classes.drawer} aria<span style="color:#555">-</span>label<span style="color:#555">=</span><span style="color:#c30">&#34;mailbox folders&#34;</span><span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>Hidden smUp implementation<span style="color:#555">=</span><span style="color:#c30">&#34;css&#34;</span><span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>Drawer
-            variant<span style="color:#555">=</span><span style="color:#c30">&#34;temporary&#34;</span>
-            anchor<span style="color:#555">=</span><span style="color:#c30">&#34;left&#34;</span>
-            open<span style="color:#555">=</span>{mobileOpen}
-            onClose<span style="color:#555">=</span>{handleDrawerToggle}
-            classes<span style="color:#555">=</span>{{ paper<span style="color:#555">:</span> classes.drawerPaper }}
-            ModalProps<span style="color:#555">=</span>{{ keepMounted<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span> }}
-            color<span style="color:#555">=</span><span style="color:#c30">&#34;secondary&#34;</span>
-          <span style="color:#555">&gt;</span>
-            {drawer}
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Drawer&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Hidden&gt;</span>
-        <span style="color:#555">&lt;</span>Hidden xsDown implementation<span style="color:#555">=</span><span style="color:#c30">&#34;css&#34;</span><span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>Drawer classes<span style="color:#555">=</span>{{ paper<span style="color:#555">:</span> classes.drawerPaper }} variant<span style="color:#555">=</span><span style="color:#c30">&#34;permanent&#34;</span> color<span style="color:#555">=</span><span style="color:#c30">&#34;secondary&#34;</span> open<span style="color:#555">&gt;</span>
-            {drawer}
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Drawer&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Hidden&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/nav&gt;</span>
-      <span style="color:#555">&lt;</span>main className<span style="color:#555">=</span>{classes.contentContainer}<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>div className<span style="color:#555">=</span>{classes.toolbar} <span style="color:#555">/&gt;</span>
-        <span style="color:#555">&lt;</span>div className<span style="color:#555">=</span>{classes.content}<span style="color:#555">&gt;</span>{children}<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/main&gt;</span>
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/div&gt;</span>
-  );
-};
-
-AppLayout.propTypes <span style="color:#555">=</span> {
-  children<span style="color:#555">:</span> PropTypes.node.isRequired,
-};
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> AppLayout;
-</code></pre></div><p><code>Material Ui</code>의 temporary Drawer를 이용했으며 여기서 Materal Ui의 <code>makeStyles</code>를 통한 css class 생성 구문을 처음봤고 <a href="https://material-ui.com/styles/api/">공식 문서</a>를 통해 기본 방법을 공부하느라 제법 삽질을 했다.</p>
-<p>API를 보면 제법 많은 메서드를 지원해주는데 그 중 <code>makeStyles</code>함수를 통해 class와 css를 객체로 만들고 이를 <code>useStyles()</code>를 통해 객체로서 접근이 가능한 방식이었다.</p>
-<p>그리고 이 Layout을 기본으로 안의 내용만 바꿀것이기 때문에 _app.js의 <code>Children</code>을 이 Layout의 적절한 위치에 배치해주기 위해 이 컴포넌츠에서도 _app.js의 <code>Children</code>을 prop으로 넘겨받아 배치 시켜주었다.</p>
-<p>Drawer의 각 Nav마다 해당하는 페이지로 바꿔주기 위해 위해 <code>Router</code>를 이용하여 라우팅하였다.</p>
-<h3>_app.js 수정</h3><a class="anchor" id="_appjs-수정"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> React from <span style="color:#c30">&#39;react&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> Head from <span style="color:#c30">&#39;next/head&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> PropTypes from <span style="color:#c30">&#39;prop-types&#39;</span>;
-
-<span style="color:#069;font-weight:bold">import</span> { RecoilRoot } from <span style="color:#c30">&#39;recoil&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> AppLayout from <span style="color:#c30">&#39;../components/AppLayout&#39;</span>;
-
-<span style="color:#069;font-weight:bold">const</span> PointsWeb <span style="color:#555">=</span> ({ Component }) =&gt; {
-  <span style="color:#069;font-weight:bold">return</span> (
-    <span style="color:#555">&lt;</span>RecoilRoot<span style="color:#555">&gt;</span>
-      <span style="color:#555">&lt;</span>Head<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>title<span style="color:#555">&gt;</span>포인트 적립<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/title&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Head&gt;</span>
-      <span style="color:#555">&lt;</span>AppLayout<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>Component <span style="color:#555">/&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/AppLayout&gt;</span>
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/RecoilRoot&gt;</span>
-  );
-};
-
-PointsWeb.propTypes <span style="color:#555">=</span> {
-  Component<span style="color:#555">:</span> PropTypes.elementType.isRequired,
-};
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> PointsWeb;
-</code></pre></div><p>Component를 AppLayout으로 감싸 Component를 AppLayout에 prop으로 넘겨주도록 배치하였다.</p>
-<p><br><br></p>
-<h2>_document.js</h2><a class="anchor" id="_documentjs"></a>
-<p>Next를 이용하고 있어 SSR이기 때문에 새로고침이나 뒤로가기를 누르면 Material Ui가 렌더링이 되지 않는 문제점이 존재했다.</p>
-<p>그래서 SSR시에도 Material Ui를 렌더링을 시켜주어야했는데 _document.js를 이용했다.</p>
-<p>_document.js는 <code>React</code>의 <code>index.html</code>과 같은 파일로 SPA에서의 시작점이 되는 파일과 같다.</p>
-<p>지금과 같이 Custom할때 작성을 하며 작성을 안하면 Next.js가 기폰 값을 사용하여 실행시키게 된다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js">{
-  <span style="color:#c30">&#34;presets&#34;</span> <span style="color:#555">:</span> [<span style="color:#c30">&#34;next/babel&#34;</span>],
-  <span style="color:#c30">&#34;plugins&#34;</span><span style="color:#555">:</span> [
-    [<span style="color:#c30">&#34;babel-plugin-styled-components&#34;</span>,{
-      <span style="color:#c30">&#34;ssr&#34;</span> <span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
-      <span style="color:#c30">&#34;displayName&#34;</span> <span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>
-    }]
-  ]
-}
-</code></pre></div><p>_document.js를 작성하기 전에 <code>babel-plugin-components</code>를 설치해주고 <code>.babelrc</code>파일을 다음과 같이 작성해서 SSR시 styled components를 적용하게 설정을 해주었다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> React from <span style="color:#c30">&#39;react&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> NextDocument, { Html, Head, Main, NextScript } from <span style="color:#c30">&#39;next/document&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> { ServerStyleSheet as StyledComponentSheets } from <span style="color:#c30">&#39;styled-components&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> { ServerStyleSheets as MaterialUiServerStyleSheets } from <span style="color:#c30">&#39;@material-ui/core/styles&#39;</span>;
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> <span style="color:#069;font-weight:bold">class</span> Document <span style="color:#069;font-weight:bold">extends</span> NextDocument {
-  <span style="color:#069;font-weight:bold">static</span> async getInitialProps(ctx) {
-    <span style="color:#069;font-weight:bold">const</span> styledComponentSheet <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> StyledComponentSheets();
-    <span style="color:#069;font-weight:bold">const</span> materialUiSheets <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> MaterialUiServerStyleSheets();
-    <span style="color:#069;font-weight:bold">const</span> originalRenderPage <span style="color:#555">=</span> ctx.renderPage;
-
-    <span style="color:#069;font-weight:bold">try</span> {
-      ctx.renderPage <span style="color:#555">=</span> () =&gt;
-        originalRenderPage({
-          enhanceApp<span style="color:#555">:</span> (App) =&gt; (props) =&gt;
-            styledComponentSheet.collectStyles(materialUiSheets.collect(<span style="color:#555">&lt;</span>App {...props} <span style="color:#555">/&gt;</span>)),
-        });
-
-      <span style="color:#069;font-weight:bold">const</span> initialProps <span style="color:#555">=</span> await NextDocument.getInitialProps(ctx);
-
-      <span style="color:#069;font-weight:bold">return</span> {
-        ...initialProps,
-        styles<span style="color:#555">:</span> [
-          <span style="color:#555">&lt;</span>React.Fragment key<span style="color:#555">=</span><span style="color:#c30">&#34;styles&#34;</span><span style="color:#555">&gt;</span>
-            {initialProps.styles}
-            {materialUiSheets.getStyleElement()}
-            {styledComponentSheet.getStyleElement()}
-          <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/React.Fragment&gt;,</span>
-        ],
-      };
-    } <span style="color:#069;font-weight:bold">catch</span> (error) {
-      console.log(error);
-    } <span style="color:#069;font-weight:bold">finally</span> {
-      styledComponentSheet.seal();
-    }
-  }
-
-  render() {
-    <span style="color:#069;font-weight:bold">return</span> (
-      <span style="color:#555">&lt;</span>Html<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>Head <span style="color:#555">/&gt;</span>
-        <span style="color:#555">&lt;</span>body<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>Main <span style="color:#555">/&gt;</span>
-          <span style="color:#555">&lt;</span>NextScript <span style="color:#555">/&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/body&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Html&gt;</span>
-    );
-  }
-}
-</code></pre></div><p><code>styled components Sheets</code>를 이용하여 <code>material ui styleSheets</code>를 감싸 렌더링시에 Material Ui도 렌더링되게 설정을 해주었다.</p>
-<p><br><br></p>
-<h2>Theme color 수정</h2><a class="anchor" id="theme-color-수정"></a>
-<p>Materila Ui에서 color를 테마로 제공하는 컴포넌트들이 있는데 이는 일반 <code>css 속성</code>으로 변환이 되지 않아 변경하기 위해 <a href="https://material-ui.com/customization/theming/#theme-provider">공식 문서</a>를 보고 조금 공부를 하였다.</p>
-<p>Material Ui에서 제공하는 AppBar나 Button의 색을 바꿔주기 위해서는 기본 제공하는 palette의 색을 바꿔주거나 생성해주고 <code>ThemeProvider</code>를 적용하고자하는 컴포넌트를 감싸 테마를 사용할 수 있었다.</p>
-<p>나는 전체적인 컬러감을 생각해두고 있었고 `컬러는 4,5개 내에서 웹을 다지인 할 것이기 때문에 global theme를 만들어 전체 컴포넌트에 적용하고자 했다.</p>
-<h3>global Theme provider 파일 작성</h3><a class="anchor" id="global-theme-provider-파일-작성"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> React from <span style="color:#c30">&#39;react&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> PropTypes from <span style="color:#c30">&#39;prop-types&#39;</span>;
-
-<span style="color:#069;font-weight:bold">import</span> { createMuiTheme } from <span style="color:#c30">&#39;@material-ui/core/styles&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> { ThemeProvider } from <span style="color:#c30">&#39;@material-ui/styles&#39;</span>;
-
-<span style="color:#069;font-weight:bold">const</span> GlobalTheme <span style="color:#555">=</span> createMuiTheme({
-  palette<span style="color:#555">:</span> {
-    primary<span style="color:#555">:</span> {
-      main<span style="color:#555">:</span> <span style="color:#c30">&#39;#284D7A&#39;</span>,
-    },
-    secondary<span style="color:#555">:</span> {
-      main<span style="color:#555">:</span> <span style="color:#c30">&#39;#20B8AA&#39;</span>,
-    },
-    tertiary<span style="color:#555">:</span> {
-      main<span style="color:#555">:</span> <span style="color:#c30">&#39;#56F0B9&#39;</span>,
-    },
-    quad<span style="color:#555">:</span> {
-      main<span style="color:#555">:</span> <span style="color:#c30">&#39;#E9EBED&#39;</span>,
-    },
-  },
-});
-
-<span style="color:#069;font-weight:bold">const</span> GlobalThemeProvider <span style="color:#555">=</span> ({ children }) =&gt; <span style="color:#555">&lt;</span>ThemeProvider theme<span style="color:#555">=</span>{GlobalTheme}<span style="color:#555">&gt;</span>{children}<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/ThemeProvider&gt;;</span>
-
-GlobalThemeProvider.propTypes <span style="color:#555">=</span> {
-  children<span style="color:#555">:</span> PropTypes.elementType.isRequired,
-};
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> GlobalThemeProvider;
-</code></pre></div><p>4가지의 색을 미리 선언해놓고 이 컴포넌트를 루트에 씌워 모든 컴포넌트에서 사용할 수 있게 할 생각으로 똑같이 <code>children</code>을 prop으로 받아 이를 감싸도록 해주었다.</p>
-<h3>_app.js 수정</h3><a class="anchor" id="_appjs-수정-1"></a>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">import</span> React from <span style="color:#c30">&#39;react&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> Head from <span style="color:#c30">&#39;next/head&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> PropTypes from <span style="color:#c30">&#39;prop-types&#39;</span>;
-
-<span style="color:#069;font-weight:bold">import</span> { RecoilRoot } from <span style="color:#c30">&#39;recoil&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> GlobalThemeProvider from <span style="color:#c30">&#39;../css/GlobalThemeProvider&#39;</span>;
-<span style="color:#069;font-weight:bold">import</span> AppLayout from <span style="color:#c30">&#39;../components/AppLayout&#39;</span>;
-
-<span style="color:#069;font-weight:bold">const</span> PointsWeb <span style="color:#555">=</span> ({ Component }) =&gt; {
-  <span style="color:#069;font-weight:bold">return</span> (
-    <span style="color:#555">&lt;</span>RecoilRoot<span style="color:#555">&gt;</span>
-      <span style="color:#555">&lt;</span>Head<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>title<span style="color:#555">&gt;</span>포인트 적립<span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/title&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/Head&gt;</span>
-      <span style="color:#555">&lt;</span>GlobalThemeProvider<span style="color:#555">&gt;</span>
-        <span style="color:#555">&lt;</span>AppLayout<span style="color:#555">&gt;</span>
-          <span style="color:#555">&lt;</span>Component <span style="color:#555">/&gt;</span>
-        <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/AppLayout&gt;</span>
-      <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/GlobalThemeProvider&gt;</span>
-    <span style="color:#555">&lt;</span><span style="color:#a00;background-color:#faa">/RecoilRoot&gt;</span>
-  );
-};
-
-PointsWeb.propTypes <span style="color:#555">=</span> {
-  Component<span style="color:#555">:</span> PropTypes.elementType.isRequired,
-};
-
-<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">default</span> PointsWeb;
-</code></pre></div><p>모든 컴포넌트들에 기본이 되는 AppLayout을 방금 만든 <code>커스텀 테마 컴포넌트</code>로 감싸 모든 컴포넌트에서 이 테마를 사용가능하게 해주었다.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#555">&lt;</span>AppBar position<span style="color:#555">=</span><span style="color:#c30">&#34;fixed&#34;</span>  color<span style="color:#555">=</span><span style="color:#c30">&#34;primary&#34;</span><span style="color:#555">&gt;</span>
-<span style="color:#555">&lt;</span>Button variant<span style="color:#555">=</span><span style="color:#c30">&#34;contained&#34;</span> color<span style="color:#555">=</span><span style="color:#c30">&#34;secondary&#34;</span> <span style="color:#555">&gt;</span>
-</code></pre></div><p>그러면 위와 같이 color 속성으로 테마를 적용할 수 있고 잘 적용 된 것을 볼 수 있다.</p>
-<br>
-<h2>실행 화면</h2><a class="anchor" id="실행-화면"></a>
-<p><img src="./page.PNG?classes=shadow,border" alt="login page"></p>
-<p>현재 창이 되게 허졉해보이기는 하지만 그래도 전체적인 레이아웃과 Theme 설정등 기본 설정을 원하는 데로 해놓았기 때문에 이후 작업은 수월하게 진행 할 수 있지 않을까 생각이 든다.</p>
-<p><br><br></p>
-<h2>다음에 할 것</h2><a class="anchor" id="다음에-할-것"></a>
-<p>포인트 적립과 고객 정보 조회 컴포넌트 구성과 <code>Recoil의 Atom</code>을 이용해 로그인 상태에 따른 Nav 변경을 하려고 한다.</p>
+<h2>각 컴포넌트 디자인 해주기</h2><a class="anchor" id="각-컴포넌트-디자인-해주기"></a>
+<p>모든 page에서 사용할 header와 Sidebar등을 <code>Materail-Ui</code>를 이용해 디자인 해주었고, main page에는 사이트를 간단하게 소개하는 page로 작성하고 로그인page까지 작성을 해주었습니다.</p>
+<p>이 과정은 이렇다할 건 없고 material-ui의 docs를 살펴보면서 했고 생각보다 시간과 코드가 길어서 간단하게 완성된 모습만 기록을 남기려고 합니다.
+<img src="./start.gif" alt="start"></p>
 </div>
 
 	
@@ -2323,10 +2011,10 @@ PointsWeb.propTypes <span style="color:#555">=</span> {
 	
 	 
 	<div class="chevrons ">
-		<a class="next" href="/etc/react-project/3/" title="3. atom사용과 포인트 적립 페이지 만들기" style="margin-right: 0px;">
+		<a class="next" href="/etc/react-project/3/" title="3. back 개발환경 셋팅과 db설계" style="margin-right: 0px;">
             <div>
                 <p>Next page</p>
-                <label>3. atom사용과 포인트 적립 페이지 만들기</label>
+                <label>3. back 개발환경 셋팅과 db설계</label>
             </div>
             <i class="fas fa-arrow-right" style="font-size: 1.7em"></i></a>
 	</div>
@@ -2349,27 +2037,19 @@ PointsWeb.propTypes <span style="color:#555">=</span> {
     <label>What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/etc/react-project/2/">2. front 개발환경 셋팅과 로그인 창 구현</a></li>
+            <li><a href="/etc/react-project/2/">2. front 개발환경 셋팅과 전체적인 디자인</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#indexjs-작성">index.js 작성</a></li>
-    <li><a href="#_appjs">_app.js</a></li>
-    <li><a href="#applayout">AppLayout</a>
+    <li><a href="#indexjs-와-기본-route-구성">index.js 와 기본 route 구성</a>
       <ul>
-        <li><a href="#_appjs-수정">_app.js 수정</a></li>
+        <li><a href="#-indexjs">◾ index.js</a></li>
+        <li><a href="#-routejs">◾ route.js</a></li>
+        <li><a href="#-appjs">◾ App.js</a></li>
       </ul>
     </li>
-    <li><a href="#_documentjs">_document.js</a></li>
-    <li><a href="#theme-color-수정">Theme color 수정</a>
-      <ul>
-        <li><a href="#global-theme-provider-파일-작성">global Theme provider 파일 작성</a></li>
-        <li><a href="#_appjs-수정-1">_app.js 수정</a></li>
-      </ul>
-    </li>
-    <li><a href="#실행-화면">실행 화면</a></li>
-    <li><a href="#다음에-할-것">다음에 할 것</a></li>
+    <li><a href="#각-컴포넌트-디자인-해주기">각 컴포넌트 디자인 해주기</a></li>
   </ul>
 </nav>
 </div>
