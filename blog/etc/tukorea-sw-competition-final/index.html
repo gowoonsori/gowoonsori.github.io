@@ -1,0 +1,792 @@
+<!doctype html><html itemscope lang=ko-kr itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><meta name=theme-name content="hugoplate"><link rel="shortcut icon" href=/images/favicon_hu2575224fe8b7f0ea91e8825e42ecaf67_1499445_96x0_resize_lanczos_3.png type=image/x-icon><link rel=icon href=/images/favicon_hu2575224fe8b7f0ea91e8825e42ecaf67_1499445_96x0_resize_lanczos_3.png type=image/x-icon><link rel=icon type=image/png sizes=48x48 href=/images/favicon_hu2575224fe8b7f0ea91e8825e42ecaf67_1499445_48x0_resize_lanczos_3.png><link rel=icon type=image/png sizes=96x96 href=/images/favicon_hu2575224fe8b7f0ea91e8825e42ecaf67_1499445_96x0_resize_lanczos_3.png><link rel=apple-touch-icon sizes=144x144 href=/images/favicon_hu2575224fe8b7f0ea91e8825e42ecaf67_1499445_144x0_resize_lanczos_3.png><link rel=manifest href=/manifest.webmanifest><meta name=msapplication-TileColor content="#ddd"><meta name=theme-color content="#ffffff"><base href=https://gowoonsori.com/blog/etc/tukorea-sw-competition-final/><title>KPU S/W 경진대회 본선 후기</title>
+<meta name=generator content="Hugo 0.120.2"><meta name=keywords content="Gromit,Tech,Blog,gowoonsori"><meta name=description content="한국산업기술대학교 알고리즘 대회 본선 후기"><meta name=author content="gowoonsori"><meta property="og:image" content="https://gowoonsori.com/images/image-placeholder.png"><meta name=twitter:image content="https://gowoonsori.com/images/image-placeholder.png"><meta name=twitter:card content="summary
+            _large_image
+          "><meta property="og:image:width" content="1096"><meta property="og:image:height" content="480"><meta property="og:image:type" content="image/
+        .png
+      "><meta property="og:title" content="KPU S/W 경진대회 본선 후기"><meta property="og:description" content="한국산업기술대학교 알고리즘 대회 본선 후기"><meta property="og:type" content="website"><meta property="og:url" content="https://gowoonsori.com/blog/etc/tukorea-sw-competition-final/"><meta name=twitter:title content="KPU S/W 경진대회 본선 후기"><meta name=twitter:description content="한국산업기술대학교 알고리즘 대회 본선 후기"><script async src="https://www.googletagmanager.com/gtag/js?id=G-NB8ZZY0RDG"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-NB8ZZY0RDG",{anonymize_ip:!1})}</script><script>!function(){let e=0;document.addEventListener("mousemove",function(){1==++e&&gtmLoader()}),window.onscroll=function(){1==++e&&gtmLoader()},setTimeout(function(){0===e&&(e++,gtmLoader())},5e3)}();function gtmLoader(){(function(e,t,n,s,o){e[s]=e[s]||[],e[s].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var a=t.getElementsByTagName(n)[0],i=t.createElement(n),r=s!="dataLayer"?"&l="+s:"";i.async=!0,i.src="https://www.googletagmanager.com/gtm.js?id="+o+r,a.parentNode.insertBefore(i,a)})(window,document,"script","dataLayer","G-NB8ZZY0RDG")}</script><script>let indexURL="https://gowoonsori.com/searchindex.json",includeSectionsInSearch=["blog"],no_results_for="No results for",empty_search_results_placeholder="Type something to search.."</script><meta http-equiv=x-dns-prefetch-control content="on"><link rel=preconnect href=https://use.fontawesome.com crossorigin><link rel=preconnect href=//cdnjs.cloudflare.com><link rel=preconnect href=//www.googletagmanager.com><link rel=preconnect href=//www.google-analytics.com><link rel=dns-prefetch href=https://use.fontawesome.com><link rel=dns-prefetch href=//ajax.googleapis.com><link rel=dns-prefetch href=//cdnjs.cloudflare.com><link rel=dns-prefetch href=//www.googletagmanager.com><link rel=dns-prefetch href=//www.google-analytics.com><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//connect.facebook.net><link rel=dns-prefetch href=//platform.linkedin.com><link rel=dns-prefetch href=//platform.twitter.com><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><link href="/css/style.min.7f79edb8cd8b89cf1fa077c3ef1fc27c23db7dbf0f36180213e0101f52c366f2.css" integrity="sha256-f3ntuM2Lic8foHfD7x/CfCPbfb8PNhgCE+AQH1LDZvI=" rel=stylesheet><link rel=stylesheet href="/css/style-lazy.min.6ebccd46bdfd6a8861cd49c725f28b8615081591f753245c453e861a11c4b5b4.css" integrity="sha256-brzNRr39aohhzUnHJfKLhhUIFZH3UyRcRT6GGhHEtbQ=" media=print onload='this.media="all",this.onload=null'></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-NB8ZZY0RDG" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript><header class="header sticky top-0 z-30"><nav class="navbar container"><div class=order-0><a class="navbar-brand block" href=/><img fetchpriority=high decoding=async class="img logo-light" width=160 height=32 src=/images/logo_huecbda5afdfa6f2a47d87fa44d8964534_89529_320x0_resize_q90_h2_lanczos_3.webp alt=Gromit.Blog onerror='this.onerror=null,this.src="/images/logo_huecbda5afdfa6f2a47d87fa44d8964534_89529_320x0_resize_lanczos_3.png"'>
+<img fetchpriority=high decoding=async class="img logo-dark" width=160 height=32 src=/images/logo-darkmode_hu2877729f4be0141a60f84355100d8d94_80775_320x0_resize_q90_h2_lanczos_3.webp alt=Gromit.Blog onerror='this.onerror=null,this.src="/images/logo-darkmode_hu2877729f4be0141a60f84355100d8d94_80775_320x0_resize_lanczos_3.png"'></a></div><input id=nav-toggle type=checkbox class=hidden>
+<label for=nav-toggle class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1"><svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20"><title>Menu Open</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V0z"/></svg><svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20"><title>Menu Close</title><polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"/></svg></label><ul id=nav-menu class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"><li class=nav-item><a class=nav-link href=/blog/>Blog</a></li><li class=nav-item><a class=nav-link href=/categories/>Categories</a></li><li class=nav-item><a class=nav-link href=/tags/>Tags</a></li><li class=nav-item><a class=nav-link href=/about>About</a></li></ul><div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0"><button aria-label=search class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white" data-target=search-modal>
+<i class="fa-solid fa-search"></i></button><div class="theme-switcher mr-5"><input id=theme-switcher data-theme-switcher type=checkbox>
+<label for=theme-switcher><span class=sr-only>theme switcher</span>
+<span><svg class="absolute left-[4px] top-[4px] z-10 opacity-100 dark:opacity-0" viewBox="0 0 56 56" fill="#fff" height="16" width="16"><path d="M30 4.6c0-1-.9-2-2-2a2 2 0 00-2 2v5c0 1 .9 2 2 2s2-1 2-2zm9.6 9a2 2 0 000 2.8c.8.8 2 .8 2.9.0L46 13a2 2 0 000-2.9 2 2 0 00-3 0zm-26 2.8c.7.8 2 .8 2.8.0.8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9.0-.7.8-.7 2.1.0 3zM28 16A12 12 0 0016 28a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0028 16zm23.3 14c1.1.0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 00-2 2c0 1.1 1 2 2 2zM4.7 26a2 2 0 00-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2zm37.8 13.6a2 2 0 00-3 0 2 2 0 000 2.9l3.6 3.5a2 2 0 002.9.0c.8-.8.8-2.1.0-3zM10 43.1a2 2 0 000 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1.0-2.9s-2-.8-2.9.0zm20 3.4c0-1.1-.9-2-2-2a2 2 0 00-2 2v4.9c0 1 .9 2 2 2s2-1 2-2z"/></svg><svg class="absolute left-[4px] top-[4px] z-10 opacity-0 dark:opacity-100" viewBox="0 0 24 24" fill="none" height="16" width="16"><path fill="#000" fill-rule="evenodd" clip-rule="evenodd" d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4.0 008.7 1.8c1-.3 2 .5 1.5 1.5v.1A10.3 10.3.0 0112.4 22 10.3 10.3.0 013.2 6.7c1-2 2.9-3.5 4.9-4.4z"/></svg></span></label></div><script>var darkMode=!0,themeSwitch;localStorage.getItem("theme")==="dark"?darkMode=!0:localStorage.getItem("theme")==="light"&&(darkMode=!1),darkMode&&document.documentElement.classList.toggle("dark"),themeSwitch=document.querySelectorAll("[data-theme-switcher]"),document.addEventListener("DOMContentLoaded",()=>{[].forEach.call(themeSwitch,function(e){e.checked=!!darkMode,e.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),localStorage.setItem("theme",document.documentElement.classList.contains("dark")?"dark":"light"),setGiscusTheme()})})});function getGiscusTheme(){return localStorage.getItem("theme")==="dark"?"dark":"light"}function setGiscusTheme(){function e(e){const t=document.querySelector("iframe.giscus-frame");if(!t)return;t.contentWindow.postMessage({giscus:e},"https://giscus.app")}e({setConfig:{theme:getGiscusTheme()}})}</script></div></nav></header><div class="search-wrapper search-modal" data-image=true data-description=true data-tags=true data-categories=true tabindex=-1 aria-hidden=true style=--color-primary:#121212><div class=search-wrapper-content><div class=search-input-body><label for=search-modal-input style=margin-top:-1px><span class=sr-only>search icon</span>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="18" width="18" class="search-icon" data-type="search"><path fill="currentcolor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8.0 45.3s-32.8 12.5-45.3.0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9.0 208S93.1.0 208 0 416 93.1 416 208zM208 352a144 144 0 100-288 144 144 0 100 288z"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="18" width="18" class="search-reset" data-type="reset"><path fill="currentcolor" d="M256 512A256 256 0 10256 0a256 256 0 100 512zM175 175c9.4-9.4 24.6-9.4 33.9.0l47 47 47-47c9.4-9.4 24.6-9.4 33.9.0s9.4 24.6.0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6.0 33.9s-24.6 9.4-33.9.0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9.0s-9.4-24.6.0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6.0-33.9z"/></svg></label><input id=search-modal-input type=text data-search-input autocomplete=off aria-label=Search placeholder="Search Post ..."></div><div class=search-wrapper-body><div class=search-result data-search-result></div><span class=search-result-empty>Type something to search..</span></div><div class=search-wrapper-footer><span><kbd><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentcolor" style="margin-top:-2px" viewBox="0 0 16 16"><path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 011.506.0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 01-.753-1.659z"/></svg></kbd><kbd><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentcolor" style="margin-top:1px" viewBox="0 0 16 16"><path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 001.506.0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 00-.753 1.659z"/></svg></kbd>to navigate
+</span><span><kbd><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentcolor" style="display:inline-block" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.5 1.5a.5.5.0 01.5.5v4.8a2.5 2.5.0 01-2.5 2.5H2.707l3.347 3.346a.5.5.0 01-.708.708l-4.2-4.2a.5.5.0 010-.708l4-4a.5.5.0 11.708.708L2.707 8.3H12.5A1.5 1.5.0 0014 6.8V2a.5.5.0 01.5-.5z"/></svg></kbd>to select
+</span><span class=search-result-info></span>
+<span data-target=close-search-modal><kbd>ESC</kbd> to close</span></div></div></div><main><section class="section pt-7"><div class=container><div class="row justify-center"><article class=lg:col-10><h1 class="h2 mb-4">KPU S/W 경진대회 본선 후기</h1><ul class=mb-4><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
+<a href=/categories/%ea%b8%b0%ed%83%80/ class=ms-1>기타</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-clock mr-2"></i>
+2020년 10월 18일</li></ul><div class="content mb-10 mt-9"><p>본선일정은 2020.10.14 (수)에 <strong>13:30 ~ 17:00</strong>까지로 예선 후 1주일 뒤에 잡혀있었다.</p><p>수요일 본선 당일 12시 반까지 있던 수업을 마치고 기숙사에 들려 노트북을 챙겨 시험장소인 소강당으로 향했다.<br>도착해서 점심으로 <strong>서브웨이</strong>와 스프라이트를 받고 자리를 잡자마자 샌드위치를 허겁지겁 먹어치웠다.<br><em>(아침 점심을 안먹었더니 배가 너무 고팠었다&mldr;<em>😂</em>)</em></p><p>그런데, 사회적 거리 두기때문에 좀 넓은 곳에서 시험 보려고 소강당에서 시험을 봤으나, 소강당이 일반 책상이 아닌, 팔걸이에 간이 받침대가 숨어있는(?) 그런 의자라서 불편했다.</p><br><h2 id=시험-시작-전-ot>시험 시작 전 OT</h2><p>13:30분에 교수님과 인사하고 강당에서 시험을 보다보니 <strong>멀티탭</strong> 문제로 시간좀 지체하고 <strong>시험 룰</strong> 같은 거 이것 저것 설명하다보니 <strong>14:00</strong>쯤 되어서야 본격적인 시험이 시작되었다.</p><br><h2 id=시험-시작>시험 시작</h2><p>시험은 총 8문제가 출제 되었고, 시작하자마자 1번 문제인 후위표기식 문제를 건너뛰고, 2번 문제부터 풀기 시작했다.</p><br><h3 id=1-postfix-표현식>1) Postfix 표현식</h3><div class=accordion><button class=accordion-header data-accordion>
+문제 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><p><strong>Description</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>+및-연산자를 사용하여a,…z 알파벳 소문자로작성된 산술 표현식을 고려하십시오.다음은 예입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>((a + b)-(((c + d) -e) + a))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>완전히 괄호로 묶인 표현식은다음과 같은 간단한 규칙을 사용하여postfix라는 다른 형식으로 변환 할 수 있습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>변수는 그대로 유지됩니다.{a,…, z}의모든x에대해Translate [x] = x.
+</span></span><span style=display:flex><span>(E1 +E2)형태의 식은Translate[E1] Translate[E2] + 로 변환된다.
+</span></span><span style=display:flex><span>(E1 - E2)형태의 식은 Translate[E1] Translate[E2] - 로 변환된다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>예를 들어, 위의 표현식은 다음과 같이 번역됩니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> Translate[((a+b)-(((c+d)-e)+a))]
+</span></span><span style=display:flex><span>= Translate[(a+b)] Translate[(((c+d)-e)+a)] -
+</span></span><span style=display:flex><span>= Translate[a] Translate[b] + Translate[((c+d)-e)] Translate[a] + -
+</span></span><span style=display:flex><span>= a b + Translate[(c+d)] Translate[e] - a + -
+</span></span><span style=display:flex><span>= a b + Translate[c] Translate[d] + e - a + -
+</span></span><span style=display:flex><span>= a b + c d + e - a + -
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>당신의 임무는 이 작업의 반대를 수행하는 것입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>접미사로 표현되는 postfix 표현식을괄호로 잘 묶인원래 표현식으로 재구성해야합니다.
+</span></span></code></pre></div><p><strong>Input</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>+,-및 문자a, b,…, z가포함된 postfix 표현식을 포함하는 단일 행
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>최대 80 개의 기호가 있습니다.
+</span></span></code></pre></div><p><strong>Output</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>위에서 설명한 번역을 통해 입력postfix 표현식을괄호로 잘 묶인원래 표현식을 출력합니다.
+</span></span></code></pre></div><p><strong>Sample Input 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>ab+cd+e-a+-
+</span></span></code></pre></div><p><strong>Sample Output 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>((a+b)-(((c+d)-e)+a))
+</span></span></code></pre></div></p></div></div><br><h3 id=2-다음-순열>2) 다음 순열</h3><div class=accordion><button class=accordion-header data-accordion>
+문제 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><p><strong>Description</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>회문(Palindrome)은왼쪽에서 오른쪽으로 읽든, 오른쪽에서 왼쪽으로 읽든 똑같이 읽는 단어입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>다음과 같이 알파벳 소문자로만 이루어진 단어에서 회문을 생성하도록 합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>알파벳 소문자로 이루어진 단어 word가 있습니다.
+</span></span><span style=display:flex><span>word를 오른쪽에서 왼쪽으로 읽는 반전 단어 reverse를 생성합니다.
+</span></span><span style=display:flex><span>word와 reverse를 더합니다. 단어 덧셈은 아래 규칙을 따름니다.
+</span></span><span style=display:flex><span>덧셈을 한 단어가 회문이면 그 회문을 출력하고 아니면 단어 반전과 덧셈을 회문이 생성될 때 까지 계속합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>단어 덧셈 규칙
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>단어의 덧셈은 단어를 구성하는 알파벳을 26진수숫자로 (&#39;a&#39; = 0, &#39;b&#39;=1, &#39;c&#39;=2, ..., &#39;z&#39;= 25) 가정해서 숫자 덧셈을 한 후 다시 알파벳으로 변환해서 단어를 생성합니다.다음과 같이 단어 덧셈을 할 수 있습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&#39;a&#39; + &#39;a&#39; = &#39;a&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&#39;a&#39; + &#39;b&#39; = &#39;b&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&#39;b&#39; + &#39;b&#39; = &#39;c&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&#39;a&#39; + &#39;z&#39; = &#39;z&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&#39;b&#39; + &#39;z&#39; = &#39;ba&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>당신의 임무는 위에서 설명한 프로세스를 수행하고 결과 회문을 찾으면 출력하는 것입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>예를 들어 &#39;see&#39;가 주어지면  &#39;see&#39;의 반전 단어 &#39;ees&#39;를 생성해서 단어 덧셈을 하면 &#39;wiw&#39;를 얻습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>또한 &#39;apple&#39;이 주어지면 다음과 같은 시퀀스를 얻습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&#39;apple&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&#39;fbfae&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&#39;jbkbj&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>따라서 이경우에는 &#39;jbkbj&#39; 를 출력해야 합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>회문을 찾지 못하는 경우는 없습니다.
+</span></span></code></pre></div><p><strong>Input</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>알파벳 소문자로만 이루어진 길이 30이하의 단일 단어
+</span></span></code></pre></div><p><strong>Output</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>위에서 설명한 프로세스에 의해 생성 된 회문인 단어
+</span></span></code></pre></div><p><strong>Sample Input 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>apple
+</span></span></code></pre></div><p><strong>Sample Output 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>jbkbj
+</span></span></code></pre></div></p></div></div><p>주어진 규칙대로 알파벳을 더해주고 조건 만족할때까지 while을 도는 쉬운 문제여서 <strong>쉽게 풀 수 있겠다.</strong> 하고 시작했는데, 중간에 **&lsquo;p&rsquo; + &rsquo;l&rsquo;**이 어떻게 <strong>f</strong>가 나오는 지 규칙을 이해를 잘 못해서 많이 헤맸던 문제였다.</p><p>풀면서 머리속에서 너무 꼬여서 거의 다 풀었음에도 불구하고 결국 <strong>다음 문제</strong>로 넘어가는 것을 선택했다.</p><div class="notice note"><div class=notice-head><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9v5m0 5c-4.97056.0-9-4.0294-9-9 0-4.97056 4.02944-9 9-9 4.9706.0 9 4.02944 9 9 0 4.9706-4.0294 9-9 9zM10.0498 6V6.1L9.9502 6.1002V6H10.0498z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Note</p></div><div class=notice-body><p>규칙에서 &lsquo;b&rsquo; + &lsquo;z&rsquo; = &lsquo;ba&rsquo; 가 나온 것을 보고 &lsquo;c&rsquo; + &lsquo;z&rsquo; = &lsquo;bb&rsquo;가 아닌 &lsquo;ca&rsquo;가 될 것이라고 생각 했던 내 멍청함을 탓한다..ㅠㅠ😥</p></div></div><p>아래는 시험이 끝난 후 차분히 코드 수정을 한 코드이다. <strong>cal</strong>함수에서 덧셈 규칙의 잘못 이해한 부분만 수정해주니 잘 돌아가는 것을 볼 수 있었다.</p><div class=accordion><button class=accordion-header data-accordion>
+코드 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;iostream&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;vector&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;algorithm&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;string&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e></span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>using</span> <span style=color:#c678dd>namespace</span> <span style=color:#e06c75>std</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e>//abcde/fghij/klmno/pqrst/uvwxy/z
+</span></span></span><span style=display:flex><span><span style=color:#7f848e></span><span style=color:#e5c07b>char</span> <span style=color:#61afef;font-weight:700>out_alp</span>(<span style=color:#e5c07b>int</span> <span style=color:#e06c75>num</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>switch</span> (<span style=color:#e06c75>num</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>0</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;a&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>1</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;b&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>2</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;c&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>3</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;d&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>4</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;e&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>5</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;f&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>6</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;g&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>7</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;h&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>8</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;i&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>9</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;j&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>10</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;k&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>11</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;l&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>12</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;m&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>13</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;n&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>14</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;o&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>15</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;p&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>16</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;q&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>17</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;r&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>18</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;s&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>19</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;t&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>20</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;u&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>21</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;v&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>22</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;w&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>23</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;x&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>24</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;y&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>case</span> <span style=color:#d19a66>25</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span> <span style=color:#98c379>&#39;z&#39;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>default</span><span style=color:#56b6c2>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>break</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>return</span> <span style=color:#d19a66>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e5c07b>bool</span> <span style=color:#61afef;font-weight:700>check</span>(<span style=color:#e06c75>string</span> <span style=color:#e06c75>str</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#e5c07b>int</span> <span style=color:#e06c75>i</span>, <span style=color:#e06c75>j</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>str</span>.<span style=color:#e06c75>length</span>() <span style=color:#56b6c2>-</span> <span style=color:#d19a66>1</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>for</span> (<span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>i</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>str</span>.<span style=color:#e06c75>length</span>() <span style=color:#56b6c2>/</span> <span style=color:#d19a66>2</span>; <span style=color:#e06c75>i</span><span style=color:#56b6c2>++</span>, <span style=color:#e06c75>j</span><span style=color:#56b6c2>--</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>if</span> (<span style=color:#e06c75>str</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>!=</span> <span style=color:#e06c75>str</span>[<span style=color:#e06c75>j</span>])
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>return</span> <span style=color:#e5c07b>false</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>return</span> <span style=color:#e5c07b>true</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#e5c07b>void</span> <span style=color:#61afef;font-weight:700>cal</span>(<span style=color:#e06c75>string</span> <span style=color:#56b6c2>&amp;</span><span style=color:#e06c75>str</span>, <span style=color:#e06c75>string</span> <span style=color:#e06c75>r_str</span>, <span style=color:#e06c75>string</span> <span style=color:#56b6c2>&amp;</span><span style=color:#e06c75>ans</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#e5c07b>char</span> <span style=color:#e06c75>a2</span>, <span style=color:#e06c75>b2</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>str</span>.<span style=color:#e06c75>length</span>() <span style=color:#56b6c2>-</span> <span style=color:#d19a66>1</span>; <span style=color:#e06c75>i</span> <span style=color:#56b6c2>&gt;=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>i</span><span style=color:#56b6c2>--</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>int</span> <span style=color:#e06c75>a</span> <span style=color:#56b6c2>=</span> (<span style=color:#e06c75>str</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>-</span> <span style=color:#98c379>&#39;a&#39;</span> <span style=color:#56b6c2>+</span> <span style=color:#e06c75>r_str</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>-</span> <span style=color:#98c379>&#39;a&#39;</span>) <span style=color:#56b6c2>/</span> <span style=color:#d19a66>26</span>;
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>int</span> <span style=color:#e06c75>b</span> <span style=color:#56b6c2>=</span> (<span style=color:#e06c75>str</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>-</span> <span style=color:#98c379>&#39;a&#39;</span> <span style=color:#56b6c2>+</span> <span style=color:#e06c75>r_str</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>-</span> <span style=color:#98c379>&#39;a&#39;</span>) <span style=color:#56b6c2>%</span> <span style=color:#d19a66>26</span>;
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>if</span> (<span style=color:#e06c75>a</span> <span style=color:#56b6c2>==</span> <span style=color:#d19a66>1</span>)
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>str</span>[<span style=color:#e06c75>i</span> <span style=color:#56b6c2>-</span> <span style=color:#d19a66>1</span>] <span style=color:#56b6c2>+=</span> <span style=color:#e06c75>a</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>ans</span> <span style=color:#56b6c2>+=</span> <span style=color:#e06c75>out_alp</span>(<span style=color:#e06c75>b</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e5c07b>void</span> <span style=color:#61afef;font-weight:700>rule</span>(<span style=color:#e06c75>string</span> <span style=color:#56b6c2>&amp;</span><span style=color:#e06c75>str</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>string</span> <span style=color:#e06c75>ans</span> <span style=color:#56b6c2>=</span> <span style=color:#98c379>&#34;&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>string</span> <span style=color:#e06c75>r_str</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>str</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>reverse</span>(<span style=color:#e06c75>r_str</span>.<span style=color:#e06c75>begin</span>(), <span style=color:#e06c75>r_str</span>.<span style=color:#e06c75>end</span>());
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>cal</span>(<span style=color:#e06c75>str</span>, <span style=color:#e06c75>r_str</span>, <span style=color:#e06c75>ans</span>);
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>str</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>ans</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e5c07b>int</span> <span style=color:#61afef;font-weight:700>main</span>()
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>string</span> <span style=color:#e06c75>input</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>cin</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>input</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>while</span> (<span style=color:#56b6c2>!</span><span style=color:#e06c75>check</span>(<span style=color:#e06c75>input</span>))
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>rule</span>(<span style=color:#e06c75>input</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>cout</span> <span style=color:#56b6c2>&lt;&lt;</span> <span style=color:#e06c75>input</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>return</span> <span style=color:#d19a66>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></p></div></div><br><h3 id=3-조이-스틱>3) 조이 스틱</h3><div class=accordion><button class=accordion-header data-accordion>
+문제 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><p><strong>Description</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>조이스틱으로 알파벳 이름을 완성하세요. 맨 처음엔 A로만 이루어져 있습니다.
+</span></span><span style=display:flex><span>ex) 완성해야 하는 이름이 세 글자면 AAA, 네 글자면 AAAA
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>조이스틱을 각 방향으로 움직이면 아래와 같습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>▲ - 다음 알파벳
+</span></span><span style=display:flex><span>▼ - 이전 알파벳 (A에서 아래쪽으로 이동하면 Z로)
+</span></span><span style=display:flex><span>◀ - 커서를 왼쪽으로 이동 (첫 번째 위치에서 왼쪽으로 이동하면 마지막 문자에 커서)
+</span></span><span style=display:flex><span>▶ - 커서를 오른쪽으로 이동
+</span></span><span style=display:flex><span>예를 들어 아래의 방법으로JAZ를 만들 수 있습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>첫 번째 위치에서 조이스틱을 위로 9번 조작하여 J를 완성합니다.
+</span></span><span style=display:flex><span>조이스틱을 왼쪽으로 1번 조작하여 커서를 마지막 문자 위치로 이동시킵니다.
+</span></span><span style=display:flex><span>마지막 위치에서 조이스틱을 아래로 1번 조작하여 Z를 완성합니다. 따라서 11번 이동시켜 &#34;JAZ&#34;를 만들 수 있고, 이때가 최소 이동입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>만들고자 하는 이름 name이 입력으로 주어질 때, 이름에 대해 조이스틱 조작 횟수의 최솟값을 출력하세요.
+</span></span></code></pre></div><p><strong>Input</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>만들고자 하는 이름 name 이 첫번째 줄에 입력됩니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>제한사항
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>name은 알파벳 대문자로만 이루어져 있습니다.
+</span></span><span style=display:flex><span>name의 길이는 1 이상 20 이하입니다.
+</span></span></code></pre></div><p><strong>Output</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>이름에 대해 조이스틱 조작 횟수의 최솟값을 출력하세요.
+</span></span></code></pre></div><p><strong>Sample Input 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>JEROEN
+</span></span></code></pre></div><p><strong>Sample Output 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>56
+</span></span></code></pre></div><p><strong>Sample Input 2</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>JAN
+</span></span></code></pre></div><p><strong>Sample Output 2</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>23
+</span></span></code></pre></div></p></div></div><p>과거에 <strong>프로그래머스</strong>를 통해 풀어본 문제였기에 수월하게 풀이를 진행 했다.</p><p>input의 문자열 길이만큼 초기값 <strong>A</strong>로 세팅을 해주고, 알파벳의 중간값인 M을 기준으로 작으면 알파벳 순번을, 크다면 역으로 셀 경우가 작게 나오기 때문에 <strong>Z</strong>에서 char 번호만큼 빼준 값을 통해 각 알파벳을 선택하기위한 조이스틱 횟수를 <strong>answer</strong>에 더해줬다.</p><p>또한, <strong>input2</strong>의 case처럼 <strong>JAN</strong>에서 첫번째 글짜를 <strong>J</strong>로 설정하고 다음 글자를 선택하려고 할때 두번째 글짜는 <strong>A</strong>가있는 오른쪽으로 이동하는 것보다 <strong>왼쪽</strong>으로 이동하는 것이 더 적은 횟수를 사용할 수 있기 때문에 조이스틱을 <strong>mov</strong>하는 과정도 왼쪽으로 이동하는 경우와 오른쪽으로 이동하는 경우를 비교하여 더 <strong>최선인 방향을 선택</strong>하는 식으로 풀이를 진행했다.</p><div class=accordion><button class=accordion-header data-accordion>
+코드 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;string&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;vector&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;iostream&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e></span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>using</span> <span style=color:#c678dd>namespace</span> <span style=color:#e06c75>std</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e5c07b>int</span> <span style=color:#61afef;font-weight:700>sol</span>(<span style=color:#e06c75>string</span> <span style=color:#e06c75>name</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#e5c07b>int</span> <span style=color:#e06c75>answer</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e5c07b>int</span> <span style=color:#e06c75>i</span><span style=color:#56b6c2>=</span><span style=color:#d19a66>0</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>string</span> <span style=color:#e06c75>tmp</span>(<span style=color:#e06c75>name</span>.<span style=color:#e06c75>length</span>(),<span style=color:#98c379>&#39;A&#39;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>while</span>(<span style=color:#d19a66>1</span>){
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>tmp</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>=</span> <span style=color:#e06c75>name</span>[<span style=color:#e06c75>i</span>];
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>answer</span> <span style=color:#56b6c2>+=</span> (<span style=color:#e06c75>name</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>&lt;=</span> <span style=color:#98c379>&#39;M&#39;</span>) <span style=color:#56b6c2>?</span> (<span style=color:#e06c75>name</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>-</span> <span style=color:#98c379>&#39;A&#39;</span>) <span style=color:#56b6c2>:</span> (<span style=color:#98c379>&#39;Z&#39;</span> <span style=color:#56b6c2>-</span> <span style=color:#e06c75>name</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>+</span> <span style=color:#d19a66>1</span>) ;
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>if</span>(<span style=color:#56b6c2>!</span><span style=color:#e06c75>tmp</span>.<span style=color:#e06c75>compare</span>(<span style=color:#e06c75>name</span>)) <span style=color:#c678dd>break</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>for</span>(<span style=color:#e5c07b>int</span> <span style=color:#e06c75>mov</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>1</span>; <span style=color:#e06c75>mov</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>name</span>.<span style=color:#e06c75>length</span>() ; <span style=color:#e06c75>mov</span><span style=color:#56b6c2>++</span>){
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>if</span>(<span style=color:#e06c75>name</span> [(<span style=color:#e06c75>i</span> <span style=color:#56b6c2>+</span> <span style=color:#e06c75>mov</span>) <span style=color:#56b6c2>%</span> <span style=color:#e06c75>name</span>.<span style=color:#e06c75>length</span>()] <span style=color:#56b6c2>!=</span> <span style=color:#e06c75>tmp</span>[(<span style=color:#e06c75>i</span> <span style=color:#56b6c2>+</span> <span style=color:#e06c75>mov</span>) <span style=color:#56b6c2>%</span> <span style=color:#e06c75>name</span>.<span style=color:#e06c75>length</span>()]){
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span>  (<span style=color:#e06c75>i</span> <span style=color:#56b6c2>+</span> <span style=color:#e06c75>mov</span>) <span style=color:#56b6c2>%</span> <span style=color:#e06c75>name</span>.<span style=color:#e06c75>length</span>();
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>answer</span> <span style=color:#56b6c2>+=</span> <span style=color:#e06c75>mov</span>;
+</span></span><span style=display:flex><span>                <span style=color:#c678dd>break</span>;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>else</span> <span style=color:#c678dd>if</span>(<span style=color:#e06c75>name</span> [(<span style=color:#e06c75>i</span> <span style=color:#56b6c2>+</span> <span style=color:#e06c75>name</span>.<span style=color:#e06c75>length</span>() <span style=color:#56b6c2>-</span> <span style=color:#e06c75>mov</span>) <span style=color:#56b6c2>%</span> <span style=color:#e06c75>name</span>.<span style=color:#e06c75>length</span>()] <span style=color:#56b6c2>!=</span> <span style=color:#e06c75>tmp</span>[(<span style=color:#e06c75>i</span> <span style=color:#56b6c2>+</span> <span style=color:#e06c75>name</span>.<span style=color:#e06c75>length</span>() <span style=color:#56b6c2>-</span> <span style=color:#e06c75>mov</span>)<span style=color:#56b6c2>%</span> <span style=color:#e06c75>name</span>.<span style=color:#e06c75>length</span>()]){
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> ( <span style=color:#e06c75>i</span> <span style=color:#56b6c2>+</span> <span style=color:#e06c75>name</span>.<span style=color:#e06c75>length</span>() <span style=color:#56b6c2>-</span> <span style=color:#e06c75>mov</span> ) <span style=color:#56b6c2>%</span> <span style=color:#e06c75>name</span>.<span style=color:#e06c75>length</span>();
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>answer</span> <span style=color:#56b6c2>+=</span> <span style=color:#e06c75>mov</span>;
+</span></span><span style=display:flex><span>                <span style=color:#c678dd>break</span>;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>return</span> <span style=color:#e06c75>answer</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#e5c07b>int</span> <span style=color:#61afef;font-weight:700>main</span>(){
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>string</span> <span style=color:#e06c75>input</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>cin</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>input</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>cout</span> <span style=color:#56b6c2>&lt;&lt;</span> <span style=color:#e06c75>sol</span>(<span style=color:#e06c75>input</span>);
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>return</span> <span style=color:#d19a66>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></p></div></div><br><div class="notice note"><div class=notice-head><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9v5m0 5c-4.97056.0-9-4.0294-9-9 0-4.97056 4.02944-9 9-9 4.9706.0 9 4.02944 9 9 0 4.9706-4.0294 9-9 9zM10.0498 6V6.1L9.9502 6.1002V6H10.0498z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Note</p></div><div class=notice-body><p><p>두 문제를 풀이하고 <em>(정확히는 한문제다..)</em><br>남은 시간을 보니 모든 문제는 풀기에 가망이 없어 보였기 때문에 집중해서 풀어낼 문제를 선택해야 했다.</p><p>현재 문제 상황을 보니 의외로 끝의 문제들이 합격률이 괜찮았고, 뒷 문제일수록 배점이 좋았기 때문에 이때부터 뒤의 문제부터 풀이를 해나갔다.</p></p></div></div><br><h3 id=4-사회적-거리두기-2>4) 사회적 거리두기 2</h3><div class=accordion><button class=accordion-header data-accordion>
+문제 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><p><strong>Description</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>전세계적으로 퍼진 신종 코로나-19 감염병 예방을 위해서 김교수는 일렬로 배치된 N명(1≤N≤1000) 학생들에게 사회적 거리두기를 시행하고 있습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>그러나 이러한 사회적 거리두기에도 불구하고 이미 코로나-19에 감염된 학생과 반경 R 이내에 있는 다른 건강한 학생은 코로나-19에 감염됩니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>김교수는 R값은 정확히 모르지만 N명 학생들의 위치와 감염여부는 알고 있습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>전체 N명 학생들이 전부 감염될 수 있는 최소한의 감염 학생 수를 결정하십시오.
+</span></span></code></pre></div><p><strong>Input</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>입력의 첫번째 줄에는 학생 수 N
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>그 다음 N개 줄에는 각각 학생의 위치x(0≤x≤10^6)와 감염여부 s (0 : 건강한 학생, 1: 감염된 학생) 두 개의 정수를 갖습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>최소한 한명의 학생이 감염되면 반경 R이내의 학생들은 연속으로 코로나-19에 감염될 수 있습니다.
+</span></span></code></pre></div><p><strong>Output</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>코로나-19 감염병이 전체 학생 N명에게 퍼질 수 있는 최소 학생 수를 출력하십시오.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>예를 들어서 입력이 다음과 같다고 가정하면,
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>9
+</span></span><span style=display:flex><span>7 1
+</span></span><span style=display:flex><span>1 1
+</span></span><span style=display:flex><span>16 1
+</span></span><span style=display:flex><span>3 1
+</span></span><span style=display:flex><span>15 1
+</span></span><span style=display:flex><span>10 0
+</span></span><span style=display:flex><span>6 1
+</span></span><span style=display:flex><span>18 1
+</span></span><span style=display:flex><span>21 1
+</span></span><span style=display:flex><span>이 경우에 우리는 R &lt; 3 임을 알 수 있습니다. 그렇지 않다면 7번 위치 학생이 10번 학생을 감염 시켰을 것입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>따라서 이 경우에는 최소한 4명 학생이 (1과 3 위치에 학생 중에서 한명, 6과 7 위치에 있는 한명, 15와 16과 18 위치 학생 중에서 한명, 21위치 학생 한명) 감염되어야 전체 학생들에게 감염을 시킵니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>따라서 이 경우 정답은 4 입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>4
+</span></span></code></pre></div><p><strong>Sample Input 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>9
+</span></span><span style=display:flex><span>7 1
+</span></span><span style=display:flex><span>1 1
+</span></span><span style=display:flex><span>16 1
+</span></span><span style=display:flex><span>3 1
+</span></span><span style=display:flex><span>15 1
+</span></span><span style=display:flex><span>10 0
+</span></span><span style=display:flex><span>6 1
+</span></span><span style=display:flex><span>18 1
+</span></span><span style=display:flex><span>21 1
+</span></span></code></pre></div><p><strong>Sample Output 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>4
+</span></span></code></pre></div></p></div></div><br><h3 id=5-중요한-교차로>5) 중요한 교차로</h3><div class=accordion><button class=accordion-header data-accordion>
+문제 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><p><strong>Description</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>긴 장마철이 지나고 망가진 도로 보수를 위해서 시흥시는 시내의 모든 교차로를 재포장하기로 결정했습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>교차로를 포장하려면 해당 교차로를 통과하는 모든 교통을 통제해야 합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>그런데 교차로들 중에서 중요한 교차로는 교통 통제에 주의해야 합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>예를 들어서 교차로 J에서 교차로 K를 가려면 반드시 교차로 I를 통과해야 한다면, 교차로 I를 통제하면 J에서 K로 가는 길이 막히므로, 교차로 I를 중요한 교차로라고 합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>시흥시의 도로는모두 양방향 통행이 가능하며, 모든 교차로를 이용할 수 있다면 어느 교차로에서 든지 다른 교차로로 갈 수 있습니다.시흥시 도로의 이름은 오직 2개의 교차로를 연결하고 다른 교차로는 통과하지 않습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>예를 들어서5 개의 교차로I1,I2,I3,I4,I5가 있고  6개의 도로가있다고 가정합니다.
+</span></span></code></pre></div><p><picture><source srcset=/images/etc/tukorea-sw-competition-final/graph_hu8a13c2fbc5e258a0b45160c045fb67b4_10367_442x306_resize_q90_h2_lanczos_3.webp type=image/webp><img class=img-fluid src=https://gowoonsori.com/images/etc/tukorea-sw-competition-final/graph.ea4a186d9fd3459ddbd5dc11152daeaa.png alt loading=lazy height=306 width=442></picture></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>도로 1은I1과I2를연결합니다.
+</span></span><span style=display:flex><span>도로 2는I2와I3을연결합니다.
+</span></span><span style=display:flex><span>도로 3은I1과I3을연결합니다.
+</span></span><span style=display:flex><span>도로 4는I2와I4를연결합니다.
+</span></span><span style=display:flex><span>도로 5는I2와I5를연결합니다.
+</span></span><span style=display:flex><span>도로 6은I5와I4를연결합니다.
+</span></span><span style=display:flex><span>그러면 I2를 교통 통제하면 I4에서 I1 (혹은 I3)으로 가는 길이 없으므로 I2는 중요한 교차로 입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>또한 I5에서 I1 그리고 I5에서 I3로 가는 길도 끊깁니다. I2이외의 더 이상의 중요한 교차로는 없습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>당신이 할 일은 시흥시 교차로와 도로 정보를 살펴보고 중요한 교차로 목록을 결정하는 것입니다.
+</span></span></code></pre></div><p><strong>Input</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>입력의 첫 번째 줄에는 두 개의 정수N과M이있습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>N은 시흥시의 교차로 수이고M은 도로 수입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>교차로의 번호는 1,2, ...,N이라고 가정합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>다음M개 줄(2, ...,M+1번째 줄)은 시흥시의 도로를 나타냅니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>i+1번째 줄은도로i로연결된 교차로 쌍을 나타내는1, ...,N범위의 두 정수를 포함합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>N≤ 300, M≤ 50000 입니다.
+</span></span></code></pre></div><p><strong>Output</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>출력의 첫 번째 줄에는 중요한 교차로 개수를 나타내는정수C를 출력합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>다음C개 줄에는한 줄 당 하나씩 중요한 교차로 번호를 출력합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>중요한 교차로가 여러개 이면 교차로 번호 오름 차순으로 출력합니다.
+</span></span></code></pre></div><p><strong>Sample Input 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>5 6
+</span></span><span style=display:flex><span>1 2
+</span></span><span style=display:flex><span>2 3
+</span></span><span style=display:flex><span>1 3
+</span></span><span style=display:flex><span>2 4
+</span></span><span style=display:flex><span>2 5
+</span></span><span style=display:flex><span>5 4
+</span></span></code></pre></div><p><strong>Sample Output 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>1
+</span></span><span style=display:flex><span>2
+</span></span></code></pre></div><p><strong>Hint</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>- A 교차로가 중요한 교차로가 아니라면,  A 교차로를 제외한 다른 임의의 교차로에서 시작해서 나머지 모든 교차로를 방문할 수 있다.
+</span></span><span style=display:flex><span>- A 교차로가 중요한 교차로라면,A 교차로를 제외한 다른 임의의 교차로에서 시작해서 나머지 모든 교차로들을 방문하려고 할 때 하나라도 방문하지 못하는 교차로가 존재한다.
+</span></span></code></pre></div></p></div></div><br><h3 id=6-여행-경로>6️) 여행 경로</h3><div class=accordion><button class=accordion-header data-accordion>
+문제 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><p><strong>Description</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>주어진 항공권을 모두 이용하여 여행경로를 짜려고 합니다. 항상 ICN공항에서 출발합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>항공권 정보가 담긴 tickets가 입력으로 주어질 때, 방문하는 공항 경로를 출력합니다.
+</span></span></code></pre></div><p><strong>제한사항</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>모든 공항은 알파벳 대문자 3글자로 이루어집니다.
+</span></span><span style=display:flex><span>주어진 공항 수는 3개 이상 10,000개 이하입니다.
+</span></span><span style=display:flex><span>tickets의 각 행 a b는 a 공항에서 b 공항으로 가는 항공권이 있다는 의미입니다.
+</span></span><span style=display:flex><span>주어진 항공권은 모두 사용해야 합니다.
+</span></span><span style=display:flex><span>동일한 경로를 가지는 항공권이 있을 수 있습니다.
+</span></span><span style=display:flex><span>만일 가능한 경로가 2개 이상일 경우 알파벳 순서가 앞서는 경로를 출력합니다.
+</span></span><span style=display:flex><span>모든 도시를 방문할 수 없는 경우는 주어지지 않습니다.
+</span></span><span style=display:flex><span>입력으로 첫번째 줄에는 ticket의 개수가 주어지고 그 다음 N개 줄에는 항공권 정보를 나타냅니다.
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>다음과 같은 3장의 ticket에 대한 정보가 주어진다고 합시다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>3
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ICN JFK
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>HND IAD
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>JFK HND
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>그러면 방문 순서는
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ICN
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>JFK
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>HND
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>IAD
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>과 같습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>또 다른 예로 5장의 ticket에 대한 정보가 주어진다고 합시다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>5
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ICN SFO
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ICN ATL
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>SFO ATL
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ATL ICN
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ATL SFO
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>그러면
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ICN
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>SFO
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ATL
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ICN
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ATL
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>SFO
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>순으로 방문할 수도 있지만
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ICN
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ATL
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ICN
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>SFO
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ATL
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>SFO
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>가 알파벳 순으로 앞섭니다.
+</span></span></code></pre></div><p><strong>Input</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>입력의 첫째 줄에는 ticket의 개수를 나타내는 단일 정수 N 이 나타납니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>그 다음 N개 줄에는 각줄 마다 출발 공항 a와 도착 공항 b가 나타납니다.
+</span></span></code></pre></div><p><strong>Output</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>방문 공항 순서대로 공항 이름을 한 줄에 하나씩 출력합니다.
+</span></span></code></pre></div><p><strong>Sample Input 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>3
+</span></span><span style=display:flex><span>ICN JFK
+</span></span><span style=display:flex><span>HND IAD
+</span></span><span style=display:flex><span>JFK HND
+</span></span></code></pre></div><p><strong>Sample Output 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>ICN
+</span></span><span style=display:flex><span>JFK
+</span></span><span style=display:flex><span>HND
+</span></span><span style=display:flex><span>IAD
+</span></span></code></pre></div><p><strong>Sample Input 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>5
+</span></span><span style=display:flex><span>ICN SFO
+</span></span><span style=display:flex><span>ICN ATL
+</span></span><span style=display:flex><span>SFO ATL
+</span></span><span style=display:flex><span>ATL ICN
+</span></span><span style=display:flex><span>ATL SFO
+</span></span></code></pre></div><p><strong>Sample Output 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>ICN
+</span></span><span style=display:flex><span>ATL
+</span></span><span style=display:flex><span>ICN
+</span></span><span style=display:flex><span>SFO
+</span></span><span style=display:flex><span>ATL
+</span></span><span style=display:flex><span>SFO
+</span></span></code></pre></div></p></div></div><p>문제를 보고 <strong>dfs</strong> 나 <strong>bfs</strong>로 풀면 되겠다 생각하고 접근했으며, 도착하기까지의 경로가 여러개 일 수 있기 때문에 모든 경로를 저장하는 배열을 전역변수로 선언하여 경로를 구하고 알파벳순으로 <strong>sort</strong>하여 가장 앞의 경로를 답으로 제출하는 식으로 풀이를 진행했다.</p><strong style=color:red;margin-bottom:15px;display:inline-block>https://gowoonsori.comimages/etc/tukorea-sw-competition-final/timeLimit.png does not exist</strong>
+<script>window.addEventListener("load",e=>{const t=GLightbox()})</script><p>풀이를 진행하고 보니 4개의 case중 1개의 case가 time Limit으로 부분 통과 하였다.</p><div class="notice note"><div class=notice-head><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9v5m0 5c-4.97056.0-9-4.0294-9-9 0-4.97056 4.02944-9 9-9 4.9706.0 9 4.02944 9 9 0 4.9706-4.0294 9-9 9zM10.0498 6V6.1L9.9502 6.1002V6H10.0498z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Note</p></div><div class=notice-body><p>모든 경로를 계산 하는 것 때문이 아닐까 싶다&mldr; 지금 생각해보니 먼저 input의 경로를 sort하고 dfs를 진행했다면 괜찮았을 것 같다.</p></div></div><div class=accordion><button class=accordion-header data-accordion>
+코드 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;string&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;vector&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;algorithm&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;iostream&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e></span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>using</span> <span style=color:#c678dd>namespace</span> <span style=color:#e06c75>std</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>string</span><span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>all_routes</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e5c07b>void</span> <span style=color:#61afef;font-weight:700>dfs</span>(<span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>string</span><span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>tickets</span>, <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e5c07b>bool</span><span style=color:#56b6c2>&gt;</span> <span style=color:#56b6c2>&amp;</span><span style=color:#e06c75>visited</span>, <span style=color:#e5c07b>int</span> <span style=color:#e06c75>cnt</span>, <span style=color:#e5c07b>int</span> <span style=color:#e06c75>start</span>, <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>string</span><span style=color:#56b6c2>&gt;</span> <span style=color:#56b6c2>&amp;</span><span style=color:#e06c75>route</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>visited</span>[<span style=color:#e06c75>start</span>] <span style=color:#56b6c2>=</span> <span style=color:#e5c07b>true</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>route</span>.<span style=color:#e06c75>push_back</span>(<span style=color:#e06c75>tickets</span>[<span style=color:#e06c75>start</span>][<span style=color:#d19a66>0</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>if</span> (<span style=color:#e06c75>cnt</span> <span style=color:#56b6c2>==</span> <span style=color:#e06c75>tickets</span>.<span style=color:#e06c75>size</span>())
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>route</span>.<span style=color:#e06c75>push_back</span>(<span style=color:#e06c75>tickets</span>[<span style=color:#e06c75>start</span>][<span style=color:#d19a66>1</span>]);
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>all_routes</span>.<span style=color:#e06c75>push_back</span>(<span style=color:#e06c75>route</span>);
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>route</span>.<span style=color:#e06c75>pop_back</span>();
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>return</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>i</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>tickets</span>.<span style=color:#e06c75>size</span>(); <span style=color:#e06c75>i</span><span style=color:#56b6c2>++</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>if</span> (<span style=color:#56b6c2>!</span><span style=color:#e06c75>visited</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>&amp;&amp;</span> <span style=color:#e06c75>tickets</span>[<span style=color:#e06c75>start</span>][<span style=color:#d19a66>1</span>] <span style=color:#56b6c2>==</span> <span style=color:#e06c75>tickets</span>[<span style=color:#e06c75>i</span>][<span style=color:#d19a66>0</span>])
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>dfs</span>(<span style=color:#e06c75>tickets</span>, <span style=color:#e06c75>visited</span>, <span style=color:#e06c75>cnt</span> <span style=color:#56b6c2>+</span> <span style=color:#d19a66>1</span>, <span style=color:#e06c75>i</span>, <span style=color:#e06c75>route</span>);
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>visited</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>=</span> <span style=color:#e5c07b>false</span>;
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>route</span>.<span style=color:#e06c75>pop_back</span>();
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>string</span><span style=color:#56b6c2>&gt;</span> <span style=color:#e06c75>sol</span>(<span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>string</span><span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>tickets</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>string</span><span style=color:#56b6c2>&gt;</span> <span style=color:#e06c75>route</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e5c07b>bool</span><span style=color:#56b6c2>&gt;</span> <span style=color:#e06c75>visited</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e5c07b>int</span> <span style=color:#e06c75>cnt</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>1</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>i</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>tickets</span>.<span style=color:#e06c75>size</span>(); <span style=color:#e06c75>i</span><span style=color:#56b6c2>++</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>if</span> (<span style=color:#e06c75>tickets</span>[<span style=color:#e06c75>i</span>][<span style=color:#d19a66>0</span>] <span style=color:#56b6c2>==</span> <span style=color:#98c379>&#34;ICN&#34;</span>)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>visited</span>.<span style=color:#e06c75>assign</span>(<span style=color:#e06c75>tickets</span>.<span style=color:#e06c75>size</span>(), <span style=color:#e5c07b>false</span>);
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>route</span>.<span style=color:#e06c75>clear</span>();
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>dfs</span>(<span style=color:#e06c75>tickets</span>, <span style=color:#e06c75>visited</span>, <span style=color:#e06c75>cnt</span>, <span style=color:#e06c75>i</span>, <span style=color:#e06c75>route</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>sort</span>(<span style=color:#e06c75>all_routes</span>.<span style=color:#e06c75>begin</span>(), <span style=color:#e06c75>all_routes</span>.<span style=color:#e06c75>end</span>());
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>return</span> <span style=color:#e06c75>all_routes</span>[<span style=color:#d19a66>0</span>];
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#e5c07b>int</span> <span style=color:#61afef;font-weight:700>main</span>()
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#e5c07b>int</span> <span style=color:#e06c75>N</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>cin</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>N</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>string</span><span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>tickets</span>(<span style=color:#e06c75>N</span>, <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>string</span><span style=color:#56b6c2>&gt;</span>(<span style=color:#d19a66>2</span>, <span style=color:#98c379>&#34;&#34;</span>));
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>string</span><span style=color:#56b6c2>&gt;</span> <span style=color:#e06c75>answer</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>i</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>N</span>; <span style=color:#e06c75>i</span><span style=color:#56b6c2>++</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>cin</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>tickets</span>[<span style=color:#e06c75>i</span>][<span style=color:#d19a66>0</span>] <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>tickets</span>[<span style=color:#e06c75>i</span>][<span style=color:#d19a66>1</span>];
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>answer</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>sol</span>(<span style=color:#e06c75>tickets</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>for</span> (<span style=color:#c678dd>auto</span> <span style=color:#e06c75>n</span> : <span style=color:#e06c75>answer</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>cout</span> <span style=color:#56b6c2>&lt;&lt;</span> <span style=color:#e06c75>n</span> <span style=color:#56b6c2>&lt;&lt;</span> <span style=color:#e06c75>endl</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>return</span> <span style=color:#d19a66>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></p></div></div><br><h3 id=7-위성-이미지>7️) 위성 이미지</h3><div class=accordion><button class=accordion-header data-accordion>
+문제 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><p><strong>Description</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>기상청은 매일 기상 위성에서 이미지를 수신합니다.이 이미지는어두운 배경에구름을 나타내는 흰색 영역이 있습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>기상청은 폭풍에 대해 다소 단순화 된 모델이 있습니다. 특정 크기를 초과하는 흰색 영역은 폭풍이 되어야 한다고 결정했습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>위성 이미지는#과. 으로 이루어진 격자 이미지이며 . 은 구름을나타냅니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>위성 이미지 각 포인트에는 최대 8 개의 이웃 (북동, 북, 북서, 동, 서, 남동, 남, 남서)이 있으며, 구름은 이웃과 연속으로 이어진 . 으로 이루어집니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>아래 위성 이미지는 4개의 구름을 가지고 있습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>#####.#####
+</span></span><span style=display:flex><span>####.####.#
+</span></span><span style=display:flex><span>###..##.#.#
+</span></span><span style=display:flex><span>##...######
+</span></span><span style=display:flex><span>######.....
+</span></span><span style=display:flex><span>###########
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>만약 폭풍으로 간주할 임계 크기를 4라고 하면, 크기가 4를 넘어가는 구름은 2개가 있으며 아래와 같이 숫자 1과 2의 영역으로 표시할 수 있습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>#####1#####
+</span></span><span style=display:flex><span>####1####.#
+</span></span><span style=display:flex><span>###11##.#.#
+</span></span><span style=display:flex><span>##111######
+</span></span><span style=display:flex><span>######22222
+</span></span><span style=display:flex><span>###########
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>당신이 할 일은위성 이미지와 폭풍으로 간주할 임계 값을 입력받아서,폭풍의 갯수와 가장 큰 폭풍의 크기를 결정하는 것입니다.
+</span></span></code></pre></div><p><strong>Input</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>입력의 첫 번째 줄에는위성 이미지의 행과 열 수를 나타내는두 개의 정수M과 N이포함됩니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>그 다음에는 위성 이미지를 설명하는M개줄이 나옵니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>M+2번째 줄에는폭풍을 결정하는 임계 값K가 포함됩니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>1 ≤M, N≤ 1000 입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>입력의 80 %에서1 ≤M, N≤ 60 입니다.
+</span></span></code></pre></div><p><strong>Output</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>한 줄에 공백으로 구분 된 정수n과s는 각각 폭풍의 갯수와 가장 큰 폭풍의 크기를 나타냅니다.
+</span></span></code></pre></div><p><strong>Sample Input 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>6 11
+</span></span><span style=display:flex><span>#####.#####
+</span></span><span style=display:flex><span>####.####.#
+</span></span><span style=display:flex><span>###..##.#.#
+</span></span><span style=display:flex><span>##...######
+</span></span><span style=display:flex><span>######.....
+</span></span><span style=display:flex><span>###########
+</span></span><span style=display:flex><span>4
+</span></span></code></pre></div><p><strong>Sample Output 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>2 7
+</span></span></code></pre></div></p></div></div><p>7번 문제도 dfs/bfs를 이용하여 풀었으며, 단순히 개수만 세면 되기 때문에 6번 문제보다 더 쉽게 풀이할 수 있었다.
+bfs를 이용해서 문제를 풀이 했고, <strong>미로 찾기</strong>같이 <strong>4방향</strong>으로만 움직이는 것이 아닌 <strong>대각선</strong>으로도 움직일 수 있기 때문에 총 <strong>8방향</strong>에 대해서 <strong>bfs</strong>를 수행했다.</p><div class=accordion><button class=accordion-header data-accordion>
+코드 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;iostream&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;vector&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;queue&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e></span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>using</span> <span style=color:#c678dd>namespace</span> <span style=color:#e06c75>std</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e5c07b>int</span> <span style=color:#e06c75>M</span>, <span style=color:#e06c75>N</span>;
+</span></span><span style=display:flex><span><span style=color:#e5c07b>int</span> <span style=color:#e06c75>K</span>;
+</span></span><span style=display:flex><span><span style=color:#e5c07b>int</span> <span style=color:#e06c75>answer</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>, <span style=color:#e06c75>answer_max</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>;
+</span></span><span style=display:flex><span><span style=color:#e5c07b>int</span> <span style=color:#e06c75>dir</span>[<span style=color:#d19a66>8</span>][<span style=color:#d19a66>2</span>] <span style=color:#56b6c2>=</span> {{<span style=color:#56b6c2>-</span><span style=color:#d19a66>1</span>, <span style=color:#d19a66>0</span>}, {<span style=color:#56b6c2>-</span><span style=color:#d19a66>1</span>, <span style=color:#56b6c2>-</span><span style=color:#d19a66>1</span>}, {<span style=color:#56b6c2>-</span><span style=color:#d19a66>1</span>, <span style=color:#d19a66>1</span>}, {<span style=color:#d19a66>1</span>, <span style=color:#d19a66>1</span>}, {<span style=color:#d19a66>1</span>, <span style=color:#56b6c2>-</span><span style=color:#d19a66>1</span>}, {<span style=color:#d19a66>1</span>, <span style=color:#d19a66>0</span>}, {<span style=color:#d19a66>0</span>, <span style=color:#56b6c2>-</span><span style=color:#d19a66>1</span>}, {<span style=color:#d19a66>0</span>, <span style=color:#d19a66>1</span>}};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e5c07b>void</span> <span style=color:#61afef;font-weight:700>bfs</span>(<span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e5c07b>bool</span><span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#56b6c2>&amp;</span><span style=color:#e06c75>map</span>, <span style=color:#e5c07b>int</span> <span style=color:#e06c75>S_x</span>, <span style=color:#e5c07b>int</span> <span style=color:#e06c75>S_y</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#e5c07b>int</span> <span style=color:#e06c75>r</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>1</span>; <span style=color:#7f848e>//구름 넓이
+</span></span></span><span style=display:flex><span><span style=color:#7f848e></span>
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>queue</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>pair</span><span style=color:#56b6c2>&lt;</span><span style=color:#e5c07b>int</span>, <span style=color:#e5c07b>int</span><span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>q</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>map</span>[<span style=color:#e06c75>S_y</span>][<span style=color:#e06c75>S_x</span>] <span style=color:#56b6c2>=</span> <span style=color:#e5c07b>true</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>q</span>.<span style=color:#e06c75>push</span>(<span style=color:#e06c75>make_pair</span>(<span style=color:#e06c75>S_x</span>, <span style=color:#e06c75>S_y</span>));
+</span></span><span style=display:flex><span>    <span style=color:#e5c07b>int</span> <span style=color:#e06c75>x</span>,<span style=color:#e06c75>y</span>,<span style=color:#e06c75>next_x</span>,<span style=color:#e06c75>next_y</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>while</span> (<span style=color:#56b6c2>!</span><span style=color:#e06c75>q</span>.<span style=color:#e06c75>empty</span>())
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>x</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>q</span>.<span style=color:#e06c75>front</span>().<span style=color:#e06c75>first</span>;
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>y</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>q</span>.<span style=color:#e06c75>front</span>().<span style=color:#e06c75>second</span>;
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>q</span>.<span style=color:#e06c75>pop</span>();
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>i</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#d19a66>8</span>; <span style=color:#e06c75>i</span><span style=color:#56b6c2>++</span>)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>next_x</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>x</span> <span style=color:#56b6c2>+</span> <span style=color:#e06c75>dir</span>[<span style=color:#e06c75>i</span>][<span style=color:#d19a66>0</span>];
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>next_y</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>y</span> <span style=color:#56b6c2>+</span> <span style=color:#e06c75>dir</span>[<span style=color:#e06c75>i</span>][<span style=color:#d19a66>1</span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>if</span> (<span style=color:#e06c75>next_x</span> <span style=color:#56b6c2>&gt;=</span> <span style=color:#d19a66>0</span> <span style=color:#56b6c2>&amp;&amp;</span> <span style=color:#e06c75>next_x</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>N</span> <span style=color:#56b6c2>&amp;&amp;</span> <span style=color:#e06c75>next_y</span> <span style=color:#56b6c2>&gt;=</span> <span style=color:#d19a66>0</span> <span style=color:#56b6c2>&amp;&amp;</span> <span style=color:#e06c75>next_y</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>M</span> <span style=color:#56b6c2>&amp;&amp;</span> <span style=color:#e06c75>map</span>[<span style=color:#e06c75>next_y</span>][<span style=color:#e06c75>next_x</span>] <span style=color:#56b6c2>==</span> <span style=color:#e5c07b>false</span>)
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>map</span>[<span style=color:#e06c75>next_y</span>][<span style=color:#e06c75>next_x</span>] <span style=color:#56b6c2>=</span> <span style=color:#e5c07b>true</span>;
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>q</span>.<span style=color:#e06c75>push</span>(<span style=color:#e06c75>make_pair</span>(<span style=color:#e06c75>next_x</span>, <span style=color:#e06c75>next_y</span>));
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>r</span><span style=color:#56b6c2>++</span>;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>if</span> (<span style=color:#e06c75>K</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>r</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>answer_max</span> <span style=color:#56b6c2>=</span> (<span style=color:#e06c75>answer_max</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>r</span>) <span style=color:#56b6c2>?</span> <span style=color:#e06c75>r</span> : <span style=color:#e06c75>answer_max</span>;
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>answer</span> <span style=color:#56b6c2>+=</span> <span style=color:#d19a66>1</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e5c07b>int</span> <span style=color:#61afef;font-weight:700>main</span>()
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>cin</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>M</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>N</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e5c07b>bool</span><span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>arr</span>(<span style=color:#e06c75>M</span>, <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e5c07b>bool</span><span style=color:#56b6c2>&gt;</span>(<span style=color:#e06c75>N</span>, <span style=color:#e5c07b>true</span>));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>i</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>M</span>; <span style=color:#e06c75>i</span><span style=color:#56b6c2>++</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>int</span> <span style=color:#e06c75>j</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>;
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>string</span> <span style=color:#e06c75>str</span>;
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>cin</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>str</span>;
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>for</span> (<span style=color:#c678dd>auto</span> <span style=color:#e06c75>c</span> : <span style=color:#e06c75>str</span>)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>if</span> (<span style=color:#e06c75>c</span> <span style=color:#56b6c2>!=</span> <span style=color:#98c379>&#39;#&#39;</span>)
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>arr</span>[<span style=color:#e06c75>i</span>][<span style=color:#e06c75>j</span>] <span style=color:#56b6c2>=</span> <span style=color:#e5c07b>false</span>;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>j</span><span style=color:#56b6c2>++</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>cin</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>K</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>i</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>M</span>; <span style=color:#e06c75>i</span><span style=color:#56b6c2>++</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>j</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>j</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>N</span>; <span style=color:#e06c75>j</span><span style=color:#56b6c2>++</span>)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>if</span> (<span style=color:#e06c75>arr</span>[<span style=color:#e06c75>i</span>][<span style=color:#e06c75>j</span>] <span style=color:#56b6c2>==</span> <span style=color:#e5c07b>false</span>)
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>bfs</span>(<span style=color:#e06c75>arr</span>, <span style=color:#e06c75>j</span>, <span style=color:#e06c75>i</span>);
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>cout</span> <span style=color:#56b6c2>&lt;&lt;</span> <span style=color:#e06c75>answer</span> <span style=color:#56b6c2>&lt;&lt;</span> <span style=color:#98c379>&#34; &#34;</span> <span style=color:#56b6c2>&lt;&lt;</span> <span style=color:#e06c75>answer_max</span>;
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>return</span> <span style=color:#d19a66>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></p></div></div><br><h3 id=8-목재-총량>8️) 목재 총량</h3><div class=accordion><button class=accordion-header data-accordion>
+문제 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><p><strong>Description</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>숲은 직사각형 모양이며 나무는 균등 한 간격으로 배열되어 있습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>나무의 높이와 둘레가 다르기 때문에 목재 값은 나무마다 다릅니다.산림청은 각 나무에 대한 데이터를 수집했으며 숲의 각 나무에서 사용할 수있는 나무의 양 (입방 피트)을 알고 있습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>산림청은 이 정보를 정수의M×N배열형태로 유지합니다. 여기서(i, j)항목은i번째 행의j번째 나무의 양 (입방 피트)입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>행은 위에서 아래로 번호가 매겨지고 열은 왼쪽에서 오른쪽으로 번호가 매겨진다고 가정합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>예를 들어 배열이 다음과 같습니다.
+</span></span></code></pre></div><p><picture><source srcset=/images/etc/tukorea-sw-competition-final/1_hucec2d5c9f8fc7814d7ac55d7e48097ae_15652_155x147_resize_q90_h2_lanczos.webp type=image/webp><img class=img-fluid src=https://gowoonsori.com/images/etc/tukorea-sw-competition-final/1.b7d81cddfd8a98fb4f65de87367c5b88.jpg alt=문제1 loading=lazy height=147 width=155></picture></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>위 배열의 위치 (3,4)에 있는 나무의 양은 15 입방 피트 입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>산림청은 숲의 직사각형의 토지에 목재의 총량을 계산하여 토지 임대 자료로 활용하려고 합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>직사각형은 왼쪽 상단 모서리와 오른쪽 하단 모서리의 나무 위치로 나타냅니다. 예를 들어서 위치 (2,2) 와 (3,4) 모서리를 가지는 직사각형은 아래 그림과 같습니다.
+</span></span></code></pre></div><p><picture><source srcset=/images/etc/tukorea-sw-competition-final/2_hucec2d5c9f8fc7814d7ac55d7e48097ae_10950_118x77_resize_q90_h2_lanczos.webp type=image/webp><img class=img-fluid src=https://gowoonsori.com/images/etc/tukorea-sw-competition-final/2.32193b700c005a1d15bbaa0446d9ce88.jpg alt=문제1 loading=lazy height=77 width=118></picture></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>이 직사각형 토지의 목재 총량은 76 입방 피트입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>마찬가지로 직사각형 모서리가 (4,2)와 (4,2)인 경우의 목재양은 하나 뿐인 나무의 양 20 입방 피트입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>당신의 임무는 삼림청에서 지정한 직사각형 토지의 목재 총량을 계산하는 것입니다.
+</span></span></code></pre></div><p><strong>Input</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>입력의 첫 번째 줄에는 숲의 나무 행과 열을 나타내는 두 개의 정수 M과 N
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>다음 M개 줄에는 각각 N개의 정수가 있습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>숲의 i행 j열 위치의 나무 양은 입력의 i+1번째 줄의 j번째 정수로 나타냅니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>M+2번째 줄에는 목재 총량을 계산해야 하는 직사각형 토지의 개수 C를 나타냅니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>이어지는 C개 줄 (M+2+1번째 줄 ... M+2+C번째 줄)에는 4개의 정수 r1, c1, r2, c2 (r1≤r2, c1≤c2)가 직사각형의 2개 모서리를 나타냅니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>(r1,c1)은 좌측 상단 모서리, (r2,c2)는 우측 하단 모서리를 나타냅니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>2 ≤M≤ 1000, 2 ≤N≤ 1000,C≤ 1000000입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>입력의 30% 는C≤ 100 입니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>목재 총량을 계산해야 하는 직사각형 토지 개수 C가 매우 큰 수 입니다.
+</span></span></code></pre></div><p><strong>Output</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>출력의 C개 줄에는 각각 직사각형 토지의 목재 총량의 정수를 출력합니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>즉 출력의 i번째 줄에는 입력의 M+2+i번째 줄에서 설명한 직사각형 토지의 목재 총량을 출력합니다.
+</span></span></code></pre></div><p><strong>Sample Input 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>4   4
+</span></span><span style=display:flex><span>3   4   15  23
+</span></span><span style=display:flex><span>14  20  12  9
+</span></span><span style=display:flex><span>3   8   12  15
+</span></span><span style=display:flex><span>12  20  7   5
+</span></span><span style=display:flex><span>2
+</span></span><span style=display:flex><span>2   2   3   4
+</span></span><span style=display:flex><span>4   2   4   2
+</span></span></code></pre></div><p><strong>Sample Output 1</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>76
+</span></span><span style=display:flex><span>20
+</span></span></code></pre></div><p><strong>Hint</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>단순한 알고리즘은 시간초과를 극복할 수 없습니다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>동적 계획법(Dynamic Programming) (https://ko.wikipedia.org/wiki/동적계획법)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>일반적으로 주어진 문제를 풀기 위해서, 문제를 여러 개의 하위 문제(subproblem)로 나누어 푼 다음, 그것을 결합하여 최종적인 목적에 도달하는 것이다.
+</span></span><span style=display:flex><span>각 하위 문제의 해결을 계산한 뒤, 그 해결책을 저장하여 후에 같은 하위 문제가 나왔을 경우 그것을 간단하게 해결할 수 있다. 이러한 방법으로 동적 계획법은 계산 횟수를 줄일 수 있다. 특히 이 방법은 하위 문제의 수가 기하급수적으로 증가할 때 유용하다.
+</span></span></code></pre></div></p></div></div><p>마지막 문제를 풀이하는 데 30분쯤 남아 있는 상태였다.</p><p>그래서 아까 풀다 못풀었던 <strong>회문 생성기</strong>를 마저 풀까, <strong>이 문제</strong>를 풀까 하다가 dp를 이용하는 문제이기에 쉽게 풀 수있을 거라 생각하고 마지막 문제를 택했는데 문제에서 친절하게 dp를 이용해서 풀이하라고 설명이 되어있다.</p><div class="notice note"><div class=notice-head><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9v5m0 5c-4.97056.0-9-4.0294-9-9 0-4.97056 4.02944-9 9-9 4.9706.0 9 4.02944 9 9 0 4.9706-4.0294 9-9 9zM10.0498 6V6.1L9.9502 6.1002V6H10.0498z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Note</p></div><div class=notice-body><p>각 행에 속한 값을 계속 뒤로 밀며 더해주어 dp 배열을 완성해주고, 값을 찾을 때는 각 행의 도착지점의 dp열의 값에서 시작지점의 앞의 dp배열 값을 빼는 식으로 규칙을 찾아 코드를 작성했다.</p></div></div><p><strong>하지만</strong> 시간이 얼마 남지 않았는데 답이 틀리게 나오는 것이 아닌가!! 💫</p><p>2분이 채 안남았을 때, forest값을 입력 받으면서 dp값을 계산해 줄때 forest와 dp배열을 잘 못 입력한 것을 발견하고 수정을 했지만, 또 답이 틀리게 나왔다.</p><p>포기안하고 틀린 부분을 찾다가 <strong>마지막 1분</strong>도 안남았을 때 쯤에 반복문 <strong>j &lt; dy - 1</strong> 을 <strong>j &lt; dy</strong> 로 작성한 것을 보고 고쳐 답을 제출하려는 찰나에 <strong>17:00</strong>가 되어 칼같이 마감이 되어 제출을 못했다.. 😭</p><br><div class=accordion><button class=accordion-header data-accordion>
+코드 보기<svg class="accordion-icon" viewBox="0 0 512 512" xmlspace="preserve"><path fill="currentcolor" d="M505.755 123.592c-8.341-8.341-21.824-8.341-30.165.0L256.005 343.176 36.421 123.592c-8.341-8.341-21.824-8.341-30.165.0s-8.341 21.824.0 30.165l234.667 234.667c4.16 4.16 9.621 6.251 15.083 6.251 5.462.0 10.923-2.091 15.083-6.251l234.667-234.667C514.096 145.416 514.096 131.933 505.755 123.592z"/></svg></button><div class=accordion-content><p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;iostream&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e>#include</span> <span style=color:#7f848e>&lt;vector&gt;</span><span style=color:#7f848e>
+</span></span></span><span style=display:flex><span><span style=color:#7f848e></span>
+</span></span><span style=display:flex><span><span style=color:#c678dd>using</span> <span style=color:#c678dd>namespace</span> <span style=color:#e06c75>std</span>;
+</span></span><span style=display:flex><span><span style=color:#e5c07b>int</span> <span style=color:#e06c75>M</span>, <span style=color:#e06c75>N</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e5c07b>int</span> <span style=color:#61afef;font-weight:700>main</span>()
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>cin</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>M</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>N</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e5c07b>int</span><span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>forest</span>(<span style=color:#e06c75>M</span>, <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e5c07b>int</span><span style=color:#56b6c2>&gt;</span>(<span style=color:#e06c75>N</span>, <span style=color:#d19a66>0</span>));
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e5c07b>int</span><span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>dp</span>(<span style=color:#e06c75>M</span>, <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e5c07b>int</span><span style=color:#56b6c2>&gt;</span>(<span style=color:#e06c75>N</span>, <span style=color:#d19a66>0</span>));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>i</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>M</span>; <span style=color:#e06c75>i</span><span style=color:#56b6c2>++</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>j</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>j</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>N</span>; <span style=color:#e06c75>j</span><span style=color:#56b6c2>++</span>)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#e06c75>cin</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>forest</span>[<span style=color:#e06c75>i</span>][<span style=color:#e06c75>j</span>];
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>if</span> (<span style=color:#e06c75>j</span> <span style=color:#56b6c2>!=</span> <span style=color:#d19a66>0</span>)
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>dp</span>[<span style=color:#e06c75>i</span>][<span style=color:#e06c75>j</span>] <span style=color:#56b6c2>+=</span> <span style=color:#e06c75>dp</span>[<span style=color:#e06c75>i</span>][<span style=color:#e06c75>j</span> <span style=color:#56b6c2>-</span> <span style=color:#d19a66>1</span>] <span style=color:#56b6c2>+</span> <span style=color:#e06c75>forest</span>[<span style=color:#e06c75>i</span>][<span style=color:#e06c75>j</span>];
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>else</span>{
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>dp</span>[<span style=color:#e06c75>i</span>][<span style=color:#e06c75>j</span>] <span style=color:#56b6c2>+=</span> <span style=color:#e06c75>forest</span>[<span style=color:#e06c75>i</span>][<span style=color:#e06c75>j</span>];
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#e5c07b>int</span> <span style=color:#e06c75>C</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>cin</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>C</span>;
+</span></span><span style=display:flex><span>    <span style=color:#e06c75>vector</span><span style=color:#56b6c2>&lt;</span><span style=color:#e5c07b>int</span><span style=color:#56b6c2>&gt;</span> <span style=color:#e06c75>answer</span>(<span style=color:#e06c75>C</span>, <span style=color:#d19a66>0</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>i</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>C</span>; <span style=color:#e06c75>i</span><span style=color:#56b6c2>++</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#e5c07b>int</span> <span style=color:#e06c75>sx</span>, <span style=color:#e06c75>sy</span>, <span style=color:#e06c75>dx</span>, <span style=color:#e06c75>dy</span>;
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>cin</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>sy</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>sx</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>dy</span> <span style=color:#56b6c2>&gt;&gt;</span> <span style=color:#e06c75>dx</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>j</span> <span style=color:#56b6c2>=</span> <span style=color:#e06c75>sy</span> <span style=color:#56b6c2>-</span> <span style=color:#d19a66>1</span>; <span style=color:#e06c75>j</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>dy</span> <span style=color:#56b6c2>-</span> <span style=color:#d19a66>1</span>; <span style=color:#e06c75>j</span><span style=color:#56b6c2>++</span>)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>if</span> (<span style=color:#e06c75>sx</span> <span style=color:#56b6c2>-</span> <span style=color:#d19a66>1</span> <span style=color:#56b6c2>!=</span> <span style=color:#d19a66>0</span>)
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>answer</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>+=</span> <span style=color:#e06c75>dp</span>[<span style=color:#e06c75>j</span>][<span style=color:#e06c75>dx</span> <span style=color:#56b6c2>-</span> <span style=color:#d19a66>1</span>] <span style=color:#56b6c2>-</span> <span style=color:#e06c75>dp</span>[<span style=color:#e06c75>j</span>][<span style=color:#e06c75>dx</span> <span style=color:#56b6c2>-</span> <span style=color:#d19a66>2</span>];
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            <span style=color:#c678dd>else</span>
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#e06c75>answer</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>+=</span> <span style=color:#e06c75>dp</span>[<span style=color:#e06c75>j</span>][<span style=color:#e06c75>dx</span>];
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>for</span> (<span style=color:#e5c07b>int</span> <span style=color:#e06c75>i</span> <span style=color:#56b6c2>=</span> <span style=color:#d19a66>0</span>; <span style=color:#e06c75>i</span> <span style=color:#56b6c2>&lt;</span> <span style=color:#e06c75>answer</span>.<span style=color:#e06c75>size</span>(); <span style=color:#e06c75>i</span><span style=color:#56b6c2>++</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#e06c75>cout</span> <span style=color:#56b6c2>&lt;&lt;</span> <span style=color:#e06c75>answer</span>[<span style=color:#e06c75>i</span>] <span style=color:#56b6c2>&lt;&lt;</span> <span style=color:#e06c75>endl</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#c678dd>return</span> <span style=color:#d19a66>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></p></div></div><br><h2 id=시험-결과>시험 결과</h2><p>점수 집계는 바로 되어 시험이 끝나자마자 시상식을 진행 했는데 시상식은 간단하게 사진을 찍는 정도만 했다.</p><div class="notice note"><div class=notice-head><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9v5m0 5c-4.97056.0-9-4.0294-9-9 0-4.97056 4.02944-9 9-9 4.9706.0 9 4.02944 9 9 0 4.9706-4.0294 9-9 9zM10.0498 6V6.1L9.9502 6.1002V6H10.0498z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Note</p></div><div class=notice-body><p>나는 <strong>180점 만점</strong>에 <strong>72점</strong>으로 <strong>11등</strong>을 해서 <strong>장려상</strong>으로 <strong>10만원</strong>을 수상 했다.</p></div></div><p><strong>10만원</strong>의 목표는 달성을 했지만 사람 욕심이 끝이 없다고 <strong>30만원</strong> 커트라인인 8등 점수 80점을 보고 <strong>마지막 문제</strong>를 제출만 했으면 30만원 이었을 텐데 하는 아쉬움이 남았다. <em>(핑계이기도 하고, 이건 다른 분들도 똑같지 않았을까 싶다. 더 공부해야겠다고 느꼈다.)</em></p><br><p>17학번이 158점으로 <strong>1등</strong>을 했고 예선전에서 1등 했던 19학번은 120점으로 3등했다.</p><p>은근 <strong>10만원</strong> 커트라인이 높지 않고 <strong>한문제 반</strong> 맞는 정도 였으며, 게임공학과가 참여도 많이 했고 점수도 평균적으로 높게 나온 거 같았다.</p><p>제대로 된 책상이 아닌 무릎에 올려놓고 4시간을 코딩 했더니 끝나고 나서 허리와 목이 너무 아팠다.(이 부분은 교수님이 사회적 거리두기 때문에 장소가 마땅치 않았다고 미안하다고 계속 사과하시긴 했다..)</p><p>마지막으로 퇴장하면서 기념품을 하나씩 주셨는데, 꽤 실용적이고 디자인도 나쁘지 않은 <strong>10,000mAh 보조 배터리</strong>가 들어있었다.<br><strong><em>가지고 있는 20,000mAh 보조배터리가 무거웠는데 마침 잘됬다 싶었다.</em></strong></p><p>못 풀었던 3문제는 중간고사가 끝나고 다시 풀어보고 풀이를 업로드 할 생각이다.</p></div><div class="row items-start justify-between mt-24"><div class="lg:col-5 mb-10 flex items-center lg:mb-0"><h5 class=mr-3>Tags :</h5><ul><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/%ed%9a%8c%ea%b3%a0/>회고</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/%eb%8c%80%ed%9a%8c/>대회</a></li></ul></div><div class="lg:col-5 flex items-center"><div class=share-icons><h5 class=share-title>Share :</h5><a class="share-link share-facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fgowoonsori.com%2fblog%2fetc%2ftukorea-sw-competition-final%2f" target=_blank rel=noopener aria-label="share facebook"><span class=share-icon><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg></span></a><a class="share-link share-twitter" href="https://twitter.com/intent/tweet/?text=Share&amp;url=https%3a%2f%2fgowoonsori.com%2fblog%2fetc%2ftukorea-sw-competition-final%2f" target=_blank rel=noopener aria-label="share twitter"><span aria-hidden=true class=share-icon><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5.0-4.55 2.04-4.55 4.54.0.36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3.0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35.0 12.92-6.92 12.92-12.93.0-.2.0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg></span></a><a class="share-link share-email" href="mailto:?subject=Share&amp;body=https%3a%2f%2fgowoonsori.com%2fblog%2fetc%2ftukorea-sw-competition-final%2f" target=_self rel=noopener aria-label="share email"><span aria-hidden=true class=share-icon><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9.0 6v12c0 1.1.9 2 2 2h20c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17.0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1.0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08.0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg></span></a><a class="share-link share-reddit" href="https://reddit.com/submit/?url=https%3a%2f%2fgowoonsori.com%2fblog%2fetc%2ftukorea-sw-competition-final%2f&amp;resubmit=true&amp;title=Share" target=_blank rel=noopener aria-label="share reddit"><span aria-hidden=true class=share-icon><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96.0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65.0 3-1.35 3-3s-1.35-3-3-3c-1.38.0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65.0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66.0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64.0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4.0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6.0.23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1.0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1.0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg></span></a></div></div></div><div class=mt-16 id=giscusContainer><script>document.addEventListener("DOMContentLoaded",function(){const t={src:"https://giscus.app/client.js","data-repo":"gowoonsori/blog-comments","data-repo-id":"MDEwOlJlcG9zaXRvcnkyOTc4MTY3NDc=","data-category":"Comments","data-category-id":"DIC_kwDOEcBSq84CVvNv","data-mapping":"pathname","data-strict":"0","data-reactions-enabled":"1","data-emit-metadata":"1","data-input-position":"top","data-theme":getGiscusTheme(),"data-lang":"ko",crossorigin:"anonymous","data-loading":"lazy",async:""},e=document.createElement("script");Object.entries(t).forEach(([t,n])=>e.setAttribute(t,n)),document.getElementById("giscusContainer").appendChild(e)})</script></div></article></div><div class="section pb-0 pt-32"><h2 class="h3 mb-12">Related Posts</h2><div class=row><div class="lg:col-4 mb-16"><div class="bg-body dark:bg-darkmode-body"><a href=/blog/spring/secruity-get-userdetails/><img src=/images/spring/preview.png alt="인증된 사용자 정보 조회" class="mb-6 w-full rounded preview" width=392 height=172></a><h4 class=mb-3><a href=/blog/spring/secruity-get-userdetails/ class=title>인증된 사용자 정보 조회</a></h4><ul class=mb-4><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
+<a href=/categories/spring/ class=ms-1>Spring</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-clock mr-2"></i>
+2021년 4월 11일</li></ul><p class="mb-6 excerpt">Spring Security의 Filter들을 모두 거쳐 인증에 통과한 User가 특정 Controller에 도달했을 때, User의 정보가 필요할때가 있다. 이때, Url의 도메인으로 id를 표시하거나 param/body로 계속 전달하기도 무리이며, Filter를 통한 인증시에 이미 한번 유저 정보를 조회하는 로직을 수행하게 된다. 그런데...</p><a class="btn btn-outline-primary btn-sm" href=/blog/spring/secruity-get-userdetails/>Read More</a></div></div><div class="lg:col-4 mb-16"><div class="bg-body dark:bg-darkmode-body"><a href=/blog/books/5minute-wine/><img src=/images/books/5minute-wine/russian-jack.png alt="5분 와인" class="mb-6 w-full rounded preview" width=392 height=172></a><h4 class=mb-3><a href=/blog/books/5minute-wine/ class=title>5분 와인</a></h4><ul class=mb-4><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
+<a href=/categories/books/ class=ms-1>Books</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-clock mr-2"></i>
+2021년 4월 21일</li></ul><p class="mb-6 excerpt">제목에서 그대로 보이듯이 와인에 대해 깊고 많은 역사를 알려주는 책이 아닌 집에서 보관방법, 와인 구매장소, 마트에서 좋은 와인 고르기, 선물용 와인 등 과 같이 가벼운 내용위주의 책들이라 간단하게 보기 좋고 책에서 언급하는 대로 아는 체,있어보이는 척 하기에 괜찮은 책이다. 샴페인을 한번 먹어본 이후로 화이트와인과 스파클링 와인에 빠져서 화이트와인을...</p><a class="btn btn-outline-primary btn-sm" href=/blog/books/5minute-wine/>Read More</a></div></div><div class="lg:col-4 mb-16"><div class="bg-body dark:bg-darkmode-body"><a href=/blog/algorithms/kruskal/><div class="mb-6 w-full rounded px-12 preview empty-preview-box image-random-6"><span>[MST] Kruskal 알고리즘</span></div></a><h4 class=mb-3><a href=/blog/algorithms/kruskal/ class=title>[MST] Kruskal 알고리즘</a></h4><ul class=mb-4><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
+<a href=/categories/algorithm/ class=ms-1>Algorithm</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-clock mr-2"></i>
+2021년 4월 12일</li></ul><p class="mb-6 excerpt">그래프 중에서 MST (Minumum Spannig Tree) 를 찾는 알고리즘중에 하나로 Union-Find알고리즘을 이용하며, 간선 (edge)의 가중치(weight)를 오름차순으로 정렬하여 가중치가 사이클이 생기지 않는 낮은 간선을 먼저 선택하는 방법이다. 사이클의 여부를 확인할때 union-find 알고리즘을 이용하여 찾는 알고리즘이다. union find 알고리즘 설명 보기 1. 특징 탐욕적인 방...</p><a class="btn btn-outline-primary btn-sm" href=/blog/algorithms/kruskal/>Read More</a></div></div></div></div></div></section></main><footer class="bg-theme-light dark:bg-darkmode-theme-light"><div class=container><div class="row items-center py-10"><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left"><a class="navbar-brand inline-block" href=/><img fetchpriority=high decoding=async class="img logo-light" width=160 height=32 src=/images/logo_huecbda5afdfa6f2a47d87fa44d8964534_89529_320x0_resize_q90_h2_lanczos_3.webp alt=Gromit.Blog onerror='this.onerror=null,this.src="/images/logo_huecbda5afdfa6f2a47d87fa44d8964534_89529_320x0_resize_lanczos_3.png"'>
+<img fetchpriority=high decoding=async class="img logo-dark" width=160 height=32 src=/images/logo-darkmode_hu2877729f4be0141a60f84355100d8d94_80775_320x0_resize_q90_h2_lanczos_3.webp alt=Gromit.Blog onerror='this.onerror=null,this.src="/images/logo-darkmode_hu2877729f4be0141a60f84355100d8d94_80775_320x0_resize_lanczos_3.png"'></a></div><div class="lg:col-6 mb-8 text-center lg:mb-0"><ul></ul></div><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right"><ul class=social-icons><li><a target=_blank aria-label=github rel="nofollow noopener" href=https://www.github.com/gowoonsori><i class="fab fa-github"></i></a></li><li><a target=_blank aria-label=linkedin rel="nofollow noopener" href=https://www.linkedin.com/gowoonsori><i class="fab fa-linkedin"></i></a></li><li><a target=_blank aria-label=google rel="nofollow noopener" href=mailto:gowoonsori97@gmail.com><i class="fa-brands fa-google"></i></a></li></ul></div></div></div><div class="border-border dark:border-darkmode-border border-t py-7"><div class="text-light dark:text-darkmode-light container text-center"><p>Developed by <a href=https://github.com/gowoonsori target=_blank>gowoonsori</a></p></div></div></footer><script crossorigin=anonymous integrity="sha256-9XjLB273Xjrt3cq3LF2zQa+fq0rSKxgrV0Hgs1nCeBY=" src=/js/script.min.f578cb076ef75e3aedddcab72c5db341af9fab4ad22b182b5741e0b359c27816.js></script><script crossorigin=anonymous integrity="sha256-B6xkgfh/Kvqv5KhwfzCl2bDxX83d75UmDJHTJqlOs3M=" src=/js/script-lazy.min.07ac6481f87f2afaafe4a8707f30a5d9b0f15fcdddef95260c91d326a94eb373.js defer></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js")</script></body></html>
